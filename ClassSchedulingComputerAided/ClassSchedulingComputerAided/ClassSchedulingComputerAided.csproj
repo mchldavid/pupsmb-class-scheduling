@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3F882B0E-25F0-40E9-84D8-2172FA1A3643}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ClassSchedulingComputerAided</RootNamespace>
+    <AssemblyName>ClassSchedulingComputerAided</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.52">
+      <HintPath>..\..\..\..\Bunifu\Bunifu_UI_v1.52.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.RunTime.1.2.0.3\lib\net40-Client\MetroFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.Design.1.2.0.3\lib\net40\MetroFramework.Design.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.Fonts.1.2.0.3\lib\net40\MetroFramework.Fonts.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddSubject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddSubject.Designer.cs">
+      <DependentUpon>AddSubject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminHomePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminHomePage.Designer.cs">
+      <DependentUpon>AdminHomePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClassScheduleDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClassScheduleDashboard.Designer.cs">
+      <DependentUpon>ClassScheduleDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="curriculumData.cs" />
+    <Compile Include="controls\professorsScheduleControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\professorsScheduleControl.Designer.cs">
+      <DependentUpon>professorsScheduleControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controls\preferredSubjectsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\preferredSubjectsControl.Designer.cs">
+      <DependentUpon>preferredSubjectsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="trash\Information.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="trash\Information.Designer.cs">
+      <DependentUpon>Information.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateCurriculum.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateCurriculum.Designer.cs">
+      <DependentUpon>CreateCurriculum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Curriculum.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Curriculum.Designer.cs">
+      <DependentUpon>Curriculum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ForgotPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ForgotPassword.Designer.cs">
+      <DependentUpon>ForgotPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditProfessor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditProfessor.Designer.cs">
+      <DependentUpon>EditProfessor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controls\InformtionControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\InformtionControl.Designer.cs">
+      <DependentUpon>InformtionControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListOfProfessors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListOfProfessors.Designer.cs">
+      <DependentUpon>ListOfProfessors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyAccount.Designer.cs">
+      <DependentUpon>MyAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyDatabase.cs" />
+    <Compile Include="MySecurity.cs" />
+    <Compile Include="trash\PreferredSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="trash\PreferredSchedule.Designer.cs">
+      <DependentUpon>PreferredSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="trash\PrefferedSubjects.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="trash\PrefferedSubjects.Designer.cs">
+      <DependentUpon>PrefferedSubjects.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProfessorHomePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProfessorHomePage.Designer.cs">
+      <DependentUpon>ProfessorHomePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Register.Designer.cs">
+      <DependentUpon>Register.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="controls\registerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\registerControl.Designer.cs">
+      <DependentUpon>registerControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rooms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rooms.Designer.cs">
+      <DependentUpon>Rooms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sections.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sections.Designer.cs">
+      <DependentUpon>Sections.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SecurityQuestions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SecurityQuestions.Designer.cs">
+      <DependentUpon>SecurityQuestions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SetCourses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SetCourses.Designer.cs">
+      <DependentUpon>SetCourses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SetCurriculum.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SetCurriculum.Designer.cs">
+      <DependentUpon>SetCurriculum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TryInOtherWay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TryInOtherWay.Designer.cs">
+      <DependentUpon>TryInOtherWay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="usersData.cs" />
+    <Compile Include="ViewList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewList.Designer.cs">
+      <DependentUpon>ViewList.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddSubject.resx">
+      <DependentUpon>AddSubject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminHomePage.resx">
+      <DependentUpon>AdminHomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClassScheduleDashboard.resx">
+      <DependentUpon>ClassScheduleDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controls\professorsScheduleControl.resx">
+      <DependentUpon>professorsScheduleControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controls\preferredSubjectsControl.resx">
+      <DependentUpon>preferredSubjectsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="trash\Information.resx">
+      <DependentUpon>Information.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateCurriculum.resx">
+      <DependentUpon>CreateCurriculum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Curriculum.resx">
+      <DependentUpon>Curriculum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ForgotPassword.resx">
+      <DependentUpon>ForgotPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditProfessor.resx">
+      <DependentUpon>EditProfessor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controls\InformtionControl.resx">
+      <DependentUpon>InformtionControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListOfProfessors.resx">
+      <DependentUpon>ListOfProfessors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyAccount.resx">
+      <DependentUpon>MyAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="trash\PreferredSchedule.resx">
+      <DependentUpon>PreferredSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="trash\PrefferedSubjects.resx">
+      <DependentUpon>PrefferedSubjects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProfessorHomePage.resx">
+      <DependentUpon>ProfessorHomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Register.resx">
+      <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="controls\registerControl.resx">
+      <DependentUpon>registerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rooms.resx">
+      <DependentUpon>Rooms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sections.resx">
+      <DependentUpon>Sections.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SecurityQuestions.resx">
+      <DependentUpon>SecurityQuestions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SetCourses.resx">
+      <DependentUpon>SetCourses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SetCurriculum.resx">
+      <DependentUpon>SetCurriculum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TryInOtherWay.resx">
+      <DependentUpon>TryInOtherWay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewList.resx">
+      <DependentUpon>ViewList.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MetroFramework.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="images\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
