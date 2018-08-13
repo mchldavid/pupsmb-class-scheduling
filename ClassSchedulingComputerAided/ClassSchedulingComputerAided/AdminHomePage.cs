@@ -79,5 +79,15 @@ namespace ClassSchedulingComputerAided
         {
 
         }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void s(object sender, EventArgs e)
+        {
+
+        }
     }
 }

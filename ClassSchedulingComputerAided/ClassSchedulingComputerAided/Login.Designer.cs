@@ -36,10 +36,11 @@
             this.btnForgotPassword = new MetroFramework.Controls.MetroLink();
             this.txtUsername = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtPassword = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnExit = new MetroFramework.Controls.MetroLink();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -107,7 +108,7 @@
             this.txtUsername.BackColor = System.Drawing.Color.White;
             this.txtUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtUsername.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtUsername.ForeColor = System.Drawing.Color.Black;
             this.txtUsername.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtUsername.HintText = "Username";
             this.txtUsername.isPassword = false;
@@ -132,6 +133,17 @@
             this.panel1.Size = new System.Drawing.Size(321, 395);
             this.panel1.TabIndex = 8;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(15, 85);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(303, 211);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -147,7 +159,7 @@
             this.txtPassword.BackColor = System.Drawing.Color.White;
             this.txtPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPassword.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtPassword.ForeColor = System.Drawing.Color.Black;
             this.txtPassword.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtPassword.HintText = "Password";
             this.txtPassword.isPassword = true;
@@ -166,17 +178,6 @@
             this.txtPassword.MouseEnter += new System.EventHandler(this.txtPassword_MouseEnter);
             this.txtPassword.MouseLeave += new System.EventHandler(this.txtPassword_MouseLeave);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(15, 85);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(303, 211);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -188,12 +189,25 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "User Login";
             // 
+            // btnExit
+            // 
+            this.btnExit.FontSize = MetroFramework.MetroLinkSize.Medium;
+            this.btnExit.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.btnExit.Location = new System.Drawing.Point(614, -1);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(50, 23);
+            this.btnExit.TabIndex = 10;
+            this.btnExit.TabStop = false;
+            this.btnExit.Text = "X";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Drawing.MetroBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(667, 394);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtPassword);
@@ -232,6 +246,7 @@
         private Bunifu.Framework.UI.BunifuMaterialTextbox txtPassword;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        public MetroFramework.Controls.MetroLink btnExit;
 
 
 

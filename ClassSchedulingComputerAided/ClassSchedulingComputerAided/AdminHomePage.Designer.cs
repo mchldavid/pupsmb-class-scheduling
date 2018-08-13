@@ -45,6 +45,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.btnHome = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -61,12 +62,13 @@
             this.panel3.Controls.Add(this.btnListOfProfessors);
             this.panel3.Controls.Add(this.btnClassScheduleDashboard);
             this.panel3.Controls.Add(this.btnSections);
+            this.panel3.Controls.Add(this.btnHome);
             this.panel3.Controls.Add(this.btnLogout);
             this.panel3.Controls.Add(this.btnRooms);
             this.panel3.Controls.Add(this.btnCurriculum);
             this.panel3.Location = new System.Drawing.Point(-1, -1);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(239, 517);
+            this.panel3.Size = new System.Drawing.Size(249, 517);
             this.panel3.TabIndex = 2;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
@@ -77,14 +79,14 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(239, 73);
+            this.panel2.Size = new System.Drawing.Size(249, 73);
             this.panel2.TabIndex = 142;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(14, -29);
+            this.pictureBox1.Location = new System.Drawing.Point(21, -29);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(195, 140);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -106,7 +108,7 @@
             this.btnEventLog.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnEventLog.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEventLog.BorderRadius = 0;
-            this.btnEventLog.ButtonText = "Event Log";
+            this.btnEventLog.ButtonText = "    Event Log";
             this.btnEventLog.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEventLog.DisabledColor = System.Drawing.Color.Gray;
             this.btnEventLog.Iconcolor = System.Drawing.Color.Transparent;
@@ -114,22 +116,22 @@
             this.btnEventLog.Iconimage_right = null;
             this.btnEventLog.Iconimage_right_Selected = null;
             this.btnEventLog.Iconimage_Selected = null;
-            this.btnEventLog.IconMarginLeft = 0;
+            this.btnEventLog.IconMarginLeft = 27;
             this.btnEventLog.IconMarginRight = 0;
             this.btnEventLog.IconRightVisible = true;
             this.btnEventLog.IconRightZoom = 0D;
             this.btnEventLog.IconVisible = true;
-            this.btnEventLog.IconZoom = 90D;
+            this.btnEventLog.IconZoom = 52D;
             this.btnEventLog.IsTab = false;
-            this.btnEventLog.Location = new System.Drawing.Point(-1, 283);
+            this.btnEventLog.Location = new System.Drawing.Point(-3, 325);
             this.btnEventLog.Name = "btnEventLog";
             this.btnEventLog.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnEventLog.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
             this.btnEventLog.OnHoverTextColor = System.Drawing.Color.White;
             this.btnEventLog.selected = false;
-            this.btnEventLog.Size = new System.Drawing.Size(240, 42);
+            this.btnEventLog.Size = new System.Drawing.Size(252, 42);
             this.btnEventLog.TabIndex = 112;
-            this.btnEventLog.Text = "Event Log";
+            this.btnEventLog.Text = "    Event Log";
             this.btnEventLog.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEventLog.Textcolor = System.Drawing.Color.LightGray;
             this.btnEventLog.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -140,7 +142,7 @@
             this.btnMyAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnMyAccount.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnMyAccount.BorderRadius = 0;
-            this.btnMyAccount.ButtonText = "My Account";
+            this.btnMyAccount.ButtonText = "    My Account";
             this.btnMyAccount.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMyAccount.DisabledColor = System.Drawing.Color.Gray;
             this.btnMyAccount.Iconcolor = System.Drawing.Color.Transparent;
@@ -148,22 +150,22 @@
             this.btnMyAccount.Iconimage_right = null;
             this.btnMyAccount.Iconimage_right_Selected = null;
             this.btnMyAccount.Iconimage_Selected = null;
-            this.btnMyAccount.IconMarginLeft = 0;
+            this.btnMyAccount.IconMarginLeft = 27;
             this.btnMyAccount.IconMarginRight = 0;
             this.btnMyAccount.IconRightVisible = true;
             this.btnMyAccount.IconRightZoom = 0D;
             this.btnMyAccount.IconVisible = true;
-            this.btnMyAccount.IconZoom = 90D;
+            this.btnMyAccount.IconZoom = 52D;
             this.btnMyAccount.IsTab = false;
-            this.btnMyAccount.Location = new System.Drawing.Point(-1, 325);
+            this.btnMyAccount.Location = new System.Drawing.Point(-3, 367);
             this.btnMyAccount.Name = "btnMyAccount";
             this.btnMyAccount.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnMyAccount.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
             this.btnMyAccount.OnHoverTextColor = System.Drawing.Color.White;
             this.btnMyAccount.selected = false;
-            this.btnMyAccount.Size = new System.Drawing.Size(240, 42);
+            this.btnMyAccount.Size = new System.Drawing.Size(252, 42);
             this.btnMyAccount.TabIndex = 112;
-            this.btnMyAccount.Text = "My Account";
+            this.btnMyAccount.Text = "    My Account";
             this.btnMyAccount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMyAccount.Textcolor = System.Drawing.Color.LightGray;
             this.btnMyAccount.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -175,7 +177,7 @@
             this.btnListOfProfessors.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnListOfProfessors.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnListOfProfessors.BorderRadius = 0;
-            this.btnListOfProfessors.ButtonText = "List of Professors";
+            this.btnListOfProfessors.ButtonText = "    List of Professors";
             this.btnListOfProfessors.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnListOfProfessors.DisabledColor = System.Drawing.Color.Gray;
             this.btnListOfProfessors.Iconcolor = System.Drawing.Color.Transparent;
@@ -183,22 +185,22 @@
             this.btnListOfProfessors.Iconimage_right = null;
             this.btnListOfProfessors.Iconimage_right_Selected = null;
             this.btnListOfProfessors.Iconimage_Selected = null;
-            this.btnListOfProfessors.IconMarginLeft = 0;
+            this.btnListOfProfessors.IconMarginLeft = 26;
             this.btnListOfProfessors.IconMarginRight = 0;
             this.btnListOfProfessors.IconRightVisible = true;
             this.btnListOfProfessors.IconRightZoom = 0D;
             this.btnListOfProfessors.IconVisible = true;
-            this.btnListOfProfessors.IconZoom = 90D;
+            this.btnListOfProfessors.IconZoom = 52D;
             this.btnListOfProfessors.IsTab = false;
-            this.btnListOfProfessors.Location = new System.Drawing.Point(-1, 241);
+            this.btnListOfProfessors.Location = new System.Drawing.Point(-2, 283);
             this.btnListOfProfessors.Name = "btnListOfProfessors";
             this.btnListOfProfessors.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnListOfProfessors.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
             this.btnListOfProfessors.OnHoverTextColor = System.Drawing.Color.White;
             this.btnListOfProfessors.selected = false;
-            this.btnListOfProfessors.Size = new System.Drawing.Size(239, 42);
+            this.btnListOfProfessors.Size = new System.Drawing.Size(251, 42);
             this.btnListOfProfessors.TabIndex = 105;
-            this.btnListOfProfessors.Text = "List of Professors";
+            this.btnListOfProfessors.Text = "    List of Professors";
             this.btnListOfProfessors.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnListOfProfessors.Textcolor = System.Drawing.Color.LightGray;
             this.btnListOfProfessors.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -210,7 +212,7 @@
             this.btnClassScheduleDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnClassScheduleDashboard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnClassScheduleDashboard.BorderRadius = 0;
-            this.btnClassScheduleDashboard.ButtonText = "Class Schedule Dashboard";
+            this.btnClassScheduleDashboard.ButtonText = "    Class Schedule Dashboard";
             this.btnClassScheduleDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClassScheduleDashboard.DisabledColor = System.Drawing.Color.Gray;
             this.btnClassScheduleDashboard.Iconcolor = System.Drawing.Color.Transparent;
@@ -218,22 +220,22 @@
             this.btnClassScheduleDashboard.Iconimage_right = null;
             this.btnClassScheduleDashboard.Iconimage_right_Selected = null;
             this.btnClassScheduleDashboard.Iconimage_Selected = null;
-            this.btnClassScheduleDashboard.IconMarginLeft = 0;
+            this.btnClassScheduleDashboard.IconMarginLeft = 27;
             this.btnClassScheduleDashboard.IconMarginRight = 0;
             this.btnClassScheduleDashboard.IconRightVisible = true;
             this.btnClassScheduleDashboard.IconRightZoom = 0D;
             this.btnClassScheduleDashboard.IconVisible = true;
-            this.btnClassScheduleDashboard.IconZoom = 90D;
+            this.btnClassScheduleDashboard.IconZoom = 51D;
             this.btnClassScheduleDashboard.IsTab = false;
-            this.btnClassScheduleDashboard.Location = new System.Drawing.Point(0, 199);
+            this.btnClassScheduleDashboard.Location = new System.Drawing.Point(-3, 241);
             this.btnClassScheduleDashboard.Name = "btnClassScheduleDashboard";
             this.btnClassScheduleDashboard.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnClassScheduleDashboard.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
             this.btnClassScheduleDashboard.OnHoverTextColor = System.Drawing.Color.White;
             this.btnClassScheduleDashboard.selected = false;
-            this.btnClassScheduleDashboard.Size = new System.Drawing.Size(240, 42);
+            this.btnClassScheduleDashboard.Size = new System.Drawing.Size(252, 42);
             this.btnClassScheduleDashboard.TabIndex = 111;
-            this.btnClassScheduleDashboard.Text = "Class Schedule Dashboard";
+            this.btnClassScheduleDashboard.Text = "    Class Schedule Dashboard";
             this.btnClassScheduleDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClassScheduleDashboard.Textcolor = System.Drawing.Color.LightGray;
             this.btnClassScheduleDashboard.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -245,7 +247,7 @@
             this.btnSections.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnSections.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSections.BorderRadius = 0;
-            this.btnSections.ButtonText = "Sections";
+            this.btnSections.ButtonText = "    Sections";
             this.btnSections.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSections.DisabledColor = System.Drawing.Color.Gray;
             this.btnSections.Iconcolor = System.Drawing.Color.Transparent;
@@ -253,22 +255,22 @@
             this.btnSections.Iconimage_right = null;
             this.btnSections.Iconimage_right_Selected = null;
             this.btnSections.Iconimage_Selected = null;
-            this.btnSections.IconMarginLeft = 0;
+            this.btnSections.IconMarginLeft = 25;
             this.btnSections.IconMarginRight = 0;
             this.btnSections.IconRightVisible = true;
             this.btnSections.IconRightZoom = 0D;
             this.btnSections.IconVisible = true;
-            this.btnSections.IconZoom = 90D;
+            this.btnSections.IconZoom = 50D;
             this.btnSections.IsTab = false;
-            this.btnSections.Location = new System.Drawing.Point(0, 157);
+            this.btnSections.Location = new System.Drawing.Point(-1, 199);
             this.btnSections.Name = "btnSections";
             this.btnSections.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnSections.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
             this.btnSections.OnHoverTextColor = System.Drawing.Color.White;
             this.btnSections.selected = false;
-            this.btnSections.Size = new System.Drawing.Size(237, 42);
+            this.btnSections.Size = new System.Drawing.Size(249, 42);
             this.btnSections.TabIndex = 110;
-            this.btnSections.Text = "Sections";
+            this.btnSections.Text = "    Sections";
             this.btnSections.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSections.Textcolor = System.Drawing.Color.LightGray;
             this.btnSections.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -280,7 +282,7 @@
             this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLogout.BorderRadius = 0;
-            this.btnLogout.ButtonText = "Logout";
+            this.btnLogout.ButtonText = "    Logout";
             this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogout.DisabledColor = System.Drawing.Color.Gray;
             this.btnLogout.Iconcolor = System.Drawing.Color.Transparent;
@@ -288,22 +290,22 @@
             this.btnLogout.Iconimage_right = null;
             this.btnLogout.Iconimage_right_Selected = null;
             this.btnLogout.Iconimage_Selected = null;
-            this.btnLogout.IconMarginLeft = 0;
+            this.btnLogout.IconMarginLeft = 27;
             this.btnLogout.IconMarginRight = 0;
             this.btnLogout.IconRightVisible = true;
             this.btnLogout.IconRightZoom = 0D;
             this.btnLogout.IconVisible = true;
-            this.btnLogout.IconZoom = 90D;
+            this.btnLogout.IconZoom = 50D;
             this.btnLogout.IsTab = false;
-            this.btnLogout.Location = new System.Drawing.Point(-1, 367);
+            this.btnLogout.Location = new System.Drawing.Point(-3, 409);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnLogout.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
             this.btnLogout.OnHoverTextColor = System.Drawing.Color.White;
             this.btnLogout.selected = false;
-            this.btnLogout.Size = new System.Drawing.Size(240, 42);
+            this.btnLogout.Size = new System.Drawing.Size(252, 42);
             this.btnLogout.TabIndex = 109;
-            this.btnLogout.Text = "Logout";
+            this.btnLogout.Text = "    Logout";
             this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLogout.Textcolor = System.Drawing.Color.LightGray;
             this.btnLogout.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -315,7 +317,7 @@
             this.btnRooms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnRooms.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnRooms.BorderRadius = 0;
-            this.btnRooms.ButtonText = "Rooms";
+            this.btnRooms.ButtonText = "    Rooms";
             this.btnRooms.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRooms.DisabledColor = System.Drawing.Color.Gray;
             this.btnRooms.Iconcolor = System.Drawing.Color.Transparent;
@@ -323,22 +325,22 @@
             this.btnRooms.Iconimage_right = null;
             this.btnRooms.Iconimage_right_Selected = null;
             this.btnRooms.Iconimage_Selected = null;
-            this.btnRooms.IconMarginLeft = 0;
+            this.btnRooms.IconMarginLeft = 27;
             this.btnRooms.IconMarginRight = 0;
             this.btnRooms.IconRightVisible = true;
             this.btnRooms.IconRightZoom = 0D;
             this.btnRooms.IconVisible = true;
-            this.btnRooms.IconZoom = 90D;
+            this.btnRooms.IconZoom = 50D;
             this.btnRooms.IsTab = false;
-            this.btnRooms.Location = new System.Drawing.Point(0, 115);
+            this.btnRooms.Location = new System.Drawing.Point(-3, 157);
             this.btnRooms.Name = "btnRooms";
             this.btnRooms.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnRooms.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
             this.btnRooms.OnHoverTextColor = System.Drawing.Color.White;
             this.btnRooms.selected = false;
-            this.btnRooms.Size = new System.Drawing.Size(240, 42);
+            this.btnRooms.Size = new System.Drawing.Size(252, 42);
             this.btnRooms.TabIndex = 106;
-            this.btnRooms.Text = "Rooms";
+            this.btnRooms.Text = "    Rooms";
             this.btnRooms.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRooms.Textcolor = System.Drawing.Color.LightGray;
             this.btnRooms.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -350,7 +352,7 @@
             this.btnCurriculum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnCurriculum.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCurriculum.BorderRadius = 0;
-            this.btnCurriculum.ButtonText = "Curriculums";
+            this.btnCurriculum.ButtonText = "    Curriculums";
             this.btnCurriculum.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCurriculum.DisabledColor = System.Drawing.Color.Gray;
             this.btnCurriculum.Iconcolor = System.Drawing.Color.Transparent;
@@ -358,22 +360,22 @@
             this.btnCurriculum.Iconimage_right = null;
             this.btnCurriculum.Iconimage_right_Selected = null;
             this.btnCurriculum.Iconimage_Selected = null;
-            this.btnCurriculum.IconMarginLeft = 0;
+            this.btnCurriculum.IconMarginLeft = 25;
             this.btnCurriculum.IconMarginRight = 0;
             this.btnCurriculum.IconRightVisible = true;
             this.btnCurriculum.IconRightZoom = 0D;
             this.btnCurriculum.IconVisible = true;
-            this.btnCurriculum.IconZoom = 90D;
+            this.btnCurriculum.IconZoom = 55D;
             this.btnCurriculum.IsTab = false;
-            this.btnCurriculum.Location = new System.Drawing.Point(1, 73);
+            this.btnCurriculum.Location = new System.Drawing.Point(-3, 115);
             this.btnCurriculum.Name = "btnCurriculum";
             this.btnCurriculum.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnCurriculum.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
             this.btnCurriculum.OnHoverTextColor = System.Drawing.Color.White;
             this.btnCurriculum.selected = false;
-            this.btnCurriculum.Size = new System.Drawing.Size(240, 42);
+            this.btnCurriculum.Size = new System.Drawing.Size(252, 42);
             this.btnCurriculum.TabIndex = 104;
-            this.btnCurriculum.Text = "Curriculums";
+            this.btnCurriculum.Text = "    Curriculums";
             this.btnCurriculum.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCurriculum.Textcolor = System.Drawing.Color.LightGray;
             this.btnCurriculum.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -382,19 +384,20 @@
             // pnl
             // 
             this.pnl.BackColor = System.Drawing.Color.Gainsboro;
-            this.pnl.Location = new System.Drawing.Point(236, 72);
+            this.pnl.Location = new System.Drawing.Point(242, 72);
             this.pnl.Name = "pnl";
-            this.pnl.Size = new System.Drawing.Size(706, 451);
+            this.pnl.Size = new System.Drawing.Size(700, 451);
             this.pnl.TabIndex = 142;
+            this.pnl.Click += new System.EventHandler(this.s);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(0)))), ((int)(((byte)(17)))));
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.metroLabel4);
-            this.panel1.Location = new System.Drawing.Point(236, -1);
+            this.panel1.Location = new System.Drawing.Point(242, -1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(706, 73);
+            this.panel1.Size = new System.Drawing.Size(700, 73);
             this.panel1.TabIndex = 143;
             // 
             // label12
@@ -418,6 +421,41 @@
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(672, 10);
             this.metroLabel4.TabIndex = 139;
+            // 
+            // btnHome
+            // 
+            this.btnHome.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btnHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnHome.BorderRadius = 0;
+            this.btnHome.ButtonText = "    Home";
+            this.btnHome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHome.DisabledColor = System.Drawing.Color.Gray;
+            this.btnHome.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnHome.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnHome.Iconimage")));
+            this.btnHome.Iconimage_right = null;
+            this.btnHome.Iconimage_right_Selected = null;
+            this.btnHome.Iconimage_Selected = null;
+            this.btnHome.IconMarginLeft = 25;
+            this.btnHome.IconMarginRight = 0;
+            this.btnHome.IconRightVisible = true;
+            this.btnHome.IconRightZoom = 0D;
+            this.btnHome.IconVisible = true;
+            this.btnHome.IconZoom = 50D;
+            this.btnHome.IsTab = false;
+            this.btnHome.Location = new System.Drawing.Point(-3, 73);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btnHome.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
+            this.btnHome.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnHome.selected = false;
+            this.btnHome.Size = new System.Drawing.Size(252, 42);
+            this.btnHome.TabIndex = 109;
+            this.btnHome.Text = "    Home";
+            this.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHome.Textcolor = System.Drawing.Color.LightGray;
+            this.btnHome.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // frmAdminHomePage
             // 
@@ -461,6 +499,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label12;
         public MetroFramework.Controls.MetroLabel metroLabel4;
+        public Bunifu.Framework.UI.BunifuFlatButton btnHome;
 
 
     }

@@ -377,7 +377,7 @@
             this.pnlEditCourse.Controls.Add(this.metroLabel7);
             this.pnlEditCourse.Controls.Add(this.metroLabel8);
             this.pnlEditCourse.Controls.Add(this.txtEditCourseAcronym);
-            this.pnlEditCourse.Location = new System.Drawing.Point(158, 113);
+            this.pnlEditCourse.Location = new System.Drawing.Point(154, 118);
             this.pnlEditCourse.Name = "pnlEditCourse";
             this.pnlEditCourse.Size = new System.Drawing.Size(300, 280);
             this.pnlEditCourse.TabIndex = 169;
@@ -481,11 +481,11 @@
             this.lbl_title.Name = "lbl_title";
             this.lbl_title.Size = new System.Drawing.Size(511, 18);
             this.lbl_title.TabIndex = 176;
-            this.lbl_title.Text = "Curriculum Title: K-12 program curriculum ACT 12b";
+            this.lbl_title.Text = "Curriculum Title:";
             // 
             // lbl_control_id
             // 
-            this.lbl_control_id.Location = new System.Drawing.Point(3, 427);
+            this.lbl_control_id.Location = new System.Drawing.Point(152, 427);
             this.lbl_control_id.Name = "lbl_control_id";
             this.lbl_control_id.Size = new System.Drawing.Size(108, 18);
             this.lbl_control_id.TabIndex = 177;
