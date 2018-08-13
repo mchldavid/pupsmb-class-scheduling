@@ -21,6 +21,11 @@ namespace ClassSchedulingComputerAided
         private void AdminHomePage_Load(object sender, EventArgs e)
         {
             lbl_curriculum_id.Text = md.GetCurriculumId();
+            lblTime.Text = DateTime.Now.ToString("h:mm tt");
+            lblDay.Text = DateTime.Now.ToString("dddd");
+            lblDate.Text = DateTime.Now.ToString("dd MMMM yyyy");
+            timer1.Enabled = true;
+            
         }
 
         private void btnCurriculum_Click(object sender, EventArgs e)
@@ -88,6 +93,16 @@ namespace ClassSchedulingComputerAided
         private void s(object sender, EventArgs e)
         {
 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (timer1.Interval == 1000)
+            {
+                lblTime.Text = DateTime.Now.ToString("h:mm tt");
+                lblDay.Text = DateTime.Now.ToString("dddd");
+                lblDate.Text = DateTime.Now.ToString("dd MMMM yyyy");
+            }
         }
     }
 }

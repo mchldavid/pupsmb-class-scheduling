@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdminHomePage));
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -38,6 +39,7 @@
             this.btnListOfProfessors = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnClassScheduleDashboard = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnSections = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnHome = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnLogout = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnRooms = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnCurriculum = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -45,7 +47,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
-            this.btnHome = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.lblTime = new System.Windows.Forms.Label();
+            this.lblDate = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lblDay = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -276,6 +281,41 @@
             this.btnSections.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSections.Click += new System.EventHandler(this.btnSections_Click);
             // 
+            // btnHome
+            // 
+            this.btnHome.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btnHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnHome.BorderRadius = 0;
+            this.btnHome.ButtonText = "    Home";
+            this.btnHome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHome.DisabledColor = System.Drawing.Color.Gray;
+            this.btnHome.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnHome.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnHome.Iconimage")));
+            this.btnHome.Iconimage_right = null;
+            this.btnHome.Iconimage_right_Selected = null;
+            this.btnHome.Iconimage_Selected = null;
+            this.btnHome.IconMarginLeft = 25;
+            this.btnHome.IconMarginRight = 0;
+            this.btnHome.IconRightVisible = true;
+            this.btnHome.IconRightZoom = 0D;
+            this.btnHome.IconVisible = true;
+            this.btnHome.IconZoom = 50D;
+            this.btnHome.IsTab = false;
+            this.btnHome.Location = new System.Drawing.Point(-3, 73);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btnHome.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
+            this.btnHome.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnHome.selected = false;
+            this.btnHome.Size = new System.Drawing.Size(252, 42);
+            this.btnHome.TabIndex = 109;
+            this.btnHome.Text = "    Home";
+            this.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHome.Textcolor = System.Drawing.Color.LightGray;
+            this.btnHome.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            // 
             // btnLogout
             // 
             this.btnLogout.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
@@ -393,6 +433,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(0)))), ((int)(((byte)(17)))));
+            this.panel1.Controls.Add(this.lblDay);
+            this.panel1.Controls.Add(this.lblDate);
+            this.panel1.Controls.Add(this.lblTime);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.metroLabel4);
             this.panel1.Location = new System.Drawing.Point(242, -1);
@@ -406,7 +449,7 @@
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.LightCoral;
-            this.label12.Location = new System.Drawing.Point(506, 21);
+            this.label12.Location = new System.Drawing.Point(25, 18);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(187, 36);
             this.label12.TabIndex = 138;
@@ -422,40 +465,46 @@
             this.metroLabel4.Size = new System.Drawing.Size(672, 10);
             this.metroLabel4.TabIndex = 139;
             // 
-            // btnHome
+            // lblTime
             // 
-            this.btnHome.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btnHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnHome.BorderRadius = 0;
-            this.btnHome.ButtonText = "    Home";
-            this.btnHome.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnHome.DisabledColor = System.Drawing.Color.Gray;
-            this.btnHome.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnHome.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnHome.Iconimage")));
-            this.btnHome.Iconimage_right = null;
-            this.btnHome.Iconimage_right_Selected = null;
-            this.btnHome.Iconimage_Selected = null;
-            this.btnHome.IconMarginLeft = 25;
-            this.btnHome.IconMarginRight = 0;
-            this.btnHome.IconRightVisible = true;
-            this.btnHome.IconRightZoom = 0D;
-            this.btnHome.IconVisible = true;
-            this.btnHome.IconZoom = 50D;
-            this.btnHome.IsTab = false;
-            this.btnHome.Location = new System.Drawing.Point(-3, 73);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btnHome.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
-            this.btnHome.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnHome.selected = false;
-            this.btnHome.Size = new System.Drawing.Size(252, 42);
-            this.btnHome.TabIndex = 109;
-            this.btnHome.Text = "    Home";
-            this.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHome.Textcolor = System.Drawing.Color.LightGray;
-            this.btnHome.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            this.lblTime.BackColor = System.Drawing.Color.Transparent;
+            this.lblTime.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime.ForeColor = System.Drawing.Color.LightCoral;
+            this.lblTime.Location = new System.Drawing.Point(518, 10);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(187, 24);
+            this.lblTime.TabIndex = 140;
+            this.lblTime.Text = "00:00 AM";
+            this.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblDate
+            // 
+            this.lblDate.BackColor = System.Drawing.Color.Transparent;
+            this.lblDate.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.ForeColor = System.Drawing.Color.LightCoral;
+            this.lblDate.Location = new System.Drawing.Point(533, 41);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(159, 18);
+            this.lblDate.TabIndex = 140;
+            this.lblDate.Text = "29 December 1991";
+            this.lblDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // lblDay
+            // 
+            this.lblDay.BackColor = System.Drawing.Color.Transparent;
+            this.lblDay.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDay.ForeColor = System.Drawing.Color.LightCoral;
+            this.lblDay.Location = new System.Drawing.Point(548, 28);
+            this.lblDay.Name = "lblDay";
+            this.lblDay.Size = new System.Drawing.Size(126, 17);
+            this.lblDay.TabIndex = 140;
+            this.lblDay.Text = "Wednesday";
+            this.lblDay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frmAdminHomePage
             // 
@@ -500,6 +549,10 @@
         private System.Windows.Forms.Label label12;
         public MetroFramework.Controls.MetroLabel metroLabel4;
         public Bunifu.Framework.UI.BunifuFlatButton btnHome;
+        private System.Windows.Forms.Label lblDate;
+        private System.Windows.Forms.Label lblTime;
+        public System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lblDay;
 
 
     }
