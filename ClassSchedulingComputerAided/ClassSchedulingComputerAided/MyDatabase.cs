@@ -270,7 +270,8 @@ namespace ClassSchedulingComputerAided
             }
             return id;
         }
-
+        
+        //=================SEt COURSES====================
         public void C_AddCourses(string c_control_id, string name, string acronym)
         {
             try
@@ -286,6 +287,78 @@ namespace ClassSchedulingComputerAided
             catch (MySqlException ex)
             {
                 MessageBox.Show(ex.Message, "AddCourses");
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public DataGridView dgv_showCourse()
+        {
+            DataGridView dgv1 = new DataGridView();
+            try
+            {
+                con.Open();
+                string sql = "SELECT course_id AS 'ID', courseAcronym AS 'Acronym', courseName AS 'Course Name' FROM tbl_course WHERE curriculums_id = @id;";
+                MySqlCommand com = new MySqlCommand(sql, con);
+                com.Parameters.AddWithValue("@id", curriculumData.c_id);
+                com.ExecuteNonQuery();
+                con.Close();
+
+                con.Open();
+                MySqlDataAdapter adapter = new MySqlDataAdapter(com);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+                dgv1.DataSource = ds.Tables[0];
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "dgv_showCourse");
+            }
+            finally
+            {
+                con.Close();
+            }
+            return dgv1;
+        }
+
+        public void C_EditCourses(string id, string c_name, string c_ac)
+        {
+            try
+            {
+                con.Open();
+                string sqlUpdateUserInformation = "UPDATE tbl_course SET courseName = @n, courseAcronym = @a WHERE course_id = @id ;";
+                MySqlCommand com = new MySqlCommand(sqlUpdateUserInformation, con);
+                com.Parameters.AddWithValue("@id", id);
+                com.Parameters.AddWithValue("@n", c_name);
+                com.Parameters.AddWithValue("@a", c_ac);
+                com.ExecuteNonQuery();
+                MessageBox.Show("Update Successfully!", "C_AddcoursesEdit");
+            }
+            catch (MySqlException er)
+            {
+                MessageBox.Show(er.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public void C_DeleteCourse(string c_id)
+        {
+            try
+            {
+                con.Open();
+                string sqlCourse = "DELETE FROM tbl_course WHERE course_id = @id";
+                MySqlCommand com1 = new MySqlCommand(sqlCourse, con);
+                com1.Parameters.AddWithValue("@id", c_id);
+                com1.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "C_DeleteCourse");
             }
             finally
             {

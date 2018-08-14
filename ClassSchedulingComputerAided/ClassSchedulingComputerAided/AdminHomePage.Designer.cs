@@ -45,12 +45,12 @@
             this.btnCurriculum = new Bunifu.Framework.UI.BunifuFlatButton();
             this.pnl = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblDay = new System.Windows.Forms.Label();
+            this.lblDate = new System.Windows.Forms.Label();
+            this.lblTime = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
-            this.lblTime = new System.Windows.Forms.Label();
-            this.lblDate = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.lblDay = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -73,7 +73,7 @@
             this.panel3.Controls.Add(this.btnCurriculum);
             this.panel3.Location = new System.Drawing.Point(-1, -1);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(249, 517);
+            this.panel3.Size = new System.Drawing.Size(245, 517);
             this.panel3.TabIndex = 2;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
@@ -84,7 +84,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(249, 73);
+            this.panel2.Size = new System.Drawing.Size(245, 73);
             this.panel2.TabIndex = 142;
             // 
             // pictureBox1
@@ -109,7 +109,7 @@
             // 
             // btnEventLog
             // 
-            this.btnEventLog.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnEventLog.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(149)))), ((int)(((byte)(1)))));
             this.btnEventLog.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnEventLog.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEventLog.BorderRadius = 0;
@@ -143,7 +143,7 @@
             // 
             // btnMyAccount
             // 
-            this.btnMyAccount.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnMyAccount.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(149)))), ((int)(((byte)(1)))));
             this.btnMyAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnMyAccount.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnMyAccount.BorderRadius = 0;
@@ -178,7 +178,7 @@
             // 
             // btnListOfProfessors
             // 
-            this.btnListOfProfessors.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnListOfProfessors.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(149)))), ((int)(((byte)(1)))));
             this.btnListOfProfessors.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnListOfProfessors.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnListOfProfessors.BorderRadius = 0;
@@ -213,7 +213,7 @@
             // 
             // btnClassScheduleDashboard
             // 
-            this.btnClassScheduleDashboard.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnClassScheduleDashboard.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(149)))), ((int)(((byte)(1)))));
             this.btnClassScheduleDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnClassScheduleDashboard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnClassScheduleDashboard.BorderRadius = 0;
@@ -248,7 +248,7 @@
             // 
             // btnSections
             // 
-            this.btnSections.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnSections.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(149)))), ((int)(((byte)(1)))));
             this.btnSections.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnSections.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSections.BorderRadius = 0;
@@ -283,7 +283,7 @@
             // 
             // btnHome
             // 
-            this.btnHome.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnHome.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(149)))), ((int)(((byte)(1)))));
             this.btnHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnHome.BorderRadius = 0;
@@ -318,7 +318,7 @@
             // 
             // btnLogout
             // 
-            this.btnLogout.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnLogout.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(149)))), ((int)(((byte)(1)))));
             this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLogout.BorderRadius = 0;
@@ -353,7 +353,7 @@
             // 
             // btnRooms
             // 
-            this.btnRooms.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnRooms.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(149)))), ((int)(((byte)(1)))));
             this.btnRooms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnRooms.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnRooms.BorderRadius = 0;
@@ -388,7 +388,7 @@
             // 
             // btnCurriculum
             // 
-            this.btnCurriculum.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnCurriculum.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(149)))), ((int)(((byte)(1)))));
             this.btnCurriculum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnCurriculum.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCurriculum.BorderRadius = 0;
@@ -443,6 +443,42 @@
             this.panel1.Size = new System.Drawing.Size(700, 73);
             this.panel1.TabIndex = 143;
             // 
+            // lblDay
+            // 
+            this.lblDay.BackColor = System.Drawing.Color.Transparent;
+            this.lblDay.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDay.ForeColor = System.Drawing.Color.LightCoral;
+            this.lblDay.Location = new System.Drawing.Point(548, 28);
+            this.lblDay.Name = "lblDay";
+            this.lblDay.Size = new System.Drawing.Size(126, 17);
+            this.lblDay.TabIndex = 140;
+            this.lblDay.Text = "Wednesday";
+            this.lblDay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblDate
+            // 
+            this.lblDate.BackColor = System.Drawing.Color.Transparent;
+            this.lblDate.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.ForeColor = System.Drawing.Color.LightCoral;
+            this.lblDate.Location = new System.Drawing.Point(533, 41);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(159, 18);
+            this.lblDate.TabIndex = 140;
+            this.lblDate.Text = "29 December 1991";
+            this.lblDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblTime
+            // 
+            this.lblTime.BackColor = System.Drawing.Color.Transparent;
+            this.lblTime.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime.ForeColor = System.Drawing.Color.LightCoral;
+            this.lblTime.Location = new System.Drawing.Point(518, 10);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(187, 24);
+            this.lblTime.TabIndex = 140;
+            this.lblTime.Text = "00:00 AM";
+            this.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -465,46 +501,10 @@
             this.metroLabel4.Size = new System.Drawing.Size(672, 10);
             this.metroLabel4.TabIndex = 139;
             // 
-            // lblTime
-            // 
-            this.lblTime.BackColor = System.Drawing.Color.Transparent;
-            this.lblTime.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime.ForeColor = System.Drawing.Color.LightCoral;
-            this.lblTime.Location = new System.Drawing.Point(518, 10);
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(187, 24);
-            this.lblTime.TabIndex = 140;
-            this.lblTime.Text = "00:00 AM";
-            this.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblDate
-            // 
-            this.lblDate.BackColor = System.Drawing.Color.Transparent;
-            this.lblDate.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.ForeColor = System.Drawing.Color.LightCoral;
-            this.lblDate.Location = new System.Drawing.Point(533, 41);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(159, 18);
-            this.lblDate.TabIndex = 140;
-            this.lblDate.Text = "29 December 1991";
-            this.lblDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // timer1
             // 
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // lblDay
-            // 
-            this.lblDay.BackColor = System.Drawing.Color.Transparent;
-            this.lblDay.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDay.ForeColor = System.Drawing.Color.LightCoral;
-            this.lblDay.Location = new System.Drawing.Point(548, 28);
-            this.lblDay.Name = "lblDay";
-            this.lblDay.Size = new System.Drawing.Size(126, 17);
-            this.lblDay.TabIndex = 140;
-            this.lblDay.Text = "Wednesday";
-            this.lblDay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frmAdminHomePage
             // 
