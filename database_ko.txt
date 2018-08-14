@@ -1,0 +1,119 @@
+CREATE DATABASE `db_computeraided` /*!40100 DEFAULT CHARACTER SET latin1 */;
+
+DROP TABLE IF EXISTS `db_computeraided`.`tbl_course`;
+CREATE TABLE  `db_computeraided`.`tbl_course` (
+  `course_id` int(10) unsigned NOT NULL auto_increment,
+  `curriculums_id` int(10) unsigned NOT NULL,
+  `courseName` varchar(45) NOT NULL,
+  `courseAcronym` varchar(45) NOT NULL,
+  PRIMARY KEY  (`course_id`),
+  KEY `FK_tbl_course_1` (`curriculums_id`),
+  CONSTRAINT `FK_tbl_course_1` FOREIGN KEY (`curriculums_id`) REFERENCES `tbl_curriculums` (`curriculums_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `db_computeraided`.`tbl_curriculums`;
+CREATE TABLE  `db_computeraided`.`tbl_curriculums` (
+  `curriculums_id` int(10) unsigned NOT NULL auto_increment,
+  `curriculumName` varchar(45) NOT NULL,
+  `publishedBy` varchar(45) NOT NULL,
+  `datePublished` varchar(45) NOT NULL,
+  `status` varchar(45) NOT NULL,
+  `inUsed` varchar(45) NOT NULL,
+  PRIMARY KEY  (`curriculums_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `db_computeraided`.`tbl_preferredschedules`;
+CREATE TABLE  `db_computeraided`.`tbl_preferredschedules` (
+  `preferredSchedule_id` int(10) unsigned NOT NULL auto_increment,
+  `users_id` int(10) unsigned NOT NULL,
+  `startTime` varchar(45) NOT NULL,
+  `endTime` varchar(45) NOT NULL,
+  `ps_Day` varchar(45) NOT NULL,
+  PRIMARY KEY  USING BTREE (`preferredSchedule_id`),
+  KEY `FK_tbl_preferredschedules_1` (`users_id`),
+  CONSTRAINT `FK_tbl_preferredschedules_1` FOREIGN KEY (`users_id`) REFERENCES `tbl_users` (`users_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `db_computeraided`.`tbl_preferredsubjects`;
+CREATE TABLE  `db_computeraided`.`tbl_preferredsubjects` (
+  `preferredSubjects_id` int(10) unsigned NOT NULL auto_increment,
+  `users_id` int(10) unsigned NOT NULL,
+  `subjects_id` int(10) unsigned NOT NULL,
+  PRIMARY KEY  (`preferredSubjects_id`),
+  KEY `FK_tbl_preferredsubjects_1` (`users_id`),
+  KEY `FK_tbl_preferredsubjects_2` (`subjects_id`),
+  CONSTRAINT `FK_tbl_preferredsubjects_2` FOREIGN KEY (`subjects_id`) REFERENCES `tbl_subjects` (`subjects_id`),
+  CONSTRAINT `FK_tbl_preferredsubjects_1` FOREIGN KEY (`users_id`) REFERENCES `tbl_users` (`users_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `db_computeraided`.`tbl_room`;
+CREATE TABLE  `db_computeraided`.`tbl_room` (
+  `room_id` int(10) unsigned NOT NULL auto_increment,
+  `roomCode` varchar(45) NOT NULL,
+  `roomName` varchar(45) NOT NULL,
+  `roomSlots` int(10) unsigned NOT NULL,
+  `roomStatus` varchar(45) NOT NULL,
+  PRIMARY KEY  (`room_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `db_computeraided`.`tbl_sections`;
+CREATE TABLE  `db_computeraided`.`tbl_sections` (
+  `section_id` int(10) unsigned NOT NULL auto_increment,
+  `course` varchar(45) NOT NULL,
+  `year` int(10) unsigned NOT NULL,
+  `section` varchar(45) NOT NULL,
+  PRIMARY KEY  (`section_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `db_computeraided`.`tbl_securityquestions`;
+CREATE TABLE  `db_computeraided`.`tbl_securityquestions` (
+  `sq_id` int(10) unsigned NOT NULL auto_increment,
+  `users_id` int(10) unsigned NOT NULL,
+  `1Answer` varchar(45) NOT NULL,
+  `2Answer` varchar(45) NOT NULL,
+  `3Answer` varchar(45) NOT NULL,
+  `4Answer` varchar(45) NOT NULL,
+  `5Answer` varchar(45) NOT NULL,
+  PRIMARY KEY  (`sq_id`),
+  KEY `FK_tbl_securityquestions_1` (`users_id`),
+  CONSTRAINT `FK_tbl_securityquestions_1` FOREIGN KEY (`users_id`) REFERENCES `tbl_users` (`users_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `db_computeraided`.`tbl_subjects`;
+CREATE TABLE  `db_computeraided`.`tbl_subjects` (
+  `subjects_id` int(10) unsigned NOT NULL auto_increment,
+  `curriculums_id` int(10) unsigned NOT NULL,
+  `course_id` int(10) unsigned NOT NULL,
+  `subjectCode` varchar(45) NOT NULL,
+  `subjectDescription` varchar(45) NOT NULL,
+  `lectureHours` int(10) unsigned NOT NULL,
+  `laboratoryHours` int(10) unsigned NOT NULL,
+  `units` int(10) unsigned NOT NULL,
+  `yearLevel` int(10) unsigned NOT NULL,
+  `course` varchar(45) NOT NULL,
+  PRIMARY KEY  USING BTREE (`subjects_id`),
+  KEY `FK_tbl_subjects_1` (`curriculums_id`),
+  KEY `FK_tbl_subjects_2` (`course_id`),
+  CONSTRAINT `FK_tbl_subjects_1` FOREIGN KEY (`curriculums_id`) REFERENCES `tbl_curriculums` (`curriculums_id`),
+  CONSTRAINT `FK_tbl_subjects_2` FOREIGN KEY (`course_id`) REFERENCES `tbl_course` (`course_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `db_computeraided`.`tbl_users`;
+CREATE TABLE  `db_computeraided`.`tbl_users` (
+  `users_id` int(10) unsigned NOT NULL auto_increment,
+  `username` varchar(45) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `firstName` varchar(45) NOT NULL,
+  `middleName` varchar(45) NOT NULL,
+  `lastName` varchar(45) NOT NULL,
+  `address` varchar(120) NOT NULL,
+  `gender` varchar(45) NOT NULL,
+  `teachingStatus` varchar(45) NOT NULL,
+  `courseDepartment` varchar(45) NOT NULL,
+  `emailAddress` varchar(45) NOT NULL,
+  `mobileNumber` varchar(45) NOT NULL,
+  `status` varchar(45) NOT NULL,
+  `userLevel` varchar(45) NOT NULL,
+  `unitsAllowed` varchar(45) NOT NULL,
+  PRIMARY KEY  (`users_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
