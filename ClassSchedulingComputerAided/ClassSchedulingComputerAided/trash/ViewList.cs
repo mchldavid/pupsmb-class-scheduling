@@ -31,5 +31,10 @@ namespace ClassSchedulingComputerAided
         {
             this.Hide();
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

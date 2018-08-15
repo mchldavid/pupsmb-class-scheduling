@@ -26,11 +26,7 @@ namespace ClassSchedulingComputerAided
             cboLectureHours.SelectedIndex = 0;
             cboLabHours.SelectedIndex = 0;
             cboYearLevel.SelectedIndex = 0;
-        }
-
-        private void bunifuFlatButton2_Click(object sender, EventArgs e)
-        {
-
+            dgvListSubject.DataSource = md.dgv_showSubjectCurriculum().DataSource;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -70,13 +66,18 @@ namespace ClassSchedulingComputerAided
         {
             MessageBox.Show("Added Successfully", "Add Subject", MessageBoxButtons.OK, MessageBoxIcon.Information);
             md.C_AddSubjects(curriculumData.c_id, lbl_course_id.Text, cboCourse.SelectedItem.ToString(), txtSubjectCode.Text, txtSubjectDescription.Text, cboLectureHours.SelectedItem.ToString(), cboLabHours.SelectedItem.ToString(), cboUnits.SelectedItem.ToString(), cboYearLevel.SelectedItem.ToString());
-            
+            dgvListSubject.DataSource = md.dgv_showSubjectCurriculum().DataSource;
         }
 
         private void cboCourse_SelectedIndexChanged(object sender, EventArgs e)
         {
 
             lbl_course_id.Text = md.GetCourseID(cboCourse.SelectedItem.ToString(), curriculumData.c_id);
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

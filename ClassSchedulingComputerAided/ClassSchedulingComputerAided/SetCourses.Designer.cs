@@ -36,6 +36,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAddCourse = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnDelete = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnEditCourse = new Bunifu.Framework.UI.BunifuFlatButton();
             this.txtAddCourseAcronym = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
@@ -65,7 +66,6 @@
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.cboCourseDepartment = new System.Windows.Forms.ComboBox();
             this.lblRowId = new MetroFramework.Controls.MetroLabel();
-            this.btnDelete = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1.SuspendLayout();
             this.pnlAddCourse.SuspendLayout();
             this.pnlEditCourse.SuspendLayout();
@@ -95,7 +95,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.panel1.Controls.Add(this.btnAddCourse);
             this.panel1.Controls.Add(this.bunifuFlatButton1);
             this.panel1.Controls.Add(this.btnDelete);
@@ -108,7 +108,7 @@
             // btnAddCourse
             // 
             this.btnAddCourse.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(149)))), ((int)(((byte)(1)))));
-            this.btnAddCourse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
+            this.btnAddCourse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnAddCourse.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAddCourse.BorderRadius = 0;
             this.btnAddCourse.ButtonText = "    Add Course";
@@ -129,7 +129,7 @@
             this.btnAddCourse.IsTab = false;
             this.btnAddCourse.Location = new System.Drawing.Point(0, 4);
             this.btnAddCourse.Name = "btnAddCourse";
-            this.btnAddCourse.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
+            this.btnAddCourse.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnAddCourse.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
             this.btnAddCourse.OnHoverTextColor = System.Drawing.Color.White;
             this.btnAddCourse.selected = false;
@@ -144,7 +144,7 @@
             // bunifuFlatButton1
             // 
             this.bunifuFlatButton1.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(149)))), ((int)(((byte)(1)))));
-            this.bunifuFlatButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
+            this.bunifuFlatButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuFlatButton1.BorderRadius = 0;
             this.bunifuFlatButton1.ButtonText = "    Home";
@@ -165,7 +165,7 @@
             this.bunifuFlatButton1.IsTab = false;
             this.bunifuFlatButton1.Location = new System.Drawing.Point(0, 130);
             this.bunifuFlatButton1.Name = "bunifuFlatButton1";
-            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
+            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
             this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White;
             this.bunifuFlatButton1.selected = false;
@@ -176,10 +176,46 @@
             this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
             this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
+            // btnDelete
+            // 
+            this.btnDelete.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(149)))), ((int)(((byte)(1)))));
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDelete.BorderRadius = 0;
+            this.btnDelete.ButtonText = "    Delete Course";
+            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDelete.DisabledColor = System.Drawing.Color.Gray;
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnDelete.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnDelete.Iconimage")));
+            this.btnDelete.Iconimage_right = null;
+            this.btnDelete.Iconimage_right_Selected = null;
+            this.btnDelete.Iconimage_Selected = null;
+            this.btnDelete.IconMarginLeft = 0;
+            this.btnDelete.IconMarginRight = 0;
+            this.btnDelete.IconRightVisible = true;
+            this.btnDelete.IconRightZoom = 0D;
+            this.btnDelete.IconVisible = true;
+            this.btnDelete.IconZoom = 50D;
+            this.btnDelete.IsTab = false;
+            this.btnDelete.Location = new System.Drawing.Point(0, 88);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btnDelete.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
+            this.btnDelete.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnDelete.selected = false;
+            this.btnDelete.Size = new System.Drawing.Size(157, 42);
+            this.btnDelete.TabIndex = 159;
+            this.btnDelete.Text = "    Delete Course";
+            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDelete.Textcolor = System.Drawing.Color.White;
+            this.btnDelete.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // btnEditCourse
             // 
             this.btnEditCourse.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(149)))), ((int)(((byte)(1)))));
-            this.btnEditCourse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
+            this.btnEditCourse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnEditCourse.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEditCourse.BorderRadius = 0;
             this.btnEditCourse.ButtonText = "    Edit Course";
@@ -200,7 +236,7 @@
             this.btnEditCourse.IsTab = false;
             this.btnEditCourse.Location = new System.Drawing.Point(0, 46);
             this.btnEditCourse.Name = "btnEditCourse";
-            this.btnEditCourse.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
+            this.btnEditCourse.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnEditCourse.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
             this.btnEditCourse.OnHoverTextColor = System.Drawing.Color.White;
             this.btnEditCourse.selected = false;
@@ -436,7 +472,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(34)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(0)))), ((int)(((byte)(17)))));
             this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.lbl_title);
             this.panel2.Location = new System.Drawing.Point(0, -2);
@@ -466,6 +502,7 @@
             this.dgvShow.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvShow.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvShow.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvShow.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvShow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -486,7 +523,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.Silver;
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
             this.panel3.Controls.Add(this.txtUsername);
             this.panel3.Controls.Add(this.metroLabel3);
             this.panel3.Controls.Add(this.cboCourseDepartment);
@@ -532,43 +569,7 @@
             this.lblRowId.Name = "lblRowId";
             this.lblRowId.Size = new System.Drawing.Size(108, 18);
             this.lblRowId.TabIndex = 177;
-            this.lblRowId.Text = "Title";
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(149)))), ((int)(((byte)(1)))));
-            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
-            this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDelete.BorderRadius = 0;
-            this.btnDelete.ButtonText = "    Delete Course";
-            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDelete.DisabledColor = System.Drawing.Color.Gray;
-            this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnDelete.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnDelete.Iconimage")));
-            this.btnDelete.Iconimage_right = null;
-            this.btnDelete.Iconimage_right_Selected = null;
-            this.btnDelete.Iconimage_Selected = null;
-            this.btnDelete.IconMarginLeft = 0;
-            this.btnDelete.IconMarginRight = 0;
-            this.btnDelete.IconRightVisible = true;
-            this.btnDelete.IconRightZoom = 0D;
-            this.btnDelete.IconVisible = true;
-            this.btnDelete.IconZoom = 50D;
-            this.btnDelete.IsTab = false;
-            this.btnDelete.Location = new System.Drawing.Point(0, 88);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
-            this.btnDelete.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
-            this.btnDelete.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnDelete.selected = false;
-            this.btnDelete.Size = new System.Drawing.Size(157, 42);
-            this.btnDelete.TabIndex = 159;
-            this.btnDelete.Text = "    Delete Course";
-            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Textcolor = System.Drawing.Color.White;
-            this.btnDelete.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.lblRowId.Text = "row id";
             // 
             // frmSetCourses
             // 

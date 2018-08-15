@@ -32,10 +32,12 @@ namespace ClassSchedulingComputerAided
                 if (dr == DialogResult.Yes)
                 {
                     frmSetCourses sc = new frmSetCourses();
+                    curriculumData.c_id = md.CreateCurriculum(txtCurriculumTitle.Text, txtPublishedBy.Text, dt);
                     sc.Show();
                     sc.lbl_title.Text = "Curriculum Title: " + txtCurriculumTitle.Text;
                     //sc.lbl_control_id.Text = md.CreateCurriculum(txtCurriculumTitle.Text, txtPublishedBy.Text, dt);
-                    curriculumData.c_id = md.CreateCurriculum(txtCurriculumTitle.Text, txtPublishedBy.Text, dt);
+                    sc.lbl_control_id.Text = curriculumData.c_id;
+                    
                     this.Hide();
                 }
             }

@@ -366,8 +366,38 @@ namespace ClassSchedulingComputerAided
             }
         }
 
-        //to store all courseAcronym in the combobox
-        public string[] ListCourse(string c_control_id)
+        //================SET CURRICULUM===============
+
+        public DataGridView dgv_showSubjectCurriculum()
+        {
+            DataGridView dgv1 = new DataGridView();
+            try
+            {
+                con.Open();
+                string sql = "SELECT subjects_id AS 'ID', course AS 'Course', yearLevel AS 'Year Level', subjectCode AS 'Code', subjectDescription AS 'Description', lectureHours AS 'Lecture Hours', laboratoryHours AS 'Lab Hours', units AS 'Units' FROM tbl_subjects t WHERE curriculums_id = @id;";
+                MySqlCommand com = new MySqlCommand(sql, con);
+                com.Parameters.AddWithValue("@id", curriculumData.c_id);
+                com.ExecuteNonQuery();
+                con.Close();
+
+                con.Open();
+                MySqlDataAdapter adapter = new MySqlDataAdapter(com);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+                dgv1.DataSource = ds.Tables[0];
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "dgv_showSubjectCurriculum");
+            }
+            finally
+            {
+                con.Close();
+            }
+            return dgv1;
+        }
+
+        public string[] ListCourse(string c_control_id)//to store all courseAcronym in the combobox
         {
             int x = 0;
             string[] cbo = new string[30];

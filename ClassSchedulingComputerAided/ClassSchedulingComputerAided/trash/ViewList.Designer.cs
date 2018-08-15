@@ -145,6 +145,7 @@
             this.btnAdd.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnAdd.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.btnAdd.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // metroComboBox2
             // 
