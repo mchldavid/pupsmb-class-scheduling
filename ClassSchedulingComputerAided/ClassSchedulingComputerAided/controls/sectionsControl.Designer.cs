@@ -85,6 +85,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvShowSections.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvShowSections.Location = new System.Drawing.Point(6, 16);
+            this.dgvShowSections.MultiSelect = false;
             this.dgvShowSections.Name = "dgvShowSections";
             this.dgvShowSections.ReadOnly = true;
             this.dgvShowSections.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;

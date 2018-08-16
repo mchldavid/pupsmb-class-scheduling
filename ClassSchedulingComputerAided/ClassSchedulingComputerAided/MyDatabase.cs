@@ -488,12 +488,13 @@ namespace ClassSchedulingComputerAided
             return id;
         }
 
+        //===============ROOMS======================
         public void R_AddRooms(string roomName, string roomCode, string roomSlots)
         {
             try
             {
                 con.Open();
-                string sqlAddRoom = "INSERT INTO tbl_room(roomName, roomCode, roomSlots, roomStatus) VALUES(@rN, @rC, @rS, 'Active');";
+                string sqlAddRoom = "INSERT INTO tbl_room(roomName, roomCode, roomSlots, roomStatus) VALUES(@rN, @rC, @rS, 'ACTIVE');";
                 MySqlCommand com = new MySqlCommand(sqlAddRoom, con);
                 com.Parameters.AddWithValue("@rN", roomName);
                 com.Parameters.AddWithValue("@rC", roomCode);
@@ -511,8 +512,58 @@ namespace ClassSchedulingComputerAided
             }
         }
 
+        public void R_UpdateRooms(string code, string status)
+        {
+            try
+            {
+                con.Open();
+                string sqlAddRoom = "UPDATE tbl_room SET roomStatus = @s WHERE roomCode = @c;";
+                MySqlCommand com = new MySqlCommand(sqlAddRoom, con);
+                com.Parameters.AddWithValue("@s", status);
+                com.Parameters.AddWithValue("@c", code);
+                com.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "R_UpdateRooms");
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public DataGridView dgv_showRooms()
+        {
+            DataGridView dgv1 = new DataGridView();
+            try
+            {
+                con.Open();
+                string sql = "SELECT room_id AS 'ID', roomCode AS 'Code', roomName AS 'Name', roomSlots AS 'Slots', roomStatus AS 'Status' FROM tbl_room t;";
+                MySqlCommand com = new MySqlCommand(sql, con);
+                com.ExecuteNonQuery();
+                con.Close();
+
+                con.Open();
+                MySqlDataAdapter adapter = new MySqlDataAdapter(com);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+                dgv1.DataSource = ds.Tables[0];
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "dgv_showRooms");
+            }
+            finally
+            {
+                con.Close();
+            }
+            return dgv1;
+        }
+
         //to store all roomCode in the listBox
-        public string[] R_ListRoomsActive()
+        public string[] R_ListRooms_Active()
         {
             int x = 0;
             string[] lstActive = new string[30];
@@ -523,7 +574,40 @@ namespace ClassSchedulingComputerAided
             try
             {
                 con.Open();
-                string sqlListRoomCode= "SELECT * FROM tbl_room WHERE roomStatus = 'active';";
+                string sqlListRoomCode= "SELECT * FROM tbl_room WHERE roomStatus = 'ACTIVE';";
+                MySqlCommand com = new MySqlCommand(sqlListRoomCode, con);
+                com.ExecuteNonQuery();
+
+                MySqlDataReader dr = com.ExecuteReader();
+                while (dr.Read())
+                {
+                    lstActive[x] = dr["roomCode"].ToString();
+                    x++;
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "List course");
+            }
+            finally
+            {
+                con.Close();
+            }
+            return lstActive;
+        }
+
+        public string[] R_ListRooms_InActive()
+        {
+            int x = 0;
+            string[] lstActive = new string[30];
+            for (x = 0; x < 30; x++)
+                lstActive[x] = "";
+
+            x = 0;
+            try
+            {
+                con.Open();
+                string sqlListRoomCode = "SELECT * FROM tbl_room WHERE roomStatus = 'INACTIVE';";
                 MySqlCommand com = new MySqlCommand(sqlListRoomCode, con);
                 com.ExecuteNonQuery();
 

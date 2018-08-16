@@ -98,6 +98,12 @@
     <Compile Include="controls\sectionsControl.Designer.cs">
       <DependentUpon>sectionsControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="controls\roomsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\roomsControl.Designer.cs">
+      <DependentUpon>roomsControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="trash\Information.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,10 +192,10 @@
     <Compile Include="controls\registerControl.Designer.cs">
       <DependentUpon>registerControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Rooms.cs">
+    <Compile Include="trash\Rooms.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Rooms.Designer.cs">
+    <Compile Include="trash\Rooms.Designer.cs">
       <DependentUpon>Rooms.cs</DependentUpon>
     </Compile>
     <Compile Include="trash\Sections.cs">
@@ -247,6 +253,9 @@
     <EmbeddedResource Include="controls\sectionsControl.resx">
       <DependentUpon>sectionsControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="controls\roomsControl.resx">
+      <DependentUpon>roomsControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="trash\Information.resx">
       <DependentUpon>Information.cs</DependentUpon>
     </EmbeddedResource>
@@ -298,7 +307,7 @@
     <EmbeddedResource Include="controls\registerControl.resx">
       <DependentUpon>registerControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Rooms.resx">
+    <EmbeddedResource Include="trash\Rooms.resx">
       <DependentUpon>Rooms.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="trash\Sections.resx">

@@ -32,7 +32,6 @@
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.lstInActiveRooms = new System.Windows.Forms.ListBox();
-            this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.btnInActive = new MetroFramework.Controls.MetroButton();
             this.btnActive = new MetroFramework.Controls.MetroButton();
             this.btnActiveAll = new MetroFramework.Controls.MetroButton();
@@ -63,18 +62,20 @@
             // 
             // lstActiveRooms
             // 
+            this.lstActiveRooms.AllowDrop = true;
             this.lstActiveRooms.FormattingEnabled = true;
-            this.lstActiveRooms.Location = new System.Drawing.Point(51, 105);
+            this.lstActiveRooms.Location = new System.Drawing.Point(46, 107);
             this.lstActiveRooms.Name = "lstActiveRooms";
-            this.lstActiveRooms.Size = new System.Drawing.Size(190, 225);
+            this.lstActiveRooms.Size = new System.Drawing.Size(190, 316);
             this.lstActiveRooms.TabIndex = 0;
+            this.lstActiveRooms.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lstActiveRooms_MouseDown_1);
             // 
             // metroLabel4
             // 
             this.metroLabel4.BackColor = System.Drawing.Color.White;
             this.metroLabel4.CustomBackground = true;
             this.metroLabel4.FontSize = MetroFramework.MetroLabelSize.Small;
-            this.metroLabel4.Location = new System.Drawing.Point(40, 80);
+            this.metroLabel4.Location = new System.Drawing.Point(35, 82);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(157, 22);
             this.metroLabel4.TabIndex = 172;
@@ -86,7 +87,7 @@
             this.metroLabel1.BackColor = System.Drawing.Color.White;
             this.metroLabel1.CustomBackground = true;
             this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Small;
-            this.metroLabel1.Location = new System.Drawing.Point(346, 80);
+            this.metroLabel1.Location = new System.Drawing.Point(275, 79);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(157, 22);
             this.metroLabel1.TabIndex = 174;
@@ -95,36 +96,27 @@
             // 
             // lstInActiveRooms
             // 
+            this.lstInActiveRooms.AllowDrop = true;
             this.lstInActiveRooms.FormattingEnabled = true;
-            this.lstInActiveRooms.Location = new System.Drawing.Point(357, 105);
+            this.lstInActiveRooms.Location = new System.Drawing.Point(290, 105);
             this.lstInActiveRooms.Name = "lstInActiveRooms";
-            this.lstInActiveRooms.Size = new System.Drawing.Size(190, 225);
+            this.lstInActiveRooms.Size = new System.Drawing.Size(190, 316);
             this.lstInActiveRooms.TabIndex = 173;
-            // 
-            // bunifuSeparator1
-            // 
-            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
-            this.bunifuSeparator1.LineThickness = 1;
-            this.bunifuSeparator1.Location = new System.Drawing.Point(15, 49);
-            this.bunifuSeparator1.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuSeparator1.Name = "bunifuSeparator1";
-            this.bunifuSeparator1.Size = new System.Drawing.Size(558, 23);
-            this.bunifuSeparator1.TabIndex = 175;
-            this.bunifuSeparator1.Transparency = 255;
-            this.bunifuSeparator1.Vertical = false;
+            this.lstInActiveRooms.DragDrop += new System.Windows.Forms.DragEventHandler(this.lstInActiveRooms_DragDrop_1);
+            this.lstInActiveRooms.DragEnter += new System.Windows.Forms.DragEventHandler(this.lstInActiveRooms_DragEnter);
             // 
             // btnInActive
             // 
-            this.btnInActive.Location = new System.Drawing.Point(260, 105);
+            this.btnInActive.Location = new System.Drawing.Point(489, 102);
             this.btnInActive.Name = "btnInActive";
             this.btnInActive.Size = new System.Drawing.Size(84, 32);
             this.btnInActive.TabIndex = 177;
             this.btnInActive.Text = ">";
+            this.btnInActive.Click += new System.EventHandler(this.btnInActive_Click);
             // 
             // btnActive
             // 
-            this.btnActive.Location = new System.Drawing.Point(260, 143);
+            this.btnActive.Location = new System.Drawing.Point(489, 140);
             this.btnActive.Name = "btnActive";
             this.btnActive.Size = new System.Drawing.Size(84, 32);
             this.btnActive.TabIndex = 176;
@@ -132,7 +124,7 @@
             // 
             // btnActiveAll
             // 
-            this.btnActiveAll.Location = new System.Drawing.Point(260, 220);
+            this.btnActiveAll.Location = new System.Drawing.Point(489, 217);
             this.btnActiveAll.Name = "btnActiveAll";
             this.btnActiveAll.Size = new System.Drawing.Size(84, 32);
             this.btnActiveAll.TabIndex = 176;
@@ -140,7 +132,7 @@
             // 
             // btnInactiveAll
             // 
-            this.btnInactiveAll.Location = new System.Drawing.Point(260, 181);
+            this.btnInactiveAll.Location = new System.Drawing.Point(489, 178);
             this.btnInactiveAll.Name = "btnInactiveAll";
             this.btnInactiveAll.Size = new System.Drawing.Size(84, 32);
             this.btnInactiveAll.TabIndex = 177;
@@ -148,7 +140,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(483, 354);
+            this.btnCancel.Location = new System.Drawing.Point(489, 445);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(84, 32);
             this.btnCancel.TabIndex = 179;
@@ -157,7 +149,7 @@
             // 
             // btnSetRooms
             // 
-            this.btnSetRooms.Location = new System.Drawing.Point(260, 258);
+            this.btnSetRooms.Location = new System.Drawing.Point(489, 255);
             this.btnSetRooms.Name = "btnSetRooms";
             this.btnSetRooms.Size = new System.Drawing.Size(84, 32);
             this.btnSetRooms.TabIndex = 180;
@@ -182,7 +174,7 @@
             this.pnlSetRooms.Controls.Add(this.txtRoomCode);
             this.pnlSetRooms.Controls.Add(this.metroLabel7);
             this.pnlSetRooms.Controls.Add(this.metroLabel3);
-            this.pnlSetRooms.Location = new System.Drawing.Point(12, 30);
+            this.pnlSetRooms.Location = new System.Drawing.Point(579, 19);
             this.pnlSetRooms.Name = "pnlSetRooms";
             this.pnlSetRooms.Size = new System.Drawing.Size(565, 449);
             this.pnlSetRooms.TabIndex = 181;
@@ -360,11 +352,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Drawing.MetroBorderStyle.FixedSingle;
-            this.ClientSize = new System.Drawing.Size(591, 491);
+            this.ClientSize = new System.Drawing.Size(877, 491);
             this.Controls.Add(this.pnlSetRooms);
             this.Controls.Add(this.btnSetRooms);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.bunifuSeparator1);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.btnActive);
             this.Controls.Add(this.btnInActive);
@@ -389,7 +380,6 @@
 
         public MetroFramework.Controls.MetroLabel metroLabel4;
         public MetroFramework.Controls.MetroLabel metroLabel1;
-        public Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
         public MetroFramework.Controls.MetroButton btnInActive;
         public MetroFramework.Controls.MetroButton btnActive;
         public MetroFramework.Controls.MetroButton btnActiveAll;

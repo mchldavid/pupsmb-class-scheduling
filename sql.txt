@@ -1,0 +1,17 @@
+SELECT * FROM tbl_course t;
+SELECT * FROM tbl_subjects t;SELECT * FROM tbl_course t;SELECT * FROM tbl_course t;
+SELECT * FROM tbl_subjects t;
+SELECT subjects_id AS 'ID', course AS 'Course', yearLevel AS 'Year Level', subjectCode AS 'Code', subjectDescription AS 'Description', lectureHours AS 'Lecture Hours', laboratoryHours AS 'Lab Hours', units AS 'Units' FROM tbl_subjects t WHERE curriculums_id = 1;
+;
+SELECT * FROM tbl_course co, tbl_curriculums cu WHERE cu.status = 'active' ;
+SELECT * FROM tbl_course t;
+SELECT Distinct(courseAcronym) FROM tbl_course
+UNION ALL
+SELECT status FROM tbl_curriculums
+WHERE status='active';
+SELECT status FROM tbl_curriculums t;
+SELECT section_id AS 'ID' , course AS 'Course', year AS 'Year', section AS 'Section' FROM tbl_sections t;
+SELECT DISTINCT(courseAcronym) FROM tbl_course INNER JOIN tbl_curriculums ON tbl_course.curriculums_id = tbl_curriculums.curriculums_id WHERE tbl_curriculums.status = 'active';
+SELECT * FROM tbl_sections t;
+SELECT * FROM tbl_curriculums t;
+SELECT room_id AS 'ID', roomCode AS 'Code', roomName AS 'Name', roomSlots AS 'Slots', roomStatus AS 'Status' FROM tbl_room t;

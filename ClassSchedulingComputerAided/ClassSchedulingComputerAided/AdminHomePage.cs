@@ -44,9 +44,11 @@ namespace ClassSchedulingComputerAided
 
         private void btnRooms_Click(object sender, EventArgs e)
         {
-            Form r = new frmRooms();
-            r.Show();
-            this.Hide();
+            pnl.Controls.Clear();
+            roomsControl rc = new roomsControl();
+            pnl.Controls.Add(rc);
+
+            lbl_form_title.Text = "ROOMS";
         }
 
         private void btnSections_Click(object sender, EventArgs e)

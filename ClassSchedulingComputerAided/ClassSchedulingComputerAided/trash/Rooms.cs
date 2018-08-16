@@ -21,9 +21,9 @@ namespace ClassSchedulingComputerAided
 
         private void Rooms_Load(object sender, EventArgs e)
         {
-            for(int x = 0; x < md.R_ListRoomsActive().Length; x++)
-                if(md.R_ListRoomsActive().GetValue(x).ToString() != "")
-                    lstActiveRooms.Items.Add(md.R_ListRoomsActive().GetValue(x).ToString());
+            for(int x = 0; x < md.R_ListRooms_Active().Length; x++)
+                if(md.R_ListRooms_Active().GetValue(x).ToString() != "")
+                    lstActiveRooms.Items.Add(md.R_ListRooms_Active().GetValue(x).ToString());
         }
 
         private void txtFirstName_Click(object sender, EventArgs e)
@@ -68,6 +68,35 @@ namespace ClassSchedulingComputerAided
         {
             md.R_AddRooms(txtRoomName.Text, txtRoomCode.Text, txtSlots.Text);
             lstActiveRooms.Items.Add(txtRoomCode.Text);
+        }
+
+        private void lstInActiveRooms_DragOver(object sender, DragEventArgs e)
+        {
+        }
+
+        private void lstInActiveRooms_DragDrop(object sender, DragEventArgs e)
+        {
+           
+        }
+
+        private void lstInActiveRooms_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.All;
+        }
+
+        private void lstInActiveRooms_DragDrop_1(object sender, DragEventArgs e)
+        {
+            lstInActiveRooms.Items.Add(e.Data.GetData(DataFormats.Text));
+        }
+
+        private void lstActiveRooms_MouseDown_1(object sender, MouseEventArgs e)
+        {
+            lstActiveRooms.DoDragDrop(lstActiveRooms.SelectedItem,DragDropEffects.All);
+        }
+
+        private void btnInActive_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
