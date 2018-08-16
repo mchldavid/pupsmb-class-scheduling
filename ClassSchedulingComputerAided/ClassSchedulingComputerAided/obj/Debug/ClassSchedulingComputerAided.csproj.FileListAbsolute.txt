@@ -101,3 +101,4 @@ C:\Users\Michael David\Documents\GitHub\PUP_class_scheduling\ClassSchedulingComp
 C:\Users\Michael David\Documents\GitHub\PUP_class_scheduling\ClassSchedulingComputerAided\ClassSchedulingComputerAided\obj\Debug\ClassSchedulingComputerAided.frmTryInOtherWay.resources
 C:\Users\Michael David\Documents\GitHub\PUP_class_scheduling\ClassSchedulingComputerAided\ClassSchedulingComputerAided\obj\Debug\ClassSchedulingComputerAided.frmViewList.resources
 C:\Users\Michael David\Documents\GitHub\PUP_class_scheduling\ClassSchedulingComputerAided\ClassSchedulingComputerAided\obj\Debug\ClassSchedulingComputerAided.csproj.GenerateResource.Cache
+C:\Users\Michael David\Documents\GitHub\PUP_class_scheduling\ClassSchedulingComputerAided\ClassSchedulingComputerAided\obj\Debug\ClassSchedulingComputerAided.sectionsControl.resources

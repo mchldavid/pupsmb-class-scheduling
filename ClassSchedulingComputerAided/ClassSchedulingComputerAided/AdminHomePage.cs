@@ -51,12 +51,13 @@ namespace ClassSchedulingComputerAided
 
         private void btnSections_Click(object sender, EventArgs e)
         {
-            frmSections s = new frmSections();
-            s.Show();
-            for(int x = 0; x < md.Sections_ListCourse(lbl_curriculum_id.Text).Length; x++)
-                if(md.Sections_ListCourse(curriculumData.c_id).GetValue(x).ToString() != "")
-                    s.cboSelectCourse.Items.Add(md.Sections_ListCourse(lbl_curriculum_id.Text).GetValue(x).ToString());
-            this.Hide();
+            pnl.Controls.Clear();
+            sectionsControl s = new sectionsControl();
+            pnl.Controls.Add(s);
+            for(int x = 0; x < md.Sections_ListCourse().Length; x++)
+                if(md.Sections_ListCourse().GetValue(x).ToString() != "")
+                    s.cboSelectCourse.Items.Add(md.Sections_ListCourse().GetValue(x).ToString());
+            lbl_form_title.Text = "SECTIONS";
         }
 
         private void btnClassScheduleDashboard_Click(object sender, EventArgs e)
@@ -87,7 +88,8 @@ namespace ClassSchedulingComputerAided
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-
+            pnl.Controls.Clear();
+            lbl_form_title.Text = "ADMIN HOME";
         }
 
         private void s(object sender, EventArgs e)

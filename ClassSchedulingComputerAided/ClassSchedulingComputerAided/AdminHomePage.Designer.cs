@@ -48,9 +48,10 @@
             this.lblDay = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.lbl_form_title = new System.Windows.Forms.Label();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lbl_title = new MetroFramework.Controls.MetroLabel();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -433,10 +434,11 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(0)))), ((int)(((byte)(17)))));
+            this.panel1.Controls.Add(this.lbl_title);
             this.panel1.Controls.Add(this.lblDay);
             this.panel1.Controls.Add(this.lblDate);
             this.panel1.Controls.Add(this.lblTime);
-            this.panel1.Controls.Add(this.label12);
+            this.panel1.Controls.Add(this.lbl_form_title);
             this.panel1.Controls.Add(this.metroLabel4);
             this.panel1.Location = new System.Drawing.Point(242, -1);
             this.panel1.Name = "panel1";
@@ -479,17 +481,17 @@
             this.lblTime.Text = "00:00 AM";
             this.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label12
+            // lbl_form_title
             // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.LightCoral;
-            this.label12.Location = new System.Drawing.Point(207, 19);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(187, 36);
-            this.label12.TabIndex = 138;
-            this.label12.Text = "Admin Form";
+            this.lbl_form_title.AutoSize = true;
+            this.lbl_form_title.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_form_title.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_form_title.ForeColor = System.Drawing.Color.LightCoral;
+            this.lbl_form_title.Location = new System.Drawing.Point(8, 11);
+            this.lbl_form_title.Name = "lbl_form_title";
+            this.lbl_form_title.Size = new System.Drawing.Size(203, 36);
+            this.lbl_form_title.TabIndex = 138;
+            this.lbl_form_title.Text = "Admin Home";
             // 
             // metroLabel4
             // 
@@ -505,6 +507,17 @@
             // 
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // lbl_title
+            // 
+            this.lbl_title.CustomBackground = true;
+            this.lbl_title.CustomForeColor = true;
+            this.lbl_title.ForeColor = System.Drawing.Color.LightCoral;
+            this.lbl_title.Location = new System.Drawing.Point(12, 43);
+            this.lbl_title.Name = "lbl_title";
+            this.lbl_title.Size = new System.Drawing.Size(511, 18);
+            this.lbl_title.TabIndex = 244;
+            this.lbl_title.Text = "Polytechnic University of the Philippines, Sta. Maria Campus";
             // 
             // frmAdminHomePage
             // 
@@ -546,13 +559,14 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.Panel pnl;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lbl_form_title;
         public MetroFramework.Controls.MetroLabel metroLabel4;
         public Bunifu.Framework.UI.BunifuFlatButton btnHome;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Label lblTime;
         public System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lblDay;
+        public MetroFramework.Controls.MetroLabel lbl_title;
 
 
     }

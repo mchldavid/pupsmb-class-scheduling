@@ -573,8 +573,8 @@ namespace ClassSchedulingComputerAided
             return id;
         }
 
-        //to list all course available in the inUsed curriculum to the sectionForm
-        public string[] Sections_ListCourse(string id)
+        //=====================SECTIONS===================
+        public string[] Sections_ListCourse()//to list all course available in the inUsed curriculum to the sectionForm
         {
             int x = 0;
             string[] cbo = new string[30];
@@ -585,9 +585,8 @@ namespace ClassSchedulingComputerAided
             try
             {
                 con.Open();
-                string sqlListCourse = "SELECT * FROM tbl_course a, tbl_curriculums b WHERE a.curriculums_id = @c_id AND b.curriculums_id = @c_id AND b.inUsed = 'YES';";
+                string sqlListCourse = "SELECT DISTINCT(courseAcronym) FROM tbl_course INNER JOIN tbl_curriculums ON tbl_course.curriculums_id = tbl_curriculums.curriculums_id WHERE tbl_curriculums.status = 'active';";
                 MySqlCommand com = new MySqlCommand(sqlListCourse, con);
-                com.Parameters.AddWithValue("@c_id", id);
                 com.ExecuteNonQuery();
 
                 MySqlDataReader dr = com.ExecuteReader();
@@ -623,6 +622,55 @@ namespace ClassSchedulingComputerAided
             catch (MySqlException ex)
             {
                 MessageBox.Show(ex.Message, "S_AddSections");
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public DataGridView dgv_showSections()
+        {
+            DataGridView dgv1 = new DataGridView();
+            try
+            {
+                con.Open();
+                string sql = "SELECT section_id AS 'ID' , course AS 'Course', year AS 'Year', section AS 'Section' FROM tbl_sections t;";
+                MySqlCommand com = new MySqlCommand(sql, con);
+                com.Parameters.AddWithValue("@id", usersData.p_id);
+                com.ExecuteNonQuery();
+                con.Close();
+
+                con.Open();
+                MySqlDataAdapter adapter = new MySqlDataAdapter(com);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+                dgv1.DataSource = ds.Tables[0];
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "dgv_show");
+            }
+            finally
+            {
+                con.Close();
+            }
+            return dgv1;
+        }
+
+        public void S_DeleteSections(string id)
+        {
+            try
+            {
+                con.Open();
+                string sqlCourse = "DELETE FROM tbl_sections WHERE section_id = @id";
+                MySqlCommand com1 = new MySqlCommand(sqlCourse, con);
+                com1.Parameters.AddWithValue("@id", id);
+                com1.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "S_DeleteSEcitons");
             }
             finally
             {

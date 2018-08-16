@@ -20,7 +20,7 @@ namespace ClassSchedulingComputerAided
 
         private void Sections_Load(object sender, EventArgs e)
         {
-
+            dgvShowSections.DataSource = md.dgv_showSections().DataSource;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -44,6 +44,17 @@ namespace ClassSchedulingComputerAided
         {
             for(int x = 1; x <= Convert.ToInt32(txtNumberOfSection.Text); x++)
                 md.S_AddSections(cboSelectCourse.SelectedItem.ToString(), cboSelectYear.SelectedItem.ToString(), x.ToString());
+            txtNumberOfSection.Text = "";
+            dgvShowSections.DataSource = md.dgv_showSections().DataSource;
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow dr in dgvShowSections.SelectedRows)
+            {
+                md.S_DeleteSections(dr.Cells[0].Value.ToString());
+                dgvShowSections.DataSource = md.dgv_showSections().DataSource;
+            }
         }
     }
 }
