@@ -271,6 +271,75 @@ namespace ClassSchedulingComputerAided
             return id;
         }
         
+        //=====================ListProfessors=============
+        public DataGridView dgv_showListOfProfessors()
+        {
+            DataGridView dgv1 = new DataGridView();
+            try
+            {
+                con.Open();
+                string sql = "SELECT users_id AS 'ID', CONCAT(firstName,' ',middleName,' ', lastName) AS 'Name',address AS 'Address', gender AS 'Gender',teachingStatus AS 'Teaching Status', courseDepartment AS 'Department',emailAddress AS 'Email', mobileNumber AS 'Number', unitsAllowed AS 'Units Allowed', status AS 'Status' FROM tbl_users t WHERE userLevel = 'professor';";
+                MySqlCommand com = new MySqlCommand(sql, con);
+                com.ExecuteNonQuery();
+                con.Close();
+
+                con.Open();
+                MySqlDataAdapter adapter = new MySqlDataAdapter(com);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+                dgv1.DataSource = ds.Tables[0];
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "dgv_showlistOfProfessors");
+            }
+            finally
+            {
+                con.Close();
+            }
+            return dgv1;
+        }
+
+        public void L_DeleteProfessor(string l_id)
+        {
+            try
+            {
+                con.Open();
+                string sqlSchedule = "DELETE FROM tbl_preferredschedules WHERE users_id = @id;";
+                string sqlSubjects = "DELETE FROM tbl_preferredsubjects WHERE users_id = @id;";
+                string sqlUsers = "DELETE FROM tbl_users WHERE users_id = @id;";
+                string sqlSecurity = "DELETE FROM tbl_securityquestions WHERE users_id = @id;";
+                using (MySqlCommand com = new MySqlCommand(sqlSchedule, con))
+                {
+                    com.Parameters.AddWithValue("@id", l_id);
+                    com.ExecuteNonQuery();
+                }
+                using (MySqlCommand com = new MySqlCommand(sqlSubjects, con))
+                {
+                    com.Parameters.AddWithValue("@id", l_id);
+                    com.ExecuteNonQuery();
+                }
+                using (MySqlCommand com = new MySqlCommand(sqlSecurity, con))
+                {
+                    com.Parameters.AddWithValue("@id", l_id);
+                    com.ExecuteNonQuery();
+                }
+                using (MySqlCommand com3 = new MySqlCommand(sqlUsers, con))
+                {
+                    com3.Parameters.AddWithValue("@id", l_id);
+                    com3.ExecuteNonQuery();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "L_DeleteProfessor");
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
         //=================SEt COURSES====================
         public void C_AddCourses(string c_control_id, string name, string acronym)
         {

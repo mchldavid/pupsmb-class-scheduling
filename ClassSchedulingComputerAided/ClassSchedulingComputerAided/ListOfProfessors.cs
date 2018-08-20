@@ -16,10 +16,11 @@ namespace ClassSchedulingComputerAided
         {
             InitializeComponent();
         }
+        MyDatabase md = new MyDatabase();
 
         private void ListOfProfessors_Load(object sender, EventArgs e)
         {
-
+           dgvShow.DataSource = md.dgv_showListOfProfessors().DataSource;
         }
 
         private void bunifuSeparator1_Load(object sender, EventArgs e)
@@ -63,6 +64,43 @@ namespace ClassSchedulingComputerAided
         {
             frmEditProfessor p = new frmEditProfessor();
             p.Show();
+        }
+
+        private void btnEditProfessors_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow dr in dgvShow.SelectedRows)
+            {
+                ListOfProfessorsData.Selected_ID = dr.Cells[0].Value.ToString();
+                L_EditProfessorsControl l = new L_EditProfessorsControl();
+                pnlShowUserControl.Controls.Clear();
+                pnlShowUserControl.Controls.Add(l);
+                pnlShowUserControl.Visible = true;
+                pnlShowUserControl.BringToFront();
+                btnCancel.Visible = true;
+                btnCancel.BringToFront();
+            }
+        }
+
+        private void btnDeleteProfessors_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow dr in dgvShow.SelectedRows)
+            {
+                ListOfProfessorsData.Selected_ID = dr.Cells[0].Value.ToString();
+                string name = dr.Cells[1].Value.ToString();
+                DialogResult result =  MessageBox.Show("Are you sure you want to delete '"+ name +"' on the list?", "Delete Professor", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (result == DialogResult.Yes)
+                {
+                    md.L_DeleteProfessor(ListOfProfessorsData.Selected_ID);
+                    MessageBox.Show("hello");
+                }
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            pnlShowUserControl.Controls.Clear();
+            pnlShowUserControl.Visible = false;
+            btnCancel.Visible = false;
         }
     }
 }

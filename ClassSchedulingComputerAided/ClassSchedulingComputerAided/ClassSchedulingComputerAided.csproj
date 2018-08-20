@@ -104,6 +104,13 @@
     <Compile Include="controls\roomsControl.Designer.cs">
       <DependentUpon>roomsControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="controls\L_EditProfessorsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\L_EditProfessorsControl.Designer.cs">
+      <DependentUpon>L_EditProfessorsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListOfProfessorsData.cs" />
     <Compile Include="trash\Information.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -255,6 +262,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="controls\roomsControl.resx">
       <DependentUpon>roomsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controls\L_EditProfessorsControl.resx">
+      <DependentUpon>L_EditProfessorsControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="trash\Information.resx">
       <DependentUpon>Information.cs</DependentUpon>
