@@ -1,0 +1,28 @@
+SELECT */*subjects_ID, subjectCode, subjectDescription, lectureHours, laboratoryHours, units*/
+FROM tbl_subjects su
+INNER JOIN tbl_curriculums cu
+ON su.curriculums_id = cu.curriculums_id/*dito ko ilalagay yung curriculum name*/
+WHERE course = 'BSIT' AND yearLevel = '1' AND cu.curriculums_id = '1';/*yung [cu.curriculums_id] yan yung curriclum na iiemplement]*/
+  SELECT * FROM tbl_subjects t;
+/*for subjects that referring to their curriculum name(for prof)*/
+SELECT * FROM tbl_subjects t;
+SELECT subjects_id AS 'ID', subjectCode AS 'Code', subjectDescription AS 'Description', CONCAT('[',curriculumName,']') AS 'Curriculum'
+FROM tbl_subjects su
+INNER JOIN tbl_curriculums cu ON su.curriculums_id = cu.curriculums_id
+WHERE status = 'active' ORDER BY cu.curriculumName;
+
+/*for subjects that referring to their curriculum name(for prof)*/
+SELECT subjects_id AS 'ID', subjectCode AS 'Code', subjectDescription AS 'Description', CONCAT('[',curriculumName,']') AS 'Curriculum'
+FROM tbl_subjects su
+INNER JOIN tbl_curriculums cu ON su.curriculums_id = cu.curriculums_id
+WHERE status = 'active' AND su.course = 'BSIT' ORDER BY cu.curriculumName;
+SELECT * FROM tbl_users t;
+
+SELECT subjects_id AS 'ID', subjectCode AS 'Code', subjectDescription AS 'Description', CONCAT('[',curriculumName,']') AS 'Curriculum'
+FROM tbl_subjects s, tbl_curriculums c
+WHERE c.status= 'active' AND s.curriculums_id = c.curriculums_id AND course = 'BSIT';
+
+SELECT * FROM tbl_subjects t;
+SELECT subjects_id AS 'ID', course AS 'COURSE', subjectCode AS 'Code', subjectDescription AS 'DESCRIPTION'
+FROM tbl_subjects s, tbl_curriculums c
+WHERE c.inUsed = 'YES' AND s.curriculums_id = c.curriculums_id AND course = 'BSIT';

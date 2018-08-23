@@ -27,6 +27,7 @@ namespace ClassSchedulingComputerAided
         {
             dgvListSubject.DataSource = md.dgv_showPreferredSubjects().DataSource;
             lblTotalUnits.Text = md.getTotalUnits().ToString();
+            lblTotalSubjects.Text = md.getTotalSubjects().ToString();
             lblUnitsAllowed.Text = usersData.p_uAllowed;
         }
 
@@ -49,6 +50,7 @@ namespace ClassSchedulingComputerAided
                 md.Prof_AddSubjects(row.Cells[0].Value.ToString());
                 dgvListSubject.DataSource = md.dgv_showPreferredSubjects().DataSource;
                 lblTotalUnits.Text = md.getTotalUnits().ToString();
+                lblTotalSubjects.Text = md.getTotalSubjects().ToString();
                 MessageBox.Show("You added " + row.Cells[2].Value.ToString() + " into your preferred subjects", "Adding of Subject");
             }
         }
@@ -56,6 +58,25 @@ namespace ClassSchedulingComputerAided
         private void cboSubjectBy_SelectedIndexChanged(object sender, EventArgs e)
         {
             dgvAddSubject.DataSource = md.dgv_showAddPreferredSubjects(cboSubjectBy.SelectedItem.ToString()).DataSource;
+        }
+
+        private void btnDeleteSubject_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvListSubject.SelectedRows)
+            {
+                string ps_id = row.Cells[0].Value.ToString();
+                string s_code = row.Cells[1].Value.ToString();
+                string s_desc = row.Cells[2].Value.ToString();
+                DialogResult result = MessageBox.Show("Are you sure you want to delete ["+ s_code + "-" +s_desc+"] from your preferred subjects?", "Delete Subject", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (result == DialogResult.Yes)
+                {
+                    dgvListSubject.DataSource = md.dgv_showPreferredSubjects().DataSource;
+                    lblTotalUnits.Text = md.getTotalUnits().ToString();
+                    lblTotalSubjects.Text = md.getTotalSubjects().ToString();
+                    md.Prof_DeleteSubjects(ps_id);
+                    MessageBox.Show("["+s_code + "-" + s_desc +"] Deleted successfully!", "Delete Subject");
+                }
+            }
         }
     }
 }

@@ -38,7 +38,7 @@
             this.txtUsername = new MetroFramework.Controls.MetroTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvListSubject = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.metroTile2 = new MetroFramework.Controls.MetroTile();
+            this.btnDeleteSubject = new MetroFramework.Controls.MetroTile();
             this.btnAddSubject = new MetroFramework.Controls.MetroTile();
             this.lbl_id = new System.Windows.Forms.Label();
             this.cboCourseDepartment = new System.Windows.Forms.ComboBox();
@@ -137,15 +137,16 @@
             this.dgvListSubject.Size = new System.Drawing.Size(524, 352);
             this.dgvListSubject.TabIndex = 149;
             // 
-            // metroTile2
+            // btnDeleteSubject
             // 
-            this.metroTile2.Location = new System.Drawing.Point(544, 120);
-            this.metroTile2.Name = "metroTile2";
-            this.metroTile2.Size = new System.Drawing.Size(108, 57);
-            this.metroTile2.Style = MetroFramework.MetroColorStyle.Red;
-            this.metroTile2.TabIndex = 175;
-            this.metroTile2.Text = "Delete Subject";
-            this.metroTile2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnDeleteSubject.Location = new System.Drawing.Point(544, 120);
+            this.btnDeleteSubject.Name = "btnDeleteSubject";
+            this.btnDeleteSubject.Size = new System.Drawing.Size(108, 57);
+            this.btnDeleteSubject.Style = MetroFramework.MetroColorStyle.Red;
+            this.btnDeleteSubject.TabIndex = 175;
+            this.btnDeleteSubject.Text = "Delete Subject";
+            this.btnDeleteSubject.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnDeleteSubject.Click += new System.EventHandler(this.btnDeleteSubject_Click);
             // 
             // btnAddSubject
             // 
@@ -279,14 +280,14 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(500, 62);
+            this.panel2.Size = new System.Drawing.Size(500, 42);
             this.panel2.TabIndex = 240;
             // 
             // metroTextBox2
             // 
             this.metroTextBox2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.metroTextBox2.CustomBackground = true;
-            this.metroTextBox2.Location = new System.Drawing.Point(136, 31);
+            this.metroTextBox2.Location = new System.Drawing.Point(139, 7);
             this.metroTextBox2.Multiline = true;
             this.metroTextBox2.Name = "metroTextBox2";
             this.metroTextBox2.Size = new System.Drawing.Size(144, 21);
@@ -297,7 +298,7 @@
             this.metroLabel1.CustomBackground = true;
             this.metroLabel1.CustomForeColor = true;
             this.metroLabel1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.metroLabel1.Location = new System.Drawing.Point(75, 31);
+            this.metroLabel1.Location = new System.Drawing.Point(78, 7);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(55, 21);
             this.metroLabel1.TabIndex = 135;
@@ -308,7 +309,7 @@
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(286, 31);
+            this.comboBox1.Location = new System.Drawing.Point(289, 7);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(128, 21);
             this.comboBox1.TabIndex = 236;
@@ -338,7 +339,7 @@
             this.dgvAddSubject.GridColor = System.Drawing.Color.WhiteSmoke;
             this.dgvAddSubject.HeaderBgColor = System.Drawing.Color.Brown;
             this.dgvAddSubject.HeaderForeColor = System.Drawing.Color.Gold;
-            this.dgvAddSubject.Location = new System.Drawing.Point(36, 91);
+            this.dgvAddSubject.Location = new System.Drawing.Point(36, 73);
             this.dgvAddSubject.Name = "dgvAddSubject";
             this.dgvAddSubject.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvAddSubject.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
@@ -346,7 +347,7 @@
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dgvAddSubject.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvAddSubject.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAddSubject.Size = new System.Drawing.Size(428, 268);
+            this.dgvAddSubject.Size = new System.Drawing.Size(428, 286);
             this.dgvAddSubject.TabIndex = 148;
             // 
             // metroLabel6
@@ -396,7 +397,7 @@
             this.metroLabel4.BackColor = System.Drawing.Color.WhiteSmoke;
             this.metroLabel4.CustomBackground = true;
             this.metroLabel4.FontSize = MetroFramework.MetroLabelSize.Small;
-            this.metroLabel4.Location = new System.Drawing.Point(36, 66);
+            this.metroLabel4.Location = new System.Drawing.Point(36, 48);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(204, 22);
             this.metroLabel4.TabIndex = 140;
@@ -418,7 +419,7 @@
             this.Controls.Add(this.lblUnitsAllowed);
             this.Controls.Add(this.lbl_id);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.metroTile2);
+            this.Controls.Add(this.btnDeleteSubject);
             this.Controls.Add(this.btnAddSubject);
             this.Name = "preferredSubjectsControl";
             this.Size = new System.Drawing.Size(668, 451);
@@ -440,7 +441,7 @@
         public MetroFramework.Controls.MetroTextBox txtUsername;
         private System.Windows.Forms.GroupBox groupBox1;
         private Bunifu.Framework.UI.BunifuCustomDataGrid dgvListSubject;
-        public MetroFramework.Controls.MetroTile metroTile2;
+        public MetroFramework.Controls.MetroTile btnDeleteSubject;
         public MetroFramework.Controls.MetroTile btnAddSubject;
         public System.Windows.Forms.Label lbl_id;
         public System.Windows.Forms.ComboBox cboCourseDepartment;

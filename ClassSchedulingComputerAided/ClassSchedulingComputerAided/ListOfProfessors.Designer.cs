@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListOfProfessors));
             this.btnEditProfessor = new MetroFramework.Controls.MetroButton();
             this.btnDelete = new MetroFramework.Controls.MetroButton();
@@ -52,18 +52,18 @@
             this.label12 = new System.Windows.Forms.Label();
             this.lbl_title = new MetroFramework.Controls.MetroLabel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.txtUsername = new MetroFramework.Controls.MetroTextBox();
+            this.txtSearch = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
-            this.cboCourseDepartment = new System.Windows.Forms.ComboBox();
+            this.cboSearchBy = new System.Windows.Forms.ComboBox();
             this.pnl = new System.Windows.Forms.Panel();
+            this.btnCancel = new MetroFramework.Controls.MetroButton();
             this.dgvShow = new System.Windows.Forms.DataGridView();
+            this.pnlShowUserControl = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.btnProfessorsInfo = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnHome = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnDeleteProfessors = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnEditProfessors = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.pnlShowUserControl = new System.Windows.Forms.Panel();
-            this.btnCancel = new MetroFramework.Controls.MetroButton();
             this.pnlProfessorsInformation.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -74,8 +74,8 @@
             this.panel7.SuspendLayout();
             this.pnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShow)).BeginInit();
-            this.panel9.SuspendLayout();
             this.pnlShowUserControl.SuspendLayout();
+            this.panel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnEditProfessor
@@ -309,23 +309,23 @@
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
-            this.panel7.Controls.Add(this.txtUsername);
+            this.panel7.Controls.Add(this.txtSearch);
             this.panel7.Controls.Add(this.metroLabel8);
-            this.panel7.Controls.Add(this.cboCourseDepartment);
+            this.panel7.Controls.Add(this.cboSearchBy);
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(668, 42);
             this.panel7.TabIndex = 241;
             // 
-            // txtUsername
+            // txtSearch
             // 
-            this.txtUsername.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtUsername.CustomBackground = true;
-            this.txtUsername.Location = new System.Drawing.Point(86, 11);
-            this.txtUsername.Multiline = true;
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(144, 21);
-            this.txtUsername.TabIndex = 134;
+            this.txtSearch.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtSearch.CustomBackground = true;
+            this.txtSearch.Location = new System.Drawing.Point(86, 11);
+            this.txtSearch.Multiline = true;
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(144, 21);
+            this.txtSearch.TabIndex = 134;
             // 
             // metroLabel8
             // 
@@ -339,14 +339,14 @@
             this.metroLabel8.Text = "Search:";
             this.metroLabel8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // cboCourseDepartment
+            // cboSearchBy
             // 
-            this.cboCourseDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboCourseDepartment.FormattingEnabled = true;
-            this.cboCourseDepartment.Location = new System.Drawing.Point(236, 11);
-            this.cboCourseDepartment.Name = "cboCourseDepartment";
-            this.cboCourseDepartment.Size = new System.Drawing.Size(128, 21);
-            this.cboCourseDepartment.TabIndex = 236;
+            this.cboSearchBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSearchBy.FormattingEnabled = true;
+            this.cboSearchBy.Location = new System.Drawing.Point(236, 11);
+            this.cboSearchBy.Name = "cboSearchBy";
+            this.cboSearchBy.Size = new System.Drawing.Size(128, 21);
+            this.cboSearchBy.TabIndex = 236;
             // 
             // pnl
             // 
@@ -360,14 +360,24 @@
             this.pnl.Size = new System.Drawing.Size(668, 501);
             this.pnl.TabIndex = 242;
             // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(554, 438);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(87, 32);
+            this.btnCancel.TabIndex = 265;
+            this.btnCancel.Text = "CANCEL";
+            this.btnCancel.Visible = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // dgvShow
             // 
             this.dgvShow.AllowUserToAddRows = false;
             this.dgvShow.AllowUserToDeleteRows = false;
             this.dgvShow.AllowUserToResizeColumns = false;
             this.dgvShow.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.dgvShow.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.dgvShow.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvShow.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -375,14 +385,14 @@
             this.dgvShow.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvShow.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvShow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvShow.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvShow.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvShow.Location = new System.Drawing.Point(11, 48);
             this.dgvShow.MultiSelect = false;
             this.dgvShow.Name = "dgvShow";
@@ -391,6 +401,16 @@
             this.dgvShow.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvShow.Size = new System.Drawing.Size(644, 444);
             this.dgvShow.TabIndex = 180;
+            // 
+            // pnlShowUserControl
+            // 
+            this.pnlShowUserControl.BackColor = System.Drawing.Color.Gainsboro;
+            this.pnlShowUserControl.Controls.Add(this.pnlProfessorsInformation);
+            this.pnlShowUserControl.Location = new System.Drawing.Point(2, 1);
+            this.pnlShowUserControl.Name = "pnlShowUserControl";
+            this.pnlShowUserControl.Size = new System.Drawing.Size(666, 502);
+            this.pnlShowUserControl.TabIndex = 242;
+            this.pnlShowUserControl.Visible = false;
             // 
             // panel9
             // 
@@ -550,26 +570,6 @@
             this.btnEditProfessors.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditProfessors.Click += new System.EventHandler(this.btnEditProfessors_Click);
             // 
-            // pnlShowUserControl
-            // 
-            this.pnlShowUserControl.BackColor = System.Drawing.Color.Gainsboro;
-            this.pnlShowUserControl.Controls.Add(this.pnlProfessorsInformation);
-            this.pnlShowUserControl.Location = new System.Drawing.Point(2, 1);
-            this.pnlShowUserControl.Name = "pnlShowUserControl";
-            this.pnlShowUserControl.Size = new System.Drawing.Size(666, 502);
-            this.pnlShowUserControl.TabIndex = 242;
-            this.pnlShowUserControl.Visible = false;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(554, 438);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(87, 32);
-            this.btnCancel.TabIndex = 265;
-            this.btnCancel.Text = "CANCEL";
-            this.btnCancel.Visible = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
             // frmListOfProfessors
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -595,8 +595,8 @@
             this.panel7.ResumeLayout(false);
             this.pnl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvShow)).EndInit();
-            this.panel9.ResumeLayout(false);
             this.pnlShowUserControl.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -624,9 +624,9 @@
         private System.Windows.Forms.Label label12;
         public MetroFramework.Controls.MetroLabel lbl_title;
         private System.Windows.Forms.Panel panel7;
-        public MetroFramework.Controls.MetroTextBox txtUsername;
+        public MetroFramework.Controls.MetroTextBox txtSearch;
         public MetroFramework.Controls.MetroLabel metroLabel8;
-        public System.Windows.Forms.ComboBox cboCourseDepartment;
+        public System.Windows.Forms.ComboBox cboSearchBy;
         private System.Windows.Forms.Panel pnl;
         public System.Windows.Forms.DataGridView dgvShow;
         public System.Windows.Forms.Panel panel9;

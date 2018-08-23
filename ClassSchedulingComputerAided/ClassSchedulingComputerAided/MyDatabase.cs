@@ -954,7 +954,7 @@ namespace ClassSchedulingComputerAided
             try
             {
                 con.Open();
-                string sql = "SELECT a.subjects_id AS 'ID',course AS 'COURSE', subjectCode AS 'CODE', subjectDescription AS 'DESCRIPTION', lectureHours AS 'LEC HRS', laboratoryHours AS 'LAB HRS', units AS 'UNITS', yearLevel AS 'YR LEVEL'  FROM tbl_preferredSubjects a, tbl_subjects b WHERE a.users_id = @id AND b.subjects_id = a.subjects_id;";
+                string sql = "SELECT a.preferredSubjects_id AS 'ID', subjectCode AS 'CODE', subjectDescription AS 'DESCRIPTION', course AS 'COURSE', lectureHours AS 'LEC HRS', laboratoryHours AS 'LAB HRS', units AS 'UNITS', yearLevel AS 'YR LEVEL' FROM tbl_preferredSubjects a, tbl_subjects b WHERE a.users_id = @id AND b.subjects_id = a.subjects_id;";
                 MySqlCommand com = new MySqlCommand(sql, con);
                 com.Parameters.AddWithValue("@id", usersData.p_id);
                 com.ExecuteNonQuery();
@@ -985,9 +985,9 @@ namespace ClassSchedulingComputerAided
                 con.Open();
                 string sql = "";
                 if (courseBy == "Course Subject")
-                    sql = "SELECT subjects_id AS 'ID', course AS 'COURSE', subjectCode AS 'Code', subjectDescription AS 'DESCRIPTION' FROM tbl_subjects s, tbl_curriculums c WHERE c.inUsed = 'YES' AND s.curriculums_id = c.curriculums_id AND course = @c;";
+                    sql = "SELECT subjects_id AS 'ID', subjectCode AS 'Code', subjectDescription AS 'Description', CONCAT('[',curriculumName,']') AS 'Curriculum' FROM tbl_subjects su INNER JOIN tbl_curriculums cu ON su.curriculums_id = cu.curriculums_id WHERE status = 'active' AND su.course = @c ORDER BY cu.curriculumName;";
                 if (courseBy == "Other Subject")
-                    sql = "SELECT subjects_id AS 'ID', course AS 'COURSE', subjectCode AS 'Code', subjectDescription AS 'DESCRIPTION' FROM tbl_subjects s, tbl_curriculums c WHERE c.inUsed = 'YES' AND s.curriculums_id = c.curriculums_id;";
+                    sql = "SELECT subjects_id AS 'ID', subjectCode AS 'Code', subjectDescription AS 'Description', CONCAT('[',curriculumName,']') AS 'Curriculum' FROM tbl_subjects su INNER JOIN tbl_curriculums cu ON su.curriculums_id = cu.curriculums_id WHERE status = 'active' ORDER BY cu.curriculumName;";
                 MySqlCommand com = new MySqlCommand(sql, con);
                 com.Parameters.AddWithValue("@c", usersData.p_cDepartment);
                 com.ExecuteNonQuery();
@@ -1016,7 +1016,7 @@ namespace ClassSchedulingComputerAided
             try
             {
                 con.Open();
-                string sql = "SELECT a.subjects_id AS 'ID',course AS 'COURSE', subjectCode AS 'CODE', subjectDescription AS 'DESCRIPTION', lectureHours AS 'LEC HRS', laboratoryHours AS 'LAB HRS', units AS 'UNITS', yearLevel AS 'YR LEVEL'  FROM tbl_preferredSubjects a, tbl_subjects b WHERE a.users_id = @id AND b.subjects_id = a.subjects_id;";
+                string sql = "SELECT * FROM tbl_preferredSubjects a, tbl_subjects b WHERE a.users_id = @id AND b.subjects_id = a.subjects_id;";
                 MySqlCommand com = new MySqlCommand(sql, con);
                 com.Parameters.AddWithValue("@id", usersData.p_id);
                 com.ExecuteNonQuery();
@@ -1028,7 +1028,34 @@ namespace ClassSchedulingComputerAided
             }
             catch (MySqlException ex)
             {
-                MessageBox.Show(ex.Message, "dgv_showPreferredSubjects");
+                MessageBox.Show(ex.Message, "GetTotalUnits");
+            }
+            finally
+            {
+                con.Close();
+            }
+            return total;
+        }
+
+        public int getTotalSubjects()
+        {
+            int total = 0;
+            try
+            {
+                con.Open();
+                string sql = "SELECT * FROM tbl_preferredSubjects a, tbl_subjects b WHERE a.users_id = @id AND b.subjects_id = a.subjects_id;";
+                MySqlCommand com = new MySqlCommand(sql, con);
+                com.Parameters.AddWithValue("@id", usersData.p_id);
+                com.ExecuteNonQuery();
+
+                MySqlDataReader dr = com.ExecuteReader();
+                while (dr.Read())
+                    total++;
+                con.Close();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "GetTotalSubjects");
             }
             finally
             {
@@ -1051,6 +1078,26 @@ namespace ClassSchedulingComputerAided
             catch (MySqlException ex)
             {
                 MessageBox.Show(ex.Message, "prof_AddSubjects");
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public void Prof_DeleteSubjects(string preferredSubj_id)
+        {
+            try
+            {
+                con.Open();
+                string sqlAddSubjects = "DELETE FROM tbl_preferredsubjects WHERE preferredSubjects_id = @ps_id;";
+                MySqlCommand com1 = new MySqlCommand(sqlAddSubjects, con);
+                com1.Parameters.AddWithValue("@ps_id", preferredSubj_id);
+                com1.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "prof_DeleteSubjects");
             }
             finally
             {
