@@ -227,8 +227,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.cboGender = new MetroFramework.Controls.MetroComboBox();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.btnCancel = new MetroFramework.Controls.MetroButton();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label134 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -239,6 +240,7 @@
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -2299,25 +2301,36 @@
             this.cboGender.Size = new System.Drawing.Size(179, 29);
             this.cboGender.TabIndex = 10;
             // 
-            // metroLabel1
-            // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel1.Location = new System.Drawing.Point(8, 15);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(233, 25);
-            this.metroLabel1.TabIndex = 1;
-            this.metroLabel1.Text = "Class Schedule Dashboard";
-            // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(1289, 5);
+            this.btnCancel.Location = new System.Drawing.Point(1281, 3);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(76, 21);
             this.btnCancel.TabIndex = 156;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(0)))), ((int)(((byte)(17)))));
+            this.panel7.Controls.Add(this.label134);
+            this.panel7.Controls.Add(this.btnCancel);
+            this.panel7.Location = new System.Drawing.Point(-2, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(1370, 55);
+            this.panel7.TabIndex = 159;
+            // 
+            // label134
+            // 
+            this.label134.AutoSize = true;
+            this.label134.BackColor = System.Drawing.Color.Transparent;
+            this.label134.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label134.ForeColor = System.Drawing.Color.IndianRed;
+            this.label134.Location = new System.Drawing.Point(14, 12);
+            this.label134.Name = "label134";
+            this.label134.Size = new System.Drawing.Size(346, 28);
+            this.label134.TabIndex = 138;
+            this.label134.Text = "Class Scheduling Dashboard";
             // 
             // frmClassScheduleDashboard
             // 
@@ -2325,13 +2338,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Drawing.MetroBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(1366, 711);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel7);
             this.Movable = false;
             this.Name = "frmClassScheduleDashboard";
             this.Resizable = false;
-            this.Style = MetroFramework.MetroColorStyle.Red;
+            this.Style = MetroFramework.MetroColorStyle.White;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ClassScheduleDashboard_Load);
             this.panel1.ResumeLayout(false);
@@ -2347,6 +2359,8 @@
             this.tableLayoutPanel4.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2355,7 +2369,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private MetroFramework.Controls.MetroLabel metroLabel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.ComboBox comboBox10;
@@ -2555,6 +2568,8 @@
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroButton btnCancel;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label label134;
 
     }
 }

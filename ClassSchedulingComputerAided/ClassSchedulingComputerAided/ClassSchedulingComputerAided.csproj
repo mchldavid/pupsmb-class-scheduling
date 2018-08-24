@@ -79,6 +79,12 @@
     <Compile Include="ClassScheduleDashboard.Designer.cs">
       <DependentUpon>ClassScheduleDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="classSchedulingDashboard_UserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="classSchedulingDashboard_UserControl.Designer.cs">
+      <DependentUpon>classSchedulingDashboard_UserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="curriculumData.cs" />
     <Compile Include="controls\professorsScheduleControl.cs">
       <SubType>UserControl</SubType>
@@ -250,6 +256,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ClassScheduleDashboard.resx">
       <DependentUpon>ClassScheduleDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="classSchedulingDashboard_UserControl.resx">
+      <DependentUpon>classSchedulingDashboard_UserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="controls\professorsScheduleControl.resx">
       <DependentUpon>professorsScheduleControl.cs</DependentUpon>
