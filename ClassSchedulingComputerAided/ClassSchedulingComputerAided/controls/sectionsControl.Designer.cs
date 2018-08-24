@@ -156,6 +156,7 @@
             this.cboSelectCourse.Name = "cboSelectCourse";
             this.cboSelectCourse.Size = new System.Drawing.Size(146, 21);
             this.cboSelectCourse.TabIndex = 184;
+            this.cboSelectCourse.SelectedIndexChanged += new System.EventHandler(this.cboSelectCourse_SelectedIndexChanged);
             // 
             // metroLabel3
             // 

@@ -730,9 +730,11 @@ namespace ClassSchedulingComputerAided
         public string[] Sections_ListCourse()//to list all course available in the inUsed curriculum to the sectionForm
         {
             int x = 0;
-            string[] cbo = new string[30];
+            string[] cboCourse = new string[30];
             for (x = 0; x < 30; x++)
-                cbo[x] = "";
+            {
+                cboCourse[x] = "";
+            }
 
             x = 0;
             try
@@ -745,7 +747,7 @@ namespace ClassSchedulingComputerAided
                 MySqlDataReader dr = com.ExecuteReader();
                 while (dr.Read())
                 {
-                    cbo[x] = dr["courseAcronym"].ToString();
+                    cboCourse[x] = dr["courseAcronym"].ToString();
                     x++;
                 }
             }
@@ -757,7 +759,7 @@ namespace ClassSchedulingComputerAided
             {
                 con.Close();
             }
-            return cbo;
+            return cboCourse;
         }
 
         public void S_AddSections(string course, string year, string section)
@@ -1192,6 +1194,198 @@ namespace ClassSchedulingComputerAided
             catch (MySqlException ex)
             {
                 MessageBox.Show(ex.Message, "C_editCurriculum");
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        //=====================Class Scheduling Dasboard ==============================
+
+        public string[] getCourseYearSection()
+        {
+            int x = 0;
+            string[] cboCourse = new string[30];
+            for (x = 0; x < 30; x++)
+            {
+                cboCourse[x] = "";
+            }
+
+            x = 0;
+            try
+            {
+                con.Open();
+                string sqlListCourse = "SELECT DISTINCT(course) FROM tbl_sections;";
+
+                MySqlCommand com = new MySqlCommand(sqlListCourse, con);
+                com.ExecuteNonQuery();
+
+                MySqlDataReader dr = com.ExecuteReader();
+                while (dr.Read())
+                {
+                    cboCourse[x] = dr["course"].ToString();
+                    x++;
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "getCourseYearSection");
+            }
+            finally
+            {
+                con.Close();
+            }
+            return cboCourse;
+        }
+
+        public string[] getCourseYear(string course)
+        {
+            int x = 0;
+            string[] cboYear = new string[30];
+            for (x = 0; x < 30; x++)
+            {
+                cboYear[x] = "";
+            }
+
+            x = 0;
+            try
+            {
+                con.Open();
+                string sqlListCourse = "SELECT year FROM tbl_sections WHERE course = @c;";
+
+                MySqlCommand com = new MySqlCommand(sqlListCourse, con);
+                com.Parameters.AddWithValue("@c", course);
+                com.ExecuteNonQuery();
+
+                MySqlDataReader dr = com.ExecuteReader();
+                while (dr.Read())
+                {
+                    cboYear[x] = dr["year"].ToString();
+                    x++;
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "getCourseYear");
+            }
+            finally
+            {
+                con.Close();
+            }
+            return cboYear;
+        }
+
+        public string[] getCourseSection(string course)
+        {
+            int x = 0;
+            string[] cboSection= new string[30];
+            for (x = 0; x < 30; x++)
+            {
+                cboSection[x] = "";
+            }
+
+            x = 0;
+            try
+            {
+                con.Open();
+                string sqlListCourse = "SELECT section FROM tbl_sections WHERE course = @c;";
+
+                MySqlCommand com = new MySqlCommand(sqlListCourse, con);
+                com.Parameters.AddWithValue("@c", course);
+                com.ExecuteNonQuery();
+
+                MySqlDataReader dr = com.ExecuteReader();
+                while (dr.Read())
+                {
+                    cboSection[x] = dr["section"].ToString();
+                    x++;
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "getCourseSection");
+            }
+            finally
+            {
+                con.Close();
+            }
+            return cboSection;
+        }
+
+        public string[] getCurriculum()
+        {
+            int x = 0;
+            string[] cboCurriculum = new string[30];
+            for (x = 0; x < 30; x++)
+            {
+                cboCurriculum[x] = "";
+            }
+
+            x = 0;
+            try
+            {
+                con.Open();
+                string sqlListCourse = "SELECT curriculumName FROM tbl_curriculums WHERE status = 'active';";
+
+                MySqlCommand com = new MySqlCommand(sqlListCourse, con);
+                com.ExecuteNonQuery();
+
+                MySqlDataReader dr = com.ExecuteReader();
+                while (dr.Read())
+                {
+                    cboCurriculum[x] = dr["curriculumName"].ToString();
+                    x++;
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "getCourseYearSection");
+            }
+            finally
+            {
+                con.Close();
+            }
+            return cboCurriculum;
+        }
+
+        public void CSD_ShowSubjectsForStudents(string course, string yearLevel, string curriculum)//to set all values into the accessors 
+        {
+            int x = 0;
+            for (x = 0; x < 11; x++)//to set all accessors into null value
+            {
+                SubjectForStudents.CourseCode[x] = "";
+                SubjectForStudents.SubjectDescription[x] = "";
+                SubjectForStudents.Units[x] = "";
+                SubjectForStudents.LecHrs[x] = "";
+                SubjectForStudents.LabHrs[x] = "";
+            }
+            x = 0;
+            try
+            {
+                con.Open();
+                string sqlRegistrationCard = "SELECT * FROM tbl_subjects su INNER JOIN tbl_curriculums cu ON su.curriculums_id = cu.curriculums_id WHERE course = @c AND yearLevel = @y AND cu.curriculumName = @cN ORDER BY su.subjectCode ASC;";
+
+                MySqlCommand com = new MySqlCommand(sqlRegistrationCard, con);
+                com.Parameters.AddWithValue("@c", course);
+                com.Parameters.AddWithValue("@y", yearLevel);
+                com.Parameters.AddWithValue("@cN", curriculum);
+                com.ExecuteNonQuery();
+
+                MySqlDataReader dr = com.ExecuteReader();
+                while (dr.Read())
+                {
+                    SubjectForStudents.CourseCode[x] = dr["subjectCode"].ToString();
+                    SubjectForStudents.SubjectDescription[x] = dr["subjectDescription"].ToString();
+                    SubjectForStudents.Units[x] = dr["units"].ToString();
+                    SubjectForStudents.LecHrs[x] = dr["lectureHours"].ToString();
+                    SubjectForStudents.LabHrs[x] = dr["laboratoryHours"].ToString();
+                    x++;
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "CSD_ShowSubjectsForStudents");
             }
             finally
             {

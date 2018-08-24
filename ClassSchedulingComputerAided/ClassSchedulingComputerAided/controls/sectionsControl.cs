@@ -39,5 +39,10 @@ namespace ClassSchedulingComputerAided
                 dgvShowSections.DataSource = md.dgv_showSections().DataSource;
             }
         }
+
+        private void cboSelectCourse_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
