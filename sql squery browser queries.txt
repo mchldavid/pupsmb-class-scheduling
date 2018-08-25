@@ -26,3 +26,9 @@ SELECT * FROM tbl_subjects t;
 SELECT subjects_id AS 'ID', course AS 'COURSE', subjectCode AS 'Code', subjectDescription AS 'DESCRIPTION'
 FROM tbl_subjects s, tbl_curriculums c
 WHERE c.inUsed = 'YES' AND s.curriculums_id = c.curriculums_id AND course = 'BSIT';
+
+/*for sorting ng mga prof para sa course subject*/
+SELECT DISTINCT ps.users_id, CONCAT(usr.firstName,' ',usr.middleName,' ', usr.lastName)
+FROM tbl_preferredSubjects ps, tbl_subjects su, tbl_users usr
+WHERE ps.subjects_id = su.subjects_id AND su.subjectCode = 'ACCO 1234' AND ps.users_id = usr.users_id
+ORDER BY usr.FirstName ASC;

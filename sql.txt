@@ -18,7 +18,10 @@ SELECT room_id AS 'ID', roomCode AS 'Code', roomName AS 'Name', roomSlots AS 'Sl
 
 /*for subjects that referring to their curriculum name(for prof)*/
 SELECT * FROM tbl_subjects t;
-SELECT subjects_id, subjectCode, curriculumName FROM tbl_subjects su INNER JOIN tbl_curriculums cu ON su.curriculums_id = cu.curriculums_id WHERE status = 'active' ;
+SELECT subjects_id AS 'ID', subjectCode AS 'Code', subjectDescription AS 'Description', CONCAT('[',curriculumName,']') AS 'Curriculum'
+FROM tbl_subjects su
+INNER JOIN tbl_curriculums cu ON su.curriculums_id = cu.curriculums_id
+WHERE status = 'active' ;
 SELECT * FROM tbl_curriculums t;
 
 /*=============for registration or plotting na ng schedule ng mga bata=====*/
@@ -26,5 +29,6 @@ SELECT */*subjects_ID, subjectCode, subjectDescription, lectureHours, laboratory
 FROM tbl_subjects su
 INNER JOIN tbl_curriculums cu
 ON su.curriculums_id = cu.curriculums_id/*dito ko ilalagay yung curriculum name*/
-WHERE course = 'BSIT' AND yearLevel = '1' AND cu.curriculums_id = '1';/*yung [cu.curriculums_id] yan yung curriclum na iiemplement]*/
+WHERE course = 'BSIT' AND yearLevel = '2' AND cu.curriculumName = 'K to 12 program'/*yung [cu.curriculums_id] yan yung curriclum na iimplement]*/
+ORDER BY su.subjectCode ASC;
   SELECT * FROM tbl_subjects t;

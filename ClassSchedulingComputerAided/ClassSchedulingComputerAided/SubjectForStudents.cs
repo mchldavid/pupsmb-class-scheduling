@@ -38,5 +38,17 @@ namespace ClassSchedulingComputerAided
             get;
             set;
         }
+
+        public static string[] Rooms
+        {
+            get;
+            set;
+        }
+
+        public static string[] Professors
+        {
+            get;
+            set;
+        }
     }
 }

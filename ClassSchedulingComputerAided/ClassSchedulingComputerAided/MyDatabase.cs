@@ -1392,5 +1392,72 @@ namespace ClassSchedulingComputerAided
                 con.Close();
             }
         }
+
+        public void CSD_ListActiveRoom()//to add items of all active rooms into combox
+        {
+            int x = 0;
+            for (x = 0; x < 50; x++)//to set all accessors into null value - set to 50 loop
+            {
+                SubjectForStudents.Rooms[x] = "";
+            }
+            x = 0;
+            try
+            {
+                con.Open();
+                string sqlRegistrationCardRooms = "SELECT * FROM tbl_room WHERE roomStatus = 'ACTIVE' ORDER BY roomCode ASC;";
+
+                MySqlCommand com = new MySqlCommand(sqlRegistrationCardRooms, con);
+                com.ExecuteNonQuery();
+
+                MySqlDataReader dr = com.ExecuteReader();
+                while (dr.Read())
+                {
+                    SubjectForStudents.Rooms[x] = dr["roomCode"].ToString();
+                    x++;
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "CSD_ListActiveRooms");
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public void CSD_ListProfDedicated(string courseCode)// to add item of professors dedicated to his/her preferred subjects into combobox
+        {
+            int x = 0;
+            for (x = 0; x < 100; x++)//to set all accessors into null value - set to 100 loop
+            {
+                SubjectForStudents.Professors[x] = "";
+            }
+            x = 0;
+            try
+            {
+                con.Open();
+                string sqlRegistrationCardRooms = "SELECT DISTINCT ps.users_id, CONCAT(usr.firstName,' ',usr.middleName,' ', usr.lastName) FROM tbl_preferredSubjects ps, tbl_subjects su, tbl_users usr WHERE ps.subjects_id = su.subjects_id AND su.subjectCode = @sC AND ps.users_id = usr.users_id ORDER BY usr.FirstName ASC;";
+
+                MySqlCommand com = new MySqlCommand(sqlRegistrationCardRooms, con);
+                com.Parameters.AddWithValue("@sC", courseCode);
+                com.ExecuteNonQuery();
+
+                MySqlDataReader dr = com.ExecuteReader();
+                while (dr.Read())
+                {
+                    SubjectForStudents.Professors[x] = dr["CONCAT(usr.firstName,' ',usr.middleName,' ', usr.lastName)"].ToString();
+                    x++;
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "CSD_ListProfDedicated");
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
     }
 }

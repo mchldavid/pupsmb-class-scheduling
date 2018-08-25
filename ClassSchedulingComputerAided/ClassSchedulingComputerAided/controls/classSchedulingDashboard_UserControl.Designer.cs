@@ -521,6 +521,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cboDay_10.Enabled = false;
             this.cboDay_10.FormattingEnabled = true;
+            this.cboDay_10.Items.AddRange(new object[] {
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"});
             this.cboDay_10.Location = new System.Drawing.Point(937, 274);
             this.cboDay_10.Name = "cboDay_10";
             this.cboDay_10.Size = new System.Drawing.Size(117, 21);
@@ -546,6 +554,36 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cboEnd_10.Enabled = false;
             this.cboEnd_10.FormattingEnabled = true;
+            this.cboEnd_10.Items.AddRange(new object[] {
+            "7:00 AM",
+            "7:30 AM",
+            "8:00 AM",
+            "8:30 AM",
+            "9:00 AM",
+            "9:30 AM",
+            "10:00 AM",
+            "10:30 AM",
+            "11:00 AM",
+            "11:30 AM",
+            "12:00 PM",
+            "12:30 PM",
+            "1:00 PM",
+            "1:30 PM",
+            "2:00 PM",
+            "2:30 PM",
+            "3:00 PM",
+            "3:30 PM",
+            "4:00 PM",
+            "4:30 PM",
+            "5:00 PM",
+            "5:30 PM",
+            "6:00 PM",
+            "6:30 PM",
+            "7:00 PM",
+            "7:30 PM",
+            "8:00 PM",
+            "8:30 PM",
+            "9:00 PM"});
             this.cboEnd_10.Location = new System.Drawing.Point(843, 274);
             this.cboEnd_10.Name = "cboEnd_10";
             this.cboEnd_10.Size = new System.Drawing.Size(87, 21);
@@ -558,6 +596,36 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cboStart_1.Enabled = false;
             this.cboStart_1.FormattingEnabled = true;
+            this.cboStart_1.Items.AddRange(new object[] {
+            "7:00 AM",
+            "7:30 AM",
+            "8:00 AM",
+            "8:30 AM",
+            "9:00 AM",
+            "9:30 AM",
+            "10:00 AM",
+            "10:30 AM",
+            "11:00 AM",
+            "11:30 AM",
+            "12:00 PM",
+            "12:30 PM",
+            "1:00 PM",
+            "1:30 PM",
+            "2:00 PM",
+            "2:30 PM",
+            "3:00 PM",
+            "3:30 PM",
+            "4:00 PM",
+            "4:30 PM",
+            "5:00 PM",
+            "5:30 PM",
+            "6:00 PM",
+            "6:30 PM",
+            "7:00 PM",
+            "7:30 PM",
+            "8:00 PM",
+            "8:30 PM",
+            "9:00 PM"});
             this.cboStart_1.Location = new System.Drawing.Point(742, 31);
             this.cboStart_1.Name = "cboStart_1";
             this.cboStart_1.Size = new System.Drawing.Size(94, 21);
@@ -570,6 +638,36 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cboStart_10.Enabled = false;
             this.cboStart_10.FormattingEnabled = true;
+            this.cboStart_10.Items.AddRange(new object[] {
+            "7:00 AM",
+            "7:30 AM",
+            "8:00 AM",
+            "8:30 AM",
+            "9:00 AM",
+            "9:30 AM",
+            "10:00 AM",
+            "10:30 AM",
+            "11:00 AM",
+            "11:30 AM",
+            "12:00 PM",
+            "12:30 PM",
+            "1:00 PM",
+            "1:30 PM",
+            "2:00 PM",
+            "2:30 PM",
+            "3:00 PM",
+            "3:30 PM",
+            "4:00 PM",
+            "4:30 PM",
+            "5:00 PM",
+            "5:30 PM",
+            "6:00 PM",
+            "6:30 PM",
+            "7:00 PM",
+            "7:30 PM",
+            "8:00 PM",
+            "8:30 PM",
+            "9:00 PM"});
             this.cboStart_10.Location = new System.Drawing.Point(742, 274);
             this.cboStart_10.Name = "cboStart_10";
             this.cboStart_10.Size = new System.Drawing.Size(94, 21);
@@ -582,6 +680,36 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cboEnd_1.Enabled = false;
             this.cboEnd_1.FormattingEnabled = true;
+            this.cboEnd_1.Items.AddRange(new object[] {
+            "7:00 AM",
+            "7:30 AM",
+            "8:00 AM",
+            "8:30 AM",
+            "9:00 AM",
+            "9:30 AM",
+            "10:00 AM",
+            "10:30 AM",
+            "11:00 AM",
+            "11:30 AM",
+            "12:00 PM",
+            "12:30 PM",
+            "1:00 PM",
+            "1:30 PM",
+            "2:00 PM",
+            "2:30 PM",
+            "3:00 PM",
+            "3:30 PM",
+            "4:00 PM",
+            "4:30 PM",
+            "5:00 PM",
+            "5:30 PM",
+            "6:00 PM",
+            "6:30 PM",
+            "7:00 PM",
+            "7:30 PM",
+            "8:00 PM",
+            "8:30 PM",
+            "9:00 PM"});
             this.cboEnd_1.Location = new System.Drawing.Point(843, 31);
             this.cboEnd_1.Name = "cboEnd_1";
             this.cboEnd_1.Size = new System.Drawing.Size(87, 21);
@@ -643,6 +771,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cboDay_1.Enabled = false;
             this.cboDay_1.FormattingEnabled = true;
+            this.cboDay_1.Items.AddRange(new object[] {
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"});
             this.cboDay_1.Location = new System.Drawing.Point(937, 31);
             this.cboDay_1.Name = "cboDay_1";
             this.cboDay_1.Size = new System.Drawing.Size(117, 21);
@@ -693,6 +829,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cboDay_9.Enabled = false;
             this.cboDay_9.FormattingEnabled = true;
+            this.cboDay_9.Items.AddRange(new object[] {
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"});
             this.cboDay_9.Location = new System.Drawing.Point(937, 247);
             this.cboDay_9.Name = "cboDay_9";
             this.cboDay_9.Size = new System.Drawing.Size(117, 21);
@@ -729,6 +873,36 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cboEnd_9.Enabled = false;
             this.cboEnd_9.FormattingEnabled = true;
+            this.cboEnd_9.Items.AddRange(new object[] {
+            "7:00 AM",
+            "7:30 AM",
+            "8:00 AM",
+            "8:30 AM",
+            "9:00 AM",
+            "9:30 AM",
+            "10:00 AM",
+            "10:30 AM",
+            "11:00 AM",
+            "11:30 AM",
+            "12:00 PM",
+            "12:30 PM",
+            "1:00 PM",
+            "1:30 PM",
+            "2:00 PM",
+            "2:30 PM",
+            "3:00 PM",
+            "3:30 PM",
+            "4:00 PM",
+            "4:30 PM",
+            "5:00 PM",
+            "5:30 PM",
+            "6:00 PM",
+            "6:30 PM",
+            "7:00 PM",
+            "7:30 PM",
+            "8:00 PM",
+            "8:30 PM",
+            "9:00 PM"});
             this.cboEnd_9.Location = new System.Drawing.Point(843, 247);
             this.cboEnd_9.Name = "cboEnd_9";
             this.cboEnd_9.Size = new System.Drawing.Size(87, 21);
@@ -754,6 +928,36 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cboStart_9.Enabled = false;
             this.cboStart_9.FormattingEnabled = true;
+            this.cboStart_9.Items.AddRange(new object[] {
+            "7:00 AM",
+            "7:30 AM",
+            "8:00 AM",
+            "8:30 AM",
+            "9:00 AM",
+            "9:30 AM",
+            "10:00 AM",
+            "10:30 AM",
+            "11:00 AM",
+            "11:30 AM",
+            "12:00 PM",
+            "12:30 PM",
+            "1:00 PM",
+            "1:30 PM",
+            "2:00 PM",
+            "2:30 PM",
+            "3:00 PM",
+            "3:30 PM",
+            "4:00 PM",
+            "4:30 PM",
+            "5:00 PM",
+            "5:30 PM",
+            "6:00 PM",
+            "6:30 PM",
+            "7:00 PM",
+            "7:30 PM",
+            "8:00 PM",
+            "8:30 PM",
+            "9:00 PM"});
             this.cboStart_9.Location = new System.Drawing.Point(742, 247);
             this.cboStart_9.Name = "cboStart_9";
             this.cboStart_9.Size = new System.Drawing.Size(94, 21);
@@ -827,6 +1031,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cboDay_8.Enabled = false;
             this.cboDay_8.FormattingEnabled = true;
+            this.cboDay_8.Items.AddRange(new object[] {
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"});
             this.cboDay_8.Location = new System.Drawing.Point(937, 220);
             this.cboDay_8.Name = "cboDay_8";
             this.cboDay_8.Size = new System.Drawing.Size(117, 21);
@@ -839,6 +1051,36 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cboStart_2.Enabled = false;
             this.cboStart_2.FormattingEnabled = true;
+            this.cboStart_2.Items.AddRange(new object[] {
+            "7:00 AM",
+            "7:30 AM",
+            "8:00 AM",
+            "8:30 AM",
+            "9:00 AM",
+            "9:30 AM",
+            "10:00 AM",
+            "10:30 AM",
+            "11:00 AM",
+            "11:30 AM",
+            "12:00 PM",
+            "12:30 PM",
+            "1:00 PM",
+            "1:30 PM",
+            "2:00 PM",
+            "2:30 PM",
+            "3:00 PM",
+            "3:30 PM",
+            "4:00 PM",
+            "4:30 PM",
+            "5:00 PM",
+            "5:30 PM",
+            "6:00 PM",
+            "6:30 PM",
+            "7:00 PM",
+            "7:30 PM",
+            "8:00 PM",
+            "8:30 PM",
+            "9:00 PM"});
             this.cboStart_2.Location = new System.Drawing.Point(742, 58);
             this.cboStart_2.Name = "cboStart_2";
             this.cboStart_2.Size = new System.Drawing.Size(94, 21);
@@ -851,6 +1093,36 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cboEnd_8.Enabled = false;
             this.cboEnd_8.FormattingEnabled = true;
+            this.cboEnd_8.Items.AddRange(new object[] {
+            "7:00 AM",
+            "7:30 AM",
+            "8:00 AM",
+            "8:30 AM",
+            "9:00 AM",
+            "9:30 AM",
+            "10:00 AM",
+            "10:30 AM",
+            "11:00 AM",
+            "11:30 AM",
+            "12:00 PM",
+            "12:30 PM",
+            "1:00 PM",
+            "1:30 PM",
+            "2:00 PM",
+            "2:30 PM",
+            "3:00 PM",
+            "3:30 PM",
+            "4:00 PM",
+            "4:30 PM",
+            "5:00 PM",
+            "5:30 PM",
+            "6:00 PM",
+            "6:30 PM",
+            "7:00 PM",
+            "7:30 PM",
+            "8:00 PM",
+            "8:30 PM",
+            "9:00 PM"});
             this.cboEnd_8.Location = new System.Drawing.Point(843, 220);
             this.cboEnd_8.Name = "cboEnd_8";
             this.cboEnd_8.Size = new System.Drawing.Size(87, 21);
@@ -888,6 +1160,36 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cboEnd_2.Enabled = false;
             this.cboEnd_2.FormattingEnabled = true;
+            this.cboEnd_2.Items.AddRange(new object[] {
+            "7:00 AM",
+            "7:30 AM",
+            "8:00 AM",
+            "8:30 AM",
+            "9:00 AM",
+            "9:30 AM",
+            "10:00 AM",
+            "10:30 AM",
+            "11:00 AM",
+            "11:30 AM",
+            "12:00 PM",
+            "12:30 PM",
+            "1:00 PM",
+            "1:30 PM",
+            "2:00 PM",
+            "2:30 PM",
+            "3:00 PM",
+            "3:30 PM",
+            "4:00 PM",
+            "4:30 PM",
+            "5:00 PM",
+            "5:30 PM",
+            "6:00 PM",
+            "6:30 PM",
+            "7:00 PM",
+            "7:30 PM",
+            "8:00 PM",
+            "8:30 PM",
+            "9:00 PM"});
             this.cboEnd_2.Location = new System.Drawing.Point(843, 58);
             this.cboEnd_2.Name = "cboEnd_2";
             this.cboEnd_2.Size = new System.Drawing.Size(87, 21);
@@ -913,6 +1215,36 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cboStart_8.Enabled = false;
             this.cboStart_8.FormattingEnabled = true;
+            this.cboStart_8.Items.AddRange(new object[] {
+            "7:00 AM",
+            "7:30 AM",
+            "8:00 AM",
+            "8:30 AM",
+            "9:00 AM",
+            "9:30 AM",
+            "10:00 AM",
+            "10:30 AM",
+            "11:00 AM",
+            "11:30 AM",
+            "12:00 PM",
+            "12:30 PM",
+            "1:00 PM",
+            "1:30 PM",
+            "2:00 PM",
+            "2:30 PM",
+            "3:00 PM",
+            "3:30 PM",
+            "4:00 PM",
+            "4:30 PM",
+            "5:00 PM",
+            "5:30 PM",
+            "6:00 PM",
+            "6:30 PM",
+            "7:00 PM",
+            "7:30 PM",
+            "8:00 PM",
+            "8:30 PM",
+            "9:00 PM"});
             this.cboStart_8.Location = new System.Drawing.Point(742, 220);
             this.cboStart_8.Name = "cboStart_8";
             this.cboStart_8.Size = new System.Drawing.Size(94, 21);
@@ -938,6 +1270,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cboDay_2.Enabled = false;
             this.cboDay_2.FormattingEnabled = true;
+            this.cboDay_2.Items.AddRange(new object[] {
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"});
             this.cboDay_2.Location = new System.Drawing.Point(937, 58);
             this.cboDay_2.Name = "cboDay_2";
             this.cboDay_2.Size = new System.Drawing.Size(117, 21);
@@ -1011,6 +1351,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cboDay_7.Enabled = false;
             this.cboDay_7.FormattingEnabled = true;
+            this.cboDay_7.Items.AddRange(new object[] {
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"});
             this.cboDay_7.Location = new System.Drawing.Point(937, 193);
             this.cboDay_7.Name = "cboDay_7";
             this.cboDay_7.Size = new System.Drawing.Size(117, 21);
@@ -1036,6 +1384,36 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cboEnd_7.Enabled = false;
             this.cboEnd_7.FormattingEnabled = true;
+            this.cboEnd_7.Items.AddRange(new object[] {
+            "7:00 AM",
+            "7:30 AM",
+            "8:00 AM",
+            "8:30 AM",
+            "9:00 AM",
+            "9:30 AM",
+            "10:00 AM",
+            "10:30 AM",
+            "11:00 AM",
+            "11:30 AM",
+            "12:00 PM",
+            "12:30 PM",
+            "1:00 PM",
+            "1:30 PM",
+            "2:00 PM",
+            "2:30 PM",
+            "3:00 PM",
+            "3:30 PM",
+            "4:00 PM",
+            "4:30 PM",
+            "5:00 PM",
+            "5:30 PM",
+            "6:00 PM",
+            "6:30 PM",
+            "7:00 PM",
+            "7:30 PM",
+            "8:00 PM",
+            "8:30 PM",
+            "9:00 PM"});
             this.cboEnd_7.Location = new System.Drawing.Point(843, 193);
             this.cboEnd_7.Name = "cboEnd_7";
             this.cboEnd_7.Size = new System.Drawing.Size(87, 21);
@@ -1060,6 +1438,36 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cboStart_7.Enabled = false;
             this.cboStart_7.FormattingEnabled = true;
+            this.cboStart_7.Items.AddRange(new object[] {
+            "7:00 AM",
+            "7:30 AM",
+            "8:00 AM",
+            "8:30 AM",
+            "9:00 AM",
+            "9:30 AM",
+            "10:00 AM",
+            "10:30 AM",
+            "11:00 AM",
+            "11:30 AM",
+            "12:00 PM",
+            "12:30 PM",
+            "1:00 PM",
+            "1:30 PM",
+            "2:00 PM",
+            "2:30 PM",
+            "3:00 PM",
+            "3:30 PM",
+            "4:00 PM",
+            "4:30 PM",
+            "5:00 PM",
+            "5:30 PM",
+            "6:00 PM",
+            "6:30 PM",
+            "7:00 PM",
+            "7:30 PM",
+            "8:00 PM",
+            "8:30 PM",
+            "9:00 PM"});
             this.cboStart_7.Location = new System.Drawing.Point(742, 193);
             this.cboStart_7.Name = "cboStart_7";
             this.cboStart_7.Size = new System.Drawing.Size(94, 21);
@@ -1247,6 +1655,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cboDay_6.Enabled = false;
             this.cboDay_6.FormattingEnabled = true;
+            this.cboDay_6.Items.AddRange(new object[] {
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"});
             this.cboDay_6.Location = new System.Drawing.Point(937, 166);
             this.cboDay_6.Name = "cboDay_6";
             this.cboDay_6.Size = new System.Drawing.Size(117, 21);
@@ -1271,6 +1687,36 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cboStart_3.Enabled = false;
             this.cboStart_3.FormattingEnabled = true;
+            this.cboStart_3.Items.AddRange(new object[] {
+            "7:00 AM",
+            "7:30 AM",
+            "8:00 AM",
+            "8:30 AM",
+            "9:00 AM",
+            "9:30 AM",
+            "10:00 AM",
+            "10:30 AM",
+            "11:00 AM",
+            "11:30 AM",
+            "12:00 PM",
+            "12:30 PM",
+            "1:00 PM",
+            "1:30 PM",
+            "2:00 PM",
+            "2:30 PM",
+            "3:00 PM",
+            "3:30 PM",
+            "4:00 PM",
+            "4:30 PM",
+            "5:00 PM",
+            "5:30 PM",
+            "6:00 PM",
+            "6:30 PM",
+            "7:00 PM",
+            "7:30 PM",
+            "8:00 PM",
+            "8:30 PM",
+            "9:00 PM"});
             this.cboStart_3.Location = new System.Drawing.Point(742, 85);
             this.cboStart_3.Name = "cboStart_3";
             this.cboStart_3.Size = new System.Drawing.Size(94, 21);
@@ -1283,6 +1729,36 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cboEnd_6.Enabled = false;
             this.cboEnd_6.FormattingEnabled = true;
+            this.cboEnd_6.Items.AddRange(new object[] {
+            "7:00 AM",
+            "7:30 AM",
+            "8:00 AM",
+            "8:30 AM",
+            "9:00 AM",
+            "9:30 AM",
+            "10:00 AM",
+            "10:30 AM",
+            "11:00 AM",
+            "11:30 AM",
+            "12:00 PM",
+            "12:30 PM",
+            "1:00 PM",
+            "1:30 PM",
+            "2:00 PM",
+            "2:30 PM",
+            "3:00 PM",
+            "3:30 PM",
+            "4:00 PM",
+            "4:30 PM",
+            "5:00 PM",
+            "5:30 PM",
+            "6:00 PM",
+            "6:30 PM",
+            "7:00 PM",
+            "7:30 PM",
+            "8:00 PM",
+            "8:30 PM",
+            "9:00 PM"});
             this.cboEnd_6.Location = new System.Drawing.Point(843, 166);
             this.cboEnd_6.Name = "cboEnd_6";
             this.cboEnd_6.Size = new System.Drawing.Size(87, 21);
@@ -1295,6 +1771,36 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cboEnd_3.Enabled = false;
             this.cboEnd_3.FormattingEnabled = true;
+            this.cboEnd_3.Items.AddRange(new object[] {
+            "7:00 AM",
+            "7:30 AM",
+            "8:00 AM",
+            "8:30 AM",
+            "9:00 AM",
+            "9:30 AM",
+            "10:00 AM",
+            "10:30 AM",
+            "11:00 AM",
+            "11:30 AM",
+            "12:00 PM",
+            "12:30 PM",
+            "1:00 PM",
+            "1:30 PM",
+            "2:00 PM",
+            "2:30 PM",
+            "3:00 PM",
+            "3:30 PM",
+            "4:00 PM",
+            "4:30 PM",
+            "5:00 PM",
+            "5:30 PM",
+            "6:00 PM",
+            "6:30 PM",
+            "7:00 PM",
+            "7:30 PM",
+            "8:00 PM",
+            "8:30 PM",
+            "9:00 PM"});
             this.cboEnd_3.Location = new System.Drawing.Point(843, 85);
             this.cboEnd_3.Name = "cboEnd_3";
             this.cboEnd_3.Size = new System.Drawing.Size(87, 21);
@@ -1307,6 +1813,36 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cboStart_6.Enabled = false;
             this.cboStart_6.FormattingEnabled = true;
+            this.cboStart_6.Items.AddRange(new object[] {
+            "7:00 AM",
+            "7:30 AM",
+            "8:00 AM",
+            "8:30 AM",
+            "9:00 AM",
+            "9:30 AM",
+            "10:00 AM",
+            "10:30 AM",
+            "11:00 AM",
+            "11:30 AM",
+            "12:00 PM",
+            "12:30 PM",
+            "1:00 PM",
+            "1:30 PM",
+            "2:00 PM",
+            "2:30 PM",
+            "3:00 PM",
+            "3:30 PM",
+            "4:00 PM",
+            "4:30 PM",
+            "5:00 PM",
+            "5:30 PM",
+            "6:00 PM",
+            "6:30 PM",
+            "7:00 PM",
+            "7:30 PM",
+            "8:00 PM",
+            "8:30 PM",
+            "9:00 PM"});
             this.cboStart_6.Location = new System.Drawing.Point(742, 166);
             this.cboStart_6.Name = "cboStart_6";
             this.cboStart_6.Size = new System.Drawing.Size(94, 21);
@@ -1319,6 +1855,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cboDay_3.Enabled = false;
             this.cboDay_3.FormattingEnabled = true;
+            this.cboDay_3.Items.AddRange(new object[] {
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"});
             this.cboDay_3.Location = new System.Drawing.Point(937, 85);
             this.cboDay_3.Name = "cboDay_3";
             this.cboDay_3.Size = new System.Drawing.Size(117, 21);
@@ -1380,6 +1924,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cboDay_5.Enabled = false;
             this.cboDay_5.FormattingEnabled = true;
+            this.cboDay_5.Items.AddRange(new object[] {
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"});
             this.cboDay_5.Location = new System.Drawing.Point(937, 139);
             this.cboDay_5.Name = "cboDay_5";
             this.cboDay_5.Size = new System.Drawing.Size(117, 21);
@@ -1405,6 +1957,36 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cboEnd_5.Enabled = false;
             this.cboEnd_5.FormattingEnabled = true;
+            this.cboEnd_5.Items.AddRange(new object[] {
+            "7:00 AM",
+            "7:30 AM",
+            "8:00 AM",
+            "8:30 AM",
+            "9:00 AM",
+            "9:30 AM",
+            "10:00 AM",
+            "10:30 AM",
+            "11:00 AM",
+            "11:30 AM",
+            "12:00 PM",
+            "12:30 PM",
+            "1:00 PM",
+            "1:30 PM",
+            "2:00 PM",
+            "2:30 PM",
+            "3:00 PM",
+            "3:30 PM",
+            "4:00 PM",
+            "4:30 PM",
+            "5:00 PM",
+            "5:30 PM",
+            "6:00 PM",
+            "6:30 PM",
+            "7:00 PM",
+            "7:30 PM",
+            "8:00 PM",
+            "8:30 PM",
+            "9:00 PM"});
             this.cboEnd_5.Location = new System.Drawing.Point(843, 139);
             this.cboEnd_5.Name = "cboEnd_5";
             this.cboEnd_5.Size = new System.Drawing.Size(87, 21);
@@ -1429,6 +2011,36 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cboStart_5.Enabled = false;
             this.cboStart_5.FormattingEnabled = true;
+            this.cboStart_5.Items.AddRange(new object[] {
+            "7:00 AM",
+            "7:30 AM",
+            "8:00 AM",
+            "8:30 AM",
+            "9:00 AM",
+            "9:30 AM",
+            "10:00 AM",
+            "10:30 AM",
+            "11:00 AM",
+            "11:30 AM",
+            "12:00 PM",
+            "12:30 PM",
+            "1:00 PM",
+            "1:30 PM",
+            "2:00 PM",
+            "2:30 PM",
+            "3:00 PM",
+            "3:30 PM",
+            "4:00 PM",
+            "4:30 PM",
+            "5:00 PM",
+            "5:30 PM",
+            "6:00 PM",
+            "6:30 PM",
+            "7:00 PM",
+            "7:30 PM",
+            "8:00 PM",
+            "8:30 PM",
+            "9:00 PM"});
             this.cboStart_5.Location = new System.Drawing.Point(742, 139);
             this.cboStart_5.Name = "cboStart_5";
             this.cboStart_5.Size = new System.Drawing.Size(94, 21);
@@ -1506,6 +2118,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cboDay_4.Enabled = false;
             this.cboDay_4.FormattingEnabled = true;
+            this.cboDay_4.Items.AddRange(new object[] {
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"});
             this.cboDay_4.Location = new System.Drawing.Point(937, 112);
             this.cboDay_4.Name = "cboDay_4";
             this.cboDay_4.Size = new System.Drawing.Size(117, 21);
@@ -1533,6 +2153,36 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cboEnd_4.Enabled = false;
             this.cboEnd_4.FormattingEnabled = true;
+            this.cboEnd_4.Items.AddRange(new object[] {
+            "7:00 AM",
+            "7:30 AM",
+            "8:00 AM",
+            "8:30 AM",
+            "9:00 AM",
+            "9:30 AM",
+            "10:00 AM",
+            "10:30 AM",
+            "11:00 AM",
+            "11:30 AM",
+            "12:00 PM",
+            "12:30 PM",
+            "1:00 PM",
+            "1:30 PM",
+            "2:00 PM",
+            "2:30 PM",
+            "3:00 PM",
+            "3:30 PM",
+            "4:00 PM",
+            "4:30 PM",
+            "5:00 PM",
+            "5:30 PM",
+            "6:00 PM",
+            "6:30 PM",
+            "7:00 PM",
+            "7:30 PM",
+            "8:00 PM",
+            "8:30 PM",
+            "9:00 PM"});
             this.cboEnd_4.Location = new System.Drawing.Point(843, 112);
             this.cboEnd_4.Name = "cboEnd_4";
             this.cboEnd_4.Size = new System.Drawing.Size(87, 21);
@@ -1611,6 +2261,36 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cboStart_4.Enabled = false;
             this.cboStart_4.FormattingEnabled = true;
+            this.cboStart_4.Items.AddRange(new object[] {
+            "7:00 AM",
+            "7:30 AM",
+            "8:00 AM",
+            "8:30 AM",
+            "9:00 AM",
+            "9:30 AM",
+            "10:00 AM",
+            "10:30 AM",
+            "11:00 AM",
+            "11:30 AM",
+            "12:00 PM",
+            "12:30 PM",
+            "1:00 PM",
+            "1:30 PM",
+            "2:00 PM",
+            "2:30 PM",
+            "3:00 PM",
+            "3:30 PM",
+            "4:00 PM",
+            "4:30 PM",
+            "5:00 PM",
+            "5:30 PM",
+            "6:00 PM",
+            "6:30 PM",
+            "7:00 PM",
+            "7:30 PM",
+            "8:00 PM",
+            "8:30 PM",
+            "9:00 PM"});
             this.cboStart_4.Location = new System.Drawing.Point(742, 112);
             this.cboStart_4.Name = "cboStart_4";
             this.cboStart_4.Size = new System.Drawing.Size(94, 21);
@@ -1835,8 +2515,9 @@
             this.btnSet_10.Name = "btnSet_10";
             this.btnSet_10.Size = new System.Drawing.Size(61, 21);
             this.btnSet_10.TabIndex = 155;
-            this.btnSet_10.Text = "Set";
+            this.btnSet_10.Text = "SET";
             this.btnSet_10.Visible = false;
+            this.btnSet_10.Click += new System.EventHandler(this.btnSet_10_Click);
             // 
             // btnSet_9
             // 
@@ -1844,8 +2525,9 @@
             this.btnSet_9.Name = "btnSet_9";
             this.btnSet_9.Size = new System.Drawing.Size(61, 21);
             this.btnSet_9.TabIndex = 155;
-            this.btnSet_9.Text = "Set";
+            this.btnSet_9.Text = "SET";
             this.btnSet_9.Visible = false;
+            this.btnSet_9.Click += new System.EventHandler(this.btnSet_9_Click);
             // 
             // btnSet_8
             // 
@@ -1853,8 +2535,9 @@
             this.btnSet_8.Name = "btnSet_8";
             this.btnSet_8.Size = new System.Drawing.Size(61, 21);
             this.btnSet_8.TabIndex = 155;
-            this.btnSet_8.Text = "Set";
+            this.btnSet_8.Text = "SET";
             this.btnSet_8.Visible = false;
+            this.btnSet_8.Click += new System.EventHandler(this.btnSet_8_Click);
             // 
             // btnSet_7
             // 
@@ -1862,8 +2545,9 @@
             this.btnSet_7.Name = "btnSet_7";
             this.btnSet_7.Size = new System.Drawing.Size(61, 21);
             this.btnSet_7.TabIndex = 155;
-            this.btnSet_7.Text = "Set";
+            this.btnSet_7.Text = "SET";
             this.btnSet_7.Visible = false;
+            this.btnSet_7.Click += new System.EventHandler(this.btnSet_7_Click);
             // 
             // btnSet_6
             // 
@@ -1871,8 +2555,9 @@
             this.btnSet_6.Name = "btnSet_6";
             this.btnSet_6.Size = new System.Drawing.Size(61, 21);
             this.btnSet_6.TabIndex = 155;
-            this.btnSet_6.Text = "Set";
+            this.btnSet_6.Text = "SET";
             this.btnSet_6.Visible = false;
+            this.btnSet_6.Click += new System.EventHandler(this.btnSet_6_Click);
             // 
             // btnSet_5
             // 
@@ -1880,8 +2565,9 @@
             this.btnSet_5.Name = "btnSet_5";
             this.btnSet_5.Size = new System.Drawing.Size(61, 21);
             this.btnSet_5.TabIndex = 155;
-            this.btnSet_5.Text = "Set";
+            this.btnSet_5.Text = "SET";
             this.btnSet_5.Visible = false;
+            this.btnSet_5.Click += new System.EventHandler(this.btnSet_5_Click);
             // 
             // btnSet_4
             // 
@@ -1889,8 +2575,9 @@
             this.btnSet_4.Name = "btnSet_4";
             this.btnSet_4.Size = new System.Drawing.Size(61, 21);
             this.btnSet_4.TabIndex = 155;
-            this.btnSet_4.Text = "Set";
+            this.btnSet_4.Text = "SET";
             this.btnSet_4.Visible = false;
+            this.btnSet_4.Click += new System.EventHandler(this.btnSet_4_Click);
             // 
             // btnSet_3
             // 
@@ -1898,8 +2585,9 @@
             this.btnSet_3.Name = "btnSet_3";
             this.btnSet_3.Size = new System.Drawing.Size(61, 21);
             this.btnSet_3.TabIndex = 155;
-            this.btnSet_3.Text = "Set";
+            this.btnSet_3.Text = "SET";
             this.btnSet_3.Visible = false;
+            this.btnSet_3.Click += new System.EventHandler(this.btnSet_3_Click);
             // 
             // btnSet_2
             // 
@@ -1907,8 +2595,9 @@
             this.btnSet_2.Name = "btnSet_2";
             this.btnSet_2.Size = new System.Drawing.Size(61, 21);
             this.btnSet_2.TabIndex = 155;
-            this.btnSet_2.Text = "Set";
+            this.btnSet_2.Text = "SET";
             this.btnSet_2.Visible = false;
+            this.btnSet_2.Click += new System.EventHandler(this.btnSet_2_Click);
             // 
             // btnSet_1
             // 
@@ -1916,8 +2605,9 @@
             this.btnSet_1.Name = "btnSet_1";
             this.btnSet_1.Size = new System.Drawing.Size(61, 21);
             this.btnSet_1.TabIndex = 155;
-            this.btnSet_1.Text = "Set";
+            this.btnSet_1.Text = "SET";
             this.btnSet_1.Visible = false;
+            this.btnSet_1.Click += new System.EventHandler(this.btnSet_1_Click);
             // 
             // btnAdd
             // 

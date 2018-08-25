@@ -90,7 +90,7 @@ namespace ClassSchedulingComputerAided
             SubjectForStudents.LecHrs = new string[11];
             SubjectForStudents.LabHrs = new string[11];
 
-            md.CSD_ShowSubjectsForStudents(cboCourse.SelectedItem.ToString(), cboYear.SelectedItem.ToString(), cboCurriculum.SelectedItem.ToString());//to call function to get data into database\
+            md.CSD_ShowSubjectsForStudents(cboCourse.SelectedItem.ToString(), cboYear.SelectedItem.ToString(), cboCurriculum.SelectedItem.ToString());//to call function to get data into database
 
             //call a method to list data
             ListCourseCode();
@@ -330,6 +330,511 @@ namespace ClassSchedulingComputerAided
             for (int x = 0; x < md.getCourseSection(cboCourse.SelectedItem.ToString()).Length; x++)
                 if (md.getCourseSection(cboCourse.SelectedItem.ToString()).GetValue(x).ToString() != "")
                     cboSection.Items.Add(md.getCourseSection(cboCourse.SelectedItem.ToString()).GetValue(x).ToString());
+        }
+
+        public void SetToEnabled()//method to set button 'set' to enabled
+        {
+            //set btnSet to Enabled
+            btnSet_1.Enabled = true;
+            btnSet_2.Enabled = true;
+            btnSet_3.Enabled = true;
+            btnSet_4.Enabled = true;
+            btnSet_5.Enabled = true;
+            btnSet_6.Enabled = true;
+            btnSet_7.Enabled = true;
+            btnSet_8.Enabled = true;
+            btnSet_9.Enabled = true;
+            btnSet_10.Enabled = true;
+        }
+
+        public void SetComboBoxToDisabled()//method to set comboxes to disabled
+        {
+            //set cboprofessor to disabled
+            cboProfessor_1.Enabled = false;
+            cboProfessor_2.Enabled = false;
+            cboProfessor_3.Enabled = false;
+            cboProfessor_4.Enabled = false;
+            cboProfessor_5.Enabled = false;
+            cboProfessor_6.Enabled = false;
+            cboProfessor_7.Enabled = false;
+            cboProfessor_8.Enabled = false;
+            cboProfessor_9.Enabled = false;
+            cboProfessor_10.Enabled = false;
+            //set cboStart to disabled
+            cboStart_1.Enabled = false;
+            cboStart_2.Enabled = false;
+            cboStart_3.Enabled = false;
+            cboStart_4.Enabled = false;
+            cboStart_5.Enabled = false;
+            cboStart_6.Enabled = false;
+            cboStart_7.Enabled = false;
+            cboStart_8.Enabled = false;
+            cboStart_9.Enabled = false;
+            cboStart_10.Enabled = false;
+            //set cboEnd to disabled
+            cboEnd_1.Enabled = false;
+            cboEnd_2.Enabled = false;
+            cboEnd_3.Enabled = false;
+            cboEnd_4.Enabled = false;
+            cboEnd_5.Enabled = false;
+            cboEnd_6.Enabled = false;
+            cboEnd_7.Enabled = false;
+            cboEnd_8.Enabled = false;
+            cboEnd_9.Enabled = false;
+            cboEnd_10.Enabled = false;
+            //set cboDay to disabled
+            cboDay_1.Enabled = false;
+            cboDay_2.Enabled = false;
+            cboDay_3.Enabled = false;
+            cboDay_4.Enabled = false;
+            cboDay_5.Enabled = false;
+            cboDay_6.Enabled = false;
+            cboDay_7.Enabled = false;
+            cboDay_8.Enabled = false;
+            cboDay_9.Enabled = false;
+            cboDay_10.Enabled = false;
+            //set cboRoom to disabled
+            cboRoom_1.Enabled = false;
+            cboRoom_2.Enabled = false;
+            cboRoom_3.Enabled = false;
+            cboRoom_4.Enabled = false;
+            cboRoom_5.Enabled = false;
+            cboRoom_6.Enabled = false;
+            cboRoom_7.Enabled = false;
+            cboRoom_8.Enabled = false;
+            cboRoom_9.Enabled = false;
+            cboRoom_10.Enabled = false;
+            //set btnSet to Disabled
+            btnSet_1.Enabled = false;
+            btnSet_2.Enabled = false;
+            btnSet_3.Enabled = false;
+            btnSet_4.Enabled = false;
+            btnSet_5.Enabled = false;
+            btnSet_6.Enabled = false;
+            btnSet_7.Enabled = false;
+            btnSet_8.Enabled = false;
+            btnSet_9.Enabled = false;
+            btnSet_10.Enabled = false;
+        }
+
+        private void btnSet_1_Click(object sender, EventArgs e)
+        {
+            if (btnSet_1.Text == "SET")
+            {
+                //clear all listed items
+                cboProfessor_1.Items.Clear();
+                cboRoom_1.Items.Clear();
+
+                SetComboBoxToDisabled();
+                btnSet_1.Enabled = true;
+                cboProfessor_1.Enabled = true;
+                cboStart_1.Enabled = true;
+                cboEnd_1.Enabled = true;
+                cboDay_1.Enabled = true;
+                cboRoom_1.Enabled = true;
+                btnSet_1.Text = "OK";
+
+                //to list all Active Rooms
+                SubjectForStudents.Rooms = new string[100];
+                md.CSD_ListActiveRoom();
+                for(int x = 0; x < 50; x++)//set to 50 loop
+                {
+                    if(SubjectForStudents.Rooms[x] != "")
+                        cboRoom_1.Items.Add(SubjectForStudents.Rooms[x]);
+                }
+                //to list all professors on that particular courseCode
+                SubjectForStudents.Professors = new string[100];
+                md.CSD_ListProfDedicated(lblCode_1.Text);
+                for (int x = 0; x < 100; x++)//set to 50 loop
+                {
+                    if (SubjectForStudents.Professors[x] != "")
+                        cboProfessor_1.Items.Add(SubjectForStudents.Professors[x]);
+                }
+            }
+            else
+            {
+                SetComboBoxToDisabled();
+                SetToEnabled();
+                btnSet_1.Text = "SET";
+            }
+        }
+
+        private void btnSet_2_Click(object sender, EventArgs e)
+        {
+            if (btnSet_2.Text == "SET")
+            {
+                //clear all listed items
+                cboProfessor_2.Items.Clear();
+                cboRoom_2.Items.Clear();
+
+                SetComboBoxToDisabled();
+                btnSet_2.Enabled = true;
+                cboProfessor_2.Enabled = true;
+                cboStart_2.Enabled = true;
+                cboEnd_2.Enabled = true;
+                cboDay_2.Enabled = true;
+                cboRoom_2.Enabled = true;
+                btnSet_2.Text = "OK";
+
+                //to list all Active Rooms
+                SubjectForStudents.Rooms = new string[100];
+                md.CSD_ListActiveRoom();
+                for (int x = 0; x < 50; x++)//set to 50 loop
+                {
+                    if (SubjectForStudents.Rooms[x] != "")
+                        cboRoom_2.Items.Add(SubjectForStudents.Rooms[x]);
+                }
+                //to list all professors on that particular courseCode
+                SubjectForStudents.Professors = new string[100];
+                md.CSD_ListProfDedicated(lblCode_2.Text);
+                for (int x = 0; x < 100; x++)//set to 50 loop
+                {
+                    if (SubjectForStudents.Professors[x] != "")
+                        cboProfessor_2.Items.Add(SubjectForStudents.Professors[x]);
+                }
+            }
+            else
+            {
+                SetComboBoxToDisabled();
+                SetToEnabled();
+                btnSet_2.Text = "SET";
+            }
+        }
+
+        private void btnSet_3_Click(object sender, EventArgs e)
+        {
+            if (btnSet_3.Text == "SET")
+            {
+                //clear all listed items
+                cboProfessor_3.Items.Clear();
+                cboRoom_3.Items.Clear();
+
+                SetComboBoxToDisabled();
+                btnSet_3.Enabled = true;
+                cboProfessor_3.Enabled = true;
+                cboStart_3.Enabled = true;
+                cboEnd_3.Enabled = true;
+                cboDay_3.Enabled = true;
+                cboRoom_3.Enabled = true;
+                btnSet_3.Text = "OK";
+
+                //to list all Active Rooms
+                SubjectForStudents.Rooms = new string[100];
+                md.CSD_ListActiveRoom();
+                for (int x = 0; x < 50; x++)//set to 50 loop
+                {
+                    if (SubjectForStudents.Rooms[x] != "")
+                        cboRoom_3.Items.Add(SubjectForStudents.Rooms[x]);
+                }
+                //to list all professors on that particular courseCode
+                SubjectForStudents.Professors = new string[100];
+                md.CSD_ListProfDedicated(lblCode_3.Text);
+                for (int x = 0; x < 100; x++)//set to 50 loop
+                {
+                    if (SubjectForStudents.Professors[x] != "")
+                        cboProfessor_3.Items.Add(SubjectForStudents.Professors[x]);
+                }
+            }
+            else
+            {
+                SetComboBoxToDisabled();
+                SetToEnabled();
+                btnSet_3.Text = "SET";
+            }
+        }
+
+        private void btnSet_4_Click(object sender, EventArgs e)
+        {
+            if (btnSet_4.Text == "SET")
+            {
+                //clear all listed items
+                cboProfessor_4.Items.Clear();
+                cboRoom_4.Items.Clear();
+
+                SetComboBoxToDisabled();
+                btnSet_4.Enabled = true;
+                cboProfessor_4.Enabled = true;
+                cboStart_4.Enabled = true;
+                cboEnd_4.Enabled = true;
+                cboDay_4.Enabled = true;
+                cboRoom_4.Enabled = true;
+                btnSet_4.Text = "OK";
+
+                //to list all Active Rooms
+                SubjectForStudents.Rooms = new string[100];
+                md.CSD_ListActiveRoom();
+                for (int x = 0; x < 50; x++)//set to 50 loop
+                {
+                    if (SubjectForStudents.Rooms[x] != "")
+                        cboRoom_4.Items.Add(SubjectForStudents.Rooms[x]);
+                }
+                //to list all professors on that particular courseCode
+                SubjectForStudents.Professors = new string[100];
+                md.CSD_ListProfDedicated(lblCode_4.Text);
+                for (int x = 0; x < 100; x++)//set to 50 loop
+                {
+                    if (SubjectForStudents.Professors[x] != "")
+                        cboProfessor_4.Items.Add(SubjectForStudents.Professors[x]);
+                }
+            }
+            else
+            {
+                SetComboBoxToDisabled();
+                SetToEnabled();
+                btnSet_4.Text = "SET";
+            }
+        }
+
+        private void btnSet_5_Click(object sender, EventArgs e)
+        {
+            if (btnSet_5.Text == "SET")
+            {
+                //clear all listed items
+                cboProfessor_5.Items.Clear();
+                cboRoom_5.Items.Clear();
+
+                SetComboBoxToDisabled();
+                btnSet_5.Enabled = true;
+                cboProfessor_5.Enabled = true;
+                cboStart_5.Enabled = true;
+                cboEnd_5.Enabled = true;
+                cboDay_5.Enabled = true;
+                cboRoom_5.Enabled = true;
+                btnSet_5.Text = "OK";
+
+                //to list all Active Rooms
+                SubjectForStudents.Rooms = new string[100];
+                md.CSD_ListActiveRoom();
+                for (int x = 0; x < 50; x++)//set to 50 loop
+                {
+                    if (SubjectForStudents.Rooms[x] != "")
+                        cboRoom_5.Items.Add(SubjectForStudents.Rooms[x]);
+                }
+                //to list all professors on that particular courseCode
+                SubjectForStudents.Professors = new string[100];
+                md.CSD_ListProfDedicated(lblCode_5.Text);
+                for (int x = 0; x < 100; x++)//set to 50 loop
+                {
+                    if (SubjectForStudents.Professors[x] != "")
+                        cboProfessor_5.Items.Add(SubjectForStudents.Professors[x]);
+                }
+            }
+            else
+            {
+                SetComboBoxToDisabled();
+                SetToEnabled();
+                btnSet_5.Text = "SET";
+            }
+        }
+
+        private void btnSet_6_Click(object sender, EventArgs e)
+        {
+            if (btnSet_6.Text == "SET")
+            {
+                //clear all listed items
+                cboProfessor_6.Items.Clear();
+                cboRoom_6.Items.Clear();
+
+                SetComboBoxToDisabled();
+                btnSet_6.Enabled = true;
+                cboProfessor_6.Enabled = true;
+                cboStart_6.Enabled = true;
+                cboEnd_6.Enabled = true;
+                cboDay_6.Enabled = true;
+                cboRoom_6.Enabled = true;
+                btnSet_6.Text = "OK";
+
+                //to list all Active Rooms
+                SubjectForStudents.Rooms = new string[100];
+                md.CSD_ListActiveRoom();
+                for (int x = 0; x < 50; x++)//set to 50 loop
+                {
+                    if (SubjectForStudents.Rooms[x] != "")
+                        cboRoom_6.Items.Add(SubjectForStudents.Rooms[x]);
+                }
+                //to list all professors on that particular courseCode
+                SubjectForStudents.Professors = new string[100];
+                md.CSD_ListProfDedicated(lblCode_6.Text);
+                for (int x = 0; x < 100; x++)//set to 50 loop
+                {
+                    if (SubjectForStudents.Professors[x] != "")
+                        cboProfessor_6.Items.Add(SubjectForStudents.Professors[x]);
+                }
+            }
+            else
+            {
+                SetComboBoxToDisabled();
+                SetToEnabled();
+                btnSet_6.Text = "SET";
+            }
+        }
+
+        private void btnSet_7_Click(object sender, EventArgs e)
+        {
+            if (btnSet_7.Text == "SET")
+            {
+                //clear all listed items
+                cboProfessor_7.Items.Clear();
+                cboRoom_7.Items.Clear();
+
+                SetComboBoxToDisabled();
+                btnSet_7.Enabled = true;
+                cboProfessor_7.Enabled = true;
+                cboStart_7.Enabled = true;
+                cboEnd_7.Enabled = true;
+                cboDay_7.Enabled = true;
+                cboRoom_7.Enabled = true;
+                btnSet_7.Text = "OK";
+
+                //to list all Active Rooms
+                SubjectForStudents.Rooms = new string[100];
+                md.CSD_ListActiveRoom();
+                for (int x = 0; x < 50; x++)//set to 50 loop
+                {
+                    if (SubjectForStudents.Rooms[x] != "")
+                        cboRoom_7.Items.Add(SubjectForStudents.Rooms[x]);
+                }
+                //to list all professors on that particular courseCode
+                SubjectForStudents.Professors = new string[100];
+                md.CSD_ListProfDedicated(lblCode_7.Text);
+                for (int x = 0; x < 100; x++)//set to 50 loop
+                {
+                    if (SubjectForStudents.Professors[x] != "")
+                        cboProfessor_7.Items.Add(SubjectForStudents.Professors[x]);
+                }
+            }
+            else
+            {
+                SetComboBoxToDisabled();
+                SetToEnabled();
+                btnSet_7.Text = "SET";
+            }
+        }
+
+        private void btnSet_8_Click(object sender, EventArgs e)
+        {
+            if (btnSet_8.Text == "SET")
+            {
+                //clear all listed items
+                cboProfessor_8.Items.Clear();
+                cboRoom_8.Items.Clear();
+
+                SetComboBoxToDisabled();
+                btnSet_8.Enabled = true;
+                cboProfessor_8.Enabled = true;
+                cboStart_8.Enabled = true;
+                cboEnd_8.Enabled = true;
+                cboDay_8.Enabled = true;
+                cboRoom_8.Enabled = true;
+                btnSet_8.Text = "OK";
+
+                //to list all Active Rooms
+                SubjectForStudents.Rooms = new string[100];
+                md.CSD_ListActiveRoom();
+                for (int x = 0; x < 50; x++)//set to 50 loop
+                {
+                    if (SubjectForStudents.Rooms[x] != "")
+                        cboRoom_8.Items.Add(SubjectForStudents.Rooms[x]);
+                }
+                //to list all professors on that particular courseCode
+                SubjectForStudents.Professors = new string[100];
+                md.CSD_ListProfDedicated(lblCode_8.Text);
+                for (int x = 0; x < 100; x++)//set to 50 loop
+                {
+                    if (SubjectForStudents.Professors[x] != "")
+                        cboProfessor_8.Items.Add(SubjectForStudents.Professors[x]);
+                }
+            }
+            else
+            {
+                SetComboBoxToDisabled();
+                SetToEnabled();
+                btnSet_8.Text = "SET";
+            }
+        }
+
+        private void btnSet_9_Click(object sender, EventArgs e)
+        {
+            if (btnSet_9.Text == "SET")
+            {
+                //clear all listed items
+                cboProfessor_9.Items.Clear();
+                cboRoom_9.Items.Clear();
+
+                SetComboBoxToDisabled();
+                btnSet_9.Enabled = true;
+                cboProfessor_9.Enabled = true;
+                cboStart_9.Enabled = true;
+                cboEnd_9.Enabled = true;
+                cboDay_9.Enabled = true;
+                cboRoom_9.Enabled = true;
+                btnSet_9.Text = "OK";
+
+                //to list all Active Rooms
+                SubjectForStudents.Rooms = new string[100];
+                md.CSD_ListActiveRoom();
+                for (int x = 0; x < 50; x++)//set to 50 loop
+                {
+                    if (SubjectForStudents.Rooms[x] != "")
+                        cboRoom_9.Items.Add(SubjectForStudents.Rooms[x]);
+                }
+                //to list all professors on that particular courseCode
+                SubjectForStudents.Professors = new string[100];
+                md.CSD_ListProfDedicated(lblCode_9.Text);
+                for (int x = 0; x < 100; x++)//set to 50 loop
+                {
+                    if (SubjectForStudents.Professors[x] != "")
+                        cboProfessor_9.Items.Add(SubjectForStudents.Professors[x]);
+                }
+            }
+            else
+            {
+                SetComboBoxToDisabled();
+                SetToEnabled();
+                btnSet_9.Text = "SET";
+            }
+        }
+
+        private void btnSet_10_Click(object sender, EventArgs e)
+        {
+            if (btnSet_10.Text == "SET")
+            {
+                //clear all listed items
+                cboProfessor_10.Items.Clear();
+                cboRoom_10.Items.Clear();
+
+                SetComboBoxToDisabled();
+                btnSet_10.Enabled = true;
+                cboProfessor_10.Enabled = true;
+                cboStart_10.Enabled = true;
+                cboEnd_10.Enabled = true;
+                cboDay_10.Enabled = true;
+                cboRoom_10.Enabled = true;
+                btnSet_10.Text = "OK";
+
+                //to list all Active Rooms
+                SubjectForStudents.Rooms = new string[100];
+                md.CSD_ListActiveRoom();
+                for (int x = 0; x < 50; x++)//set to 50 loop
+                {
+                    if (SubjectForStudents.Rooms[x] != "")
+                        cboRoom_10.Items.Add(SubjectForStudents.Rooms[x]);
+                }
+                //to list all professors on that particular courseCode
+                SubjectForStudents.Professors = new string[100];
+                md.CSD_ListProfDedicated(lblCode_10.Text);
+                for (int x = 0; x < 100; x++)//set to 50 loop
+                {
+                    if (SubjectForStudents.Professors[x] != "")
+                        cboProfessor_10.Items.Add(SubjectForStudents.Professors[x]);
+                }
+            }
+            else
+            {
+                SetComboBoxToDisabled();
+                SetToEnabled();
+                btnSet_10.Text = "SET";
+            }
         }
     }
 }
