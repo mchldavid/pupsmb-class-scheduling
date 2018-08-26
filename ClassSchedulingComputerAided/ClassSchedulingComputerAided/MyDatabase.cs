@@ -926,7 +926,7 @@ namespace ClassSchedulingComputerAided
             try
             {
                 con.Open();
-                string sql = "SELECT ps_day AS 'DAY', startTime AS 'START TIME', endTime AS 'END TIME' FROM tbl_preferredschedules WHERE users_id = @id;";
+                string sql = "SELECT ps_day AS 'DAY', startTime AS 'START TIME', endTime AS 'END TIME' FROM tbl_preferredschedules WHERE users_id = @id ORDER BY ps_day, startTime ASC;";
                 MySqlCommand com = new MySqlCommand(sql, con);
                 com.Parameters.AddWithValue("@id", usersData.p_id);
                 com.ExecuteNonQuery();

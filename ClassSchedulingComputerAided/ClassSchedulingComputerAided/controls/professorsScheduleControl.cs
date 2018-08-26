@@ -67,6 +67,8 @@ namespace ClassSchedulingComputerAided
         public bool checkConstraints(string day)
         {
             bool isValid = true;
+            int scheduleIsFree = 0;
+            string message = "";
             for (int x = 0; x < md.Get_id_PSchedule(usersData.p_id).Length; x++)
             {
                 string ps_id = md.Get_id_PSchedule(usersData.p_id).GetValue(x).ToString();
@@ -88,55 +90,69 @@ namespace ClassSchedulingComputerAided
                     {
                         if (dt1 == -1 && dt2 == 1)
                         {
-                            MessageBox.Show(promptMessage, day);
+                            scheduleIsFree++;
+                            message = promptMessage;
                             isValid = false;
                         }
                         if (dt1 == -1 && dt2 == -1 && dt4 == 1)
                         {
-                            MessageBox.Show(promptMessage, day);
+                            scheduleIsFree++;
+                            message = promptMessage;
                             isValid = false;
                         }
                         if (dt1 == 1 && dt2 == 1 && dt3 == -1)
                         {
-                            MessageBox.Show(promptMessage, day);
+                            scheduleIsFree++;
+                            message = promptMessage;
                             isValid = false;
                         }
                         if (dt1 == 1 && dt2 == -1)
                         {
-                            MessageBox.Show(promptMessage, day);
+                            scheduleIsFree++;
+                            message = promptMessage;
                             isValid = false;
                         }
                         if (dt1 == 0 && dt2 == 1 && dt3 == -1)
                         {
-                            MessageBox.Show(promptMessage, day);
+                            scheduleIsFree++;
+                            message = promptMessage;
                             isValid = false;
                         }
                         if (dt1 == 0 && dt2 == -1)
                         {
-                            MessageBox.Show(promptMessage, day);
+                            scheduleIsFree++;
+                            message = promptMessage;
                             isValid = false;
                         }
                         if (dt1 == -1 && dt4 == 1 && dt2 == 0)
                         {
-                            MessageBox.Show(promptMessage, day);
+                            scheduleIsFree++;
+                            message = promptMessage;
                             isValid = false;
                         }
                         if (dt1 == 1 && dt2 == 0)
                         {
-                            MessageBox.Show(promptMessage, day);
+                            scheduleIsFree++;
+                            message = promptMessage;
                             isValid = false;
                         }
                         if (dt1 == 0 && dt2 == 0)
                         {
-                            MessageBox.Show(promptMessage, day);
+                            scheduleIsFree++;
+                            message = promptMessage;
                             isValid = false;
-                        }
-                        if (isValid == true)
-                        {
-                            MessageBox.Show("Your preferred schedule has been added", day);
                         }
                     }
                 }
+            }
+            if (scheduleIsFree < 1)
+            {
+                isValid = true;
+                MessageBox.Show("Your preferred schedule has been added", day);
+            }
+            else
+            {
+                MessageBox.Show(message, day);
             }
             return isValid;
         }

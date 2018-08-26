@@ -2625,7 +2625,7 @@
             // lblTEST
             // 
             this.lblTEST.AutoSize = true;
-            this.lblTEST.Location = new System.Drawing.Point(225, 456);
+            this.lblTEST.Location = new System.Drawing.Point(13, 405);
             this.lblTEST.Name = "lblTEST";
             this.lblTEST.Size = new System.Drawing.Size(41, 13);
             this.lblTEST.TabIndex = 2;
