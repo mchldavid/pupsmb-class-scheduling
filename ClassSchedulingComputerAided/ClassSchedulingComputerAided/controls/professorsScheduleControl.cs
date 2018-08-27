@@ -213,5 +213,23 @@ namespace ClassSchedulingComputerAided
             dgvShow.DataSource = md.dgv_showSchedule().DataSource;
             dgvSchedule.DataSource = md.dgv_showSchedule().DataSource;
         }
+
+        private void btnViewTimetable_Click(object sender, EventArgs e)
+        {
+            if (btnViewTimetable.Text =="VIEW")
+            {
+                pnlView.Visible = true;
+                P_viewTimeTableControl pView = new P_viewTimeTableControl();
+                pnlView.Controls.Add(pView);
+                btnViewTimetable.Text = "CANCEL";
+            }
+            else
+            {
+                pnlView.Visible = false;
+                pnlView.Controls.Clear();
+                btnViewTimetable.Text = "VIEW";
+            }
+
+        }
     }
 }

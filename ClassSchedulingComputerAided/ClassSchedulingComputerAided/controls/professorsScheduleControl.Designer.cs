@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dgvSchedule = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.dgvShow = new System.Windows.Forms.DataGridView();
+            this.dgvSchedule = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.chkFriday = new MetroFramework.Controls.MetroCheckBox();
             this.chkMonday = new MetroFramework.Controls.MetroCheckBox();
@@ -52,9 +52,11 @@
             this.btnDelete = new MetroFramework.Controls.MetroTile();
             this.btnAdd = new MetroFramework.Controls.MetroTile();
             this.lbl_id = new System.Windows.Forms.Label();
+            this.btnViewTimetable = new MetroFramework.Controls.MetroButton();
+            this.pnlView = new System.Windows.Forms.Panel();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSchedule)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSchedule)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -71,25 +73,51 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "List of Schedule";
             // 
+            // dgvShow
+            // 
+            this.dgvShow.AllowUserToAddRows = false;
+            this.dgvShow.AllowUserToDeleteRows = false;
+            this.dgvShow.AllowUserToResizeColumns = false;
+            this.dgvShow.AllowUserToResizeRows = false;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.dgvShow.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvShow.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvShow.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvShow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvShow.DefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvShow.Location = new System.Drawing.Point(6, 16);
+            this.dgvShow.Name = "dgvShow";
+            this.dgvShow.ReadOnly = true;
+            this.dgvShow.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvShow.Size = new System.Drawing.Size(341, 368);
+            this.dgvShow.TabIndex = 0;
+            // 
             // dgvSchedule
             // 
-            dataGridViewCellStyle28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.dgvSchedule.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.dgvSchedule.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvSchedule.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvSchedule.BackgroundColor = System.Drawing.Color.White;
             this.dgvSchedule.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvSchedule.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle29.BackColor = System.Drawing.Color.Brown;
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSchedule.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.Brown;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSchedule.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvSchedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSchedule.DoubleBuffered = true;
             this.dgvSchedule.EnableHeadersVisualStyles = false;
@@ -100,38 +128,12 @@
             this.dgvSchedule.Name = "dgvSchedule";
             this.dgvSchedule.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvSchedule.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
-            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dgvSchedule.RowsDefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dgvSchedule.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvSchedule.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSchedule.Size = new System.Drawing.Size(341, 278);
             this.dgvSchedule.TabIndex = 1;
-            // 
-            // dgvShow
-            // 
-            this.dgvShow.AllowUserToAddRows = false;
-            this.dgvShow.AllowUserToDeleteRows = false;
-            this.dgvShow.AllowUserToResizeColumns = false;
-            this.dgvShow.AllowUserToResizeRows = false;
-            dataGridViewCellStyle26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.dgvShow.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle26;
-            this.dgvShow.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dgvShow.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvShow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvShow.DefaultCellStyle = dataGridViewCellStyle27;
-            this.dgvShow.Location = new System.Drawing.Point(6, 16);
-            this.dgvShow.Name = "dgvShow";
-            this.dgvShow.ReadOnly = true;
-            this.dgvShow.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvShow.Size = new System.Drawing.Size(341, 368);
-            this.dgvShow.TabIndex = 0;
             // 
             // groupBox2
             // 
@@ -390,12 +392,33 @@
             this.lbl_id.Size = new System.Drawing.Size(52, 13);
             this.lbl_id.TabIndex = 172;
             this.lbl_id.Text = "Control Id";
+            this.lbl_id.Visible = false;
+            // 
+            // btnViewTimetable
+            // 
+            this.btnViewTimetable.Location = new System.Drawing.Point(548, 416);
+            this.btnViewTimetable.Name = "btnViewTimetable";
+            this.btnViewTimetable.Size = new System.Drawing.Size(108, 32);
+            this.btnViewTimetable.TabIndex = 168;
+            this.btnViewTimetable.Text = "VIEW";
+            this.btnViewTimetable.Click += new System.EventHandler(this.btnViewTimetable_Click);
+            // 
+            // pnlView
+            // 
+            this.pnlView.AutoScroll = true;
+            this.pnlView.Location = new System.Drawing.Point(0, 3);
+            this.pnlView.Name = "pnlView";
+            this.pnlView.Size = new System.Drawing.Size(668, 409);
+            this.pnlView.TabIndex = 177;
+            this.pnlView.Visible = false;
             // 
             // professorsScheduleControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
+            this.Controls.Add(this.pnlView);
+            this.Controls.Add(this.btnViewTimetable);
             this.Controls.Add(this.lbl_id);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -406,8 +429,8 @@
             this.Size = new System.Drawing.Size(668, 451);
             this.Load += new System.EventHandler(this.professorsScheduleControl_Load);
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSchedule)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSchedule)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -436,5 +459,7 @@
         public MetroFramework.Controls.MetroTile btnDelete;
         public MetroFramework.Controls.MetroTile btnAdd;
         public System.Windows.Forms.Label lbl_id;
+        public MetroFramework.Controls.MetroButton btnViewTimetable;
+        private System.Windows.Forms.Panel pnlView;
     }
 }

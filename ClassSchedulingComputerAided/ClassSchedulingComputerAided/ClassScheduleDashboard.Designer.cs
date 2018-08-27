@@ -567,7 +567,7 @@
             this.label90.Dock = System.Windows.Forms.DockStyle.Top;
             this.label90.Location = new System.Drawing.Point(80, 1);
             this.label90.Name = "label90";
-            this.label90.Size = new System.Drawing.Size(88, 15);
+            this.label90.Size = new System.Drawing.Size(88, 19);
             this.label90.TabIndex = 0;
             this.label90.Text = "MONDAY";
             this.label90.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
