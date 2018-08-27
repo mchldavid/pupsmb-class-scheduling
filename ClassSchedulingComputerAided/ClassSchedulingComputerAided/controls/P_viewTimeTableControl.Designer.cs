@@ -36,9 +36,17 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
+            this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape7 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape6 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape5 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape4 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label68 = new System.Windows.Forms.Label();
             this.label69 = new System.Windows.Forms.Label();
@@ -76,17 +84,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label12 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape4 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape5 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape6 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape7 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape8 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.pnlTimeTable.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -187,6 +188,17 @@
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label7.Visible = false;
             // 
+            // label12
+            // 
+            this.label12.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label12.Location = new System.Drawing.Point(4, 1);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(79, 143);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Monday 7:30 to 10:30";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label12.Visible = false;
+            // 
             // label6
             // 
             this.label6.BackColor = System.Drawing.SystemColors.Highlight;
@@ -201,7 +213,7 @@
             // label13
             // 
             this.label13.BackColor = System.Drawing.Color.LimeGreen;
-            this.label13.Location = new System.Drawing.Point(290, 325);
+            this.label13.Location = new System.Drawing.Point(3, 487);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(79, 35);
             this.label13.TabIndex = 0;
@@ -218,6 +230,83 @@
             this.label38.TabIndex = 0;
             this.label38.Text = "Monday 7:30 to 10:30";
             this.label38.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // shapeContainer2
+            // 
+            this.shapeContainer2.Location = new System.Drawing.Point(0, 0);
+            this.shapeContainer2.Margin = new System.Windows.Forms.Padding(0);
+            this.shapeContainer2.Name = "shapeContainer2";
+            this.shapeContainer2.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.lineShape8,
+            this.lineShape7,
+            this.lineShape6,
+            this.lineShape5,
+            this.lineShape4,
+            this.lineShape3,
+            this.lineShape2});
+            this.shapeContainer2.Size = new System.Drawing.Size(575, 534);
+            this.shapeContainer2.TabIndex = 1;
+            this.shapeContainer2.TabStop = false;
+            // 
+            // lineShape7
+            // 
+            this.lineShape7.BorderColor = System.Drawing.SystemColors.ControlDark;
+            this.lineShape7.BorderWidth = 2;
+            this.lineShape7.Name = "lineShape7";
+            this.lineShape7.X1 = 494;
+            this.lineShape7.X2 = 494;
+            this.lineShape7.Y1 = -1;
+            this.lineShape7.Y2 = 531;
+            // 
+            // lineShape6
+            // 
+            this.lineShape6.BorderColor = System.Drawing.SystemColors.ControlDark;
+            this.lineShape6.BorderWidth = 2;
+            this.lineShape6.Name = "lineShape6";
+            this.lineShape6.X1 = 412;
+            this.lineShape6.X2 = 412;
+            this.lineShape6.Y1 = 1;
+            this.lineShape6.Y2 = 533;
+            // 
+            // lineShape5
+            // 
+            this.lineShape5.BorderColor = System.Drawing.SystemColors.ControlDark;
+            this.lineShape5.BorderWidth = 2;
+            this.lineShape5.Name = "lineShape5";
+            this.lineShape5.X1 = 330;
+            this.lineShape5.X2 = 330;
+            this.lineShape5.Y1 = 1;
+            this.lineShape5.Y2 = 533;
+            // 
+            // lineShape4
+            // 
+            this.lineShape4.BorderColor = System.Drawing.SystemColors.ControlDark;
+            this.lineShape4.BorderWidth = 2;
+            this.lineShape4.Name = "lineShape4";
+            this.lineShape4.X1 = 248;
+            this.lineShape4.X2 = 248;
+            this.lineShape4.Y1 = -1;
+            this.lineShape4.Y2 = 531;
+            // 
+            // lineShape3
+            // 
+            this.lineShape3.BorderColor = System.Drawing.SystemColors.ControlDark;
+            this.lineShape3.BorderWidth = 2;
+            this.lineShape3.Name = "lineShape3";
+            this.lineShape3.X1 = 166;
+            this.lineShape3.X2 = 166;
+            this.lineShape3.Y1 = -2;
+            this.lineShape3.Y2 = 530;
+            // 
+            // lineShape2
+            // 
+            this.lineShape2.BorderColor = System.Drawing.SystemColors.ControlDark;
+            this.lineShape2.BorderWidth = 2;
+            this.lineShape2.Name = "lineShape2";
+            this.lineShape2.X1 = 84;
+            this.lineShape2.X2 = 84;
+            this.lineShape2.Y1 = -1;
+            this.lineShape2.Y2 = 531;
             // 
             // tableLayoutPanel2
             // 
@@ -255,7 +344,7 @@
             this.tableLayoutPanel2.Controls.Add(this.label64, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.label65, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.label66, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 23);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 24);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 31;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 3.333555F));
@@ -723,17 +812,6 @@
             this.panel1.Size = new System.Drawing.Size(655, 42);
             this.panel1.TabIndex = 4;
             // 
-            // label12
-            // 
-            this.label12.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label12.Location = new System.Drawing.Point(4, 1);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(79, 143);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "Monday 7:30 to 10:30";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label12.Visible = false;
-            // 
             // label14
             // 
             this.label14.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -764,91 +842,25 @@
             this.lineShape1.Y1 = 0;
             this.lineShape1.Y2 = 23;
             // 
-            // shapeContainer2
+            // lineShape8
             // 
-            this.shapeContainer2.Location = new System.Drawing.Point(0, 0);
-            this.shapeContainer2.Margin = new System.Windows.Forms.Padding(0);
-            this.shapeContainer2.Name = "shapeContainer2";
-            this.shapeContainer2.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
-            this.lineShape7,
-            this.lineShape6,
-            this.lineShape5,
-            this.lineShape4,
-            this.lineShape3,
-            this.lineShape2});
-            this.shapeContainer2.Size = new System.Drawing.Size(575, 534);
-            this.shapeContainer2.TabIndex = 1;
-            this.shapeContainer2.TabStop = false;
-            // 
-            // lineShape2
-            // 
-            this.lineShape2.BorderColor = System.Drawing.SystemColors.ControlDark;
-            this.lineShape2.BorderWidth = 2;
-            this.lineShape2.Name = "lineShape2";
-            this.lineShape2.X1 = 84;
-            this.lineShape2.X2 = 84;
-            this.lineShape2.Y1 = -1;
-            this.lineShape2.Y2 = 531;
-            // 
-            // lineShape3
-            // 
-            this.lineShape3.BorderColor = System.Drawing.SystemColors.ControlDark;
-            this.lineShape3.BorderWidth = 2;
-            this.lineShape3.Name = "lineShape3";
-            this.lineShape3.X1 = 166;
-            this.lineShape3.X2 = 166;
-            this.lineShape3.Y1 = -2;
-            this.lineShape3.Y2 = 530;
-            // 
-            // lineShape4
-            // 
-            this.lineShape4.BorderColor = System.Drawing.SystemColors.ControlDark;
-            this.lineShape4.BorderWidth = 2;
-            this.lineShape4.Name = "lineShape4";
-            this.lineShape4.X1 = 248;
-            this.lineShape4.X2 = 248;
-            this.lineShape4.Y1 = -1;
-            this.lineShape4.Y2 = 531;
-            // 
-            // lineShape5
-            // 
-            this.lineShape5.BorderColor = System.Drawing.SystemColors.ControlDark;
-            this.lineShape5.BorderWidth = 2;
-            this.lineShape5.Name = "lineShape5";
-            this.lineShape5.X1 = 330;
-            this.lineShape5.X2 = 330;
-            this.lineShape5.Y1 = 1;
-            this.lineShape5.Y2 = 533;
-            // 
-            // lineShape6
-            // 
-            this.lineShape6.BorderColor = System.Drawing.SystemColors.ControlDark;
-            this.lineShape6.BorderWidth = 2;
-            this.lineShape6.Name = "lineShape6";
-            this.lineShape6.X1 = 412;
-            this.lineShape6.X2 = 412;
-            this.lineShape6.Y1 = 1;
-            this.lineShape6.Y2 = 533;
-            // 
-            // lineShape7
-            // 
-            this.lineShape7.BorderColor = System.Drawing.SystemColors.ControlDark;
-            this.lineShape7.BorderWidth = 2;
-            this.lineShape7.Name = "lineShape7";
-            this.lineShape7.X1 = 494;
-            this.lineShape7.X2 = 494;
-            this.lineShape7.Y1 = -1;
-            this.lineShape7.Y2 = 531;
+            this.lineShape8.BorderColor = System.Drawing.SystemColors.ControlDark;
+            this.lineShape8.BorderWidth = 2;
+            this.lineShape8.Name = "lineShape8";
+            this.lineShape8.X1 = 2;
+            this.lineShape8.X2 = 2;
+            this.lineShape8.Y1 = -1;
+            this.lineShape8.Y2 = 531;
             // 
             // P_viewTimeTableControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.pnlTimeTable);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.shapeContainer1);
-            this.Controls.Add(this.pnlTimeTable);
             this.Name = "P_viewTimeTableControl";
             this.Size = new System.Drawing.Size(650, 568);
             this.Load += new System.EventHandler(this.P_viewTimeTableControl_Load);
@@ -920,6 +932,7 @@
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape8;
 
     }
 }

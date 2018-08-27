@@ -199,6 +199,9 @@ namespace ClassSchedulingComputerAided
                 case "8:00 PM":
                     startPoint = 469;
                     break;
+                case "8:30 PM":
+                    startPoint = 487;
+                    break;
                 case "9:00 PM":
                     startPoint = 505;
                     break;
