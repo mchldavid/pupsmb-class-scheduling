@@ -161,7 +161,8 @@
             this.btnSet_2 = new MetroFramework.Controls.MetroButton();
             this.btnSet_1 = new MetroFramework.Controls.MetroButton();
             this.btnAdd = new MetroFramework.Controls.MetroTile();
-            this.lblTEST = new System.Windows.Forms.Label();
+            this.pnlProfessors = new System.Windows.Forms.Panel();
+            this.pnlRooms = new System.Windows.Forms.Panel();
             this.pnlStudentScheduling.SuspendLayout();
             this.tbl_pnl_layout.SuspendLayout();
             this.pnlHeader.SuspendLayout();
@@ -169,8 +170,7 @@
             // 
             // pnlStudentScheduling
             // 
-            this.pnlStudentScheduling.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.pnlStudentScheduling.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlStudentScheduling.AutoScroll = true;
             this.pnlStudentScheduling.BackColor = System.Drawing.Color.White;
@@ -190,7 +190,7 @@
             this.pnlStudentScheduling.Controls.Add(this.btnAdd);
             this.pnlStudentScheduling.Location = new System.Drawing.Point(12, 11);
             this.pnlStudentScheduling.Name = "pnlStudentScheduling";
-            this.pnlStudentScheduling.Size = new System.Drawing.Size(1343, 371);
+            this.pnlStudentScheduling.Size = new System.Drawing.Size(1342, 369);
             this.pnlStudentScheduling.TabIndex = 1;
             // 
             // tbl_pnl_layout
@@ -2622,23 +2622,37 @@
             this.btnAdd.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.btnAdd.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             // 
-            // lblTEST
+            // pnlProfessors
             // 
-            this.lblTEST.AutoSize = true;
-            this.lblTEST.Location = new System.Drawing.Point(13, 405);
-            this.lblTEST.Name = "lblTEST";
-            this.lblTEST.Size = new System.Drawing.Size(41, 13);
-            this.lblTEST.TabIndex = 2;
-            this.lblTEST.Text = "label10";
+            this.pnlProfessors.AutoScroll = true;
+            this.pnlProfessors.BackColor = System.Drawing.Color.White;
+            this.pnlProfessors.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlProfessors.Location = new System.Drawing.Point(12, 386);
+            this.pnlProfessors.Name = "pnlProfessors";
+            this.pnlProfessors.Size = new System.Drawing.Size(587, 345);
+            this.pnlProfessors.TabIndex = 8;
+            this.pnlProfessors.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // pnlRooms
+            // 
+            this.pnlRooms.AutoScroll = true;
+            this.pnlRooms.BackColor = System.Drawing.Color.White;
+            this.pnlRooms.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlRooms.Location = new System.Drawing.Point(605, 386);
+            this.pnlRooms.Name = "pnlRooms";
+            this.pnlRooms.Size = new System.Drawing.Size(749, 345);
+            this.pnlRooms.TabIndex = 10;
             // 
             // classSchedulingDashboard_UserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.lblTEST);
+            this.AutoScroll = true;
+            this.Controls.Add(this.pnlRooms);
+            this.Controls.Add(this.pnlProfessors);
             this.Controls.Add(this.pnlStudentScheduling);
             this.Name = "classSchedulingDashboard_UserControl";
-            this.Size = new System.Drawing.Size(1373, 866);
+            this.Size = new System.Drawing.Size(1373, 842);
             this.Load += new System.EventHandler(this.classSchedulingDashboard_UserControl_Load);
             this.pnlStudentScheduling.ResumeLayout(false);
             this.tbl_pnl_layout.ResumeLayout(false);
@@ -2646,7 +2660,6 @@
             this.pnlHeader.ResumeLayout(false);
             this.pnlHeader.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -2785,6 +2798,7 @@
         public System.Windows.Forms.ComboBox cboYear;
         public System.Windows.Forms.ComboBox cboCourse;
         public System.Windows.Forms.ComboBox cboCurriculum;
-        private System.Windows.Forms.Label lblTEST;
+        private System.Windows.Forms.Panel pnlProfessors;
+        private System.Windows.Forms.Panel pnlRooms;
     }
 }

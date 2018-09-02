@@ -1,6 +1,6 @@
 ﻿namespace ClassSchedulingComputerAided
 {
-    partial class P_viewTimeTableControl
+    partial class CSD_ProfTimeTable
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,17 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
-            this.pnlTimeTable = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.pnlTimeTable = new System.Windows.Forms.Panel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
             this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape8 = new Microsoft.VisualBasic.PowerPacks.LineShape();
@@ -72,34 +80,67 @@
             this.label88 = new System.Windows.Forms.Label();
             this.label89 = new System.Windows.Forms.Label();
             this.label67 = new System.Windows.Forms.Label();
-            this.label60 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
             this.label61 = new System.Windows.Forms.Label();
             this.label62 = new System.Windows.Forms.Label();
             this.label63 = new System.Windows.Forms.Label();
             this.label64 = new System.Windows.Forms.Label();
             this.label65 = new System.Windows.Forms.Label();
             this.label66 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label14 = new System.Windows.Forms.Label();
-            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lblProfessorsTimeTable = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.pnlTimeTable.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.panel1);
+            this.panel3.Controls.Add(this.pnlTimeTable);
+            this.panel3.Controls.Add(this.tableLayoutPanel2);
+            this.panel3.Location = new System.Drawing.Point(3, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(656, 568);
+            this.panel3.TabIndex = 11;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.DimGray;
+            this.panel1.Controls.Add(this.label14);
+            this.panel1.Controls.Add(this.label31);
+            this.panel1.Controls.Add(this.label32);
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.label12);
+            this.panel1.Controls.Add(this.label13);
+            this.panel1.Controls.Add(this.label15);
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(649, 42);
+            this.panel1.TabIndex = 7;
+            // 
+            // label14
+            // 
+            this.label14.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.LightGray;
+            this.label14.Location = new System.Drawing.Point(-3, 1);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(79, 41);
+            this.label14.TabIndex = 1;
+            this.label14.Text = "Time";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label31
             // 
+            this.label31.BackColor = System.Drawing.Color.DarkKhaki;
             this.label31.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label31.ForeColor = System.Drawing.Color.White;
-            this.label31.Location = new System.Drawing.Point(80, 0);
+            this.label31.Location = new System.Drawing.Point(76, 0);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(79, 41);
+            this.label31.Size = new System.Drawing.Size(83, 41);
             this.label31.TabIndex = 1;
             this.label31.Text = "MON";
             this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -114,112 +155,167 @@
             this.label32.TabIndex = 1;
             this.label32.Text = "TUE";
             this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label32.Click += new System.EventHandler(this.label32_Click);
-            // 
-            // pnlTimeTable
-            // 
-            this.pnlTimeTable.Controls.Add(this.label11);
-            this.pnlTimeTable.Controls.Add(this.label10);
-            this.pnlTimeTable.Controls.Add(this.label9);
-            this.pnlTimeTable.Controls.Add(this.label8);
-            this.pnlTimeTable.Controls.Add(this.label7);
-            this.pnlTimeTable.Controls.Add(this.label12);
-            this.pnlTimeTable.Controls.Add(this.label6);
-            this.pnlTimeTable.Controls.Add(this.label13);
-            this.pnlTimeTable.Controls.Add(this.label38);
-            this.pnlTimeTable.Controls.Add(this.shapeContainer2);
-            this.pnlTimeTable.Location = new System.Drawing.Point(74, 42);
-            this.pnlTimeTable.Name = "pnlTimeTable";
-            this.pnlTimeTable.Size = new System.Drawing.Size(575, 534);
-            this.pnlTimeTable.TabIndex = 2;
-            // 
-            // label11
-            // 
-            this.label11.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label11.Location = new System.Drawing.Point(496, 1);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(79, 143);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "Monday 7:30 to 10:30";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label11.Visible = false;
             // 
             // label10
             // 
-            this.label10.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label10.Location = new System.Drawing.Point(414, 1);
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(242, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(79, 143);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Monday 7:30 to 10:30";
+            this.label10.Size = new System.Drawing.Size(76, 41);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "WED";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label10.Visible = false;
             // 
-            // label9
+            // label11
             // 
-            this.label9.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label9.Location = new System.Drawing.Point(332, 1);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(79, 143);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Monday 7:30 to 10:30";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label9.Visible = false;
-            // 
-            // label8
-            // 
-            this.label8.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label8.Location = new System.Drawing.Point(250, 1);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(79, 143);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Monday 7:30 to 10:30";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label8.Visible = false;
-            // 
-            // label7
-            // 
-            this.label7.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label7.Location = new System.Drawing.Point(168, 1);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(79, 143);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Monday 7:30 to 10:30";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label7.Visible = false;
+            this.label11.BackColor = System.Drawing.Color.Salmon;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(569, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(80, 41);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "SUN";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label12
             // 
-            this.label12.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label12.Location = new System.Drawing.Point(4, 1);
+            this.label12.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(323, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(79, 143);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "Monday 7:30 to 10:30";
+            this.label12.Size = new System.Drawing.Size(76, 41);
+            this.label12.TabIndex = 1;
+            this.label12.Text = "THUR";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label12.Visible = false;
-            // 
-            // label6
-            // 
-            this.label6.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label6.Location = new System.Drawing.Point(86, 1);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(79, 143);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Monday 7:30 to 10:30";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label6.Visible = false;
             // 
             // label13
             // 
-            this.label13.BackColor = System.Drawing.Color.LimeGreen;
-            this.label13.Location = new System.Drawing.Point(3, 487);
+            this.label13.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(488, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(79, 35);
-            this.label13.TabIndex = 0;
-            this.label13.Text = "Monday 7:30 to 10:30";
+            this.label13.Size = new System.Drawing.Size(76, 41);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "SAT";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label13.Visible = false;
+            // 
+            // label15
+            // 
+            this.label15.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.Location = new System.Drawing.Point(409, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(67, 41);
+            this.label15.TabIndex = 1;
+            this.label15.Text = "FRI";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlTimeTable
+            // 
+            this.pnlTimeTable.Controls.Add(this.label16);
+            this.pnlTimeTable.Controls.Add(this.label17);
+            this.pnlTimeTable.Controls.Add(this.label18);
+            this.pnlTimeTable.Controls.Add(this.label19);
+            this.pnlTimeTable.Controls.Add(this.label20);
+            this.pnlTimeTable.Controls.Add(this.label21);
+            this.pnlTimeTable.Controls.Add(this.label22);
+            this.pnlTimeTable.Controls.Add(this.label23);
+            this.pnlTimeTable.Controls.Add(this.label38);
+            this.pnlTimeTable.Controls.Add(this.shapeContainer2);
+            this.pnlTimeTable.Location = new System.Drawing.Point(77, 45);
+            this.pnlTimeTable.Name = "pnlTimeTable";
+            this.pnlTimeTable.Size = new System.Drawing.Size(575, 534);
+            this.pnlTimeTable.TabIndex = 5;
+            // 
+            // label16
+            // 
+            this.label16.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label16.Location = new System.Drawing.Point(496, 1);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(79, 143);
+            this.label16.TabIndex = 0;
+            this.label16.Text = "Monday 7:30 to 10:30";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label16.Visible = false;
+            // 
+            // label17
+            // 
+            this.label17.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label17.Location = new System.Drawing.Point(414, 1);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(79, 143);
+            this.label17.TabIndex = 0;
+            this.label17.Text = "Monday 7:30 to 10:30";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label17.Visible = false;
+            // 
+            // label18
+            // 
+            this.label18.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label18.Location = new System.Drawing.Point(332, 1);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(79, 143);
+            this.label18.TabIndex = 0;
+            this.label18.Text = "Monday 7:30 to 10:30";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label18.Visible = false;
+            // 
+            // label19
+            // 
+            this.label19.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label19.Location = new System.Drawing.Point(250, 1);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(79, 143);
+            this.label19.TabIndex = 0;
+            this.label19.Text = "Monday 7:30 to 10:30";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label19.Visible = false;
+            // 
+            // label20
+            // 
+            this.label20.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label20.Location = new System.Drawing.Point(168, 1);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(79, 143);
+            this.label20.TabIndex = 0;
+            this.label20.Text = "Monday 7:30 to 10:30";
+            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label20.Visible = false;
+            // 
+            // label21
+            // 
+            this.label21.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label21.Location = new System.Drawing.Point(4, 1);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(79, 143);
+            this.label21.TabIndex = 0;
+            this.label21.Text = "Monday 7:30 to 10:30";
+            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label21.Visible = false;
+            // 
+            // label22
+            // 
+            this.label22.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label22.Location = new System.Drawing.Point(86, 1);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(79, 143);
+            this.label22.TabIndex = 0;
+            this.label22.Text = "Monday 7:30 to 10:30";
+            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label22.Visible = false;
+            // 
+            // label23
+            // 
+            this.label23.BackColor = System.Drawing.Color.LimeGreen;
+            this.label23.Location = new System.Drawing.Point(86, 424);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(79, 35);
+            this.label23.TabIndex = 0;
+            this.label23.Text = "Monday 7:30 to 10:30";
+            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label23.Visible = false;
             // 
             // label38
             // 
@@ -347,14 +443,14 @@
             this.tableLayoutPanel2.Controls.Add(this.label88, 0, 28);
             this.tableLayoutPanel2.Controls.Add(this.label89, 0, 29);
             this.tableLayoutPanel2.Controls.Add(this.label67, 0, 7);
-            this.tableLayoutPanel2.Controls.Add(this.label60, 0, 6);
+            this.tableLayoutPanel2.Controls.Add(this.label24, 0, 6);
             this.tableLayoutPanel2.Controls.Add(this.label61, 0, 5);
             this.tableLayoutPanel2.Controls.Add(this.label62, 0, 4);
             this.tableLayoutPanel2.Controls.Add(this.label63, 0, 3);
             this.tableLayoutPanel2.Controls.Add(this.label64, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.label65, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.label66, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 24);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 27);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 31;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 3.333555F));
@@ -389,7 +485,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 3.330221F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(76, 582);
-            this.tableLayoutPanel2.TabIndex = 3;
+            this.tableLayoutPanel2.TabIndex = 6;
             // 
             // label68
             // 
@@ -667,17 +763,17 @@
             this.label67.Text = "10:00 am";
             this.label67.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label60
+            // label24
             // 
-            this.label60.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label24.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label60.Location = new System.Drawing.Point(4, 109);
-            this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(68, 17);
-            this.label60.TabIndex = 0;
-            this.label60.Text = "9:30 am";
-            this.label60.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label24.Location = new System.Drawing.Point(4, 109);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(68, 17);
+            this.label24.TabIndex = 0;
+            this.label24.Text = "9:30 am";
+            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label61
             // 
@@ -748,135 +844,73 @@
             this.label66.Text = "TIME";
             this.label66.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
+            // lblProfessorsTimeTable
             // 
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(242, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 41);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "WED";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblProfessorsTimeTable.AutoSize = true;
+            this.lblProfessorsTimeTable.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProfessorsTimeTable.Location = new System.Drawing.Point(6, 5);
+            this.lblProfessorsTimeTable.Name = "lblProfessorsTimeTable";
+            this.lblProfessorsTimeTable.Size = new System.Drawing.Size(164, 23);
+            this.lblProfessorsTimeTable.TabIndex = 10;
+            this.lblProfessorsTimeTable.Text = "Professor\'s Name";
             // 
-            // label2
+            // panel2
             // 
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(323, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 41);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "THUR";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Location = new System.Drawing.Point(-6, 25);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(661, 572);
+            this.panel2.TabIndex = 12;
             // 
-            // label3
-            // 
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(409, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 41);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "FRI";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // label4
-            // 
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(488, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(76, 41);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "SAT";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label4.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // label5
-            // 
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(569, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(76, 41);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "SUN";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label5.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.DimGray;
-            this.panel1.Controls.Add(this.label14);
-            this.panel1.Controls.Add(this.label31);
-            this.panel1.Controls.Add(this.label32);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(655, 42);
-            this.panel1.TabIndex = 4;
-            // 
-            // label14
-            // 
-            this.label14.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.LightGray;
-            this.label14.Location = new System.Drawing.Point(-3, 1);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(79, 41);
-            this.label14.TabIndex = 1;
-            this.label14.Text = "Time";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // shapeContainer1
-            // 
-            this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
-            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
-            this.shapeContainer1.Name = "shapeContainer1";
-            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
-            this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(650, 568);
-            this.shapeContainer1.TabIndex = 5;
-            this.shapeContainer1.TabStop = false;
-            // 
-            // lineShape1
-            // 
-            this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = 0;
-            this.lineShape1.X2 = 75;
-            this.lineShape1.Y1 = 0;
-            this.lineShape1.Y2 = 23;
-            // 
-            // P_viewTimeTableControl
+            // CSD_ProfTimeTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.pnlTimeTable);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.tableLayoutPanel2);
-            this.Controls.Add(this.shapeContainer1);
-            this.Name = "P_viewTimeTableControl";
-            this.Size = new System.Drawing.Size(650, 568);
-            this.Load += new System.EventHandler(this.P_viewTimeTableControl_Load);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.lblProfessorsTimeTable);
+            this.Name = "CSD_ProfTimeTable";
+            this.Size = new System.Drawing.Size(651, 600);
+            this.Load += new System.EventHandler(this.CSD_ProfTimeTable_Load);
+            this.panel3.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.pnlTimeTable.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Panel pnlTimeTable;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label38;
+        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer2;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape8;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape7;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape6;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape5;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape4;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape3;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label68;
         private System.Windows.Forms.Label label69;
@@ -901,38 +935,15 @@
         private System.Windows.Forms.Label label88;
         private System.Windows.Forms.Label label89;
         private System.Windows.Forms.Label label67;
-        private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label61;
         private System.Windows.Forms.Label label62;
         private System.Windows.Forms.Label label63;
         private System.Windows.Forms.Label label64;
         private System.Windows.Forms.Label label65;
         private System.Windows.Forms.Label label66;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label14;
-        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer2;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape7;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape6;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape5;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape4;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape3;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
-        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape8;
+        private System.Windows.Forms.Label lblProfessorsTimeTable;
+        private System.Windows.Forms.Panel panel2;
 
     }
 }

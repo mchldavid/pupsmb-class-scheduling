@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ClassSchedulingComputerAided
 {
-    public partial class P_viewTimeTableControl : UserControl
+    public partial class CSD_ProfTimeTable : UserControl
     {
-        public P_viewTimeTableControl()
+        public CSD_ProfTimeTable()
         {
             InitializeComponent();
         }
@@ -56,59 +56,15 @@ namespace ClassSchedulingComputerAided
             "8:30 PM",
             "9:00 PM"};
 
-        private void P_viewTimeTableControl_Load(object sender, EventArgs e)
-        {
-            for (int x = 0; x < md.Get_id_PSchedule(usersData.p_id).Length; x++)
-            {
-                string ps_id = md.Get_id_PSchedule(usersData.p_id).GetValue(x).ToString();
-                if (ps_id != "")
-                {
-                    int day = GetDay(md.Get_info_PSchedule(ps_id).GetValue(2).ToString());
-                    int st = GetStartTime(md.Get_info_PSchedule(ps_id).GetValue(0).ToString());
-
-                    string ps_startTime = md.Get_info_PSchedule(ps_id).GetValue(0).ToString();
-                    string ps_endTime = md.Get_info_PSchedule(ps_id).GetValue(1).ToString();
-                    int shade = 0;
-                    int startShade = 0;
-
-                    for (int y = 0; y < GetEndTime.Length; y++)
-                    {
-                        if (ps_startTime == GetEndTime[y])
-                        {
-                            startShade = y;
-                            y = GetEndTime.Length;
-                        }
-                    }
-
-                    int c = 0;
-                    for (int z = startShade; z < GetEndTime.Length; z++)
-                    {
-                        c++;
-                        if (ps_endTime == GetEndTime[z])
-                        {
-                            shade += 18 * c;
-                        }
-                    }
-                    callDay = day;
-                    callStart = st;
-                    callShade = shade;
-                    dayPrompt = md.Get_info_PSchedule(ps_id).GetValue(2).ToString();
-                    startTimePrompt = md.Get_info_PSchedule(ps_id).GetValue(0).ToString();
-                    endTimePrompt = md.Get_info_PSchedule(ps_id).GetValue(1).ToString();
-                    AddLabel();
-                }
-            }
-        }
-
-        //dynamic Control
+        //dynamic control
         public System.Windows.Forms.Label AddLabel()
         {
             System.Windows.Forms.Label lbl = new System.Windows.Forms.Label();
             pnlTimeTable.Controls.Add(lbl);
-            lbl.Text = ""+dayPrompt+"\r\n"+ startTimePrompt +" to "+ endTimePrompt+"";
+            lbl.Text = "" + dayPrompt + "\r\n" + startTimePrompt + " to " + endTimePrompt + "";
             lbl.Location = new System.Drawing.Point(callDay, callStart);
             lbl.Size = new System.Drawing.Size(79, callShade);
-            lbl.BackColor = System.Drawing.Color.LimeGreen;
+            lbl.BackColor = System.Drawing.Color.YellowGreen;
             lbl.TextAlign = ContentAlignment.MiddleCenter;
             return lbl;
         }
@@ -215,44 +171,78 @@ namespace ClassSchedulingComputerAided
         //to get the Day
         public int GetDay(string day)
         {
-	        int pointDay = 0;
-	        switch(day)
-	        {
-		        case "Monday":
-			        pointDay = 4;
-			        break;
-		        case "Tuesday":
-			        pointDay = 86;
-			        break;
-		        case "Wednesday":
-			        pointDay = 168;
-			        break;
-		        case "Thursday":
-			        pointDay = 250;
-			        break;
-		        case "Friday":
-			        pointDay = 332;
-			        break;
-		        case "Saturday":
-			        pointDay = 414;
-			        break;
-		        case "Sunday":
-			        pointDay = 496;
-			        break;
-		        default:
-			        break;
-	        }
-	        return pointDay;
+            int pointDay = 0;
+            switch (day)
+            {
+                case "Monday":
+                    pointDay = 4;
+                    break;
+                case "Tuesday":
+                    pointDay = 86;
+                    break;
+                case "Wednesday":
+                    pointDay = 168;
+                    break;
+                case "Thursday":
+                    pointDay = 250;
+                    break;
+                case "Friday":
+                    pointDay = 332;
+                    break;
+                case "Saturday":
+                    pointDay = 414;
+                    break;
+                case "Sunday":
+                    pointDay = 496;
+                    break;
+                default:
+                    break;
+            }
+            return pointDay;
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void CSD_ProfTimeTable_Load(object sender, EventArgs e)
         {
+            for (int x = 0; x < md.Get_id_PSchedule(usersData.p_id).Length; x++)
+            {
+                string ps_id = md.Get_id_PSchedule(usersData.p_id).GetValue(x).ToString();
+                if (ps_id != "")
+                {
+                    int day = GetDay(md.Get_info_PSchedule(ps_id).GetValue(2).ToString());
+                    int st = GetStartTime(md.Get_info_PSchedule(ps_id).GetValue(0).ToString());
 
-        }
+                    string ps_startTime = md.Get_info_PSchedule(ps_id).GetValue(0).ToString();
+                    string ps_endTime = md.Get_info_PSchedule(ps_id).GetValue(1).ToString();
+                    int shade = 0;
+                    int startShade = 0;
 
-        private void label32_Click(object sender, EventArgs e)
-        {
+                    for (int y = 0; y < GetEndTime.Length; y++)
+                    {
+                        if (ps_startTime == GetEndTime[y])
+                        {
+                            startShade = y;
+                            y = GetEndTime.Length;
+                        }
+                    }
 
+                    int c = 0;
+                    for (int z = startShade; z < GetEndTime.Length; z++)
+                    {
+                        c++;
+                        if (ps_endTime == GetEndTime[z])
+                        {
+                            shade += 18 * c;
+                        }
+                    }
+                    callDay = day;
+                    callStart = st;
+                    callShade = shade;
+                    dayPrompt = md.Get_info_PSchedule(ps_id).GetValue(2).ToString();
+                    startTimePrompt = md.Get_info_PSchedule(ps_id).GetValue(0).ToString();
+                    endTimePrompt = md.Get_info_PSchedule(ps_id).GetValue(1).ToString();
+                    AddLabel();
+                }
+            }
         }
     }
 }

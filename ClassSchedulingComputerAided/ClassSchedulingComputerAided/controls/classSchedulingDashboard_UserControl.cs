@@ -317,7 +317,11 @@ namespace ClassSchedulingComputerAided
 
         private void classSchedulingDashboard_UserControl_Load(object sender, EventArgs e)
         {
+            RoomTimeTableControl rttc = new RoomTimeTableControl();
+            pnlRooms.Controls.Add(rttc);
 
+            CSD_ProfTimeTable ptt = new CSD_ProfTimeTable();
+            pnlProfessors.Controls.Add(ptt);
         }
 
         private void cboCourse_SelectedIndexChanged(object sender, EventArgs e)
@@ -835,6 +839,11 @@ namespace ClassSchedulingComputerAided
                 SetToEnabled();
                 btnSet_10.Text = "SET";
             }
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

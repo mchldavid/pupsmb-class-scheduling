@@ -87,6 +87,12 @@
     <Compile Include="controls\classSchedulingDashboard_UserControl.Designer.cs">
       <DependentUpon>classSchedulingDashboard_UserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="controls\CSD_ProfTimeTable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\CSD_ProfTimeTable.Designer.cs">
+      <DependentUpon>CSD_ProfTimeTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="curriculumData.cs" />
     <Compile Include="controls\professorsScheduleControl.cs">
       <SubType>UserControl</SubType>
@@ -124,6 +130,12 @@
     </Compile>
     <Compile Include="controls\P_viewTimeTableControl.Designer.cs">
       <DependentUpon>P_viewTimeTableControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controls\RoomTimeTableControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\RoomTimeTableControl.Designer.cs">
+      <DependentUpon>RoomTimeTableControl.cs</DependentUpon>
     </Compile>
     <Compile Include="SubjectForStudents.cs" />
     <Compile Include="trash\Information.cs">
@@ -286,6 +298,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="controls\P_viewTimeTableControl.resx">
       <DependentUpon>P_viewTimeTableControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controls\RoomTimeTableControl.resx">
+      <DependentUpon>RoomTimeTableControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controls\CSD_ProfTimeTable.resx">
+      <DependentUpon>CSD_ProfTimeTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="trash\Information.resx">
       <DependentUpon>Information.cs</DependentUpon>
