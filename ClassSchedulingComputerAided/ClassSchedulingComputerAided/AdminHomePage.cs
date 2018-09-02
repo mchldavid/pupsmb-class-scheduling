@@ -64,6 +64,8 @@ namespace ClassSchedulingComputerAided
 
         private void btnClassScheduleDashboard_Click(object sender, EventArgs e)
         {
+            ClassSchedule_Data.Professors_id = "";
+            ClassSchedule_Data.professors_name = "";
             Form csd = new frmClassScheduleDashboard();
             csd.Show();
             this.Hide();

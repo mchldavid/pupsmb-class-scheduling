@@ -81,6 +81,7 @@
     <Compile Include="ClassScheduleDashboard.Designer.cs">
       <DependentUpon>ClassScheduleDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="ClassSchedule_Data.cs" />
     <Compile Include="controls\classSchedulingDashboard_UserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

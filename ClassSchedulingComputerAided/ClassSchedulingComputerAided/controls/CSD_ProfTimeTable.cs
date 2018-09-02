@@ -203,9 +203,10 @@ namespace ClassSchedulingComputerAided
 
         private void CSD_ProfTimeTable_Load(object sender, EventArgs e)
         {
-            for (int x = 0; x < md.Get_id_PSchedule(usersData.p_id).Length; x++)
+            lblProfessorsName.Text = ClassSchedule_Data.professors_name + " (PREFERRED SCHEDULE)";// to show the name of the selected professor
+            for (int x = 0; x < md.Get_id_PSchedule(ClassSchedule_Data.Professors_id).Length; x++)
             {
-                string ps_id = md.Get_id_PSchedule(usersData.p_id).GetValue(x).ToString();
+                string ps_id = md.Get_id_PSchedule(ClassSchedule_Data.Professors_id).GetValue(x).ToString();
                 if (ps_id != "")
                 {
                     int day = GetDay(md.Get_info_PSchedule(ps_id).GetValue(2).ToString());

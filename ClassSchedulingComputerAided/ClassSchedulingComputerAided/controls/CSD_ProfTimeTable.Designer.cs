@@ -87,7 +87,7 @@
             this.label64 = new System.Windows.Forms.Label();
             this.label65 = new System.Windows.Forms.Label();
             this.label66 = new System.Windows.Forms.Label();
-            this.lblProfessorsTimeTable = new System.Windows.Forms.Label();
+            this.lblProfessorsName = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -844,15 +844,15 @@
             this.label66.Text = "TIME";
             this.label66.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblProfessorsTimeTable
+            // lblProfessorsName
             // 
-            this.lblProfessorsTimeTable.AutoSize = true;
-            this.lblProfessorsTimeTable.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProfessorsTimeTable.Location = new System.Drawing.Point(6, 5);
-            this.lblProfessorsTimeTable.Name = "lblProfessorsTimeTable";
-            this.lblProfessorsTimeTable.Size = new System.Drawing.Size(164, 23);
-            this.lblProfessorsTimeTable.TabIndex = 10;
-            this.lblProfessorsTimeTable.Text = "Professor\'s Name";
+            this.lblProfessorsName.AutoSize = true;
+            this.lblProfessorsName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProfessorsName.Location = new System.Drawing.Point(4, 3);
+            this.lblProfessorsName.Name = "lblProfessorsName";
+            this.lblProfessorsName.Size = new System.Drawing.Size(137, 19);
+            this.lblProfessorsName.TabIndex = 10;
+            this.lblProfessorsName.Text = "Professor\'s Name";
             // 
             // panel2
             // 
@@ -867,7 +867,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.lblProfessorsTimeTable);
+            this.Controls.Add(this.lblProfessorsName);
             this.Name = "CSD_ProfTimeTable";
             this.Size = new System.Drawing.Size(651, 600);
             this.Load += new System.EventHandler(this.CSD_ProfTimeTable_Load);
@@ -942,7 +942,7 @@
         private System.Windows.Forms.Label label64;
         private System.Windows.Forms.Label label65;
         private System.Windows.Forms.Label label66;
-        private System.Windows.Forms.Label lblProfessorsTimeTable;
+        private System.Windows.Forms.Label lblProfessorsName;
         private System.Windows.Forms.Panel panel2;
 
     }

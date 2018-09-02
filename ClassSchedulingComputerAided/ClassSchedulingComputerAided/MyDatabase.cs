@@ -1459,5 +1459,31 @@ namespace ClassSchedulingComputerAided
                 con.Close();
             }
         }
+
+        public void CSD_get_professors_id(string professor)
+        {
+            try
+            {
+                con.Open();
+                string sql = "SELECT users_id FROM tbl_users WHERE CONCAT(firstName,' ',middleName,' ',lastName) = @p;";
+                MySqlCommand cmd = new MySqlCommand(sql, con);
+                cmd.Parameters.AddWithValue("@p", professor);
+                cmd.ExecuteNonQuery();
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+                if(dr.Read())
+                {
+                    ClassSchedule_Data.Professors_id = dr["users_id"].ToString();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "CSD_get_professors_id");
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
     }
 }

@@ -39,11 +39,6 @@ namespace ClassSchedulingComputerAided
 
         }
 
-        private void cboProfessor_4_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void lbl_LabHours_4_Click(object sender, EventArgs e)
         {
 
@@ -71,6 +66,8 @@ namespace ClassSchedulingComputerAided
 
         private void btnOK_Click(object sender, EventArgs e)
         {
+            btnSAVE.Visible = true;
+
             tbl_pnl_layout.Visible = true;
             btnSet_1.Visible = true;
             btnSet_2.Visible = true;
@@ -842,6 +839,101 @@ namespace ClassSchedulingComputerAided
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void cboProfessor_1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            md.CSD_get_professors_id(cboProfessor_1.SelectedItem.ToString());
+            ClassSchedule_Data.professors_name = cboProfessor_1.SelectedItem.ToString();
+            CSD_ProfTimeTable ptt = new CSD_ProfTimeTable();
+            pnlProfessors.Controls.Clear();
+            pnlProfessors.Controls.Add(ptt);
+        }
+
+        private void cboProfessor_2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            md.CSD_get_professors_id(cboProfessor_2.SelectedItem.ToString());
+            ClassSchedule_Data.professors_name = cboProfessor_2.SelectedItem.ToString();
+            CSD_ProfTimeTable ptt = new CSD_ProfTimeTable();
+            pnlProfessors.Controls.Clear();
+            pnlProfessors.Controls.Add(ptt);
+        }
+
+        private void cboProfessor_3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            md.CSD_get_professors_id(cboProfessor_3.SelectedItem.ToString());
+            ClassSchedule_Data.professors_name = cboProfessor_3.SelectedItem.ToString();
+            CSD_ProfTimeTable ptt = new CSD_ProfTimeTable();
+            pnlProfessors.Controls.Clear();
+            pnlProfessors.Controls.Add(ptt);
+        }
+
+        private void cboProfessor_4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            md.CSD_get_professors_id(cboProfessor_4.SelectedItem.ToString());
+            ClassSchedule_Data.professors_name = cboProfessor_4.SelectedItem.ToString();
+            CSD_ProfTimeTable ptt = new CSD_ProfTimeTable();
+            pnlProfessors.Controls.Clear();
+            pnlProfessors.Controls.Add(ptt);
+        }
+
+        private void cboProfessor_5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            md.CSD_get_professors_id(cboProfessor_5.SelectedItem.ToString());
+            ClassSchedule_Data.professors_name = cboProfessor_5.SelectedItem.ToString();
+            CSD_ProfTimeTable ptt = new CSD_ProfTimeTable();
+            pnlProfessors.Controls.Clear();
+            pnlProfessors.Controls.Add(ptt);
+        }
+
+        private void cboProfessor_6_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            md.CSD_get_professors_id(cboProfessor_6.SelectedItem.ToString());
+            ClassSchedule_Data.professors_name = cboProfessor_6.SelectedItem.ToString();
+            CSD_ProfTimeTable ptt = new CSD_ProfTimeTable();
+            pnlProfessors.Controls.Clear();
+            pnlProfessors.Controls.Add(ptt);
+        }
+
+        private void cboProfessor_7_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            md.CSD_get_professors_id(cboProfessor_7.SelectedItem.ToString());
+            ClassSchedule_Data.professors_name = cboProfessor_7.SelectedItem.ToString();
+            CSD_ProfTimeTable ptt = new CSD_ProfTimeTable();
+            pnlProfessors.Controls.Clear();
+            pnlProfessors.Controls.Add(ptt);
+        }
+
+        private void cboProfessor_8_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            md.CSD_get_professors_id(cboProfessor_8.SelectedItem.ToString());
+            ClassSchedule_Data.professors_name = cboProfessor_8.SelectedItem.ToString();
+            CSD_ProfTimeTable ptt = new CSD_ProfTimeTable();
+            pnlProfessors.Controls.Clear();
+            pnlProfessors.Controls.Add(ptt);
+        }
+
+        private void cboProfessor_9_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            md.CSD_get_professors_id(cboProfessor_9.SelectedItem.ToString());
+            ClassSchedule_Data.professors_name = cboProfessor_9.SelectedItem.ToString();
+            CSD_ProfTimeTable ptt = new CSD_ProfTimeTable();
+            pnlProfessors.Controls.Clear();
+            pnlProfessors.Controls.Add(ptt);
+        }
+
+        private void cboProfessor_10_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            md.CSD_get_professors_id(cboProfessor_10.SelectedItem.ToString());
+            ClassSchedule_Data.professors_name = cboProfessor_10.SelectedItem.ToString();
+            CSD_ProfTimeTable ptt = new CSD_ProfTimeTable();
+            pnlProfessors.Controls.Clear();
+            pnlProfessors.Controls.Add(ptt);
+        }
+
+        private void btnSAVE_Click(object sender, EventArgs e)
         {
 
         }

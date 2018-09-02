@@ -160,9 +160,9 @@
             this.btnSet_3 = new MetroFramework.Controls.MetroButton();
             this.btnSet_2 = new MetroFramework.Controls.MetroButton();
             this.btnSet_1 = new MetroFramework.Controls.MetroButton();
-            this.btnAdd = new MetroFramework.Controls.MetroTile();
             this.pnlProfessors = new System.Windows.Forms.Panel();
             this.pnlRooms = new System.Windows.Forms.Panel();
+            this.btnSAVE = new MetroFramework.Controls.MetroButton();
             this.pnlStudentScheduling.SuspendLayout();
             this.tbl_pnl_layout.SuspendLayout();
             this.pnlHeader.SuspendLayout();
@@ -177,6 +177,7 @@
             this.pnlStudentScheduling.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlStudentScheduling.Controls.Add(this.tbl_pnl_layout);
             this.pnlStudentScheduling.Controls.Add(this.pnlHeader);
+            this.pnlStudentScheduling.Controls.Add(this.btnSAVE);
             this.pnlStudentScheduling.Controls.Add(this.btnSet_10);
             this.pnlStudentScheduling.Controls.Add(this.btnSet_9);
             this.pnlStudentScheduling.Controls.Add(this.btnSet_8);
@@ -187,8 +188,7 @@
             this.pnlStudentScheduling.Controls.Add(this.btnSet_3);
             this.pnlStudentScheduling.Controls.Add(this.btnSet_2);
             this.pnlStudentScheduling.Controls.Add(this.btnSet_1);
-            this.pnlStudentScheduling.Controls.Add(this.btnAdd);
-            this.pnlStudentScheduling.Location = new System.Drawing.Point(12, 11);
+            this.pnlStudentScheduling.Location = new System.Drawing.Point(12, 3);
             this.pnlStudentScheduling.Name = "pnlStudentScheduling";
             this.pnlStudentScheduling.Size = new System.Drawing.Size(1342, 369);
             this.pnlStudentScheduling.TabIndex = 1;
@@ -317,7 +317,7 @@
             this.tbl_pnl_layout.Controls.Add(this.lblUnits_6, 2, 6);
             this.tbl_pnl_layout.Controls.Add(this.lblCode_5, 0, 5);
             this.tbl_pnl_layout.Controls.Add(this.lblCode_6, 0, 6);
-            this.tbl_pnl_layout.Location = new System.Drawing.Point(12, 43);
+            this.tbl_pnl_layout.Location = new System.Drawing.Point(15, 43);
             this.tbl_pnl_layout.Name = "tbl_pnl_layout";
             this.tbl_pnl_layout.RowCount = 11;
             this.tbl_pnl_layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.091001F));
@@ -476,6 +476,7 @@
             this.cboProfessor_1.Name = "cboProfessor_1";
             this.cboProfessor_1.Size = new System.Drawing.Size(200, 21);
             this.cboProfessor_1.TabIndex = 11;
+            this.cboProfessor_1.SelectedIndexChanged += new System.EventHandler(this.cboProfessor_1_SelectedIndexChanged);
             // 
             // lblCode_1
             // 
@@ -726,6 +727,7 @@
             this.cboProfessor_10.Name = "cboProfessor_10";
             this.cboProfessor_10.Size = new System.Drawing.Size(200, 21);
             this.cboProfessor_10.TabIndex = 13;
+            this.cboProfessor_10.SelectedIndexChanged += new System.EventHandler(this.cboProfessor_10_SelectedIndexChanged);
             // 
             // cboRoom_9
             // 
@@ -986,6 +988,7 @@
             this.cboProfessor_9.Name = "cboProfessor_9";
             this.cboProfessor_9.Size = new System.Drawing.Size(200, 21);
             this.cboProfessor_9.TabIndex = 13;
+            this.cboProfessor_9.SelectedIndexChanged += new System.EventHandler(this.cboProfessor_9_SelectedIndexChanged);
             // 
             // cboRoom_8
             // 
@@ -1023,6 +1026,7 @@
             this.cboProfessor_2.Name = "cboProfessor_2";
             this.cboProfessor_2.Size = new System.Drawing.Size(200, 21);
             this.cboProfessor_2.TabIndex = 13;
+            this.cboProfessor_2.SelectedIndexChanged += new System.EventHandler(this.cboProfessor_2_SelectedIndexChanged);
             // 
             // cboDay_8
             // 
@@ -1306,6 +1310,7 @@
             this.cboProfessor_8.Name = "cboProfessor_8";
             this.cboProfessor_8.Size = new System.Drawing.Size(200, 21);
             this.cboProfessor_8.TabIndex = 13;
+            this.cboProfessor_8.SelectedIndexChanged += new System.EventHandler(this.cboProfessor_8_SelectedIndexChanged);
             // 
             // cboRoom_7
             // 
@@ -1509,6 +1514,7 @@
             this.cboProfessor_7.Name = "cboProfessor_7";
             this.cboProfessor_7.Size = new System.Drawing.Size(200, 21);
             this.cboProfessor_7.TabIndex = 13;
+            this.cboProfessor_7.SelectedIndexChanged += new System.EventHandler(this.cboProfessor_7_SelectedIndexChanged);
             // 
             // cboRoom_6
             // 
@@ -1634,6 +1640,7 @@
             this.cboProfessor_3.Name = "cboProfessor_3";
             this.cboProfessor_3.Size = new System.Drawing.Size(200, 21);
             this.cboProfessor_3.TabIndex = 13;
+            this.cboProfessor_3.SelectedIndexChanged += new System.EventHandler(this.cboProfessor_3_SelectedIndexChanged);
             // 
             // lblUnits_7
             // 
@@ -1879,6 +1886,7 @@
             this.cboProfessor_6.Name = "cboProfessor_6";
             this.cboProfessor_6.Size = new System.Drawing.Size(200, 21);
             this.cboProfessor_6.TabIndex = 13;
+            this.cboProfessor_6.SelectedIndexChanged += new System.EventHandler(this.cboProfessor_6_SelectedIndexChanged);
             // 
             // cboRoom_5
             // 
@@ -2070,6 +2078,7 @@
             this.cboProfessor_5.Name = "cboProfessor_5";
             this.cboProfessor_5.Size = new System.Drawing.Size(200, 21);
             this.cboProfessor_5.TabIndex = 13;
+            this.cboProfessor_5.SelectedIndexChanged += new System.EventHandler(this.cboProfessor_5_SelectedIndexChanged);
             // 
             // cboRoom_4
             // 
@@ -2400,7 +2409,7 @@
             this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlHeader.Location = new System.Drawing.Point(0, 0);
             this.pnlHeader.Name = "pnlHeader";
-            this.pnlHeader.Size = new System.Drawing.Size(1421, 37);
+            this.pnlHeader.Size = new System.Drawing.Size(1340, 37);
             this.pnlHeader.TabIndex = 2;
             // 
             // btnOK
@@ -2511,7 +2520,7 @@
             // 
             // btnSet_10
             // 
-            this.btnSet_10.Location = new System.Drawing.Point(1192, 317);
+            this.btnSet_10.Location = new System.Drawing.Point(1195, 317);
             this.btnSet_10.Name = "btnSet_10";
             this.btnSet_10.Size = new System.Drawing.Size(61, 21);
             this.btnSet_10.TabIndex = 155;
@@ -2521,7 +2530,7 @@
             // 
             // btnSet_9
             // 
-            this.btnSet_9.Location = new System.Drawing.Point(1192, 290);
+            this.btnSet_9.Location = new System.Drawing.Point(1195, 290);
             this.btnSet_9.Name = "btnSet_9";
             this.btnSet_9.Size = new System.Drawing.Size(61, 21);
             this.btnSet_9.TabIndex = 155;
@@ -2531,7 +2540,7 @@
             // 
             // btnSet_8
             // 
-            this.btnSet_8.Location = new System.Drawing.Point(1192, 263);
+            this.btnSet_8.Location = new System.Drawing.Point(1195, 263);
             this.btnSet_8.Name = "btnSet_8";
             this.btnSet_8.Size = new System.Drawing.Size(61, 21);
             this.btnSet_8.TabIndex = 155;
@@ -2541,7 +2550,7 @@
             // 
             // btnSet_7
             // 
-            this.btnSet_7.Location = new System.Drawing.Point(1192, 236);
+            this.btnSet_7.Location = new System.Drawing.Point(1195, 236);
             this.btnSet_7.Name = "btnSet_7";
             this.btnSet_7.Size = new System.Drawing.Size(61, 21);
             this.btnSet_7.TabIndex = 155;
@@ -2551,7 +2560,7 @@
             // 
             // btnSet_6
             // 
-            this.btnSet_6.Location = new System.Drawing.Point(1192, 209);
+            this.btnSet_6.Location = new System.Drawing.Point(1195, 209);
             this.btnSet_6.Name = "btnSet_6";
             this.btnSet_6.Size = new System.Drawing.Size(61, 21);
             this.btnSet_6.TabIndex = 155;
@@ -2561,7 +2570,7 @@
             // 
             // btnSet_5
             // 
-            this.btnSet_5.Location = new System.Drawing.Point(1192, 182);
+            this.btnSet_5.Location = new System.Drawing.Point(1195, 182);
             this.btnSet_5.Name = "btnSet_5";
             this.btnSet_5.Size = new System.Drawing.Size(61, 21);
             this.btnSet_5.TabIndex = 155;
@@ -2571,7 +2580,7 @@
             // 
             // btnSet_4
             // 
-            this.btnSet_4.Location = new System.Drawing.Point(1192, 155);
+            this.btnSet_4.Location = new System.Drawing.Point(1195, 155);
             this.btnSet_4.Name = "btnSet_4";
             this.btnSet_4.Size = new System.Drawing.Size(61, 21);
             this.btnSet_4.TabIndex = 155;
@@ -2581,7 +2590,7 @@
             // 
             // btnSet_3
             // 
-            this.btnSet_3.Location = new System.Drawing.Point(1192, 128);
+            this.btnSet_3.Location = new System.Drawing.Point(1195, 128);
             this.btnSet_3.Name = "btnSet_3";
             this.btnSet_3.Size = new System.Drawing.Size(61, 21);
             this.btnSet_3.TabIndex = 155;
@@ -2591,7 +2600,7 @@
             // 
             // btnSet_2
             // 
-            this.btnSet_2.Location = new System.Drawing.Point(1192, 101);
+            this.btnSet_2.Location = new System.Drawing.Point(1195, 101);
             this.btnSet_2.Name = "btnSet_2";
             this.btnSet_2.Size = new System.Drawing.Size(61, 21);
             this.btnSet_2.TabIndex = 155;
@@ -2601,7 +2610,7 @@
             // 
             // btnSet_1
             // 
-            this.btnSet_1.Location = new System.Drawing.Point(1192, 74);
+            this.btnSet_1.Location = new System.Drawing.Point(1195, 74);
             this.btnSet_1.Name = "btnSet_1";
             this.btnSet_1.Size = new System.Drawing.Size(61, 21);
             this.btnSet_1.TabIndex = 155;
@@ -2609,27 +2618,14 @@
             this.btnSet_1.Visible = false;
             this.btnSet_1.Click += new System.EventHandler(this.btnSet_1_Click);
             // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(1287, 91);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(134, 40);
-            this.btnAdd.Style = MetroFramework.MetroColorStyle.Green;
-            this.btnAdd.TabIndex = 154;
-            this.btnAdd.Text = "View schedule";
-            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnAdd.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnAdd.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
-            this.btnAdd.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            // 
             // pnlProfessors
             // 
             this.pnlProfessors.AutoScroll = true;
             this.pnlProfessors.BackColor = System.Drawing.Color.White;
             this.pnlProfessors.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlProfessors.Location = new System.Drawing.Point(12, 386);
+            this.pnlProfessors.Location = new System.Drawing.Point(12, 378);
             this.pnlProfessors.Name = "pnlProfessors";
-            this.pnlProfessors.Size = new System.Drawing.Size(587, 345);
+            this.pnlProfessors.Size = new System.Drawing.Size(587, 308);
             this.pnlProfessors.TabIndex = 8;
             this.pnlProfessors.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -2638,10 +2634,20 @@
             this.pnlRooms.AutoScroll = true;
             this.pnlRooms.BackColor = System.Drawing.Color.White;
             this.pnlRooms.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlRooms.Location = new System.Drawing.Point(605, 386);
+            this.pnlRooms.Location = new System.Drawing.Point(605, 378);
             this.pnlRooms.Name = "pnlRooms";
-            this.pnlRooms.Size = new System.Drawing.Size(749, 345);
+            this.pnlRooms.Size = new System.Drawing.Size(749, 308);
             this.pnlRooms.TabIndex = 10;
+            // 
+            // btnSAVE
+            // 
+            this.btnSAVE.Location = new System.Drawing.Point(1258, 345);
+            this.btnSAVE.Name = "btnSAVE";
+            this.btnSAVE.Size = new System.Drawing.Size(79, 21);
+            this.btnSAVE.TabIndex = 155;
+            this.btnSAVE.Text = "SAVE";
+            this.btnSAVE.Visible = false;
+            this.btnSAVE.Click += new System.EventHandler(this.btnSAVE_Click);
             // 
             // classSchedulingDashboard_UserControl
             // 
@@ -2652,7 +2658,7 @@
             this.Controls.Add(this.pnlProfessors);
             this.Controls.Add(this.pnlStudentScheduling);
             this.Name = "classSchedulingDashboard_UserControl";
-            this.Size = new System.Drawing.Size(1373, 842);
+            this.Size = new System.Drawing.Size(1373, 763);
             this.Load += new System.EventHandler(this.classSchedulingDashboard_UserControl_Load);
             this.pnlStudentScheduling.ResumeLayout(false);
             this.tbl_pnl_layout.ResumeLayout(false);
@@ -2677,7 +2683,6 @@
         private MetroFramework.Controls.MetroButton btnSet_3;
         private MetroFramework.Controls.MetroButton btnSet_2;
         private MetroFramework.Controls.MetroButton btnSet_1;
-        public MetroFramework.Controls.MetroTile btnAdd;
         private System.Windows.Forms.ComboBox cboRoom_10;
         private System.Windows.Forms.ComboBox cboDay_10;
         private System.Windows.Forms.ComboBox cboStart_10;
@@ -2800,5 +2805,6 @@
         public System.Windows.Forms.ComboBox cboCurriculum;
         private System.Windows.Forms.Panel pnlProfessors;
         private System.Windows.Forms.Panel pnlRooms;
+        private MetroFramework.Controls.MetroButton btnSAVE;
     }
 }
