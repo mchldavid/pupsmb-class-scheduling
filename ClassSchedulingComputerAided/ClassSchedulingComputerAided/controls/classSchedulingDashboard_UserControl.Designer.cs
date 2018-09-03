@@ -150,6 +150,7 @@
             this.cboYear = new System.Windows.Forms.ComboBox();
             this.cboCurriculum = new System.Windows.Forms.ComboBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.btnSAVE = new MetroFramework.Controls.MetroButton();
             this.btnSet_10 = new MetroFramework.Controls.MetroButton();
             this.btnSet_9 = new MetroFramework.Controls.MetroButton();
             this.btnSet_8 = new MetroFramework.Controls.MetroButton();
@@ -162,7 +163,6 @@
             this.btnSet_1 = new MetroFramework.Controls.MetroButton();
             this.pnlProfessors = new System.Windows.Forms.Panel();
             this.pnlRooms = new System.Windows.Forms.Panel();
-            this.btnSAVE = new MetroFramework.Controls.MetroButton();
             this.pnlStudentScheduling.SuspendLayout();
             this.tbl_pnl_layout.SuspendLayout();
             this.pnlHeader.SuspendLayout();
@@ -2518,6 +2518,16 @@
             this.metroLabel1.TabIndex = 2;
             this.metroLabel1.Text = "Year:";
             // 
+            // btnSAVE
+            // 
+            this.btnSAVE.Location = new System.Drawing.Point(1258, 345);
+            this.btnSAVE.Name = "btnSAVE";
+            this.btnSAVE.Size = new System.Drawing.Size(79, 21);
+            this.btnSAVE.TabIndex = 155;
+            this.btnSAVE.Text = "SAVE";
+            this.btnSAVE.Visible = false;
+            this.btnSAVE.Click += new System.EventHandler(this.btnSAVE_Click);
+            // 
             // btnSet_10
             // 
             this.btnSet_10.Location = new System.Drawing.Point(1195, 317);
@@ -2638,16 +2648,6 @@
             this.pnlRooms.Name = "pnlRooms";
             this.pnlRooms.Size = new System.Drawing.Size(749, 308);
             this.pnlRooms.TabIndex = 10;
-            // 
-            // btnSAVE
-            // 
-            this.btnSAVE.Location = new System.Drawing.Point(1258, 345);
-            this.btnSAVE.Name = "btnSAVE";
-            this.btnSAVE.Size = new System.Drawing.Size(79, 21);
-            this.btnSAVE.TabIndex = 155;
-            this.btnSAVE.Text = "SAVE";
-            this.btnSAVE.Visible = false;
-            this.btnSAVE.Click += new System.EventHandler(this.btnSAVE_Click);
             // 
             // classSchedulingDashboard_UserControl
             // 

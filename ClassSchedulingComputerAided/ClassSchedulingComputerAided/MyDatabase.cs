@@ -1252,7 +1252,7 @@ namespace ClassSchedulingComputerAided
             try
             {
                 con.Open();
-                string sqlListCourse = "SELECT year FROM tbl_sections WHERE course = @c;";
+                string sqlListCourse = "SELECT DISTINCT year FROM tbl_sections WHERE course = @c;";
 
                 MySqlCommand com = new MySqlCommand(sqlListCourse, con);
                 com.Parameters.AddWithValue("@c", course);
@@ -1289,7 +1289,7 @@ namespace ClassSchedulingComputerAided
             try
             {
                 con.Open();
-                string sqlListCourse = "SELECT section FROM tbl_sections WHERE course = @c;";
+                string sqlListCourse = "SELECT DISTINCT section FROM tbl_sections WHERE course = @c;";
 
                 MySqlCommand com = new MySqlCommand(sqlListCourse, con);
                 com.Parameters.AddWithValue("@c", course);

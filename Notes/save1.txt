@@ -1,0 +1,19 @@
+SELECT a.preferredSubjects_id AS 'ID', subjectCode AS 'CODE', subjectDescription AS 'DESCRIPTION', course AS 'COURSE', lectureHours AS 'LEC HRS', laboratoryHours AS 'LAB HRS', units AS 'UNITS', yearLevel AS 'YR LEVEL'
+FROM tbl_preferredSubjects a, tbl_subjects b
+WHERE a.users_id = 1 AND b.subjects_id = a.subjects_id;
+
+SELECT *
+FROM tbl_preferredSubjects a, tbl_subjects b
+WHERE a.users_id = 1 AND b.subjects_id = a.subjects_id;
+
+SELECT * FROM tbl_sections t;
+SELECT DISTINCT(course) FROM tbl_sections;
+
+SELECT */*subjects_ID, subjectCode, subjectDescription, lectureHours, laboratoryHours, units*/
+FROM tbl_subjects su
+INNER JOIN tbl_curriculums cu
+ON su.curriculums_id = cu.curriculums_id/*dito ko ilalagay yung curriculum name*/
+WHERE course = 'BSIT' AND yearLevel = '2' AND cu.curriculumName = 'K to 12 program'/*yung [cu.curriculums_id] yan yung curriclum na iimplement]*/
+ORDER BY su.subjectCode ASC;
+
+SELECT * FROM tbl_subjects t;

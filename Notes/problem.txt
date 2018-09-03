@@ -1,0 +1,1 @@
+di nya nacacatch kapag may tatlo ng araw na magkakaibang time tapos kapag nag insert na sya ng bago bale dun palang navavalid yung day na kaylangan.

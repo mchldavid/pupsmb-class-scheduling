@@ -138,6 +138,8 @@
     <Compile Include="controls\RoomTimeTableControl.Designer.cs">
       <DependentUpon>RoomTimeTableControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="SaveInfoData.cs" />
+    <Compile Include="SaveXML.cs" />
     <Compile Include="SubjectForStudents.cs" />
     <Compile Include="trash\Information.cs">
       <SubType>Form</SubType>

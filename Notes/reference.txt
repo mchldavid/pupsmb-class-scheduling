@@ -1,0 +1,22 @@
+REFERENCES
+
+usercontrol
+https://www.codeproject.com/Questions/441940/How-to-use-user-control-in-csharp-windows-applicat
+
+UI
+https://www.youtube.com/watch?v=nLfzH4xOVqo
+
+repository
+https://github.com/CodeMoto
+
+drag and drop
+https://www.youtube.com/watch?v=ln59zYyJvB4
+
+adding controls via code
+https://support.microsoft.com/en-ph/help/319266/how-to-programmatically-add-controls-to-windows-forms-at-run-time-by-uadd
+
+adding dynamic controls
+https://www.youtube.com/watch?v=QdaV2IAW3Y8
+
+save data and load file into controls
+https://www.youtube.com/watch?v=GwAamiBq3uA

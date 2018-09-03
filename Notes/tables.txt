@@ -1,0 +1,13 @@
+[table_students]
+schedule_student_id
+curriculums_id 
+subjects_id
+subjectCode
+subjectDescription
+
+[table_professors]
+day
+start
+end
+subject
+room
