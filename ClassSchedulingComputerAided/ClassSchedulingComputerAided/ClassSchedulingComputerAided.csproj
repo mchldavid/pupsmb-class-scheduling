@@ -81,7 +81,7 @@
     <Compile Include="ClassScheduleDashboard.Designer.cs">
       <DependentUpon>ClassScheduleDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="ClassSchedule_Data.cs" />
+    <Compile Include="classes\ClassSchedule_Data.cs" />
     <Compile Include="controls\classSchedulingDashboard_UserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -94,7 +94,7 @@
     <Compile Include="controls\CSD_ProfTimeTable.Designer.cs">
       <DependentUpon>CSD_ProfTimeTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="curriculumData.cs" />
+    <Compile Include="classes\curriculumData.cs" />
     <Compile Include="controls\professorsScheduleControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -125,7 +125,7 @@
     <Compile Include="controls\L_EditProfessorsControl.Designer.cs">
       <DependentUpon>L_EditProfessorsControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="ListOfProfessorsData.cs" />
+    <Compile Include="classes\ListOfProfessorsData.cs" />
     <Compile Include="controls\P_viewTimeTableControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -138,9 +138,10 @@
     <Compile Include="controls\RoomTimeTableControl.Designer.cs">
       <DependentUpon>RoomTimeTableControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="SaveInfoData.cs" />
-    <Compile Include="SaveXML.cs" />
-    <Compile Include="SubjectForStudents.cs" />
+    <Compile Include="classes\SaveInfoData.cs" />
+    <Compile Include="classes\SaveXML.cs" />
+    <Compile Include="classes\StudentsScheduled.cs" />
+    <Compile Include="classes\SubjectForStudents.cs" />
     <Compile Include="trash\Information.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,8 +190,8 @@
     <Compile Include="MyAccount.Designer.cs">
       <DependentUpon>MyAccount.cs</DependentUpon>
     </Compile>
-    <Compile Include="MyDatabase.cs" />
-    <Compile Include="MySecurity.cs" />
+    <Compile Include="classes\MyDatabase.cs" />
+    <Compile Include="classes\MySecurity.cs" />
     <Compile Include="trash\PreferredSchedule.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -265,7 +266,7 @@
     <Compile Include="TryInOtherWay.Designer.cs">
       <DependentUpon>TryInOtherWay.cs</DependentUpon>
     </Compile>
-    <Compile Include="usersData.cs" />
+    <Compile Include="classes\usersData.cs" />
     <Compile Include="trash\ViewList.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -141,11 +141,15 @@
             this.lblCode_5 = new System.Windows.Forms.Label();
             this.lblCode_6 = new System.Windows.Forms.Label();
             this.pnlHeader = new System.Windows.Forms.Panel();
+            this.cboSchoolYear = new System.Windows.Forms.ComboBox();
+            this.cboSemester = new System.Windows.Forms.ComboBox();
             this.btnOK = new MetroFramework.Controls.MetroButton();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.cboSection = new System.Windows.Forms.ComboBox();
             this.cboCourse = new System.Windows.Forms.ComboBox();
+            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.cboYear = new System.Windows.Forms.ComboBox();
             this.cboCurriculum = new System.Windows.Forms.ComboBox();
@@ -2397,11 +2401,15 @@
             // pnlHeader
             // 
             this.pnlHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(21)))), ((int)(((byte)(24)))));
+            this.pnlHeader.Controls.Add(this.cboSchoolYear);
+            this.pnlHeader.Controls.Add(this.cboSemester);
             this.pnlHeader.Controls.Add(this.btnOK);
             this.pnlHeader.Controls.Add(this.metroLabel2);
             this.pnlHeader.Controls.Add(this.cboSection);
             this.pnlHeader.Controls.Add(this.cboCourse);
+            this.pnlHeader.Controls.Add(this.metroLabel6);
             this.pnlHeader.Controls.Add(this.metroLabel3);
+            this.pnlHeader.Controls.Add(this.metroLabel5);
             this.pnlHeader.Controls.Add(this.metroLabel4);
             this.pnlHeader.Controls.Add(this.cboYear);
             this.pnlHeader.Controls.Add(this.cboCurriculum);
@@ -2412,9 +2420,25 @@
             this.pnlHeader.Size = new System.Drawing.Size(1340, 37);
             this.pnlHeader.TabIndex = 2;
             // 
+            // cboSchoolYear
+            // 
+            this.cboSchoolYear.FormattingEnabled = true;
+            this.cboSchoolYear.Location = new System.Drawing.Point(1113, 9);
+            this.cboSchoolYear.Name = "cboSchoolYear";
+            this.cboSchoolYear.Size = new System.Drawing.Size(121, 21);
+            this.cboSchoolYear.TabIndex = 156;
+            // 
+            // cboSemester
+            // 
+            this.cboSemester.FormattingEnabled = true;
+            this.cboSemester.Location = new System.Drawing.Point(933, 9);
+            this.cboSemester.Name = "cboSemester";
+            this.cboSemester.Size = new System.Drawing.Size(58, 21);
+            this.cboSemester.TabIndex = 156;
+            // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(855, 9);
+            this.btnOK.Location = new System.Drawing.Point(777, 9);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(61, 21);
             this.btnOK.TabIndex = 157;
@@ -2455,6 +2479,21 @@
             this.cboCourse.TabIndex = 156;
             this.cboCourse.SelectedIndexChanged += new System.EventHandler(this.cboCourse_SelectedIndexChanged);
             // 
+            // metroLabel6
+            // 
+            this.metroLabel6.AutoSize = true;
+            this.metroLabel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(21)))), ((int)(((byte)(24)))));
+            this.metroLabel6.CustomBackground = true;
+            this.metroLabel6.CustomForeColor = true;
+            this.metroLabel6.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel6.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel6.ForeColor = System.Drawing.Color.White;
+            this.metroLabel6.Location = new System.Drawing.Point(1004, 5);
+            this.metroLabel6.Name = "metroLabel6";
+            this.metroLabel6.Size = new System.Drawing.Size(107, 25);
+            this.metroLabel6.TabIndex = 2;
+            this.metroLabel6.Text = "School Year:";
+            // 
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
@@ -2470,6 +2509,21 @@
             this.metroLabel3.TabIndex = 2;
             this.metroLabel3.Text = "Section:";
             // 
+            // metroLabel5
+            // 
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(21)))), ((int)(((byte)(24)))));
+            this.metroLabel5.CustomBackground = true;
+            this.metroLabel5.CustomForeColor = true;
+            this.metroLabel5.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel5.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel5.ForeColor = System.Drawing.Color.White;
+            this.metroLabel5.Location = new System.Drawing.Point(844, 5);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(89, 25);
+            this.metroLabel5.TabIndex = 2;
+            this.metroLabel5.Text = "Semester:";
+            // 
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
@@ -2479,7 +2533,7 @@
             this.metroLabel4.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel4.ForeColor = System.Drawing.Color.White;
-            this.metroLabel4.Location = new System.Drawing.Point(544, 5);
+            this.metroLabel4.Location = new System.Drawing.Point(466, 5);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(101, 25);
             this.metroLabel4.TabIndex = 2;
@@ -2498,7 +2552,7 @@
             // 
             this.cboCurriculum.BackColor = System.Drawing.Color.White;
             this.cboCurriculum.FormattingEnabled = true;
-            this.cboCurriculum.Location = new System.Drawing.Point(656, 9);
+            this.cboCurriculum.Location = new System.Drawing.Point(578, 9);
             this.cboCurriculum.Name = "cboCurriculum";
             this.cboCurriculum.Size = new System.Drawing.Size(189, 21);
             this.cboCurriculum.TabIndex = 156;
@@ -2806,5 +2860,9 @@
         private System.Windows.Forms.Panel pnlProfessors;
         private System.Windows.Forms.Panel pnlRooms;
         private MetroFramework.Controls.MetroButton btnSAVE;
+        private System.Windows.Forms.ComboBox cboSchoolYear;
+        private System.Windows.Forms.ComboBox cboSemester;
+        private MetroFramework.Controls.MetroLabel metroLabel6;
+        private MetroFramework.Controls.MetroLabel metroLabel5;
     }
 }

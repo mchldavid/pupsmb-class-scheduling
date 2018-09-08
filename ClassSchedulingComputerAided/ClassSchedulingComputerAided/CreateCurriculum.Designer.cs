@@ -112,7 +112,7 @@
             this.rdoActive.Size = new System.Drawing.Size(104, 24);
             this.rdoActive.Style = MetroFramework.MetroColorStyle.Red;
             this.rdoActive.TabIndex = 157;
-            this.rdoActive.Text = "Acitve";
+            this.rdoActive.Text = "Active";
             this.rdoActive.UseVisualStyleBackColor = true;
             // 
             // dtpDatePublished
@@ -140,6 +140,7 @@
             this.rdoUsed.TabIndex = 159;
             this.rdoUsed.Text = "Set as default curriculum";
             this.rdoUsed.UseVisualStyleBackColor = true;
+            this.rdoUsed.Visible = false;
             // 
             // panel1
             // 

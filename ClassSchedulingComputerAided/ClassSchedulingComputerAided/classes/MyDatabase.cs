@@ -1485,5 +1485,111 @@ namespace ClassSchedulingComputerAided
                 con.Close();
             }
         }
+
+        public void CSD_insert_students_schedule(string course, string year, string curriculum)
+        {
+            try
+            {
+                con.Open();
+                int x = 0;
+                int count = 0;
+                string cu = "";
+                string sqlGetCurriculumId = "SELECT * FROM tbl_curriculums WHERE curriculumName = @cN";
+                using(MySqlCommand cmd = new MySqlCommand(sqlGetCurriculumId, con))//getting curriculums id
+                {
+                    cmd.Parameters.AddWithValue("@cN", StudentsScheduled.curriculumsName );
+                    cmd.ExecuteNonQuery();
+
+                    MySqlDataReader dr = cmd.ExecuteReader();
+                    if(dr.Read())
+                    {
+                        cu = dr["curriculums_id"].ToString();
+                    }
+                    con.Close();
+                }
+
+                con.Open();
+                string sqlCount = "SELECT * FROM tbl_subjects su INNER JOIN tbl_curriculums cu ON su.curriculums_id = cu.curriculums_id WHERE course = @co AND yearLevel = @y AND cu.curriculumName = @cu ORDER BY su.subjectCode ASC";
+                using(MySqlCommand cmd1 = new MySqlCommand(sqlCount, con))
+                {
+                    cmd1.Parameters.AddWithValue("@co", course);
+                    cmd1.Parameters.AddWithValue("@y", year);
+                    cmd1.Parameters.AddWithValue("@cu", curriculum);
+                    cmd1.ExecuteNonQuery();
+
+                    MySqlDataReader dr = cmd1.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        count++;
+                    }
+                }
+                con.Close();
+
+                //inserting data
+                con.Open();
+                for(int y = 0; y < count; y++)
+                {
+                    string sqlInsertStudentsSched = "INSERT INTO tbl_students_scheduled(curriculums_id, course, year, section, semester, schoolYear, room, subjectCode, subjectDescription, scheduledBy, scheduledDate, professor, scheduledStartTime, scheduledEndTime, scheduledDay) VALUES(@c_id, @c, @y, @s, @sem, @sY, @r, @sC, @sD, @sB, @sDa, @p, @sS, @sE, @sDay)";
+                    using (MySqlCommand cmd = new MySqlCommand(sqlInsertStudentsSched, con))//to insert new data
+                    {
+                        cmd.Parameters.AddWithValue("@c_id", cu);
+                        cmd.Parameters.AddWithValue("@c", StudentsScheduled.course);
+                        cmd.Parameters.AddWithValue("@y", StudentsScheduled.year);
+                        cmd.Parameters.AddWithValue("@s", StudentsScheduled.section);
+                        cmd.Parameters.AddWithValue("@sem", StudentsScheduled.semester);
+                        cmd.Parameters.AddWithValue("@sY", StudentsScheduled.schoolYear);
+
+                        cmd.Parameters.AddWithValue("@r", StudentsScheduled.Rooms[x]);
+                        cmd.Parameters.AddWithValue("@sC", StudentsScheduled.CourseCode[x]);
+                        cmd.Parameters.AddWithValue("@sD", StudentsScheduled.SubjectDescription[x]);
+                        cmd.Parameters.AddWithValue("@sB", usersData.a_id);
+                        cmd.Parameters.AddWithValue("@sDa", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff"));
+                        cmd.Parameters.AddWithValue("@p", StudentsScheduled.Professors[x]);
+                        cmd.Parameters.AddWithValue("@sS", StudentsScheduled.startTime[x]);
+                        cmd.Parameters.AddWithValue("@sE", StudentsScheduled.endTime[x]);
+                        cmd.Parameters.AddWithValue("@sDay", StudentsScheduled.day[x]);
+
+                        cmd.ExecuteNonQuery();
+                        x++;
+                    }
+                }
+                con.Close();
+
+                con.Open();
+                x = 0;
+                for (int y = 0; y < count; y++)
+                {
+                    string sqlInsertRoomScheduled = "INSERT INTO tbl_room_scheduled(roomCode, roomStartTime, roomEndTime, roomDay, assignedProfessor, subjectCode, course, year, section, semester, schoolYear) VALUES(@rC, @rST, @rET, @rD, @aP, @sC, @c, @y, @sec, @sem, @sY)";
+                    using (MySqlCommand cmd = new MySqlCommand(sqlInsertRoomScheduled, con))
+                    {
+                        cmd.Parameters.AddWithValue("@rC", StudentsScheduled.Rooms[x]);
+                        cmd.Parameters.AddWithValue("@rST", StudentsScheduled.startTime[x]);
+                        cmd.Parameters.AddWithValue("@rET", StudentsScheduled.endTime[x]);
+                        cmd.Parameters.AddWithValue("@rD", StudentsScheduled.day[x]);
+                        cmd.Parameters.AddWithValue("@aP", StudentsScheduled.Professors[x]);
+                        cmd.Parameters.AddWithValue("@sC", StudentsScheduled.CourseCode[x]);
+                        cmd.Parameters.AddWithValue("@c", StudentsScheduled.course);
+                        cmd.Parameters.AddWithValue("@y", StudentsScheduled.year);
+                        cmd.Parameters.AddWithValue("@sec", StudentsScheduled.section);
+                        cmd.Parameters.AddWithValue("@sem", StudentsScheduled.semester);
+                        cmd.Parameters.AddWithValue("@sY", StudentsScheduled.schoolYear);
+
+                        cmd.ExecuteNonQuery();
+                        x++;
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "students_schedule");
+            }
+            finally
+            {
+                con.Close();
+            }
+            
+        }
+
+
     }
 }

@@ -72,6 +72,8 @@ namespace ClassSchedulingComputerAided
             string name = cboCourse.SelectedItem.ToString();
             name += cboYear.SelectedItem.ToString();
             name += cboSection.SelectedItem.ToString();
+            name += cboSemester.SelectedItem.ToString();
+            name += cboSchoolYear.SelectedItem.ToString();
             name += cboCurriculum.SelectedItem.ToString();
 
             if (File.Exists(name + ".xml"))
@@ -398,6 +400,34 @@ namespace ClassSchedulingComputerAided
 
             CSD_ProfTimeTable ptt = new CSD_ProfTimeTable();
             pnlProfessors.Controls.Add(ptt);
+
+            cboSemester.Items.Add("1ST");
+            cboSemester.Items.Add("2ND");
+            cboSemester.Items.Add("3RD");
+
+            //to fill the school year
+            string sy = "";
+            DateTime dt = new DateTime(2015, DateTime.Now.Month, DateTime.Now.Day);
+            bool flag = true;
+            while (flag)
+            {
+                if (dt.Year != DateTime.Now.Year)
+                {
+                    sy += dt.Year.ToString();
+                    dt = dt.AddYears(1);
+                    sy += "-" + dt.Year.ToString();
+                    cboSchoolYear.Items.Add(sy);
+                    sy = "";
+                }
+                else {
+                    sy += dt.Year.ToString();
+                    dt = dt.AddYears(1);
+                    sy += "-" + dt.Year.ToString();
+                    cboSchoolYear.Items.Add(sy);
+                    sy = "";
+                    flag = false;
+                }
+            }
         }
 
         private void cboCourse_SelectedIndexChanged(object sender, EventArgs e)
@@ -1079,19 +1109,119 @@ namespace ClassSchedulingComputerAided
             string name = cboCourse.SelectedItem.ToString();
             name += cboYear.SelectedItem.ToString();
             name += cboSection.SelectedItem.ToString();
+            name += cboSemester.SelectedItem.ToString();
+            name += cboSchoolYear.SelectedItem.ToString();
             name += cboCurriculum.SelectedItem.ToString();
             SaveXML.SaveData(sid, name + ".xml");
+        }
+
+        public void SaveScheduled()
+        {
+            StudentsScheduled.curriculumsName = cboCurriculum.SelectedItem.ToString();
+            StudentsScheduled.course = cboCourse.SelectedItem.ToString();
+            StudentsScheduled.year = cboYear.SelectedItem.ToString();
+            StudentsScheduled.section = cboSection.SelectedItem.ToString();
+            StudentsScheduled.semester = cboSemester.SelectedItem.ToString();
+            StudentsScheduled.schoolYear = cboSchoolYear.SelectedItem.ToString();
+            StudentsScheduled.CourseCode = new string[11];
+            StudentsScheduled.SubjectDescription = new string[11];
+            StudentsScheduled.Rooms = new string[11];
+            StudentsScheduled.Professors = new string[11];
+            StudentsScheduled.startTime = new string[11];
+            StudentsScheduled.endTime = new string[11];
+            StudentsScheduled.day = new string[11];
+
+            StudentsScheduled.CourseCode[0] = lblCode_1.Text;
+            StudentsScheduled.CourseCode[1] = lblCode_2.Text;
+            StudentsScheduled.CourseCode[2] = lblCode_3.Text;
+            StudentsScheduled.CourseCode[3] = lblCode_4.Text;
+            StudentsScheduled.CourseCode[4] = lblCode_5.Text;
+            StudentsScheduled.CourseCode[5] = lblCode_6.Text;
+            StudentsScheduled.CourseCode[6] = lblCode_7.Text;
+            StudentsScheduled.CourseCode[7] = lblCode_8.Text;
+            StudentsScheduled.CourseCode[8] = lblCode_9.Text;
+            StudentsScheduled.CourseCode[9] = lblCode_10.Text;
+
+            StudentsScheduled.SubjectDescription[0] = lblDescription_1.Text;
+            StudentsScheduled.SubjectDescription[1] = lblDescription_2.Text;
+            StudentsScheduled.SubjectDescription[2] = lblDescription_3.Text;
+            StudentsScheduled.SubjectDescription[3] = lblDescription_4.Text;
+            StudentsScheduled.SubjectDescription[4] = lblDescription_5.Text;
+            StudentsScheduled.SubjectDescription[5] = lblDescription_6.Text;
+            StudentsScheduled.SubjectDescription[6] = lblDescription_7.Text;
+            StudentsScheduled.SubjectDescription[7] = lblDescription_8.Text;
+            StudentsScheduled.SubjectDescription[8] = lblDescription_9.Text;
+            StudentsScheduled.SubjectDescription[9] = lblDescription_10.Text;
+
+            StudentsScheduled.Rooms[0] = cboRoom_1.Text;
+            StudentsScheduled.Rooms[1] = cboRoom_2.Text;
+            StudentsScheduled.Rooms[2] = cboRoom_3.Text;
+            StudentsScheduled.Rooms[3] = cboRoom_4.Text;
+            StudentsScheduled.Rooms[4] = cboRoom_5.Text;
+            StudentsScheduled.Rooms[5] = cboRoom_6.Text;
+            StudentsScheduled.Rooms[6] = cboRoom_7.Text;
+            StudentsScheduled.Rooms[7] = cboRoom_8.Text;
+            StudentsScheduled.Rooms[8] = cboRoom_9.Text;
+            StudentsScheduled.Rooms[9] = cboRoom_10.Text;
+
+            StudentsScheduled.Professors[0] = cboProfessor_1.Text;
+            StudentsScheduled.Professors[1] = cboProfessor_2.Text;
+            StudentsScheduled.Professors[2] = cboProfessor_3.Text;
+            StudentsScheduled.Professors[3] = cboProfessor_4.Text;
+            StudentsScheduled.Professors[4] = cboProfessor_5.Text;
+            StudentsScheduled.Professors[5] = cboProfessor_6.Text;
+            StudentsScheduled.Professors[6] = cboProfessor_7.Text;
+            StudentsScheduled.Professors[7] = cboProfessor_8.Text;
+            StudentsScheduled.Professors[8] = cboProfessor_9.Text;
+            StudentsScheduled.Professors[9] = cboProfessor_10.Text;
+
+            StudentsScheduled.startTime[0] = cboStart_1.Text;
+            StudentsScheduled.startTime[1] = cboStart_2.Text;
+            StudentsScheduled.startTime[2] = cboStart_3.Text;
+            StudentsScheduled.startTime[3] = cboStart_4.Text;
+            StudentsScheduled.startTime[4] = cboStart_5.Text;
+            StudentsScheduled.startTime[5] = cboStart_6.Text;
+            StudentsScheduled.startTime[6] = cboStart_7.Text;
+            StudentsScheduled.startTime[7] = cboStart_8.Text;
+            StudentsScheduled.startTime[8] = cboStart_9.Text;
+            StudentsScheduled.startTime[9] = cboStart_10.Text;
+
+            StudentsScheduled.endTime[0] = cboEnd_1.Text;
+            StudentsScheduled.endTime[1] = cboEnd_2.Text;
+            StudentsScheduled.endTime[2] = cboEnd_3.Text;
+            StudentsScheduled.endTime[3] = cboEnd_4.Text;
+            StudentsScheduled.endTime[4] = cboEnd_5.Text;
+            StudentsScheduled.endTime[5] = cboEnd_6.Text;
+            StudentsScheduled.endTime[6] = cboEnd_7.Text;
+            StudentsScheduled.endTime[7] = cboEnd_8.Text;
+            StudentsScheduled.endTime[8] = cboEnd_9.Text;
+            StudentsScheduled.endTime[9] = cboEnd_10.Text;
+
+            StudentsScheduled.day[0] = cboDay_1.Text;
+            StudentsScheduled.day[1] = cboDay_2.Text;
+            StudentsScheduled.day[2] = cboDay_3.Text;
+            StudentsScheduled.day[3] = cboDay_4.Text;
+            StudentsScheduled.day[4] = cboDay_5.Text;
+            StudentsScheduled.day[5] = cboDay_6.Text;
+            StudentsScheduled.day[6] = cboDay_7.Text;
+            StudentsScheduled.day[7] = cboDay_8.Text;
+            StudentsScheduled.day[8] = cboDay_9.Text;
+            StudentsScheduled.day[9] = cboDay_10.Text;
+
+            md.CSD_insert_students_schedule(cboCourse.Text, cboYear.Text, cboCurriculum.Text);
         }
 
         private void btnSAVE_Click(object sender, EventArgs e)
         {
             try
             {
+                SaveScheduled();
                 SaveData();
+                
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Save");
             }
         }
     }

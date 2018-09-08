@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SaveInfoData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Prof_1>Michael losbanos David</Prof_1>
+  <Start_1>3</Start_1>
+  <End_1>5</End_1>
+  <Day_1>1</Day_1>
+  <Room_1>RM201</Room_1>
+  <Prof_2 />
+  <Start_2>-1</Start_2>
+  <End_2>-1</End_2>
+  <Day_2>0</Day_2>
+  <Room_2>RM206</Room_2>
+  <Prof_3 />
+  <Start_3>-1</Start_3>
+  <End_3>-1</End_3>
+  <Day_3>-1</Day_3>
+  <Room_3>rm209</Room_3>
+  <Prof_4 />
+  <Start_4>8</Start_4>
+  <End_4>4</End_4>
+  <Day_4>1</Day_4>
+  <Room_4>RM201</Room_4>
+  <Prof_5 />
+  <Start_5>11</Start_5>
+  <End_5>2</End_5>
+  <Day_5>5</Day_5>
+  <Room_5>RM201</Room_5>
+  <Prof_6 />
+  <Start_6>11</Start_6>
+  <End_6>2</End_6>
+  <Day_6>3</Day_6>
+  <Room_6>RM210</Room_6>
+  <Prof_7 />
+  <Start_7>2</Start_7>
+  <End_7>0</End_7>
+  <Day_7>4</Day_7>
+  <Room_7>RM201</Room_7>
+  <Prof_8 />
+  <Start_8>7</Start_8>
+  <End_8>6</End_8>
+  <Day_8>1</Day_8>
+  <Room_8>RM206</Room_8>
+  <Prof_9 />
+  <Start_9>-1</Start_9>
+  <End_9>-1</End_9>
+  <Day_9>-1</Day_9>
+  <Room_9 />
+  <Prof_10 />
+  <Start_10>-1</Start_10>
+  <End_10>-1</End_10>
+  <Day_10>-1</Day_10>
+  <Room_10 />
+</SaveInfoData>
