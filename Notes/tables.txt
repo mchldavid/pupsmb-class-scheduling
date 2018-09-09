@@ -1,9 +1,12 @@
 [table_students]
 schedule_student_id
 curriculums_id 
+room_id
 subjects_id
-subjectCode
-subjectDescription
+section_id
+encodedBy
+encodedDateTime
+
 
 [table_professors]
 day
