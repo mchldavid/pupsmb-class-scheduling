@@ -82,6 +82,12 @@
       <DependentUpon>ClassScheduleDashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="classes\ClassSchedule_Data.cs" />
+    <Compile Include="ConnectionWizard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConnectionWizard.Designer.cs">
+      <DependentUpon>ConnectionWizard.cs</DependentUpon>
+    </Compile>
     <Compile Include="controls\classSchedulingDashboard_UserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -281,6 +287,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ClassScheduleDashboard.resx">
       <DependentUpon>ClassScheduleDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConnectionWizard.resx">
+      <DependentUpon>ConnectionWizard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="controls\classSchedulingDashboard_UserControl.resx">
       <DependentUpon>classSchedulingDashboard_UserControl.cs</DependentUpon>

@@ -6,13 +6,25 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 using System.Data;
+using ClassSchedulingComputerAided.Properties;
 
 namespace ClassSchedulingComputerAided
 {
     class MyDatabase
     {
         //connection to my database
-        static string sqlConnection = "server=localhost; username=root; password=root; database=db_computeraided;";
+        private static string server = Settings.Default["Server"].ToString();
+        private static string dbName = Settings.Default["DatabaseName"].ToString();
+        private static string usrDb = Settings.Default["UsernameDB"].ToString();
+        private static string pwdDb = Settings.Default["PasswordDB"].ToString();
+        private static string port = Settings.Default["Port"].ToString();
+
+        static string sqlConnection = "server="+ server 
+            +"; username="+ usrDb 
+            +"; password="+ pwdDb 
+            +"; database="+ dbName
+            +"; port="+ port +";";
+
         static MySqlConnection con = new MySqlConnection(sqlConnection);
 
         //check the database connection
