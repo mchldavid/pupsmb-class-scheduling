@@ -22,6 +22,7 @@ namespace ClassSchedulingComputerAided
         {
             //lbl_id.Text = usersData.p_id;
             dgvShow.DataSource = md.dgv_showSchedule().DataSource;
+            dgvShow.Columns[0].Visible = false;
             dgvSchedule.DataSource = md.dgv_showSchedule().DataSource;
         }
 
@@ -221,7 +222,8 @@ namespace ClassSchedulingComputerAided
                 pnlView.Visible = true;
                 P_viewTimeTableControl pView = new P_viewTimeTableControl();
                 pnlView.Controls.Add(pView);
-                btnViewTimetable.Text = "CANCEL";
+                btnViewTimetable.Text = "BACK";
+                pnlView.BringToFront();
             }
             else
             {
@@ -230,6 +232,25 @@ namespace ClassSchedulingComputerAided
                 btnViewTimetable.Text = "VIEW";
             }
 
+        }
+
+        private void pnlView_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Do you want to delete?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            foreach (DataGridViewRow dr in dgvShow.SelectedRows)
+            {
+                if (result == DialogResult.Yes)
+                {
+                    md.Prof_DeleteSchedule(dr.Cells[0].Value.ToString());
+                    dgvShow.DataSource = md.dgv_showSchedule().DataSource;
+                    dgvShow.Columns[0].Visible = false;
+                }
+            }
         }
     }
 }

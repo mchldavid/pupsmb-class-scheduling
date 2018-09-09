@@ -76,7 +76,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(453, 624);
+            this.btnSave.Location = new System.Drawing.Point(461, 589);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(84, 32);
             this.btnSave.TabIndex = 32;
@@ -85,7 +85,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(542, 624);
+            this.btnCancel.Location = new System.Drawing.Point(550, 589);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(84, 32);
             this.btnCancel.TabIndex = 33;
@@ -97,7 +97,7 @@
             this.bunifuSeparator3.BackColor = System.Drawing.Color.Transparent;
             this.bunifuSeparator3.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.bunifuSeparator3.LineThickness = 7;
-            this.bunifuSeparator3.Location = new System.Drawing.Point(376, 102);
+            this.bunifuSeparator3.Location = new System.Drawing.Point(384, 67);
             this.bunifuSeparator3.Margin = new System.Windows.Forms.Padding(3, 7, 3, 7);
             this.bunifuSeparator3.Name = "bunifuSeparator3";
             this.bunifuSeparator3.Size = new System.Drawing.Size(250, 14);
@@ -110,7 +110,7 @@
             this.bunifuSeparator2.BackColor = System.Drawing.Color.Transparent;
             this.bunifuSeparator2.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.bunifuSeparator2.LineThickness = 7;
-            this.bunifuSeparator2.Location = new System.Drawing.Point(52, 562);
+            this.bunifuSeparator2.Location = new System.Drawing.Point(60, 527);
             this.bunifuSeparator2.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.bunifuSeparator2.Name = "bunifuSeparator2";
             this.bunifuSeparator2.Size = new System.Drawing.Size(250, 11);
@@ -123,7 +123,7 @@
             this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
             this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.bunifuSeparator1.LineThickness = 7;
-            this.bunifuSeparator1.Location = new System.Drawing.Point(52, 104);
+            this.bunifuSeparator1.Location = new System.Drawing.Point(60, 69);
             this.bunifuSeparator1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bunifuSeparator1.Name = "bunifuSeparator1";
             this.bunifuSeparator1.Size = new System.Drawing.Size(250, 12);
@@ -136,7 +136,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label8.Location = new System.Drawing.Point(363, 459);
+            this.label8.Location = new System.Drawing.Point(371, 424);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(238, 16);
             this.label8.TabIndex = 214;
@@ -147,7 +147,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label7.Location = new System.Drawing.Point(363, 415);
+            this.label7.Location = new System.Drawing.Point(371, 380);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(182, 16);
             this.label7.TabIndex = 213;
@@ -158,7 +158,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label6.Location = new System.Drawing.Point(363, 368);
+            this.label6.Location = new System.Drawing.Point(371, 333);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(178, 16);
             this.label6.TabIndex = 212;
@@ -169,7 +169,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label5.Location = new System.Drawing.Point(363, 317);
+            this.label5.Location = new System.Drawing.Point(371, 282);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(234, 16);
             this.label5.TabIndex = 211;
@@ -180,7 +180,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(363, 269);
+            this.label4.Location = new System.Drawing.Point(371, 234);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(280, 16);
             this.label4.TabIndex = 210;
@@ -191,7 +191,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(374, 85);
+            this.label11.Location = new System.Drawing.Point(382, 50);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(146, 19);
             this.label11.TabIndex = 208;
@@ -202,7 +202,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(48, 542);
+            this.label10.Location = new System.Drawing.Point(56, 507);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(124, 19);
             this.label10.TabIndex = 207;
@@ -213,7 +213,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(49, 85);
+            this.label9.Location = new System.Drawing.Point(57, 50);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(166, 19);
             this.label9.TabIndex = 206;
@@ -224,7 +224,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(50, 493);
+            this.label3.Location = new System.Drawing.Point(58, 458);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(125, 17);
             this.label3.TabIndex = 205;
@@ -234,7 +234,7 @@
             // 
             this.cboCourseDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCourseDepartment.FormattingEnabled = true;
-            this.cboCourseDepartment.Location = new System.Drawing.Point(175, 490);
+            this.cboCourseDepartment.Location = new System.Drawing.Point(183, 455);
             this.cboCourseDepartment.Name = "cboCourseDepartment";
             this.cboCourseDepartment.Size = new System.Drawing.Size(128, 21);
             this.cboCourseDepartment.TabIndex = 9;
@@ -245,7 +245,7 @@
             this.groupBox2.Controls.Add(this.rdoFulltimer);
             this.groupBox2.Controls.Add(this.rdoParttimer);
             this.groupBox2.Controls.Add(this.rdoRetiree);
-            this.groupBox2.Location = new System.Drawing.Point(53, 426);
+            this.groupBox2.Location = new System.Drawing.Point(61, 391);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(250, 56);
             this.groupBox2.TabIndex = 204;
@@ -303,7 +303,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.rdoFemale);
             this.groupBox1.Controls.Add(this.rdoMale);
-            this.groupBox1.Location = new System.Drawing.Point(53, 368);
+            this.groupBox1.Location = new System.Drawing.Point(61, 333);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -355,7 +355,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(56, 248);
+            this.label1.Location = new System.Drawing.Point(64, 213);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 17);
             this.label1.TabIndex = 202;
@@ -364,7 +364,7 @@
             // txtAddress
             // 
             this.txtAddress.CustomBackground = true;
-            this.txtAddress.Location = new System.Drawing.Point(53, 269);
+            this.txtAddress.Location = new System.Drawing.Point(61, 234);
             this.txtAddress.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
@@ -377,14 +377,14 @@
             this.txtMobileNumber.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtMobileNumber.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMobileNumber.ForeColor = System.Drawing.Color.Black;
-            this.txtMobileNumber.HintForeColor = System.Drawing.Color.DarkGray;
+            this.txtMobileNumber.HintForeColor = System.Drawing.Color.Black;
             this.txtMobileNumber.HintText = "Mobile Number";
             this.txtMobileNumber.isPassword = false;
             this.txtMobileNumber.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(0)))), ((int)(((byte)(17)))));
             this.txtMobileNumber.LineIdleColor = System.Drawing.SystemColors.GrayText;
             this.txtMobileNumber.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(4)))), ((int)(((byte)(0)))));
             this.txtMobileNumber.LineThickness = 3;
-            this.txtMobileNumber.Location = new System.Drawing.Point(53, 624);
+            this.txtMobileNumber.Location = new System.Drawing.Point(61, 589);
             this.txtMobileNumber.Margin = new System.Windows.Forms.Padding(7);
             this.txtMobileNumber.Name = "txtMobileNumber";
             this.txtMobileNumber.Size = new System.Drawing.Size(250, 26);
@@ -397,14 +397,14 @@
             this.txtAnswer5.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtAnswer5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAnswer5.ForeColor = System.Drawing.Color.Black;
-            this.txtAnswer5.HintForeColor = System.Drawing.Color.DarkGray;
+            this.txtAnswer5.HintForeColor = System.Drawing.Color.Black;
             this.txtAnswer5.HintText = "Please answer";
             this.txtAnswer5.isPassword = false;
             this.txtAnswer5.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(0)))), ((int)(((byte)(17)))));
             this.txtAnswer5.LineIdleColor = System.Drawing.SystemColors.GrayText;
             this.txtAnswer5.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(4)))), ((int)(((byte)(0)))));
             this.txtAnswer5.LineThickness = 3;
-            this.txtAnswer5.Location = new System.Drawing.Point(379, 477);
+            this.txtAnswer5.Location = new System.Drawing.Point(387, 442);
             this.txtAnswer5.Margin = new System.Windows.Forms.Padding(7);
             this.txtAnswer5.Name = "txtAnswer5";
             this.txtAnswer5.Size = new System.Drawing.Size(250, 26);
@@ -417,14 +417,14 @@
             this.txtAnswer3.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtAnswer3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAnswer3.ForeColor = System.Drawing.Color.Black;
-            this.txtAnswer3.HintForeColor = System.Drawing.Color.DarkGray;
+            this.txtAnswer3.HintForeColor = System.Drawing.Color.Black;
             this.txtAnswer3.HintText = "Please answer";
             this.txtAnswer3.isPassword = false;
             this.txtAnswer3.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(0)))), ((int)(((byte)(17)))));
             this.txtAnswer3.LineIdleColor = System.Drawing.SystemColors.GrayText;
             this.txtAnswer3.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(4)))), ((int)(((byte)(0)))));
             this.txtAnswer3.LineThickness = 3;
-            this.txtAnswer3.Location = new System.Drawing.Point(379, 382);
+            this.txtAnswer3.Location = new System.Drawing.Point(387, 347);
             this.txtAnswer3.Margin = new System.Windows.Forms.Padding(7);
             this.txtAnswer3.Name = "txtAnswer3";
             this.txtAnswer3.Size = new System.Drawing.Size(250, 26);
@@ -437,14 +437,14 @@
             this.txtAnswer4.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtAnswer4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAnswer4.ForeColor = System.Drawing.Color.Black;
-            this.txtAnswer4.HintForeColor = System.Drawing.Color.DarkGray;
+            this.txtAnswer4.HintForeColor = System.Drawing.Color.Black;
             this.txtAnswer4.HintText = "Please answer";
             this.txtAnswer4.isPassword = false;
             this.txtAnswer4.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(0)))), ((int)(((byte)(17)))));
             this.txtAnswer4.LineIdleColor = System.Drawing.SystemColors.GrayText;
             this.txtAnswer4.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(4)))), ((int)(((byte)(0)))));
             this.txtAnswer4.LineThickness = 3;
-            this.txtAnswer4.Location = new System.Drawing.Point(379, 426);
+            this.txtAnswer4.Location = new System.Drawing.Point(387, 391);
             this.txtAnswer4.Margin = new System.Windows.Forms.Padding(7);
             this.txtAnswer4.Name = "txtAnswer4";
             this.txtAnswer4.Size = new System.Drawing.Size(250, 26);
@@ -457,14 +457,14 @@
             this.txtAnswer2.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtAnswer2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAnswer2.ForeColor = System.Drawing.Color.Black;
-            this.txtAnswer2.HintForeColor = System.Drawing.Color.DarkGray;
+            this.txtAnswer2.HintForeColor = System.Drawing.Color.Black;
             this.txtAnswer2.HintText = "Please answer";
             this.txtAnswer2.isPassword = false;
             this.txtAnswer2.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(0)))), ((int)(((byte)(17)))));
             this.txtAnswer2.LineIdleColor = System.Drawing.SystemColors.GrayText;
             this.txtAnswer2.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(4)))), ((int)(((byte)(0)))));
             this.txtAnswer2.LineThickness = 3;
-            this.txtAnswer2.Location = new System.Drawing.Point(379, 335);
+            this.txtAnswer2.Location = new System.Drawing.Point(387, 300);
             this.txtAnswer2.Margin = new System.Windows.Forms.Padding(7);
             this.txtAnswer2.Name = "txtAnswer2";
             this.txtAnswer2.Size = new System.Drawing.Size(250, 26);
@@ -477,14 +477,14 @@
             this.txtAnswer1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtAnswer1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAnswer1.ForeColor = System.Drawing.Color.Black;
-            this.txtAnswer1.HintForeColor = System.Drawing.Color.DarkGray;
+            this.txtAnswer1.HintForeColor = System.Drawing.Color.Black;
             this.txtAnswer1.HintText = "Please answer";
             this.txtAnswer1.isPassword = false;
             this.txtAnswer1.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(0)))), ((int)(((byte)(17)))));
             this.txtAnswer1.LineIdleColor = System.Drawing.SystemColors.GrayText;
             this.txtAnswer1.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(4)))), ((int)(((byte)(0)))));
             this.txtAnswer1.LineThickness = 3;
-            this.txtAnswer1.Location = new System.Drawing.Point(379, 284);
+            this.txtAnswer1.Location = new System.Drawing.Point(387, 249);
             this.txtAnswer1.Margin = new System.Windows.Forms.Padding(7);
             this.txtAnswer1.Name = "txtAnswer1";
             this.txtAnswer1.Size = new System.Drawing.Size(250, 26);
@@ -497,14 +497,14 @@
             this.txtConfirmPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtConfirmPassword.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtConfirmPassword.ForeColor = System.Drawing.Color.Black;
-            this.txtConfirmPassword.HintForeColor = System.Drawing.Color.DarkGray;
+            this.txtConfirmPassword.HintForeColor = System.Drawing.Color.Black;
             this.txtConfirmPassword.HintText = "Confirm Password";
             this.txtConfirmPassword.isPassword = false;
             this.txtConfirmPassword.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(0)))), ((int)(((byte)(17)))));
             this.txtConfirmPassword.LineIdleColor = System.Drawing.SystemColors.GrayText;
             this.txtConfirmPassword.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(4)))), ((int)(((byte)(0)))));
             this.txtConfirmPassword.LineThickness = 3;
-            this.txtConfirmPassword.Location = new System.Drawing.Point(377, 207);
+            this.txtConfirmPassword.Location = new System.Drawing.Point(385, 172);
             this.txtConfirmPassword.Margin = new System.Windows.Forms.Padding(7);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
             this.txtConfirmPassword.Size = new System.Drawing.Size(250, 26);
@@ -517,14 +517,14 @@
             this.txtPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPassword.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.Color.Black;
-            this.txtPassword.HintForeColor = System.Drawing.Color.DarkGray;
+            this.txtPassword.HintForeColor = System.Drawing.Color.Black;
             this.txtPassword.HintText = "Password";
             this.txtPassword.isPassword = false;
             this.txtPassword.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(0)))), ((int)(((byte)(17)))));
             this.txtPassword.LineIdleColor = System.Drawing.SystemColors.GrayText;
             this.txtPassword.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(4)))), ((int)(((byte)(0)))));
             this.txtPassword.LineThickness = 3;
-            this.txtPassword.Location = new System.Drawing.Point(377, 167);
+            this.txtPassword.Location = new System.Drawing.Point(385, 132);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(7);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(250, 26);
@@ -538,14 +538,14 @@
             this.txtUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtUsername.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.ForeColor = System.Drawing.Color.Black;
-            this.txtUsername.HintForeColor = System.Drawing.Color.DarkGray;
+            this.txtUsername.HintForeColor = System.Drawing.Color.Black;
             this.txtUsername.HintText = "Username";
             this.txtUsername.isPassword = false;
             this.txtUsername.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(0)))), ((int)(((byte)(17)))));
             this.txtUsername.LineIdleColor = System.Drawing.SystemColors.GrayText;
             this.txtUsername.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(4)))), ((int)(((byte)(0)))));
             this.txtUsername.LineThickness = 3;
-            this.txtUsername.Location = new System.Drawing.Point(377, 127);
+            this.txtUsername.Location = new System.Drawing.Point(385, 92);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(7);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(250, 26);
@@ -558,14 +558,14 @@
             this.txtEmailAddress.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtEmailAddress.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmailAddress.ForeColor = System.Drawing.Color.Black;
-            this.txtEmailAddress.HintForeColor = System.Drawing.Color.DarkGray;
+            this.txtEmailAddress.HintForeColor = System.Drawing.Color.Black;
             this.txtEmailAddress.HintText = "Email Address";
             this.txtEmailAddress.isPassword = false;
             this.txtEmailAddress.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(0)))), ((int)(((byte)(17)))));
             this.txtEmailAddress.LineIdleColor = System.Drawing.SystemColors.GrayText;
             this.txtEmailAddress.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(4)))), ((int)(((byte)(0)))));
             this.txtEmailAddress.LineThickness = 3;
-            this.txtEmailAddress.Location = new System.Drawing.Point(53, 584);
+            this.txtEmailAddress.Location = new System.Drawing.Point(61, 549);
             this.txtEmailAddress.Margin = new System.Windows.Forms.Padding(7);
             this.txtEmailAddress.Name = "txtEmailAddress";
             this.txtEmailAddress.Size = new System.Drawing.Size(250, 26);
@@ -578,14 +578,14 @@
             this.txtLastName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtLastName.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastName.ForeColor = System.Drawing.Color.Black;
-            this.txtLastName.HintForeColor = System.Drawing.Color.DarkGray;
+            this.txtLastName.HintForeColor = System.Drawing.Color.Black;
             this.txtLastName.HintText = "Last Name";
             this.txtLastName.isPassword = false;
             this.txtLastName.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(0)))), ((int)(((byte)(17)))));
             this.txtLastName.LineIdleColor = System.Drawing.SystemColors.GrayText;
             this.txtLastName.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(4)))), ((int)(((byte)(0)))));
             this.txtLastName.LineThickness = 3;
-            this.txtLastName.Location = new System.Drawing.Point(53, 207);
+            this.txtLastName.Location = new System.Drawing.Point(61, 172);
             this.txtLastName.Margin = new System.Windows.Forms.Padding(7);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(250, 26);
@@ -598,14 +598,14 @@
             this.txtMiddleName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtMiddleName.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMiddleName.ForeColor = System.Drawing.Color.Black;
-            this.txtMiddleName.HintForeColor = System.Drawing.Color.DarkGray;
+            this.txtMiddleName.HintForeColor = System.Drawing.Color.Black;
             this.txtMiddleName.HintText = "Middle Name";
             this.txtMiddleName.isPassword = false;
             this.txtMiddleName.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(0)))), ((int)(((byte)(17)))));
             this.txtMiddleName.LineIdleColor = System.Drawing.SystemColors.GrayText;
             this.txtMiddleName.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(4)))), ((int)(((byte)(0)))));
             this.txtMiddleName.LineThickness = 3;
-            this.txtMiddleName.Location = new System.Drawing.Point(53, 167);
+            this.txtMiddleName.Location = new System.Drawing.Point(61, 132);
             this.txtMiddleName.Margin = new System.Windows.Forms.Padding(7);
             this.txtMiddleName.Name = "txtMiddleName";
             this.txtMiddleName.Size = new System.Drawing.Size(250, 26);
@@ -618,14 +618,14 @@
             this.txtFirstName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtFirstName.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFirstName.ForeColor = System.Drawing.Color.Black;
-            this.txtFirstName.HintForeColor = System.Drawing.Color.DarkGray;
+            this.txtFirstName.HintForeColor = System.Drawing.Color.Black;
             this.txtFirstName.HintText = "First Name";
             this.txtFirstName.isPassword = false;
             this.txtFirstName.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(0)))), ((int)(((byte)(17)))));
             this.txtFirstName.LineIdleColor = System.Drawing.SystemColors.GrayText;
             this.txtFirstName.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(4)))), ((int)(((byte)(0)))));
             this.txtFirstName.LineThickness = 3;
-            this.txtFirstName.Location = new System.Drawing.Point(53, 127);
+            this.txtFirstName.Location = new System.Drawing.Point(61, 92);
             this.txtFirstName.Margin = new System.Windows.Forms.Padding(7);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(250, 26);
@@ -638,17 +638,17 @@
             this.panel1.Controls.Add(this.label12);
             this.panel1.Location = new System.Drawing.Point(-5, -2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(698, 67);
+            this.panel1.Size = new System.Drawing.Size(698, 36);
             this.panel1.TabIndex = 218;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(23, 9);
+            this.label12.Location = new System.Drawing.Point(13, 4);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(127, 36);
+            this.label12.Size = new System.Drawing.Size(104, 28);
             this.label12.TabIndex = 137;
             this.label12.Text = "Register";
             // 
@@ -657,7 +657,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Drawing.MetroBorderStyle.FixedSingle;
-            this.ClientSize = new System.Drawing.Size(692, 678);
+            this.ClientSize = new System.Drawing.Size(692, 637);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.bunifuSeparator3);
             this.Controls.Add(this.bunifuSeparator2);

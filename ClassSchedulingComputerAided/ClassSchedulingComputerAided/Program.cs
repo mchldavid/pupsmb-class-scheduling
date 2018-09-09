@@ -16,7 +16,7 @@ namespace ClassSchedulingComputerAided
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmConnectionWizard());
+            Application.Run(new frmLogin());
         }
     }
 }

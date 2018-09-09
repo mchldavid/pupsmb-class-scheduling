@@ -27,6 +27,7 @@ namespace ClassSchedulingComputerAided
             cboLabHours.SelectedIndex = 0;
             cboYearLevel.SelectedIndex = 0;
             dgvListSubject.DataSource = md.dgv_showSubjectCurriculum().DataSource;
+            dgvListSubject.Columns[0].Visible = false;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -67,6 +68,7 @@ namespace ClassSchedulingComputerAided
             MessageBox.Show("Added Successfully", "Add Subject", MessageBoxButtons.OK, MessageBoxIcon.Information);
             md.C_AddSubjects(curriculumData.c_id, lbl_course_id.Text, cboCourse.SelectedItem.ToString(), txtSubjectCode.Text, txtSubjectDescription.Text, cboLectureHours.SelectedItem.ToString(), cboLabHours.SelectedItem.ToString(), cboUnits.SelectedItem.ToString(), cboYearLevel.SelectedItem.ToString());
             dgvListSubject.DataSource = md.dgv_showSubjectCurriculum().DataSource;
+            dgvListSubject.Columns[0].Visible = false;
         }
 
         private void cboCourse_SelectedIndexChanged(object sender, EventArgs e)

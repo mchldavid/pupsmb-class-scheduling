@@ -26,6 +26,8 @@ namespace ClassSchedulingComputerAided
         private void preferredSubjectsControl_Load(object sender, EventArgs e)
         {
             dgvListSubject.DataSource = md.dgv_showPreferredSubjects().DataSource;
+            dgvListSubject.Columns[0].Visible = false;
+
             lblTotalUnits.Text = md.getTotalUnits().ToString();
             lblTotalSubjects.Text = md.getTotalSubjects().ToString();
             lblUnitsAllowed.Text = usersData.p_uAllowed;
@@ -36,6 +38,7 @@ namespace ClassSchedulingComputerAided
             pnlAddSubject.Visible = true;
             cboSubjectBy.SelectedIndex = 0;
             dgvAddSubject.DataSource = md.dgv_showAddPreferredSubjects("Course Subject").DataSource;
+            dgvAddSubject.Columns[0].Visible = false;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -49,6 +52,7 @@ namespace ClassSchedulingComputerAided
             {
                 md.Prof_AddSubjects(row.Cells[0].Value.ToString());
                 dgvListSubject.DataSource = md.dgv_showPreferredSubjects().DataSource;
+                dgvListSubject.Columns[0].Visible = false;
                 lblTotalUnits.Text = md.getTotalUnits().ToString();
                 lblTotalSubjects.Text = md.getTotalSubjects().ToString();
                 MessageBox.Show("You added " + row.Cells[2].Value.ToString() + " into your preferred subjects", "Adding of Subject");
@@ -58,6 +62,7 @@ namespace ClassSchedulingComputerAided
         private void cboSubjectBy_SelectedIndexChanged(object sender, EventArgs e)
         {
             dgvAddSubject.DataSource = md.dgv_showAddPreferredSubjects(cboSubjectBy.SelectedItem.ToString()).DataSource;
+            dgvAddSubject.Columns[0].Visible = false;
         }
 
         private void btnDeleteSubject_Click(object sender, EventArgs e)

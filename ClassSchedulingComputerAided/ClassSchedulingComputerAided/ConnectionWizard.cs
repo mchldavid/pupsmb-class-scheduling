@@ -58,6 +58,7 @@ namespace ClassSchedulingComputerAided
             }
             catch (MySqlException ex)
             {
+                string str = ex.Message;
                 MessageBox.Show("Connection Failed!", "Failed!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             finally

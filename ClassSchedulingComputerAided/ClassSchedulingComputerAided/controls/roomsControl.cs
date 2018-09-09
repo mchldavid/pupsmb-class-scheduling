@@ -34,12 +34,15 @@ namespace ClassSchedulingComputerAided
             md.R_AddRooms(txtRoomName.Text, txtRoomCode.Text, txtSlots.Text);
             lstActiveRooms.Items.Add(txtRoomCode.Text);
             dgvShowRooms.DataSource = md.dgv_showRooms().DataSource;
+            dgvShowRooms.Columns[0].Visible = false;
         }
 
         private void btnSetRooms_Click(object sender, EventArgs e)
         {
             pnlSetRooms.Visible = true;
             dgvShowRooms.DataSource = md.dgv_showRooms().DataSource;
+            dgvShowRooms.Columns[0].Visible = false;
+
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

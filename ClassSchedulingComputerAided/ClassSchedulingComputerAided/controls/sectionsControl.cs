@@ -24,11 +24,13 @@ namespace ClassSchedulingComputerAided
                 md.S_AddSections(cboSelectCourse.SelectedItem.ToString(), cboSelectYear.SelectedItem.ToString(), x.ToString());
             txtNumberOfSection.Text = "";
             dgvShowSections.DataSource = md.dgv_showSections().DataSource;
+            dgvShowSections.Columns[0].Visible = false;
         }
 
         private void sectionsControl_Load(object sender, EventArgs e)
         {
             dgvShowSections.DataSource = md.dgv_showSections().DataSource;
+            dgvShowSections.Columns[0].Visible = false;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -37,6 +39,7 @@ namespace ClassSchedulingComputerAided
             {
                 md.S_DeleteSections(dr.Cells[0].Value.ToString());
                 dgvShowSections.DataSource = md.dgv_showSections().DataSource;
+                dgvShowSections.Columns[0].Visible = false;
             }
         }
 

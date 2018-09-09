@@ -21,6 +21,7 @@ namespace ClassSchedulingComputerAided
         private void SetCourses_Load(object sender, EventArgs e)
         {
             dgvShow.DataSource = md.dgv_showCourse().DataSource;
+            dgvShow.Columns[0].Visible = false;
         }
 
         private void metroTextBox1_Click(object sender, EventArgs e)

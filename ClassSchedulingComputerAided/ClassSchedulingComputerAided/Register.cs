@@ -33,6 +33,10 @@ namespace ClassSchedulingComputerAided
         private void CreateAccount_Load(object sender, EventArgs e)
         {
             txtFirstName.Focus();
+            cboCourseDepartment.Items.Add("NONE");
+            for (int x = 0; x < md.Sections_ListCourse().Length; x++)
+                if (md.Sections_ListCourse().GetValue(x).ToString() != "")
+                    cboCourseDepartment.Items.Add(md.Sections_ListCourse().GetValue(x).ToString());
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -55,7 +59,7 @@ namespace ClassSchedulingComputerAided
                             teachStatus = "Parttimer";
                         if (rdoRetiree.Checked == true)
                             teachStatus = "Retiree";
-                        md.RegisterUser(txtUsername.Text, ms.encryptPassword(txtPassword.Text), txtFirstName.Text, txtMiddleName.Text, txtLastName.Text, txtAddress.Text, gender, teachStatus, "cboCourseDe partment.SelectedItem.ToString()", txtEmailAddress.Text, txtMobileNumber.Text);
+                        md.RegisterUser(txtUsername.Text, ms.encryptPassword(txtPassword.Text), txtFirstName.Text, txtMiddleName.Text, txtLastName.Text, txtAddress.Text, gender, teachStatus, cboCourseDepartment.Text, txtEmailAddress.Text, txtMobileNumber.Text);
 
                         md.RegisterSecurityQuestion(txtUsername.Text, ms.encryptPassword(txtPassword.Text), txtAnswer1.Text, txtAnswer2.Text, txtAnswer3.Text, txtAnswer4.Text, txtAnswer5.Text);
                         frmLogin l = new frmLogin();

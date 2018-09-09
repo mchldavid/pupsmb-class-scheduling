@@ -22,6 +22,7 @@ namespace ClassSchedulingComputerAided
         private void Curriculum_Load(object sender, EventArgs e)
         {
             dgvCurriculum.DataSource = md.C_dgv_showCurriculum().DataSource;
+            dgvCurriculum.Columns[0].Visible = false;
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
@@ -57,6 +58,11 @@ namespace ClassSchedulingComputerAided
                 
                 this.Hide();
             }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

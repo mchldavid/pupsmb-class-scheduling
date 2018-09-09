@@ -228,6 +228,31 @@ namespace ClassSchedulingComputerAided
                 com.Parameters.AddWithValue("@moN", mobileNumber);
                 com.ExecuteNonQuery();
                 MessageBox.Show("Update Successfully!", "UpdateUser");
+                con.Close();
+                
+                con.Open();
+                string SqlSelectUsers = "SELECT * FROM tbl_users WHERE users_id = @id;";
+                using (MySqlCommand cmd = new MySqlCommand(SqlSelectUsers, con))
+                {
+                    cmd.Parameters.AddWithValue("@id", usersData.p_id);
+                    cmd.ExecuteNonQuery();
+
+                    MySqlDataReader dr = cmd.ExecuteReader();
+                    if (dr.Read())
+                    {
+                        usersData.p_usr = dr["username"].ToString();
+                        usersData.p_pwd = dr["password"].ToString();
+                        usersData.p_fName = dr["firstName"].ToString();
+                        usersData.p_mName = dr["middleName"].ToString();
+                        usersData.p_lName = dr["lastName"].ToString();
+                        usersData.p_address = dr["address"].ToString();
+                        usersData.p_gender = dr["gender"].ToString();
+                        usersData.p_cDepartment = dr["courseDepartment"].ToString();
+                        usersData.p_tStatus = dr["teachingStatus"].ToString();
+                        usersData.p_uLevel = dr["userLevel"].ToString();
+                        usersData.p_uAllowed = dr["unitsAllowed"].ToString();
+                    }
+                }
             }
             catch (MySqlException er)
             {
@@ -283,6 +308,8 @@ namespace ClassSchedulingComputerAided
             return id;
         }
         
+        //=====================Register============
+
         //=====================ListProfessors=============
         public DataGridView dgv_showListOfProfessors()
         {
@@ -938,7 +965,7 @@ namespace ClassSchedulingComputerAided
             try
             {
                 con.Open();
-                string sql = "SELECT ps_day AS 'DAY', startTime AS 'START TIME', endTime AS 'END TIME' FROM tbl_preferredschedules WHERE users_id = @id ORDER BY ps_day, startTime ASC;";
+                string sql = "SELECT preferredSchedule_id, ps_day AS 'DAY', startTime AS 'START TIME', endTime AS 'END TIME' FROM tbl_preferredschedules WHERE users_id = @id ORDER BY ps_day, startTime ASC;";
                 MySqlCommand com = new MySqlCommand(sql, con);
                 com.Parameters.AddWithValue("@id", usersData.p_id);
                 com.ExecuteNonQuery();
@@ -1145,6 +1172,26 @@ namespace ClassSchedulingComputerAided
                 con.Close();
             }
             return dgv1;
+        }
+
+        public void Prof_DeleteSchedule(string prefSched_id)
+        {
+            try
+            {
+                con.Open();
+                string sqlAddSubjects = "DELETE FROM tbl_preferredschedules WHERE preferredSchedule_id = @pS_id;";
+                MySqlCommand com1 = new MySqlCommand(sqlAddSubjects, con);
+                com1.Parameters.AddWithValue("@pS_id", prefSched_id);
+                com1.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "prof_DeleteSchedule");
+            }
+            finally
+            {
+                con.Close();
+            }
         }
 
         public string[] C_dgv_Edit(string id)

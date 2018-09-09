@@ -21,6 +21,7 @@ namespace ClassSchedulingComputerAided
         private void ListOfProfessors_Load(object sender, EventArgs e)
         {
            dgvShow.DataSource = md.dgv_showListOfProfessors().DataSource;
+           dgvShow.Columns[0].Visible = false;
         }
 
         private void bunifuSeparator1_Load(object sender, EventArgs e)
@@ -91,6 +92,8 @@ namespace ClassSchedulingComputerAided
                 if (result == DialogResult.Yes)
                 {
                     md.L_DeleteProfessor(ListOfProfessorsData.Selected_ID);
+                    dgvShow.DataSource = md.dgv_showListOfProfessors().DataSource;
+                    dgvShow.Columns[0].Visible = false;
                     MessageBox.Show("hello");
                 }
             }
