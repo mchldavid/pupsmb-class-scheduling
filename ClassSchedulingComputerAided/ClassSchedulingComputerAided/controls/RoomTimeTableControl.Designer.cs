@@ -583,6 +583,7 @@
             this.label58.TabIndex = 13;
             this.label58.Text = "label2";
             this.label58.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label58.Visible = false;
             // 
             // label59
             // 
@@ -593,6 +594,7 @@
             this.label59.TabIndex = 13;
             this.label59.Text = "label2";
             this.label59.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label59.Visible = false;
             // 
             // label90
             // 
@@ -603,6 +605,7 @@
             this.label90.TabIndex = 13;
             this.label90.Text = "label2";
             this.label90.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label90.Visible = false;
             // 
             // label91
             // 
@@ -613,6 +616,7 @@
             this.label91.TabIndex = 13;
             this.label91.Text = "label2";
             this.label91.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label91.Visible = false;
             // 
             // label92
             // 
@@ -623,6 +627,7 @@
             this.label92.TabIndex = 13;
             this.label92.Text = "label2";
             this.label92.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label92.Visible = false;
             // 
             // label93
             // 
@@ -633,6 +638,7 @@
             this.label93.TabIndex = 13;
             this.label93.Text = "label93";
             this.label93.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label93.Visible = false;
             // 
             // label94
             // 
@@ -643,6 +649,7 @@
             this.label94.TabIndex = 1;
             this.label94.Text = "label94";
             this.label94.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label94.Visible = false;
             // 
             // tableLayoutPanel3
             // 

@@ -1350,6 +1350,72 @@ namespace ClassSchedulingComputerAided
             return cboCurriculum;
         }
 
+        public string[] get_id_roomScheduled(string room_code)
+        {
+            string[] id = new string[100];
+            int x = 0;
+            for (x = 0; x < 100; x++)
+                id[x] = "";
+
+            x = 0;
+            try
+            {
+                con.Open();
+                string sqlListRoomCode = "SELECT * FROM tbl_room_scheduled t WHERE roomCode = @rC;";
+                MySqlCommand com = new MySqlCommand(sqlListRoomCode, con);
+                com.Parameters.AddWithValue("@rC", room_code);
+                com.ExecuteNonQuery();
+
+                MySqlDataReader dr = com.ExecuteReader();
+                while (dr.Read())
+                {
+                    id[x] = dr["room_scheduled_id"].ToString();
+                    x++;
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "Get_id_roomScheduled");
+            }
+            finally
+            {
+                con.Close();
+            }
+            return id;
+        }
+
+        public string[] get_info_roomScheduled(string rS_id)
+        {
+            string[] roomSchedule = new string[11];
+            try
+            {
+                con.Open();
+                string testSqlUsers = "SELECT *, CONCAT(course,' ',year,'-',section) FROM tbl_room_scheduled WHERE room_scheduled_id = @id";
+                MySqlCommand com = new MySqlCommand(testSqlUsers, con);
+                com.Parameters.AddWithValue("@id", rS_id);
+                com.ExecuteNonQuery();
+                MySqlDataReader dr = com.ExecuteReader();
+                if (dr.Read())
+                {
+                    roomSchedule[0] = dr["roomStartTime"].ToString();
+                    roomSchedule[1] = dr["roomEndTime"].ToString();
+                    roomSchedule[2] = dr["roomDay"].ToString();
+                    roomSchedule[3] = dr["assignedProfessor"].ToString();
+                    roomSchedule[4] = dr["subjectCode"].ToString();
+                    roomSchedule[5] = dr["CONCAT(course,' ',year,'-',section)"].ToString();
+                }
+            }
+            catch (MySqlException er)
+            {
+                MessageBox.Show(er.Message, "get_info_roomScheduled");
+            }
+            finally
+            {
+                con.Close();
+            }
+            return roomSchedule;
+        }
+
         public void CSD_ShowSubjectsForStudents(string course, string yearLevel, string curriculum)//to set all values into the accessors 
         {
             int x = 0;
@@ -1590,7 +1656,5 @@ namespace ClassSchedulingComputerAided
             }
             
         }
-
-
     }
 }

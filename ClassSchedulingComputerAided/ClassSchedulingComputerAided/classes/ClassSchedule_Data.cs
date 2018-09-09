@@ -20,5 +20,11 @@ namespace ClassSchedulingComputerAided
             set;
         }
 
+        public static string roomCode
+        {
+            get;
+            set;
+        }
+
     }
 }

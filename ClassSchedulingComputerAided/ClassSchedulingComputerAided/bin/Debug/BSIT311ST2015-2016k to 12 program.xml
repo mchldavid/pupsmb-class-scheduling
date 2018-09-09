@@ -2,14 +2,14 @@
 <SaveInfoData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Prof_1>Michael losbanos David</Prof_1>
   <Start_1>3</Start_1>
-  <End_1>5</End_1>
-  <Day_1>1</Day_1>
+  <End_1>10</End_1>
+  <Day_1>2</Day_1>
   <Room_1>RM201</Room_1>
   <Prof_2 />
-  <Start_2>-1</Start_2>
-  <End_2>3</End_2>
-  <Day_2>0</Day_2>
-  <Room_2>RM206</Room_2>
+  <Start_2>7</Start_2>
+  <End_2>13</End_2>
+  <Day_2>3</Day_2>
+  <Room_2>RM201</Room_2>
   <Prof_3 />
   <Start_3>-1</Start_3>
   <End_3>-1</End_3>
@@ -19,20 +19,20 @@
   <Start_4>8</Start_4>
   <End_4>4</End_4>
   <Day_4>1</Day_4>
-  <Room_4>RM201</Room_4>
+  <Room_4>RM206</Room_4>
   <Prof_5 />
   <Start_5>11</Start_5>
   <End_5>2</End_5>
   <Day_5>5</Day_5>
-  <Room_5>RM201</Room_5>
+  <Room_5>RM210</Room_5>
   <Prof_6 />
   <Start_6>11</Start_6>
   <End_6>2</End_6>
   <Day_6>3</Day_6>
   <Room_6>RM210</Room_6>
   <Prof_7 />
-  <Start_7>2</Start_7>
-  <End_7>0</End_7>
+  <Start_7>14</Start_7>
+  <End_7>20</End_7>
   <Day_7>4</Day_7>
   <Room_7>RM201</Room_7>
   <Prof_8 />

@@ -1249,5 +1249,15 @@ namespace ClassSchedulingComputerAided
                 if (md.getCourseSection(cboCourse.SelectedItem.ToString(), cboYear.SelectedItem.ToString()).GetValue(x).ToString() != "")
                     cboSection.Items.Add(md.getCourseSection(cboCourse.SelectedItem.ToString(), cboYear.SelectedItem.ToString()).GetValue(x).ToString());
         }
+
+        private void cboRoom_1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //md.CSD_get_professors_id(cboProfessor_1.SelectedItem.ToString());
+            //ClassSchedule_Data.professors_name = cboProfessor_1.SelectedItem.ToString();
+            ClassSchedule_Data.roomCode = cboRoom_1.SelectedItem.ToString();
+            RoomTimeTableControl rttc = new RoomTimeTableControl();
+            pnlRooms.Controls.Clear();
+            pnlRooms.Controls.Add(rttc);
+        }
     }
 }
