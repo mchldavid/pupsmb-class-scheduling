@@ -433,13 +433,10 @@ namespace ClassSchedulingComputerAided
         private void cboCourse_SelectedIndexChanged(object sender, EventArgs e)
         {
             cboYear.Items.Clear();
+            cboYear.Text = "";
             for (int x = 0; x < md.getCourseYear(cboCourse.SelectedItem.ToString()).Length; x++)
                 if (md.getCourseYear(cboCourse.SelectedItem.ToString()).GetValue(x).ToString() != "")
                     cboYear.Items.Add(md.getCourseYear(cboCourse.SelectedItem.ToString()).GetValue(x).ToString());
-
-            for (int x = 0; x < md.getCourseSection(cboCourse.SelectedItem.ToString()).Length; x++)
-                if (md.getCourseSection(cboCourse.SelectedItem.ToString()).GetValue(x).ToString() != "")
-                    cboSection.Items.Add(md.getCourseSection(cboCourse.SelectedItem.ToString()).GetValue(x).ToString());
         }
 
         public void SetToEnabled()//method to set button 'set' to enabled
@@ -543,6 +540,7 @@ namespace ClassSchedulingComputerAided
                 cboDay_1.Enabled = true;
                 cboRoom_1.Enabled = true;
                 btnSet_1.Text = "OK";
+                btnSAVE.Enabled = false;
 
                 //to list all Active Rooms
                 SubjectForStudents.Rooms = new string[100];
@@ -566,6 +564,7 @@ namespace ClassSchedulingComputerAided
                 SetComboBoxToDisabled();
                 SetToEnabled();
                 btnSet_1.Text = "SET";
+                btnSAVE.Enabled = true;
             }
         }
 
@@ -585,6 +584,7 @@ namespace ClassSchedulingComputerAided
                 cboDay_2.Enabled = true;
                 cboRoom_2.Enabled = true;
                 btnSet_2.Text = "OK";
+                btnSAVE.Enabled = false;
 
                 //to list all Active Rooms
                 SubjectForStudents.Rooms = new string[100];
@@ -608,6 +608,7 @@ namespace ClassSchedulingComputerAided
                 SetComboBoxToDisabled();
                 SetToEnabled();
                 btnSet_2.Text = "SET";
+                btnSAVE.Enabled = true;
             }
         }
 
@@ -627,6 +628,7 @@ namespace ClassSchedulingComputerAided
                 cboDay_3.Enabled = true;
                 cboRoom_3.Enabled = true;
                 btnSet_3.Text = "OK";
+                btnSAVE.Enabled = false;
 
                 //to list all Active Rooms
                 SubjectForStudents.Rooms = new string[100];
@@ -650,6 +652,7 @@ namespace ClassSchedulingComputerAided
                 SetComboBoxToDisabled();
                 SetToEnabled();
                 btnSet_3.Text = "SET";
+                btnSAVE.Enabled = true;
             }
         }
 
@@ -669,6 +672,7 @@ namespace ClassSchedulingComputerAided
                 cboDay_4.Enabled = true;
                 cboRoom_4.Enabled = true;
                 btnSet_4.Text = "OK";
+                btnSAVE.Enabled = false;
 
                 //to list all Active Rooms
                 SubjectForStudents.Rooms = new string[100];
@@ -692,6 +696,7 @@ namespace ClassSchedulingComputerAided
                 SetComboBoxToDisabled();
                 SetToEnabled();
                 btnSet_4.Text = "SET";
+                btnSAVE.Enabled = true;
             }
         }
 
@@ -711,6 +716,7 @@ namespace ClassSchedulingComputerAided
                 cboDay_5.Enabled = true;
                 cboRoom_5.Enabled = true;
                 btnSet_5.Text = "OK";
+                btnSAVE.Enabled = false;
 
                 //to list all Active Rooms
                 SubjectForStudents.Rooms = new string[100];
@@ -734,6 +740,7 @@ namespace ClassSchedulingComputerAided
                 SetComboBoxToDisabled();
                 SetToEnabled();
                 btnSet_5.Text = "SET";
+                btnSAVE.Enabled = true;
             }
         }
 
@@ -753,6 +760,7 @@ namespace ClassSchedulingComputerAided
                 cboDay_6.Enabled = true;
                 cboRoom_6.Enabled = true;
                 btnSet_6.Text = "OK";
+                btnSAVE.Enabled = false;
 
                 //to list all Active Rooms
                 SubjectForStudents.Rooms = new string[100];
@@ -776,6 +784,7 @@ namespace ClassSchedulingComputerAided
                 SetComboBoxToDisabled();
                 SetToEnabled();
                 btnSet_6.Text = "SET";
+                btnSAVE.Enabled = true;
             }
         }
 
@@ -795,6 +804,7 @@ namespace ClassSchedulingComputerAided
                 cboDay_7.Enabled = true;
                 cboRoom_7.Enabled = true;
                 btnSet_7.Text = "OK";
+                btnSAVE.Enabled = false;
 
                 //to list all Active Rooms
                 SubjectForStudents.Rooms = new string[100];
@@ -818,6 +828,7 @@ namespace ClassSchedulingComputerAided
                 SetComboBoxToDisabled();
                 SetToEnabled();
                 btnSet_7.Text = "SET";
+                btnSAVE.Enabled = true;
             }
         }
 
@@ -837,6 +848,7 @@ namespace ClassSchedulingComputerAided
                 cboDay_8.Enabled = true;
                 cboRoom_8.Enabled = true;
                 btnSet_8.Text = "OK";
+                btnSAVE.Enabled = false;
 
                 //to list all Active Rooms
                 SubjectForStudents.Rooms = new string[100];
@@ -860,6 +872,7 @@ namespace ClassSchedulingComputerAided
                 SetComboBoxToDisabled();
                 SetToEnabled();
                 btnSet_8.Text = "SET";
+                btnSAVE.Enabled = true;
             }
         }
 
@@ -879,6 +892,7 @@ namespace ClassSchedulingComputerAided
                 cboDay_9.Enabled = true;
                 cboRoom_9.Enabled = true;
                 btnSet_9.Text = "OK";
+                btnSAVE.Enabled = false;
 
                 //to list all Active Rooms
                 SubjectForStudents.Rooms = new string[100];
@@ -902,6 +916,7 @@ namespace ClassSchedulingComputerAided
                 SetComboBoxToDisabled();
                 SetToEnabled();
                 btnSet_9.Text = "SET";
+                btnSAVE.Enabled = true;
             }
         }
 
@@ -921,6 +936,7 @@ namespace ClassSchedulingComputerAided
                 cboDay_10.Enabled = true;
                 cboRoom_10.Enabled = true;
                 btnSet_10.Text = "OK";
+                btnSAVE.Enabled = false;
 
                 //to list all Active Rooms
                 SubjectForStudents.Rooms = new string[100];
@@ -944,6 +960,7 @@ namespace ClassSchedulingComputerAided
                 SetComboBoxToDisabled();
                 SetToEnabled();
                 btnSet_10.Text = "SET";
+                btnSAVE.Enabled = true;
             }
         }
 
@@ -1217,12 +1234,20 @@ namespace ClassSchedulingComputerAided
             {
                 SaveScheduled();
                 SaveData();
-                
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Save");
             }
+        }
+
+        private void cboYear_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cboSection.Items.Clear();
+            cboSection.Text = "";
+            for (int x = 0; x < md.getCourseSection(cboCourse.SelectedItem.ToString(), cboYear.SelectedItem.ToString()).Length; x++)
+                if (md.getCourseSection(cboCourse.SelectedItem.ToString(), cboYear.SelectedItem.ToString()).GetValue(x).ToString() != "")
+                    cboSection.Items.Add(md.getCourseSection(cboCourse.SelectedItem.ToString(), cboYear.SelectedItem.ToString()).GetValue(x).ToString());
         }
     }
 }

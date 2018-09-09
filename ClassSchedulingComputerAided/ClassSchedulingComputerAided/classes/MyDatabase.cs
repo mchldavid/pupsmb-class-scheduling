@@ -1276,7 +1276,7 @@ namespace ClassSchedulingComputerAided
             return cboYear;
         }
 
-        public string[] getCourseSection(string course)
+        public string[] getCourseSection(string course, string year)
         {
             int x = 0;
             string[] cboSection= new string[30];
@@ -1289,10 +1289,11 @@ namespace ClassSchedulingComputerAided
             try
             {
                 con.Open();
-                string sqlListCourse = "SELECT DISTINCT section FROM tbl_sections WHERE course = @c;";
+                string sqlListCourse = "SELECT DISTINCT section FROM tbl_sections WHERE course = @c AND year = @y;";
 
                 MySqlCommand com = new MySqlCommand(sqlListCourse, con);
                 com.Parameters.AddWithValue("@c", course);
+                com.Parameters.AddWithValue("@y", year);
                 com.ExecuteNonQuery();
 
                 MySqlDataReader dr = com.ExecuteReader();
@@ -1495,7 +1496,7 @@ namespace ClassSchedulingComputerAided
                 int count = 0;
                 string cu = "";
                 string sqlGetCurriculumId = "SELECT * FROM tbl_curriculums WHERE curriculumName = @cN";
-                using(MySqlCommand cmd = new MySqlCommand(sqlGetCurriculumId, con))//getting curriculums id
+                using(MySqlCommand cmd = new MySqlCommand(sqlGetCurriculumId, con))//get the curriculums id
                 {
                     cmd.Parameters.AddWithValue("@cN", StudentsScheduled.curriculumsName );
                     cmd.ExecuteNonQuery();
@@ -1510,7 +1511,7 @@ namespace ClassSchedulingComputerAided
 
                 con.Open();
                 string sqlCount = "SELECT * FROM tbl_subjects su INNER JOIN tbl_curriculums cu ON su.curriculums_id = cu.curriculums_id WHERE course = @co AND yearLevel = @y AND cu.curriculumName = @cu ORDER BY su.subjectCode ASC";
-                using(MySqlCommand cmd1 = new MySqlCommand(sqlCount, con))
+                using(MySqlCommand cmd1 = new MySqlCommand(sqlCount, con))//count
                 {
                     cmd1.Parameters.AddWithValue("@co", course);
                     cmd1.Parameters.AddWithValue("@y", year);
@@ -1527,7 +1528,7 @@ namespace ClassSchedulingComputerAided
 
                 //inserting data
                 con.Open();
-                for(int y = 0; y < count; y++)
+                for (int y = 0; y < count; y++)// from how many count that increment that to be insert the schedule for students
                 {
                     string sqlInsertStudentsSched = "INSERT INTO tbl_students_scheduled(curriculums_id, course, year, section, semester, schoolYear, room, subjectCode, subjectDescription, scheduledBy, scheduledDate, professor, scheduledStartTime, scheduledEndTime, scheduledDay) VALUES(@c_id, @c, @y, @s, @sem, @sY, @r, @sC, @sD, @sB, @sDa, @p, @sS, @sE, @sDay)";
                     using (MySqlCommand cmd = new MySqlCommand(sqlInsertStudentsSched, con))//to insert new data
@@ -1557,7 +1558,7 @@ namespace ClassSchedulingComputerAided
 
                 con.Open();
                 x = 0;
-                for (int y = 0; y < count; y++)
+                for (int y = 0; y < count; y++)// from how many count that increment that to be insert the schedule for rooms
                 {
                     string sqlInsertRoomScheduled = "INSERT INTO tbl_room_scheduled(roomCode, roomStartTime, roomEndTime, roomDay, assignedProfessor, subjectCode, course, year, section, semester, schoolYear) VALUES(@rC, @rST, @rET, @rD, @aP, @sC, @c, @y, @sec, @sem, @sY)";
                     using (MySqlCommand cmd = new MySqlCommand(sqlInsertRoomScheduled, con))
