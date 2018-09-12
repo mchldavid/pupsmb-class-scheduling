@@ -41,8 +41,11 @@
             this.txtPassword = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnExit = new MetroFramework.Controls.MetroLink();
+            this.lbltext = new System.Windows.Forms.Label();
+            this.btnSettings = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSettings)).BeginInit();
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -201,12 +204,38 @@
             this.btnExit.Text = "X";
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // lbltext
+            // 
+            this.lbltext.AutoSize = true;
+            this.lbltext.ForeColor = System.Drawing.Color.DimGray;
+            this.lbltext.Location = new System.Drawing.Point(353, 368);
+            this.lbltext.Name = "lbltext";
+            this.lbltext.Size = new System.Drawing.Size(69, 13);
+            this.lbltext.TabIndex = 12;
+            this.lbltext.Text = "Configuration";
+            // 
+            // btnSettings
+            // 
+            this.btnSettings.BackColor = System.Drawing.Color.White;
+            this.btnSettings.Image = ((System.Drawing.Image)(resources.GetObject("btnSettings.Image")));
+            this.btnSettings.ImageActive = null;
+            this.btnSettings.Location = new System.Drawing.Point(327, 363);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Size = new System.Drawing.Size(24, 23);
+            this.btnSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnSettings.TabIndex = 13;
+            this.btnSettings.TabStop = false;
+            this.btnSettings.Zoom = 10;
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Drawing.MetroBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(667, 394);
+            this.Controls.Add(this.btnSettings);
+            this.Controls.Add(this.lbltext);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
@@ -229,6 +258,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSettings)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -248,6 +278,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         public MetroFramework.Controls.MetroLink btnExit;
+        private System.Windows.Forms.Label lbltext;
+        private Bunifu.Framework.UI.BunifuImageButton btnSettings;
 
 
 

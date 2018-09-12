@@ -123,5 +123,16 @@ namespace ClassSchedulingComputerAided
         {
             System.Environment.Exit(0);
         }
+
+        private void btnConfiguration_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            frmConnectionWizard fcw = new frmConnectionWizard();
+            fcw.Show();
+            this.Hide();
+        }
     }
 }
