@@ -81,7 +81,7 @@
             // 
             this.txtPublishedBy.Location = new System.Drawing.Point(157, 99);
             this.txtPublishedBy.Name = "txtPublishedBy";
-            this.txtPublishedBy.Size = new System.Drawing.Size(251, 25);
+            this.txtPublishedBy.Size = new System.Drawing.Size(286, 25);
             this.txtPublishedBy.TabIndex = 3;
             // 
             // btnSave
@@ -124,7 +124,7 @@
             this.dtpDatePublished.FormatCustom = null;
             this.dtpDatePublished.Location = new System.Drawing.Point(156, 135);
             this.dtpDatePublished.Name = "dtpDatePublished";
-            this.dtpDatePublished.Size = new System.Drawing.Size(252, 25);
+            this.dtpDatePublished.Size = new System.Drawing.Size(287, 25);
             this.dtpDatePublished.TabIndex = 158;
             this.dtpDatePublished.Value = new System.DateTime(2018, 7, 24, 16, 9, 36, 981);
             // 

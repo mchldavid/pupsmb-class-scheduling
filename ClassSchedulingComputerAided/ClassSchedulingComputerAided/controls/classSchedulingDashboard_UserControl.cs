@@ -46,8 +46,6 @@ namespace ClassSchedulingComputerAided
 
         }
 
-        
-
         private void lblDescription_4_Click(object sender, EventArgs e)
         {
 

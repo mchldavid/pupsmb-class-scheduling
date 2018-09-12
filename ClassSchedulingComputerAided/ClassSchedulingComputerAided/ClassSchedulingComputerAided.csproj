@@ -148,7 +148,7 @@
     <Compile Include="classes\SaveXML.cs" />
     <Compile Include="classes\StudentsScheduled.cs" />
     <Compile Include="classes\SubjectForStudents.cs" />
-    <Compile Include="CreateDatabase.cs" />
+    <Compile Include="classes\CreateDatabase.cs" />
     <Compile Include="trash\Information.cs">
       <SubType>Form</SubType>
     </Compile>

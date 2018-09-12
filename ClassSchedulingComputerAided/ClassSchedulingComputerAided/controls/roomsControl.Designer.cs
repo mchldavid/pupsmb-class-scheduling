@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.lstInActiveRooms = new System.Windows.Forms.ListBox();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
@@ -43,7 +46,6 @@
             this.btnInactiveAll = new MetroFramework.Controls.MetroButton();
             this.lbl_info = new System.Windows.Forms.Label();
             this.pnlSetRooms = new System.Windows.Forms.Panel();
-            this.dgvShowRooms = new System.Windows.Forms.DataGridView();
             this.btnCancel = new MetroFramework.Controls.MetroButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
@@ -57,10 +59,11 @@
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
+            this.dgvShowRooms = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.panel1.SuspendLayout();
             this.pnlSetRooms.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvShowRooms)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvShowRooms)).BeginInit();
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -219,36 +222,6 @@
             this.pnlSetRooms.TabIndex = 248;
             this.pnlSetRooms.Visible = false;
             // 
-            // dgvShowRooms
-            // 
-            this.dgvShowRooms.AllowUserToAddRows = false;
-            this.dgvShowRooms.AllowUserToDeleteRows = false;
-            this.dgvShowRooms.AllowUserToResizeColumns = false;
-            this.dgvShowRooms.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.dgvShowRooms.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvShowRooms.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvShowRooms.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dgvShowRooms.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvShowRooms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvShowRooms.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvShowRooms.Location = new System.Drawing.Point(310, 61);
-            this.dgvShowRooms.MultiSelect = false;
-            this.dgvShowRooms.Name = "dgvShowRooms";
-            this.dgvShowRooms.ReadOnly = true;
-            this.dgvShowRooms.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvShowRooms.Size = new System.Drawing.Size(288, 261);
-            this.dgvShowRooms.TabIndex = 243;
-            // 
             // btnCancel
             // 
             this.btnCancel.Location = new System.Drawing.Point(13, 280);
@@ -370,6 +343,69 @@
             this.metroLabel8.Text = "Room Code:";
             this.metroLabel8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // dgvShowRooms
+            // 
+            this.dgvShowRooms.AllowUserToAddRows = false;
+            this.dgvShowRooms.AllowUserToDeleteRows = false;
+            this.dgvShowRooms.AllowUserToResizeColumns = false;
+            this.dgvShowRooms.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Gray;
+            this.dgvShowRooms.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvShowRooms.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvShowRooms.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvShowRooms.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvShowRooms.BackgroundColor = System.Drawing.Color.White;
+            this.dgvShowRooms.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvShowRooms.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvShowRooms.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvShowRooms.ColumnHeadersHeight = 25;
+            this.dgvShowRooms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvShowRooms.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvShowRooms.DoubleBuffered = true;
+            this.dgvShowRooms.EnableHeadersVisualStyles = false;
+            this.dgvShowRooms.GridColor = System.Drawing.Color.DarkGray;
+            this.dgvShowRooms.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
+            this.dgvShowRooms.HeaderForeColor = System.Drawing.Color.Gold;
+            this.dgvShowRooms.Location = new System.Drawing.Point(308, 61);
+            this.dgvShowRooms.MultiSelect = false;
+            this.dgvShowRooms.Name = "dgvShowRooms";
+            this.dgvShowRooms.ReadOnly = true;
+            this.dgvShowRooms.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvShowRooms.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvShowRooms.RowHeadersWidth = 15;
+            this.dgvShowRooms.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvShowRooms.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvShowRooms.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvShowRooms.Size = new System.Drawing.Size(300, 261);
+            this.dgvShowRooms.TabIndex = 243;
+            // 
             // roomsControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -392,8 +428,8 @@
             this.Load += new System.EventHandler(this.roomsControl_Load);
             this.panel1.ResumeLayout(false);
             this.pnlSetRooms.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvShowRooms)).EndInit();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvShowRooms)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -427,6 +463,6 @@
         public MetroFramework.Controls.MetroButton btnCancel;
         public MetroFramework.Controls.MetroTextBox txtSlots;
         public MetroFramework.Controls.MetroTextBox txtRoomCode;
-        public System.Windows.Forms.DataGridView dgvShowRooms;
+        private Bunifu.Framework.UI.BunifuCustomDataGrid dgvShowRooms;
     }
 }

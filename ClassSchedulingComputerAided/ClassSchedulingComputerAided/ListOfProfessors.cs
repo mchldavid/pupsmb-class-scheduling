@@ -53,12 +53,10 @@ namespace ClassSchedulingComputerAided
 
         private void btnProfessorClose_Click(object sender, EventArgs e)
         {
-            pnlProfessorsInformation.Visible = false;
         }
 
         private void btnViewInfo_Click(object sender, EventArgs e)
         {
-            pnlProfessorsInformation.Visible = true;
         }
 
         private void btnEditProfessor_Click(object sender, EventArgs e)

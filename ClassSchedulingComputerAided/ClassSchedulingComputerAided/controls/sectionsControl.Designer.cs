@@ -30,8 +30,9 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dgvShowSections = new System.Windows.Forms.DataGridView();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
             this.cboSelectYear = new System.Windows.Forms.ComboBox();
@@ -45,52 +46,12 @@
             this.txtUsername = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.cboCourseDepartment = new System.Windows.Forms.ComboBox();
-            this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvShowSections)).BeginInit();
+            this.dgvShowSections = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvShowSections)).BeginInit();
             this.SuspendLayout();
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.BackColor = System.Drawing.Color.Gainsboro;
-            this.groupBox3.Controls.Add(this.dgvShowSections);
-            this.groupBox3.Location = new System.Drawing.Point(40, 45);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(296, 390);
-            this.groupBox3.TabIndex = 190;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "List of Sections";
-            // 
-            // dgvShowSections
-            // 
-            this.dgvShowSections.AllowUserToAddRows = false;
-            this.dgvShowSections.AllowUserToDeleteRows = false;
-            this.dgvShowSections.AllowUserToResizeColumns = false;
-            this.dgvShowSections.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.dgvShowSections.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvShowSections.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvShowSections.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dgvShowSections.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvShowSections.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvShowSections.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvShowSections.Location = new System.Drawing.Point(6, 16);
-            this.dgvShowSections.MultiSelect = false;
-            this.dgvShowSections.Name = "dgvShowSections";
-            this.dgvShowSections.ReadOnly = true;
-            this.dgvShowSections.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvShowSections.Size = new System.Drawing.Size(284, 374);
-            this.dgvShowSections.TabIndex = 0;
             // 
             // groupBox1
             // 
@@ -249,31 +210,103 @@
             this.cboCourseDepartment.Size = new System.Drawing.Size(128, 21);
             this.cboCourseDepartment.TabIndex = 236;
             // 
+            // dgvShowSections
+            // 
+            this.dgvShowSections.AllowUserToAddRows = false;
+            this.dgvShowSections.AllowUserToDeleteRows = false;
+            this.dgvShowSections.AllowUserToResizeColumns = false;
+            this.dgvShowSections.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Gray;
+            this.dgvShowSections.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvShowSections.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvShowSections.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvShowSections.BackgroundColor = System.Drawing.Color.White;
+            this.dgvShowSections.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvShowSections.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvShowSections.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvShowSections.ColumnHeadersHeight = 25;
+            this.dgvShowSections.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvShowSections.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvShowSections.DoubleBuffered = true;
+            this.dgvShowSections.EnableHeadersVisualStyles = false;
+            this.dgvShowSections.GridColor = System.Drawing.Color.DarkGray;
+            this.dgvShowSections.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
+            this.dgvShowSections.HeaderForeColor = System.Drawing.Color.Gold;
+            this.dgvShowSections.Location = new System.Drawing.Point(10, 64);
+            this.dgvShowSections.MultiSelect = false;
+            this.dgvShowSections.Name = "dgvShowSections";
+            this.dgvShowSections.ReadOnly = true;
+            this.dgvShowSections.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvShowSections.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvShowSections.RowHeadersWidth = 15;
+            this.dgvShowSections.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvShowSections.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvShowSections.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvShowSections.Size = new System.Drawing.Size(336, 374);
+            this.dgvShowSections.TabIndex = 248;
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.Gainsboro;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Maroon;
+            this.label1.Location = new System.Drawing.Point(7, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(329, 19);
+            this.label1.TabIndex = 247;
+            this.label1.Text = "LIST OF COURSE/S";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // sectionsControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
+            this.Controls.Add(this.dgvShowSections);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnDelete);
             this.Name = "sectionsControl";
             this.Size = new System.Drawing.Size(700, 451);
             this.Load += new System.EventHandler(this.sectionsControl_Load);
-            this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvShowSections)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvShowSections)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        public System.Windows.Forms.GroupBox groupBox3;
-        public System.Windows.Forms.DataGridView dgvShowSections;
         public System.Windows.Forms.GroupBox groupBox1;
         public MetroFramework.Controls.MetroLabel metroLabel11;
         public System.Windows.Forms.ComboBox cboSelectYear;
@@ -287,5 +320,7 @@
         public MetroFramework.Controls.MetroTextBox txtUsername;
         public MetroFramework.Controls.MetroLabel metroLabel2;
         public System.Windows.Forms.ComboBox cboCourseDepartment;
+        private Bunifu.Framework.UI.BunifuCustomDataGrid dgvShowSections;
+        private System.Windows.Forms.Label label1;
     }
 }

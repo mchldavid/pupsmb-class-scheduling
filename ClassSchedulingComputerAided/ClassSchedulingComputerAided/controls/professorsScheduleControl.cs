@@ -23,7 +23,6 @@ namespace ClassSchedulingComputerAided
             //lbl_id.Text = usersData.p_id;
             dgvShow.DataSource = md.dgv_showSchedule().DataSource;
             dgvShow.Columns[0].Visible = false;
-            dgvSchedule.DataSource = md.dgv_showSchedule().DataSource;
         }
 
         //check the time from start time to end time
@@ -212,7 +211,6 @@ namespace ClassSchedulingComputerAided
                 MessageBox.Show("Please select time before you add", "Invalid Time", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             dgvShow.DataSource = md.dgv_showSchedule().DataSource;
-            dgvSchedule.DataSource = md.dgv_showSchedule().DataSource;
         }
 
         private void btnViewTimetable_Click(object sender, EventArgs e)

@@ -31,6 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSetCurriculum));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
             this.txtSubjectCode = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
@@ -57,20 +60,20 @@
             this.label12 = new System.Windows.Forms.Label();
             this.lbl_title = new MetroFramework.Controls.MetroLabel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             this.pnl = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txtSearch = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.cboBy = new System.Windows.Forms.ComboBox();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
-            this.dgvListSubject = new System.Windows.Forms.DataGridView();
+            this.dgvListSubject = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.pnl.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListSubject)).BeginInit();
             this.SuspendLayout();
             // 
@@ -442,6 +445,27 @@
             this.panel3.Size = new System.Drawing.Size(333, 437);
             this.panel3.TabIndex = 180;
             // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
+            this.panel5.Controls.Add(this.metroLabel8);
+            this.panel5.Location = new System.Drawing.Point(0, -3);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(333, 39);
+            this.panel5.TabIndex = 243;
+            // 
+            // metroLabel8
+            // 
+            this.metroLabel8.CustomBackground = true;
+            this.metroLabel8.CustomForeColor = true;
+            this.metroLabel8.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.metroLabel8.Location = new System.Drawing.Point(4, 10);
+            this.metroLabel8.Name = "metroLabel8";
+            this.metroLabel8.Size = new System.Drawing.Size(133, 21);
+            this.metroLabel8.TabIndex = 136;
+            this.metroLabel8.Text = "Add Subject Section";
+            this.metroLabel8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // pnl
             // 
             this.pnl.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -494,55 +518,68 @@
             this.cboBy.Size = new System.Drawing.Size(128, 21);
             this.cboBy.TabIndex = 236;
             // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
-            this.panel5.Controls.Add(this.metroLabel8);
-            this.panel5.Location = new System.Drawing.Point(0, -3);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(333, 39);
-            this.panel5.TabIndex = 243;
-            // 
-            // metroLabel8
-            // 
-            this.metroLabel8.CustomBackground = true;
-            this.metroLabel8.CustomForeColor = true;
-            this.metroLabel8.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.metroLabel8.Location = new System.Drawing.Point(4, 10);
-            this.metroLabel8.Name = "metroLabel8";
-            this.metroLabel8.Size = new System.Drawing.Size(133, 21);
-            this.metroLabel8.TabIndex = 136;
-            this.metroLabel8.Text = "Add Subject Section";
-            this.metroLabel8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // dgvListSubject
             // 
             this.dgvListSubject.AllowUserToAddRows = false;
             this.dgvListSubject.AllowUserToDeleteRows = false;
             this.dgvListSubject.AllowUserToResizeColumns = false;
             this.dgvListSubject.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Gray;
             this.dgvListSubject.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvListSubject.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvListSubject.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvListSubject.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvListSubject.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvListSubject.BackgroundColor = System.Drawing.Color.White;
             this.dgvListSubject.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvListSubject.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListSubject.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvListSubject.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvListSubject.Location = new System.Drawing.Point(10, 47);
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvListSubject.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvListSubject.ColumnHeadersHeight = 25;
+            this.dgvListSubject.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListSubject.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvListSubject.DoubleBuffered = true;
+            this.dgvListSubject.EnableHeadersVisualStyles = false;
+            this.dgvListSubject.GridColor = System.Drawing.Color.DarkGray;
+            this.dgvListSubject.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
+            this.dgvListSubject.HeaderForeColor = System.Drawing.Color.Gold;
+            this.dgvListSubject.Location = new System.Drawing.Point(0, 39);
             this.dgvListSubject.MultiSelect = false;
             this.dgvListSubject.Name = "dgvListSubject";
             this.dgvListSubject.ReadOnly = true;
-            this.dgvListSubject.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            this.dgvListSubject.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvListSubject.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvListSubject.RowHeadersWidth = 15;
+            this.dgvListSubject.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvListSubject.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvListSubject.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListSubject.Size = new System.Drawing.Size(588, 382);
-            this.dgvListSubject.TabIndex = 243;
+            this.dgvListSubject.Size = new System.Drawing.Size(605, 400);
+            this.dgvListSubject.TabIndex = 247;
             // 
             // frmSetCurriculum
             // 
@@ -563,9 +600,9 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
             this.pnl.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListSubject)).EndInit();
             this.ResumeLayout(false);
 
@@ -606,6 +643,6 @@
         public System.Windows.Forms.ComboBox cboBy;
         private System.Windows.Forms.Panel panel5;
         public MetroFramework.Controls.MetroLabel metroLabel8;
-        public System.Windows.Forms.DataGridView dgvListSubject;
+        private Bunifu.Framework.UI.BunifuCustomDataGrid dgvListSubject;
     }
 }
