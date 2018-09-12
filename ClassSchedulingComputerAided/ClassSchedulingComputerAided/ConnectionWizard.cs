@@ -98,9 +98,38 @@ namespace ClassSchedulingComputerAided
             {
                 if (txtDatabase.Text != "")
                 {
-                    cd.initCreateDatabase(txtHost.Text, txtDatabase.Text, txtUsername.Text, txtPassword.Text, txtPort.Text);
-                    MessageBox.Show(txtDatabase.Text + " [DATABASE] created successful!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    btnSAVE_Click(sender, e);
+                    string server = txtHost.Text;
+                    string port = txtPort.Text;
+                    string dbName = txtDatabase.Text;
+                    string usrDb = txtUsername.Text;
+                    string pwdDb = txtPassword.Text;
+
+                    string sqlConnection = "server=" + server
+                     + "; username=" + usrDb
+                     + "; password=" + pwdDb
+                     + "; port=" + port + ";";
+
+                    if (testCon() == true)//to check if the connection is connected
+                    {
+                        if (DBExists(sqlConnection, dbName) == true)//to check if the database is already exist
+                        {
+                            MessageBox.Show("The " + txtDatabase.Text + " [DATABASE] is already exist!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            txtDatabase.SelectionStart = 0;
+                            txtDatabase.SelectionLength = txtDatabase.TextLength;
+                            txtDatabase.Focus();
+                        }
+                        else
+                        {
+                            //creation of database
+                            cd.initCreateDatabase(txtHost.Text, txtDatabase.Text, txtUsername.Text, txtPassword.Text, txtPort.Text);
+                            MessageBox.Show(txtDatabase.Text + " [DATABASE] created successful!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            btnSAVE_Click(sender, e);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Connection Failed!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
                 else
                 {
@@ -212,6 +241,40 @@ namespace ClassSchedulingComputerAided
                 MessageBox.Show("Connection Failed!", "DBexists");
             }
             return isExists;
+        }
+
+        public bool testCon()//to test if the connection is connected
+        {
+            string server = txtHost.Text;
+            string port = txtPort.Text;
+            string dbName = txtDatabase.Text;
+            string usrDb = txtUsername.Text;
+            string pwdDb = txtPassword.Text;
+
+            bool isExistDB = false;
+
+            string sqlConnection = "server=" + server
+             + "; username=" + usrDb
+             + "; password=" + pwdDb
+             + "; port=" + port + ";";
+
+            MySqlConnection con = new MySqlConnection(sqlConnection);
+            try
+            {
+                con.Open();
+                isExistDB = true;
+            }
+            catch (MySqlException ex)
+            {
+                string str = ex.Message;
+                isExistDB = false;
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            return isExistDB;
         }
 
     }

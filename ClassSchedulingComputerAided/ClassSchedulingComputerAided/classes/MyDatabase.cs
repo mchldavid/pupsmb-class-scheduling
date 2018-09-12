@@ -13,19 +13,11 @@ namespace ClassSchedulingComputerAided
     class MyDatabase
     {
         //connection to my database
-        private static string server = Settings.Default["Server"].ToString();
-        private static string dbName = Settings.Default["DatabaseName"].ToString();
-        private static string usrDb = Settings.Default["UsernameDB"].ToString();
-        private static string pwdDb = Settings.Default["PasswordDB"].ToString();
-        private static string port = Settings.Default["Port"].ToString();
-
-        static string sqlConnection = "server="+ server 
-            +"; username="+ usrDb 
-            +"; password="+ pwdDb 
-            +"; database="+ dbName
-            +"; port="+ port +";";
-
-        static MySqlConnection con = new MySqlConnection(sqlConnection);
+        MySqlConnection con = new MySqlConnection("server=" + Settings.Default["Server"].ToString()
+            + "; username=" + Settings.Default["UsernameDB"].ToString()
+            + "; password=" + Settings.Default["PasswordDB"].ToString()
+            + "; database=" + Settings.Default["DatabaseName"].ToString()
+            + "; port=" + Settings.Default["Port"].ToString() + ";");
 
         //check the database connection
         public void ConnectSql()

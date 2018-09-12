@@ -46,10 +46,7 @@ namespace ClassSchedulingComputerAided
 
         }
 
-        private void cboRoom_4_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void lblDescription_4_Click(object sender, EventArgs e)
         {
@@ -1255,6 +1252,78 @@ namespace ClassSchedulingComputerAided
             //md.CSD_get_professors_id(cboProfessor_1.SelectedItem.ToString());
             //ClassSchedule_Data.professors_name = cboProfessor_1.SelectedItem.ToString();
             ClassSchedule_Data.roomCode = cboRoom_1.SelectedItem.ToString();
+            RoomTimeTableControl rttc = new RoomTimeTableControl();
+            pnlRooms.Controls.Clear();
+            pnlRooms.Controls.Add(rttc);
+        }
+
+        private void cboRoom_2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ClassSchedule_Data.roomCode = cboRoom_2.SelectedItem.ToString();
+            RoomTimeTableControl rttc = new RoomTimeTableControl();
+            pnlRooms.Controls.Clear();
+            pnlRooms.Controls.Add(rttc);
+        }
+
+        private void cboRoom_3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ClassSchedule_Data.roomCode = cboRoom_3.SelectedItem.ToString();
+            RoomTimeTableControl rttc = new RoomTimeTableControl();
+            pnlRooms.Controls.Clear();
+            pnlRooms.Controls.Add(rttc);
+        }
+
+        private void cboRoom_4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ClassSchedule_Data.roomCode = cboRoom_4.SelectedItem.ToString();
+            RoomTimeTableControl rttc = new RoomTimeTableControl();
+            pnlRooms.Controls.Clear();
+            pnlRooms.Controls.Add(rttc);
+        }
+
+        private void cboRoom_5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ClassSchedule_Data.roomCode = cboRoom_5.SelectedItem.ToString();
+            RoomTimeTableControl rttc = new RoomTimeTableControl();
+            pnlRooms.Controls.Clear();
+            pnlRooms.Controls.Add(rttc);
+        }
+
+        private void cboRoom_6_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ClassSchedule_Data.roomCode = cboRoom_6.SelectedItem.ToString();
+            RoomTimeTableControl rttc = new RoomTimeTableControl();
+            pnlRooms.Controls.Clear();
+            pnlRooms.Controls.Add(rttc);
+        }
+
+        private void cboRoom_7_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ClassSchedule_Data.roomCode = cboRoom_7.SelectedItem.ToString();
+            RoomTimeTableControl rttc = new RoomTimeTableControl();
+            pnlRooms.Controls.Clear();
+            pnlRooms.Controls.Add(rttc);
+        }
+
+        private void cboRoom_8_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ClassSchedule_Data.roomCode = cboRoom_8.SelectedItem.ToString();
+            RoomTimeTableControl rttc = new RoomTimeTableControl();
+            pnlRooms.Controls.Clear();
+            pnlRooms.Controls.Add(rttc);
+        }
+
+        private void cboRoom_9_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ClassSchedule_Data.roomCode = cboRoom_9.SelectedItem.ToString();
+            RoomTimeTableControl rttc = new RoomTimeTableControl();
+            pnlRooms.Controls.Clear();
+            pnlRooms.Controls.Add(rttc);
+        }
+
+        private void cboRoom_10_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ClassSchedule_Data.roomCode = cboRoom_10.SelectedItem.ToString();
             RoomTimeTableControl rttc = new RoomTimeTableControl();
             pnlRooms.Controls.Clear();
             pnlRooms.Controls.Add(rttc);

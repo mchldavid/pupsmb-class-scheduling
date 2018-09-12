@@ -508,6 +508,7 @@
             this.cboRoom_10.Name = "cboRoom_10";
             this.cboRoom_10.Size = new System.Drawing.Size(113, 21);
             this.cboRoom_10.TabIndex = 13;
+            this.cboRoom_10.SelectedIndexChanged += new System.EventHandler(this.cboRoom_10_SelectedIndexChanged);
             // 
             // lblLecHours_1
             // 
@@ -747,6 +748,7 @@
             this.cboRoom_9.Name = "cboRoom_9";
             this.cboRoom_9.Size = new System.Drawing.Size(113, 21);
             this.cboRoom_9.TabIndex = 13;
+            this.cboRoom_9.SelectedIndexChanged += new System.EventHandler(this.cboRoom_9_SelectedIndexChanged);
             // 
             // lblDescription_10
             // 
@@ -1009,6 +1011,7 @@
             this.cboRoom_8.Name = "cboRoom_8";
             this.cboRoom_8.Size = new System.Drawing.Size(113, 21);
             this.cboRoom_8.TabIndex = 13;
+            this.cboRoom_8.SelectedIndexChanged += new System.EventHandler(this.cboRoom_8_SelectedIndexChanged);
             // 
             // lbl_LabHours_2
             // 
@@ -1331,6 +1334,7 @@
             this.cboRoom_7.Name = "cboRoom_7";
             this.cboRoom_7.Size = new System.Drawing.Size(113, 21);
             this.cboRoom_7.TabIndex = 13;
+            this.cboRoom_7.SelectedIndexChanged += new System.EventHandler(this.cboRoom_7_SelectedIndexChanged);
             // 
             // cboRoom_2
             // 
@@ -1343,6 +1347,7 @@
             this.cboRoom_2.Name = "cboRoom_2";
             this.cboRoom_2.Size = new System.Drawing.Size(113, 21);
             this.cboRoom_2.TabIndex = 13;
+            this.cboRoom_2.SelectedIndexChanged += new System.EventHandler(this.cboRoom_2_SelectedIndexChanged);
             // 
             // lblLecHours_2
             // 
@@ -1535,6 +1540,7 @@
             this.cboRoom_6.Name = "cboRoom_6";
             this.cboRoom_6.Size = new System.Drawing.Size(113, 21);
             this.cboRoom_6.TabIndex = 13;
+            this.cboRoom_6.SelectedIndexChanged += new System.EventHandler(this.cboRoom_6_SelectedIndexChanged);
             // 
             // lblLecHours_8
             // 
@@ -1907,6 +1913,7 @@
             this.cboRoom_5.Name = "cboRoom_5";
             this.cboRoom_5.Size = new System.Drawing.Size(113, 21);
             this.cboRoom_5.TabIndex = 13;
+            this.cboRoom_5.SelectedIndexChanged += new System.EventHandler(this.cboRoom_5_SelectedIndexChanged);
             // 
             // cboRoom_3
             // 
@@ -1919,6 +1926,7 @@
             this.cboRoom_3.Name = "cboRoom_3";
             this.cboRoom_3.Size = new System.Drawing.Size(113, 21);
             this.cboRoom_3.TabIndex = 13;
+            this.cboRoom_3.SelectedIndexChanged += new System.EventHandler(this.cboRoom_3_SelectedIndexChanged);
             // 
             // lblUnits_3
             // 

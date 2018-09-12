@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using ClassSchedulingComputerAided.Properties;
+using System.Windows.Forms;
 
 namespace ClassSchedulingComputerAided
 {
@@ -36,7 +37,7 @@ namespace ClassSchedulingComputerAided
         {
             using (MySqlConnection dbconn = new MySqlConnection(conn))
             {
-                using (MySqlCommand cmd = new MySqlCommand("CREATE DATABASE `"+ name +"`;", dbconn))
+                using (MySqlCommand cmd = new MySqlCommand("CREATE DATABASE `" + name + "`;", dbconn))
                 {
                     dbconn.Open();
                     cmd.ExecuteNonQuery();
