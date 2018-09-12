@@ -1707,5 +1707,70 @@ namespace ClassSchedulingComputerAided
             }
             
         }
+
+        //================My Account ============
+        public void AccountInfo()
+        {
+            try
+            {
+                con.Open();
+                string SqlSelectUsers = "SELECT * FROM tbl_users WHERE users_id = @a_id;";
+                MySqlCommand com = new MySqlCommand(SqlSelectUsers, con);
+                com.Parameters.AddWithValue("@a_id", usersData.a_id);
+                com.ExecuteNonQuery();
+
+                MySqlDataReader dr = com.ExecuteReader();
+                if (dr.Read())
+                {
+                    usersData.a_username = dr["username"].ToString();
+                    usersData.a_password = dr["password"].ToString();
+                    usersData.a_fName = dr["firstName"].ToString();
+                    usersData.a_mName = dr["middleName"].ToString();
+                    usersData.a_lName = dr["lastName"].ToString();
+                    usersData.a_address = dr["address"].ToString();
+                    usersData.a_emailAddress = dr["emailAddress"].ToString();
+                    usersData.a_mobileNubmer = dr["mobileNumber"].ToString();
+                    usersData.a_gender = dr["gender"].ToString();
+                }
+            }
+            catch (MySqlException sql)
+            {
+                MessageBox.Show(sql.Message, "Login Test");
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public void UpdateUsersAccount(string id, string username, string password, string firstname, string middlename, string lastname, string address, string gender, string emailAddress, string mobileNumber)
+        {
+            try
+            {
+                con.Open();
+                string sqlUpdateUserInformation = "UPDATE tbl_users SET username=@u, password=@p, firstName=@fN, middleName=@mN, lastName=@lN, address=@a, gender=@g, emailAddress=@eA, mobileNumber=@moN WHERE users_id=@id;";
+                MySqlCommand com = new MySqlCommand(sqlUpdateUserInformation, con);
+                com.Parameters.AddWithValue("@id", id);
+                com.Parameters.AddWithValue("@u", username);
+                com.Parameters.AddWithValue("@p", password);
+                com.Parameters.AddWithValue("@fN", firstname);
+                com.Parameters.AddWithValue("@mN", middlename);
+                com.Parameters.AddWithValue("@lN", lastname);
+                com.Parameters.AddWithValue("@a", address);
+                com.Parameters.AddWithValue("@g", gender);
+                com.Parameters.AddWithValue("@eA", emailAddress);
+                com.Parameters.AddWithValue("@moN", mobileNumber);
+                com.ExecuteNonQuery();
+                MessageBox.Show("Update Successfully!", "UpdateUser");
+            }
+            catch (MySqlException er)
+            {
+                MessageBox.Show(er.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
     }
 }

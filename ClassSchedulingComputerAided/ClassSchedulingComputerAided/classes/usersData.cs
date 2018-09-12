@@ -8,12 +8,62 @@ namespace ClassSchedulingComputerAided
 {
     public class usersData
     {
-        public static string p_id
+        public static string a_id
+        {
+            get;
+            set;
+        }
+        public static string a_fName
+        {
+            get;
+            set;
+        }
+        public static string a_mName
+        {
+            get;
+            set;
+        }
+        public static string a_lName
+        {
+            get;
+            set;
+        }
+        public static string a_gender
+        {
+            get;
+            set;
+        }
+        public static string a_address
+        {
+            get;
+            set;
+        }
+        public static string a_emailAddress
+        {
+            get;
+            set;
+        }
+        public static string a_mobileNubmer
+        {
+            get;
+            set;
+        }
+        public static string a_username
+        {
+            get;
+            set;
+        }
+        public static string a_password
         {
             get;
             set;
         }
 
+        public static string p_id
+        {
+            get;
+            set;
+        }
         public static string p_usr
         {
             get;
@@ -24,19 +74,11 @@ namespace ClassSchedulingComputerAided
             get;
             set;
         }
-
-        public static string a_id
-        {
-            get;
-            set;
-        }
-
         public static string p_fName
         {
             get;
             set;
         }
-
         public static string p_mName
         {
             get;
@@ -47,7 +89,6 @@ namespace ClassSchedulingComputerAided
             get;
             set;
         }
-
         public static string p_address
         {
             get;
