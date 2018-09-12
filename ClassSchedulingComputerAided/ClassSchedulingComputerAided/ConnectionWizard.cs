@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClassSchedulingComputerAided.Properties;
 using MySql.Data.MySqlClient;
+using System.Diagnostics;//for restarting the app
 
 namespace ClassSchedulingComputerAided
 {
@@ -18,6 +19,8 @@ namespace ClassSchedulingComputerAided
         {
             InitializeComponent();
         }
+
+        CreateDatabase cd = new CreateDatabase();// call 'CreateDatabase' class
 
         private void ConnectionWizard_Load(object sender, EventArgs e)
         {
@@ -30,7 +33,7 @@ namespace ClassSchedulingComputerAided
 
         private void btnSAVE_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Do you want to save connection configuration?", "Save", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            DialogResult dr = MessageBox.Show("Do you want to save connection configuration?", "Save connection", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (DialogResult.Yes == dr)
             {
                 Settings.Default["Server"] = txtHost.Text;
@@ -39,6 +42,9 @@ namespace ClassSchedulingComputerAided
                 Settings.Default["PasswordDB"] = txtPassword.Text;
                 Settings.Default["Port"] = txtPort.Text;
                 Settings.Default.Save();
+
+                this.Hide();
+                RestartsApp();
             }
         }
 
@@ -49,22 +55,164 @@ namespace ClassSchedulingComputerAided
             + "; password=" + txtPassword.Text
             + "; database=" + txtDatabase.Text
             + "; port=" + txtPort.Text + ";";
+            if (txtUsername.Text != "")
+            {
+                if (txtDatabase.Text != "")
+                {
+                    MySqlConnection con = new MySqlConnection(sqlConnection);
+                    try
+                    {
+                        con.Open();
+                        MessageBox.Show("Connection successful!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (MySqlException ex)
+                    {
+                        string str = ex.Message;
+                        MessageBox.Show("Connection Failed!", "Failed!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            MySqlConnection con = new MySqlConnection(sqlConnection);
+                        txtDatabase.SelectionStart = 0;
+                        txtDatabase.SelectionLength = txtDatabase.TextLength;
+                        txtDatabase.Focus();
+                    }
+                    finally
+                    {
+                        con.Close();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please enter Database name!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtDatabase.Focus();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter Username!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtUsername.Focus();
+            }
+        }
+
+        private void btnCreateDatabase_Click(object sender, EventArgs e)
+        {
+            if (txtUsername.Text != "")
+            {
+                if (txtDatabase.Text != "")
+                {
+                    cd.initCreateDatabase(txtHost.Text, txtDatabase.Text, txtUsername.Text, txtPassword.Text, txtPort.Text);
+                    MessageBox.Show(txtDatabase.Text + " [DATABASE] created successful!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btnSAVE_Click(sender, e);
+                }
+                else
+                {
+                    MessageBox.Show("Please enter database name!", "Create Database", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtDatabase.Focus();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter Username!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtUsername.Focus();
+            }
+        }
+
+        private void txtDatabase_TextChanged(object sender, EventArgs e)//restrict the user to input not alphabet
+        {
+            string txt = "";
+            if (!System.Text.RegularExpressions.Regex.IsMatch(txtDatabase.Text, "^[a-zA-Z ]^"))
+            {
+                int result;
+                foreach (char a in txtDatabase.Text)
+                {
+                    if(int.TryParse(a.ToString(), out result) == false)
+                        txt += a;
+                }
+            }
+            txtDatabase.Text = txt;
+            txtDatabase.SelectionStart = txtDatabase.Text.Length;
+            txtDatabase.SelectionLength = 0;
+        }
+
+        private void txtHost_TextChanged(object sender, EventArgs e)
+        {
+            if (txtHost.Text != "")
+            {
+                btnTest.Enabled = true;
+                btnCreateDatabase.Enabled = true;
+            }
+            else
+            {
+                btnTest.Enabled = false;
+                btnCreateDatabase.Enabled = false;
+            }
+        }
+
+        //to restart the app()
+        static void RestartsApp()
+        {
+            string server = Settings.Default["Server"].ToString();
+            string port = Settings.Default["Port"].ToString();
+            string dbName = Settings.Default["DatabaseName"].ToString();
+            string usrDb = Settings.Default["UsernameDB"].ToString();
+            string pwdDb = Settings.Default["PasswordDB"].ToString();
+
+            if (Settings.Default["Server"].ToString() != "" &&
+               Settings.Default["Port"].ToString() != "" &&
+               Settings.Default["DatabaseName"].ToString() != "" &&
+               Settings.Default["UsernameDB"].ToString() != "")
+            {
+                string sqlConnection = "server=" + server
+                     + "; username=" + usrDb
+                     + "; password=" + pwdDb
+                     + "; port=" + port + ";";
+
+                if (DBExists(sqlConnection, dbName) == true)
+                {
+                    frmLogin login = new frmLogin();
+                    login.Show();
+                }
+                else
+                {
+                    frmConnectionWizard connection = new frmConnectionWizard();
+                    connection.Show();
+                }
+
+            }
+            else
+            {
+                frmConnectionWizard connection = new frmConnectionWizard();
+                connection.Show();
+            }
+        }
+
+        public static bool DBExists(string conn, string dbName)
+        {
+            bool isExists = false;
             try
             {
-                con.Open();
-                MessageBox.Show("Connection successful!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                using (MySqlConnection dbconn = new MySqlConnection(conn))
+                {
+                    using (MySqlCommand cmd = new MySqlCommand("SELECT COUNT(*) FROM information_schema.schemata WHERE SCHEMA_NAME= @dbName;", dbconn))
+                    {
+                        isExists = false;
+                        cmd.Parameters.AddWithValue("@dbName", dbName);
+                        dbconn.Open();
+                        cmd.ExecuteNonQuery();
+                        MySqlDataReader dr = cmd.ExecuteReader();
+                        if (dr.Read())
+                        {
+                            if (Convert.ToInt32(dr["COUNT(*)"].ToString()) > 0)
+                                isExists = true;
+                        }
+                        dbconn.Close();
+                    }
+                }
             }
             catch (MySqlException ex)
             {
-                string str = ex.Message;
-                MessageBox.Show("Connection Failed!", "Failed!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Connection Failed!", "DBexists");
             }
-            finally
-            {
-                con.Close();
-            }
+            return isExists;
         }
+
     }
 }
