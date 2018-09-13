@@ -29,3 +29,12 @@ https://www.wikihow.com/Open-Ports
 
 visible of column
 https://www.youtube.com/watch?v=tCJeFSbMjxQ
+
+database isExist
+https://www.codeproject.com/Questions/1167839/How-to-check-if-database-exists-in-mysql-server
+
+alphabet only
+https://stackoverflow.com/questions/8321871/how-to-make-a-textbox-accept-only-alphabetic-characters
+
+focus on last character on textbox
+https://stackoverflow.com/questions/20423211/setting-cursor-at-the-end-of-any-text-of-a-textbox

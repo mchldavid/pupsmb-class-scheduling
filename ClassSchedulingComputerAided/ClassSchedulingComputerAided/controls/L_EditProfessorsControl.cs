@@ -18,9 +18,15 @@ namespace ClassSchedulingComputerAided
         }
 
         MyDatabase md = new MyDatabase();
+        MySecurity ms = new MySecurity();
 
         private void L_EditProfessorsControl_Load(object sender, EventArgs e)
         {
+            cboCourseDepartment.Items.Add("NONE");
+            for (int x = 0; x < md.Sections_ListCourse().Length; x++)
+                if (md.Sections_ListCourse().GetValue(x).ToString() != "")
+                    cboCourseDepartment.Items.Add(md.Sections_ListCourse().GetValue(x).ToString());
+
             string[] userInfo = new string[11];
 
             for (int x = 0; x < userInfo.Length; x++)
@@ -34,8 +40,8 @@ namespace ClassSchedulingComputerAided
             txtMobileNumber.Text = userInfo[7];
             cboCourseDepartment.Text = userInfo[9];
             txtUsername.Text = userInfo[0];
-            txtPassword.Text = userInfo[1];
-            txtConfirmPassword.Text = userInfo[1];
+            txtPassword.Text = ms.decryptPassword(userInfo[1]);
+            txtConfirmPassword.Text = ms.decryptPassword(userInfo[1]);
 
             if (userInfo[8] == "Male")
                 rdoMale.Checked = true;
@@ -64,7 +70,7 @@ namespace ClassSchedulingComputerAided
                     teachStatus = "Parttimer";
                 if (rdoRetiree.Checked == true)
                     teachStatus = "Retiree";
-                md.UpdateUsersAccount(ListOfProfessorsData.Selected_ID, txtUsername.Text, txtPassword.Text, txtFirstName.Text, txtMiddleName.Text, txtLastName.Text, txtAddress.Text, gender, teachStatus, "", txtEmailAddress.Text, txtMobileNumber.Text);
+                md.UpdateUsersAccount(ListOfProfessorsData.Selected_ID, txtUsername.Text, ms.encryptPassword(txtPassword.Text), txtFirstName.Text, txtMiddleName.Text, txtLastName.Text, txtAddress.Text, gender, teachStatus, cboCourseDepartment.Text, txtEmailAddress.Text, txtMobileNumber.Text);
             }
         }
     }

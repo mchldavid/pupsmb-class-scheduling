@@ -69,6 +69,12 @@
     <Compile Include="AddSubject.Designer.cs">
       <DependentUpon>AddSubject.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminAccount.Designer.cs">
+      <DependentUpon>AdminAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminHomePage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -282,6 +288,9 @@
     </Compile>
     <EmbeddedResource Include="AddSubject.resx">
       <DependentUpon>AddSubject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminAccount.resx">
+      <DependentUpon>AdminAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminHomePage.resx">
       <DependentUpon>AdminHomePage.cs</DependentUpon>

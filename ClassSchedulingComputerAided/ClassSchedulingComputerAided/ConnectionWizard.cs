@@ -120,7 +120,7 @@ namespace ClassSchedulingComputerAided
                         }
                         else
                         {
-                            //creation of database
+                            //creation of database 
                             cd.initCreateDatabase(txtHost.Text, txtDatabase.Text, txtUsername.Text, txtPassword.Text, txtPort.Text);
                             MessageBox.Show(txtDatabase.Text + " [DATABASE] created successful!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             btnSAVE_Click(sender, e);
@@ -193,11 +193,23 @@ namespace ClassSchedulingComputerAided
                      + "; username=" + usrDb
                      + "; password=" + pwdDb
                      + "; port=" + port + ";";
+                string sqlConnectionWithDatabase = "server=" + server
+                     + "; username=" + usrDb
+                     + "; password=" + pwdDb
+                     + "; database=" + dbName
+                     + "; port=" + port + ";";
 
                 if (DBExists(sqlConnection, dbName) == true)
                 {
-                    frmLogin login = new frmLogin();
-                    login.Show();
+                    if (isDB_Empty(sqlConnectionWithDatabase, dbName) == true)
+                    {
+                        frmAdminAccount aa = new frmAdminAccount();
+                        aa.Show();
+                    }
+                    else {
+                        frmLogin login = new frmLogin();
+                        login.Show();
+                    }
                 }
                 else
                 {
@@ -275,6 +287,35 @@ namespace ClassSchedulingComputerAided
             }
 
             return isExistDB;
+        }
+
+        public static bool isDB_Empty(string conn, string dbName)
+        {
+            bool isEmpty = false;
+            try
+            {
+                using (MySqlConnection dbconn = new MySqlConnection(conn))
+                {
+                    using (MySqlCommand cmd = new MySqlCommand("SELECT COUNT(*) FROM tbl_users;", dbconn))
+                    {
+                        isEmpty = false;
+                        dbconn.Open();
+                        cmd.ExecuteNonQuery();
+                        MySqlDataReader dr = cmd.ExecuteReader();
+                        if (dr.Read())
+                        {
+                            if (Convert.ToInt32(dr["COUNT(*)"].ToString()) == 0)
+                                isEmpty = true;
+                        }
+                        dbconn.Close();
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+
+            }
+            return isEmpty;
         }
 
     }

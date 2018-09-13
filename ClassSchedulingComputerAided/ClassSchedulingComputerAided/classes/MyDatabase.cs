@@ -1772,5 +1772,34 @@ namespace ClassSchedulingComputerAided
                 con.Close();
             }
         }
+
+        //===============Admin Account===============
+        public void RegisterAdmin(string username, string password, string firstname, string middlename, string lastname, string address, string gender, string emailAddress, string mobileNumber)
+        {
+            try
+            {
+                con.Open();
+                string sqlRegisterUser = "INSERT INTO tbl_users(username, password, firstName, middleName, lastName, address, gender, emailAddress, mobileNumber, status, userLevel, teachingStatus, courseDepartment, unitsAllowed) VALUES(@u, @p, @fN, @mN, @lN, @a, @g, @eA, @moN, 'active', 'administrator', 'administrator', 'administrator', 'administrator');";
+                MySqlCommand com = new MySqlCommand(sqlRegisterUser, con);
+                com.Parameters.AddWithValue("@u", username);
+                com.Parameters.AddWithValue("@p", password);
+                com.Parameters.AddWithValue("@fN", firstname);
+                com.Parameters.AddWithValue("@mN", middlename);
+                com.Parameters.AddWithValue("@lN", lastname);
+                com.Parameters.AddWithValue("@a", address);
+                com.Parameters.AddWithValue("@g", gender);
+                com.Parameters.AddWithValue("@eA", emailAddress);
+                com.Parameters.AddWithValue("@moN", mobileNumber);
+                com.ExecuteNonQuery();
+            }
+            catch (MySqlException sq)
+            {
+                MessageBox.Show(sq.Message, "RegisterAdmin");
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
     }
 }

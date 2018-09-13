@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
@@ -8,17 +12,43 @@ using ClassSchedulingComputerAided.Properties;
 
 namespace ClassSchedulingComputerAided
 {
-    static class Program
+    public partial class frmAdminAccount : MetroFramework.Forms.MetroForm
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
-        [STAThread]
-        static void Main()
+        public frmAdminAccount()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
+            InitializeComponent();
+        }
 
+        MyDatabase md = new MyDatabase();
+        MySecurity ms = new MySecurity();
+
+        private void AdminAccount_Load(object sender, EventArgs e)
+        {
+            txtFirstName.Focus();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Do you want to save?", "Admin", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+            if (result == DialogResult.Yes)
+            {
+                md.RegisterAdmin(txtUsername.Text, ms.encryptPassword(txtPassword.Text), txtFirstName.Text, txtMiddleName.Text, txtLastName.Text, txtAddress.Text, cboGender.Text, txtEmailAddress.Text, txtMobileNumber.Text);
+                MessageBox.Show("Admin account created succesdul", "Success!", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                this.Hide();
+                RestartsApp();//to restart the app
+            }
+        }
+
+        //to restart the app()
+        static void RestartsApp()
+        {
             string server = Settings.Default["Server"].ToString();
             string port = Settings.Default["Port"].ToString();
             string dbName = Settings.Default["DatabaseName"].ToString();
@@ -34,7 +64,6 @@ namespace ClassSchedulingComputerAided
                      + "; username=" + usrDb
                      + "; password=" + pwdDb
                      + "; port=" + port + ";";
-
                 string sqlConnectionWithDatabase = "server=" + server
                      + "; username=" + usrDb
                      + "; password=" + pwdDb
@@ -45,24 +74,27 @@ namespace ClassSchedulingComputerAided
                 {
                     if (isDB_Empty(sqlConnectionWithDatabase, dbName) == true)
                     {
-                        Application.Run(new frmAdminAccount());
+                        frmAdminAccount aa = new frmAdminAccount();
+                        aa.Show();
                     }
                     else
                     {
-                        Application.Run(new frmLogin());
+                        frmLogin login = new frmLogin();
+                        login.Show();
                     }
                 }
                 else
                 {
-                    Application.Run(new frmConnectionWizard());
+                    frmConnectionWizard connection = new frmConnectionWizard();
+                    connection.Show();
                 }
 
             }
             else
             {
-                Application.Run(new frmConnectionWizard());
+                frmConnectionWizard connection = new frmConnectionWizard();
+                connection.Show();
             }
-                
         }
 
         public static bool DBExists(string conn, string dbName)
@@ -93,6 +125,40 @@ namespace ClassSchedulingComputerAided
                 MessageBox.Show("Connection Failed!", "DBexists");
             }
             return isExists;
+        }
+
+        public bool testCon()//to test if the connection is connected
+        {
+            string server = Settings.Default["Server"].ToString();
+            string port = Settings.Default["Port"].ToString();
+            string dbName = Settings.Default["DatabaseName"].ToString();
+            string usrDb = Settings.Default["UsernameDB"].ToString();
+            string pwdDb = Settings.Default["PasswordDB"].ToString();
+
+            bool isExistDB = false;
+
+            string sqlConnection = "server=" + server
+             + "; username=" + usrDb
+             + "; password=" + pwdDb
+             + "; port=" + port + ";";
+
+            MySqlConnection con = new MySqlConnection(sqlConnection);
+            try
+            {
+                con.Open();
+                isExistDB = true;
+            }
+            catch (MySqlException ex)
+            {
+                string str = ex.Message;
+                isExistDB = false;
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            return isExistDB;
         }
 
         public static bool isDB_Empty(string conn, string dbName)
