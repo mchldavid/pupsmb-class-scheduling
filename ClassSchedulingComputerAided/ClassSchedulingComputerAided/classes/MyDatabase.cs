@@ -1610,7 +1610,7 @@ namespace ClassSchedulingComputerAided
             }
         }
 
-        public void CSD_insert_students_schedule(string course, string year, string curriculum, string semester, string schoolYear)
+        public void CSD_insert_students_schedule(string course, string year, string section, string curriculum, string semester, string schoolYear)
         {
             try
             {
@@ -1650,6 +1650,37 @@ namespace ClassSchedulingComputerAided
                     }
                 }
                 con.Close();
+
+                //[students schedule]to delete the existing data to replace new data at the same sections blah blah blah
+                con.Open();
+                string sqlDeleteStudentsScheduled = "DELETE FROM tbl_students_scheduled WHERE curriculums_id = @c_id AND course = @c AND year = @y AND section = @s AND semester = @sem AND schoolYear = @sY;";
+                using (MySqlCommand cmd = new MySqlCommand(sqlDeleteStudentsScheduled, con))//to delete data from students scheduled
+                {
+                    cmd.Parameters.AddWithValue("@c_id", cu);
+                    cmd.Parameters.AddWithValue("@c", course);
+                    cmd.Parameters.AddWithValue("@y", year);
+                    cmd.Parameters.AddWithValue("@s", section);
+                    cmd.Parameters.AddWithValue("@sem", semester);
+                    cmd.Parameters.AddWithValue("@sY", schoolYear);
+                    cmd.ExecuteNonQuery();
+                }
+                con.Close();
+
+                //[room schedule]to delete the existing data to replace new data at the same sections blah blah blah
+                con.Open();
+                string sqlDeleteRoomScheduled = "DELETE FROM tbl_room_scheduled WHERE curriculums_id = @c_id AND course = @c AND year = @y AND section = @s AND semester = @sem AND schoolYear = @sY;";
+                using (MySqlCommand cmd = new MySqlCommand(sqlDeleteRoomScheduled, con))//to delete data from students scheduled
+                {
+                    cmd.Parameters.AddWithValue("@c_id", cu);
+                    cmd.Parameters.AddWithValue("@c", course);
+                    cmd.Parameters.AddWithValue("@y", year);
+                    cmd.Parameters.AddWithValue("@s", section);
+                    cmd.Parameters.AddWithValue("@sem", semester);
+                    cmd.Parameters.AddWithValue("@sY", schoolYear);
+                    cmd.ExecuteNonQuery();
+                }
+                con.Close();
+
 
                 //inserting data
                 con.Open();
@@ -1714,7 +1745,6 @@ namespace ClassSchedulingComputerAided
             {
                 con.Close();
             }
-            
         }
 
         //================My Account ============

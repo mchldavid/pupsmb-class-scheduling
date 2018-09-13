@@ -1223,7 +1223,7 @@ namespace ClassSchedulingComputerAided
             StudentsScheduled.day[8] = cboDay_9.Text;
             StudentsScheduled.day[9] = cboDay_10.Text;
 
-            md.CSD_insert_students_schedule(cboCourse.Text, cboYear.Text, cboCurriculum.Text, cboSemester.Text, cboSchoolYear.Text);
+            md.CSD_insert_students_schedule(cboCourse.Text, cboYear.Text,cboSection.Text, cboCurriculum.Text, cboSemester.Text, cboSchoolYear.Text);
         }
 
         private void btnSAVE_Click(object sender, EventArgs e)
