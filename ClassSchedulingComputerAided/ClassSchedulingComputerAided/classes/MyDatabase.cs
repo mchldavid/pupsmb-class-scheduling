@@ -474,9 +474,11 @@ namespace ClassSchedulingComputerAided
             try
             {
                 con.Open();
-                string sql = "SELECT subjects_id AS 'ID', course AS 'Course', yearLevel AS 'Year Level', subjectCode AS 'Code', subjectDescription AS 'Description', lectureHours AS 'Lecture Hours', laboratoryHours AS 'Lab Hours', units AS 'Units' FROM tbl_subjects t WHERE curriculums_id = @id;";
+                string sql = "SELECT subjects_id AS 'ID', course AS 'Course', yearLevel AS 'Year Level', subjectCode AS 'Code', subjectDescription AS 'Description', lectureHours AS 'Lecture Hours', laboratoryHours AS 'Lab Hours', units AS 'Units' FROM tbl_subjects t WHERE curriculums_id = @id AND semester = @sem AND schoolYear = @sY;";
                 MySqlCommand com = new MySqlCommand(sql, con);
                 com.Parameters.AddWithValue("@id", curriculumData.c_id);
+                com.Parameters.AddWithValue("@sem", curriculumData.c_semester);
+                com.Parameters.AddWithValue("@sY", curriculumData.c_schoolYear);
                 com.ExecuteNonQuery();
                 con.Close();
 
@@ -531,12 +533,12 @@ namespace ClassSchedulingComputerAided
             return cbo;
         }
 
-        public void C_AddSubjects(string c_control_id, string co_id, string course, string subjectCode, string subjectDescription, string lectureHours, string laboratoryHours, string units, string yearLevel)
+        public void C_AddSubjects(string c_control_id, string co_id, string course, string subjectCode, string subjectDescription, string lectureHours, string laboratoryHours, string units, string yearLevel, string semester, string schoolYear)
         {
             try
             {
                 con.Open();
-                string sqlCourse = "INSERT INTO tbl_subjects(curriculums_id, course_id, course, subjectCode, subjectDescription, lectureHours, laboratoryHours, units, yearLevel) VALUES(@cu_id, @co_id,@c, @sC, @sD, @leH, @laH, @u, @yL);";
+                string sqlCourse = "INSERT INTO tbl_subjects(curriculums_id, course_id, course, subjectCode, subjectDescription, lectureHours, laboratoryHours, units, yearLevel, semester, schoolYear) VALUES(@cu_id, @co_id,@c, @sC, @sD, @leH, @laH, @u, @yL, @sem, @sY);";
                 MySqlCommand com1 = new MySqlCommand(sqlCourse, con);
                 com1.Parameters.AddWithValue("@cu_id", c_control_id);
                 com1.Parameters.AddWithValue("@co_id", co_id);
@@ -547,6 +549,8 @@ namespace ClassSchedulingComputerAided
                 com1.Parameters.AddWithValue("@laH", laboratoryHours);
                 com1.Parameters.AddWithValue("@u", units);
                 com1.Parameters.AddWithValue("@yL", yearLevel);
+                com1.Parameters.AddWithValue("@sem", semester);
+                com1.Parameters.AddWithValue("@sY", schoolYear);
                 com1.ExecuteNonQuery();
             }
             catch (MySqlException ex)
@@ -1467,7 +1471,7 @@ namespace ClassSchedulingComputerAided
             return roomSchedule;
         }
 
-        public void CSD_ShowSubjectsForStudents(string course, string yearLevel, string curriculum)//to set all values into the accessors 
+        public void CSD_ShowSubjectsForStudents(string course, string yearLevel, string curriculum, string semester, string schoolYear)//to set all values into the accessors 
         {
             int x = 0;
             for (x = 0; x < 11; x++)//to set all accessors into null value
@@ -1482,12 +1486,14 @@ namespace ClassSchedulingComputerAided
             try
             {
                 con.Open();
-                string sqlRegistrationCard = "SELECT * FROM tbl_subjects su INNER JOIN tbl_curriculums cu ON su.curriculums_id = cu.curriculums_id WHERE course = @c AND yearLevel = @y AND cu.curriculumName = @cN ORDER BY su.subjectCode ASC;";
+                string sqlRegistrationCard = "SELECT * FROM tbl_subjects su INNER JOIN tbl_curriculums cu ON su.curriculums_id = cu.curriculums_id WHERE course = @c AND yearLevel = @y AND cu.curriculumName = @cN AND su.semester = @sem AND su.schoolYear = @sY ORDER BY su.subjectCode ASC;";
 
                 MySqlCommand com = new MySqlCommand(sqlRegistrationCard, con);
                 com.Parameters.AddWithValue("@c", course);
                 com.Parameters.AddWithValue("@y", yearLevel);
                 com.Parameters.AddWithValue("@cN", curriculum);
+                com.Parameters.AddWithValue("@sem", semester);
+                com.Parameters.AddWithValue("@sY", schoolYear);
                 com.ExecuteNonQuery();
 
                 MySqlDataReader dr = com.ExecuteReader();
@@ -1604,7 +1610,7 @@ namespace ClassSchedulingComputerAided
             }
         }
 
-        public void CSD_insert_students_schedule(string course, string year, string curriculum)
+        public void CSD_insert_students_schedule(string course, string year, string curriculum, string semester, string schoolYear)
         {
             try
             {
@@ -1615,7 +1621,7 @@ namespace ClassSchedulingComputerAided
                 string sqlGetCurriculumId = "SELECT * FROM tbl_curriculums WHERE curriculumName = @cN";
                 using(MySqlCommand cmd = new MySqlCommand(sqlGetCurriculumId, con))//get the curriculums id
                 {
-                    cmd.Parameters.AddWithValue("@cN", StudentsScheduled.curriculumsName );
+                    cmd.Parameters.AddWithValue("@cN", StudentsScheduled.curriculumsName);
                     cmd.ExecuteNonQuery();
 
                     MySqlDataReader dr = cmd.ExecuteReader();
@@ -1627,12 +1633,14 @@ namespace ClassSchedulingComputerAided
                 }
 
                 con.Open();
-                string sqlCount = "SELECT * FROM tbl_subjects su INNER JOIN tbl_curriculums cu ON su.curriculums_id = cu.curriculums_id WHERE course = @co AND yearLevel = @y AND cu.curriculumName = @cu ORDER BY su.subjectCode ASC";
+                string sqlCount = "SELECT * FROM tbl_subjects su INNER JOIN tbl_curriculums cu ON su.curriculums_id = cu.curriculums_id WHERE course = @c AND yearLevel = @y AND cu.curriculumName = @cN AND su.semester = @sem AND su.schoolYear = @sY ORDER BY su.subjectCode ASC;";
                 using(MySqlCommand cmd1 = new MySqlCommand(sqlCount, con))//count
                 {
-                    cmd1.Parameters.AddWithValue("@co", course);
+                    cmd1.Parameters.AddWithValue("@c", course);
                     cmd1.Parameters.AddWithValue("@y", year);
-                    cmd1.Parameters.AddWithValue("@cu", curriculum);
+                    cmd1.Parameters.AddWithValue("@cN", curriculum);
+                    cmd1.Parameters.AddWithValue("@sem", semester);
+                    cmd1.Parameters.AddWithValue("@sY", schoolYear);
                     cmd1.ExecuteNonQuery();
 
                     MySqlDataReader dr = cmd1.ExecuteReader();
@@ -1677,7 +1685,7 @@ namespace ClassSchedulingComputerAided
                 x = 0;
                 for (int y = 0; y < count; y++)// from how many count that increment that to be insert the schedule for rooms
                 {
-                    string sqlInsertRoomScheduled = "INSERT INTO tbl_room_scheduled(roomCode, roomStartTime, roomEndTime, roomDay, assignedProfessor, subjectCode, course, year, section, semester, schoolYear) VALUES(@rC, @rST, @rET, @rD, @aP, @sC, @c, @y, @sec, @sem, @sY)";
+                    string sqlInsertRoomScheduled = "INSERT INTO tbl_room_scheduled(roomCode, roomStartTime, roomEndTime, roomDay, assignedProfessor, subjectCode, course, year, section, semester, schoolYear, curriculums_id) VALUES(@rC, @rST, @rET, @rD, @aP, @sC, @c, @y, @sec, @sem, @sY, @c_id)";
                     using (MySqlCommand cmd = new MySqlCommand(sqlInsertRoomScheduled, con))
                     {
                         cmd.Parameters.AddWithValue("@rC", StudentsScheduled.Rooms[x]);
@@ -1691,6 +1699,7 @@ namespace ClassSchedulingComputerAided
                         cmd.Parameters.AddWithValue("@sec", StudentsScheduled.section);
                         cmd.Parameters.AddWithValue("@sem", StudentsScheduled.semester);
                         cmd.Parameters.AddWithValue("@sY", StudentsScheduled.schoolYear);
+                        cmd.Parameters.AddWithValue("@c_id", cu);
 
                         cmd.ExecuteNonQuery();
                         x++;

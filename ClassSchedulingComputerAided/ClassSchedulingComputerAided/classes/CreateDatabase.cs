@@ -30,6 +30,7 @@ namespace ClassSchedulingComputerAided
             DBtable_9(dbName, sqlConnection);
             DBtable_10(dbName, sqlConnection);
             DBtable_11(dbName, sqlConnection);
+            DBtable_12(dbName, sqlConnection);
         }
 
         //===============QUERIES==============
@@ -319,6 +320,38 @@ namespace ClassSchedulingComputerAided
                     + "`schoolYear` varchar(45) NOT NULL,"
                     + "PRIMARY KEY  (`room_scheduled_id`)"
                     + ") ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;", dbconn))
+                {
+                    dbconn.Open();
+                    cmd.ExecuteNonQuery();
+                    dbconn.Close();
+                }
+            }
+        }
+
+        private void DBtable_12(string name, string conn)
+        {
+            using (MySqlConnection dbconn = new MySqlConnection(conn))
+            {
+                using (MySqlCommand cmd = new MySqlCommand("CREATE TABLE  `"
+                    + name +"`.`tbl_professor_scheduled` ("
+                    + "`professorsScheduled_id` int(10) unsigned NOT NULL auto_increment,"
+                    + "`curriculumns_id` int(10) unsigned NOT NULL,"
+                    + "`course` varchar(45) NOT NULL,"
+                    + "`year` varchar(45) NOT NULL,"
+                    + "`section` varchar(45) NOT NULL,"
+                    + "`scheduledBy` varchar(45) NOT NULL,"
+                    + "`scheduledDate` varchar(45) NOT NULL,"
+                    + "`semester` varchar(45) NOT NULL,"
+                    + "`schoolYear` varchar(45) NOT NULL,"
+                    + "`room` varchar(45) NOT NULL,"
+                    + "`subjectCode` varchar(45) NOT NULL,"
+                    + "`subjectDescription` varchar(100) NOT NULL,"
+                    + "`professor` varchar(100) NOT NULL,"
+                    + "`scheduledStartTime` varchar(45) NOT NULL,"
+                    + "`scheduledEndTime` varchar(45) NOT NULL,"
+                    + "`scheduledDay` varchar(45) NOT NULL,"
+                    + "PRIMARY KEY  (`professorsScheduled_id`)"
+                    + ") ENGINE=InnoDB DEFAULT CHARSET=latin1;", dbconn))
                 {
                     dbconn.Open();
                     cmd.ExecuteNonQuery();

@@ -81,16 +81,19 @@ namespace ClassSchedulingComputerAided
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            frmSetCurriculum sc = new frmSetCurriculum();
-            sc.Show();
-            sc.lbl_control_id.Text = curriculumData.c_id;
-            sc.lbl_title.Text = lbl_title.Text;
-            for (int x = 0; x < md.ListCourse(curriculumData.c_id).Length; x++)
-            {
-                if (md.ListCourse(curriculumData.c_id).GetValue(x).ToString() != "")
-                    sc.cboCourse.Items.Add(md.ListCourse(curriculumData.c_id).GetValue(x).ToString());
-            }
+            frmSemesterAndSchoolYear sas = new frmSemesterAndSchoolYear();
+            sas.Show();
             this.Hide();
+            //frmSetCurriculum sc = new frmSetCurriculum();
+            //sc.Show();
+            //sc.lbl_control_id.Text = curriculumData.c_id;
+            //curriculumData.c_curriculumTitle = lbl_title.Text;
+            //for (int x = 0; x < md.ListCourse(curriculumData.c_id).Length; x++)
+            //{
+            //    if (md.ListCourse(curriculumData.c_id).GetValue(x).ToString() != "")
+            //        sc.cboCourse.Items.Add(md.ListCourse(curriculumData.c_id).GetValue(x).ToString());
+            //}
+            //this.Hide();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

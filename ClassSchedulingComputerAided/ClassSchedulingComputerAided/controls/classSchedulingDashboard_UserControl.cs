@@ -156,6 +156,7 @@ namespace ClassSchedulingComputerAided
             btnSet_9.Visible = true;
             btnSet_10.Visible = true;
 
+            StudentsScheduled.curriculumsName = cboCurriculum.Text;
             //instanciation of an object
             SubjectForStudents.CourseCode = new string[11];
             SubjectForStudents.SubjectDescription = new string[11];
@@ -163,7 +164,7 @@ namespace ClassSchedulingComputerAided
             SubjectForStudents.LecHrs = new string[11];
             SubjectForStudents.LabHrs = new string[11];
 
-            md.CSD_ShowSubjectsForStudents(cboCourse.SelectedItem.ToString(), cboYear.SelectedItem.ToString(), cboCurriculum.SelectedItem.ToString());//to call function to get data into database
+            md.CSD_ShowSubjectsForStudents(cboCourse.Text, cboYear.Text, cboCurriculum.Text, cboSemester.Text, cboSchoolYear.Text);//to call function to get data into database
 
             //call a method to list data
             ListCourseCode();
@@ -432,6 +433,8 @@ namespace ClassSchedulingComputerAided
             for (int x = 0; x < md.getCourseYear(cboCourse.SelectedItem.ToString()).Length; x++)
                 if (md.getCourseYear(cboCourse.SelectedItem.ToString()).GetValue(x).ToString() != "")
                     cboYear.Items.Add(md.getCourseYear(cboCourse.SelectedItem.ToString()).GetValue(x).ToString());
+
+            cboSection.Items.Clear();
         }
 
         public void SetToEnabled()//method to set button 'set' to enabled
@@ -1220,7 +1223,7 @@ namespace ClassSchedulingComputerAided
             StudentsScheduled.day[8] = cboDay_9.Text;
             StudentsScheduled.day[9] = cboDay_10.Text;
 
-            md.CSD_insert_students_schedule(cboCourse.Text, cboYear.Text, cboCurriculum.Text);
+            md.CSD_insert_students_schedule(cboCourse.Text, cboYear.Text, cboCurriculum.Text, cboSemester.Text, cboSchoolYear.Text);
         }
 
         private void btnSAVE_Click(object sender, EventArgs e)

@@ -155,6 +155,12 @@
     <Compile Include="classes\StudentsScheduled.cs" />
     <Compile Include="classes\SubjectForStudents.cs" />
     <Compile Include="classes\CreateDatabase.cs" />
+    <Compile Include="SemesterAndSchoolYear.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SemesterAndSchoolYear.Designer.cs">
+      <DependentUpon>SemesterAndSchoolYear.cs</DependentUpon>
+    </Compile>
     <Compile Include="trash\Information.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -327,6 +333,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="controls\CSD_ProfTimeTable.resx">
       <DependentUpon>CSD_ProfTimeTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SemesterAndSchoolYear.resx">
+      <DependentUpon>SemesterAndSchoolYear.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="trash\Information.resx">
       <DependentUpon>Information.cs</DependentUpon>

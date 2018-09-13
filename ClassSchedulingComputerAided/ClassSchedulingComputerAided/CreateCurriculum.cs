@@ -35,6 +35,7 @@ namespace ClassSchedulingComputerAided
                     curriculumData.c_id = md.CreateCurriculum(txtCurriculumTitle.Text, txtPublishedBy.Text, dt);
                     sc.Show();
                     sc.lbl_title.Text = "Curriculum Title: " + txtCurriculumTitle.Text;
+                    curriculumData.c_curriculumTitle = txtCurriculumTitle.Text;
                     //sc.lbl_control_id.Text = md.CreateCurriculum(txtCurriculumTitle.Text, txtPublishedBy.Text, dt);
                     sc.lbl_control_id.Text = curriculumData.c_id;
                     
@@ -50,6 +51,7 @@ namespace ClassSchedulingComputerAided
                     frmSetCourses sc = new frmSetCourses();
                     sc.Show();
                     sc.lbl_title.Text = "Curriculum Title: " + txtCurriculumTitle.Text;
+                    curriculumData.c_curriculumTitle = txtCurriculumTitle.Text;
                     //sc.lbl_control_id.Text = md.CreateCurriculum(txtCurriculumTitle.Text, txtPublishedBy.Text, dt);
                     string active = "inactive";
                     string used = "NO";

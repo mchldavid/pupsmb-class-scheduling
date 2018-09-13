@@ -13,5 +13,23 @@ namespace ClassSchedulingComputerAided
             get;
             set;
         }
+
+        public static string c_semester
+        {
+            get;
+            set;
+        }
+
+        public static string c_schoolYear
+        {
+            get;
+            set;
+        }
+
+        public static string c_curriculumTitle
+        {
+            get;
+            set;
+        }
     }
 }

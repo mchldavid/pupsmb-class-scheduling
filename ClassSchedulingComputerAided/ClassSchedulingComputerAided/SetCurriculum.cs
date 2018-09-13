@@ -44,10 +44,13 @@ namespace ClassSchedulingComputerAided
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            frmSetCourses sc = new frmSetCourses();
-            sc.Show();
-            sc.lbl_control_id.Text = curriculumData.c_id;
-            sc.lbl_title.Text = lbl_title.Text;
+            //frmSetCourses sc = new frmSetCourses();
+            //sc.Show();
+            //sc.lbl_control_id.Text = curriculumData.c_id;
+            //sc.lbl_title.Text = lbl_title.Text;
+            //this.Hide();
+            frmSemesterAndSchoolYear sas = new frmSemesterAndSchoolYear();
+            sas.Show();
             this.Hide();
         }
 
@@ -66,7 +69,7 @@ namespace ClassSchedulingComputerAided
         private void btnAdd_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Added Successfully", "Add Subject", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            md.C_AddSubjects(curriculumData.c_id, lbl_course_id.Text, cboCourse.SelectedItem.ToString(), txtSubjectCode.Text, txtSubjectDescription.Text, cboLectureHours.SelectedItem.ToString(), cboLabHours.SelectedItem.ToString(), cboUnits.SelectedItem.ToString(), cboYearLevel.SelectedItem.ToString());
+            md.C_AddSubjects(curriculumData.c_id, lbl_course_id.Text, cboCourse.SelectedItem.ToString(), txtSubjectCode.Text, txtSubjectDescription.Text, cboLectureHours.SelectedItem.ToString(), cboLabHours.SelectedItem.ToString(), cboUnits.SelectedItem.ToString(), cboYearLevel.SelectedItem.ToString(), curriculumData.c_semester, curriculumData.c_schoolYear);
             dgvListSubject.DataSource = md.dgv_showSubjectCurriculum().DataSource;
             dgvListSubject.Columns[0].Visible = false;
         }
