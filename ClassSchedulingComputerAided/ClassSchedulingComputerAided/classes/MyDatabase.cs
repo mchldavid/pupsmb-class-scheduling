@@ -985,15 +985,23 @@ namespace ClassSchedulingComputerAided
         }
 
         // ====================P_SUBJECTS START============================
-        public DataGridView dgv_showPreferredSubjects()
+        public DataGridView dgv_showPreferredSubjects(string semester, string schoolYear)
         {
             DataGridView dgv = new DataGridView();
             try
             {
                 con.Open();
-                string sql = "SELECT a.preferredSubjects_id AS 'ID', subjectCode AS 'CODE', subjectDescription AS 'DESCRIPTION', course AS 'COURSE', lectureHours AS 'LEC HRS', laboratoryHours AS 'LAB HRS', units AS 'UNITS', yearLevel AS 'YR LEVEL' FROM tbl_preferredSubjects a, tbl_subjects b WHERE a.users_id = @id AND b.subjects_id = a.subjects_id;";
+                //string sql = "SELECT a.preferredSubjects_id AS 'ID', subjectCode AS 'CODE', subjectDescription AS 'DESCRIPTION', course AS 'COURSE', lectureHours AS 'LEC HRS', laboratoryHours AS 'LAB HRS', units AS 'UNITS', yearLevel AS 'YR LEVEL' FROM tbl_preferredSubjects a, tbl_subjects b WHERE a.users_id = @id AND b.subjects_id = a.subjects_id;";
+                string sql = "SELECT a.preferredSubjects_id AS 'ID', subjectCode AS 'CODE', subjectDescription AS 'DESCRIPTION', course AS 'COURSE', lectureHours AS 'LEC HRS', laboratoryHours AS 'LAB HRS', units AS 'UNITS', yearLevel AS 'YR LEVEL' "
+                    + "FROM tbl_preferredSubjects a, tbl_subjects b "
+                    + "WHERE a.users_id = @id "
+                    + "AND b.subjects_id = a.subjects_id "
+                    + "AND a.semester = @sem "
+                    + "AND a.schoolYear = @sY;";
                 MySqlCommand com = new MySqlCommand(sql, con);
                 com.Parameters.AddWithValue("@id", usersData.p_id);
+                com.Parameters.AddWithValue("@sem", semester);
+                com.Parameters.AddWithValue("@sY", schoolYear);
                 com.ExecuteNonQuery();
                 con.Close();
 
@@ -1014,19 +1022,38 @@ namespace ClassSchedulingComputerAided
             return dgv; 
         }
 
-        public DataGridView dgv_showAddPreferredSubjects(string courseBy )
+        public DataGridView dgv_showAddPreferredSubjects(string courseBy, string semester, string schoolYear)
         {
             DataGridView dgv1 = new DataGridView();
             try
             {
                 con.Open();
                 string sql = "";
+                //if (courseBy == "Course Subject")
+                //    sql = "SELECT subjects_id AS 'ID', subjectCode AS 'Code', subjectDescription AS 'Description', CONCAT('[',curriculumName,']') AS 'Curriculum' FROM tbl_subjects su INNER JOIN tbl_curriculums cu ON su.curriculums_id = cu.curriculums_id WHERE status = 'active' AND su.course = @c ORDER BY cu.curriculumName;";
                 if (courseBy == "Course Subject")
-                    sql = "SELECT subjects_id AS 'ID', subjectCode AS 'Code', subjectDescription AS 'Description', CONCAT('[',curriculumName,']') AS 'Curriculum' FROM tbl_subjects su INNER JOIN tbl_curriculums cu ON su.curriculums_id = cu.curriculums_id WHERE status = 'active' AND su.course = @c ORDER BY cu.curriculumName;";
+                    sql = "SELECT subjects_id AS 'ID', su.course AS 'Course', subjectCode AS 'Code', subjectDescription AS 'Description', CONCAT('[',curriculumName,']') AS 'Curriculum' "
+                        + "FROM tbl_subjects su "
+                        + "INNER JOIN tbl_curriculums cu ON su.curriculums_id = cu.curriculums_id "
+                        + "WHERE status = 'active' "
+                        + "AND su.course = @c "
+                        + "AND su.semester = @sem "
+                        + "AND su.schoolYear = @sY "
+                        + "ORDER BY cu.curriculumName;";
+                //if (courseBy == "Other Subject")
+                //    sql = "SELECT subjects_id AS 'ID', subjectCode AS 'Code', subjectDescription AS 'Description', CONCAT('[',curriculumName,']') AS 'Curriculum' FROM tbl_subjects su INNER JOIN tbl_curriculums cu ON su.curriculums_id = cu.curriculums_id WHERE status = 'active' ORDER BY cu.curriculumName;";
                 if (courseBy == "Other Subject")
-                    sql = "SELECT subjects_id AS 'ID', subjectCode AS 'Code', subjectDescription AS 'Description', CONCAT('[',curriculumName,']') AS 'Curriculum' FROM tbl_subjects su INNER JOIN tbl_curriculums cu ON su.curriculums_id = cu.curriculums_id WHERE status = 'active' ORDER BY cu.curriculumName;";
+                    sql = "SELECT subjects_id AS 'ID', subjectCode AS 'Code', subjectDescription AS 'Description', CONCAT('[',curriculumName,']') AS 'Curriculum' "
+                        + "FROM tbl_subjects su "
+                        + "INNER JOIN tbl_curriculums cu ON su.curriculums_id = cu.curriculums_id "
+                        + "WHERE status = 'active' "
+                        + "AND su.semester = @sem "
+                        + "AND su.schoolYear = @sY "
+                        + "ORDER BY cu.curriculumName;";
                 MySqlCommand com = new MySqlCommand(sql, con);
                 com.Parameters.AddWithValue("@c", usersData.p_cDepartment);
+                com.Parameters.AddWithValue("@sem", semester);
+                com.Parameters.AddWithValue("@sY", schoolYear);
                 com.ExecuteNonQuery();
                 con.Close();
 
@@ -1101,15 +1128,17 @@ namespace ClassSchedulingComputerAided
             return total;
         }
 
-        public void Prof_AddSubjects(string subject_id)
+        public void Prof_AddSubjects(string subject_id, string semester, string schoolYear)
         {
             try
             {
                 con.Open();
-                string sqlAddSubjects = "INSERT INTO tbl_preferredsubjects(users_id, subjects_id) VALUES(@p_id, @s_id);";
+                string sqlAddSubjects = "INSERT INTO tbl_preferredsubjects(users_id, subjects_id, semester, schoolYear) VALUES(@p_id, @s_id, @sem, @sY);";
                 MySqlCommand com1 = new MySqlCommand(sqlAddSubjects, con);
                 com1.Parameters.AddWithValue("@p_id", usersData.p_id);
                 com1.Parameters.AddWithValue("@s_id", subject_id);
+                com1.Parameters.AddWithValue("@sem", semester);
+                com1.Parameters.AddWithValue("@sY", schoolYear);
                 com1.ExecuteNonQuery();
             }
             catch (MySqlException ex)

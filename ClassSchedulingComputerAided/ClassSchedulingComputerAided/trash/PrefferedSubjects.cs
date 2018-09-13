@@ -21,7 +21,7 @@ namespace ClassSchedulingComputerAided
         private void PrefferedSubjects_Load(object sender, EventArgs e)
         {
             lbl_id.Text = usersData.p_id;
-            dgvListSubject.DataSource = md.dgv_showPreferredSubjects().DataSource;
+            //dgvListSubject.DataSource = md.dgv_showPreferredSubjects().DataSource;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -33,7 +33,7 @@ namespace ClassSchedulingComputerAided
         {
             pnlAddSubject.Visible = true;
             cboSubjectBy.SelectedIndex = 0;
-            dgvAddSubject.DataSource = md.dgv_showAddPreferredSubjects("Course Subject").DataSource;
+            //dgvAddSubject.DataSource = md.dgv_showAddPreferredSubjects("Course Subject", ).DataSource;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -48,8 +48,8 @@ namespace ClassSchedulingComputerAided
         {
             foreach (DataGridViewRow row in dgvAddSubject.SelectedRows)
             {
-                md.Prof_AddSubjects(row.Cells[0].Value.ToString());
-                dgvListSubject.DataSource = md.dgv_showPreferredSubjects().DataSource;
+                //md.Prof_AddSubjects(row.Cells[0].Value.ToString());
+                //dgvListSubject.DataSource = md.dgv_showPreferredSubjects().DataSource;
                 MessageBox.Show("You added " +row.Cells[2].Value.ToString() + " into your preferred subjects", "Adding of Subject");
             }
         }
@@ -96,7 +96,7 @@ namespace ClassSchedulingComputerAided
 
         private void cboSubjectBy_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dgvAddSubject.DataSource = md.dgv_showAddPreferredSubjects(cboSubjectBy.SelectedItem.ToString()).DataSource;
+            //dgvAddSubject.DataSource = md.dgv_showAddPreferredSubjects(cboSubjectBy.SelectedItem.ToString()).DataSource;
         }
 
         private void bunifuSeparator2_Load(object sender, EventArgs e)

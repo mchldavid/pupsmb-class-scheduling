@@ -138,7 +138,7 @@ namespace ClassSchedulingComputerAided
                     + "`status` varchar(45) NOT NULL,"
                     + "`inUsed` varchar(45) NOT NULL,"
                     + "PRIMARY KEY  (`curriculums_id`)"
-                    + ") ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;", dbconn))
+                    + ") ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;", dbconn))
                 {
                     dbconn.Open();
                     cmd.ExecuteNonQuery();
@@ -186,12 +186,14 @@ namespace ClassSchedulingComputerAided
                     + "`units` int(10) unsigned NOT NULL,"
                     + "`yearLevel` int(10) unsigned NOT NULL,"
                     + "`course` varchar(45) NOT NULL,"
+                    + "`semester` varchar(45) NOT NULL,"
+                    + "`schoolYear` varchar(45) NOT NULL,"
                     + "PRIMARY KEY  USING BTREE (`subjects_id`),"
                     + "KEY `FK_tbl_subjects_1` (`curriculums_id`),"
                     + "KEY `FK_tbl_subjects_2` (`course_id`),"
                     + "CONSTRAINT `FK_tbl_subjects_1` FOREIGN KEY (`curriculums_id`) REFERENCES `tbl_curriculums` (`curriculums_id`),"
                     + "CONSTRAINT `FK_tbl_subjects_2` FOREIGN KEY (`course_id`) REFERENCES `tbl_course` (`course_id`)"
-                    + ") ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=latin1;", dbconn))
+                    + ") ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=latin1;", dbconn))
                 {
                     dbconn.Open();
                     cmd.ExecuteNonQuery();
@@ -232,12 +234,14 @@ namespace ClassSchedulingComputerAided
                     + "`preferredSubjects_id` int(10) unsigned NOT NULL auto_increment,"
                     + "`users_id` int(10) unsigned NOT NULL,"
                     + "`subjects_id` int(10) unsigned NOT NULL,"
+                    + "`semester` varchar(45) NOT NULL,"
+                    + "`schoolYear` varchar(45) NOT NULL,"
                     + "PRIMARY KEY  (`preferredSubjects_id`),"
                     + "KEY `FK_tbl_preferredsubjects_1` (`users_id`),"
                     + "KEY `FK_tbl_preferredsubjects_2` (`subjects_id`),"
                     + "CONSTRAINT `FK_tbl_preferredsubjects_1` FOREIGN KEY (`users_id`) REFERENCES `tbl_users` (`users_id`),"
                     + "CONSTRAINT `FK_tbl_preferredsubjects_2` FOREIGN KEY (`subjects_id`) REFERENCES `tbl_subjects` (`subjects_id`)"
-                    + ") ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;"
+                    + ") ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;"
                     + "", dbconn))
                 {
                     dbconn.Open();
@@ -311,8 +315,10 @@ namespace ClassSchedulingComputerAided
                     + "`scheduledStartTime` varchar(45) NOT NULL,"
                     + "`scheduledEndTime` varchar(45) NOT NULL,"
                     + "`scheduledDay` varchar(45) NOT NULL,"
-                    + "PRIMARY KEY  USING BTREE (`students_scheduled_id`)"
-                    + ") ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;", dbconn))
+                    + "PRIMARY KEY  USING BTREE (`students_scheduled_id`),"
+                    + "KEY `FK_tbl_students_scheduled_1` (`curriculums_id`),"
+                    + "CONSTRAINT `FK_tbl_students_scheduled_1` FOREIGN KEY (`curriculums_id`) REFERENCES `tbl_curriculums` (`curriculums_id`)"
+                    + ") ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;", dbconn))
                 {
                     dbconn.Open();
                     cmd.ExecuteNonQuery();
@@ -339,8 +345,11 @@ namespace ClassSchedulingComputerAided
                     + "`section` varchar(45) NOT NULL,"
                     + "`semester` varchar(45) NOT NULL,"
                     + "`schoolYear` varchar(45) NOT NULL,"
-                    + "PRIMARY KEY  (`room_scheduled_id`)"
-                    + ") ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;", dbconn))
+                    + "`curriculums_id` int(10) unsigned NOT NULL,"
+                    + "PRIMARY KEY  (`room_scheduled_id`),"
+                    + "KEY `FK_tbl_room_scheduled_1` (`curriculums_id`),"
+                    + "CONSTRAINT `FK_tbl_room_scheduled_1` FOREIGN KEY (`curriculums_id`) REFERENCES `tbl_curriculums` (`curriculums_id`)"
+                    + ") ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=latin1;", dbconn))
                 {
                     dbconn.Open();
                     cmd.ExecuteNonQuery();
