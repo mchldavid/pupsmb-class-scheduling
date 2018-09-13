@@ -41,7 +41,7 @@ namespace ClassSchedulingComputerAided
                      + "; database=" + dbName
                      + "; port=" + port + ";";
 
-                if (DBExists(sqlConnection, dbName) == true)
+                if (DBExists(sqlConnection, dbName) == true)//dito
                 {
                     if (isDB_Empty(sqlConnectionWithDatabase, dbName) == true)
                     {

@@ -11,6 +11,26 @@ namespace ClassSchedulingComputerAided
 {
     class CreateDatabase
     {
+        public void grantPrivilegesDB(string name, string conn, string username, string password)
+        {
+            using (MySqlConnection dbconn = new MySqlConnection(conn))
+            {
+                using (MySqlCommand cmd = new MySqlCommand("GRANT ALL PRIVILEGES ON *.* TO '"+username+"'@'%' IDENTIFIED BY '"+password+"';", dbconn))
+                {
+                    dbconn.Open();
+                    cmd.ExecuteNonQuery();
+                    dbconn.Close();
+                }
+
+                using (MySqlCommand cmd = new MySqlCommand("FLUSH PRIVILEGES;", dbconn))
+                {
+                    dbconn.Open();
+                    cmd.ExecuteNonQuery();
+                    dbconn.Close();
+                }
+            }
+        }
+
         public void initCreateDatabase(string server, string dbName, string usrDb, string pwdDb, string port)
         {
             string sqlConnection = "server=" + server
@@ -18,6 +38,7 @@ namespace ClassSchedulingComputerAided
             + "; password=" + pwdDb
             + "; port=" + port + ";";
 
+            grantPrivilegesDB(dbName, sqlConnection, usrDb, pwdDb);
             DBNAME(dbName, sqlConnection);
             DBtable_1(dbName, sqlConnection);
             DBtable_2(dbName, sqlConnection);
