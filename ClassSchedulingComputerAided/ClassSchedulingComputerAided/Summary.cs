@@ -262,6 +262,38 @@ namespace ClassSchedulingComputerAided
         private void Summary_Load(object sender, EventArgs e)
         {
             //to list all Active Rooms
+
+            pnlStart.BringToFront();
+
+            cboSemester.Items.Add("1ST");
+            cboSemester.Items.Add("2ND");
+            cboSemester.Items.Add("3RD");
+
+            //to fill the school year
+            string sy = "";
+            DateTime dt = new DateTime(2015, DateTime.Now.Month, DateTime.Now.Day);
+            bool flag = true;
+            while (flag)
+            {
+                if (dt.Year != DateTime.Now.Year)
+                {
+                    sy += dt.Year.ToString();
+                    dt = dt.AddYears(1);
+                    sy += "-" + dt.Year.ToString();
+                    cboSchoolYear.Items.Add(sy);
+                    sy = "";
+                }
+                else
+                {
+                    sy += dt.Year.ToString();
+                    dt = dt.AddYears(1);
+                    sy += "-" + dt.Year.ToString();
+                    cboSchoolYear.Items.Add(sy);
+                    sy = "";
+                    flag = false;
+                }
+            }
+
             SubjectForStudents.Rooms = new string[100];
             md.CSD_ListActiveRoom();
             for (int x = 0; x < 50; x++)//set to 50 loop
@@ -278,13 +310,25 @@ namespace ClassSchedulingComputerAided
 
         private void cboCourseDepartment_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ClassSchedule_Data.roomCode = cboRoom.SelectedItem.ToString();
+            //ClassSchedule_Data.roomCode = cboRoom.SelectedItem.ToString();
 
             SummaryData.roomCode = cboRoom.Text;
 
             SummaryRoomScheduledControl room = new SummaryRoomScheduledControl();
             pnlRoomSummary.Controls.Clear();
             pnlRoomSummary.Controls.Add(room);
+        }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnOK_Click_1(object sender, EventArgs e)
+        {
+            pnlStart.Visible = false;
+            SummaryData.semester = cboSemester.Text;
+            SummaryData.schoolYear = cboSchoolYear.Text;
         }
     }
 }

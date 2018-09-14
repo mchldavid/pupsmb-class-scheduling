@@ -214,9 +214,9 @@ namespace ClassSchedulingComputerAided
 
         private void RoomTimeTableControl_Load(object sender, EventArgs e)
         {
-            for (int x = 0; x < md.get_id_roomScheduled(ClassSchedule_Data.roomCode).Length; x++)
+            for (int x = 0; x < md.get_id_roomScheduled(ClassSchedule_Data.roomCode, ClassSchedule_Data.semester, ClassSchedule_Data.schoolYear).Length; x++)
             {
-                string ps_id = md.get_id_roomScheduled(ClassSchedule_Data.roomCode).GetValue(x).ToString();
+                string ps_id = md.get_id_roomScheduled(ClassSchedule_Data.roomCode, ClassSchedule_Data.semester, ClassSchedule_Data.schoolYear).GetValue(x).ToString();
                 if (ps_id != "")
                 {
                     int day = GetDay(md.get_info_roomScheduled(ps_id).GetValue(2).ToString());

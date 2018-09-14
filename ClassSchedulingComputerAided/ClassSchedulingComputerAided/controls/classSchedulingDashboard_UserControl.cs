@@ -144,6 +144,9 @@ namespace ClassSchedulingComputerAided
             LoadSaveData();//to load the save data
             btnSAVE.Visible = true;
 
+            ClassSchedule_Data.semester = cboSemester.Text;
+            ClassSchedule_Data.schoolYear = cboSchoolYear.Text;
+
             tbl_pnl_layout.Visible = true;
             btnSet_1.Visible = true;
             btnSet_2.Visible = true;

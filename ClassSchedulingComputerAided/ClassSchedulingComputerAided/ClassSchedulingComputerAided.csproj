@@ -167,11 +167,11 @@
     <Compile Include="Summary.Designer.cs">
       <DependentUpon>Summary.cs</DependentUpon>
     </Compile>
-    <Compile Include="SummaryData.cs" />
-    <Compile Include="SummaryRoomScheduledControl.cs">
+    <Compile Include="classes\SummaryData.cs" />
+    <Compile Include="controls\SummaryRoomScheduledControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="SummaryRoomScheduledControl.Designer.cs">
+    <Compile Include="controls\SummaryRoomScheduledControl.Designer.cs">
       <DependentUpon>SummaryRoomScheduledControl.cs</DependentUpon>
     </Compile>
     <Compile Include="trash\Information.cs">
@@ -353,7 +353,7 @@
     <EmbeddedResource Include="Summary.resx">
       <DependentUpon>Summary.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SummaryRoomScheduledControl.resx">
+    <EmbeddedResource Include="controls\SummaryRoomScheduledControl.resx">
       <DependentUpon>SummaryRoomScheduledControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="trash\Information.resx">

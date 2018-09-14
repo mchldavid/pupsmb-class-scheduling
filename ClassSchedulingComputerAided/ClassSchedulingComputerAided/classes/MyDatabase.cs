@@ -1434,7 +1434,7 @@ namespace ClassSchedulingComputerAided
             return cboCurriculum;
         }
 
-        public string[] get_id_roomScheduled(string room_code)
+        public string[] get_id_roomScheduled(string room_code, string semester, string schoolYear)
         {
             string[] id = new string[100];
             int x = 0;
@@ -1445,9 +1445,13 @@ namespace ClassSchedulingComputerAided
             try
             {
                 con.Open();
-                string sqlListRoomCode = "SELECT * FROM tbl_room_scheduled t WHERE roomCode = @rC;";
+                string sqlListRoomCode = "SELECT * FROM tbl_room_scheduled t WHERE roomCode = 'RM201' "
+                    + "AND semester = @sem "
+                    + "AND schoolYear = @sY;";
                 MySqlCommand com = new MySqlCommand(sqlListRoomCode, con);
                 com.Parameters.AddWithValue("@rC", room_code);
+                com.Parameters.AddWithValue("@sem", semester);
+                com.Parameters.AddWithValue("@sY", schoolYear);
                 com.ExecuteNonQuery();
 
                 MySqlDataReader dr = com.ExecuteReader();

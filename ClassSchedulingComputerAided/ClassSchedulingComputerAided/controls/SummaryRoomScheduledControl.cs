@@ -219,9 +219,9 @@ namespace ClassSchedulingComputerAided
 
         private void SummaryRoomScheduledControl_Load(object sender, EventArgs e)
         {
-            for (int x = 0; x < md.get_id_roomScheduled(SummaryData.roomCode).Length; x++)
+            for (int x = 0; x < md.get_id_roomScheduled(SummaryData.roomCode, SummaryData.semester, SummaryData.schoolYear).Length; x++)
             {
-                string ps_id = md.get_id_roomScheduled(SummaryData.roomCode).GetValue(x).ToString();
+                string ps_id = md.get_id_roomScheduled(SummaryData.roomCode, SummaryData.semester, SummaryData.schoolYear).GetValue(x).ToString();
                 if (ps_id != "")
                 {
                     int day = GetDay(md.get_info_roomScheduled(ps_id).GetValue(2).ToString());
