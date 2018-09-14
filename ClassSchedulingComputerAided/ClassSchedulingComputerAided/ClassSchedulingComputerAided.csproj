@@ -161,6 +161,19 @@
     <Compile Include="SemesterAndSchoolYear.Designer.cs">
       <DependentUpon>SemesterAndSchoolYear.cs</DependentUpon>
     </Compile>
+    <Compile Include="Summary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Summary.Designer.cs">
+      <DependentUpon>Summary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SummaryData.cs" />
+    <Compile Include="SummaryRoomScheduledControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SummaryRoomScheduledControl.Designer.cs">
+      <DependentUpon>SummaryRoomScheduledControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="trash\Information.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -336,6 +349,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SemesterAndSchoolYear.resx">
       <DependentUpon>SemesterAndSchoolYear.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Summary.resx">
+      <DependentUpon>Summary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SummaryRoomScheduledControl.resx">
+      <DependentUpon>SummaryRoomScheduledControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="trash\Information.resx">
       <DependentUpon>Information.cs</DependentUpon>
