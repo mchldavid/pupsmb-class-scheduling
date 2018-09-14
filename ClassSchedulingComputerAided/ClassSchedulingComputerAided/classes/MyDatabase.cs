@@ -1445,7 +1445,7 @@ namespace ClassSchedulingComputerAided
             try
             {
                 con.Open();
-                string sqlListRoomCode = "SELECT * FROM tbl_room_scheduled t WHERE roomCode = 'RM201' "
+                string sqlListRoomCode = "SELECT * FROM tbl_room_scheduled t WHERE roomCode = @rC "
                     + "AND semester = @sem "
                     + "AND schoolYear = @sY;";
                 MySqlCommand com = new MySqlCommand(sqlListRoomCode, con);
