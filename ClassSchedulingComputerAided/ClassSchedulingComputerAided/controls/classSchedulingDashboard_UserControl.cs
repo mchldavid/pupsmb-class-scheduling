@@ -139,49 +139,7 @@ namespace ClassSchedulingComputerAided
             }
         }
 
-        private void btnOK_Click(object sender, EventArgs e)
-        {
-            LoadSaveData();//to load the save data
-            btnSAVE.Visible = true;
-
-            ClassSchedule_Data.semester = cboSemester.Text;
-            ClassSchedule_Data.schoolYear = cboSchoolYear.Text;
-
-            tbl_pnl_layout.Visible = true;
-            btnSet_1.Visible = true;
-            btnSet_2.Visible = true;
-            btnSet_3.Visible = true;
-            btnSet_4.Visible = true;
-            btnSet_5.Visible = true;
-            btnSet_6.Visible = true;
-            btnSet_7.Visible = true;
-            btnSet_8.Visible = true;
-            btnSet_9.Visible = true;
-            btnSet_10.Visible = true;
-
-            StudentsScheduled.curriculumsName = cboCurriculum.Text;
-            //instanciation of an object
-            SubjectForStudents.CourseCode = new string[11];
-            SubjectForStudents.SubjectDescription = new string[11];
-            SubjectForStudents.Units = new string[11];
-            SubjectForStudents.LecHrs = new string[11];
-            SubjectForStudents.LabHrs = new string[11];
-
-            md.CSD_ShowSubjectsForStudents(cboCourse.Text, cboYear.Text, cboCurriculum.Text, cboSemester.Text, cboSchoolYear.Text);//to call function to get data into database
-
-            //call a method to list data
-            ListCourseCode();
-            ListSubjectDescription();
-            ListUnits();
-            ListLecHrs();
-            ListlabHrs();
-            ListProfessors();
-            ListStartTime();
-            ListEndTime();
-            ListDay();
-            ListRoom();
-            ListSet();
-        }
+        
 
         public void ListCourseCode()//list For CourseCode
         {
@@ -559,6 +517,19 @@ namespace ClassSchedulingComputerAided
                     if (SubjectForStudents.Professors[x] != "")
                         cboProfessor_1.Items.Add(SubjectForStudents.Professors[x]);
                 }
+
+                //to load all data if already
+                ClassSchedule_Data.professors_name = cboProfessor_1.Text;
+                ClassSchedule_Data.roomCode = cboRoom_1.Text;
+
+                RoomTimeTableControl rttc = new RoomTimeTableControl();
+                pnlRooms.Controls.Clear();
+                pnlRooms.Controls.Add(rttc);
+
+                md.CSD_get_professors_id(cboProfessor_1.Text);
+                CSD_ProfTimeTable ptt = new CSD_ProfTimeTable();
+                pnlProfessors.Controls.Clear();
+                pnlProfessors.Controls.Add(ptt);
             }
             else
             {
@@ -603,6 +574,19 @@ namespace ClassSchedulingComputerAided
                     if (SubjectForStudents.Professors[x] != "")
                         cboProfessor_2.Items.Add(SubjectForStudents.Professors[x]);
                 }
+
+                //to load all data if already
+                ClassSchedule_Data.professors_name = cboProfessor_2.Text;
+                ClassSchedule_Data.roomCode = cboRoom_2.Text;
+
+                RoomTimeTableControl rttc = new RoomTimeTableControl();
+                pnlRooms.Controls.Clear();
+                pnlRooms.Controls.Add(rttc);
+
+                md.CSD_get_professors_id(cboProfessor_2.Text);
+                CSD_ProfTimeTable ptt = new CSD_ProfTimeTable();
+                pnlProfessors.Controls.Clear();
+                pnlProfessors.Controls.Add(ptt);
             }
             else
             {
@@ -647,6 +631,19 @@ namespace ClassSchedulingComputerAided
                     if (SubjectForStudents.Professors[x] != "")
                         cboProfessor_3.Items.Add(SubjectForStudents.Professors[x]);
                 }
+
+                //to load all data if already
+                ClassSchedule_Data.professors_name = cboProfessor_3.Text;
+                ClassSchedule_Data.roomCode = cboRoom_3.Text;
+
+                RoomTimeTableControl rttc = new RoomTimeTableControl();
+                pnlRooms.Controls.Clear();
+                pnlRooms.Controls.Add(rttc);
+
+                md.CSD_get_professors_id(cboProfessor_3.Text);
+                CSD_ProfTimeTable ptt = new CSD_ProfTimeTable();
+                pnlProfessors.Controls.Clear();
+                pnlProfessors.Controls.Add(ptt);
             }
             else
             {
@@ -691,6 +688,19 @@ namespace ClassSchedulingComputerAided
                     if (SubjectForStudents.Professors[x] != "")
                         cboProfessor_4.Items.Add(SubjectForStudents.Professors[x]);
                 }
+
+                //to load all data if already
+                ClassSchedule_Data.professors_name = cboProfessor_4.Text;
+                ClassSchedule_Data.roomCode = cboRoom_4.Text;
+
+                RoomTimeTableControl rttc = new RoomTimeTableControl();
+                pnlRooms.Controls.Clear();
+                pnlRooms.Controls.Add(rttc);
+
+                md.CSD_get_professors_id(cboProfessor_4.Text);
+                CSD_ProfTimeTable ptt = new CSD_ProfTimeTable();
+                pnlProfessors.Controls.Clear();
+                pnlProfessors.Controls.Add(ptt);
             }
             else
             {
@@ -735,6 +745,19 @@ namespace ClassSchedulingComputerAided
                     if (SubjectForStudents.Professors[x] != "")
                         cboProfessor_5.Items.Add(SubjectForStudents.Professors[x]);
                 }
+
+                //to load all data if already
+                ClassSchedule_Data.professors_name = cboProfessor_5.Text;
+                ClassSchedule_Data.roomCode = cboRoom_5.Text;
+
+                RoomTimeTableControl rttc = new RoomTimeTableControl();
+                pnlRooms.Controls.Clear();
+                pnlRooms.Controls.Add(rttc);
+
+                md.CSD_get_professors_id(cboProfessor_5.Text);
+                CSD_ProfTimeTable ptt = new CSD_ProfTimeTable();
+                pnlProfessors.Controls.Clear();
+                pnlProfessors.Controls.Add(ptt);
             }
             else
             {
@@ -779,6 +802,19 @@ namespace ClassSchedulingComputerAided
                     if (SubjectForStudents.Professors[x] != "")
                         cboProfessor_6.Items.Add(SubjectForStudents.Professors[x]);
                 }
+
+                //to load all data if already
+                ClassSchedule_Data.professors_name = cboProfessor_6.Text;
+                ClassSchedule_Data.roomCode = cboRoom_6.Text;
+
+                RoomTimeTableControl rttc = new RoomTimeTableControl();
+                pnlRooms.Controls.Clear();
+                pnlRooms.Controls.Add(rttc);
+
+                md.CSD_get_professors_id(cboProfessor_6.Text);
+                CSD_ProfTimeTable ptt = new CSD_ProfTimeTable();
+                pnlProfessors.Controls.Clear();
+                pnlProfessors.Controls.Add(ptt);
             }
             else
             {
@@ -823,6 +859,19 @@ namespace ClassSchedulingComputerAided
                     if (SubjectForStudents.Professors[x] != "")
                         cboProfessor_7.Items.Add(SubjectForStudents.Professors[x]);
                 }
+
+                //to load all data if already
+                ClassSchedule_Data.professors_name = cboProfessor_7.Text;
+                ClassSchedule_Data.roomCode = cboRoom_7.Text;
+
+                RoomTimeTableControl rttc = new RoomTimeTableControl();
+                pnlRooms.Controls.Clear();
+                pnlRooms.Controls.Add(rttc);
+
+                md.CSD_get_professors_id(cboProfessor_7.Text);
+                CSD_ProfTimeTable ptt = new CSD_ProfTimeTable();
+                pnlProfessors.Controls.Clear();
+                pnlProfessors.Controls.Add(ptt);
             }
             else
             {
@@ -867,6 +916,19 @@ namespace ClassSchedulingComputerAided
                     if (SubjectForStudents.Professors[x] != "")
                         cboProfessor_8.Items.Add(SubjectForStudents.Professors[x]);
                 }
+
+                //to load all data if already
+                ClassSchedule_Data.professors_name = cboProfessor_8.Text;
+                ClassSchedule_Data.roomCode = cboRoom_8.Text;
+
+                RoomTimeTableControl rttc = new RoomTimeTableControl();
+                pnlRooms.Controls.Clear();
+                pnlRooms.Controls.Add(rttc);
+
+                md.CSD_get_professors_id(cboProfessor_8.Text);
+                CSD_ProfTimeTable ptt = new CSD_ProfTimeTable();
+                pnlProfessors.Controls.Clear();
+                pnlProfessors.Controls.Add(ptt);
             }
             else
             {
@@ -911,6 +973,19 @@ namespace ClassSchedulingComputerAided
                     if (SubjectForStudents.Professors[x] != "")
                         cboProfessor_9.Items.Add(SubjectForStudents.Professors[x]);
                 }
+
+                //to load all data if already
+                ClassSchedule_Data.professors_name = cboProfessor_9.Text;
+                ClassSchedule_Data.roomCode = cboRoom_9.Text;
+
+                RoomTimeTableControl rttc = new RoomTimeTableControl();
+                pnlRooms.Controls.Clear();
+                pnlRooms.Controls.Add(rttc);
+
+                md.CSD_get_professors_id(cboProfessor_9.Text);
+                CSD_ProfTimeTable ptt = new CSD_ProfTimeTable();
+                pnlProfessors.Controls.Clear();
+                pnlProfessors.Controls.Add(ptt);
             }
             else
             {
@@ -955,6 +1030,19 @@ namespace ClassSchedulingComputerAided
                     if (SubjectForStudents.Professors[x] != "")
                         cboProfessor_10.Items.Add(SubjectForStudents.Professors[x]);
                 }
+
+                //to load all data if already
+                ClassSchedule_Data.professors_name = cboProfessor_10.Text;
+                ClassSchedule_Data.roomCode = cboRoom_10.Text;
+
+                RoomTimeTableControl rttc = new RoomTimeTableControl();
+                pnlRooms.Controls.Clear();
+                pnlRooms.Controls.Add(rttc);
+
+                md.CSD_get_professors_id(cboProfessor_10.Text);
+                CSD_ProfTimeTable ptt = new CSD_ProfTimeTable();
+                pnlProfessors.Controls.Clear();
+                pnlProfessors.Controls.Add(ptt);
             }
             else
             {
@@ -1058,6 +1146,97 @@ namespace ClassSchedulingComputerAided
             CSD_ProfTimeTable ptt = new CSD_ProfTimeTable();
             pnlProfessors.Controls.Clear();
             pnlProfessors.Controls.Add(ptt);
+        }
+
+        private void cboYear_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cboSection.Items.Clear();
+            cboSection.Text = "";
+            for (int x = 0; x < md.getCourseSection(cboCourse.SelectedItem.ToString(), cboYear.SelectedItem.ToString()).Length; x++)
+                if (md.getCourseSection(cboCourse.SelectedItem.ToString(), cboYear.SelectedItem.ToString()).GetValue(x).ToString() != "")
+                    cboSection.Items.Add(md.getCourseSection(cboCourse.SelectedItem.ToString(), cboYear.SelectedItem.ToString()).GetValue(x).ToString());
+        }
+
+        private void cboRoom_1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //md.CSD_get_professors_id(cboProfessor_1.SelectedItem.ToString());
+            //ClassSchedule_Data.professors_name = cboProfessor_1.SelectedItem.ToString();
+            ClassSchedule_Data.roomCode = cboRoom_1.SelectedItem.ToString();
+            RoomTimeTableControl rttc = new RoomTimeTableControl();
+            pnlRooms.Controls.Clear();
+            pnlRooms.Controls.Add(rttc);
+        }
+
+        private void cboRoom_2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ClassSchedule_Data.roomCode = cboRoom_2.SelectedItem.ToString();
+            RoomTimeTableControl rttc = new RoomTimeTableControl();
+            pnlRooms.Controls.Clear();
+            pnlRooms.Controls.Add(rttc);
+        }
+
+        private void cboRoom_3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ClassSchedule_Data.roomCode = cboRoom_3.SelectedItem.ToString();
+            RoomTimeTableControl rttc = new RoomTimeTableControl();
+            pnlRooms.Controls.Clear();
+            pnlRooms.Controls.Add(rttc);
+        }
+
+        private void cboRoom_4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ClassSchedule_Data.roomCode = cboRoom_4.SelectedItem.ToString();
+            RoomTimeTableControl rttc = new RoomTimeTableControl();
+            pnlRooms.Controls.Clear();
+            pnlRooms.Controls.Add(rttc);
+        }
+
+        private void cboRoom_5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ClassSchedule_Data.roomCode = cboRoom_5.SelectedItem.ToString();
+            RoomTimeTableControl rttc = new RoomTimeTableControl();
+            pnlRooms.Controls.Clear();
+            pnlRooms.Controls.Add(rttc);
+        }
+
+        private void cboRoom_6_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ClassSchedule_Data.roomCode = cboRoom_6.SelectedItem.ToString();
+            RoomTimeTableControl rttc = new RoomTimeTableControl();
+            pnlRooms.Controls.Clear();
+            pnlRooms.Controls.Add(rttc);
+        }
+
+        private void cboRoom_7_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ClassSchedule_Data.roomCode = cboRoom_7.SelectedItem.ToString();
+            RoomTimeTableControl rttc = new RoomTimeTableControl();
+            pnlRooms.Controls.Clear();
+            pnlRooms.Controls.Add(rttc);
+        }
+
+        private void cboRoom_8_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ClassSchedule_Data.roomCode = cboRoom_8.SelectedItem.ToString();
+            RoomTimeTableControl rttc = new RoomTimeTableControl();
+            pnlRooms.Controls.Clear();
+            pnlRooms.Controls.Add(rttc);
+        }
+
+        private void cboRoom_9_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ClassSchedule_Data.roomCode = cboRoom_9.SelectedItem.ToString();
+            RoomTimeTableControl rttc = new RoomTimeTableControl();
+            pnlRooms.Controls.Clear();
+            pnlRooms.Controls.Add(rttc);
+        }
+
+        private void cboRoom_10_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ClassSchedule_Data.roomCode = cboRoom_10.SelectedItem.ToString();
+            RoomTimeTableControl rttc = new RoomTimeTableControl();
+            pnlRooms.Controls.Clear();
+            pnlRooms.Controls.Add(rttc);
         }
 
         public void SaveData()
@@ -1226,7 +1405,67 @@ namespace ClassSchedulingComputerAided
             StudentsScheduled.day[8] = cboDay_9.Text;
             StudentsScheduled.day[9] = cboDay_10.Text;
 
-            md.CSD_insert_students_schedule(cboCourse.Text, cboYear.Text,cboSection.Text, cboCurriculum.Text, cboSemester.Text, cboSchoolYear.Text);
+            md.CSD_insert_students_schedule(cboCourse.Text, cboYear.Text, cboSection.Text, cboCurriculum.Text, cboSemester.Text, cboSchoolYear.Text);
+        }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            ClearAll();//to clear
+
+            btnSettings.Visible = true;
+            pnlStart.Visible = false;
+            lblSection.Text = "Section:  " + cboCourse.Text + " " + cboYear.Text + " - " + cboSection.Text + "";
+            lblCurriculumTitle.Text = "" + cboCurriculum.Text + " [" + cboSemester.Text + " Semester] [SY:" + cboSchoolYear.Text + "]";
+
+            LoadSaveData();//to load the save data
+            btnSAVE.Visible = true;
+
+            ClassSchedule_Data.semester = cboSemester.Text;
+            ClassSchedule_Data.schoolYear = cboSchoolYear.Text;
+
+            tbl_pnl_layout.Visible = true;
+            btnSet_1.Visible = true;
+            btnSet_2.Visible = true;
+            btnSet_3.Visible = true;
+            btnSet_4.Visible = true;
+            btnSet_5.Visible = true;
+            btnSet_6.Visible = true;
+            btnSet_7.Visible = true;
+            btnSet_8.Visible = true;
+            btnSet_9.Visible = true;
+            btnSet_10.Visible = true;
+
+            StudentsScheduled.curriculumsName = cboCurriculum.Text;
+            //instanciation of an object
+            SubjectForStudents.CourseCode = new string[11];
+            SubjectForStudents.SubjectDescription = new string[11];
+            SubjectForStudents.Units = new string[11];
+            SubjectForStudents.LecHrs = new string[11];
+            SubjectForStudents.LabHrs = new string[11];
+
+            md.CSD_ShowSubjectsForStudents(cboCourse.Text, cboYear.Text, cboCurriculum.Text, cboSemester.Text, cboSchoolYear.Text);//to call function to get data into database
+
+            //call a method to list data
+            ListCourseCode();
+            ListSubjectDescription();
+            ListUnits();
+            ListLecHrs();
+            ListlabHrs();
+            ListProfessors();
+            ListStartTime();
+            ListEndTime();
+            ListDay();
+            ListRoom();
+            ListSet();
+        }
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            pnlStart.Visible = true;
+            pnlStart.BringToFront();
+            btnSettings.Visible = false;
+            lblSection.Text = "Settings";
+            lblCurriculumTitle.Text = " ";
         }
 
         private void btnSAVE_Click(object sender, EventArgs e)
@@ -1242,95 +1481,117 @@ namespace ClassSchedulingComputerAided
             }
         }
 
-        private void cboYear_SelectedIndexChanged(object sender, EventArgs e)
+        private void ClearAll()//to clear all fields
         {
-            cboSection.Items.Clear();
-            cboSection.Text = "";
-            for (int x = 0; x < md.getCourseSection(cboCourse.SelectedItem.ToString(), cboYear.SelectedItem.ToString()).Length; x++)
-                if (md.getCourseSection(cboCourse.SelectedItem.ToString(), cboYear.SelectedItem.ToString()).GetValue(x).ToString() != "")
-                    cboSection.Items.Add(md.getCourseSection(cboCourse.SelectedItem.ToString(), cboYear.SelectedItem.ToString()).GetValue(x).ToString());
-        }
+            lblCode_1.Text = "";
+            lblCode_2.Text = "";
+            lblCode_3.Text = "";
+            lblCode_4.Text = "";
+            lblCode_5.Text = "";
+            lblCode_6.Text = "";
+            lblCode_7.Text = "";
+            lblCode_8.Text = "";
+            lblCode_9.Text = "";
+            lblCode_10.Text = "";
 
-        private void cboRoom_1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //md.CSD_get_professors_id(cboProfessor_1.SelectedItem.ToString());
-            //ClassSchedule_Data.professors_name = cboProfessor_1.SelectedItem.ToString();
-            ClassSchedule_Data.roomCode = cboRoom_1.SelectedItem.ToString();
-            RoomTimeTableControl rttc = new RoomTimeTableControl();
-            pnlRooms.Controls.Clear();
-            pnlRooms.Controls.Add(rttc);
-        }
+            lblDescription_1.Text = "";
+            lblDescription_2.Text = "";
+            lblDescription_3.Text = "";
+            lblDescription_4.Text = "";
+            lblDescription_5.Text = "";
+            lblDescription_6.Text = "";
+            lblDescription_7.Text = "";
+            lblDescription_8.Text = "";
+            lblDescription_9.Text = "";
+            lblDescription_10.Text = "";
 
-        private void cboRoom_2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            ClassSchedule_Data.roomCode = cboRoom_2.SelectedItem.ToString();
-            RoomTimeTableControl rttc = new RoomTimeTableControl();
-            pnlRooms.Controls.Clear();
-            pnlRooms.Controls.Add(rttc);
-        }
+            lblUnits_1.Text = "";
+            lblUnits_2.Text = "";
+            lblUnits_3.Text = "";
+            lblUnits_4.Text = "";
+            lblUnits_5.Text = "";
+            lblUnits_6.Text = "";
+            lblUnits_7.Text = "";
+            lblUnits_8.Text = "";
+            lblUnits_9.Text = "";
+            lblUnits_10.Text = "";
 
-        private void cboRoom_3_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            ClassSchedule_Data.roomCode = cboRoom_3.SelectedItem.ToString();
-            RoomTimeTableControl rttc = new RoomTimeTableControl();
-            pnlRooms.Controls.Clear();
-            pnlRooms.Controls.Add(rttc);
-        }
+            lblLecHours_1.Text = "";
+            lblLecHours_2.Text = "";
+            lblLecHours_3.Text = "";
+            lblLecHours_4.Text = "";
+            lblLecHours_5.Text = "";
+            lblLecHours_6.Text = "";
+            lblLecHours_7.Text = "";
+            lblLecHours_8.Text = "";
+            lblLecHours_9.Text = "";
+            lblLecHours_10.Text = "";
 
-        private void cboRoom_4_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            ClassSchedule_Data.roomCode = cboRoom_4.SelectedItem.ToString();
-            RoomTimeTableControl rttc = new RoomTimeTableControl();
-            pnlRooms.Controls.Clear();
-            pnlRooms.Controls.Add(rttc);
-        }
+            lbl_LabHours_1.Text = "";
+            lbl_LabHours_2.Text = "";
+            lbl_LabHours_3.Text = "";
+            lbl_LabHours_4.Text = "";
+            lbl_LabHours_5.Text = "";
+            lbl_LabHours_6.Text = "";
+            lbl_LabHours_7.Text = "";
+            lbl_LabHours_8.Text = "";
+            lbl_LabHours_9.Text = "";
+            lbl_LabHours_10.Text = "";
 
-        private void cboRoom_5_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            ClassSchedule_Data.roomCode = cboRoom_5.SelectedItem.ToString();
-            RoomTimeTableControl rttc = new RoomTimeTableControl();
-            pnlRooms.Controls.Clear();
-            pnlRooms.Controls.Add(rttc);
-        }
+            cboProfessor_1.Text = "";
+            cboProfessor_2.Text = "";
+            cboProfessor_3.Text = "";
+            cboProfessor_4.Text = "";
+            cboProfessor_5.Text = "";
+            cboProfessor_6.Text = "";
+            cboProfessor_7.Text = "";
+            cboProfessor_8.Text = "";
+            cboProfessor_9.Text = "";
+            cboProfessor_10.Text = "";
 
-        private void cboRoom_6_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            ClassSchedule_Data.roomCode = cboRoom_6.SelectedItem.ToString();
-            RoomTimeTableControl rttc = new RoomTimeTableControl();
-            pnlRooms.Controls.Clear();
-            pnlRooms.Controls.Add(rttc);
-        }
+            cboStart_1.Text = "";
+            cboStart_2.Text = "";
+            cboStart_3.Text = "";
+            cboStart_4.Text = "";
+            cboStart_5.Text = "";
+            cboStart_6.Text = "";
+            cboStart_7.Text = "";
+            cboStart_8.Text = "";
+            cboStart_9.Text = "";
+            cboStart_10.Text = "";
 
-        private void cboRoom_7_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            ClassSchedule_Data.roomCode = cboRoom_7.SelectedItem.ToString();
-            RoomTimeTableControl rttc = new RoomTimeTableControl();
-            pnlRooms.Controls.Clear();
-            pnlRooms.Controls.Add(rttc);
-        }
+            cboEnd_1.Text = "";
+            cboEnd_2.Text = "";
+            cboEnd_3.Text = "";
+            cboEnd_4.Text = "";
+            cboEnd_5.Text = "";
+            cboEnd_6.Text = "";
+            cboEnd_7.Text = "";
+            cboEnd_8.Text = "";
+            cboEnd_9.Text = "";
+            cboEnd_10.Text = "";
 
-        private void cboRoom_8_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            ClassSchedule_Data.roomCode = cboRoom_8.SelectedItem.ToString();
-            RoomTimeTableControl rttc = new RoomTimeTableControl();
-            pnlRooms.Controls.Clear();
-            pnlRooms.Controls.Add(rttc);
-        }
+            cboDay_1.Text = "";
+            cboDay_2.Text = "";
+            cboDay_3.Text = "";
+            cboDay_4.Text = "";
+            cboDay_5.Text = "";
+            cboDay_6.Text = "";
+            cboDay_7.Text = "";
+            cboDay_8.Text = "";
+            cboDay_9.Text = "";
+            cboDay_10.Text = "";
 
-        private void cboRoom_9_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            ClassSchedule_Data.roomCode = cboRoom_9.SelectedItem.ToString();
-            RoomTimeTableControl rttc = new RoomTimeTableControl();
-            pnlRooms.Controls.Clear();
-            pnlRooms.Controls.Add(rttc);
-        }
-
-        private void cboRoom_10_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            ClassSchedule_Data.roomCode = cboRoom_10.SelectedItem.ToString();
-            RoomTimeTableControl rttc = new RoomTimeTableControl();
-            pnlRooms.Controls.Clear();
-            pnlRooms.Controls.Add(rttc);
+            cboRoom_1.Text = "";
+            cboRoom_2.Text = "";
+            cboRoom_3.Text = "";
+            cboRoom_4.Text = "";
+            cboRoom_5.Text = "";
+            cboRoom_6.Text = "";
+            cboRoom_7.Text = "";
+            cboRoom_8.Text = "";
+            cboRoom_9.Text = "";
+            cboRoom_10.Text = "";
         }
     }
 }

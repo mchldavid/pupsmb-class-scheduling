@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnNext = new MetroFramework.Controls.MetroButton();
-            this.label1 = new System.Windows.Forms.Label();
             this.cboSchoolYear = new System.Windows.Forms.ComboBox();
             this.cboSemester = new System.Windows.Forms.ComboBox();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnBack = new MetroFramework.Controls.MetroButton();
+            this.btnNext = new MetroFramework.Controls.MetroButton();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,26 +53,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(322, 317);
             this.panel2.TabIndex = 180;
-            // 
-            // btnNext
-            // 
-            this.btnNext.Location = new System.Drawing.Point(189, 262);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(84, 32);
-            this.btnNext.TabIndex = 177;
-            this.btnNext.Text = "NEXT";
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(23, 40);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(265, 61);
-            this.label1.TabIndex = 178;
-            this.label1.Text = "Please Set the semester and school year before you proceed to the Set Curriculum." +
-    "";
             // 
             // cboSchoolYear
             // 
@@ -120,6 +100,17 @@
             this.metroLabel5.TabIndex = 180;
             this.metroLabel5.Text = "Semester:";
             // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(23, 40);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(265, 61);
+            this.label1.TabIndex = 178;
+            this.label1.Text = "Please Set the semester and school year before you proceed to the Set Curriculum." +
+    "";
+            // 
             // btnBack
             // 
             this.btnBack.Location = new System.Drawing.Point(26, 262);
@@ -128,6 +119,15 @@
             this.btnBack.TabIndex = 177;
             this.btnBack.Text = "BACK";
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // btnNext
+            // 
+            this.btnNext.Location = new System.Drawing.Point(204, 262);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(84, 32);
+            this.btnNext.TabIndex = 177;
+            this.btnNext.Text = "NEXT";
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // frmSemesterAndSchoolYear
             // 

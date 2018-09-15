@@ -1628,9 +1628,13 @@ namespace ClassSchedulingComputerAided
                 cmd.ExecuteNonQuery();
 
                 MySqlDataReader dr = cmd.ExecuteReader();
-                if(dr.Read())
+                if (dr.Read())
                 {
                     ClassSchedule_Data.Professors_id = dr["users_id"].ToString();
+                }
+                else
+                {
+                    ClassSchedule_Data.Professors_id = "";
                 }
             }
             catch (MySqlException ex)

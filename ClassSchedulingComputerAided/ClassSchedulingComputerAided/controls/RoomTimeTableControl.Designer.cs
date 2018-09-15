@@ -77,6 +77,7 @@
             this.label100 = new System.Windows.Forms.Label();
             this.label101 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblRoomCodeName = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.pnlRoomTimetable.SuspendLayout();
@@ -808,10 +809,21 @@
             this.panel1.Size = new System.Drawing.Size(805, 555);
             this.panel1.TabIndex = 17;
             // 
+            // lblRoomCodeName
+            // 
+            this.lblRoomCodeName.AutoSize = true;
+            this.lblRoomCodeName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRoomCodeName.Location = new System.Drawing.Point(3, 7);
+            this.lblRoomCodeName.Name = "lblRoomCodeName";
+            this.lblRoomCodeName.Size = new System.Drawing.Size(147, 19);
+            this.lblRoomCodeName.TabIndex = 18;
+            this.lblRoomCodeName.Text = "Room: (Schedule)";
+            // 
             // RoomTimeTableControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblRoomCodeName);
             this.Controls.Add(this.panel1);
             this.Name = "RoomTimeTableControl";
             this.Size = new System.Drawing.Size(809, 584);
@@ -823,6 +835,7 @@
             this.tableLayoutPanel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -877,6 +890,7 @@
         private System.Windows.Forms.Label label100;
         private System.Windows.Forms.Label label101;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblRoomCodeName;
 
     }
 }

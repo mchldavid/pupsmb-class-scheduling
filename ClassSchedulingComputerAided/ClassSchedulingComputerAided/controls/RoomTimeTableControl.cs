@@ -214,6 +214,8 @@ namespace ClassSchedulingComputerAided
 
         private void RoomTimeTableControl_Load(object sender, EventArgs e)
         {
+            lblRoomCodeName.Text = "Room: ["+ ClassSchedule_Data.roomCode +"] (Schedule)";
+
             for (int x = 0; x < md.get_id_roomScheduled(ClassSchedule_Data.roomCode, ClassSchedule_Data.semester, ClassSchedule_Data.schoolYear).Length; x++)
             {
                 string ps_id = md.get_id_roomScheduled(ClassSchedule_Data.roomCode, ClassSchedule_Data.semester, ClassSchedule_Data.schoolYear).GetValue(x).ToString();
