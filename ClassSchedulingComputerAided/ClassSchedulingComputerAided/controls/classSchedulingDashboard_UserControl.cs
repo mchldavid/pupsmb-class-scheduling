@@ -18,6 +18,7 @@ namespace ClassSchedulingComputerAided
         {
             InitializeComponent();
         }
+
         MyDatabase md = new MyDatabase();
 
         private void lblLecHours_4_Click(object sender, EventArgs e)
@@ -31,11 +32,6 @@ namespace ClassSchedulingComputerAided
         }
 
         private void cboEnd_4_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cboStart_4_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
@@ -1454,7 +1450,7 @@ namespace ClassSchedulingComputerAided
             lblCurriculumTitle.Text = "" + cboCurriculum.Text + " [" + cboSemester.Text + " Semester] [SY:" + cboSchoolYear.Text + "]";
 
             SaveDataCSD_Start();//to save the data from starts
-            
+
             LoadSaveData();//to load the save data
             btnSAVE.Visible = true;
 
@@ -1517,6 +1513,16 @@ namespace ClassSchedulingComputerAided
                 {
                     SaveScheduled();
                     SaveData();
+
+                    SummaryControl sc = new SummaryControl();
+                    //pnlReport.Controls.Clear();
+                    pnlReport.Controls.Add(sc);
+                    btnOKk.BringToFront();
+                    pnlReport.Visible = true;
+                    pnlReport.BringToFront();
+                    pnlStudentScheduling.Enabled = false;
+                    pnlRooms.Enabled = false;
+                    pnlProfessors.Enabled = false;
                 }
                 catch (Exception ex)
                 {
@@ -1593,38 +1599,38 @@ namespace ClassSchedulingComputerAided
             cboProfessor_9.Text = "";
             cboProfessor_10.Text = "";
 
-            cboStart_1.Text = "";
-            cboStart_2.Text = "";
-            cboStart_3.Text = "";
-            cboStart_4.Text = "";
-            cboStart_5.Text = "";
-            cboStart_6.Text = "";
-            cboStart_7.Text = "";
-            cboStart_8.Text = "";
-            cboStart_9.Text = "";
-            cboStart_10.Text = "";
+            cboStart_1.SelectedIndex = -1;
+            cboStart_2.SelectedIndex = -1;
+            cboStart_3.SelectedIndex = -1;
+            cboStart_4.SelectedIndex = -1;
+            cboStart_5.SelectedIndex = -1;
+            cboStart_6.SelectedIndex = -1;
+            cboStart_7.SelectedIndex = -1;
+            cboStart_8.SelectedIndex = -1;
+            cboStart_9.SelectedIndex = -1;
+            cboStart_10.SelectedIndex = -1;
 
-            cboEnd_1.Text = "";
-            cboEnd_2.Text = "";
-            cboEnd_3.Text = "";
-            cboEnd_4.Text = "";
-            cboEnd_5.Text = "";
-            cboEnd_6.Text = "";
-            cboEnd_7.Text = "";
-            cboEnd_8.Text = "";
-            cboEnd_9.Text = "";
-            cboEnd_10.Text = "";
+            cboEnd_1.SelectedIndex = -1;
+            cboEnd_2.SelectedIndex = -1;
+            cboEnd_3.SelectedIndex = -1;
+            cboEnd_4.SelectedIndex = -1;
+            cboEnd_5.SelectedIndex = -1;
+            cboEnd_6.SelectedIndex = -1;
+            cboEnd_7.SelectedIndex = -1;
+            cboEnd_8.SelectedIndex = -1;
+            cboEnd_9.SelectedIndex = -1;
+            cboEnd_10.SelectedIndex = -1;
 
-            cboDay_1.Text = "";
-            cboDay_2.Text = "";
-            cboDay_3.Text = "";
-            cboDay_4.Text = "";
-            cboDay_5.Text = "";
-            cboDay_6.Text = "";
-            cboDay_7.Text = "";
-            cboDay_8.Text = "";
-            cboDay_9.Text = "";
-            cboDay_10.Text = "";
+            cboDay_1.SelectedIndex = -1;
+            cboDay_2.SelectedIndex = -1;
+            cboDay_3.SelectedIndex = -1;
+            cboDay_4.SelectedIndex = -1;
+            cboDay_5.SelectedIndex = -1;
+            cboDay_6.SelectedIndex = -1;
+            cboDay_7.SelectedIndex = -1;
+            cboDay_8.SelectedIndex = -1;
+            cboDay_9.SelectedIndex = -1;
+            cboDay_10.SelectedIndex = -1;
 
             cboRoom_1.Text = "";
             cboRoom_2.Text = "";
@@ -1636,6 +1642,74 @@ namespace ClassSchedulingComputerAided
             cboRoom_8.Text = "";
             cboRoom_9.Text = "";
             cboRoom_10.Text = "";
+        }
+
+        private void cboStart_1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cboStart_1.SelectedIndex < 23)
+                cboEnd_1.SelectedIndex = cboStart_1.SelectedIndex + 6;
+        }
+
+        private void cboStart_2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboStart_2.SelectedIndex < 23)
+                cboEnd_2.SelectedIndex = cboStart_2.SelectedIndex + 6;
+        }
+
+        private void cboStart_3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboStart_3.SelectedIndex < 23)
+                cboEnd_3.SelectedIndex = cboStart_3.SelectedIndex + 6;
+        }
+
+        private void cboStart_4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboStart_4.SelectedIndex < 23)
+                cboEnd_4.SelectedIndex = cboStart_4.SelectedIndex + 6;
+        }
+
+        private void cboStart_5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboStart_5.SelectedIndex < 23)
+                cboEnd_5.SelectedIndex = cboStart_5.SelectedIndex + 6;
+        }
+
+        private void cboStart_6_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboStart_6.SelectedIndex < 23)
+                cboEnd_6.SelectedIndex = cboStart_6.SelectedIndex + 6;
+        }
+
+        private void cboStart_7_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboStart_7.SelectedIndex < 23)
+                cboEnd_7.SelectedIndex = cboStart_7.SelectedIndex + 6;
+        }
+
+        private void cboStart_8_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboStart_8.SelectedIndex < 23)
+                cboEnd_8.SelectedIndex = cboStart_8.SelectedIndex + 6;
+        }
+
+        private void cboStart_9_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboStart_9.SelectedIndex < 23)
+                cboEnd_9.SelectedIndex = cboStart_9.SelectedIndex + 6;
+        }
+
+        private void cboStart_10_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboStart_10.SelectedIndex < 23)
+                cboEnd_10.SelectedIndex = cboStart_10.SelectedIndex + 6;
+        }
+
+        private void btnOKk_Click(object sender, EventArgs e)
+        {
+            pnlReport.Visible = false;
+            pnlStudentScheduling.Enabled = true;
+            pnlRooms.Enabled = true;
+            pnlProfessors.Enabled = true;
         }
     }
 }

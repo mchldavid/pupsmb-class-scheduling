@@ -49,7 +49,7 @@ namespace ClassSchedulingComputerAided
                     }
                     else
                     {
-                        Application.Run(new frmLogin());
+                         Application.Run(new frmLogin());
                         //Application.Run(new frmSummary());
                     }
                 }
