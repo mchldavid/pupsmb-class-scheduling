@@ -19,7 +19,6 @@ namespace ClassSchedulingComputerAided
             InitializeComponent();
         }
         MyDatabase md = new MyDatabase();
-        
 
         private void lblLecHours_4_Click(object sender, EventArgs e)
         {
@@ -60,86 +59,6 @@ namespace ClassSchedulingComputerAided
         {
 
         }
-
-        public void LoadSaveData()//to load the set data from xml filetype
-        {
-            //to set the name for the file save
-            string name = cboCourse.SelectedItem.ToString();
-            name += cboYear.SelectedItem.ToString();
-            name += cboSection.SelectedItem.ToString();
-            name += cboSemester.SelectedItem.ToString();
-            name += cboSchoolYear.SelectedItem.ToString();
-            name += cboCurriculum.SelectedItem.ToString();
-
-            if (File.Exists(name + ".xml"))
-            {
-                XmlSerializer xs = new XmlSerializer(typeof(SaveInfoData));
-                FileStream read = new FileStream(name + ".xml", FileMode.Open, FileAccess.Read, FileShare.Read);
-                SaveInfoData sid = (SaveInfoData)xs.Deserialize(read);
-
-                cboProfessor_1.Text = sid.Prof_1;
-                cboStart_1.SelectedIndex = sid.Start_1;
-                cboEnd_1.SelectedIndex = sid.End_1;
-                cboDay_1.SelectedIndex = sid.Day_1;
-                cboRoom_1.Text = sid.Room_1;
-
-                cboProfessor_2.Text = sid.Prof_2;
-                cboStart_2.SelectedIndex = sid.Start_2;
-                cboEnd_2.SelectedIndex = sid.End_2;
-                cboDay_2.SelectedIndex = sid.Day_2;
-                cboRoom_2.Text = sid.Room_2;
-
-                cboProfessor_3.Text = sid.Prof_3;
-                cboStart_3.SelectedIndex = sid.Start_3;
-                cboEnd_3.SelectedIndex = sid.End_3;
-                cboDay_3.SelectedIndex = sid.Day_3;
-                cboRoom_3.Text = sid.Room_3;
-
-                cboProfessor_4.Text = sid.Prof_4;
-                cboStart_4.SelectedIndex = sid.Start_4;
-                cboEnd_4.SelectedIndex = sid.End_4;
-                cboDay_4.SelectedIndex = sid.Day_4;
-                cboRoom_4.Text = sid.Room_4;
-
-                cboProfessor_5.Text = sid.Prof_5;
-                cboStart_5.SelectedIndex = sid.Start_5;
-                cboEnd_5.SelectedIndex = sid.End_5;
-                cboDay_5.SelectedIndex = sid.Day_5;
-                cboRoom_5.Text = sid.Room_5;
-
-                cboProfessor_6.Text = sid.Prof_6;
-                cboStart_6.SelectedIndex = sid.Start_6;
-                cboEnd_6.SelectedIndex = sid.End_6;
-                cboDay_6.SelectedIndex = sid.Day_6;
-                cboRoom_6.Text = sid.Room_6;
-
-                cboProfessor_7.Text = sid.Prof_7;
-                cboStart_7.SelectedIndex = sid.Start_7;
-                cboEnd_7.SelectedIndex = sid.End_7;
-                cboDay_7.SelectedIndex = sid.Day_7;
-                cboRoom_7.Text = sid.Room_7;
-
-                cboProfessor_8.Text = sid.Prof_8;
-                cboStart_8.SelectedIndex = sid.Start_8;
-                cboEnd_8.SelectedIndex = sid.End_8;
-                cboDay_8.SelectedIndex = sid.Day_8;
-                cboRoom_8.Text = sid.Room_8;
-
-                cboProfessor_9.Text = sid.Prof_9;
-                cboStart_9.SelectedIndex = sid.Start_9;
-                cboEnd_9.SelectedIndex = sid.End_9;
-                cboDay_9.SelectedIndex = sid.Day_9;
-                cboRoom_9.Text = sid.Room_9;
-
-                cboProfessor_10.Text = sid.Prof_10;
-                cboStart_10.SelectedIndex = sid.Start_10;
-                cboEnd_10.SelectedIndex = sid.End_10;
-                cboDay_10.SelectedIndex = sid.Day_10;
-                cboRoom_10.Text = sid.Room_10;
-            }
-        }
-
-        
 
         public void ListCourseCode()//list For CourseCode
         {
@@ -358,6 +277,8 @@ namespace ClassSchedulingComputerAided
             CSD_ProfTimeTable ptt = new CSD_ProfTimeTable();
             pnlProfessors.Controls.Add(ptt);
 
+            LoadSaveDataCSD_Start();//to load data
+
             cboSemester.Items.Add("1ST");
             cboSemester.Items.Add("2ND");
             cboSemester.Items.Add("3RD");
@@ -385,6 +306,8 @@ namespace ClassSchedulingComputerAided
                     flag = false;
                 }
             }
+
+            
         }
 
         private void cboCourse_SelectedIndexChanged(object sender, EventArgs e)
@@ -1303,23 +1226,38 @@ namespace ClassSchedulingComputerAided
             sid.Room_10 = cboRoom_10.Text;
 
             //to set the name for the file save
-            string name = cboCourse.SelectedItem.ToString();
-            name += cboYear.SelectedItem.ToString();
-            name += cboSection.SelectedItem.ToString();
-            name += cboSemester.SelectedItem.ToString();
-            name += cboSchoolYear.SelectedItem.ToString();
-            name += cboCurriculum.SelectedItem.ToString();
+            string name = cboCourse.Text;
+            name += cboYear.Text;
+            name += cboSection.Text;
+            name += cboSemester.Text;
+            name += cboSchoolYear.Text;
+            name += cboCurriculum.Text;
+            SaveXML.SaveData(sid, name + ".xml");
+        }
+
+        public void SaveDataCSD_Start()
+        {
+            SaveInfoData sid = new SaveInfoData();
+            sid.CurriculumTitle = cboCurriculum.Text;
+            sid.Semester = cboSemester.Text;
+            sid.SchoolYear = cboSchoolYear.Text;
+            sid.Course = cboCourse.Text;
+            sid.Year = cboYear.Text;
+            sid.Section = cboSection.Text;
+
+            //to set the name for the file save
+            string name = "CSD-pnlStart";
             SaveXML.SaveData(sid, name + ".xml");
         }
 
         public void SaveScheduled()
         {
-            StudentsScheduled.curriculumsName = cboCurriculum.SelectedItem.ToString();
-            StudentsScheduled.course = cboCourse.SelectedItem.ToString();
-            StudentsScheduled.year = cboYear.SelectedItem.ToString();
-            StudentsScheduled.section = cboSection.SelectedItem.ToString();
-            StudentsScheduled.semester = cboSemester.SelectedItem.ToString();
-            StudentsScheduled.schoolYear = cboSchoolYear.SelectedItem.ToString();
+            StudentsScheduled.curriculumsName = cboCurriculum.Text;
+            StudentsScheduled.course = cboCourse.Text;
+            StudentsScheduled.year = cboYear.Text;
+            StudentsScheduled.section = cboSection.Text;
+            StudentsScheduled.semester = cboSemester.Text;
+            StudentsScheduled.schoolYear = cboSchoolYear.Text;
             StudentsScheduled.CourseCode = new string[11];
             StudentsScheduled.SubjectDescription = new string[11];
             StudentsScheduled.Rooms = new string[11];
@@ -1408,6 +1346,104 @@ namespace ClassSchedulingComputerAided
             md.CSD_insert_students_schedule(cboCourse.Text, cboYear.Text, cboSection.Text, cboCurriculum.Text, cboSemester.Text, cboSchoolYear.Text);
         }
 
+        public void LoadSaveData()//to load the set data from xml filetype
+        {
+            //to set the name for the file save
+            string name = cboCourse.Text;
+            name += cboYear.Text;
+            name += cboSection.Text;
+            name += cboSemester.Text;
+            name += cboSchoolYear.Text;
+            name += cboCurriculum.Text;
+
+            if (File.Exists(name + ".xml"))
+            {
+                XmlSerializer xs = new XmlSerializer(typeof(SaveInfoData));
+                FileStream read = new FileStream(name + ".xml", FileMode.Open, FileAccess.Read, FileShare.Read);
+                SaveInfoData sid = (SaveInfoData)xs.Deserialize(read);
+
+                cboProfessor_1.Text = sid.Prof_1;
+                cboStart_1.SelectedIndex = sid.Start_1;
+                cboEnd_1.SelectedIndex = sid.End_1;
+                cboDay_1.SelectedIndex = sid.Day_1;
+                cboRoom_1.Text = sid.Room_1;
+
+                cboProfessor_2.Text = sid.Prof_2;
+                cboStart_2.SelectedIndex = sid.Start_2;
+                cboEnd_2.SelectedIndex = sid.End_2;
+                cboDay_2.SelectedIndex = sid.Day_2;
+                cboRoom_2.Text = sid.Room_2;
+
+                cboProfessor_3.Text = sid.Prof_3;
+                cboStart_3.SelectedIndex = sid.Start_3;
+                cboEnd_3.SelectedIndex = sid.End_3;
+                cboDay_3.SelectedIndex = sid.Day_3;
+                cboRoom_3.Text = sid.Room_3;
+
+                cboProfessor_4.Text = sid.Prof_4;
+                cboStart_4.SelectedIndex = sid.Start_4;
+                cboEnd_4.SelectedIndex = sid.End_4;
+                cboDay_4.SelectedIndex = sid.Day_4;
+                cboRoom_4.Text = sid.Room_4;
+
+                cboProfessor_5.Text = sid.Prof_5;
+                cboStart_5.SelectedIndex = sid.Start_5;
+                cboEnd_5.SelectedIndex = sid.End_5;
+                cboDay_5.SelectedIndex = sid.Day_5;
+                cboRoom_5.Text = sid.Room_5;
+
+                cboProfessor_6.Text = sid.Prof_6;
+                cboStart_6.SelectedIndex = sid.Start_6;
+                cboEnd_6.SelectedIndex = sid.End_6;
+                cboDay_6.SelectedIndex = sid.Day_6;
+                cboRoom_6.Text = sid.Room_6;
+
+                cboProfessor_7.Text = sid.Prof_7;
+                cboStart_7.SelectedIndex = sid.Start_7;
+                cboEnd_7.SelectedIndex = sid.End_7;
+                cboDay_7.SelectedIndex = sid.Day_7;
+                cboRoom_7.Text = sid.Room_7;
+
+                cboProfessor_8.Text = sid.Prof_8;
+                cboStart_8.SelectedIndex = sid.Start_8;
+                cboEnd_8.SelectedIndex = sid.End_8;
+                cboDay_8.SelectedIndex = sid.Day_8;
+                cboRoom_8.Text = sid.Room_8;
+
+                cboProfessor_9.Text = sid.Prof_9;
+                cboStart_9.SelectedIndex = sid.Start_9;
+                cboEnd_9.SelectedIndex = sid.End_9;
+                cboDay_9.SelectedIndex = sid.Day_9;
+                cboRoom_9.Text = sid.Room_9;
+
+                cboProfessor_10.Text = sid.Prof_10;
+                cboStart_10.SelectedIndex = sid.Start_10;
+                cboEnd_10.SelectedIndex = sid.End_10;
+                cboDay_10.SelectedIndex = sid.Day_10;
+                cboRoom_10.Text = sid.Room_10;
+            }
+        }
+
+        public void LoadSaveDataCSD_Start()//to load the set data from xml filetype
+        {
+            //to set the name for the file save
+            string name = "CSD-pnlStart";
+
+            if (File.Exists(name + ".xml"))
+            {
+                XmlSerializer xs = new XmlSerializer(typeof(SaveInfoData));
+                FileStream read = new FileStream(name + ".xml", FileMode.Open, FileAccess.Read, FileShare.Read);
+                SaveInfoData sid = (SaveInfoData)xs.Deserialize(read);
+
+                cboCurriculum.Text = sid.CurriculumTitle;
+                cboSemester.Text = sid.Semester;
+                cboSchoolYear.Text = sid.SchoolYear;
+                cboCourse.Text = sid.Course;
+                cboYear.Text = sid.Year;
+                cboSection.Text = sid.Section;
+            }
+        }
+
         private void btnOK_Click(object sender, EventArgs e)
         {
             ClearAll();//to clear
@@ -1417,6 +1453,8 @@ namespace ClassSchedulingComputerAided
             lblSection.Text = "Section:  " + cboCourse.Text + " " + cboYear.Text + " - " + cboSection.Text + "";
             lblCurriculumTitle.Text = "" + cboCurriculum.Text + " [" + cboSemester.Text + " Semester] [SY:" + cboSchoolYear.Text + "]";
 
+            SaveDataCSD_Start();//to save the data from starts
+            
             LoadSaveData();//to load the save data
             btnSAVE.Visible = true;
 
@@ -1470,14 +1508,20 @@ namespace ClassSchedulingComputerAided
 
         private void btnSAVE_Click(object sender, EventArgs e)
         {
-            try
+            string savedName = cboCourse.Text +" "+ cboYear.Text +" - "+ cboSection.Text;
+            DialogResult result = MessageBox.Show("Do you want to save "+ savedName +"?", "Save", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+            if (result == DialogResult.Yes)
             {
-                SaveScheduled();
-                SaveData();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Save");
+                try
+                {
+                    SaveScheduled();
+                    SaveData();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Save");
+                }
             }
         }
 

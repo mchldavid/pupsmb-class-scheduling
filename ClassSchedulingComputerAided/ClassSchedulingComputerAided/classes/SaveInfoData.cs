@@ -68,6 +68,13 @@ namespace ClassSchedulingComputerAided
         private int end10;
         private int day10;
         private string room10;
+        //===11
+        private string curriculumTitle;
+        private string semester;
+        private string schoolYear;
+        private string course;
+        private string year;
+        private string section;
 
         //------1
         public string Prof_1
@@ -336,6 +343,37 @@ namespace ClassSchedulingComputerAided
         {
             get { return room10; }
             set { room10 = value; }
+        }
+
+        public string CurriculumTitle
+        {
+            get { return curriculumTitle; }
+            set { curriculumTitle = value; }
+        }
+        public string Semester
+        {
+            get { return semester; }
+            set { semester = value; }
+        }
+        public string SchoolYear
+        {
+            get { return schoolYear; }
+            set { schoolYear = value; }
+        }
+        public string Course
+        {
+            get { return course; }
+            set { course = value; }
+        }
+        public string Year
+        {
+            get { return year; }
+            set { year = value; }
+        }
+        public string Section
+        {
+            get { return section; }
+            set { section = value; }
         }
     }
 }
