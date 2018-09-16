@@ -50,5 +50,17 @@ namespace ClassSchedulingComputerAided
             get;
             set;
         }
+
+        public static string[] Sections
+        {
+            get;
+            set;
+        }
+
+        public static string[] ProfessorsName
+        {
+            get;
+            set;
+        }
     }
 }

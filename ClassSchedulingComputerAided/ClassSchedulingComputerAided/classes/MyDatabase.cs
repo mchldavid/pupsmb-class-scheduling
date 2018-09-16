@@ -1434,7 +1434,7 @@ namespace ClassSchedulingComputerAided
             return cboCurriculum;
         }
 
-        public string[] get_id_StudentScheduled(string course, string year, string section, string semester, string schoolYear)//to get id of the section(student)
+        public string[] get_id_ProfessorScheduled(string professor, string semester, string schoolYear)//to get id of the professor
         {
             string[] id = new string[100];
             int x = 0;
@@ -1445,15 +1445,83 @@ namespace ClassSchedulingComputerAided
             try
             {
                 con.Open();
-                string sqlListSection = "SELECT * FROM tbl_students_scheduled t WHERE course = @c "
-                    + "AND year = @y "
-                    + "AND section = @s "
+                string sql = "SELECT * FROM tbl_students_scheduled t "
+                    + "WHERE professor = @prof "
+                    + "AND semester = @sem "
+                    + "AND schoolYear = @sY;";
+                MySqlCommand com = new MySqlCommand(sql, con);
+                com.Parameters.AddWithValue("@prof", professor);
+                com.Parameters.AddWithValue("@sem", semester);
+                com.Parameters.AddWithValue("@sY", schoolYear);
+                com.ExecuteNonQuery();
+
+                MySqlDataReader dr = com.ExecuteReader();
+                while (dr.Read())
+                {
+                    id[x] = dr["students_scheduled_id"].ToString();
+                    x++;
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "Get_id_StudentsScheduled");
+            }
+            finally
+            {
+                con.Close();
+            }
+            return id;
+        }
+
+        public string[] get_info_ProfessorScheduled(string sS_id)
+        {
+            string[] roomSchedule = new string[11];
+            try
+            {
+                con.Open();
+                string testSqlUsers = "SELECT *, CONCAT(course,' ',year,'-',section) FROM tbl_students_scheduled WHERE students_scheduled_id = @id";
+                MySqlCommand com = new MySqlCommand(testSqlUsers, con);
+                com.Parameters.AddWithValue("@id", sS_id);
+                com.ExecuteNonQuery();
+                MySqlDataReader dr = com.ExecuteReader();
+                if (dr.Read())
+                {
+                    roomSchedule[0] = dr["scheduledStartTime"].ToString();
+                    roomSchedule[1] = dr["scheduledEndTime"].ToString();
+                    roomSchedule[2] = dr["scheduledDay"].ToString();
+                    roomSchedule[3] = dr["professor"].ToString();
+                    roomSchedule[4] = dr["subjectCode"].ToString();
+                    roomSchedule[5] = dr["CONCAT(course,' ',year,'-',section)"].ToString();
+                }
+            }
+            catch (MySqlException er)
+            {
+                MessageBox.Show(er.Message, "get_info_StudentsScheduled");
+            }
+            finally
+            {
+                con.Close();
+            }
+            return roomSchedule;
+        }
+
+        public string[] get_id_StudentScheduled(string section, string semester, string schoolYear)//to get id of the section(student)
+        {
+            string[] id = new string[100];
+            int x = 0;
+            for (x = 0; x < 100; x++)
+                id[x] = "";
+
+            x = 0;
+            try
+            {
+                con.Open();
+                string sqlListSection = "SELECT * FROM tbl_students_scheduled t "
+                    + "WHERE CONCAT(course,' ',year,' - ',section) = @sec "
                     + "AND semester = @sem "
                     + "AND schoolYear = @sY;";
                 MySqlCommand com = new MySqlCommand(sqlListSection, con);
-                com.Parameters.AddWithValue("@c", course);
-                com.Parameters.AddWithValue("@y", year);
-                com.Parameters.AddWithValue("@s", section);
+                com.Parameters.AddWithValue("@sec", section);
                 com.Parameters.AddWithValue("@sem", semester);
                 com.Parameters.AddWithValue("@sY", schoolYear);
                 com.ExecuteNonQuery();
@@ -1650,6 +1718,74 @@ namespace ClassSchedulingComputerAided
             catch (MySqlException ex)
             {
                 MessageBox.Show(ex.Message, "CSD_ListActiveRooms");
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public void CSD_ListAllSections()
+        {
+            int x = 0;
+            for (x = 0; x < 50; x++)//to set all accessors into null value - set to 50 loop
+            {
+                SubjectForStudents.Sections[x] = "";
+            }
+            x = 0;
+            try
+            {
+                con.Open();
+                string sql = "SELECT DISTINCT CONCAT(course,' ',year,' - ',section) "
+                    + "FROM tbl_students_scheduled t "
+                    + "ORDER BY course, year, section asc;";
+
+                MySqlCommand com = new MySqlCommand(sql, con);
+                com.ExecuteNonQuery();
+
+                MySqlDataReader dr = com.ExecuteReader();
+                while (dr.Read())
+                {
+                    SubjectForStudents.Sections[x] = dr["CONCAT(course,' ',year,' - ',section)"].ToString();
+                    x++;
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "CSD_ListAllSections");
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public void CSD_ListAllProfessors()
+        {
+            int x = 0;
+            for (x = 0; x < 50; x++)//to set all accessors into null value - set to 50 loop
+            {
+                SubjectForStudents.ProfessorsName[x] = "";
+            }
+            x = 0;
+            try
+            {
+                con.Open();
+                string sql = "SELECT DISTINCT professor FROM tbl_students_scheduled t WHERE professor != '';";
+
+                MySqlCommand com = new MySqlCommand(sql, con);
+                com.ExecuteNonQuery();
+
+                MySqlDataReader dr = com.ExecuteReader();
+                while (dr.Read())
+                {
+                    SubjectForStudents.ProfessorsName[x] = dr["professor"].ToString();
+                    x++;
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "CSD_ListAllProfessors");
             }
             finally
             {

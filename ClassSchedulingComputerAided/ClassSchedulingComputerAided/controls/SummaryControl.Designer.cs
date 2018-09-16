@@ -38,7 +38,7 @@
             this.Professors = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
             this.cboProfessorName = new System.Windows.Forms.ComboBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlProfessor = new System.Windows.Forms.Panel();
             this.Rooms = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
             this.cboRoom = new System.Windows.Forms.ComboBox();
@@ -97,7 +97,7 @@
             // 
             // pnlSection
             // 
-            this.pnlSection.Location = new System.Drawing.Point(42, 27);
+            this.pnlSection.Location = new System.Drawing.Point(40, 27);
             this.pnlSection.Name = "pnlSection";
             this.pnlSection.Size = new System.Drawing.Size(820, 561);
             this.pnlSection.TabIndex = 249;
@@ -110,7 +110,7 @@
             this.panel2.Controls.Add(this.label12);
             this.panel2.Location = new System.Drawing.Point(-1, -1);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(925, 42);
+            this.panel2.Size = new System.Drawing.Size(925, 38);
             this.panel2.TabIndex = 245;
             // 
             // label12
@@ -141,8 +141,8 @@
             // 
             this.Professors.Controls.Add(this.label3);
             this.Professors.Controls.Add(this.cboProfessorName);
-            this.Professors.Controls.Add(this.panel1);
-            this.Professors.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Professors.Controls.Add(this.pnlProfessor);
+            this.Professors.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.Professors.Location = new System.Drawing.Point(4, 29);
             this.Professors.Name = "Professors";
             this.Professors.Padding = new System.Windows.Forms.Padding(3);
@@ -172,13 +172,14 @@
             this.cboProfessorName.Name = "cboProfessorName";
             this.cboProfessorName.Size = new System.Drawing.Size(169, 25);
             this.cboProfessorName.TabIndex = 253;
+            this.cboProfessorName.SelectedIndexChanged += new System.EventHandler(this.cboProfessorName_SelectedIndexChanged);
             // 
-            // panel1
+            // pnlProfessor
             // 
-            this.panel1.Location = new System.Drawing.Point(43, 26);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(820, 561);
-            this.panel1.TabIndex = 252;
+            this.pnlProfessor.Location = new System.Drawing.Point(41, 26);
+            this.pnlProfessor.Name = "pnlProfessor";
+            this.pnlProfessor.Size = new System.Drawing.Size(820, 561);
+            this.pnlProfessor.TabIndex = 252;
             // 
             // Rooms
             // 
@@ -218,7 +219,7 @@
             // 
             // pnlRoomSummary
             // 
-            this.pnlRoomSummary.Location = new System.Drawing.Point(38, 29);
+            this.pnlRoomSummary.Location = new System.Drawing.Point(38, 27);
             this.pnlRoomSummary.Name = "pnlRoomSummary";
             this.pnlRoomSummary.Size = new System.Drawing.Size(820, 561);
             this.pnlRoomSummary.TabIndex = 248;
@@ -347,6 +348,6 @@
         public System.Windows.Forms.ComboBox cboSectionName;
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.ComboBox cboProfessorName;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlProfessor;
     }
 }

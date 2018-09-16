@@ -38,5 +38,10 @@ namespace ClassSchedulingComputerAided
             get;
             set;
         }
+        public static string professor
+        {
+            get;
+            set;
+        }
     }
 }

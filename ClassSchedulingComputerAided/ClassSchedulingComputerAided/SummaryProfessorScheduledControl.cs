@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ClassSchedulingComputerAided
 {
-    public partial class SummaryStudentScheduledControl : UserControl
+    public partial class SummaryProfessorScheduledControl : UserControl
     {
-        public SummaryStudentScheduledControl()
+        public SummaryProfessorScheduledControl()
         {
             InitializeComponent();
         }
@@ -26,7 +26,7 @@ namespace ClassSchedulingComputerAided
         public string startTimePrompt = "";
         public string endTimePrompt = "";
         public string sections = "";
-        public string room = "";
+        public string professor = "";
         public string courseCode = "";
         public string[] GetEndTime = new string[] 
             {"7:00 AM",
@@ -63,8 +63,8 @@ namespace ClassSchedulingComputerAided
         public System.Windows.Forms.Label AddLabel()
         {
             System.Windows.Forms.Label lbl = new System.Windows.Forms.Label();
-            pnlStudentTimetable.Controls.Add(lbl);
-            lbl.Text = "" + courseCode + "\r\n" + sections + "\r\n" + room + "";
+            pnlProfessorTimetable.Controls.Add(lbl);
+            lbl.Text = "" + courseCode + "\r\n" + sections + "\r\n" + professor + "";
             lbl.Location = new System.Drawing.Point(callDay, callStart);
             lbl.Size = new System.Drawing.Size(94, callShade);
             lbl.BackColor = random();
@@ -212,18 +212,18 @@ namespace ClassSchedulingComputerAided
             return pointDay;
         }
 
-        private void SummaryStudentScheduledControl_Load(object sender, EventArgs e)
+        private void SummaryProfessorScheduledControl_Load(object sender, EventArgs e)
         {
-            for (int x = 0; x < md.get_id_StudentScheduled(SummaryData.section, SummaryData.semester, SummaryData.schoolYear).Length; x++)
+            for (int x = 0; x < md.get_id_ProfessorScheduled(SummaryData.professor, SummaryData.semester, SummaryData.schoolYear).Length; x++)
             {
-                string ps_id = md.get_id_StudentScheduled(SummaryData.section, SummaryData.semester, SummaryData.schoolYear).GetValue(x).ToString();
+                string ps_id = md.get_id_ProfessorScheduled(SummaryData.professor, SummaryData.semester, SummaryData.schoolYear).GetValue(x).ToString();
                 if (ps_id != "")
                 {
-                    int day = GetDay(md.get_info_StudentScheduled(ps_id).GetValue(2).ToString());
-                    int st = GetStartTime(md.get_info_StudentScheduled(ps_id).GetValue(0).ToString());
+                    int day = GetDay(md.get_info_ProfessorScheduled(ps_id).GetValue(2).ToString());
+                    int st = GetStartTime(md.get_info_ProfessorScheduled(ps_id).GetValue(0).ToString());
 
-                    string ps_startTime = md.get_info_StudentScheduled(ps_id).GetValue(0).ToString();
-                    string ps_endTime = md.get_info_StudentScheduled(ps_id).GetValue(1).ToString();
+                    string ps_startTime = md.get_info_ProfessorScheduled(ps_id).GetValue(0).ToString();
+                    string ps_endTime = md.get_info_ProfessorScheduled(ps_id).GetValue(1).ToString();
                     int shade = 0;
                     int startShade = 0;
 
@@ -248,12 +248,12 @@ namespace ClassSchedulingComputerAided
                     callDay = day;
                     callStart = st;
                     callShade = shade;
-                    dayPrompt = md.get_info_StudentScheduled(ps_id).GetValue(2).ToString();
-                    startTimePrompt = md.get_info_StudentScheduled(ps_id).GetValue(0).ToString();
-                    endTimePrompt = md.get_info_StudentScheduled(ps_id).GetValue(1).ToString();
-                    room = md.get_info_StudentScheduled(ps_id).GetValue(3).ToString();
-                    courseCode = md.get_info_StudentScheduled(ps_id).GetValue(4).ToString();
-                    sections = md.get_info_StudentScheduled(ps_id).GetValue(5).ToString();
+                    dayPrompt = md.get_info_ProfessorScheduled(ps_id).GetValue(2).ToString();
+                    startTimePrompt = md.get_info_ProfessorScheduled(ps_id).GetValue(0).ToString();
+                    endTimePrompt = md.get_info_ProfessorScheduled(ps_id).GetValue(1).ToString();
+                    professor = md.get_info_ProfessorScheduled(ps_id).GetValue(3).ToString();
+                    courseCode = md.get_info_ProfessorScheduled(ps_id).GetValue(4).ToString();
+                    sections = md.get_info_ProfessorScheduled(ps_id).GetValue(5).ToString();
                     AddLabel();
                 }
             }
