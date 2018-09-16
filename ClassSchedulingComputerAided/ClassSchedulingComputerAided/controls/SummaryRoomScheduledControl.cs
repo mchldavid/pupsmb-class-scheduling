@@ -76,7 +76,7 @@ namespace ClassSchedulingComputerAided
         public Color random()
         {
             Random rnd = new Random();
-            Color randomColor = Color.FromArgb(rnd.Next(256), rnd.Next(256), rnd.Next(256));
+            Color randomColor = Color.FromArgb(rnd.Next(147, 255), rnd.Next(147, 255), rnd.Next(147, 255));
             return randomColor;
         }
 

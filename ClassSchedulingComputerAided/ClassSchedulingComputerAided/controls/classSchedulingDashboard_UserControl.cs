@@ -1355,7 +1355,7 @@ namespace ClassSchedulingComputerAided
             if (File.Exists(name + ".xml"))
             {
                 XmlSerializer xs = new XmlSerializer(typeof(SaveInfoData));
-                FileStream read = new FileStream(name + ".xml", FileMode.Open, FileAccess.Read, FileShare.Read);
+                FileStream read = new FileStream(name + ".xml", FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
                 SaveInfoData sid = (SaveInfoData)xs.Deserialize(read);
 
                 cboProfessor_1.Text = sid.Prof_1;
@@ -1428,7 +1428,7 @@ namespace ClassSchedulingComputerAided
             if (File.Exists(name + ".xml"))
             {
                 XmlSerializer xs = new XmlSerializer(typeof(SaveInfoData));
-                FileStream read = new FileStream(name + ".xml", FileMode.Open, FileAccess.Read, FileShare.Read);
+                FileStream read = new FileStream(name + ".xml", FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
                 SaveInfoData sid = (SaveInfoData)xs.Deserialize(read);
 
                 cboCurriculum.Text = sid.CurriculumTitle;
