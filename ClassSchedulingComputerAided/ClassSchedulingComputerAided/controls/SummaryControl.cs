@@ -65,6 +65,7 @@ namespace ClassSchedulingComputerAided
             cboSemester.Text = ClassSchedule_Data.semester;
             cboSchoolYear.Text = ClassSchedule_Data.schoolYear;
 
+            cboSectionName.Items.Add("hello");
         }
 
         private void cboRoom_SelectedIndexChanged(object sender, EventArgs e)
@@ -81,6 +82,9 @@ namespace ClassSchedulingComputerAided
         private void btnOK_Click(object sender, EventArgs e)
         {
             pnlStart.Visible = false;
+            SummaryData.course = ClassSchedule_Data.course;
+            SummaryData.year = ClassSchedule_Data.year;
+            SummaryData.section = ClassSchedule_Data.section;
             SummaryData.semester = cboSemester.Text;
             SummaryData.schoolYear = cboSchoolYear.Text;
         }
@@ -88,6 +92,15 @@ namespace ClassSchedulingComputerAided
         private void btnOKk_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void cboSectionName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //SummaryData.roomCode = cboRoom.Text;
+
+            SummaryStudentScheduledControl section = new SummaryStudentScheduledControl();
+            pnlSection.Controls.Clear();
+            pnlSection.Controls.Add(section);
         }
     }
 }

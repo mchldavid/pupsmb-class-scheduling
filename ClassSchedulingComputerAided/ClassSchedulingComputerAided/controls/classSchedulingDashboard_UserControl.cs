@@ -1454,6 +1454,9 @@ namespace ClassSchedulingComputerAided
             LoadSaveData();//to load the save data
             btnSAVE.Visible = true;
 
+            ClassSchedule_Data.course = cboCourse.Text;
+            ClassSchedule_Data.year = cboYear.Text;
+            ClassSchedule_Data.section = cboSection.Text;
             ClassSchedule_Data.semester = cboSemester.Text;
             ClassSchedule_Data.schoolYear = cboSchoolYear.Text;
 

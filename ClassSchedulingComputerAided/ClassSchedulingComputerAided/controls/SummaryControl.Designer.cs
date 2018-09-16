@@ -29,10 +29,16 @@
         private void InitializeComponent()
         {
             this.Students = new System.Windows.Forms.TabPage();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cboSectionName = new System.Windows.Forms.ComboBox();
+            this.pnlSection = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.tbCtrl_Students = new System.Windows.Forms.TabControl();
             this.Professors = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cboProfessorName = new System.Windows.Forms.ComboBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.Rooms = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
             this.cboRoom = new System.Windows.Forms.ComboBox();
@@ -44,8 +50,10 @@
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.label4 = new System.Windows.Forms.Label();
             this.btnOK = new MetroFramework.Controls.MetroButton();
+            this.Students.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tbCtrl_Students.SuspendLayout();
+            this.Professors.SuspendLayout();
             this.Rooms.SuspendLayout();
             this.pnlStart.SuspendLayout();
             this.SuspendLayout();
@@ -53,12 +61,46 @@
             // Students
             // 
             this.Students.BackColor = System.Drawing.Color.White;
+            this.Students.Controls.Add(this.label2);
+            this.Students.Controls.Add(this.cboSectionName);
+            this.Students.Controls.Add(this.pnlSection);
+            this.Students.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.Students.Location = new System.Drawing.Point(4, 29);
             this.Students.Name = "Students";
             this.Students.Padding = new System.Windows.Forms.Padding(3);
             this.Students.Size = new System.Drawing.Size(905, 589);
             this.Students.TabIndex = 0;
             this.Students.Text = "Students";
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(4, 3);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(117, 19);
+            this.label2.TabIndex = 251;
+            this.label2.Text = "Select Section:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // cboSectionName
+            // 
+            this.cboSectionName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSectionName.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSectionName.FormattingEnabled = true;
+            this.cboSectionName.Location = new System.Drawing.Point(127, 1);
+            this.cboSectionName.Name = "cboSectionName";
+            this.cboSectionName.Size = new System.Drawing.Size(169, 25);
+            this.cboSectionName.TabIndex = 250;
+            this.cboSectionName.SelectedIndexChanged += new System.EventHandler(this.cboSectionName_SelectedIndexChanged);
+            // 
+            // pnlSection
+            // 
+            this.pnlSection.Location = new System.Drawing.Point(42, 27);
+            this.pnlSection.Name = "pnlSection";
+            this.pnlSection.Size = new System.Drawing.Size(820, 561);
+            this.pnlSection.TabIndex = 249;
             // 
             // panel2
             // 
@@ -89,7 +131,7 @@
             this.tbCtrl_Students.Controls.Add(this.Professors);
             this.tbCtrl_Students.Controls.Add(this.Rooms);
             this.tbCtrl_Students.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCtrl_Students.Location = new System.Drawing.Point(7, 38);
+            this.tbCtrl_Students.Location = new System.Drawing.Point(7, 37);
             this.tbCtrl_Students.Name = "tbCtrl_Students";
             this.tbCtrl_Students.SelectedIndex = 0;
             this.tbCtrl_Students.Size = new System.Drawing.Size(913, 622);
@@ -97,14 +139,46 @@
             // 
             // Professors
             // 
+            this.Professors.Controls.Add(this.label3);
+            this.Professors.Controls.Add(this.cboProfessorName);
+            this.Professors.Controls.Add(this.panel1);
             this.Professors.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Professors.Location = new System.Drawing.Point(4, 29);
             this.Professors.Name = "Professors";
             this.Professors.Padding = new System.Windows.Forms.Padding(3);
-            this.Professors.Size = new System.Drawing.Size(896, 589);
+            this.Professors.Size = new System.Drawing.Size(905, 589);
             this.Professors.TabIndex = 1;
             this.Professors.Text = "Professors";
             this.Professors.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(4, 4);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(128, 19);
+            this.label3.TabIndex = 254;
+            this.label3.Text = "Select Professor:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // cboProfessorName
+            // 
+            this.cboProfessorName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboProfessorName.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboProfessorName.FormattingEnabled = true;
+            this.cboProfessorName.Location = new System.Drawing.Point(133, 2);
+            this.cboProfessorName.Name = "cboProfessorName";
+            this.cboProfessorName.Size = new System.Drawing.Size(169, 25);
+            this.cboProfessorName.TabIndex = 253;
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(43, 26);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(820, 561);
+            this.panel1.TabIndex = 252;
             // 
             // Rooms
             // 
@@ -114,7 +188,7 @@
             this.Rooms.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.Rooms.Location = new System.Drawing.Point(4, 29);
             this.Rooms.Name = "Rooms";
-            this.Rooms.Size = new System.Drawing.Size(896, 589);
+            this.Rooms.Size = new System.Drawing.Size(905, 589);
             this.Rooms.TabIndex = 2;
             this.Rooms.Text = "Rooms";
             this.Rooms.UseVisualStyleBackColor = true;
@@ -124,7 +198,7 @@
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(5, 7);
+            this.label1.Location = new System.Drawing.Point(5, 5);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(106, 19);
             this.label1.TabIndex = 246;
@@ -136,7 +210,7 @@
             this.cboRoom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboRoom.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboRoom.FormattingEnabled = true;
-            this.cboRoom.Location = new System.Drawing.Point(112, 4);
+            this.cboRoom.Location = new System.Drawing.Point(111, 3);
             this.cboRoom.Name = "cboRoom";
             this.cboRoom.Size = new System.Drawing.Size(169, 25);
             this.cboRoom.TabIndex = 10;
@@ -238,9 +312,11 @@
             this.Name = "SummaryControl";
             this.Size = new System.Drawing.Size(923, 672);
             this.Load += new System.EventHandler(this.SummaryControl_Load);
+            this.Students.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.tbCtrl_Students.ResumeLayout(false);
+            this.Professors.ResumeLayout(false);
             this.Rooms.ResumeLayout(false);
             this.pnlStart.ResumeLayout(false);
             this.pnlStart.PerformLayout();
@@ -266,5 +342,11 @@
         private MetroFramework.Controls.MetroLabel metroLabel5;
         private System.Windows.Forms.Label label4;
         public MetroFramework.Controls.MetroButton btnOK;
+        private System.Windows.Forms.Panel pnlSection;
+        private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.ComboBox cboSectionName;
+        private System.Windows.Forms.Label label3;
+        public System.Windows.Forms.ComboBox cboProfessorName;
+        private System.Windows.Forms.Panel panel1;
     }
 }

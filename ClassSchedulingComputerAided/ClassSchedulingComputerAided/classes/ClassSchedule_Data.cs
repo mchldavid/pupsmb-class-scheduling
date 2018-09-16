@@ -36,6 +36,21 @@ namespace ClassSchedulingComputerAided
             get;
             set;
         }
+        public static string course
+        {
+            get;
+            set;
+        }
+        public static string year
+        {
+            get;
+            set;
+        }
+        public static string section
+        {
+            get;
+            set;
+        }
 
     }
 }
