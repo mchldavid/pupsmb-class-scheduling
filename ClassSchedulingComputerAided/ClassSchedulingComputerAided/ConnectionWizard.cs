@@ -318,5 +318,28 @@ namespace ClassSchedulingComputerAided
             return isEmpty;
         }
 
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            if (btnCancel.Text == "CANCEL")
+            {
+                DialogResult result = MessageBox.Show("Connection is not set. Do you want to cancel the configuration?", "Connection", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (result == DialogResult.Yes)
+                {
+                    DialogResult res = MessageBox.Show("This will terminate the program, continue...", "Exit", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                    if (res == DialogResult.OK)
+                    {
+                        System.Environment.Exit(0);
+                    }
+                }
+            }
+            else
+            {
+                frmLogin l = new frmLogin();
+                l.Show();
+                this.Hide();
+            }
+        }
+
     }
 }

@@ -32,6 +32,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnCreateDatabase = new MetroFramework.Controls.MetroButton();
             this.btnTest = new MetroFramework.Controls.MetroButton();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,7 +45,6 @@
             this.txtHost = new System.Windows.Forms.TextBox();
             this.btnSAVE = new MetroFramework.Controls.MetroButton();
             this.btnCancel = new MetroFramework.Controls.MetroButton();
-            this.btnCreateDatabase = new MetroFramework.Controls.MetroButton();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -103,6 +103,16 @@
             this.label2.Size = new System.Drawing.Size(35, 17);
             this.label2.TabIndex = 4;
             this.label2.Text = "Port:";
+            // 
+            // btnCreateDatabase
+            // 
+            this.btnCreateDatabase.Enabled = false;
+            this.btnCreateDatabase.Location = new System.Drawing.Point(261, 178);
+            this.btnCreateDatabase.Name = "btnCreateDatabase";
+            this.btnCreateDatabase.Size = new System.Drawing.Size(123, 21);
+            this.btnCreateDatabase.TabIndex = 12;
+            this.btnCreateDatabase.Text = "Create Database";
+            this.btnCreateDatabase.Click += new System.EventHandler(this.btnCreateDatabase_Click);
             // 
             // btnTest
             // 
@@ -214,16 +224,7 @@
             this.btnCancel.Size = new System.Drawing.Size(79, 21);
             this.btnCancel.TabIndex = 14;
             this.btnCancel.Text = "CANCEL";
-            // 
-            // btnCreateDatabase
-            // 
-            this.btnCreateDatabase.Enabled = false;
-            this.btnCreateDatabase.Location = new System.Drawing.Point(261, 178);
-            this.btnCreateDatabase.Name = "btnCreateDatabase";
-            this.btnCreateDatabase.Size = new System.Drawing.Size(123, 21);
-            this.btnCreateDatabase.TabIndex = 12;
-            this.btnCreateDatabase.Text = "Create Database";
-            this.btnCreateDatabase.Click += new System.EventHandler(this.btnCreateDatabase_Click);
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // frmConnectionWizard
             // 
@@ -262,7 +263,7 @@
         private System.Windows.Forms.TextBox txtDatabase;
         private MetroFramework.Controls.MetroButton btnTest;
         private MetroFramework.Controls.MetroButton btnSAVE;
-        private MetroFramework.Controls.MetroButton btnCancel;
         private MetroFramework.Controls.MetroButton btnCreateDatabase;
+        public MetroFramework.Controls.MetroButton btnCancel;
     }
 }

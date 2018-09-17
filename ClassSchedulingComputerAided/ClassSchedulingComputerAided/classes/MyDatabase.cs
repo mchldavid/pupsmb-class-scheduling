@@ -1043,7 +1043,7 @@ namespace ClassSchedulingComputerAided
                 //if (courseBy == "Other Subject")
                 //    sql = "SELECT subjects_id AS 'ID', subjectCode AS 'Code', subjectDescription AS 'Description', CONCAT('[',curriculumName,']') AS 'Curriculum' FROM tbl_subjects su INNER JOIN tbl_curriculums cu ON su.curriculums_id = cu.curriculums_id WHERE status = 'active' ORDER BY cu.curriculumName;";
                 if (courseBy == "Other Subject")
-                    sql = "SELECT subjects_id AS 'ID', subjectCode AS 'Code', subjectDescription AS 'Description', CONCAT('[',curriculumName,']') AS 'Curriculum' "
+                    sql = "SELECT subjects_id AS 'ID', su.course AS 'Course', subjectCode AS 'Code', subjectDescription AS 'Description', CONCAT('[',curriculumName,']') AS 'Curriculum' "
                         + "FROM tbl_subjects su "
                         + "INNER JOIN tbl_curriculums cu ON su.curriculums_id = cu.curriculums_id "
                         + "WHERE status = 'active' "
@@ -1074,15 +1074,21 @@ namespace ClassSchedulingComputerAided
             return dgv1;
         }
 
-        public int getTotalUnits()
+        public int getTotalUnits(string semester, string schoolYear)
         {
             int total = 0;
             try
             {
                 con.Open();
-                string sql = "SELECT * FROM tbl_preferredSubjects a, tbl_subjects b WHERE a.users_id = @id AND b.subjects_id = a.subjects_id;";
+                string sql = "SELECT * FROM tbl_preferredSubjects a, tbl_subjects b "
+                    + "WHERE a.users_id = @id "
+                    + "AND a.semester = @sem "
+                    + "AND a.schoolYear = @sY "
+                    + "AND b.subjects_id = a.subjects_id;";
                 MySqlCommand com = new MySqlCommand(sql, con);
                 com.Parameters.AddWithValue("@id", usersData.p_id);
+                com.Parameters.AddWithValue("@sem", semester);
+                com.Parameters.AddWithValue("@sY", schoolYear);
                 com.ExecuteNonQuery();
 
                 MySqlDataReader dr = com.ExecuteReader();
@@ -1101,15 +1107,21 @@ namespace ClassSchedulingComputerAided
             return total;
         }
 
-        public int getTotalSubjects()
+        public int getTotalSubjects(string semester, string schoolYear)
         {
             int total = 0;
             try
             {
                 con.Open();
-                string sql = "SELECT * FROM tbl_preferredSubjects a, tbl_subjects b WHERE a.users_id = @id AND b.subjects_id = a.subjects_id;";
+                string sql = "SELECT * FROM tbl_preferredSubjects a, tbl_subjects b "
+                    + "WHERE a.users_id = @id "
+                    + "AND a.semester = @sem "
+                    + "AND a.schoolYear = @sY "
+                    + "AND b.subjects_id = a.subjects_id;";
                 MySqlCommand com = new MySqlCommand(sql, con);
                 com.Parameters.AddWithValue("@id", usersData.p_id);
+                com.Parameters.AddWithValue("@sem", semester);
+                com.Parameters.AddWithValue("@sY", schoolYear);
                 com.ExecuteNonQuery();
 
                 MySqlDataReader dr = com.ExecuteReader();
@@ -1793,7 +1805,7 @@ namespace ClassSchedulingComputerAided
             }
         }
 
-        public void CSD_ListProfDedicated(string courseCode)// to add item of professors dedicated to his/her preferred subjects into combobox
+        public void CSD_ListProfDedicated(string courseCode, string semester, string schoolYear)// to add item of professors dedicated to his/her preferred subjects into combobox
         {
             int x = 0;
             for (x = 0; x < 100; x++)//to set all accessors into null value - set to 100 loop
@@ -1804,10 +1816,19 @@ namespace ClassSchedulingComputerAided
             try
             {
                 con.Open();
-                string sqlRegistrationCardRooms = "SELECT DISTINCT ps.users_id, CONCAT(usr.firstName,' ',usr.middleName,' ', usr.lastName) FROM tbl_preferredSubjects ps, tbl_subjects su, tbl_users usr WHERE ps.subjects_id = su.subjects_id AND su.subjectCode = @sC AND ps.users_id = usr.users_id ORDER BY usr.FirstName ASC;";
+                string sql = "SELECT DISTINCT ps.users_id, CONCAT(usr.firstName,' ',usr.middleName,' ', usr.lastName) "
+                    + "FROM tbl_preferredSubjects ps, tbl_subjects su, tbl_users usr "
+                    + "WHERE ps.subjects_id = su.subjects_id "
+                    + "AND su.subjectCode = @sC "
+                    + "AND su.semester = @sem "
+                    + "AND su.schoolYear = @sY "
+                    + "AND ps.users_id = usr.users_id "
+                    + "ORDER BY usr.FirstName ASC;";
 
-                MySqlCommand com = new MySqlCommand(sqlRegistrationCardRooms, con);
+                MySqlCommand com = new MySqlCommand(sql, con);
                 com.Parameters.AddWithValue("@sC", courseCode);
+                com.Parameters.AddWithValue("@sem", semester);
+                com.Parameters.AddWithValue("@sY", schoolYear);
                 com.ExecuteNonQuery();
 
                 MySqlDataReader dr = com.ExecuteReader();

@@ -79,8 +79,8 @@ namespace ClassSchedulingComputerAided
 
                 dgvListSubject.DataSource = md.dgv_showPreferredSubjects(cboSemester.Text, cboSchoolYear.Text).DataSource;
                 dgvListSubject.Columns[0].Visible = false;
-                lblTotalUnits.Text = md.getTotalUnits().ToString();
-                lblTotalSubjects.Text = md.getTotalSubjects().ToString();
+                lblTotalUnits.Text = md.getTotalUnits(cboSemester.Text, cboSchoolYear.Text).ToString();
+                lblTotalSubjects.Text = md.getTotalSubjects(cboSemester.Text, cboSchoolYear.Text).ToString();
                 MessageBox.Show("You added " + row.Cells[2].Value.ToString() + " into your preferred subjects", "Adding of Subject");
             }
         }
@@ -101,11 +101,12 @@ namespace ClassSchedulingComputerAided
                 DialogResult result = MessageBox.Show("Are you sure you want to delete ["+ s_code + "-" +s_desc+"] from your preferred subjects?", "Delete Subject", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (result == DialogResult.Yes)
                 {
-                    dgvListSubject.DataSource = md.dgv_showPreferredSubjects(cboSemester.Text, cboSchoolYear.Text).DataSource;
-                    lblTotalUnits.Text = md.getTotalUnits().ToString();
-                    lblTotalSubjects.Text = md.getTotalSubjects().ToString();
                     md.Prof_DeleteSubjects(ps_id);
-                    MessageBox.Show("["+s_code + "-" + s_desc +"] Deleted successfully!", "Delete Subject");
+                    dgvListSubject.DataSource = md.dgv_showPreferredSubjects(cboSemester.Text, cboSchoolYear.Text).DataSource;
+                    dgvListSubject.Columns[0].Visible = false;
+                    lblTotalUnits.Text = md.getTotalUnits(cboSemester.Text, cboSchoolYear.Text).ToString();
+                    lblTotalSubjects.Text = md.getTotalSubjects(cboSemester.Text, cboSchoolYear.Text).ToString();
+                    //MessageBox.Show("["+s_code + "-" + s_desc +"] Deleted successfully!", "Delete Subject");
                 }
             }
         }
@@ -119,8 +120,8 @@ namespace ClassSchedulingComputerAided
             dgvListSubject.DataSource = md.dgv_showPreferredSubjects(cboSemester.Text, cboSchoolYear.Text).DataSource;
             dgvListSubject.Columns[0].Visible = false;
 
-            lblTotalUnits.Text = md.getTotalUnits().ToString();
-            lblTotalSubjects.Text = md.getTotalSubjects().ToString();
+            lblTotalUnits.Text = md.getTotalUnits(cboSemester.Text, cboSchoolYear.Text).ToString();
+            lblTotalSubjects.Text = md.getTotalSubjects(cboSemester.Text, cboSchoolYear.Text).ToString();
             lblUnitsAllowed.Text = usersData.p_uAllowed;
         }
     }

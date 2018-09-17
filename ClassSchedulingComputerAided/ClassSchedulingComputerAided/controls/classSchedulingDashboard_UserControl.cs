@@ -430,7 +430,7 @@ namespace ClassSchedulingComputerAided
                 }
                 //to list all professors on that particular courseCode
                 SubjectForStudents.Professors = new string[100];
-                md.CSD_ListProfDedicated(lblCode_1.Text);
+                md.CSD_ListProfDedicated(lblCode_1.Text, cboSemester.Text, cboSchoolYear.Text);
                 for (int x = 0; x < 100; x++)//set to 50 loop
                 {
                     if (SubjectForStudents.Professors[x] != "")
@@ -487,7 +487,7 @@ namespace ClassSchedulingComputerAided
                 }
                 //to list all professors on that particular courseCode
                 SubjectForStudents.Professors = new string[100];
-                md.CSD_ListProfDedicated(lblCode_2.Text);
+                md.CSD_ListProfDedicated(lblCode_2.Text, cboSemester.Text, cboSchoolYear.Text);
                 for (int x = 0; x < 100; x++)//set to 50 loop
                 {
                     if (SubjectForStudents.Professors[x] != "")
@@ -544,7 +544,7 @@ namespace ClassSchedulingComputerAided
                 }
                 //to list all professors on that particular courseCode
                 SubjectForStudents.Professors = new string[100];
-                md.CSD_ListProfDedicated(lblCode_3.Text);
+                md.CSD_ListProfDedicated(lblCode_3.Text, cboSemester.Text, cboSchoolYear.Text);
                 for (int x = 0; x < 100; x++)//set to 50 loop
                 {
                     if (SubjectForStudents.Professors[x] != "")
@@ -601,7 +601,7 @@ namespace ClassSchedulingComputerAided
                 }
                 //to list all professors on that particular courseCode
                 SubjectForStudents.Professors = new string[100];
-                md.CSD_ListProfDedicated(lblCode_4.Text);
+                md.CSD_ListProfDedicated(lblCode_4.Text, cboSemester.Text, cboSchoolYear.Text);
                 for (int x = 0; x < 100; x++)//set to 50 loop
                 {
                     if (SubjectForStudents.Professors[x] != "")
@@ -658,7 +658,7 @@ namespace ClassSchedulingComputerAided
                 }
                 //to list all professors on that particular courseCode
                 SubjectForStudents.Professors = new string[100];
-                md.CSD_ListProfDedicated(lblCode_5.Text);
+                md.CSD_ListProfDedicated(lblCode_5.Text, cboSemester.Text, cboSchoolYear.Text);
                 for (int x = 0; x < 100; x++)//set to 50 loop
                 {
                     if (SubjectForStudents.Professors[x] != "")
@@ -715,7 +715,7 @@ namespace ClassSchedulingComputerAided
                 }
                 //to list all professors on that particular courseCode
                 SubjectForStudents.Professors = new string[100];
-                md.CSD_ListProfDedicated(lblCode_6.Text);
+                md.CSD_ListProfDedicated(lblCode_6.Text, cboSemester.Text, cboSchoolYear.Text);
                 for (int x = 0; x < 100; x++)//set to 50 loop
                 {
                     if (SubjectForStudents.Professors[x] != "")
@@ -772,7 +772,7 @@ namespace ClassSchedulingComputerAided
                 }
                 //to list all professors on that particular courseCode
                 SubjectForStudents.Professors = new string[100];
-                md.CSD_ListProfDedicated(lblCode_7.Text);
+                md.CSD_ListProfDedicated(lblCode_7.Text, cboSemester.Text, cboSchoolYear.Text);
                 for (int x = 0; x < 100; x++)//set to 50 loop
                 {
                     if (SubjectForStudents.Professors[x] != "")
@@ -829,7 +829,7 @@ namespace ClassSchedulingComputerAided
                 }
                 //to list all professors on that particular courseCode
                 SubjectForStudents.Professors = new string[100];
-                md.CSD_ListProfDedicated(lblCode_8.Text);
+                md.CSD_ListProfDedicated(lblCode_8.Text, cboSemester.Text, cboSchoolYear.Text);
                 for (int x = 0; x < 100; x++)//set to 50 loop
                 {
                     if (SubjectForStudents.Professors[x] != "")
@@ -886,7 +886,7 @@ namespace ClassSchedulingComputerAided
                 }
                 //to list all professors on that particular courseCode
                 SubjectForStudents.Professors = new string[100];
-                md.CSD_ListProfDedicated(lblCode_9.Text);
+                md.CSD_ListProfDedicated(lblCode_9.Text, cboSemester.Text, cboSchoolYear.Text);
                 for (int x = 0; x < 100; x++)//set to 50 loop
                 {
                     if (SubjectForStudents.Professors[x] != "")
@@ -943,7 +943,7 @@ namespace ClassSchedulingComputerAided
                 }
                 //to list all professors on that particular courseCode
                 SubjectForStudents.Professors = new string[100];
-                md.CSD_ListProfDedicated(lblCode_10.Text);
+                md.CSD_ListProfDedicated(lblCode_10.Text, cboSemester.Text, cboSchoolYear.Text);
                 for (int x = 0; x < 100; x++)//set to 50 loop
                 {
                     if (SubjectForStudents.Professors[x] != "")

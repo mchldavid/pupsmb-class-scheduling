@@ -132,6 +132,7 @@ namespace ClassSchedulingComputerAided
         {
             frmConnectionWizard fcw = new frmConnectionWizard();
             fcw.Show();
+            fcw.btnCancel.Text = "CANCEL ";
             this.Hide();
         }
     }
