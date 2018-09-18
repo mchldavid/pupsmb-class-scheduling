@@ -28,16 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListOfProfessors));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.btnEditProfessor = new MetroFramework.Controls.MetroButton();
-            this.btnDelete = new MetroFramework.Controls.MetroButton();
-            this.btnProfessorsInformation = new MetroFramework.Controls.MetroButton();
-            this.btnCancell = new MetroFramework.Controls.MetroButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.lbl_title = new MetroFramework.Controls.MetroLabel();
@@ -46,76 +42,41 @@
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             this.cboSearchBy = new System.Windows.Forms.ComboBox();
             this.pnl = new System.Windows.Forms.Panel();
+            this.dgvShow = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnCancel = new MetroFramework.Controls.MetroButton();
             this.pnlShowUserControl = new System.Windows.Forms.Panel();
+            this.pnlProfessorsInformation = new System.Windows.Forms.Panel();
+            this.btnProfessorCancel = new MetroFramework.Controls.MetroButton();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.btnProfessorsInfo = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnHome = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnDeleteProfessors = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnEditProfessors = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
-            this.btnProfessorCancel = new MetroFramework.Controls.MetroButton();
-            this.pnlProfessorsInformation = new System.Windows.Forms.Panel();
-            this.dgvShow = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
             this.pnl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvShow)).BeginInit();
             this.pnlShowUserControl.SuspendLayout();
-            this.panel9.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
+            this.pnlProfessorsInformation.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.pnlProfessorsInformation.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvShow)).BeginInit();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel9.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnEditProfessor
-            // 
-            this.btnEditProfessor.Location = new System.Drawing.Point(23, 352);
-            this.btnEditProfessor.Name = "btnEditProfessor";
-            this.btnEditProfessor.Size = new System.Drawing.Size(107, 32);
-            this.btnEditProfessor.TabIndex = 147;
-            this.btnEditProfessor.Text = "EDIT PROF";
-            this.btnEditProfessor.Click += new System.EventHandler(this.btnEditProfessor_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(23, 383);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(107, 32);
-            this.btnDelete.TabIndex = 148;
-            this.btnDelete.Text = "DELETE";
-            // 
-            // btnProfessorsInformation
-            // 
-            this.btnProfessorsInformation.Location = new System.Drawing.Point(23, 323);
-            this.btnProfessorsInformation.Name = "btnProfessorsInformation";
-            this.btnProfessorsInformation.Size = new System.Drawing.Size(107, 32);
-            this.btnProfessorsInformation.TabIndex = 148;
-            this.btnProfessorsInformation.Text = "PROF INFO";
-            this.btnProfessorsInformation.Click += new System.EventHandler(this.btnViewInfo_Click);
-            // 
-            // btnCancell
-            // 
-            this.btnCancell.Location = new System.Drawing.Point(23, 414);
-            this.btnCancell.Name = "btnCancell";
-            this.btnCancell.Size = new System.Drawing.Size(107, 32);
-            this.btnCancell.TabIndex = 148;
-            this.btnCancell.Text = "CANCEL";
-            this.btnCancell.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // panel1
             // 
@@ -205,6 +166,81 @@
             this.pnl.Size = new System.Drawing.Size(668, 501);
             this.pnl.TabIndex = 242;
             // 
+            // dgvShow
+            // 
+            this.dgvShow.AllowUserToAddRows = false;
+            this.dgvShow.AllowUserToDeleteRows = false;
+            this.dgvShow.AllowUserToResizeColumns = false;
+            this.dgvShow.AllowUserToResizeRows = false;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Gray;
+            this.dgvShow.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            this.dgvShow.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvShow.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvShow.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvShow.BackgroundColor = System.Drawing.Color.White;
+            this.dgvShow.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvShow.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvShow.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            this.dgvShow.ColumnHeadersHeight = 25;
+            this.dgvShow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvShow.DefaultCellStyle = dataGridViewCellStyle13;
+            this.dgvShow.DoubleBuffered = true;
+            this.dgvShow.EnableHeadersVisualStyles = false;
+            this.dgvShow.GridColor = System.Drawing.Color.DarkGray;
+            this.dgvShow.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
+            this.dgvShow.HeaderForeColor = System.Drawing.Color.Gold;
+            this.dgvShow.Location = new System.Drawing.Point(2, 64);
+            this.dgvShow.MultiSelect = false;
+            this.dgvShow.Name = "dgvShow";
+            this.dgvShow.ReadOnly = true;
+            this.dgvShow.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvShow.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            this.dgvShow.RowHeadersWidth = 15;
+            this.dgvShow.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvShow.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            this.dgvShow.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvShow.Size = new System.Drawing.Size(663, 436);
+            this.dgvShow.TabIndex = 267;
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Maroon;
+            this.label1.Location = new System.Drawing.Point(3, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(406, 19);
+            this.label1.TabIndex = 266;
+            this.label1.Text = "LIST OF PROFESSOR/S";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // btnCancel
             // 
             this.btnCancel.Location = new System.Drawing.Point(554, 438);
@@ -225,17 +261,173 @@
             this.pnlShowUserControl.TabIndex = 242;
             this.pnlShowUserControl.Visible = false;
             // 
+            // pnlProfessorsInformation
+            // 
+            this.pnlProfessorsInformation.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlProfessorsInformation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlProfessorsInformation.Controls.Add(this.btnProfessorCancel);
+            this.pnlProfessorsInformation.Controls.Add(this.panel5);
+            this.pnlProfessorsInformation.Controls.Add(this.panel3);
+            this.pnlProfessorsInformation.Controls.Add(this.metroLabel4);
+            this.pnlProfessorsInformation.Controls.Add(this.panel2);
+            this.pnlProfessorsInformation.Location = new System.Drawing.Point(648, 125);
+            this.pnlProfessorsInformation.Name = "pnlProfessorsInformation";
+            this.pnlProfessorsInformation.Size = new System.Drawing.Size(625, 490);
+            this.pnlProfessorsInformation.TabIndex = 151;
+            this.pnlProfessorsInformation.Visible = false;
+            this.pnlProfessorsInformation.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // btnProfessorCancel
+            // 
+            this.btnProfessorCancel.Location = new System.Drawing.Point(513, 37);
+            this.btnProfessorCancel.Name = "btnProfessorCancel";
+            this.btnProfessorCancel.Size = new System.Drawing.Size(99, 32);
+            this.btnProfessorCancel.TabIndex = 149;
+            this.btnProfessorCancel.Text = "CANCEL";
+            this.btnProfessorCancel.Click += new System.EventHandler(this.btnProfessorClose_Click);
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.metroLabel6);
+            this.panel5.Controls.Add(this.panel6);
+            this.panel5.Location = new System.Drawing.Point(330, 148);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(269, 315);
+            this.panel5.TabIndex = 7;
+            // 
+            // metroLabel6
+            // 
+            this.metroLabel6.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.metroLabel6.CustomBackground = true;
+            this.metroLabel6.CustomForeColor = true;
+            this.metroLabel6.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.metroLabel6.ForeColor = System.Drawing.Color.DimGray;
+            this.metroLabel6.Location = new System.Drawing.Point(23, 42);
+            this.metroLabel6.Name = "metroLabel6";
+            this.metroLabel6.Size = new System.Drawing.Size(223, 117);
+            this.metroLabel6.TabIndex = 6;
+            this.metroLabel6.Text = "INTE 2013 Programming";
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.LightCoral;
+            this.panel6.Controls.Add(this.metroLabel7);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(267, 28);
+            this.panel6.TabIndex = 3;
+            // 
+            // metroLabel7
+            // 
+            this.metroLabel7.BackColor = System.Drawing.Color.LightCoral;
+            this.metroLabel7.CustomBackground = true;
+            this.metroLabel7.CustomForeColor = true;
+            this.metroLabel7.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel7.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.metroLabel7.Location = new System.Drawing.Point(3, 0);
+            this.metroLabel7.Name = "metroLabel7";
+            this.metroLabel7.Size = new System.Drawing.Size(232, 28);
+            this.metroLabel7.TabIndex = 4;
+            this.metroLabel7.Text = "Profesor\'s preferred subjects";
+            this.metroLabel7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.metroLabel2);
+            this.panel3.Controls.Add(this.panel4);
+            this.panel3.Location = new System.Drawing.Point(32, 148);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(269, 315);
+            this.panel3.TabIndex = 6;
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.metroLabel2.CustomBackground = true;
+            this.metroLabel2.CustomForeColor = true;
+            this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.metroLabel2.ForeColor = System.Drawing.Color.DimGray;
+            this.metroLabel2.Location = new System.Drawing.Point(23, 42);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(223, 117);
+            this.metroLabel2.TabIndex = 6;
+            this.metroLabel2.Text = "Monday 7:30am-10:30am\r\nMonday 2:00pm-7:00pm\r\nThursday 3:00pm-8:00pm\r\nFriday 7:00a" +
+    "m-8:00pm";
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.LightCoral;
+            this.panel4.Controls.Add(this.metroLabel5);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(267, 28);
+            this.panel4.TabIndex = 3;
+            // 
+            // metroLabel5
+            // 
+            this.metroLabel5.BackColor = System.Drawing.Color.LightCoral;
+            this.metroLabel5.CustomBackground = true;
+            this.metroLabel5.CustomForeColor = true;
+            this.metroLabel5.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel5.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.metroLabel5.Location = new System.Drawing.Point(3, 0);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(232, 28);
+            this.metroLabel5.TabIndex = 4;
+            this.metroLabel5.Text = "Professor\'s preferred schedule";
+            this.metroLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // metroLabel4
+            // 
+            this.metroLabel4.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.metroLabel4.CustomBackground = true;
+            this.metroLabel4.CustomForeColor = true;
+            this.metroLabel4.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.metroLabel4.ForeColor = System.Drawing.Color.DimGray;
+            this.metroLabel4.Location = new System.Drawing.Point(35, 37);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(223, 94);
+            this.metroLabel4.TabIndex = 5;
+            this.metroLabel4.Text = "Name: Michael L. David \r\nAddress: Blk 25 lot 30 San Vicente Homes\r\nSan Vicente Ho" +
+    "mes\r\nno#: 09173871717\r\nstatus: Full timer";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.IndianRed;
+            this.panel2.Controls.Add(this.metroLabel1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(623, 28);
+            this.panel2.TabIndex = 3;
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.BackColor = System.Drawing.Color.IndianRed;
+            this.metroLabel1.CustomBackground = true;
+            this.metroLabel1.CustomForeColor = true;
+            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.metroLabel1.Location = new System.Drawing.Point(3, 0);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(160, 28);
+            this.metroLabel1.TabIndex = 4;
+            this.metroLabel1.Text = "Professor Information";
+            this.metroLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.panel9.Controls.Add(this.btnProfessorsInfo);
             this.panel9.Controls.Add(this.btnHome);
-            this.panel9.Controls.Add(this.btnDelete);
             this.panel9.Controls.Add(this.btnDeleteProfessors);
-            this.panel9.Controls.Add(this.btnEditProfessor);
             this.panel9.Controls.Add(this.btnEditProfessors);
-            this.panel9.Controls.Add(this.btnProfessorsInformation);
-            this.panel9.Controls.Add(this.btnCancell);
             this.panel9.Location = new System.Drawing.Point(0, 65);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(151, 505);
@@ -310,6 +502,7 @@
             this.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHome.Textcolor = System.Drawing.Color.White;
             this.btnHome.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // btnDeleteProfessors
             // 
@@ -383,241 +576,6 @@
             this.btnEditProfessors.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditProfessors.Click += new System.EventHandler(this.btnEditProfessors_Click);
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.IndianRed;
-            this.panel2.Controls.Add(this.metroLabel1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(623, 28);
-            this.panel2.TabIndex = 3;
-            // 
-            // metroLabel1
-            // 
-            this.metroLabel1.BackColor = System.Drawing.Color.IndianRed;
-            this.metroLabel1.CustomBackground = true;
-            this.metroLabel1.CustomForeColor = true;
-            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.metroLabel1.Location = new System.Drawing.Point(3, 0);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(160, 28);
-            this.metroLabel1.TabIndex = 4;
-            this.metroLabel1.Text = "Professor Information";
-            this.metroLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // metroLabel4
-            // 
-            this.metroLabel4.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.metroLabel4.CustomBackground = true;
-            this.metroLabel4.CustomForeColor = true;
-            this.metroLabel4.FontSize = MetroFramework.MetroLabelSize.Small;
-            this.metroLabel4.ForeColor = System.Drawing.Color.DimGray;
-            this.metroLabel4.Location = new System.Drawing.Point(35, 37);
-            this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(223, 94);
-            this.metroLabel4.TabIndex = 5;
-            this.metroLabel4.Text = "Name: Michael L. David \r\nAddress: Blk 25 lot 30 San Vicente Homes\r\nSan Vicente Ho" +
-    "mes\r\nno#: 09173871717\r\nstatus: Full timer";
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.metroLabel2);
-            this.panel3.Controls.Add(this.panel4);
-            this.panel3.Location = new System.Drawing.Point(32, 148);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(269, 315);
-            this.panel3.TabIndex = 6;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.LightCoral;
-            this.panel4.Controls.Add(this.metroLabel5);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(267, 28);
-            this.panel4.TabIndex = 3;
-            // 
-            // metroLabel5
-            // 
-            this.metroLabel5.BackColor = System.Drawing.Color.LightCoral;
-            this.metroLabel5.CustomBackground = true;
-            this.metroLabel5.CustomForeColor = true;
-            this.metroLabel5.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.metroLabel5.Location = new System.Drawing.Point(3, 0);
-            this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(232, 28);
-            this.metroLabel5.TabIndex = 4;
-            this.metroLabel5.Text = "Professor\'s preferred schedule";
-            this.metroLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // metroLabel2
-            // 
-            this.metroLabel2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.metroLabel2.CustomBackground = true;
-            this.metroLabel2.CustomForeColor = true;
-            this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Small;
-            this.metroLabel2.ForeColor = System.Drawing.Color.DimGray;
-            this.metroLabel2.Location = new System.Drawing.Point(23, 42);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(223, 117);
-            this.metroLabel2.TabIndex = 6;
-            this.metroLabel2.Text = "Monday 7:30am-10:30am\r\nMonday 2:00pm-7:00pm\r\nThursday 3:00pm-8:00pm\r\nFriday 7:00a" +
-    "m-8:00pm";
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.metroLabel6);
-            this.panel5.Controls.Add(this.panel6);
-            this.panel5.Location = new System.Drawing.Point(330, 148);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(269, 315);
-            this.panel5.TabIndex = 7;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.LightCoral;
-            this.panel6.Controls.Add(this.metroLabel7);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(267, 28);
-            this.panel6.TabIndex = 3;
-            // 
-            // metroLabel7
-            // 
-            this.metroLabel7.BackColor = System.Drawing.Color.LightCoral;
-            this.metroLabel7.CustomBackground = true;
-            this.metroLabel7.CustomForeColor = true;
-            this.metroLabel7.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel7.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.metroLabel7.Location = new System.Drawing.Point(3, 0);
-            this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(232, 28);
-            this.metroLabel7.TabIndex = 4;
-            this.metroLabel7.Text = "Profesor\'s preferred subjects";
-            this.metroLabel7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // metroLabel6
-            // 
-            this.metroLabel6.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.metroLabel6.CustomBackground = true;
-            this.metroLabel6.CustomForeColor = true;
-            this.metroLabel6.FontSize = MetroFramework.MetroLabelSize.Small;
-            this.metroLabel6.ForeColor = System.Drawing.Color.DimGray;
-            this.metroLabel6.Location = new System.Drawing.Point(23, 42);
-            this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(223, 117);
-            this.metroLabel6.TabIndex = 6;
-            this.metroLabel6.Text = "INTE 2013 Programming";
-            // 
-            // btnProfessorCancel
-            // 
-            this.btnProfessorCancel.Location = new System.Drawing.Point(513, 37);
-            this.btnProfessorCancel.Name = "btnProfessorCancel";
-            this.btnProfessorCancel.Size = new System.Drawing.Size(99, 32);
-            this.btnProfessorCancel.TabIndex = 149;
-            this.btnProfessorCancel.Text = "CANCEL";
-            this.btnProfessorCancel.Click += new System.EventHandler(this.btnProfessorClose_Click);
-            // 
-            // pnlProfessorsInformation
-            // 
-            this.pnlProfessorsInformation.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pnlProfessorsInformation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlProfessorsInformation.Controls.Add(this.btnProfessorCancel);
-            this.pnlProfessorsInformation.Controls.Add(this.panel5);
-            this.pnlProfessorsInformation.Controls.Add(this.panel3);
-            this.pnlProfessorsInformation.Controls.Add(this.metroLabel4);
-            this.pnlProfessorsInformation.Controls.Add(this.panel2);
-            this.pnlProfessorsInformation.Location = new System.Drawing.Point(648, 125);
-            this.pnlProfessorsInformation.Name = "pnlProfessorsInformation";
-            this.pnlProfessorsInformation.Size = new System.Drawing.Size(625, 490);
-            this.pnlProfessorsInformation.TabIndex = 151;
-            this.pnlProfessorsInformation.Visible = false;
-            this.pnlProfessorsInformation.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // dgvShow
-            // 
-            this.dgvShow.AllowUserToAddRows = false;
-            this.dgvShow.AllowUserToDeleteRows = false;
-            this.dgvShow.AllowUserToResizeColumns = false;
-            this.dgvShow.AllowUserToResizeRows = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Gray;
-            this.dgvShow.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvShow.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvShow.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvShow.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvShow.BackgroundColor = System.Drawing.Color.White;
-            this.dgvShow.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvShow.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvShow.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.dgvShow.ColumnHeadersHeight = 25;
-            this.dgvShow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvShow.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dgvShow.DoubleBuffered = true;
-            this.dgvShow.EnableHeadersVisualStyles = false;
-            this.dgvShow.GridColor = System.Drawing.Color.DarkGray;
-            this.dgvShow.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
-            this.dgvShow.HeaderForeColor = System.Drawing.Color.Gold;
-            this.dgvShow.Location = new System.Drawing.Point(2, 64);
-            this.dgvShow.MultiSelect = false;
-            this.dgvShow.Name = "dgvShow";
-            this.dgvShow.ReadOnly = true;
-            this.dgvShow.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvShow.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.dgvShow.RowHeadersWidth = 15;
-            this.dgvShow.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvShow.RowsDefaultCellStyle = dataGridViewCellStyle10;
-            this.dgvShow.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvShow.Size = new System.Drawing.Size(663, 436);
-            this.dgvShow.TabIndex = 267;
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Maroon;
-            this.label1.Location = new System.Drawing.Point(3, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(406, 19);
-            this.label1.TabIndex = 266;
-            this.label1.Text = "LIST OF PROFESSOR/S";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // frmListOfProfessors
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -636,25 +594,21 @@
             this.panel1.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.pnl.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvShow)).EndInit();
             this.pnlShowUserControl.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
+            this.pnlProfessorsInformation.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
-            this.pnlProfessorsInformation.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvShow)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        public MetroFramework.Controls.MetroButton btnEditProfessor;
-        public MetroFramework.Controls.MetroButton btnDelete;
-        public MetroFramework.Controls.MetroButton btnProfessorsInformation;
-        public MetroFramework.Controls.MetroButton btnCancell;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label12;
         public MetroFramework.Controls.MetroLabel lbl_title;

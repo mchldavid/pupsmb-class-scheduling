@@ -93,6 +93,8 @@ namespace ClassSchedulingComputerAided
             SummaryData.section = ClassSchedule_Data.section;
             SummaryData.semester = cboSemester.Text;
             SummaryData.schoolYear = cboSchoolYear.Text;
+
+            lblCurriculum.Text = " [" + cboSemester.Text + " Semester] [SY:" + cboSchoolYear.Text + "]";
         }
 
         private void btnOKk_Click(object sender, EventArgs e)

@@ -273,7 +273,7 @@ namespace ClassSchedulingComputerAided
             CSD_ProfTimeTable ptt = new CSD_ProfTimeTable();
             pnlProfessors.Controls.Add(ptt);
 
-            LoadSaveDataCSD_Start();//to load data
+            pnlStart.BringToFront();
 
             cboSemester.Items.Add("1ST");
             cboSemester.Items.Add("2ND");
@@ -302,7 +302,14 @@ namespace ClassSchedulingComputerAided
                     flag = false;
                 }
             }
+            for (int x = 0; x < md.getCourseYearSection().Length; x++)
+                if (md.getCourseYearSection().GetValue(x).ToString() != "")
+                    cboCourse.Items.Add(md.getCourseYearSection().GetValue(x).ToString());
 
+            for (int x = 0; x < md.getCurriculum().Length; x++)
+                if (md.getCurriculum().GetValue(x).ToString() != "")
+                    cboCurriculum.Items.Add(md.getCurriculum().GetValue(x).ToString());
+            LoadSaveDataCSD_Start();//to load data
             
         }
 
@@ -420,6 +427,10 @@ namespace ClassSchedulingComputerAided
                 btnSet_1.Text = "OK";
                 btnSAVE.Enabled = false;
 
+                //set first value to TBA
+                cboRoom_1.Items.Add("TBA");
+                cboProfessor_1.Items.Add("TBA");
+
                 //to list all Active Rooms
                 SubjectForStudents.Rooms = new string[100];
                 md.CSD_ListActiveRoom();
@@ -436,7 +447,6 @@ namespace ClassSchedulingComputerAided
                     if (SubjectForStudents.Professors[x] != "")
                         cboProfessor_1.Items.Add(SubjectForStudents.Professors[x]);
                 }
-
                 //to load all data if already
                 ClassSchedule_Data.professors_name = cboProfessor_1.Text;
                 ClassSchedule_Data.roomCode = cboRoom_1.Text;
@@ -476,6 +486,10 @@ namespace ClassSchedulingComputerAided
                 cboRoom_2.Enabled = true;
                 btnSet_2.Text = "OK";
                 btnSAVE.Enabled = false;
+
+                //set first value to TBA
+                cboRoom_2.Items.Add("TBA");
+                cboProfessor_2.Items.Add("TBA");
 
                 //to list all Active Rooms
                 SubjectForStudents.Rooms = new string[100];
@@ -534,6 +548,10 @@ namespace ClassSchedulingComputerAided
                 btnSet_3.Text = "OK";
                 btnSAVE.Enabled = false;
 
+                //set first value to TBA
+                cboRoom_3.Items.Add("TBA");
+                cboProfessor_3.Items.Add("TBA");
+
                 //to list all Active Rooms
                 SubjectForStudents.Rooms = new string[100];
                 md.CSD_ListActiveRoom();
@@ -590,6 +608,10 @@ namespace ClassSchedulingComputerAided
                 cboRoom_4.Enabled = true;
                 btnSet_4.Text = "OK";
                 btnSAVE.Enabled = false;
+
+                //set first value to TBA
+                cboRoom_4.Items.Add("TBA");
+                cboProfessor_4.Items.Add("TBA");
 
                 //to list all Active Rooms
                 SubjectForStudents.Rooms = new string[100];
@@ -648,6 +670,10 @@ namespace ClassSchedulingComputerAided
                 btnSet_5.Text = "OK";
                 btnSAVE.Enabled = false;
 
+                //set first value to TBA
+                cboRoom_5.Items.Add("TBA");
+                cboProfessor_5.Items.Add("TBA");
+
                 //to list all Active Rooms
                 SubjectForStudents.Rooms = new string[100];
                 md.CSD_ListActiveRoom();
@@ -704,6 +730,10 @@ namespace ClassSchedulingComputerAided
                 cboRoom_6.Enabled = true;
                 btnSet_6.Text = "OK";
                 btnSAVE.Enabled = false;
+
+                //set first value to TBA
+                cboRoom_6.Items.Add("TBA");
+                cboProfessor_6.Items.Add("TBA");
 
                 //to list all Active Rooms
                 SubjectForStudents.Rooms = new string[100];
@@ -762,6 +792,10 @@ namespace ClassSchedulingComputerAided
                 btnSet_7.Text = "OK";
                 btnSAVE.Enabled = false;
 
+                //set first value to TBA
+                cboRoom_7.Items.Add("TBA");
+                cboProfessor_7.Items.Add("TBA");
+
                 //to list all Active Rooms
                 SubjectForStudents.Rooms = new string[100];
                 md.CSD_ListActiveRoom();
@@ -818,6 +852,10 @@ namespace ClassSchedulingComputerAided
                 cboRoom_8.Enabled = true;
                 btnSet_8.Text = "OK";
                 btnSAVE.Enabled = false;
+
+                //set first value to TBA
+                cboRoom_8.Items.Add("TBA");
+                cboProfessor_8.Items.Add("TBA");
 
                 //to list all Active Rooms
                 SubjectForStudents.Rooms = new string[100];
@@ -876,6 +914,10 @@ namespace ClassSchedulingComputerAided
                 btnSet_9.Text = "OK";
                 btnSAVE.Enabled = false;
 
+                //set first value to TBA
+                cboRoom_9.Items.Add("TBA");
+                cboProfessor_9.Items.Add("TBA");
+
                 //to list all Active Rooms
                 SubjectForStudents.Rooms = new string[100];
                 md.CSD_ListActiveRoom();
@@ -932,6 +974,10 @@ namespace ClassSchedulingComputerAided
                 cboRoom_10.Enabled = true;
                 btnSet_10.Text = "OK";
                 btnSAVE.Enabled = false;
+
+                //set first value to TBA
+                cboRoom_10.Items.Add("TBA");
+                cboProfessor_10.Items.Add("TBA");
 
                 //to list all Active Rooms
                 SubjectForStudents.Rooms = new string[100];
@@ -1494,6 +1540,19 @@ namespace ClassSchedulingComputerAided
             ListDay();
             ListRoom();
             ListSet();
+
+            //to load all data if already
+            ClassSchedule_Data.professors_name = "";
+            ClassSchedule_Data.roomCode = "";
+
+            RoomTimeTableControl rttc = new RoomTimeTableControl();
+            pnlRooms.Controls.Clear();
+            pnlRooms.Controls.Add(rttc);
+
+            md.CSD_get_professors_id(ClassSchedule_Data.professors_name);
+            CSD_ProfTimeTable ptt = new CSD_ProfTimeTable();
+            pnlProfessors.Controls.Clear();
+            pnlProfessors.Controls.Add(ptt);
         }
 
         private void btnSettings_Click(object sender, EventArgs e)
@@ -1503,35 +1562,6 @@ namespace ClassSchedulingComputerAided
             btnSettings.Visible = false;
             lblSection.Text = "Settings";
             lblCurriculumTitle.Text = " ";
-        }
-
-        private void btnSAVE_Click(object sender, EventArgs e)
-        {
-            string savedName = cboCourse.Text +" "+ cboYear.Text +" - "+ cboSection.Text;
-            DialogResult result = MessageBox.Show("Do you want to save "+ savedName +"?", "Save", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-
-            if (result == DialogResult.Yes)
-            {
-                try
-                {
-                    SaveScheduled();
-                    SaveData();
-
-                    SummaryControl sc = new SummaryControl();
-                    //pnlReport.Controls.Clear();
-                    pnlReport.Controls.Add(sc);
-                    btnOKk.BringToFront();
-                    pnlReport.Visible = true;
-                    pnlReport.BringToFront();
-                    pnlStudentScheduling.Enabled = false;
-                    pnlRooms.Enabled = false;
-                    pnlProfessors.Enabled = false;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Save");
-                }
-            }
         }
 
         private void ClearAll()//to clear all fields
@@ -1713,6 +1743,35 @@ namespace ClassSchedulingComputerAided
             pnlStudentScheduling.Enabled = true;
             pnlRooms.Enabled = true;
             pnlProfessors.Enabled = true;
+        }
+
+        private void btnSAVE_Click(object sender, EventArgs e)
+        {
+            string savedName = cboCourse.Text + " " + cboYear.Text + " - " + cboSection.Text;
+            DialogResult result = MessageBox.Show("Do you want to save " + savedName + "?", "Save", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    SaveScheduled();
+                    SaveData();
+
+                    SummaryControl sc = new SummaryControl();
+                    //pnlReport.Controls.Clear();
+                    pnlReport.Controls.Add(sc);
+                    btnOKk.BringToFront();
+                    pnlReport.Visible = true;
+                    pnlReport.BringToFront();
+                    pnlStudentScheduling.Enabled = false;
+                    pnlRooms.Enabled = false;
+                    pnlProfessors.Enabled = false;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Save");
+                }
+            }
         }
     }
 }

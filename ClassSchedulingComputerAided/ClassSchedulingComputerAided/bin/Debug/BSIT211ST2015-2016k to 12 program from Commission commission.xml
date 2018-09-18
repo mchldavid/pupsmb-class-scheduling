@@ -10,11 +10,11 @@
   <End_2>11</End_2>
   <Day_2>1</Day_2>
   <Room_2>RM206</Room_2>
-  <Prof_3 />
-  <Start_3>-1</Start_3>
-  <End_3>-1</End_3>
-  <Day_3>-1</Day_3>
-  <Room_3 />
+  <Prof_3>Michael losbanos David</Prof_3>
+  <Start_3>1</Start_3>
+  <End_3>7</End_3>
+  <Day_3>0</Day_3>
+  <Room_3>RM207</Room_3>
   <Prof_4>Anna Losbaños David</Prof_4>
   <Start_4>4</Start_4>
   <End_4>5</End_4>
@@ -50,4 +50,6 @@
   <End_10>-1</End_10>
   <Day_10>-1</Day_10>
   <Room_10 />
+  <ProfSemester>0</ProfSemester>
+  <ProfSchoolYear>0</ProfSchoolYear>
 </SaveInfoData>

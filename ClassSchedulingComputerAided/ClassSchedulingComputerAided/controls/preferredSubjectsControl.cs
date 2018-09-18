@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Xml.Serialization;
 
 namespace ClassSchedulingComputerAided
 {
@@ -55,6 +57,7 @@ namespace ClassSchedulingComputerAided
                     flag = false;
                 }
             }
+            loadData();//load savedata
         }
 
         private void btnAddSubject_Click(object sender, EventArgs e)
@@ -115,6 +118,8 @@ namespace ClassSchedulingComputerAided
         {
             pnlStart.Visible = false;
 
+            saveData();
+
             lbl_title.Text = "[" + cboSemester.Text + " Semester] [SY:" + cboSchoolYear.Text + "]";
 
             dgvListSubject.DataSource = md.dgv_showPreferredSubjects(cboSemester.Text, cboSchoolYear.Text).DataSource;
@@ -123,6 +128,29 @@ namespace ClassSchedulingComputerAided
             lblTotalUnits.Text = md.getTotalUnits(cboSemester.Text, cboSchoolYear.Text).ToString();
             lblTotalSubjects.Text = md.getTotalSubjects(cboSemester.Text, cboSchoolYear.Text).ToString();
             lblUnitsAllowed.Text = usersData.p_uAllowed;
+        }
+
+        private void saveData()
+        {
+            SaveInfoData sid = new SaveInfoData();
+            sid.ProfSemester = cboSemester.SelectedIndex;
+            sid.ProfSchoolYear = cboSchoolYear.SelectedIndex;
+            string name = usersData.p_id + "user";
+            SaveXML.SaveData(sid, name + ".xml");
+        }
+
+        private void loadData()
+        {
+            string name = usersData.p_id + "user";
+            if (File.Exists(name + ".xml"))
+            {
+                XmlSerializer xs = new XmlSerializer(typeof(SaveInfoData));
+                FileStream read = new FileStream(name + ".xml", FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+                SaveInfoData sid = (SaveInfoData)xs.Deserialize(read);
+
+                cboSemester.SelectedIndex = sid.ProfSemester;
+                cboSchoolYear.SelectedIndex = sid.ProfSchoolYear;
+            }
         }
     }
 }

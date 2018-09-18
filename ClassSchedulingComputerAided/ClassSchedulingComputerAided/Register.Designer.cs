@@ -269,6 +269,7 @@
             this.rdoFulltimer.Location = new System.Drawing.Point(18, 28);
             this.rdoFulltimer.Name = "rdoFulltimer";
             this.rdoFulltimer.Size = new System.Drawing.Size(75, 15);
+            this.rdoFulltimer.Style = MetroFramework.MetroColorStyle.Red;
             this.rdoFulltimer.TabIndex = 6;
             this.rdoFulltimer.TabStop = true;
             this.rdoFulltimer.Text = "Full-timer";
@@ -281,6 +282,7 @@
             this.rdoParttimer.Location = new System.Drawing.Point(99, 28);
             this.rdoParttimer.Name = "rdoParttimer";
             this.rdoParttimer.Size = new System.Drawing.Size(77, 15);
+            this.rdoParttimer.Style = MetroFramework.MetroColorStyle.Red;
             this.rdoParttimer.TabIndex = 7;
             this.rdoParttimer.TabStop = true;
             this.rdoParttimer.Text = "Part-timer";
@@ -293,6 +295,7 @@
             this.rdoRetiree.Location = new System.Drawing.Point(185, 28);
             this.rdoRetiree.Name = "rdoRetiree";
             this.rdoRetiree.Size = new System.Drawing.Size(59, 15);
+            this.rdoRetiree.Style = MetroFramework.MetroColorStyle.Red;
             this.rdoRetiree.TabIndex = 8;
             this.rdoRetiree.TabStop = true;
             this.rdoRetiree.Text = "Retiree";
@@ -331,6 +334,7 @@
             this.rdoFemale.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rdoFemale.Name = "rdoFemale";
             this.rdoFemale.Size = new System.Drawing.Size(61, 15);
+            this.rdoFemale.Style = MetroFramework.MetroColorStyle.Red;
             this.rdoFemale.TabIndex = 5;
             this.rdoFemale.TabStop = true;
             this.rdoFemale.Text = "Female";
@@ -345,6 +349,7 @@
             this.rdoMale.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rdoMale.Name = "rdoMale";
             this.rdoMale.Size = new System.Drawing.Size(49, 15);
+            this.rdoMale.Style = MetroFramework.MetroColorStyle.Red;
             this.rdoMale.TabIndex = 4;
             this.rdoMale.TabStop = true;
             this.rdoMale.Text = "Male";

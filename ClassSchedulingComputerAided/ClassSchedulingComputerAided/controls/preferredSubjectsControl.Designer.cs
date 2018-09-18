@@ -51,6 +51,7 @@
             this.lblTotalSubjects = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbl_title = new MetroFramework.Controls.MetroLabel();
             this.pnlAddSubject = new System.Windows.Forms.Panel();
             this.dgvAddSubject = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.label1 = new System.Windows.Forms.Label();
@@ -71,7 +72,6 @@
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.label4 = new System.Windows.Forms.Label();
             this.btnOK = new MetroFramework.Controls.MetroButton();
-            this.lbl_title = new MetroFramework.Controls.MetroLabel();
             this.panel1.SuspendLayout();
             this.pnlAddSubject.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAddSubject)).BeginInit();
@@ -219,6 +219,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(668, 39);
             this.panel1.TabIndex = 239;
+            // 
+            // lbl_title
+            // 
+            this.lbl_title.CustomBackground = true;
+            this.lbl_title.CustomForeColor = true;
+            this.lbl_title.ForeColor = System.Drawing.Color.White;
+            this.lbl_title.Location = new System.Drawing.Point(416, 13);
+            this.lbl_title.Name = "lbl_title";
+            this.lbl_title.Size = new System.Drawing.Size(249, 18);
+            this.lbl_title.TabIndex = 237;
+            this.lbl_title.Text = "[semester] [schoolYear]";
+            this.lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // pnlAddSubject
             // 
@@ -488,6 +500,7 @@
             // 
             // cboSchoolYear
             // 
+            this.cboSchoolYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSchoolYear.FormattingEnabled = true;
             this.cboSchoolYear.Location = new System.Drawing.Point(333, 220);
             this.cboSchoolYear.Name = "cboSchoolYear";
@@ -496,6 +509,7 @@
             // 
             // cboSemester
             // 
+            this.cboSemester.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSemester.FormattingEnabled = true;
             this.cboSemester.Location = new System.Drawing.Point(333, 183);
             this.cboSemester.Name = "cboSemester";
@@ -551,18 +565,6 @@
             this.btnOK.TabIndex = 177;
             this.btnOK.Text = "OK";
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
-            // 
-            // lbl_title
-            // 
-            this.lbl_title.CustomBackground = true;
-            this.lbl_title.CustomForeColor = true;
-            this.lbl_title.ForeColor = System.Drawing.Color.White;
-            this.lbl_title.Location = new System.Drawing.Point(416, 13);
-            this.lbl_title.Name = "lbl_title";
-            this.lbl_title.Size = new System.Drawing.Size(249, 18);
-            this.lbl_title.TabIndex = 237;
-            this.lbl_title.Text = "[semester] [schoolYear]";
-            this.lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // preferredSubjectsControl
             // 

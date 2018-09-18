@@ -68,17 +68,17 @@ namespace ClassSchedulingComputerAided
                     }
                     else
                     {
-                        MessageBox.Show("Please select your teaching status", "Teaching Status");
+                        MessageBox.Show("Please select your teaching status", "Teaching Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Please select gender", "Gender");
+                    MessageBox.Show("Please select gender", "Gender", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else
             {
-                MessageBox.Show("All Fields are required", "Fields");
+                MessageBox.Show("All Fields are required", "Fields", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

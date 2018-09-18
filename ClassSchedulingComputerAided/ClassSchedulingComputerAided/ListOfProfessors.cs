@@ -103,5 +103,17 @@ namespace ClassSchedulingComputerAided
             pnlShowUserControl.Visible = false;
             btnCancel.Visible = false;
         }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            Form ahp = new frmAdminHomePage();
+            ahp.Show();
+            this.Hide();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

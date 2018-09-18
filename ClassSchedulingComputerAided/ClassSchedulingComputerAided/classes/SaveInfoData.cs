@@ -75,6 +75,9 @@ namespace ClassSchedulingComputerAided
         private string course;
         private string year;
         private string section;
+        //===12
+        private int profSemester;
+        private int profSchoolYear;
 
         //------1
         public string Prof_1
@@ -344,7 +347,7 @@ namespace ClassSchedulingComputerAided
             get { return room10; }
             set { room10 = value; }
         }
-
+        //------11
         public string CurriculumTitle
         {
             get { return curriculumTitle; }
@@ -374,6 +377,17 @@ namespace ClassSchedulingComputerAided
         {
             get { return section; }
             set { section = value; }
+        }
+        //------12
+        public int ProfSemester
+        {
+            get { return profSemester; }
+            set { profSemester = value; }
+        }
+        public int ProfSchoolYear
+        {
+            get { return profSchoolYear; }
+            set { profSchoolYear = value; }
         }
     }
 }

@@ -33,6 +33,7 @@
             this.cboSectionName = new System.Windows.Forms.ComboBox();
             this.pnlSection = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblCurriculum = new MetroFramework.Controls.MetroLabel();
             this.label12 = new System.Windows.Forms.Label();
             this.tbCtrl_Students = new System.Windows.Forms.TabControl();
             this.Professors = new System.Windows.Forms.TabPage();
@@ -107,11 +108,25 @@
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(0)))), ((int)(((byte)(17)))));
+            this.panel2.Controls.Add(this.lblCurriculum);
             this.panel2.Controls.Add(this.label12);
             this.panel2.Location = new System.Drawing.Point(-1, -1);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(925, 38);
             this.panel2.TabIndex = 245;
+            // 
+            // lblCurriculum
+            // 
+            this.lblCurriculum.CustomBackground = true;
+            this.lblCurriculum.CustomForeColor = true;
+            this.lblCurriculum.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.lblCurriculum.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.lblCurriculum.ForeColor = System.Drawing.Color.White;
+            this.lblCurriculum.Location = new System.Drawing.Point(368, 4);
+            this.lblCurriculum.Name = "lblCurriculum";
+            this.lblCurriculum.Size = new System.Drawing.Size(553, 31);
+            this.lblCurriculum.TabIndex = 178;
+            this.lblCurriculum.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label12
             // 
@@ -349,5 +364,6 @@
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.ComboBox cboProfessorName;
         private System.Windows.Forms.Panel pnlProfessor;
+        public MetroFramework.Controls.MetroLabel lblCurriculum;
     }
 }

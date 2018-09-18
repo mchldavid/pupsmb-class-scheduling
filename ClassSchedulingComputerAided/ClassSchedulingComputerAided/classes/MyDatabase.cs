@@ -204,7 +204,7 @@ namespace ClassSchedulingComputerAided
             try
             {
                 con.Open();
-                string sqlUpdateUserInformation = "UPDATE tbl_users SET username=@u, password=@p, firstName=@fN, middleName=@mN, lastName=@lN, address=@a, gender=@g, teachingStatus=@tS, courseDepartment=@cD, emailAddress=@eA, mobileNumber=@moN WHERE users_id=@id;";
+                string sqlUpdateUserInformation = "UPDATE tbl_users SET username=@u, password=@p, firstName=@fN, middleName=@mN, lastName=@lN, address=@a, gender=@g, teachingStatus=@tS, courseDepartment=@cD, emailAddress=@eA, mobileNumber=@moN, unitsAllowed=@uA WHERE users_id=@id;";
                 MySqlCommand com = new MySqlCommand(sqlUpdateUserInformation, con);
                 com.Parameters.AddWithValue("@id", id);
                 com.Parameters.AddWithValue("@u", username);
@@ -218,8 +218,13 @@ namespace ClassSchedulingComputerAided
                 com.Parameters.AddWithValue("@cD", courseDepartment);
                 com.Parameters.AddWithValue("@eA", emailAddress);
                 com.Parameters.AddWithValue("@moN", mobileNumber);
+                if (teachingStatus == "Fulltimer")
+                    com.Parameters.AddWithValue("@uA", 42);
+                if (teachingStatus == "Parttimer")
+                    com.Parameters.AddWithValue("@uA", 12);
+                if (teachingStatus == "Retiree")
+                    com.Parameters.AddWithValue("@uA", 6);
                 com.ExecuteNonQuery();
-                MessageBox.Show("Update Successfully!", "UpdateUser");
                 con.Close();
                 
                 con.Open();

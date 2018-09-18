@@ -30,21 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(classSchedulingDashboard_UserControl));
             this.pnlStudentScheduling = new System.Windows.Forms.Panel();
-            this.pnlStart = new System.Windows.Forms.Panel();
-            this.btnOK = new MetroFramework.Controls.MetroButton();
-            this.cboSchoolYear = new System.Windows.Forms.ComboBox();
-            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
-            this.cboSemester = new System.Windows.Forms.ComboBox();
-            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
-            this.cboSection = new System.Windows.Forms.ComboBox();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.cboCurriculum = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.cboCourse = new System.Windows.Forms.ComboBox();
-            this.cboYear = new System.Windows.Forms.ComboBox();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.tbl_pnl_layout = new System.Windows.Forms.TableLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -160,7 +145,6 @@
             this.btnSettings = new Bunifu.Framework.UI.BunifuImageButton();
             this.lblCurriculumTitle = new MetroFramework.Controls.MetroLabel();
             this.lblSection = new MetroFramework.Controls.MetroLabel();
-            this.btnSAVE = new MetroFramework.Controls.MetroButton();
             this.btnSet_10 = new MetroFramework.Controls.MetroButton();
             this.btnSet_9 = new MetroFramework.Controls.MetroButton();
             this.btnSet_8 = new MetroFramework.Controls.MetroButton();
@@ -171,6 +155,22 @@
             this.btnSet_3 = new MetroFramework.Controls.MetroButton();
             this.btnSet_2 = new MetroFramework.Controls.MetroButton();
             this.btnSet_1 = new MetroFramework.Controls.MetroButton();
+            this.btnSAVE = new MetroFramework.Controls.MetroButton();
+            this.pnlStart = new System.Windows.Forms.Panel();
+            this.btnOK = new MetroFramework.Controls.MetroButton();
+            this.cboSchoolYear = new System.Windows.Forms.ComboBox();
+            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
+            this.cboSemester = new System.Windows.Forms.ComboBox();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.cboSection = new System.Windows.Forms.ComboBox();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.cboCurriculum = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cboCourse = new System.Windows.Forms.ComboBox();
+            this.cboYear = new System.Windows.Forms.ComboBox();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.pnlProfessors = new System.Windows.Forms.Panel();
             this.pnlRooms = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -179,10 +179,10 @@
             this.pnlReport = new System.Windows.Forms.Panel();
             this.btnOKk = new MetroFramework.Controls.MetroButton();
             this.pnlStudentScheduling.SuspendLayout();
-            this.pnlStart.SuspendLayout();
             this.tbl_pnl_layout.SuspendLayout();
             this.pnlHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnSettings)).BeginInit();
+            this.pnlStart.SuspendLayout();
             this.pnlReport.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -192,10 +192,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlStudentScheduling.BackColor = System.Drawing.Color.White;
             this.pnlStudentScheduling.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlStudentScheduling.Controls.Add(this.pnlStart);
             this.pnlStudentScheduling.Controls.Add(this.tbl_pnl_layout);
             this.pnlStudentScheduling.Controls.Add(this.pnlHeader);
-            this.pnlStudentScheduling.Controls.Add(this.btnSAVE);
             this.pnlStudentScheduling.Controls.Add(this.btnSet_10);
             this.pnlStudentScheduling.Controls.Add(this.btnSet_9);
             this.pnlStudentScheduling.Controls.Add(this.btnSet_8);
@@ -206,195 +204,12 @@
             this.pnlStudentScheduling.Controls.Add(this.btnSet_3);
             this.pnlStudentScheduling.Controls.Add(this.btnSet_2);
             this.pnlStudentScheduling.Controls.Add(this.btnSet_1);
+            this.pnlStudentScheduling.Controls.Add(this.btnSAVE);
+            this.pnlStudentScheduling.Controls.Add(this.pnlStart);
             this.pnlStudentScheduling.Location = new System.Drawing.Point(12, 3);
             this.pnlStudentScheduling.Name = "pnlStudentScheduling";
             this.pnlStudentScheduling.Size = new System.Drawing.Size(1342, 351);
             this.pnlStudentScheduling.TabIndex = 1;
-            // 
-            // pnlStart
-            // 
-            this.pnlStart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(0)))), ((int)(((byte)(17)))));
-            this.pnlStart.Controls.Add(this.btnOK);
-            this.pnlStart.Controls.Add(this.cboSchoolYear);
-            this.pnlStart.Controls.Add(this.metroLabel6);
-            this.pnlStart.Controls.Add(this.cboSemester);
-            this.pnlStart.Controls.Add(this.metroLabel5);
-            this.pnlStart.Controls.Add(this.cboSection);
-            this.pnlStart.Controls.Add(this.metroLabel2);
-            this.pnlStart.Controls.Add(this.metroLabel4);
-            this.pnlStart.Controls.Add(this.metroLabel3);
-            this.pnlStart.Controls.Add(this.cboCurriculum);
-            this.pnlStart.Controls.Add(this.label10);
-            this.pnlStart.Controls.Add(this.cboCourse);
-            this.pnlStart.Controls.Add(this.cboYear);
-            this.pnlStart.Controls.Add(this.metroLabel1);
-            this.pnlStart.Location = new System.Drawing.Point(-10, 36);
-            this.pnlStart.Name = "pnlStart";
-            this.pnlStart.Size = new System.Drawing.Size(1353, 315);
-            this.pnlStart.TabIndex = 181;
-            // 
-            // btnOK
-            // 
-            this.btnOK.Location = new System.Drawing.Point(606, 232);
-            this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(191, 38);
-            this.btnOK.TabIndex = 157;
-            this.btnOK.Text = "OK";
-            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
-            // 
-            // cboSchoolYear
-            // 
-            this.cboSchoolYear.FormattingEnabled = true;
-            this.cboSchoolYear.Location = new System.Drawing.Point(608, 125);
-            this.cboSchoolYear.Name = "cboSchoolYear";
-            this.cboSchoolYear.Size = new System.Drawing.Size(189, 21);
-            this.cboSchoolYear.TabIndex = 156;
-            // 
-            // metroLabel6
-            // 
-            this.metroLabel6.AutoSize = true;
-            this.metroLabel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(0)))), ((int)(((byte)(17)))));
-            this.metroLabel6.CustomBackground = true;
-            this.metroLabel6.CustomForeColor = true;
-            this.metroLabel6.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel6.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel6.ForeColor = System.Drawing.Color.White;
-            this.metroLabel6.Location = new System.Drawing.Point(485, 120);
-            this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(107, 25);
-            this.metroLabel6.TabIndex = 2;
-            this.metroLabel6.Text = "School Year:";
-            // 
-            // cboSemester
-            // 
-            this.cboSemester.FormattingEnabled = true;
-            this.cboSemester.Location = new System.Drawing.Point(608, 96);
-            this.cboSemester.Name = "cboSemester";
-            this.cboSemester.Size = new System.Drawing.Size(189, 21);
-            this.cboSemester.TabIndex = 156;
-            // 
-            // metroLabel5
-            // 
-            this.metroLabel5.AutoSize = true;
-            this.metroLabel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(0)))), ((int)(((byte)(17)))));
-            this.metroLabel5.CustomBackground = true;
-            this.metroLabel5.CustomForeColor = true;
-            this.metroLabel5.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel5.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel5.ForeColor = System.Drawing.Color.White;
-            this.metroLabel5.Location = new System.Drawing.Point(485, 92);
-            this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(89, 25);
-            this.metroLabel5.TabIndex = 2;
-            this.metroLabel5.Text = "Semester:";
-            // 
-            // cboSection
-            // 
-            this.cboSection.BackColor = System.Drawing.Color.White;
-            this.cboSection.FormattingEnabled = true;
-            this.cboSection.Location = new System.Drawing.Point(756, 192);
-            this.cboSection.Name = "cboSection";
-            this.cboSection.Size = new System.Drawing.Size(41, 21);
-            this.cboSection.TabIndex = 156;
-            // 
-            // metroLabel2
-            // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(0)))), ((int)(((byte)(17)))));
-            this.metroLabel2.CustomBackground = true;
-            this.metroLabel2.CustomForeColor = true;
-            this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel2.ForeColor = System.Drawing.Color.White;
-            this.metroLabel2.Location = new System.Drawing.Point(483, 160);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(122, 25);
-            this.metroLabel2.TabIndex = 2;
-            this.metroLabel2.Text = "Select Course:";
-            // 
-            // metroLabel4
-            // 
-            this.metroLabel4.AutoSize = true;
-            this.metroLabel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(0)))), ((int)(((byte)(17)))));
-            this.metroLabel4.CustomBackground = true;
-            this.metroLabel4.CustomForeColor = true;
-            this.metroLabel4.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel4.ForeColor = System.Drawing.Color.White;
-            this.metroLabel4.Location = new System.Drawing.Point(485, 61);
-            this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(101, 25);
-            this.metroLabel4.TabIndex = 2;
-            this.metroLabel4.Text = "Curriculum:";
-            // 
-            // metroLabel3
-            // 
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(0)))), ((int)(((byte)(17)))));
-            this.metroLabel3.CustomBackground = true;
-            this.metroLabel3.CustomForeColor = true;
-            this.metroLabel3.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel3.ForeColor = System.Drawing.Color.White;
-            this.metroLabel3.Location = new System.Drawing.Point(676, 188);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(74, 25);
-            this.metroLabel3.TabIndex = 2;
-            this.metroLabel3.Text = "Section:";
-            // 
-            // cboCurriculum
-            // 
-            this.cboCurriculum.BackColor = System.Drawing.Color.White;
-            this.cboCurriculum.FormattingEnabled = true;
-            this.cboCurriculum.Location = new System.Drawing.Point(608, 67);
-            this.cboCurriculum.Name = "cboCurriculum";
-            this.cboCurriculum.Size = new System.Drawing.Size(189, 21);
-            this.cboCurriculum.TabIndex = 156;
-            // 
-            // label10
-            // 
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(482, 15);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(393, 46);
-            this.label10.TabIndex = 178;
-            this.label10.Text = "Please Set all fields below before you proceed to the scheduling.";
-            // 
-            // cboCourse
-            // 
-            this.cboCourse.BackColor = System.Drawing.Color.White;
-            this.cboCourse.FormattingEnabled = true;
-            this.cboCourse.Location = new System.Drawing.Point(608, 163);
-            this.cboCourse.Name = "cboCourse";
-            this.cboCourse.Size = new System.Drawing.Size(189, 21);
-            this.cboCourse.TabIndex = 156;
-            this.cboCourse.SelectedIndexChanged += new System.EventHandler(this.cboCourse_SelectedIndexChanged);
-            // 
-            // cboYear
-            // 
-            this.cboYear.BackColor = System.Drawing.Color.White;
-            this.cboYear.FormattingEnabled = true;
-            this.cboYear.Location = new System.Drawing.Point(608, 193);
-            this.cboYear.Name = "cboYear";
-            this.cboYear.Size = new System.Drawing.Size(39, 21);
-            this.cboYear.TabIndex = 156;
-            this.cboYear.SelectedIndexChanged += new System.EventHandler(this.cboYear_SelectedIndexChanged);
-            // 
-            // metroLabel1
-            // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(0)))), ((int)(((byte)(17)))));
-            this.metroLabel1.CustomBackground = true;
-            this.metroLabel1.CustomForeColor = true;
-            this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel1.ForeColor = System.Drawing.Color.White;
-            this.metroLabel1.Location = new System.Drawing.Point(557, 188);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(48, 25);
-            this.metroLabel1.TabIndex = 2;
-            this.metroLabel1.Text = "Year:";
             // 
             // tbl_pnl_layout
             // 
@@ -724,6 +539,7 @@
             this.cboDay_10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboDay_10.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboDay_10.Enabled = false;
             this.cboDay_10.FormattingEnabled = true;
             this.cboDay_10.Items.AddRange(new object[] {
@@ -757,6 +573,7 @@
             this.cboEnd_10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboEnd_10.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboEnd_10.Enabled = false;
             this.cboEnd_10.FormattingEnabled = true;
             this.cboEnd_10.Items.AddRange(new object[] {
@@ -799,6 +616,7 @@
             this.cboStart_1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboStart_1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboStart_1.Enabled = false;
             this.cboStart_1.FormattingEnabled = true;
             this.cboStart_1.Items.AddRange(new object[] {
@@ -842,6 +660,7 @@
             this.cboStart_10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboStart_10.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboStart_10.Enabled = false;
             this.cboStart_10.FormattingEnabled = true;
             this.cboStart_10.Items.AddRange(new object[] {
@@ -885,6 +704,7 @@
             this.cboEnd_1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboEnd_1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboEnd_1.Enabled = false;
             this.cboEnd_1.FormattingEnabled = true;
             this.cboEnd_1.Items.AddRange(new object[] {
@@ -978,6 +798,7 @@
             this.cboDay_1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboDay_1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboDay_1.Enabled = false;
             this.cboDay_1.FormattingEnabled = true;
             this.cboDay_1.Items.AddRange(new object[] {
@@ -1037,6 +858,7 @@
             this.cboDay_9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboDay_9.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboDay_9.Enabled = false;
             this.cboDay_9.FormattingEnabled = true;
             this.cboDay_9.Items.AddRange(new object[] {
@@ -1081,6 +903,7 @@
             this.cboEnd_9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboEnd_9.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboEnd_9.Enabled = false;
             this.cboEnd_9.FormattingEnabled = true;
             this.cboEnd_9.Items.AddRange(new object[] {
@@ -1136,6 +959,7 @@
             this.cboStart_9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboStart_9.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboStart_9.Enabled = false;
             this.cboStart_9.FormattingEnabled = true;
             this.cboStart_9.Items.AddRange(new object[] {
@@ -1243,6 +1067,7 @@
             this.cboDay_8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboDay_8.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboDay_8.Enabled = false;
             this.cboDay_8.FormattingEnabled = true;
             this.cboDay_8.Items.AddRange(new object[] {
@@ -1263,6 +1088,7 @@
             this.cboStart_2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboStart_2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboStart_2.Enabled = false;
             this.cboStart_2.FormattingEnabled = true;
             this.cboStart_2.Items.AddRange(new object[] {
@@ -1306,6 +1132,7 @@
             this.cboEnd_8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboEnd_8.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboEnd_8.Enabled = false;
             this.cboEnd_8.FormattingEnabled = true;
             this.cboEnd_8.Items.AddRange(new object[] {
@@ -1373,6 +1200,7 @@
             this.cboEnd_2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboEnd_2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboEnd_2.Enabled = false;
             this.cboEnd_2.FormattingEnabled = true;
             this.cboEnd_2.Items.AddRange(new object[] {
@@ -1428,6 +1256,7 @@
             this.cboStart_8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboStart_8.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboStart_8.Enabled = false;
             this.cboStart_8.FormattingEnabled = true;
             this.cboStart_8.Items.AddRange(new object[] {
@@ -1484,6 +1313,7 @@
             this.cboDay_2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboDay_2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboDay_2.Enabled = false;
             this.cboDay_2.FormattingEnabled = true;
             this.cboDay_2.Items.AddRange(new object[] {
@@ -1568,6 +1398,7 @@
             this.cboDay_7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboDay_7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboDay_7.Enabled = false;
             this.cboDay_7.FormattingEnabled = true;
             this.cboDay_7.Items.AddRange(new object[] {
@@ -1601,6 +1432,7 @@
             this.cboEnd_7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboEnd_7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboEnd_7.Enabled = false;
             this.cboEnd_7.FormattingEnabled = true;
             this.cboEnd_7.Items.AddRange(new object[] {
@@ -1655,6 +1487,7 @@
             this.cboStart_7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboStart_7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboStart_7.Enabled = false;
             this.cboStart_7.FormattingEnabled = true;
             this.cboStart_7.Items.AddRange(new object[] {
@@ -1876,6 +1709,7 @@
             this.cboDay_6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboDay_6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboDay_6.Enabled = false;
             this.cboDay_6.FormattingEnabled = true;
             this.cboDay_6.Items.AddRange(new object[] {
@@ -1908,6 +1742,7 @@
             this.cboStart_3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboStart_3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboStart_3.Enabled = false;
             this.cboStart_3.FormattingEnabled = true;
             this.cboStart_3.Items.AddRange(new object[] {
@@ -1951,6 +1786,7 @@
             this.cboEnd_6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboEnd_6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboEnd_6.Enabled = false;
             this.cboEnd_6.FormattingEnabled = true;
             this.cboEnd_6.Items.AddRange(new object[] {
@@ -1993,6 +1829,7 @@
             this.cboEnd_3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboEnd_3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboEnd_3.Enabled = false;
             this.cboEnd_3.FormattingEnabled = true;
             this.cboEnd_3.Items.AddRange(new object[] {
@@ -2035,6 +1872,7 @@
             this.cboStart_6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboStart_6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboStart_6.Enabled = false;
             this.cboStart_6.FormattingEnabled = true;
             this.cboStart_6.Items.AddRange(new object[] {
@@ -2078,6 +1916,7 @@
             this.cboDay_3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboDay_3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboDay_3.Enabled = false;
             this.cboDay_3.FormattingEnabled = true;
             this.cboDay_3.Items.AddRange(new object[] {
@@ -2150,6 +1989,7 @@
             this.cboDay_5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboDay_5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboDay_5.Enabled = false;
             this.cboDay_5.FormattingEnabled = true;
             this.cboDay_5.Items.AddRange(new object[] {
@@ -2183,6 +2023,7 @@
             this.cboEnd_5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboEnd_5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboEnd_5.Enabled = false;
             this.cboEnd_5.FormattingEnabled = true;
             this.cboEnd_5.Items.AddRange(new object[] {
@@ -2237,6 +2078,7 @@
             this.cboStart_5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboStart_5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboStart_5.Enabled = false;
             this.cboStart_5.FormattingEnabled = true;
             this.cboStart_5.Items.AddRange(new object[] {
@@ -2346,6 +2188,7 @@
             this.cboDay_4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboDay_4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboDay_4.Enabled = false;
             this.cboDay_4.FormattingEnabled = true;
             this.cboDay_4.Items.AddRange(new object[] {
@@ -2381,6 +2224,7 @@
             this.cboEnd_4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboEnd_4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboEnd_4.Enabled = false;
             this.cboEnd_4.FormattingEnabled = true;
             this.cboEnd_4.Items.AddRange(new object[] {
@@ -2489,6 +2333,7 @@
             this.cboStart_4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboStart_4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboStart_4.Enabled = false;
             this.cboStart_4.FormattingEnabled = true;
             this.cboStart_4.Items.AddRange(new object[] {
@@ -2670,16 +2515,6 @@
             this.lblSection.Text = "Settings";
             this.lblSection.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // btnSAVE
-            // 
-            this.btnSAVE.Location = new System.Drawing.Point(1258, 317);
-            this.btnSAVE.Name = "btnSAVE";
-            this.btnSAVE.Size = new System.Drawing.Size(79, 21);
-            this.btnSAVE.TabIndex = 155;
-            this.btnSAVE.Text = "SAVE";
-            this.btnSAVE.Visible = false;
-            this.btnSAVE.Click += new System.EventHandler(this.btnSAVE_Click);
-            // 
             // btnSet_10
             // 
             this.btnSet_10.Location = new System.Drawing.Point(1195, 317);
@@ -2780,6 +2615,207 @@
             this.btnSet_1.Visible = false;
             this.btnSet_1.Click += new System.EventHandler(this.btnSet_1_Click);
             // 
+            // btnSAVE
+            // 
+            this.btnSAVE.Location = new System.Drawing.Point(1269, 317);
+            this.btnSAVE.Name = "btnSAVE";
+            this.btnSAVE.Size = new System.Drawing.Size(61, 21);
+            this.btnSAVE.TabIndex = 155;
+            this.btnSAVE.Text = "SAVE";
+            this.btnSAVE.Visible = false;
+            this.btnSAVE.Click += new System.EventHandler(this.btnSAVE_Click);
+            // 
+            // pnlStart
+            // 
+            this.pnlStart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(0)))), ((int)(((byte)(17)))));
+            this.pnlStart.Controls.Add(this.btnOK);
+            this.pnlStart.Controls.Add(this.cboSchoolYear);
+            this.pnlStart.Controls.Add(this.metroLabel6);
+            this.pnlStart.Controls.Add(this.cboSemester);
+            this.pnlStart.Controls.Add(this.metroLabel5);
+            this.pnlStart.Controls.Add(this.cboSection);
+            this.pnlStart.Controls.Add(this.metroLabel2);
+            this.pnlStart.Controls.Add(this.metroLabel4);
+            this.pnlStart.Controls.Add(this.metroLabel3);
+            this.pnlStart.Controls.Add(this.cboCurriculum);
+            this.pnlStart.Controls.Add(this.label10);
+            this.pnlStart.Controls.Add(this.cboCourse);
+            this.pnlStart.Controls.Add(this.cboYear);
+            this.pnlStart.Controls.Add(this.metroLabel1);
+            this.pnlStart.Location = new System.Drawing.Point(-10, 36);
+            this.pnlStart.Name = "pnlStart";
+            this.pnlStart.Size = new System.Drawing.Size(1350, 315);
+            this.pnlStart.TabIndex = 181;
+            // 
+            // btnOK
+            // 
+            this.btnOK.Location = new System.Drawing.Point(606, 232);
+            this.btnOK.Name = "btnOK";
+            this.btnOK.Size = new System.Drawing.Size(191, 38);
+            this.btnOK.TabIndex = 157;
+            this.btnOK.Text = "OK";
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
+            // 
+            // cboSchoolYear
+            // 
+            this.cboSchoolYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSchoolYear.FormattingEnabled = true;
+            this.cboSchoolYear.Location = new System.Drawing.Point(608, 125);
+            this.cboSchoolYear.Name = "cboSchoolYear";
+            this.cboSchoolYear.Size = new System.Drawing.Size(189, 21);
+            this.cboSchoolYear.TabIndex = 156;
+            // 
+            // metroLabel6
+            // 
+            this.metroLabel6.AutoSize = true;
+            this.metroLabel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(0)))), ((int)(((byte)(17)))));
+            this.metroLabel6.CustomBackground = true;
+            this.metroLabel6.CustomForeColor = true;
+            this.metroLabel6.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel6.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel6.ForeColor = System.Drawing.Color.White;
+            this.metroLabel6.Location = new System.Drawing.Point(485, 120);
+            this.metroLabel6.Name = "metroLabel6";
+            this.metroLabel6.Size = new System.Drawing.Size(107, 25);
+            this.metroLabel6.TabIndex = 2;
+            this.metroLabel6.Text = "School Year:";
+            // 
+            // cboSemester
+            // 
+            this.cboSemester.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSemester.FormattingEnabled = true;
+            this.cboSemester.Location = new System.Drawing.Point(608, 96);
+            this.cboSemester.Name = "cboSemester";
+            this.cboSemester.Size = new System.Drawing.Size(189, 21);
+            this.cboSemester.TabIndex = 156;
+            // 
+            // metroLabel5
+            // 
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(0)))), ((int)(((byte)(17)))));
+            this.metroLabel5.CustomBackground = true;
+            this.metroLabel5.CustomForeColor = true;
+            this.metroLabel5.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel5.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel5.ForeColor = System.Drawing.Color.White;
+            this.metroLabel5.Location = new System.Drawing.Point(485, 92);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(89, 25);
+            this.metroLabel5.TabIndex = 2;
+            this.metroLabel5.Text = "Semester:";
+            // 
+            // cboSection
+            // 
+            this.cboSection.BackColor = System.Drawing.Color.White;
+            this.cboSection.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSection.FormattingEnabled = true;
+            this.cboSection.Location = new System.Drawing.Point(756, 192);
+            this.cboSection.Name = "cboSection";
+            this.cboSection.Size = new System.Drawing.Size(41, 21);
+            this.cboSection.TabIndex = 156;
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(0)))), ((int)(((byte)(17)))));
+            this.metroLabel2.CustomBackground = true;
+            this.metroLabel2.CustomForeColor = true;
+            this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel2.ForeColor = System.Drawing.Color.White;
+            this.metroLabel2.Location = new System.Drawing.Point(483, 160);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(122, 25);
+            this.metroLabel2.TabIndex = 2;
+            this.metroLabel2.Text = "Select Course:";
+            // 
+            // metroLabel4
+            // 
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(0)))), ((int)(((byte)(17)))));
+            this.metroLabel4.CustomBackground = true;
+            this.metroLabel4.CustomForeColor = true;
+            this.metroLabel4.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel4.ForeColor = System.Drawing.Color.White;
+            this.metroLabel4.Location = new System.Drawing.Point(485, 61);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(101, 25);
+            this.metroLabel4.TabIndex = 2;
+            this.metroLabel4.Text = "Curriculum:";
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(0)))), ((int)(((byte)(17)))));
+            this.metroLabel3.CustomBackground = true;
+            this.metroLabel3.CustomForeColor = true;
+            this.metroLabel3.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel3.ForeColor = System.Drawing.Color.White;
+            this.metroLabel3.Location = new System.Drawing.Point(676, 188);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(74, 25);
+            this.metroLabel3.TabIndex = 2;
+            this.metroLabel3.Text = "Section:";
+            // 
+            // cboCurriculum
+            // 
+            this.cboCurriculum.BackColor = System.Drawing.Color.White;
+            this.cboCurriculum.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCurriculum.FormattingEnabled = true;
+            this.cboCurriculum.Location = new System.Drawing.Point(608, 67);
+            this.cboCurriculum.Name = "cboCurriculum";
+            this.cboCurriculum.Size = new System.Drawing.Size(189, 21);
+            this.cboCurriculum.TabIndex = 156;
+            // 
+            // label10
+            // 
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(482, 15);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(393, 46);
+            this.label10.TabIndex = 178;
+            this.label10.Text = "Please Set all fields below before you proceed to the scheduling.";
+            // 
+            // cboCourse
+            // 
+            this.cboCourse.BackColor = System.Drawing.Color.White;
+            this.cboCourse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCourse.FormattingEnabled = true;
+            this.cboCourse.Location = new System.Drawing.Point(608, 163);
+            this.cboCourse.Name = "cboCourse";
+            this.cboCourse.Size = new System.Drawing.Size(189, 21);
+            this.cboCourse.TabIndex = 156;
+            this.cboCourse.SelectedIndexChanged += new System.EventHandler(this.cboCourse_SelectedIndexChanged);
+            // 
+            // cboYear
+            // 
+            this.cboYear.BackColor = System.Drawing.Color.White;
+            this.cboYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboYear.FormattingEnabled = true;
+            this.cboYear.Location = new System.Drawing.Point(608, 193);
+            this.cboYear.Name = "cboYear";
+            this.cboYear.Size = new System.Drawing.Size(39, 21);
+            this.cboYear.TabIndex = 156;
+            this.cboYear.SelectedIndexChanged += new System.EventHandler(this.cboYear_SelectedIndexChanged);
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(0)))), ((int)(((byte)(17)))));
+            this.metroLabel1.CustomBackground = true;
+            this.metroLabel1.CustomForeColor = true;
+            this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel1.ForeColor = System.Drawing.Color.White;
+            this.metroLabel1.Location = new System.Drawing.Point(557, 188);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(48, 25);
+            this.metroLabel1.TabIndex = 2;
+            this.metroLabel1.Text = "Year:";
+            // 
             // pnlProfessors
             // 
             this.pnlProfessors.AutoScroll = true;
@@ -2848,23 +2884,23 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.Controls.Add(this.pnlReport);
             this.Controls.Add(this.pnlRooms);
             this.Controls.Add(this.pnlProfessors);
             this.Controls.Add(this.pnlStudentScheduling);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
+            this.Controls.Add(this.pnlReport);
             this.Name = "classSchedulingDashboard_UserControl";
             this.Size = new System.Drawing.Size(1373, 763);
             this.Load += new System.EventHandler(this.classSchedulingDashboard_UserControl_Load);
             this.pnlStudentScheduling.ResumeLayout(false);
-            this.pnlStart.ResumeLayout(false);
-            this.pnlStart.PerformLayout();
             this.tbl_pnl_layout.ResumeLayout(false);
             this.tbl_pnl_layout.PerformLayout();
             this.pnlHeader.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnSettings)).EndInit();
+            this.pnlStart.ResumeLayout(false);
+            this.pnlStart.PerformLayout();
             this.pnlReport.ResumeLayout(false);
             this.ResumeLayout(false);
 
