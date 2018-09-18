@@ -15,7 +15,7 @@ namespace ClassSchedulingComputerAided
         public frmProfessorHomePage()
         {
             InitializeComponent();
-            sidePanel.Height = btnMyInformation.Height;
+            sidePanel.Height = btnMyInformation.Height - 1;
         }
 
         MyDatabase md = new MyDatabase();
@@ -42,7 +42,7 @@ namespace ClassSchedulingComputerAided
             professorsScheduleControl psc = new professorsScheduleControl();
             pnl.Controls.Add(psc);
 
-            sidePanel.Height = btnMyPreferredSchedule.Height;
+            sidePanel.Height = btnMyPreferredSchedule.Height - 1;
             sidePanel.Top = btnMyPreferredSchedule.Top;
             //frmPreferredSchedule pt = new frmPreferredSchedule();
             //pt.lbl_id.Text = lbl_id.Text;
@@ -56,7 +56,7 @@ namespace ClassSchedulingComputerAided
             preferredSubjectsControl psc = new preferredSubjectsControl();
             pnl.Controls.Add(psc);
 
-            sidePanel.Height = btnMyPreferredSubjects.Height;
+            sidePanel.Height = btnMyPreferredSubjects.Height - 1;
             sidePanel.Top = btnMyPreferredSubjects.Top;
             //frmPrefferedSubjects ps = new frmPrefferedSubjects();
             //ps.Show();
@@ -69,14 +69,14 @@ namespace ClassSchedulingComputerAided
             InformtionControl ic = new InformtionControl();
             pnl.Controls.Add(ic);
 
-            sidePanel.Height = btnMyInformation.Height;
+            sidePanel.Height = btnMyInformation.Height - 1;
             sidePanel.Top = btnMyInformation.Top;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             pnl.Controls.Clear();
-            sidePanel.Height = btnHome.Height;
+            sidePanel.Height = btnHome.Height - 1;
             sidePanel.Top = btnHome.Top;
         }
 
@@ -88,8 +88,18 @@ namespace ClassSchedulingComputerAided
         private void btnHome_Click(object sender, EventArgs e)
         {
             pnl.Controls.Clear();
-            sidePanel.Height = btnHome.Height;
+            sidePanel.Height = btnHome.Height - 1;
             sidePanel.Top = btnHome.Top;
+        }
+
+        private void btnProfessorsScheduled_Click(object sender, EventArgs e)
+        {
+            frmClassScheduled cs = new frmClassScheduled();
+            this.Hide();
+            cs.Show();
+
+            sidePanel.Height = btnProfessorsScheduled.Height - 1;
+            sidePanel.Top = btnProfessorsScheduled.Top;
         }
 
         

@@ -81,6 +81,12 @@
     <Compile Include="AdminHomePage.Designer.cs">
       <DependentUpon>AdminHomePage.cs</DependentUpon>
     </Compile>
+    <Compile Include="ClassScheduled.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClassScheduled.Designer.cs">
+      <DependentUpon>ClassScheduled.cs</DependentUpon>
+    </Compile>
     <Compile Include="ClassScheduleDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +94,12 @@
       <DependentUpon>ClassScheduleDashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="classes\ClassSchedule_Data.cs" />
+    <Compile Include="controls\ClassScheduledProfessorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\ClassScheduledProfessorControl.Designer.cs">
+      <DependentUpon>ClassScheduledProfessorControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConnectionWizard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,6 +167,12 @@
     <Compile Include="classes\StudentsScheduled.cs" />
     <Compile Include="classes\SubjectForStudents.cs" />
     <Compile Include="classes\CreateDatabase.cs" />
+    <Compile Include="profScheduledControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="profScheduledControl.Designer.cs">
+      <DependentUpon>profScheduledControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="SemesterAndSchoolYear.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -332,8 +350,14 @@
     <EmbeddedResource Include="AdminHomePage.resx">
       <DependentUpon>AdminHomePage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ClassScheduled.resx">
+      <DependentUpon>ClassScheduled.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ClassScheduleDashboard.resx">
       <DependentUpon>ClassScheduleDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controls\ClassScheduledProfessorControl.resx">
+      <DependentUpon>ClassScheduledProfessorControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ConnectionWizard.resx">
       <DependentUpon>ConnectionWizard.cs</DependentUpon>
@@ -364,6 +388,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="controls\CSD_ProfTimeTable.resx">
       <DependentUpon>CSD_ProfTimeTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="profScheduledControl.resx">
+      <DependentUpon>profScheduledControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SemesterAndSchoolYear.resx">
       <DependentUpon>SemesterAndSchoolYear.cs</DependentUpon>

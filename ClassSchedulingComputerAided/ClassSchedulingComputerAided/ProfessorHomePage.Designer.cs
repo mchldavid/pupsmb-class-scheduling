@@ -44,6 +44,7 @@
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnl = new System.Windows.Forms.Panel();
+            this.btnProfessorsScheduled = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -57,6 +58,7 @@
             this.panel3.Controls.Add(this.sidePanel);
             this.panel3.Controls.Add(this.panel2);
             this.panel3.Controls.Add(this.btnLogout);
+            this.panel3.Controls.Add(this.btnProfessorsScheduled);
             this.panel3.Controls.Add(this.btnMyPreferredSubjects);
             this.panel3.Controls.Add(this.btnMyPreferredSchedule);
             this.panel3.Controls.Add(this.btnHome);
@@ -72,7 +74,7 @@
             this.sidePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(149)))), ((int)(((byte)(1)))));
             this.sidePanel.Location = new System.Drawing.Point(-2, 73);
             this.sidePanel.Name = "sidePanel";
-            this.sidePanel.Size = new System.Drawing.Size(10, 40);
+            this.sidePanel.Size = new System.Drawing.Size(10, 39);
             this.sidePanel.TabIndex = 111;
             // 
             // panel2
@@ -118,7 +120,7 @@
             this.btnLogout.IconVisible = true;
             this.btnLogout.IconZoom = 52D;
             this.btnLogout.IsTab = false;
-            this.btnLogout.Location = new System.Drawing.Point(1, 241);
+            this.btnLogout.Location = new System.Drawing.Point(0, 278);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnLogout.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
@@ -153,7 +155,7 @@
             this.btnMyPreferredSubjects.IconVisible = true;
             this.btnMyPreferredSubjects.IconZoom = 52D;
             this.btnMyPreferredSubjects.IsTab = false;
-            this.btnMyPreferredSubjects.Location = new System.Drawing.Point(1, 199);
+            this.btnMyPreferredSubjects.Location = new System.Drawing.Point(0, 196);
             this.btnMyPreferredSubjects.Name = "btnMyPreferredSubjects";
             this.btnMyPreferredSubjects.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnMyPreferredSubjects.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
@@ -188,7 +190,7 @@
             this.btnMyPreferredSchedule.IconVisible = true;
             this.btnMyPreferredSchedule.IconZoom = 60D;
             this.btnMyPreferredSchedule.IsTab = false;
-            this.btnMyPreferredSchedule.Location = new System.Drawing.Point(1, 157);
+            this.btnMyPreferredSchedule.Location = new System.Drawing.Point(0, 155);
             this.btnMyPreferredSchedule.Name = "btnMyPreferredSchedule";
             this.btnMyPreferredSchedule.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnMyPreferredSchedule.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
@@ -223,7 +225,7 @@
             this.btnHome.IconVisible = true;
             this.btnHome.IconZoom = 50D;
             this.btnHome.IsTab = false;
-            this.btnHome.Location = new System.Drawing.Point(1, 73);
+            this.btnHome.Location = new System.Drawing.Point(0, 73);
             this.btnHome.Name = "btnHome";
             this.btnHome.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnHome.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
@@ -258,7 +260,7 @@
             this.btnMyInformation.IconVisible = true;
             this.btnMyInformation.IconZoom = 55D;
             this.btnMyInformation.IsTab = false;
-            this.btnMyInformation.Location = new System.Drawing.Point(1, 115);
+            this.btnMyInformation.Location = new System.Drawing.Point(0, 114);
             this.btnMyInformation.Name = "btnMyInformation";
             this.btnMyInformation.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnMyInformation.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
@@ -330,6 +332,41 @@
             this.pnl.Size = new System.Drawing.Size(668, 452);
             this.pnl.TabIndex = 141;
             // 
+            // btnProfessorsScheduled
+            // 
+            this.btnProfessorsScheduled.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(149)))), ((int)(((byte)(1)))));
+            this.btnProfessorsScheduled.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btnProfessorsScheduled.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnProfessorsScheduled.BorderRadius = 0;
+            this.btnProfessorsScheduled.ButtonText = "    Class Scheduled";
+            this.btnProfessorsScheduled.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnProfessorsScheduled.DisabledColor = System.Drawing.Color.Gray;
+            this.btnProfessorsScheduled.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnProfessorsScheduled.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnProfessorsScheduled.Iconimage")));
+            this.btnProfessorsScheduled.Iconimage_right = null;
+            this.btnProfessorsScheduled.Iconimage_right_Selected = null;
+            this.btnProfessorsScheduled.Iconimage_Selected = null;
+            this.btnProfessorsScheduled.IconMarginLeft = 24;
+            this.btnProfessorsScheduled.IconMarginRight = 0;
+            this.btnProfessorsScheduled.IconRightVisible = true;
+            this.btnProfessorsScheduled.IconRightZoom = 0D;
+            this.btnProfessorsScheduled.IconVisible = true;
+            this.btnProfessorsScheduled.IconZoom = 52D;
+            this.btnProfessorsScheduled.IsTab = false;
+            this.btnProfessorsScheduled.Location = new System.Drawing.Point(0, 237);
+            this.btnProfessorsScheduled.Name = "btnProfessorsScheduled";
+            this.btnProfessorsScheduled.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btnProfessorsScheduled.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
+            this.btnProfessorsScheduled.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnProfessorsScheduled.selected = false;
+            this.btnProfessorsScheduled.Size = new System.Drawing.Size(236, 42);
+            this.btnProfessorsScheduled.TabIndex = 106;
+            this.btnProfessorsScheduled.Text = "    Class Scheduled";
+            this.btnProfessorsScheduled.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProfessorsScheduled.Textcolor = System.Drawing.Color.White;
+            this.btnProfessorsScheduled.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProfessorsScheduled.Click += new System.EventHandler(this.btnProfessorsScheduled_Click);
+            // 
             // frmProfessorHomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -375,6 +412,7 @@
         public System.Windows.Forms.Panel pnl;
         private System.Windows.Forms.Panel sidePanel;
         public Bunifu.Framework.UI.BunifuFlatButton btnHome;
+        public Bunifu.Framework.UI.BunifuFlatButton btnProfessorsScheduled;
 
     }
 }
