@@ -1488,11 +1488,6 @@ namespace ClassSchedulingComputerAided
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            UserClickOkButton();
-        }
-
-        public void UserClickOkButton()
-        {
             ClearAll();//to clear
 
             btnSettings.Visible = true;
@@ -1512,7 +1507,6 @@ namespace ClassSchedulingComputerAided
             ClassSchedule_Data.schoolYear = cboSchoolYear.Text;
 
             tbl_pnl_layout.Visible = true;
-
             btnSet_1.Visible = true;
             btnSet_2.Visible = true;
             btnSet_3.Visible = true;
@@ -1559,7 +1553,6 @@ namespace ClassSchedulingComputerAided
             CSD_ProfTimeTable ptt = new CSD_ProfTimeTable();
             pnlProfessors.Controls.Clear();
             pnlProfessors.Controls.Add(ptt);
-            
         }
 
         private void btnSettings_Click(object sender, EventArgs e)
