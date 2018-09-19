@@ -25,6 +25,9 @@ namespace ClassSchedulingComputerAided
         public string dayPrompt = "";
         public string startTimePrompt = "";
         public string endTimePrompt = "";
+        public string courseCode = "";
+        public string sections = "";
+        public string professor = "";
         public string[] GetEndTime = new string[] 
             {"7:00 AM",
             "7:30 AM",
@@ -56,8 +59,8 @@ namespace ClassSchedulingComputerAided
             "8:30 PM",
             "9:00 PM"};
 
-        //dynamic control
-        public System.Windows.Forms.Label AddLabel()
+        //dynamic control preferred schedule
+        public System.Windows.Forms.Label AddLabelPreferredSchedule()
         {
             System.Windows.Forms.Label lbl = new System.Windows.Forms.Label();
             pnlTimeTable.Controls.Add(lbl);
@@ -65,6 +68,19 @@ namespace ClassSchedulingComputerAided
             lbl.Location = new System.Drawing.Point(callDay, callStart);
             lbl.Size = new System.Drawing.Size(79, callShade);
             lbl.BackColor = System.Drawing.Color.YellowGreen;
+            lbl.TextAlign = ContentAlignment.MiddleCenter;
+            return lbl;
+        }
+
+        //dynamic control class scheduled
+        public System.Windows.Forms.Label AddLabelClassSchedule()
+        {
+            System.Windows.Forms.Label lbl = new System.Windows.Forms.Label();
+            pnlTimeTable.Controls.Add(lbl);
+            lbl.Text = "" + courseCode + "\r\n" + sections + "\r\n" + professor + "";
+            lbl.Location = new System.Drawing.Point(callDay, callStart);
+            lbl.Size = new System.Drawing.Size(79, callShade);
+            lbl.BackColor = System.Drawing.Color.Maroon;
             lbl.TextAlign = ContentAlignment.MiddleCenter;
             return lbl;
         }
@@ -241,7 +257,55 @@ namespace ClassSchedulingComputerAided
                     dayPrompt = md.Get_info_PSchedule(ps_id).GetValue(2).ToString();
                     startTimePrompt = md.Get_info_PSchedule(ps_id).GetValue(0).ToString();
                     endTimePrompt = md.Get_info_PSchedule(ps_id).GetValue(1).ToString();
-                    AddLabel();
+                    AddLabelPreferredSchedule();
+                }
+            }
+            ProfClassScheduled();//to generate timetable for scheduled prof
+        }
+
+        private void ProfClassScheduled()
+        {
+            for (int x = 0; x < md.get_id_ProfessorScheduled(ClassSchedule_Data.professors_name, ClassSchedule_Data.semester, ClassSchedule_Data.schoolYear).Length; x++)
+            {
+                string ps_id = md.get_id_ProfessorScheduled(ClassSchedule_Data.professors_name, ClassSchedule_Data.semester, ClassSchedule_Data.schoolYear).GetValue(x).ToString();
+                if (ps_id != "")
+                {
+                    int day = GetDay(md.get_info_ProfessorScheduled(ps_id).GetValue(2).ToString());
+                    int st = GetStartTime(md.get_info_ProfessorScheduled(ps_id).GetValue(0).ToString());
+
+                    string ps_startTime = md.get_info_ProfessorScheduled(ps_id).GetValue(0).ToString();
+                    string ps_endTime = md.get_info_ProfessorScheduled(ps_id).GetValue(1).ToString();
+                    int shade = 0;
+                    int startShade = 0;
+
+                    for (int y = 0; y < GetEndTime.Length; y++)
+                    {
+                        if (ps_startTime == GetEndTime[y])
+                        {
+                            startShade = y;
+                            y = GetEndTime.Length;
+                        }
+                    }
+
+                    int c = 0;
+                    for (int z = startShade; z < GetEndTime.Length; z++)
+                    {
+                        c++;
+                        if (ps_endTime == GetEndTime[z])
+                        {
+                            shade += 18 * c;
+                        }
+                    }
+                    callDay = day;
+                    callStart = st;
+                    callShade = shade;
+                    dayPrompt = md.get_info_ProfessorScheduled(ps_id).GetValue(2).ToString();
+                    startTimePrompt = md.get_info_ProfessorScheduled(ps_id).GetValue(0).ToString();
+                    endTimePrompt = md.get_info_ProfessorScheduled(ps_id).GetValue(1).ToString();
+                    professor = md.get_info_ProfessorScheduled(ps_id).GetValue(3).ToString();
+                    courseCode = md.get_info_ProfessorScheduled(ps_id).GetValue(4).ToString();
+                    sections = md.get_info_ProfessorScheduled(ps_id).GetValue(5).ToString();
+                    AddLabelClassSchedule().BringToFront() ;
                 }
             }
         }

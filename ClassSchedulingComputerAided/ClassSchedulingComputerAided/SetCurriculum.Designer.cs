@@ -63,18 +63,18 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             this.pnl = new System.Windows.Forms.Panel();
+            this.dgvListSubject = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txtSearch = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.cboBy = new System.Windows.Forms.ComboBox();
-            this.dgvListSubject = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             this.pnl.SuspendLayout();
-            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListSubject)).BeginInit();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // metroLabel11
@@ -266,6 +266,7 @@
             this.lbl_course_id.Size = new System.Drawing.Size(108, 18);
             this.lbl_course_id.TabIndex = 178;
             this.lbl_course_id.Text = "Course Id";
+            this.lbl_course_id.Visible = false;
             // 
             // lbl_control_id
             // 
@@ -274,6 +275,7 @@
             this.lbl_control_id.Size = new System.Drawing.Size(108, 18);
             this.lbl_control_id.TabIndex = 178;
             this.lbl_control_id.Text = "Title";
+            this.lbl_control_id.Visible = false;
             // 
             // btnAdd
             // 
@@ -476,48 +478,6 @@
             this.pnl.Size = new System.Drawing.Size(608, 442);
             this.pnl.TabIndex = 168;
             // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
-            this.panel4.Controls.Add(this.txtSearch);
-            this.panel4.Controls.Add(this.metroLabel7);
-            this.panel4.Controls.Add(this.cboBy);
-            this.panel4.Location = new System.Drawing.Point(-3, 2);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(615, 39);
-            this.panel4.TabIndex = 242;
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtSearch.CustomBackground = true;
-            this.txtSearch.Location = new System.Drawing.Point(201, 10);
-            this.txtSearch.Multiline = true;
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(144, 21);
-            this.txtSearch.TabIndex = 134;
-            // 
-            // metroLabel7
-            // 
-            this.metroLabel7.CustomBackground = true;
-            this.metroLabel7.CustomForeColor = true;
-            this.metroLabel7.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.metroLabel7.Location = new System.Drawing.Point(132, 10);
-            this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(63, 21);
-            this.metroLabel7.TabIndex = 135;
-            this.metroLabel7.Text = "Search:";
-            this.metroLabel7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // cboBy
-            // 
-            this.cboBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboBy.FormattingEnabled = true;
-            this.cboBy.Location = new System.Drawing.Point(351, 10);
-            this.cboBy.Name = "cboBy";
-            this.cboBy.Size = new System.Drawing.Size(128, 21);
-            this.cboBy.TabIndex = 236;
-            // 
             // dgvListSubject
             // 
             this.dgvListSubject.AllowUserToAddRows = false;
@@ -581,6 +541,48 @@
             this.dgvListSubject.Size = new System.Drawing.Size(605, 400);
             this.dgvListSubject.TabIndex = 247;
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
+            this.panel4.Controls.Add(this.txtSearch);
+            this.panel4.Controls.Add(this.metroLabel7);
+            this.panel4.Controls.Add(this.cboBy);
+            this.panel4.Location = new System.Drawing.Point(-3, 2);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(615, 39);
+            this.panel4.TabIndex = 242;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtSearch.CustomBackground = true;
+            this.txtSearch.Location = new System.Drawing.Point(201, 10);
+            this.txtSearch.Multiline = true;
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(144, 21);
+            this.txtSearch.TabIndex = 134;
+            // 
+            // metroLabel7
+            // 
+            this.metroLabel7.CustomBackground = true;
+            this.metroLabel7.CustomForeColor = true;
+            this.metroLabel7.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.metroLabel7.Location = new System.Drawing.Point(132, 10);
+            this.metroLabel7.Name = "metroLabel7";
+            this.metroLabel7.Size = new System.Drawing.Size(63, 21);
+            this.metroLabel7.TabIndex = 135;
+            this.metroLabel7.Text = "Search:";
+            this.metroLabel7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // cboBy
+            // 
+            this.cboBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboBy.FormattingEnabled = true;
+            this.cboBy.Location = new System.Drawing.Point(351, 10);
+            this.cboBy.Name = "cboBy";
+            this.cboBy.Size = new System.Drawing.Size(128, 21);
+            this.cboBy.TabIndex = 236;
+            // 
             // frmSetCurriculum
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -602,8 +604,8 @@
             this.panel3.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.pnl.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListSubject)).EndInit();
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

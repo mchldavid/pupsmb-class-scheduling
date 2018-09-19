@@ -113,5 +113,15 @@ namespace ClassSchedulingComputerAided
         private void lstActiveRooms_SelectedIndexChanged(object sender, EventArgs e)
         {
         }
+
+        private void btnInActive_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnActive_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -301,7 +301,7 @@
             this.pnlAddCourse.Controls.Add(this.metroLabel1);
             this.pnlAddCourse.Controls.Add(this.metroLabel2);
             this.pnlAddCourse.Controls.Add(this.txtAddCourseAcronym);
-            this.pnlAddCourse.Location = new System.Drawing.Point(541, 181);
+            this.pnlAddCourse.Location = new System.Drawing.Point(261, 163);
             this.pnlAddCourse.Name = "pnlAddCourse";
             this.pnlAddCourse.Size = new System.Drawing.Size(300, 280);
             this.pnlAddCourse.TabIndex = 167;
@@ -346,7 +346,7 @@
             this.pnlEditCourse.Controls.Add(this.metroLabel7);
             this.pnlEditCourse.Controls.Add(this.metroLabel8);
             this.pnlEditCourse.Controls.Add(this.txtEditCourseAcronym);
-            this.pnlEditCourse.Location = new System.Drawing.Point(591, 132);
+            this.pnlEditCourse.Location = new System.Drawing.Point(261, 152);
             this.pnlEditCourse.Name = "pnlEditCourse";
             this.pnlEditCourse.Size = new System.Drawing.Size(300, 280);
             this.pnlEditCourse.TabIndex = 169;
@@ -614,15 +614,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Drawing.MetroBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(605, 595);
+            this.Controls.Add(this.pnlEditCourse);
+            this.Controls.Add(this.pnlAddCourse);
             this.Controls.Add(this.dgvShow);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.lblRowId);
-            this.Controls.Add(this.pnlEditCourse);
             this.Controls.Add(this.lbl_control_id);
             this.Controls.Add(this.btnNext);
-            this.Controls.Add(this.pnlAddCourse);
             this.Controls.Add(this.panel1);
             this.Movable = false;
             this.Name = "frmSetCourses";
