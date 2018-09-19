@@ -22,6 +22,19 @@ namespace ClassSchedulingComputerAided
 
         }
 
+        public void randomQuestionPicker()
+        {
+            Random rnd = new Random();
+            int num = rnd.Next(1, 5);
+            if (num == 1)
+            {
+                lblQuestion1.Text = "";
+                lblQuestion2.Text = "";
+                lblQuestion3.Text = "";
+            }
+
+        }
+
         private void btnCancel_Click(object sender, EventArgs e)
         {
             frmForgotPassword fp = new frmForgotPassword();

@@ -310,7 +310,6 @@ namespace ClassSchedulingComputerAided
                 if (md.getCurriculum().GetValue(x).ToString() != "")
                     cboCurriculum.Items.Add(md.getCurriculum().GetValue(x).ToString());
             LoadSaveDataCSD_Start();//to load data
-            
         }
 
         private void cboCourse_SelectedIndexChanged(object sender, EventArgs e)
@@ -2058,7 +2057,5 @@ namespace ClassSchedulingComputerAided
             pnlRooms.Enabled = true;
             pnlProfessors.Enabled = true;
         }
-
-        
     }
 }

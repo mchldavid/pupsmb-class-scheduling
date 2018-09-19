@@ -28,40 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.bunifuSeparator4 = new Bunifu.Framework.UI.BunifuSeparator();
-            this.txtUsername = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.btnLogin = new MetroFramework.Controls.MetroLink();
             this.btnRegister = new MetroFramework.Controls.MetroLink();
             this.btnNext = new MetroFramework.Controls.MetroTile();
             this.btnOtherWay = new MetroFramework.Controls.MetroLink();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label134 = new System.Windows.Forms.Label();
+            this.btnCancel = new MetroFramework.Controls.MetroButton();
+            this.txtUsername1 = new System.Windows.Forms.TextBox();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // bunifuSeparator4
-            // 
-            this.bunifuSeparator4.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSeparator4.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
-            this.bunifuSeparator4.LineThickness = 1;
-            this.bunifuSeparator4.Location = new System.Drawing.Point(24, 64);
-            this.bunifuSeparator4.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuSeparator4.Name = "bunifuSeparator4";
-            this.bunifuSeparator4.Size = new System.Drawing.Size(277, 10);
-            this.bunifuSeparator4.TabIndex = 145;
-            this.bunifuSeparator4.Transparency = 255;
-            this.bunifuSeparator4.Vertical = false;
-            // 
-            // txtUsername
-            // 
-            this.txtUsername.Location = new System.Drawing.Point(50, 102);
-            this.txtUsername.Multiline = true;
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(218, 25);
-            this.txtUsername.TabIndex = 147;
             // 
             // metroLabel1
             // 
             this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel1.Location = new System.Drawing.Point(11, 79);
+            this.metroLabel1.Location = new System.Drawing.Point(11, 58);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(150, 25);
             this.metroLabel1.TabIndex = 146;
@@ -72,7 +54,7 @@
             // 
             this.btnLogin.FontWeight = MetroFramework.MetroLinkWeight.Light;
             this.btnLogin.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.btnLogin.Location = new System.Drawing.Point(50, 204);
+            this.btnLogin.Location = new System.Drawing.Point(50, 198);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(135, 23);
             this.btnLogin.TabIndex = 148;
@@ -85,7 +67,7 @@
             // 
             this.btnRegister.FontWeight = MetroFramework.MetroLinkWeight.Light;
             this.btnRegister.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.btnRegister.Location = new System.Drawing.Point(50, 224);
+            this.btnRegister.Location = new System.Drawing.Point(50, 218);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(135, 23);
             this.btnRegister.TabIndex = 149;
@@ -96,7 +78,7 @@
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(50, 140);
+            this.btnNext.Location = new System.Drawing.Point(50, 130);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(218, 40);
             this.btnNext.Style = MetroFramework.MetroColorStyle.Red;
@@ -112,7 +94,7 @@
             // 
             this.btnOtherWay.FontWeight = MetroFramework.MetroLinkWeight.Light;
             this.btnOtherWay.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.btnOtherWay.Location = new System.Drawing.Point(50, 184);
+            this.btnOtherWay.Location = new System.Drawing.Point(50, 178);
             this.btnOtherWay.Name = "btnOtherWay";
             this.btnOtherWay.Size = new System.Drawing.Size(135, 23);
             this.btnOtherWay.TabIndex = 151;
@@ -121,26 +103,68 @@
             this.btnOtherWay.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnOtherWay.Click += new System.EventHandler(this.btnOtherWay_Click);
             // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(0)))), ((int)(((byte)(17)))));
+            this.panel7.Controls.Add(this.label134);
+            this.panel7.Controls.Add(this.btnCancel);
+            this.panel7.Location = new System.Drawing.Point(0, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(323, 38);
+            this.panel7.TabIndex = 160;
+            // 
+            // label134
+            // 
+            this.label134.AutoSize = true;
+            this.label134.BackColor = System.Drawing.Color.Transparent;
+            this.label134.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label134.ForeColor = System.Drawing.Color.White;
+            this.label134.Location = new System.Drawing.Point(0, 5);
+            this.label134.Name = "label134";
+            this.label134.Size = new System.Drawing.Size(176, 25);
+            this.label134.TabIndex = 138;
+            this.label134.Text = "Forpot Password";
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(1281, 3);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(76, 21);
+            this.btnCancel.TabIndex = 156;
+            this.btnCancel.Text = "Cancel";
+            // 
+            // txtUsername1
+            // 
+            this.txtUsername1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername1.Location = new System.Drawing.Point(50, 86);
+            this.txtUsername1.Name = "txtUsername1";
+            this.txtUsername1.Size = new System.Drawing.Size(218, 26);
+            this.txtUsername1.TabIndex = 0;
+            this.txtUsername1.Click += new System.EventHandler(this.txtUsername_Click);
+            this.txtUsername1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUsername_KeyDown_1);
+            // 
             // frmForgotPassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Drawing.MetroBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(321, 264);
+            this.Controls.Add(this.txtUsername1);
+            this.Controls.Add(this.panel7);
             this.Controls.Add(this.btnOtherWay);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.metroLabel1);
-            this.Controls.Add(this.bunifuSeparator4);
             this.MaximizeBox = false;
             this.Movable = false;
             this.Name = "frmForgotPassword";
-            this.Style = MetroFramework.MetroColorStyle.Red;
-            this.Text = "Forgot Password";
+            this.Style = MetroFramework.MetroColorStyle.White;
             this.Load += new System.EventHandler(this.ForgotPassword_Load);
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -150,8 +174,10 @@
         public MetroFramework.Controls.MetroLink btnRegister;
         public MetroFramework.Controls.MetroTile btnNext;
         public MetroFramework.Controls.MetroLink btnOtherWay;
-        public Bunifu.Framework.UI.BunifuSeparator bunifuSeparator4;
-        public MetroFramework.Controls.MetroTextBox txtUsername;
         public MetroFramework.Controls.MetroLabel metroLabel1;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label label134;
+        private MetroFramework.Controls.MetroButton btnCancel;
+        private System.Windows.Forms.TextBox txtUsername1;
     }
 }

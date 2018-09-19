@@ -123,7 +123,7 @@ namespace ClassSchedulingComputerAided
         }
 
         //inserting of security question answer to the user in the registration
-        public void RegisterSecurityQuestion(string username, string password, string q1, string q2, string q3, string q4, string q5)
+        public void RegisterSecurityQuestion(string username, string password, string[] answer, string[] question)
         {
             try
             {
@@ -142,14 +142,14 @@ namespace ClassSchedulingComputerAided
                 }
                 con.Close();
                 con.Open();
-                string sqlInsertSQ = "INSERT INTO tbl_securityquestions(users_id, 1Answer, 2Answer, 3Answer, 4Answer, 5Answer) VALUES('" + id + "',@1, @2, @3, @4, @5)";
-                MySqlCommand com1 = new MySqlCommand(sqlInsertSQ, con);
-                com1.Parameters.AddWithValue("@1", q1);
-                com1.Parameters.AddWithValue("@2", q2);
-                com1.Parameters.AddWithValue("@3", q3);
-                com1.Parameters.AddWithValue("@4", q4);
-                com1.Parameters.AddWithValue("@5", q5);
-                com1.ExecuteNonQuery();
+                for (int x = 0; x < 5; x++)
+                {
+                    string sqlInsertSQ = "INSERT INTO tbl_securityquestions(users_id, answer, question) VALUES('" + id + "', @a, @q)";
+                    MySqlCommand com1 = new MySqlCommand(sqlInsertSQ, con);
+                    com1.Parameters.AddWithValue("@a", answer[x]);
+                    com1.Parameters.AddWithValue("@q", question[x]);
+                    com1.ExecuteNonQuery();
+                }
             }
             catch (MySqlException ex)
             {
@@ -2112,6 +2112,35 @@ namespace ClassSchedulingComputerAided
             {
                 con.Close();
             }
+        }
+
+        //===============Forgot Password==============
+        public bool UserExists(string username)
+        {
+            bool result = false;
+            try
+            {
+                con.Open();
+                string sql = "SELECT * FROM tbl_users t WHERE username = @usr;";
+                MySqlCommand cmd = new MySqlCommand(sql, con);
+                cmd.Parameters.AddWithValue("@usr", username);
+                cmd.ExecuteNonQuery();
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    result = true;
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "UserExists");
+            }
+            finally
+            {
+                con.Close();
+            }
+            return result;
         }
     }
 }

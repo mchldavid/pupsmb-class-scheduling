@@ -107,16 +107,12 @@ namespace ClassSchedulingComputerAided
                     + name +"`.`tbl_securityquestions` ("
                     + "`sq_id` int(10) unsigned NOT NULL auto_increment,"
                     + "`users_id` int(10) unsigned NOT NULL,"
-                    + "`1Answer` varchar(45) NOT NULL,"
-                    + "`2Answer` varchar(45) NOT NULL,"
-                    + "`3Answer` varchar(45) NOT NULL,"
-                    + "`4Answer` varchar(45) NOT NULL,"
-                    + "`5Answer` varchar(45) NOT NULL,"
+                    + "`answer` varchar(45) NOT NULL,"
+                    + "`question` varchar(100) NOT NULL,"
                     + "PRIMARY KEY  (`sq_id`),"
                     + "KEY `FK_tbl_securityquestions_1` (`users_id`),"
                     + "CONSTRAINT `FK_tbl_securityquestions_1` FOREIGN KEY (`users_id`) REFERENCES `tbl_users` (`users_id`)"
-                    + ") ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;"
-                    + "", dbconn))
+                    + ") ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;", dbconn))
                 {
                     dbconn.Open();
                     cmd.ExecuteNonQuery();

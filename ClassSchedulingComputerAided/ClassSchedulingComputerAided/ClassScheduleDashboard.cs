@@ -23,15 +23,7 @@ namespace ClassSchedulingComputerAided
         {
             classSchedulingDashboard_UserControl studentDashboard = new classSchedulingDashboard_UserControl();
             pnlDashboard.Controls.Clear();
-            pnlDashboard.Controls.Add(studentDashboard);
-            for (int x = 0; x < md.getCourseYearSection().Length; x++)
-                if (md.getCourseYearSection().GetValue(x).ToString() != "")
-                    studentDashboard.cboCourse.Items.Add(md.getCourseYearSection().GetValue(x).ToString());
-
-            for (int x = 0; x < md.getCurriculum().Length; x++)
-                if (md.getCurriculum().GetValue(x).ToString() != "")
-                    studentDashboard.cboCurriculum.Items.Add(md.getCurriculum().GetValue(x).ToString());
-
+            pnlDashboard.Controls.Add(studentDashboard);    
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
