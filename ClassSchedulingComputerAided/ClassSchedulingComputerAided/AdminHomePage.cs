@@ -82,7 +82,7 @@ namespace ClassSchedulingComputerAided
             this.Hide();
         }
 
-        private void btnMyAccount_Click(object sender, EventArgs e)
+        public void btnMyAccount_Click(object sender, EventArgs e)
         {
             Form ma = new frmMyAccount();
             ma.Show();

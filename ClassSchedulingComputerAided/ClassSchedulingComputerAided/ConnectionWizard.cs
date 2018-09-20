@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using ClassSchedulingComputerAided.Properties;
 using MySql.Data.MySqlClient;
 using System.Diagnostics;//for restarting the app
+using System.Net.Sockets;//addressfamily
+using System.Net;//dns
 
 namespace ClassSchedulingComputerAided
 {
@@ -29,6 +31,8 @@ namespace ClassSchedulingComputerAided
             txtDatabase.Text = Settings.Default["DatabaseName"].ToString();
             txtUsername.Text = Settings.Default["UsernameDB"].ToString();
             txtPassword.Text = Settings.Default["PasswordDB"].ToString();
+
+            lblIPv4.Text = GetLocalIPAddress();
         }
 
         private void btnSAVE_Click(object sender, EventArgs e)
@@ -339,6 +343,19 @@ namespace ClassSchedulingComputerAided
                 l.Show();
                 this.Hide();
             }
+        }
+
+        public static string GetLocalIPAddress()
+        {
+            var host = Dns.GetHostEntry(Dns.GetHostName());
+            foreach (var ip in host.AddressList)
+            {
+                if (ip.AddressFamily == AddressFamily.InterNetwork)
+                {
+                    return ip.ToString();
+                }
+            }
+            throw new Exception("No network adapters with an IPv4 address in the system!");
         }
 
     }

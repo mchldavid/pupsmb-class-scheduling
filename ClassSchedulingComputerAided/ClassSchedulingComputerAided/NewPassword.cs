@@ -40,6 +40,16 @@ namespace ClassSchedulingComputerAided
                     usersData.p_id = md.LoginTest(usersData.p_usr, ms.encryptPassword(txtNewPassword.Text)).GetValue(1).ToString();
                     this.Hide();
                 }
+                if (md.LoginTest(usersData.p_usr, ms.encryptPassword(txtNewPassword.Text)).GetValue(2).ToString() == "administrator")
+                {
+                    usersData.a_id = md.LoginTest(usersData.p_usr, ms.encryptPassword(txtNewPassword.Text)).GetValue(1).ToString();
+                    md.AccountInfo();
+                    frmAdminHomePage admin = new frmAdminHomePage();
+                    admin.Show();
+                    admin.btnMyAccount_Click(sender, e);
+                    
+                    this.Hide();
+                }
             }
         }
     }

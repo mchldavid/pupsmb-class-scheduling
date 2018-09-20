@@ -46,6 +46,8 @@
             this.btnSAVE = new MetroFramework.Controls.MetroButton();
             this.btnCancel = new MetroFramework.Controls.MetroButton();
             this.label6 = new System.Windows.Forms.Label();
+            this.lblIP_Address = new System.Windows.Forms.Label();
+            this.lblIPv4 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -78,6 +80,8 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.btnCreateDatabase);
             this.groupBox1.Controls.Add(this.btnTest);
+            this.groupBox1.Controls.Add(this.lblIPv4);
+            this.groupBox1.Controls.Add(this.lblIP_Address);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label4);
@@ -90,7 +94,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(23, 48);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(426, 218);
+            this.groupBox1.Size = new System.Drawing.Size(426, 225);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Customize connection";
@@ -99,7 +103,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(305, 37);
+            this.label2.Location = new System.Drawing.Point(305, 54);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 17);
             this.label2.TabIndex = 4;
@@ -108,7 +112,7 @@
             // btnCreateDatabase
             // 
             this.btnCreateDatabase.Enabled = false;
-            this.btnCreateDatabase.Location = new System.Drawing.Point(261, 178);
+            this.btnCreateDatabase.Location = new System.Drawing.Point(261, 195);
             this.btnCreateDatabase.Name = "btnCreateDatabase";
             this.btnCreateDatabase.Size = new System.Drawing.Size(123, 21);
             this.btnCreateDatabase.TabIndex = 12;
@@ -118,7 +122,7 @@
             // btnTest
             // 
             this.btnTest.Enabled = false;
-            this.btnTest.Location = new System.Drawing.Point(112, 178);
+            this.btnTest.Location = new System.Drawing.Point(112, 195);
             this.btnTest.Name = "btnTest";
             this.btnTest.Size = new System.Drawing.Size(123, 21);
             this.btnTest.TabIndex = 12;
@@ -129,7 +133,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(27, 138);
+            this.label5.Location = new System.Drawing.Point(27, 155);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(66, 17);
             this.label5.TabIndex = 10;
@@ -139,7 +143,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(27, 60);
+            this.label3.Location = new System.Drawing.Point(27, 77);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 17);
             this.label3.TabIndex = 6;
@@ -149,7 +153,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(27, 112);
+            this.label4.Location = new System.Drawing.Point(27, 129);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 17);
             this.label4.TabIndex = 8;
@@ -159,7 +163,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(27, 34);
+            this.label1.Location = new System.Drawing.Point(27, 51);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(37, 17);
             this.label1.TabIndex = 2;
@@ -168,7 +172,7 @@
             // txtPort
             // 
             this.txtPort.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPort.Location = new System.Drawing.Point(345, 35);
+            this.txtPort.Location = new System.Drawing.Point(345, 52);
             this.txtPort.Name = "txtPort";
             this.txtPort.Size = new System.Drawing.Size(75, 21);
             this.txtPort.TabIndex = 5;
@@ -177,7 +181,7 @@
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(112, 138);
+            this.txtPassword.Location = new System.Drawing.Point(112, 155);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(308, 21);
@@ -186,7 +190,7 @@
             // txtUsername
             // 
             this.txtUsername.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(112, 112);
+            this.txtUsername.Location = new System.Drawing.Point(112, 129);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(308, 21);
             this.txtUsername.TabIndex = 9;
@@ -194,7 +198,7 @@
             // txtDatabase
             // 
             this.txtDatabase.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDatabase.Location = new System.Drawing.Point(112, 60);
+            this.txtDatabase.Location = new System.Drawing.Point(112, 77);
             this.txtDatabase.Name = "txtDatabase";
             this.txtDatabase.Size = new System.Drawing.Size(308, 21);
             this.txtDatabase.TabIndex = 7;
@@ -203,7 +207,7 @@
             // txtHost
             // 
             this.txtHost.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHost.Location = new System.Drawing.Point(112, 34);
+            this.txtHost.Location = new System.Drawing.Point(112, 51);
             this.txtHost.Name = "txtHost";
             this.txtHost.Size = new System.Drawing.Size(180, 21);
             this.txtHost.TabIndex = 3;
@@ -211,7 +215,7 @@
             // 
             // btnSAVE
             // 
-            this.btnSAVE.Location = new System.Drawing.Point(284, 276);
+            this.btnSAVE.Location = new System.Drawing.Point(284, 292);
             this.btnSAVE.Name = "btnSAVE";
             this.btnSAVE.Size = new System.Drawing.Size(79, 21);
             this.btnSAVE.TabIndex = 13;
@@ -220,7 +224,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(370, 276);
+            this.btnCancel.Location = new System.Drawing.Point(370, 292);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(79, 21);
             this.btnCancel.TabIndex = 14;
@@ -231,17 +235,37 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(23, 278);
+            this.label6.Location = new System.Drawing.Point(23, 294);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(202, 16);
             this.label6.TabIndex = 10;
             this.label6.Text = "Note: Please Set the connection.";
             // 
+            // lblIP_Address
+            // 
+            this.lblIP_Address.AutoSize = true;
+            this.lblIP_Address.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIP_Address.Location = new System.Drawing.Point(27, 22);
+            this.lblIP_Address.Name = "lblIP_Address";
+            this.lblIP_Address.Size = new System.Drawing.Size(88, 17);
+            this.lblIP_Address.TabIndex = 10;
+            this.lblIP_Address.Text = "IPv4 address: ";
+            // 
+            // lblIPv4
+            // 
+            this.lblIPv4.AutoSize = true;
+            this.lblIPv4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIPv4.Location = new System.Drawing.Point(110, 22);
+            this.lblIPv4.Name = "lblIPv4";
+            this.lblIPv4.Size = new System.Drawing.Size(55, 16);
+            this.lblIPv4.TabIndex = 10;
+            this.lblIPv4.Text = "Address";
+            // 
             // frmConnectionWizard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(470, 312);
+            this.ClientSize = new System.Drawing.Size(470, 330);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSAVE);
             this.Controls.Add(this.groupBox1);
@@ -279,5 +303,7 @@
         private MetroFramework.Controls.MetroButton btnCreateDatabase;
         public MetroFramework.Controls.MetroButton btnCancel;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblIP_Address;
+        private System.Windows.Forms.Label lblIPv4;
     }
 }

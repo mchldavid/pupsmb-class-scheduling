@@ -265,47 +265,50 @@ namespace ClassSchedulingComputerAided
 
         private void ProfClassScheduled()
         {
-            for (int x = 0; x < md.get_id_ProfessorScheduled(ClassSchedule_Data.professors_name, ClassSchedule_Data.semester, ClassSchedule_Data.schoolYear).Length; x++)
+            if (ClassSchedule_Data.professors_name != "")
             {
-                string ps_id = md.get_id_ProfessorScheduled(ClassSchedule_Data.professors_name, ClassSchedule_Data.semester, ClassSchedule_Data.schoolYear).GetValue(x).ToString();
-                if (ps_id != "")
+                for (int x = 0; x < md.get_id_ProfessorScheduled(ClassSchedule_Data.professors_name, ClassSchedule_Data.semester, ClassSchedule_Data.schoolYear).Length; x++)
                 {
-                    int day = GetDay(md.get_info_ProfessorScheduled(ps_id).GetValue(2).ToString());
-                    int st = GetStartTime(md.get_info_ProfessorScheduled(ps_id).GetValue(0).ToString());
-
-                    string ps_startTime = md.get_info_ProfessorScheduled(ps_id).GetValue(0).ToString();
-                    string ps_endTime = md.get_info_ProfessorScheduled(ps_id).GetValue(1).ToString();
-                    int shade = 0;
-                    int startShade = 0;
-
-                    for (int y = 0; y < GetEndTime.Length; y++)
+                    string ps_id = md.get_id_ProfessorScheduled(ClassSchedule_Data.professors_name, ClassSchedule_Data.semester, ClassSchedule_Data.schoolYear).GetValue(x).ToString();
+                    if (ps_id != "")
                     {
-                        if (ps_startTime == GetEndTime[y])
-                        {
-                            startShade = y;
-                            y = GetEndTime.Length;
-                        }
-                    }
+                        int day = GetDay(md.get_info_ProfessorScheduled(ps_id).GetValue(2).ToString());
+                        int st = GetStartTime(md.get_info_ProfessorScheduled(ps_id).GetValue(0).ToString());
 
-                    int c = 0;
-                    for (int z = startShade; z < GetEndTime.Length; z++)
-                    {
-                        c++;
-                        if (ps_endTime == GetEndTime[z])
+                        string ps_startTime = md.get_info_ProfessorScheduled(ps_id).GetValue(0).ToString();
+                        string ps_endTime = md.get_info_ProfessorScheduled(ps_id).GetValue(1).ToString();
+                        int shade = 0;
+                        int startShade = 0;
+
+                        for (int y = 0; y < GetEndTime.Length; y++)
                         {
-                            shade += 18 * c;
+                            if (ps_startTime == GetEndTime[y])
+                            {
+                                startShade = y;
+                                y = GetEndTime.Length;
+                            }
                         }
+
+                        int c = 0;
+                        for (int z = startShade; z < GetEndTime.Length; z++)
+                        {
+                            c++;
+                            if (ps_endTime == GetEndTime[z])
+                            {
+                                shade += 18 * c;
+                            }
+                        }
+                        callDay = day;
+                        callStart = st;
+                        callShade = shade;
+                        dayPrompt = md.get_info_ProfessorScheduled(ps_id).GetValue(2).ToString();
+                        startTimePrompt = md.get_info_ProfessorScheduled(ps_id).GetValue(0).ToString();
+                        endTimePrompt = md.get_info_ProfessorScheduled(ps_id).GetValue(1).ToString();
+                        professor = md.get_info_ProfessorScheduled(ps_id).GetValue(3).ToString();
+                        courseCode = md.get_info_ProfessorScheduled(ps_id).GetValue(4).ToString();
+                        sections = md.get_info_ProfessorScheduled(ps_id).GetValue(5).ToString();
+                        AddLabelClassSchedule().BringToFront();
                     }
-                    callDay = day;
-                    callStart = st;
-                    callShade = shade;
-                    dayPrompt = md.get_info_ProfessorScheduled(ps_id).GetValue(2).ToString();
-                    startTimePrompt = md.get_info_ProfessorScheduled(ps_id).GetValue(0).ToString();
-                    endTimePrompt = md.get_info_ProfessorScheduled(ps_id).GetValue(1).ToString();
-                    professor = md.get_info_ProfessorScheduled(ps_id).GetValue(3).ToString();
-                    courseCode = md.get_info_ProfessorScheduled(ps_id).GetValue(4).ToString();
-                    sections = md.get_info_ProfessorScheduled(ps_id).GetValue(5).ToString();
-                    AddLabelClassSchedule().BringToFront() ;
                 }
             }
         }
