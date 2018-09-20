@@ -121,7 +121,6 @@ namespace ClassSchedulingComputerAided
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            System.Environment.Exit(0);
         }
 
         private void btnConfiguration_Click(object sender, EventArgs e)
@@ -134,6 +133,15 @@ namespace ClassSchedulingComputerAided
             fcw.Show();
             fcw.btnCancel.Text = "CANCEL ";
             this.Hide();
+        }
+
+        private void btnExit_Click_1(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Do you want to Exit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (result == DialogResult.Yes)
+            {
+                System.Environment.Exit(0);
+            }
         }
     }
 }

@@ -45,6 +45,7 @@
             this.txtHost = new System.Windows.Forms.TextBox();
             this.btnSAVE = new MetroFramework.Controls.MetroButton();
             this.btnCancel = new MetroFramework.Controls.MetroButton();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -226,6 +227,16 @@
             this.btnCancel.Text = "CANCEL";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(23, 278);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(202, 16);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Note: Please Set the connection.";
+            // 
             // frmConnectionWizard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -234,6 +245,7 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSAVE);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.panel2);
             this.Name = "frmConnectionWizard";
             this.Style = MetroFramework.MetroColorStyle.White;
@@ -243,6 +255,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -265,5 +278,6 @@
         private MetroFramework.Controls.MetroButton btnSAVE;
         private MetroFramework.Controls.MetroButton btnCreateDatabase;
         public MetroFramework.Controls.MetroButton btnCancel;
+        private System.Windows.Forms.Label label6;
     }
 }

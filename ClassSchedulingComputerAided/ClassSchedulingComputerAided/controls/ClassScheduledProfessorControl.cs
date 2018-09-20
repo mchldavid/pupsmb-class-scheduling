@@ -27,7 +27,7 @@ namespace ClassSchedulingComputerAided
             string mname = md.UsersInformation(usersData.p_id).GetValue(3).ToString();
             string lname = md.UsersInformation(usersData.p_id).GetValue(4).ToString();
 
-            lblName.Text = fname + " " + mname + " " + lname + "(Class Scheduled)";
+            //lblName.Text = fname + " " + mname + " " + lname + "(Class Scheduled)";
 
             cboSemester.Items.Add("1ST");
             cboSemester.Items.Add("2ND");

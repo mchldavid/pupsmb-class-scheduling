@@ -39,6 +39,25 @@ namespace ClassSchedulingComputerAided
             if (result == DialogResult.Yes)
             {
                 md.RegisterAdmin(txtUsername.Text, ms.encryptPassword(txtPassword.Text), txtFirstName.Text, txtMiddleName.Text, txtLastName.Text, txtAddress.Text, cboGender.Text, txtEmailAddress.Text, txtMobileNumber.Text);
+
+                //get set security questions
+                string[] answer = new string[5];
+                string[] question = new string[5];
+
+                answer[0] = txtAnswer1.Text;
+                answer[1] = txtAnswer2.Text;
+                answer[2] = txtAnswer3.Text;
+                answer[3] = txtAnswer4.Text;
+                answer[4] = txtAnswer5.Text;
+
+                question[0] = "Who is your favorite actor, musician, or artist?";
+                question[1] = "What is your mother’s maiden name?";
+                question[2] = "What is your favorite color?";
+                question[3] = "In what city were you born?";
+                question[4] = "What is the name of your favorite pet?";
+
+                md.RegisterAdminSecurityQuestion(txtUsername.Text, ms.encryptPassword(txtPassword.Text), answer, question);
+                
                 MessageBox.Show("Admin account created succesdul", "Success!", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
                 this.Hide();
@@ -188,6 +207,25 @@ namespace ClassSchedulingComputerAided
 
             }
             return isEmpty;
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            pnlAdmin.Location = new Point(-437, 35);
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            pnlAdmin.Location = new Point(0, 35);
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Do you want to Exit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (result == DialogResult.Yes)
+            {
+                System.Environment.Exit(0);
+            }
         }
     }
 }

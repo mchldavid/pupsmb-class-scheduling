@@ -21,7 +21,10 @@ namespace ClassSchedulingComputerAided
         MyDatabase md = new MyDatabase();
         private void ProfessorHomePage_Load(object sender, EventArgs e)
         {
-
+            lblTime.Text = DateTime.Now.ToString("h:mm tt");
+            lblDay.Text = DateTime.Now.ToString("dddd");
+            lblDate.Text = DateTime.Now.ToString("dd MMMM yyyy");
+            timer1.Enabled = true;
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -63,7 +66,7 @@ namespace ClassSchedulingComputerAided
             //this.Hide();
         }
 
-        private void btnMyInformation_Click(object sender, EventArgs e)
+        public void btnMyInformation_Click(object sender, EventArgs e)
         {
             pnl.Controls.Clear();
             InformtionControl ic = new InformtionControl();
@@ -100,6 +103,16 @@ namespace ClassSchedulingComputerAided
 
             sidePanel.Height = btnProfessorsScheduled.Height - 1;
             sidePanel.Top = btnProfessorsScheduled.Top;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (timer1.Interval == 1000)
+            {
+                lblTime.Text = DateTime.Now.ToString("h:mm tt");
+                lblDay.Text = DateTime.Now.ToString("dddd");
+                lblDate.Text = DateTime.Now.ToString("dd MMMM yyyy");
+            }
         }
 
         

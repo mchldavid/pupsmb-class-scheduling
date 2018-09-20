@@ -38,14 +38,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnOK = new MetroFramework.Controls.MetroButton();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnSettings = new Bunifu.Framework.UI.BunifuImageButton();
             this.lblSemester = new MetroFramework.Controls.MetroLabel();
             this.lblName = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnSettings = new Bunifu.Framework.UI.BunifuImageButton();
             this.pnlStart.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnSettings)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlProfessor
@@ -154,6 +154,21 @@
             this.panel3.Size = new System.Drawing.Size(837, 38);
             this.panel3.TabIndex = 260;
             // 
+            // btnSettings
+            // 
+            this.btnSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(0)))), ((int)(((byte)(17)))));
+            this.btnSettings.Image = ((System.Drawing.Image)(resources.GetObject("btnSettings.Image")));
+            this.btnSettings.ImageActive = null;
+            this.btnSettings.Location = new System.Drawing.Point(802, 8);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Size = new System.Drawing.Size(24, 23);
+            this.btnSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnSettings.TabIndex = 247;
+            this.btnSettings.TabStop = false;
+            this.btnSettings.Visible = false;
+            this.btnSettings.Zoom = 10;
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
+            // 
             // lblSemester
             // 
             this.lblSemester.CustomBackground = true;
@@ -175,9 +190,9 @@
             this.lblName.ForeColor = System.Drawing.Color.White;
             this.lblName.Location = new System.Drawing.Point(37, 9);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(148, 19);
+            this.lblName.Size = new System.Drawing.Size(56, 19);
             this.lblName.TabIndex = 138;
-            this.lblName.Text = "(Class Scheduled)";
+            this.lblName.Text = "Home";
             // 
             // panel1
             // 
@@ -187,21 +202,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(832, 570);
             this.panel1.TabIndex = 261;
-            // 
-            // btnSettings
-            // 
-            this.btnSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(0)))), ((int)(((byte)(17)))));
-            this.btnSettings.Image = ((System.Drawing.Image)(resources.GetObject("btnSettings.Image")));
-            this.btnSettings.ImageActive = null;
-            this.btnSettings.Location = new System.Drawing.Point(802, 8);
-            this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(24, 23);
-            this.btnSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnSettings.TabIndex = 247;
-            this.btnSettings.TabStop = false;
-            this.btnSettings.Visible = false;
-            this.btnSettings.Zoom = 10;
-            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
             // 
             // ClassScheduledProfessorControl
             // 
@@ -217,8 +217,8 @@
             this.pnlStart.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnSettings)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

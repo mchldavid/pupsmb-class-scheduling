@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProfessorHomePage));
             this.panel3 = new System.Windows.Forms.Panel();
             this.sidePanel = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnLogout = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnProfessorsScheduled = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnMyPreferredSubjects = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnMyPreferredSchedule = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnHome = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -44,7 +46,11 @@
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnl = new System.Windows.Forms.Panel();
-            this.btnProfessorsScheduled = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.lblDay = new System.Windows.Forms.Label();
+            this.lblDate = new System.Windows.Forms.Label();
+            this.lblTime = new System.Windows.Forms.Label();
+            this.lbl_title = new MetroFramework.Controls.MetroLabel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -133,6 +139,41 @@
             this.btnLogout.Textcolor = System.Drawing.Color.White;
             this.btnLogout.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
+            // btnProfessorsScheduled
+            // 
+            this.btnProfessorsScheduled.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(149)))), ((int)(((byte)(1)))));
+            this.btnProfessorsScheduled.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btnProfessorsScheduled.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnProfessorsScheduled.BorderRadius = 0;
+            this.btnProfessorsScheduled.ButtonText = "    Class Scheduled";
+            this.btnProfessorsScheduled.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnProfessorsScheduled.DisabledColor = System.Drawing.Color.Gray;
+            this.btnProfessorsScheduled.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnProfessorsScheduled.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnProfessorsScheduled.Iconimage")));
+            this.btnProfessorsScheduled.Iconimage_right = null;
+            this.btnProfessorsScheduled.Iconimage_right_Selected = null;
+            this.btnProfessorsScheduled.Iconimage_Selected = null;
+            this.btnProfessorsScheduled.IconMarginLeft = 24;
+            this.btnProfessorsScheduled.IconMarginRight = 0;
+            this.btnProfessorsScheduled.IconRightVisible = true;
+            this.btnProfessorsScheduled.IconRightZoom = 0D;
+            this.btnProfessorsScheduled.IconVisible = true;
+            this.btnProfessorsScheduled.IconZoom = 52D;
+            this.btnProfessorsScheduled.IsTab = false;
+            this.btnProfessorsScheduled.Location = new System.Drawing.Point(0, 237);
+            this.btnProfessorsScheduled.Name = "btnProfessorsScheduled";
+            this.btnProfessorsScheduled.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btnProfessorsScheduled.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
+            this.btnProfessorsScheduled.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnProfessorsScheduled.selected = false;
+            this.btnProfessorsScheduled.Size = new System.Drawing.Size(236, 42);
+            this.btnProfessorsScheduled.TabIndex = 106;
+            this.btnProfessorsScheduled.Text = "    Class Scheduled";
+            this.btnProfessorsScheduled.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProfessorsScheduled.Textcolor = System.Drawing.Color.White;
+            this.btnProfessorsScheduled.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProfessorsScheduled.Click += new System.EventHandler(this.btnProfessorsScheduled_Click);
             // 
             // btnMyPreferredSubjects
             // 
@@ -297,11 +338,11 @@
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.LightCoral;
-            this.label12.Location = new System.Drawing.Point(423, 16);
+            this.label12.Location = new System.Drawing.Point(2, 8);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(216, 36);
+            this.label12.Size = new System.Drawing.Size(232, 36);
             this.label12.TabIndex = 138;
-            this.label12.Text = "Professor Form";
+            this.label12.Text = "Professor Home";
             // 
             // metroLabel4
             // 
@@ -316,6 +357,10 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(0)))), ((int)(((byte)(17)))));
+            this.panel1.Controls.Add(this.lbl_title);
+            this.panel1.Controls.Add(this.lblDay);
+            this.panel1.Controls.Add(this.lblDate);
+            this.panel1.Controls.Add(this.lblTime);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.metroLabel4);
             this.panel1.Location = new System.Drawing.Point(226, -1);
@@ -332,40 +377,56 @@
             this.pnl.Size = new System.Drawing.Size(668, 452);
             this.pnl.TabIndex = 141;
             // 
-            // btnProfessorsScheduled
+            // lblDay
             // 
-            this.btnProfessorsScheduled.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(149)))), ((int)(((byte)(1)))));
-            this.btnProfessorsScheduled.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btnProfessorsScheduled.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnProfessorsScheduled.BorderRadius = 0;
-            this.btnProfessorsScheduled.ButtonText = "    Class Scheduled";
-            this.btnProfessorsScheduled.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnProfessorsScheduled.DisabledColor = System.Drawing.Color.Gray;
-            this.btnProfessorsScheduled.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnProfessorsScheduled.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnProfessorsScheduled.Iconimage")));
-            this.btnProfessorsScheduled.Iconimage_right = null;
-            this.btnProfessorsScheduled.Iconimage_right_Selected = null;
-            this.btnProfessorsScheduled.Iconimage_Selected = null;
-            this.btnProfessorsScheduled.IconMarginLeft = 24;
-            this.btnProfessorsScheduled.IconMarginRight = 0;
-            this.btnProfessorsScheduled.IconRightVisible = true;
-            this.btnProfessorsScheduled.IconRightZoom = 0D;
-            this.btnProfessorsScheduled.IconVisible = true;
-            this.btnProfessorsScheduled.IconZoom = 52D;
-            this.btnProfessorsScheduled.IsTab = false;
-            this.btnProfessorsScheduled.Location = new System.Drawing.Point(0, 237);
-            this.btnProfessorsScheduled.Name = "btnProfessorsScheduled";
-            this.btnProfessorsScheduled.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btnProfessorsScheduled.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
-            this.btnProfessorsScheduled.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnProfessorsScheduled.selected = false;
-            this.btnProfessorsScheduled.Size = new System.Drawing.Size(236, 42);
-            this.btnProfessorsScheduled.TabIndex = 106;
-            this.btnProfessorsScheduled.Text = "    Class Scheduled";
-            this.btnProfessorsScheduled.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProfessorsScheduled.Textcolor = System.Drawing.Color.White;
-            this.btnProfessorsScheduled.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProfessorsScheduled.Click += new System.EventHandler(this.btnProfessorsScheduled_Click);
+            this.lblDay.BackColor = System.Drawing.Color.Transparent;
+            this.lblDay.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDay.ForeColor = System.Drawing.Color.LightCoral;
+            this.lblDay.Location = new System.Drawing.Point(515, 25);
+            this.lblDay.Name = "lblDay";
+            this.lblDay.Size = new System.Drawing.Size(126, 17);
+            this.lblDay.TabIndex = 141;
+            this.lblDay.Text = "Wednesday";
+            this.lblDay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblDate
+            // 
+            this.lblDate.BackColor = System.Drawing.Color.Transparent;
+            this.lblDate.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.ForeColor = System.Drawing.Color.LightCoral;
+            this.lblDate.Location = new System.Drawing.Point(500, 38);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(159, 18);
+            this.lblDate.TabIndex = 142;
+            this.lblDate.Text = "29 December 1991";
+            this.lblDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblTime
+            // 
+            this.lblTime.BackColor = System.Drawing.Color.Transparent;
+            this.lblTime.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime.ForeColor = System.Drawing.Color.LightCoral;
+            this.lblTime.Location = new System.Drawing.Point(485, 7);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(187, 24);
+            this.lblTime.TabIndex = 143;
+            this.lblTime.Text = "00:00 AM";
+            this.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_title
+            // 
+            this.lbl_title.CustomBackground = true;
+            this.lbl_title.CustomForeColor = true;
+            this.lbl_title.ForeColor = System.Drawing.Color.LightCoral;
+            this.lbl_title.Location = new System.Drawing.Point(6, 42);
+            this.lbl_title.Name = "lbl_title";
+            this.lbl_title.Size = new System.Drawing.Size(511, 18);
+            this.lbl_title.TabIndex = 245;
+            this.lbl_title.Text = "Polytechnic University of the Philippines, Sta. Maria Campus";
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // frmProfessorHomePage
             // 
@@ -413,6 +474,11 @@
         private System.Windows.Forms.Panel sidePanel;
         public Bunifu.Framework.UI.BunifuFlatButton btnHome;
         public Bunifu.Framework.UI.BunifuFlatButton btnProfessorsScheduled;
+        private System.Windows.Forms.Label lblDay;
+        private System.Windows.Forms.Label lblDate;
+        private System.Windows.Forms.Label lblTime;
+        public MetroFramework.Controls.MetroLabel lbl_title;
+        private System.Windows.Forms.Timer timer1;
 
     }
 }

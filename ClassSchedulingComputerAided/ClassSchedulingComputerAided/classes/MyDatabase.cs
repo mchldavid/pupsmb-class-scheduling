@@ -2114,6 +2114,45 @@ namespace ClassSchedulingComputerAided
             }
         }
 
+        public void RegisterAdminSecurityQuestion(string username, string password, string[] answer, string[] question)
+        {
+            try
+            {
+                con.Open();
+                string id = "";
+                string sqlSecurityQuestion = "SELECT * FROM tbl_users WHERE username = @u AND password = @p;";
+                MySqlCommand com = new MySqlCommand(sqlSecurityQuestion, con);
+                com.Parameters.AddWithValue("@u", username);
+                com.Parameters.AddWithValue("@p", password);
+                com.ExecuteNonQuery();
+
+                MySqlDataReader dr = com.ExecuteReader();
+                if (dr.Read())
+                {
+                    id = dr["users_id"].ToString();
+                }
+                con.Close();
+                con.Open();
+                for (int x = 0; x < 5; x++)
+                {
+                    string sqlInsertSQ = "INSERT INTO tbl_securityquestions(users_id, answer, question) VALUES('" + id + "', @a, @q)";
+                    MySqlCommand com1 = new MySqlCommand(sqlInsertSQ, con);
+                    com1.Parameters.AddWithValue("@a", answer[x]);
+                    com1.Parameters.AddWithValue("@q", question[x]);
+                    com1.ExecuteNonQuery();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "Admin Security Question");
+            }
+            finally
+            {
+                con.Close();
+            }
+
+        }
+
         //===============Forgot Password==============
         public bool UserExists(string username)
         {
@@ -2129,6 +2168,97 @@ namespace ClassSchedulingComputerAided
                 MySqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
+                    usersData.p_id = dr["users_id"].ToString();
+                    usersData.p_usr = dr["username"].ToString();
+                    result = true;
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "UserExists");
+            }
+            finally
+            {
+                con.Close();
+            }
+            return result;
+        }
+
+        public bool ValidSecurityQuestion(string id, string answer, string question)
+        {
+            bool result = false;
+            try
+            {
+                con.Open();
+                string sql = "SELECT * FROM tbl_securityquestions t WHERE users_id = @id AND answer = @a AND question = @q";
+                MySqlCommand cmd = new MySqlCommand(sql, con);
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.Parameters.AddWithValue("@a", answer);
+                cmd.Parameters.AddWithValue("@q", question);
+                cmd.ExecuteNonQuery();
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    result = true;
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "UserExists");
+            }
+            finally
+            {
+                con.Close();
+            }
+            return result;
+        }
+
+        public void UpdateNewPassword(string id, string newPassword)
+        {
+            try
+            {
+                con.Open();
+                string sqlUpdateUserInformation = "UPDATE tbl_users SET password = @nP WHERE users_id = @id;";
+                MySqlCommand com = new MySqlCommand(sqlUpdateUserInformation, con);
+                com.Parameters.AddWithValue("@id", id);
+                com.Parameters.AddWithValue("@nP", newPassword);
+                com.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (MySqlException er)
+            {
+                MessageBox.Show(er.Message, "UpdateNewPassword");
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public bool TryInOtherWay(string fName, string mName, string lName, string mNumber)
+        {
+            bool result = false;
+            try
+            {
+                con.Open();
+                string sql = "SELECT * FROM tbl_users t "
+                    + "WHERE firstName = @fN "
+                    + "AND middleName = @mN "
+                    + "AND lastName = @lN "
+                    + "AND mobileNumber = @moN;";
+                MySqlCommand cmd = new MySqlCommand(sql, con);
+                cmd.Parameters.AddWithValue("@fN", fName);
+                cmd.Parameters.AddWithValue("@mN", mName);
+                cmd.Parameters.AddWithValue("@lN", lName);
+                cmd.Parameters.AddWithValue("@moN", mNumber);
+                cmd.ExecuteNonQuery();
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    usersData.p_id = dr["users_id"].ToString();
+                    usersData.p_usr = dr["username"].ToString();
                     result = true;
                 }
             }

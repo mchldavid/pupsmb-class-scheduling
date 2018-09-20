@@ -45,13 +45,13 @@
             this.btnCurriculum = new Bunifu.Framework.UI.BunifuFlatButton();
             this.pnl = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbl_title = new MetroFramework.Controls.MetroLabel();
             this.lblDay = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
             this.lbl_form_title = new System.Windows.Forms.Label();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.lbl_title = new MetroFramework.Controls.MetroLabel();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -107,6 +107,7 @@
             this.lbl_curriculum_id.Size = new System.Drawing.Size(68, 13);
             this.lbl_curriculum_id.TabIndex = 3;
             this.lbl_curriculum_id.Text = "Curriculum Id";
+            this.lbl_curriculum_id.Visible = false;
             // 
             // btnEventLog
             // 
@@ -445,6 +446,17 @@
             this.panel1.Size = new System.Drawing.Size(700, 73);
             this.panel1.TabIndex = 143;
             // 
+            // lbl_title
+            // 
+            this.lbl_title.CustomBackground = true;
+            this.lbl_title.CustomForeColor = true;
+            this.lbl_title.ForeColor = System.Drawing.Color.LightCoral;
+            this.lbl_title.Location = new System.Drawing.Point(12, 43);
+            this.lbl_title.Name = "lbl_title";
+            this.lbl_title.Size = new System.Drawing.Size(511, 18);
+            this.lbl_title.TabIndex = 244;
+            this.lbl_title.Text = "Polytechnic University of the Philippines, Sta. Maria Campus";
+            // 
             // lblDay
             // 
             this.lblDay.BackColor = System.Drawing.Color.Transparent;
@@ -507,17 +519,6 @@
             // 
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // lbl_title
-            // 
-            this.lbl_title.CustomBackground = true;
-            this.lbl_title.CustomForeColor = true;
-            this.lbl_title.ForeColor = System.Drawing.Color.LightCoral;
-            this.lbl_title.Location = new System.Drawing.Point(12, 43);
-            this.lbl_title.Name = "lbl_title";
-            this.lbl_title.Size = new System.Drawing.Size(511, 18);
-            this.lbl_title.TabIndex = 244;
-            this.lbl_title.Text = "Polytechnic University of the Philippines, Sta. Maria Campus";
             // 
             // frmAdminHomePage
             // 

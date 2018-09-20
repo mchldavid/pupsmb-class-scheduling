@@ -44,7 +44,6 @@
             this.btnInActive = new MetroFramework.Controls.MetroButton();
             this.btnActiveAll = new MetroFramework.Controls.MetroButton();
             this.btnInactiveAll = new MetroFramework.Controls.MetroButton();
-            this.lbl_info = new System.Windows.Forms.Label();
             this.pnlSetRooms = new System.Windows.Forms.Panel();
             this.dgvShowRooms = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.btnCancel = new MetroFramework.Controls.MetroButton();
@@ -193,17 +192,6 @@
             this.btnInactiveAll.TabIndex = 245;
             this.btnInactiveAll.Text = ">>";
             this.btnInactiveAll.Visible = false;
-            // 
-            // lbl_info
-            // 
-            this.lbl_info.AutoSize = true;
-            this.lbl_info.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_info.ForeColor = System.Drawing.Color.DarkCyan;
-            this.lbl_info.Location = new System.Drawing.Point(20, 422);
-            this.lbl_info.Name = "lbl_info";
-            this.lbl_info.Size = new System.Drawing.Size(46, 18);
-            this.lbl_info.TabIndex = 247;
-            this.lbl_info.Text = "label";
             // 
             // pnlSetRooms
             // 
@@ -418,7 +406,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.Controls.Add(this.pnlSetRooms);
-            this.Controls.Add(this.lbl_info);
             this.Controls.Add(this.btnSetRooms);
             this.Controls.Add(this.btnActive);
             this.Controls.Add(this.btnInActive);
@@ -437,7 +424,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvShowRooms)).EndInit();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -454,7 +440,6 @@
         public MetroFramework.Controls.MetroButton btnInActive;
         public MetroFramework.Controls.MetroButton btnActiveAll;
         public MetroFramework.Controls.MetroButton btnInactiveAll;
-        public System.Windows.Forms.Label lbl_info;
         public System.Windows.Forms.Panel pnlSetRooms;
         public MetroFramework.Controls.MetroButton btnRoomCancel;
         public MetroFramework.Controls.MetroButton btnDelete;

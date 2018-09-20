@@ -17,6 +17,8 @@ namespace ClassSchedulingComputerAided
             InitializeComponent();
         }
 
+        MyDatabase md = new MyDatabase();
+
         private void TryInOtherWay_Load(object sender, EventArgs e)
         {
 
@@ -31,9 +33,17 @@ namespace ClassSchedulingComputerAided
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            frmSecurityQuestions s = new frmSecurityQuestions();
-            s.Show();
-            this.Hide();
+            if (md.TryInOtherWay(txtFirstName.Text, txtMiddleName.Text, txtLastName.Text, txtContactNumber.Text) == true)
+            {
+                frmSecurityQuestions s = new frmSecurityQuestions();
+                s.Show();
+                this.Hide();
+            }
+        }
+
+        private void s(object sender, EventArgs e)
+        {
+
         }
     }
 }

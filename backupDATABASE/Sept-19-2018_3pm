@@ -1,0 +1,569 @@
+-- MySQL Administrator dump 1.4
+--
+-- ------------------------------------------------------
+-- Server version	5.0.91-community-nt
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+
+--
+-- Create schema db_computeraided
+--
+
+CREATE DATABASE IF NOT EXISTS db_computeraided;
+USE db_computeraided;
+
+--
+-- Definition of table `tbl_course`
+--
+
+DROP TABLE IF EXISTS `tbl_course`;
+CREATE TABLE `tbl_course` (
+  `course_id` int(10) unsigned NOT NULL auto_increment,
+  `curriculums_id` int(10) unsigned NOT NULL,
+  `courseName` varchar(100) NOT NULL,
+  `courseAcronym` varchar(45) NOT NULL,
+  PRIMARY KEY  (`course_id`),
+  KEY `FK_tbl_course_1` (`curriculums_id`),
+  CONSTRAINT `FK_tbl_course_1` FOREIGN KEY (`curriculums_id`) REFERENCES `tbl_curriculums` (`curriculums_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_course`
+--
+
+/*!40000 ALTER TABLE `tbl_course` DISABLE KEYS */;
+INSERT INTO `tbl_course` (`course_id`,`curriculums_id`,`courseName`,`courseAcronym`) VALUES 
+ (1,1,'Bachelor of Science in Information Technology','BSIT'),
+ (2,1,'Bachelor of Science in Civil Engineering','BSCE'),
+ (3,1,'Bachelor of Science in Entreprenuership','BSENTREP'),
+ (7,2,'Bachelor of science in computer engineering','BSCOE'),
+ (8,2,'Bachelor of Science in Hospitality Management','BSHM'),
+ (9,2,'Diploma in office management Technology','DOMT'),
+ (10,2,'Bachelor of Science in Information Technology','BSIT'),
+ (11,13,'Bachelor of Secondary in Education Major in English','BSEDEN'),
+ (12,13,'Bachelor of Science in Accountancy','BSA'),
+ (14,1,'Bachelor of Science in Accountancy','BSA'),
+ (15,15,'Bachelor of Science in Information Technology','BSIT');
+/*!40000 ALTER TABLE `tbl_course` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tbl_curriculums`
+--
+
+DROP TABLE IF EXISTS `tbl_curriculums`;
+CREATE TABLE `tbl_curriculums` (
+  `curriculums_id` int(10) unsigned NOT NULL auto_increment,
+  `curriculumName` varchar(45) NOT NULL,
+  `publishedBy` varchar(45) NOT NULL,
+  `datePublished` varchar(45) NOT NULL,
+  `status` varchar(45) NOT NULL,
+  `inUsed` varchar(45) NOT NULL,
+  PRIMARY KEY  (`curriculums_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_curriculums`
+--
+
+/*!40000 ALTER TABLE `tbl_curriculums` DISABLE KEYS */;
+INSERT INTO `tbl_curriculums` (`curriculums_id`,`curriculumName`,`publishedBy`,`datePublished`,`status`,`inUsed`) VALUES 
+ (1,'k to 12 program from Commission commission','michael','Wednesday, 19 September 2018','active','YES'),
+ (2,'Michael Curriculum','Michael davidasdf ffefe e','Tuesday, 18 September 2018','inactive','NO'),
+ (13,'fdas','dsafadsf','Wednesday, 12 September 2018','inactive','NO'),
+ (14,'asdfasdfasdf','asdfasdfasdf','Tuesday, 18 September 2018','inactive','NO'),
+ (15,'BSIT 2009-2011','fasdfasdf','Tuesday, 18 September 2018','active','NO'),
+ (16,'BSA 2009-2010','asdfasdf','Tuesday, 18 September 2018','active','NO');
+/*!40000 ALTER TABLE `tbl_curriculums` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tbl_preferredschedules`
+--
+
+DROP TABLE IF EXISTS `tbl_preferredschedules`;
+CREATE TABLE `tbl_preferredschedules` (
+  `preferredSchedule_id` int(10) unsigned NOT NULL auto_increment,
+  `users_id` int(10) unsigned NOT NULL,
+  `startTime` varchar(45) NOT NULL,
+  `endTime` varchar(45) NOT NULL,
+  `ps_Day` varchar(45) NOT NULL,
+  PRIMARY KEY  USING BTREE (`preferredSchedule_id`),
+  KEY `FK_tbl_preferredschedules_1` (`users_id`),
+  CONSTRAINT `FK_tbl_preferredschedules_1` FOREIGN KEY (`users_id`) REFERENCES `tbl_users` (`users_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_preferredschedules`
+--
+
+/*!40000 ALTER TABLE `tbl_preferredschedules` DISABLE KEYS */;
+INSERT INTO `tbl_preferredschedules` (`preferredSchedule_id`,`users_id`,`startTime`,`endTime`,`ps_Day`) VALUES 
+ (10,1,'7:00 AM','7:30 AM','Tuesday'),
+ (13,1,'2:00 PM','5:00 PM','Thursday'),
+ (14,1,'8:30 PM','9:00 PM','Monday'),
+ (15,1,'8:00 AM','5:00 PM','Monday'),
+ (16,4,'7:00 AM','10:00 AM','Monday'),
+ (21,6,'7:00 AM','7:30 AM','Monday'),
+ (22,1,'11:00 AM','2:00 PM','Wednesday'),
+ (23,1,'7:00 AM','7:30 AM','Monday'),
+ (24,4,'9:30 AM','2:30 PM','Friday'),
+ (25,1,'7:30 AM','9:00 AM','Saturday');
+/*!40000 ALTER TABLE `tbl_preferredschedules` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tbl_preferredsubjects`
+--
+
+DROP TABLE IF EXISTS `tbl_preferredsubjects`;
+CREATE TABLE `tbl_preferredsubjects` (
+  `preferredSubjects_id` int(10) unsigned NOT NULL auto_increment,
+  `users_id` int(10) unsigned NOT NULL,
+  `subjects_id` int(10) unsigned NOT NULL,
+  `semester` varchar(45) NOT NULL,
+  `schoolYear` varchar(45) NOT NULL,
+  PRIMARY KEY  (`preferredSubjects_id`),
+  KEY `FK_tbl_preferredsubjects_1` (`users_id`),
+  KEY `FK_tbl_preferredsubjects_2` (`subjects_id`),
+  CONSTRAINT `FK_tbl_preferredsubjects_1` FOREIGN KEY (`users_id`) REFERENCES `tbl_users` (`users_id`),
+  CONSTRAINT `FK_tbl_preferredsubjects_2` FOREIGN KEY (`subjects_id`) REFERENCES `tbl_subjects` (`subjects_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_preferredsubjects`
+--
+
+/*!40000 ALTER TABLE `tbl_preferredsubjects` DISABLE KEYS */;
+INSERT INTO `tbl_preferredsubjects` (`preferredSubjects_id`,`users_id`,`subjects_id`,`semester`,`schoolYear`) VALUES 
+ (1,1,1,'1ST','2015-2016'),
+ (8,1,3,'1ST','2015-2016'),
+ (9,1,5,'1ST','2015-2016'),
+ (14,4,22,'1ST','2015-2016'),
+ (15,4,21,'1ST','2015-2016'),
+ (16,4,20,'1ST','2015-2016'),
+ (17,1,18,'1ST','2015-2016'),
+ (18,1,19,'1ST','2015-2016'),
+ (24,1,12,'1ST','2015-2016'),
+ (25,1,11,'1ST','2015-2016'),
+ (26,1,37,'2ND','2015-2016'),
+ (27,1,32,'1ST','2015-2016'),
+ (32,4,37,'2ND','2015-2016'),
+ (35,4,38,'2ND','2015-2016'),
+ (36,4,1,'1ST','2015-2016'),
+ (37,1,9,'1ST','2015-2016');
+/*!40000 ALTER TABLE `tbl_preferredsubjects` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tbl_professor_scheduled`
+--
+
+DROP TABLE IF EXISTS `tbl_professor_scheduled`;
+CREATE TABLE `tbl_professor_scheduled` (
+  `professorsScheduled_id` int(10) unsigned NOT NULL auto_increment,
+  `curriculumns_id` int(10) unsigned NOT NULL,
+  `course` varchar(45) NOT NULL,
+  `year` varchar(45) NOT NULL,
+  `section` varchar(45) NOT NULL,
+  `scheduledBy` varchar(45) NOT NULL,
+  `scheduledDate` varchar(45) NOT NULL,
+  `semester` varchar(45) NOT NULL,
+  `schoolYear` varchar(45) NOT NULL,
+  `room` varchar(45) NOT NULL,
+  `subjectCode` varchar(45) NOT NULL,
+  `subjectDescription` varchar(100) NOT NULL,
+  `professor` varchar(100) NOT NULL,
+  `scheduledStartTime` varchar(45) NOT NULL,
+  `scheduledEndTime` varchar(45) NOT NULL,
+  `scheduledDay` varchar(45) NOT NULL,
+  PRIMARY KEY  (`professorsScheduled_id`),
+  CONSTRAINT `FK_tbl_professor_scheduled_1` FOREIGN KEY (`professorsScheduled_id`) REFERENCES `tbl_professor_scheduled` (`professorsScheduled_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_professor_scheduled`
+--
+
+/*!40000 ALTER TABLE `tbl_professor_scheduled` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_professor_scheduled` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tbl_room`
+--
+
+DROP TABLE IF EXISTS `tbl_room`;
+CREATE TABLE `tbl_room` (
+  `room_id` int(10) unsigned NOT NULL auto_increment,
+  `roomCode` varchar(45) NOT NULL,
+  `roomName` varchar(45) NOT NULL,
+  `roomSlots` int(10) unsigned NOT NULL,
+  `roomStatus` varchar(45) NOT NULL,
+  PRIMARY KEY  (`room_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_room`
+--
+
+/*!40000 ALTER TABLE `tbl_room` DISABLE KEYS */;
+INSERT INTO `tbl_room` (`room_id`,`roomCode`,`roomName`,`roomSlots`,`roomStatus`) VALUES 
+ (1,'rm209','Room 209',60,'ACTIVE'),
+ (2,'RM206','206',60,'ACTIVE'),
+ (3,'RM201','ROOM 201',60,'ACTIVE'),
+ (4,'RM210','ROOM 210',60,'ACTIVE'),
+ (5,'SMRMLNGE','Student Lounge',60,'ACTIVE'),
+ (6,'RM207','Room 207',60,'ACTIVE');
+/*!40000 ALTER TABLE `tbl_room` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tbl_room_scheduled`
+--
+
+DROP TABLE IF EXISTS `tbl_room_scheduled`;
+CREATE TABLE `tbl_room_scheduled` (
+  `room_scheduled_id` int(10) unsigned NOT NULL auto_increment,
+  `roomCode` varchar(45) NOT NULL,
+  `roomStartTime` varchar(45) NOT NULL,
+  `roomEndTime` varchar(45) NOT NULL,
+  `roomDay` varchar(45) NOT NULL,
+  `assignedProfessor` varchar(100) NOT NULL,
+  `subjectCode` varchar(45) NOT NULL,
+  `course` varchar(45) NOT NULL,
+  `year` varchar(45) NOT NULL,
+  `section` varchar(45) NOT NULL,
+  `semester` varchar(45) NOT NULL,
+  `schoolYear` varchar(45) NOT NULL,
+  `curriculums_id` int(10) unsigned NOT NULL,
+  PRIMARY KEY  (`room_scheduled_id`),
+  KEY `FK_tbl_room_scheduled_1` (`curriculums_id`),
+  CONSTRAINT `FK_tbl_room_scheduled_1` FOREIGN KEY (`curriculums_id`) REFERENCES `tbl_curriculums` (`curriculums_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=729 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_room_scheduled`
+--
+
+/*!40000 ALTER TABLE `tbl_room_scheduled` DISABLE KEYS */;
+INSERT INTO `tbl_room_scheduled` (`room_scheduled_id`,`roomCode`,`roomStartTime`,`roomEndTime`,`roomDay`,`assignedProfessor`,`subjectCode`,`course`,`year`,`section`,`semester`,`schoolYear`,`curriculums_id`) VALUES 
+ (248,'RM201','8:30 AM','11:30 AM','Sunday','Michael losbanos David','fda','BSIT','1','1','2ND','2015-2016',1),
+ (249,'rm209','8:30 AM','11:30 AM','Monday','','COMP 3033','BSIT','3','2','1ST','2015-2016',1),
+ (250,'rm209','11:30 AM','2:30 PM','Monday','Michael losbanos David','COMP 3043','BSIT','3','2','1ST','2015-2016',1),
+ (251,'rm209','3:00 PM','6:00 PM','Monday','Michael losbanos David','HUMA','BSIT','3','2','1ST','2015-2016',1),
+ (252,'rm209','8:00 AM','11:00 AM','Tuesday','Anna Losbaños David','INTE 3043','BSIT','3','2','1ST','2015-2016',1),
+ (253,'rm209','10:30 AM','1:30 PM','Tuesday','Anna Losbaños David','IT-ELEC1','BSIT','3','2','1ST','2015-2016',1),
+ (254,'rm209','3:00 PM','6:00 PM','Wednesday','Anna Losbaños David','MANA 2053','BSIT','3','2','1ST','2015-2016',1),
+ (255,'rm209','7:30 AM','10:30 AM','Wednesday','','NASC 1093','BSIT','3','2','1ST','2015-2016',1),
+ (264,'rm209','7:30 AM','10:30 AM','Thursday','Michael losbanos David','ACCO 1234','BSA','1','1','1ST','2015-2016',1),
+ (317,'','','','','','COMP 3033','BSIT','3','1','1ST','2015-2016',1),
+ (318,'','','','','','COMP 3043','BSIT','3','1','1ST','2015-2016',1),
+ (319,'','','','','','HUMA','BSIT','3','1','1ST','2015-2016',1),
+ (320,'','','','','','INTE 3043','BSIT','3','1','1ST','2015-2016',1),
+ (321,'','','','','','IT-ELEC1','BSIT','3','1','1ST','2015-2016',1),
+ (322,'','','','','','MANA 2053','BSIT','3','1','1ST','2015-2016',1),
+ (323,'','','','','','NASC 1093','BSIT','3','1','1ST','2015-2016',1),
+ (577,'RM207','7:00 AM','10:00 AM','Thursday','Michael losbanos David','COMP 3013','BSIT','2','1','1ST','2015-2016',1),
+ (578,'','','','','TBA','COMP 3083','BSIT','2','1','1ST','2015-2016',1),
+ (579,'','','','','','COMP 4033 ','BSIT','2','1','1ST','2015-2016',1),
+ (580,'','','','','','ECON 1013','BSIT','2','1','1ST','2015-2016',1),
+ (581,'','','','','','INTE 3023','BSIT','2','1','1ST','2015-2016',1),
+ (582,'','','','','','NASC 2033','BSIT','2','1','1ST','2015-2016',1),
+ (583,'','','','','','PHED 1332','BSIT','2','1','1ST','2015-2016',1),
+ (584,'','','','','','PSYC 1013','BSIT','2','1','1ST','2015-2016',1),
+ (711,'RM210','7:00 AM','10:00 AM','Wednesday','TBA','COMP 3013','BSIT','2','2','1ST','2015-2016',1),
+ (712,'RM210','7:30 AM','10:00 AM','Thursday','TBA','COMP 3083','BSIT','2','2','1ST','2015-2016',1),
+ (713,'RM210','10:00 AM','12:30 PM','Monday','TBA','COMP 4033 ','BSIT','2','2','1ST','2015-2016',1),
+ (714,'RM210','2:00 PM','5:00 PM','Friday','Michael losbanos David','ECON 1013','BSIT','2','2','1ST','2015-2016',1),
+ (715,'RM210','10:30 AM','2:00 PM','Thursday','','INTE 3023','BSIT','2','2','1ST','2015-2016',1),
+ (716,'RM210','11:00 AM','2:00 PM','Saturday','TBA','NASC 2033','BSIT','2','2','1ST','2015-2016',1),
+ (717,'RM210','7:30 AM','9:00 AM','Saturday','','PHED 1332','BSIT','2','2','1ST','2015-2016',1),
+ (718,'RM210','9:00 AM','12:00 PM','Friday','TBA','PSYC 1013','BSIT','2','2','1ST','2015-2016',1),
+ (724,'TBA','11:30 AM','2:30 PM','Wednesday','Michael losbanos David','ACCO 1234','BSIT','1','1','1ST','2015-2016',1),
+ (725,'RM201','7:30 AM','10:30 AM','Monday','TBA','asdf','BSIT','1','1','1ST','2015-2016',1),
+ (726,'RM206','7:30 AM','10:30 AM','Monday','Michael losbanos David','asdfas','BSIT','1','1','1ST','2015-2016',1),
+ (727,'SMRMLNGE','7:30 AM','10:30 AM','Thursday','Anna Losbaños David','IT-ELEC1','BSIT','1','1','1ST','2015-2016',1),
+ (728,'RM201','8:00 AM','11:00 AM','Tuesday','TBA','ITF 2322','BSIT','1','1','1ST','2015-2016',1);
+/*!40000 ALTER TABLE `tbl_room_scheduled` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tbl_sections`
+--
+
+DROP TABLE IF EXISTS `tbl_sections`;
+CREATE TABLE `tbl_sections` (
+  `section_id` int(10) unsigned NOT NULL auto_increment,
+  `course` varchar(45) NOT NULL,
+  `year` int(10) unsigned NOT NULL,
+  `section` varchar(45) NOT NULL,
+  PRIMARY KEY  (`section_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_sections`
+--
+
+/*!40000 ALTER TABLE `tbl_sections` DISABLE KEYS */;
+INSERT INTO `tbl_sections` (`section_id`,`course`,`year`,`section`) VALUES 
+ (8,'BSCE',1,'1'),
+ (9,'BSENTREP',1,'1'),
+ (16,'DOMT',2,'1'),
+ (17,'BSIT',1,'1'),
+ (18,'BSIT',1,'2'),
+ (19,'BSIT',1,'3'),
+ (20,'BSIT',2,'1'),
+ (21,'BSIT',2,'2'),
+ (22,'BSIT',2,'3'),
+ (23,'BSIT',3,'1'),
+ (24,'BSIT',3,'2'),
+ (25,'BSIT',3,'3'),
+ (26,'BSIT',4,'1'),
+ (27,'BSIT',4,'2'),
+ (28,'BSCE',4,'1'),
+ (30,'BSA',1,'1'),
+ (31,'BSA',1,'2'),
+ (32,'BSA',2,'1'),
+ (33,'DOMT',1,'1'),
+ (34,'DOMT',1,'2'),
+ (35,'DOMT',1,'3'),
+ (36,'DOMT',1,'4');
+/*!40000 ALTER TABLE `tbl_sections` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tbl_securityquestions`
+--
+
+DROP TABLE IF EXISTS `tbl_securityquestions`;
+CREATE TABLE `tbl_securityquestions` (
+  `sq_id` int(10) unsigned NOT NULL auto_increment,
+  `users_id` int(10) unsigned NOT NULL,
+  `answer` varchar(45) NOT NULL,
+  `question` varchar(100) NOT NULL,
+  PRIMARY KEY  (`sq_id`),
+  KEY `FK_tbl_securityquestions_1` (`users_id`),
+  CONSTRAINT `FK_tbl_securityquestions_1` FOREIGN KEY (`users_id`) REFERENCES `tbl_users` (`users_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_securityquestions`
+--
+
+/*!40000 ALTER TABLE `tbl_securityquestions` DISABLE KEYS */;
+INSERT INTO `tbl_securityquestions` (`sq_id`,`users_id`,`answer`,`question`) VALUES 
+ (1,4,'hello','Who is your favorite actor, musician, or artist?'),
+ (2,4,'asdfa','What is your mother’s maiden name?'),
+ (3,4,'asdfe','What is your favorite color?'),
+ (6,4,'hayuk','In what city were you born?'),
+ (7,4,'hauuk','What is the name of your favorite pet?');
+/*!40000 ALTER TABLE `tbl_securityquestions` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tbl_students_scheduled`
+--
+
+DROP TABLE IF EXISTS `tbl_students_scheduled`;
+CREATE TABLE `tbl_students_scheduled` (
+  `students_scheduled_id` int(10) unsigned NOT NULL auto_increment,
+  `curriculums_id` int(10) unsigned NOT NULL,
+  `course` varchar(45) NOT NULL,
+  `year` varchar(45) NOT NULL,
+  `section` varchar(45) NOT NULL,
+  `scheduledBy` varchar(45) NOT NULL,
+  `scheduledDate` datetime NOT NULL,
+  `semester` varchar(45) NOT NULL,
+  `schoolYear` varchar(45) NOT NULL,
+  `room` varchar(45) NOT NULL,
+  `subjectCode` varchar(45) NOT NULL,
+  `subjectDescription` varchar(200) NOT NULL,
+  `professor` varchar(100) NOT NULL,
+  `scheduledStartTime` varchar(45) NOT NULL,
+  `scheduledEndTime` varchar(45) NOT NULL,
+  `scheduledDay` varchar(45) NOT NULL,
+  PRIMARY KEY  USING BTREE (`students_scheduled_id`),
+  KEY `FK_tbl_students_scheduled_1` (`curriculums_id`),
+  CONSTRAINT `FK_tbl_students_scheduled_1` FOREIGN KEY (`curriculums_id`) REFERENCES `tbl_curriculums` (`curriculums_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=708 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_students_scheduled`
+--
+
+/*!40000 ALTER TABLE `tbl_students_scheduled` DISABLE KEYS */;
+INSERT INTO `tbl_students_scheduled` (`students_scheduled_id`,`curriculums_id`,`course`,`year`,`section`,`scheduledBy`,`scheduledDate`,`semester`,`schoolYear`,`room`,`subjectCode`,`subjectDescription`,`professor`,`scheduledStartTime`,`scheduledEndTime`,`scheduledDay`) VALUES 
+ (227,1,'BSIT','1','1','2','2018-09-16 14:30:56','2ND','2015-2016','RM201','fda','fdsa','Michael losbanos David','8:30 AM','11:30 AM','Sunday'),
+ (228,1,'BSIT','3','2','2','2018-09-16 15:04:15','1ST','2015-2016','rm209','COMP 3033','Software Engineering','','8:30 AM','11:30 AM','Monday'),
+ (229,1,'BSIT','3','2','2','2018-09-16 15:04:15','1ST','2015-2016','rm209','COMP 3043','Web Development','Michael losbanos David','11:30 AM','2:30 PM','Monday'),
+ (230,1,'BSIT','3','2','2','2018-09-16 15:04:15','1ST','2015-2016','rm209','HUMA','Introduction to the Humanities','Michael losbanos David','3:00 PM','6:00 PM','Monday'),
+ (231,1,'BSIT','3','2','2','2018-09-16 15:04:15','1ST','2015-2016','rm209','INTE 3043','System Analysis and Design','Anna Losbaños David','8:00 AM','11:00 AM','Tuesday'),
+ (232,1,'BSIT','3','2','2','2018-09-16 15:04:15','1ST','2015-2016','rm209','IT-ELEC1','BSIT Elective 1','Anna Losbaños David','10:30 AM','1:30 PM','Tuesday'),
+ (233,1,'BSIT','3','2','2','2018-09-16 15:04:15','1ST','2015-2016','rm209','MANA 2053','Total Quality Management','Anna Losbaños David','3:00 PM','6:00 PM','Wednesday'),
+ (234,1,'BSIT','3','2','2','2018-09-16 15:04:15','1ST','2015-2016','rm209','NASC 1093','Ecology','','7:30 AM','10:30 AM','Wednesday'),
+ (243,1,'BSA','1','1','2','2018-09-16 16:07:53','1ST','2015-2016','rm209','ACCO 1234','Accounting 1','Michael losbanos David','7:30 AM','10:30 AM','Thursday'),
+ (296,1,'BSIT','3','1','2','2018-09-16 16:35:47','1ST','2015-2016','','COMP 3033','Software Engineering','','','',''),
+ (297,1,'BSIT','3','1','2','2018-09-16 16:35:47','1ST','2015-2016','','COMP 3043','Web Development','','','',''),
+ (298,1,'BSIT','3','1','2','2018-09-16 16:35:47','1ST','2015-2016','','HUMA','Introduction to the Humanities','','','',''),
+ (299,1,'BSIT','3','1','2','2018-09-16 16:35:47','1ST','2015-2016','','INTE 3043','System Analysis and Design','','','',''),
+ (300,1,'BSIT','3','1','2','2018-09-16 16:35:47','1ST','2015-2016','','IT-ELEC1','BSIT Elective 1','','','',''),
+ (301,1,'BSIT','3','1','2','2018-09-16 16:35:47','1ST','2015-2016','','MANA 2053','Total Quality Management','','','',''),
+ (302,1,'BSIT','3','1','2','2018-09-16 16:35:48','1ST','2015-2016','','NASC 1093','Ecology','','','',''),
+ (556,1,'BSIT','2','1','2','2018-09-18 13:35:19','1ST','2015-2016','RM207','COMP 3013','Operating System','Michael losbanos David','7:00 AM','10:00 AM','Thursday'),
+ (557,1,'BSIT','2','1','2','2018-09-18 13:35:19','1ST','2015-2016','','COMP 3083','Data and File Structure','TBA','','',''),
+ (558,1,'BSIT','2','1','2','2018-09-18 13:35:19','1ST','2015-2016','','COMP 4033 ','Advanced Networking','','','',''),
+ (559,1,'BSIT','2','1','2','2018-09-18 13:35:19','1ST','2015-2016','','ECON 1013','Basic Economics with Taxation and Agrarian Reform','','','',''),
+ (560,1,'BSIT','2','1','2','2018-09-18 13:35:19','1ST','2015-2016','','INTE 3023','Database Management System','','','',''),
+ (561,1,'BSIT','2','1','2','2018-09-18 13:35:19','1ST','2015-2016','','NASC 2033','College Physics','','','',''),
+ (562,1,'BSIT','2','1','2','2018-09-18 13:35:19','1ST','2015-2016','','PHED 1332','Team Sports Volleyball','','','',''),
+ (563,1,'BSIT','2','1','2','2018-09-18 13:35:19','1ST','2015-2016','','PSYC 1013','General Psychology','','','',''),
+ (690,1,'BSIT','2','2','2','2018-09-19 00:26:25','1ST','2015-2016','RM210','COMP 3013','Operating System','TBA','7:00 AM','10:00 AM','Wednesday'),
+ (691,1,'BSIT','2','2','2','2018-09-19 00:26:25','1ST','2015-2016','RM210','COMP 3083','Data and File Structure','TBA','7:30 AM','10:00 AM','Thursday'),
+ (692,1,'BSIT','2','2','2','2018-09-19 00:26:25','1ST','2015-2016','RM210','COMP 4033 ','Advanced Networking','TBA','10:00 AM','12:30 PM','Monday'),
+ (693,1,'BSIT','2','2','2','2018-09-19 00:26:25','1ST','2015-2016','RM210','ECON 1013','Basic Economics with Taxation and Agrarian Reform','Michael losbanos David','2:00 PM','5:00 PM','Friday'),
+ (694,1,'BSIT','2','2','2','2018-09-19 00:26:25','1ST','2015-2016','RM210','INTE 3023','Database Management System','','10:30 AM','2:00 PM','Thursday'),
+ (695,1,'BSIT','2','2','2','2018-09-19 00:26:25','1ST','2015-2016','RM210','NASC 2033','College Physics','TBA','11:00 AM','2:00 PM','Saturday'),
+ (696,1,'BSIT','2','2','2','2018-09-19 00:26:25','1ST','2015-2016','RM210','PHED 1332','Team Sports Volleyball','','7:30 AM','9:00 AM','Saturday'),
+ (697,1,'BSIT','2','2','2','2018-09-19 00:26:25','1ST','2015-2016','RM210','PSYC 1013','General Psychology','TBA','9:00 AM','12:00 PM','Friday'),
+ (703,1,'BSIT','1','1','2','2018-09-19 11:13:07','1ST','2015-2016','TBA','ACCO 1234','Accounting 1','Michael losbanos David','11:30 AM','2:30 PM','Wednesday'),
+ (704,1,'BSIT','1','1','2','2018-09-19 11:13:07','1ST','2015-2016','RM201','asdf','asdf','TBA','7:30 AM','10:30 AM','Monday'),
+ (705,1,'BSIT','1','1','2','2018-09-19 11:13:07','1ST','2015-2016','RM206','asdfas','asdfasdfadf','Michael losbanos David','7:30 AM','10:30 AM','Monday'),
+ (706,1,'BSIT','1','1','2','2018-09-19 11:13:07','1ST','2015-2016','SMRMLNGE','IT-ELEC1','BSIT Elective 1','Anna Losbaños David','7:30 AM','10:30 AM','Thursday'),
+ (707,1,'BSIT','1','1','2','2018-09-19 11:13:07','1ST','2015-2016','RM201','ITF 2322','Fundamentals of Research','TBA','8:00 AM','11:00 AM','Tuesday');
+/*!40000 ALTER TABLE `tbl_students_scheduled` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tbl_subjects`
+--
+
+DROP TABLE IF EXISTS `tbl_subjects`;
+CREATE TABLE `tbl_subjects` (
+  `subjects_id` int(10) unsigned NOT NULL auto_increment,
+  `curriculums_id` int(10) unsigned NOT NULL,
+  `course_id` int(10) unsigned NOT NULL,
+  `subjectCode` varchar(45) NOT NULL,
+  `subjectDescription` varchar(100) NOT NULL,
+  `lectureHours` int(10) unsigned NOT NULL,
+  `laboratoryHours` int(10) unsigned NOT NULL,
+  `units` int(10) unsigned NOT NULL,
+  `yearLevel` int(10) unsigned NOT NULL,
+  `course` varchar(45) NOT NULL,
+  `semester` varchar(45) NOT NULL,
+  `schoolYear` varchar(45) NOT NULL,
+  PRIMARY KEY  USING BTREE (`subjects_id`),
+  KEY `FK_tbl_subjects_1` (`curriculums_id`),
+  KEY `FK_tbl_subjects_2` (`course_id`),
+  CONSTRAINT `FK_tbl_subjects_1` FOREIGN KEY (`curriculums_id`) REFERENCES `tbl_curriculums` (`curriculums_id`),
+  CONSTRAINT `FK_tbl_subjects_2` FOREIGN KEY (`course_id`) REFERENCES `tbl_course` (`course_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_subjects`
+--
+
+/*!40000 ALTER TABLE `tbl_subjects` DISABLE KEYS */;
+INSERT INTO `tbl_subjects` (`subjects_id`,`curriculums_id`,`course_id`,`subjectCode`,`subjectDescription`,`lectureHours`,`laboratoryHours`,`units`,`yearLevel`,`course`,`semester`,`schoolYear`) VALUES 
+ (1,1,1,'ACCO 1234','Accounting 1',1,1,1,1,'BSIT','1ST','2015-2016'),
+ (2,2,7,'ENGI 1234','Accounting in 1',1,1,1,1,'BSCOE','1ST','2015-2016'),
+ (3,1,1,'IT-ELEC1','BSIT Elective 1',3,4,2,1,'BSIT','1ST','2015-2016'),
+ (4,1,1,'asdf','asdf',1,1,1,1,'BSIT','1ST','2015-2016'),
+ (5,2,8,'asdfas','asdfasdf',1,1,1,1,'BSHM','1ST','2015-2016'),
+ (6,2,10,'IT-ELEC 1','FREE ELECTIVE',3,3,3,4,'BSIT','1ST','2015-2016'),
+ (7,2,8,'phay213','PSYCHOYER',1,1,1,1,'BSHM','1ST','2015-2016'),
+ (8,1,1,'ACCO 1234','Accounting 1',1,1,1,1,'BSA','1ST','2015-2016'),
+ (9,1,1,'COMP 3013','Operating System',1,1,1,2,'BSIT','1ST','2015-2016'),
+ (10,1,1,'COMP 3083','Data and File Structure',1,1,1,2,'BSIT','1ST','2015-2016'),
+ (11,1,1,'COMP 4033 ','Advanced Networking',1,1,1,2,'BSIT','1ST','2015-2016'),
+ (12,1,1,'ECON 1013','Basic Economics with Taxation and Agrarian Reform',1,1,1,2,'BSIT','1ST','2015-2016'),
+ (13,1,1,'INTE 3023','Database Management System',1,1,1,2,'BSIT','1ST','2015-2016'),
+ (14,1,1,'NASC 2033','College Physics',1,1,1,2,'BSIT','1ST','2015-2016'),
+ (15,1,1,'PHED 1332','Team Sports Volleyball',1,1,1,2,'BSIT','1ST','2015-2016'),
+ (16,1,1,'PSYC 1013','General Psychology',1,1,1,2,'BSIT','1ST','2015-2016'),
+ (17,1,1,'COMP 3033','Software Engineering',1,1,1,3,'BSIT','1ST','2015-2016'),
+ (18,1,1,'COMP 3043','Web Development',1,1,1,3,'BSIT','1ST','2015-2016'),
+ (19,1,1,'HUMA','Introduction to the Humanities',1,1,1,3,'BSIT','1ST','2015-2016'),
+ (20,1,1,'INTE 3043','System Analysis and Design',1,1,1,3,'BSIT','1ST','2015-2016'),
+ (21,1,1,'IT-ELEC1','BSIT Elective 1',1,1,1,3,'BSIT','1ST','2015-2016'),
+ (22,1,1,'MANA 2053','Total Quality Management',1,1,1,3,'BSIT','1ST','2015-2016'),
+ (23,1,1,'NASC 1093','Ecology',1,1,1,3,'BSIT','1ST','2015-2016'),
+ (24,1,1,'asdfasdf','asdfasdf',1,1,1,4,'BSIT','1ST','2015-2016'),
+ (25,1,1,'4123123','asdfasdf',1,1,1,4,'BSIT','1ST','2015-2016'),
+ (26,1,1,'asdfasdf','asdfasdf',1,1,1,4,'BSIT','1ST','2015-2016'),
+ (27,1,1,'gadfsgas','asdfasdf',1,1,1,4,'BSIT','1ST','2015-2016'),
+ (28,1,1,'hdfghrth','asdfasdf',1,1,1,4,'BSIT','1ST','2015-2016'),
+ (29,1,1,'yrrtrtr','asdfasdf',1,1,1,4,'BSIT','1ST','2015-2016'),
+ (30,1,1,'uygjghj','asdfasdf',1,1,1,4,'BSIT','1ST','2015-2016'),
+ (31,1,1,'kukyk','asdfasdf',1,1,1,4,'BSIT','1ST','2015-2016'),
+ (32,1,1,'oyuiyui','asdfasdf',1,1,1,4,'BSIT','1ST','2015-2016'),
+ (33,1,1,'fawdfasdf','fasdfasdf',1,1,1,4,'BSIT','1ST','2015-2016'),
+ (34,1,1,'ITF 2322','Fundamentals of Research',2,3,3,1,'BSIT','1ST','2015-2016'),
+ (35,1,14,'ACCO 2203','Advanced Accountancy',1,1,1,2,'BSA','1ST','2015-2016'),
+ (36,1,1,'asdfas','asdfasdfadf',1,1,1,1,'BSIT','1ST','2015-2016'),
+ (37,1,1,'fda','fdsa',1,1,1,1,'BSIT','2ND','2015-2016'),
+ (38,1,1,'IT-ELEC1','fundamentals',1,1,1,1,'BSIT','2ND','2015-2016'),
+ (39,15,15,'Comp 1034','Programming 1',3,1,3,1,'BSIT','1ST','2015-2016');
+/*!40000 ALTER TABLE `tbl_subjects` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tbl_users`
+--
+
+DROP TABLE IF EXISTS `tbl_users`;
+CREATE TABLE `tbl_users` (
+  `users_id` int(10) unsigned NOT NULL auto_increment,
+  `username` varchar(45) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `firstName` varchar(45) NOT NULL,
+  `middleName` varchar(45) NOT NULL,
+  `lastName` varchar(45) NOT NULL,
+  `address` varchar(120) NOT NULL,
+  `gender` varchar(45) NOT NULL,
+  `teachingStatus` varchar(45) NOT NULL,
+  `courseDepartment` varchar(45) NOT NULL,
+  `emailAddress` varchar(45) NOT NULL,
+  `mobileNumber` varchar(45) NOT NULL,
+  `status` varchar(45) NOT NULL,
+  `userLevel` varchar(45) NOT NULL,
+  `unitsAllowed` varchar(45) NOT NULL,
+  PRIMARY KEY  (`users_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_users`
+--
+
+/*!40000 ALTER TABLE `tbl_users` DISABLE KEYS */;
+INSERT INTO `tbl_users` (`users_id`,`username`,`password`,`firstName`,`middleName`,`lastName`,`address`,`gender`,`teachingStatus`,`courseDepartment`,`emailAddress`,`mobileNumber`,`status`,`userLevel`,`unitsAllowed`) VALUES 
+ (1,'michael','P92nrqYSbI4=','Michael','losbanos','David','blk 25 lot 30 San Vicente Homes, San Vicente Homes, Santa Maria, Bulacan','Male','Fulltimer','BSIT','david.michael@yahoo.com.ph','091738717177','active','professor','42'),
+ (2,'admin','pCAyd+V9rhk=','Arman','D. C.','Santos','PUPSMB','Male','yeah','yeah','example@gmail.com','09898998989','active','administrator',''),
+ (4,'anna','P92nrqYSbI4=','Anna','Losbaños','David','blk 25 lot 30 san Vicente Homes','Male','Parttimer','BSIT','david.michael15@yahoo.com.ph','09173871717','active','professor','12'),
+ (6,'david','NZH1ADqASpjxDGene3HVLg==','Michael','','David','blk 25 lot 30 San Vicente Homes, San Vicente, Sta. Maria, Bulacan','Male','Fulltimer','BSIT','david.michael15.md@gmail.com','09173871717','active','professor','42'),
+ (7,'asdf','TYFFSpD4pCQ=','asdf','asdf','asdf','asdf','Male','Retiree','NONE','asdf','sdf','active','professor','6'),
+ (8,'hello1','cNVtP9SrnKU=','hello','hello','hello','hello','Male','Fulltimer','NONE','hello','hellohello','active','professor','42'),
+ (9,'raw','EBRlOwHG/3s=','raw','raw','raw','raw','Male','Fulltimer','BSCE','raw','raw','active','professor','42'),
+ (10,'raw','EBRlOwHG/3s=','raw','raw','raw','raw','Male','Fulltimer','BSIT','raw','raw','active','professor','42'),
+ (11,'raw','EBRlOwHG/3s=','raw','raw','raw','raw','Male','Parttimer','BSCE','raw','raw','active','professor','12');
+/*!40000 ALTER TABLE `tbl_users` ENABLE KEYS */;
+
+
+
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

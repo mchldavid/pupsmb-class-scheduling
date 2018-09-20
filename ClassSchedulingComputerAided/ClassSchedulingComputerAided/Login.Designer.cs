@@ -40,12 +40,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtPassword = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnExit = new MetroFramework.Controls.MetroLink();
             this.lbltext = new System.Windows.Forms.Label();
             this.btnSettings = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnExit = new Bunifu.Framework.UI.BunifuImageButton();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSettings)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -192,18 +194,6 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "User Login";
             // 
-            // btnExit
-            // 
-            this.btnExit.FontSize = MetroFramework.MetroLinkSize.Medium;
-            this.btnExit.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.btnExit.Location = new System.Drawing.Point(614, -1);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(50, 23);
-            this.btnExit.TabIndex = 10;
-            this.btnExit.TabStop = false;
-            this.btnExit.Text = "X";
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
             // lbltext
             // 
             this.lbltext.AutoSize = true;
@@ -228,15 +218,38 @@
             this.btnSettings.Zoom = 10;
             this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
             // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.White;
+            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
+            this.btnExit.ImageActive = null;
+            this.btnExit.Location = new System.Drawing.Point(618, 2);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(48, 25);
+            this.btnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnExit.TabIndex = 228;
+            this.btnExit.TabStop = false;
+            this.btnExit.Zoom = 10;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click_1);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Location = new System.Drawing.Point(664, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(20, 426);
+            this.panel2.TabIndex = 229;
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Drawing.MetroBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(667, 394);
+            this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnSettings);
             this.Controls.Add(this.lbltext);
-            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtPassword);
@@ -259,6 +272,7 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSettings)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -277,9 +291,10 @@
         private Bunifu.Framework.UI.BunifuMaterialTextbox txtPassword;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        public MetroFramework.Controls.MetroLink btnExit;
         private System.Windows.Forms.Label lbltext;
         private Bunifu.Framework.UI.BunifuImageButton btnSettings;
+        private Bunifu.Framework.UI.BunifuImageButton btnExit;
+        private System.Windows.Forms.Panel panel2;
 
 
 

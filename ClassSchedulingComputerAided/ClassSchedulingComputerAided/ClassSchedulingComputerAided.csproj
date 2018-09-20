@@ -167,11 +167,23 @@
     <Compile Include="classes\StudentsScheduled.cs" />
     <Compile Include="classes\SubjectForStudents.cs" />
     <Compile Include="classes\CreateDatabase.cs" />
+    <Compile Include="NewPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewPassword.Designer.cs">
+      <DependentUpon>NewPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="profScheduledControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="profScheduledControl.Designer.cs">
       <DependentUpon>profScheduledControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PUPImageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PUPImageControl.Designer.cs">
+      <DependentUpon>PUPImageControl.cs</DependentUpon>
     </Compile>
     <Compile Include="SemesterAndSchoolYear.cs">
       <SubType>Form</SubType>
@@ -389,8 +401,14 @@
     <EmbeddedResource Include="controls\CSD_ProfTimeTable.resx">
       <DependentUpon>CSD_ProfTimeTable.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NewPassword.resx">
+      <DependentUpon>NewPassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="profScheduledControl.resx">
       <DependentUpon>profScheduledControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PUPImageControl.resx">
+      <DependentUpon>PUPImageControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SemesterAndSchoolYear.resx">
       <DependentUpon>SemesterAndSchoolYear.cs</DependentUpon>

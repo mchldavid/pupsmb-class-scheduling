@@ -20,6 +20,10 @@ namespace ClassSchedulingComputerAided
 
         private void AdminHomePage_Load(object sender, EventArgs e)
         {
+            PUPImageControl pup = new PUPImageControl();
+            pnl.Controls.Clear();
+            pnl.Controls.Add(pup);
+
             lbl_curriculum_id.Text = md.GetCurriculumId();
             lblTime.Text = DateTime.Now.ToString("h:mm tt");
             lblDay.Text = DateTime.Now.ToString("dddd");
@@ -92,7 +96,9 @@ namespace ClassSchedulingComputerAided
 
         private void btnHome_Click(object sender, EventArgs e)
         {
+            PUPImageControl pup = new PUPImageControl();
             pnl.Controls.Clear();
+            pnl.Controls.Add(pup);
             lbl_form_title.Text = "ADMIN HOME";
         }
 
