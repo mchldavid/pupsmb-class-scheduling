@@ -21,6 +21,10 @@ namespace ClassSchedulingComputerAided
         MyDatabase md = new MyDatabase();
         private void ProfessorHomePage_Load(object sender, EventArgs e)
         {
+            PUPImageControl pup = new PUPImageControl();
+            pnl.Controls.Clear();
+            pnl.Controls.Add(pup);
+
             lblTime.Text = DateTime.Now.ToString("h:mm tt");
             lblDay.Text = DateTime.Now.ToString("dddd");
             lblDate.Text = DateTime.Now.ToString("dd MMMM yyyy");

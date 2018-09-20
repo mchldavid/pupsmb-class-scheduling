@@ -173,16 +173,16 @@
     <Compile Include="NewPassword.Designer.cs">
       <DependentUpon>NewPassword.cs</DependentUpon>
     </Compile>
-    <Compile Include="profScheduledControl.cs">
+    <Compile Include="controls\profScheduledControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="profScheduledControl.Designer.cs">
+    <Compile Include="controls\profScheduledControl.Designer.cs">
       <DependentUpon>profScheduledControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="PUPImageControl.cs">
+    <Compile Include="controls\PUPImageControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="PUPImageControl.Designer.cs">
+    <Compile Include="controls\PUPImageControl.Designer.cs">
       <DependentUpon>PUPImageControl.cs</DependentUpon>
     </Compile>
     <Compile Include="SemesterAndSchoolYear.cs">
@@ -404,10 +404,10 @@
     <EmbeddedResource Include="NewPassword.resx">
       <DependentUpon>NewPassword.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="profScheduledControl.resx">
+    <EmbeddedResource Include="controls\profScheduledControl.resx">
       <DependentUpon>profScheduledControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PUPImageControl.resx">
+    <EmbeddedResource Include="controls\PUPImageControl.resx">
       <DependentUpon>PUPImageControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SemesterAndSchoolYear.resx">

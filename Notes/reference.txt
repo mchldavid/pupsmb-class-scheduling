@@ -41,3 +41,9 @@ https://stackoverflow.com/questions/20423211/setting-cursor-at-the-end-of-any-te
 
 grant access
 https://www.youtube.com/watch?v=f5qQDm3ciDg
+
+file process is being used
+https://stackoverflow.com/questions/9547145/c-sharp-process-cannot-access-file-because-it-is-used-by-another-process
+
+get ip address
+https://stackoverflow.com/questions/6803073/get-local-ip-address
