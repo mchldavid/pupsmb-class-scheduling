@@ -74,7 +74,7 @@
             // txtNewPassword
             // 
             this.txtNewPassword.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNewPassword.Location = new System.Drawing.Point(23, 119);
+            this.txtNewPassword.Location = new System.Drawing.Point(23, 108);
             this.txtNewPassword.Name = "txtNewPassword";
             this.txtNewPassword.PasswordChar = '*';
             this.txtNewPassword.Size = new System.Drawing.Size(343, 26);
@@ -84,7 +84,7 @@
             // 
             this.lblQuestion1.CustomBackground = true;
             this.lblQuestion1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.lblQuestion1.Location = new System.Drawing.Point(17, 93);
+            this.lblQuestion1.Location = new System.Drawing.Point(17, 82);
             this.lblQuestion1.Name = "lblQuestion1";
             this.lblQuestion1.Size = new System.Drawing.Size(333, 25);
             this.lblQuestion1.TabIndex = 0;
@@ -95,7 +95,7 @@
             // 
             this.metroLabel1.CustomBackground = true;
             this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel1.Location = new System.Drawing.Point(17, 158);
+            this.metroLabel1.Location = new System.Drawing.Point(17, 147);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(333, 25);
             this.metroLabel1.TabIndex = 2;
@@ -105,7 +105,7 @@
             // txtConfirmNewPassword
             // 
             this.txtConfirmNewPassword.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConfirmNewPassword.Location = new System.Drawing.Point(23, 184);
+            this.txtConfirmNewPassword.Location = new System.Drawing.Point(23, 173);
             this.txtConfirmNewPassword.Name = "txtConfirmNewPassword";
             this.txtConfirmNewPassword.PasswordChar = '*';
             this.txtConfirmNewPassword.Size = new System.Drawing.Size(343, 26);
@@ -113,7 +113,7 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(23, 232);
+            this.btnSubmit.Location = new System.Drawing.Point(23, 221);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(343, 40);
             this.btnSubmit.Style = MetroFramework.MetroColorStyle.Red;
@@ -128,16 +128,16 @@
             // metroLabel2
             // 
             this.metroLabel2.CustomBackground = true;
-            this.metroLabel2.Location = new System.Drawing.Point(17, 60);
+            this.metroLabel2.Location = new System.Drawing.Point(17, 48);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(333, 25);
             this.metroLabel2.TabIndex = 166;
-            this.metroLabel2.Text = "Set your new password and submit.";
+            this.metroLabel2.Text = "Note: Set your new password and submit.";
             this.metroLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(23, 278);
+            this.btnCancel.Location = new System.Drawing.Point(23, 267);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(343, 32);
             this.btnCancel.TabIndex = 5;
@@ -147,7 +147,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(391, 348);
+            this.ClientSize = new System.Drawing.Size(391, 324);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.btnSubmit);

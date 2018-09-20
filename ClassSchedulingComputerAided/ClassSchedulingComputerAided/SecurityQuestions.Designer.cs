@@ -192,11 +192,11 @@
             // metroLabel2
             // 
             this.metroLabel2.CustomBackground = true;
-            this.metroLabel2.Location = new System.Drawing.Point(10, 45);
+            this.metroLabel2.Location = new System.Drawing.Point(21, 45);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(333, 25);
             this.metroLabel2.TabIndex = 167;
-            this.metroLabel2.Text = "Please answer the questions below and submit";
+            this.metroLabel2.Text = "Note: Please answer the questions below and submit";
             this.metroLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // frmSecurityQuestions
@@ -204,7 +204,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Drawing.MetroBorderStyle.FixedSingle;
-            this.ClientSize = new System.Drawing.Size(391, 348);
+            this.ClientSize = new System.Drawing.Size(391, 331);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.txtAnswer3);
             this.Controls.Add(this.txtAnswer2);

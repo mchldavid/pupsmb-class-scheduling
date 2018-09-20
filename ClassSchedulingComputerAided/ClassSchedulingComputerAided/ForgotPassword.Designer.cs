@@ -37,13 +37,14 @@
             this.label134 = new System.Windows.Forms.Label();
             this.btnCancel = new MetroFramework.Controls.MetroButton();
             this.txtUsername1 = new System.Windows.Forms.TextBox();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // metroLabel1
             // 
             this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel1.Location = new System.Drawing.Point(11, 58);
+            this.metroLabel1.Location = new System.Drawing.Point(14, 87);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(150, 25);
             this.metroLabel1.TabIndex = 146;
@@ -54,7 +55,7 @@
             // 
             this.btnLogin.FontWeight = MetroFramework.MetroLinkWeight.Light;
             this.btnLogin.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.btnLogin.Location = new System.Drawing.Point(50, 198);
+            this.btnLogin.Location = new System.Drawing.Point(53, 227);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(135, 23);
             this.btnLogin.TabIndex = 148;
@@ -67,7 +68,7 @@
             // 
             this.btnRegister.FontWeight = MetroFramework.MetroLinkWeight.Light;
             this.btnRegister.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.btnRegister.Location = new System.Drawing.Point(50, 218);
+            this.btnRegister.Location = new System.Drawing.Point(53, 247);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(135, 23);
             this.btnRegister.TabIndex = 149;
@@ -78,7 +79,7 @@
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(50, 130);
+            this.btnNext.Location = new System.Drawing.Point(53, 159);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(218, 40);
             this.btnNext.Style = MetroFramework.MetroColorStyle.Red;
@@ -94,7 +95,7 @@
             // 
             this.btnOtherWay.FontWeight = MetroFramework.MetroLinkWeight.Light;
             this.btnOtherWay.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.btnOtherWay.Location = new System.Drawing.Point(50, 178);
+            this.btnOtherWay.Location = new System.Drawing.Point(53, 207);
             this.btnOtherWay.Name = "btnOtherWay";
             this.btnOtherWay.Size = new System.Drawing.Size(135, 23);
             this.btnOtherWay.TabIndex = 151;
@@ -123,7 +124,7 @@
             this.label134.Name = "label134";
             this.label134.Size = new System.Drawing.Size(176, 25);
             this.label134.TabIndex = 138;
-            this.label134.Text = "Forpot Password";
+            this.label134.Text = "Forgot Password";
             // 
             // btnCancel
             // 
@@ -136,19 +137,29 @@
             // txtUsername1
             // 
             this.txtUsername1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername1.Location = new System.Drawing.Point(50, 86);
+            this.txtUsername1.Location = new System.Drawing.Point(53, 115);
             this.txtUsername1.Name = "txtUsername1";
             this.txtUsername1.Size = new System.Drawing.Size(218, 26);
             this.txtUsername1.TabIndex = 0;
             this.txtUsername1.Click += new System.EventHandler(this.txtUsername_Click);
             this.txtUsername1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUsername_KeyDown_1);
             // 
+            // metroLabel2
+            // 
+            this.metroLabel2.CustomBackground = true;
+            this.metroLabel2.Location = new System.Drawing.Point(24, 40);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(333, 50);
+            this.metroLabel2.TabIndex = 168;
+            this.metroLabel2.Text = "Note: Please enter your username below \r\nand submit.";
+            this.metroLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // frmForgotPassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Drawing.MetroBorderStyle.FixedSingle;
-            this.ClientSize = new System.Drawing.Size(321, 264);
+            this.ClientSize = new System.Drawing.Size(321, 288);
             this.Controls.Add(this.txtUsername1);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.btnOtherWay);
@@ -156,6 +167,7 @@
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.metroLabel1);
+            this.Controls.Add(this.metroLabel2);
             this.MaximizeBox = false;
             this.Movable = false;
             this.Name = "frmForgotPassword";
@@ -179,5 +191,6 @@
         private System.Windows.Forms.Label label134;
         private MetroFramework.Controls.MetroButton btnCancel;
         private System.Windows.Forms.TextBox txtUsername1;
+        private MetroFramework.Controls.MetroLabel metroLabel2;
     }
 }

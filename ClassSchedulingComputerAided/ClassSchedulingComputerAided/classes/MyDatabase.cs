@@ -2272,5 +2272,87 @@ namespace ClassSchedulingComputerAided
             }
             return result;
         }
+
+        //===============Load Start-up============
+        public bool EmptyCurriculum()
+        {
+            bool result = false;
+            try
+            {
+                con.Open();
+                string sql = "SELECT * FROM tbl_curriculums t;";
+                MySqlCommand cmd = new MySqlCommand(sql, con);
+                cmd.ExecuteNonQuery();
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    result = true;
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "EmptyCurriculum");
+            }
+            finally
+            {
+                con.Close();
+            }
+            return result;
+        }
+
+        public bool EmptySection()
+        {
+            bool result = false;
+            try
+            {
+                con.Open();
+                string sql = "SELECT * FROM tbl_sections t;";
+                MySqlCommand cmd = new MySqlCommand(sql, con);
+                cmd.ExecuteNonQuery();
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    result = true;
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "EmptyCurriculum");
+            }
+            finally
+            {
+                con.Close();
+            }
+            return result;
+        }
+
+        public bool EmptyRoom()
+        {
+            bool result = false;
+            try
+            {
+                con.Open();
+                string sql = "SELECT * FROM tbl_room t;";
+                MySqlCommand cmd = new MySqlCommand(sql, con);
+                cmd.ExecuteNonQuery();
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    result = true;
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "EmptyCurriculum");
+            }
+            finally
+            {
+                con.Close();
+            }
+            return result;
+        }
     }
 }

@@ -29,6 +29,22 @@ namespace ClassSchedulingComputerAided
             lblDay.Text = DateTime.Now.ToString("dddd");
             lblDate.Text = DateTime.Now.ToString("dd MMMM yyyy");
             timer1.Enabled = true;
+
+            if (md.EmptyCurriculum() == false)
+            {
+                btnRooms.Enabled = false;
+                btnSections.Enabled = false;
+                btnClassScheduleDashboard.Enabled = false;
+            }
+            if (md.EmptySection() == false)
+            {
+                btnRooms.Enabled = false;
+                btnClassScheduleDashboard.Enabled = false;
+            }
+            if (md.EmptyRoom() == false)
+            {
+                btnClassScheduleDashboard.Enabled = false;
+            }
             
         }
 
@@ -46,7 +62,7 @@ namespace ClassSchedulingComputerAided
             this.Hide();
         }
 
-        private void btnRooms_Click(object sender, EventArgs e)
+        public void btnRooms_Click(object sender, EventArgs e)
         {
             pnl.Controls.Clear();
             roomsControl rc = new roomsControl();
@@ -55,7 +71,7 @@ namespace ClassSchedulingComputerAided
             lbl_form_title.Text = "ROOMS";
         }
 
-        private void btnSections_Click(object sender, EventArgs e)
+        public void btnSections_Click(object sender, EventArgs e)
         {
             pnl.Controls.Clear();
             sectionsControl s = new sectionsControl();
@@ -114,6 +130,32 @@ namespace ClassSchedulingComputerAided
                 lblTime.Text = DateTime.Now.ToString("h:mm tt");
                 lblDay.Text = DateTime.Now.ToString("dddd");
                 lblDate.Text = DateTime.Now.ToString("dd MMMM yyyy");
+            }
+            if (md.EmptyCurriculum() == false)
+            {
+                btnRooms.Enabled = false;
+                btnSections.Enabled = false;
+                btnClassScheduleDashboard.Enabled = false;
+            }
+            else
+            {
+                if (md.EmptySection() == false)
+                {
+                    btnRooms.Enabled = false;
+                    btnClassScheduleDashboard.Enabled = false;
+                }
+                else
+                {
+                    btnRooms.Enabled = true;
+                    if (md.EmptyRoom() == false)
+                    {
+                        btnClassScheduleDashboard.Enabled = false;
+                    }
+                    else
+                    {
+                        btnClassScheduleDashboard.Enabled = true;
+                    }
+                }
             }
         }
     }

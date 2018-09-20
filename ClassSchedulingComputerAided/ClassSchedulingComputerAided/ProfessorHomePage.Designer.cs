@@ -45,11 +45,11 @@
             this.label12 = new System.Windows.Forms.Label();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pnl = new System.Windows.Forms.Panel();
+            this.lbl_title = new MetroFramework.Controls.MetroLabel();
             this.lblDay = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
-            this.lbl_title = new MetroFramework.Controls.MetroLabel();
+            this.pnl = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -331,6 +331,7 @@
             this.lbl_id.Size = new System.Drawing.Size(52, 13);
             this.lbl_id.TabIndex = 110;
             this.lbl_id.Text = "Control Id";
+            this.lbl_id.Visible = false;
             // 
             // label12
             // 
@@ -368,14 +369,16 @@
             this.panel1.Size = new System.Drawing.Size(668, 70);
             this.panel1.TabIndex = 140;
             // 
-            // pnl
+            // lbl_title
             // 
-            this.pnl.BackColor = System.Drawing.Color.Gainsboro;
-            this.pnl.Controls.Add(this.lbl_id);
-            this.pnl.Location = new System.Drawing.Point(226, 67);
-            this.pnl.Name = "pnl";
-            this.pnl.Size = new System.Drawing.Size(668, 452);
-            this.pnl.TabIndex = 141;
+            this.lbl_title.CustomBackground = true;
+            this.lbl_title.CustomForeColor = true;
+            this.lbl_title.ForeColor = System.Drawing.Color.LightCoral;
+            this.lbl_title.Location = new System.Drawing.Point(6, 42);
+            this.lbl_title.Name = "lbl_title";
+            this.lbl_title.Size = new System.Drawing.Size(511, 18);
+            this.lbl_title.TabIndex = 245;
+            this.lbl_title.Text = "Polytechnic University of the Philippines, Sta. Maria Campus";
             // 
             // lblDay
             // 
@@ -413,16 +416,14 @@
             this.lblTime.Text = "00:00 AM";
             this.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lbl_title
+            // pnl
             // 
-            this.lbl_title.CustomBackground = true;
-            this.lbl_title.CustomForeColor = true;
-            this.lbl_title.ForeColor = System.Drawing.Color.LightCoral;
-            this.lbl_title.Location = new System.Drawing.Point(6, 42);
-            this.lbl_title.Name = "lbl_title";
-            this.lbl_title.Size = new System.Drawing.Size(511, 18);
-            this.lbl_title.TabIndex = 245;
-            this.lbl_title.Text = "Polytechnic University of the Philippines, Sta. Maria Campus";
+            this.pnl.BackColor = System.Drawing.Color.Gainsboro;
+            this.pnl.Controls.Add(this.lbl_id);
+            this.pnl.Location = new System.Drawing.Point(226, 67);
+            this.pnl.Name = "pnl";
+            this.pnl.Size = new System.Drawing.Size(668, 452);
+            this.pnl.TabIndex = 141;
             // 
             // timer1
             // 
