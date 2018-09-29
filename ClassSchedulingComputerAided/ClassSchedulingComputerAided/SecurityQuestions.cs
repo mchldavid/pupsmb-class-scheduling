@@ -94,6 +94,10 @@ namespace ClassSchedulingComputerAided
             else
             {
                 MessageBox.Show("Invalid Answer/s. Please enter your valid security answer!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtAnswer1.Text = "";
+                txtAnswer2.Text = "";
+                txtAnswer3.Text = "";
+                txtAnswer1.Focus();
             }
         }
     }

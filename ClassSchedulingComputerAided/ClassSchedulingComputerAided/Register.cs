@@ -37,6 +37,7 @@ namespace ClassSchedulingComputerAided
             for (int x = 0; x < md.Sections_ListCourse().Length; x++)
                 if (md.Sections_ListCourse().GetValue(x).ToString() != "")
                     cboCourseDepartment.Items.Add(md.Sections_ListCourse().GetValue(x).ToString());
+            cboCourseDepartment.SelectedIndex = 0;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -44,43 +45,77 @@ namespace ClassSchedulingComputerAided
             string teachStatus = "";
             string gender = "";
 
-            if (txtFirstName.Text != "" && txtLastName.Text != "" && txtAddress.Text != "" &&
-                txtEmailAddress.Text != "" && txtMobileNumber.Text != "" && txtUsername.Text != "" && txtPassword.Text != "" &&
-                txtAnswer1.Text != "" && txtAnswer2.Text != "" && txtAnswer3.Text != "" && txtAnswer4.Text != "" && txtAnswer5.Text != "")
+            if (txtFirstName.Text != "" 
+                && txtLastName.Text != "" 
+                && txtAddress.Text != "" 
+                && txtEmailAddress.Text != ""
+                && txtMobileNumber.Text != "(+63)   -    -" 
+                && txtUsername.Text != "" 
+                && txtPassword.Text != "" 
+                && txtAnswer1.Text != "" 
+                && txtAnswer2.Text != "" 
+                && txtAnswer3.Text != "" 
+                && txtAnswer4.Text != "" 
+                && txtAnswer5.Text != "")
             {
                 if (!(rdoFemale.Checked == false && rdoMale.Checked == false))
                 {
                     gender = (rdoMale.Checked == true) ? "Male" : "Female";
                     if (!(rdoFulltimer.Checked == false && rdoParttimer.Checked == false && rdoRetiree.Checked == false))
                     {
-                        if (rdoFulltimer.Checked == true)
-                            teachStatus = "Fulltimer";
-                        if (rdoParttimer.Checked == true)
-                            teachStatus = "Parttimer";
-                        if (rdoRetiree.Checked == true)
-                            teachStatus = "Retiree";
-                        md.RegisterUser(txtUsername.Text, ms.encryptPassword(txtPassword.Text), txtFirstName.Text, txtMiddleName.Text, txtLastName.Text, txtAddress.Text, gender, teachStatus, cboCourseDepartment.Text, txtEmailAddress.Text, txtMobileNumber.Text);
-                        
-                        //get set security questions
-                        string[] answer = new string[5];
-                        string[] question = new string[5];
+                        if (cboCourseDepartment.SelectedIndex != -1)
+                        {
+                            EmailValidation email = new EmailValidation();
+                            if (email.IsValidEmail(txtEmailAddress.Text) == true)
+                            {
+                                if (txtPassword.Text == txtConfirmPassword.Text)
+                                {
+                                    DialogResult dr = MessageBox.Show("Do you want to save?", "Save", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                                    if (dr == DialogResult.Yes)
+                                    {
+                                        if (rdoFulltimer.Checked == true)
+                                            teachStatus = "Fulltimer";
+                                        if (rdoParttimer.Checked == true)
+                                            teachStatus = "Parttimer";
+                                        if (rdoRetiree.Checked == true)
+                                            teachStatus = "Retiree";
+                                        md.RegisterUser(txtUsername.Text, ms.encryptPassword(txtPassword.Text), txtFirstName.Text, txtMiddleName.Text, txtLastName.Text, txtAddress.Text, gender, teachStatus, cboCourseDepartment.Text, txtEmailAddress.Text, txtMobileNumber.Text);
 
-                        answer[0] = txtAnswer1.Text;
-                        answer[1] = txtAnswer2.Text;
-                        answer[2] = txtAnswer3.Text;
-                        answer[3] = txtAnswer4.Text;
-                        answer[4] = txtAnswer5.Text;
+                                        //get set security questions
+                                        string[] answer = new string[5];
+                                        string[] question = new string[5];
 
-                        question[0] = "Who is your favorite actor, musician, or artist?";
-                        question[1] = "What is your mother’s maiden name?";
-                        question[2] = "What is your favorite color?";
-                        question[3] = "In what city were you born?";
-                        question[4] = "What is the name of your favorite pet?";
+                                        answer[0] = txtAnswer1.Text;
+                                        answer[1] = txtAnswer2.Text;
+                                        answer[2] = txtAnswer3.Text;
+                                        answer[3] = txtAnswer4.Text;
+                                        answer[4] = txtAnswer5.Text;
 
-                        md.RegisterSecurityQuestion(txtUsername.Text, ms.encryptPassword(txtPassword.Text), answer ,question);
-                        frmLogin l = new frmLogin();
-                        l.Show();
-                        this.Hide();
+                                        question[0] = "Who is your favorite actor, musician, or artist?";
+                                        question[1] = "What is your mother’s maiden name?";
+                                        question[2] = "What is your favorite color?";
+                                        question[3] = "In what city were you born?";
+                                        question[4] = "What is the name of your favorite pet?";
+
+                                        md.RegisterSecurityQuestion(txtUsername.Text, ms.encryptPassword(txtPassword.Text), answer, question);
+                                        frmLogin l = new frmLogin();
+                                        l.Show();
+                                        this.Hide();
+                                    }
+                                }
+                                else
+                                {
+                                    MessageBox.Show("The specified password do not match!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    txtConfirmPassword.Text = "";
+                                    txtConfirmPassword.Focus();
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("The specified email is invalid!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                txtEmailAddress.Focus();
+                            }
+                        }
                     }
                     else
                     {
@@ -95,6 +130,19 @@ namespace ClassSchedulingComputerAided
             else
             {
                 MessageBox.Show("All Fields are required", "Fields", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (txtAnswer5.Text == "") { txtAnswer5.Focus(); }
+                if (txtAnswer4.Text == "") { txtAnswer4.Focus(); }
+                if (txtAnswer3.Text == "") { txtAnswer3.Focus(); }
+                if (txtAnswer2.Text == "") { txtAnswer2.Focus(); }
+                if (txtAnswer1.Text == "") { txtAnswer1.Focus(); }
+                if (txtConfirmPassword.Text == "") { txtConfirmPassword.Focus(); }
+                if (txtPassword.Text == "") { txtPassword.Focus(); }
+                if (txtUsername.Text == "") { txtUsername.Focus(); }
+                if (txtMobileNumber.Text == "") { txtMobileNumber.Focus(); }
+                if (txtEmailAddress.Text == "") { txtEmailAddress.Focus(); }
+                if (txtAddress.Text == "") { txtAddress.Focus(); }
+                if (txtLastName.Text == "") { txtLastName.Focus(); }
+                if (txtFirstName.Text == "") { txtFirstName.Focus(); }
             }
         }
 
@@ -323,6 +371,37 @@ namespace ClassSchedulingComputerAided
         private void txtPassword_OnValueChanged(object sender, EventArgs e)
         {
             txtPassword.isPassword = true;
+        }
+
+        private void txtConfirmPassword_OnValueChanged(object sender, EventArgs e)
+        {
+            txtConfirmPassword.isPassword = true;
+        }
+
+        private void txtMobileNumber_Enter(object sender, EventArgs e)
+        {
+            lineShape1.BorderColor = Color.FromArgb(67, 0, 17); 
+        }
+
+        private void txtMobileNumber_Leave(object sender, EventArgs e)
+        {
+            lineShape1.BorderColor = Color.DimGray;
+        }
+
+        private void txtMobileNumber_MouseHover(object sender, EventArgs e)
+        {
+            lineShape1.BorderColor = Color.FromArgb(138, 4, 0);
+        }
+
+        private void txtMobileNumber_MouseLeave(object sender, EventArgs e)
+        {
+            if(txtMobileNumber.Focus() == false)
+                lineShape1.BorderColor = Color.DimGray;
+        }
+
+        private void txtFirstName_OnValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

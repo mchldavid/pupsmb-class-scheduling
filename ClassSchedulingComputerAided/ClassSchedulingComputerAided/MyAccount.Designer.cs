@@ -33,6 +33,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtMobileNumber = new System.Windows.Forms.MaskedTextBox();
             this.cboGender = new System.Windows.Forms.ComboBox();
             this.txtConfirmPassword = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -41,7 +42,6 @@
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtAddress = new System.Windows.Forms.TextBox();
-            this.txtMobileNumber = new System.Windows.Forms.TextBox();
             this.txtEmailAddress = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -98,6 +98,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel2.Controls.Add(this.txtMobileNumber);
             this.panel2.Controls.Add(this.cboGender);
             this.panel2.Controls.Add(this.txtConfirmPassword);
             this.panel2.Controls.Add(this.label7);
@@ -106,7 +107,6 @@
             this.panel2.Controls.Add(this.txtUsername);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.txtAddress);
-            this.panel2.Controls.Add(this.txtMobileNumber);
             this.panel2.Controls.Add(this.txtEmailAddress);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label10);
@@ -125,13 +125,20 @@
             this.panel2.Size = new System.Drawing.Size(443, 491);
             this.panel2.TabIndex = 220;
             // 
+            // txtMobileNumber
+            // 
+            this.txtMobileNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.txtMobileNumber.Location = new System.Drawing.Point(179, 299);
+            this.txtMobileNumber.Mask = "(+63)000-0000-000";
+            this.txtMobileNumber.Name = "txtMobileNumber";
+            this.txtMobileNumber.Size = new System.Drawing.Size(210, 22);
+            this.txtMobileNumber.TabIndex = 184;
+            // 
             // cboGender
             // 
+            this.cboGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboGender.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboGender.FormattingEnabled = true;
-            this.cboGender.Items.AddRange(new object[] {
-            "Male",
-            "Female"});
             this.cboGender.Location = new System.Drawing.Point(179, 126);
             this.cboGender.Name = "cboGender";
             this.cboGender.Size = new System.Drawing.Size(210, 25);
@@ -142,7 +149,7 @@
             this.txtConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtConfirmPassword.Location = new System.Drawing.Point(179, 408);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
-            this.txtConfirmPassword.PasswordChar = '*';
+            this.txtConfirmPassword.PasswordChar = '•';
             this.txtConfirmPassword.Size = new System.Drawing.Size(210, 22);
             this.txtConfirmPassword.TabIndex = 182;
             // 
@@ -161,7 +168,7 @@
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(179, 380);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.PasswordChar = '•';
             this.txtPassword.Size = new System.Drawing.Size(210, 22);
             this.txtPassword.TabIndex = 182;
             // 
@@ -201,14 +208,6 @@
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(210, 87);
             this.txtAddress.TabIndex = 182;
-            // 
-            // txtMobileNumber
-            // 
-            this.txtMobileNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMobileNumber.Location = new System.Drawing.Point(179, 296);
-            this.txtMobileNumber.Name = "txtMobileNumber";
-            this.txtMobileNumber.Size = new System.Drawing.Size(210, 22);
-            this.txtMobileNumber.TabIndex = 182;
             // 
             // txtEmailAddress
             // 
@@ -296,6 +295,8 @@
             // 
             // txtFirstName
             // 
+            this.txtFirstName.BackColor = System.Drawing.Color.White;
+            this.txtFirstName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFirstName.Location = new System.Drawing.Point(179, 24);
             this.txtFirstName.Name = "txtFirstName";
@@ -356,9 +357,9 @@
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtAddress;
-        private System.Windows.Forms.TextBox txtMobileNumber;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.MaskedTextBox txtMobileNumber;
 
     }
 }

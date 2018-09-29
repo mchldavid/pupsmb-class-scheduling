@@ -110,8 +110,6 @@ namespace ClassSchedulingComputerAided
                 if (teachingStatus == "Retiree")
                     com.Parameters.AddWithValue("@uA", 6);
                 com.ExecuteNonQuery();
-
-                MessageBox.Show("Created Successfully!");
             }
             catch (MySqlException sq)
             {
@@ -2055,7 +2053,7 @@ namespace ClassSchedulingComputerAided
             }
         }
 
-        public void UpdateUsersAccount(string id, string username, string password, string firstname, string middlename, string lastname, string address, string gender, string emailAddress, string mobileNumber)
+        public void UpdateUsersAdminAccount(string id, string username, string password, string firstname, string middlename, string lastname, string address, string gender, string emailAddress, string mobileNumber)
         {
             try
             {
@@ -2073,11 +2071,10 @@ namespace ClassSchedulingComputerAided
                 com.Parameters.AddWithValue("@eA", emailAddress);
                 com.Parameters.AddWithValue("@moN", mobileNumber);
                 com.ExecuteNonQuery();
-                MessageBox.Show("Update Successfully!", "UpdateUser");
             }
             catch (MySqlException er)
             {
-                MessageBox.Show(er.Message);
+                MessageBox.Show(er.Message, "UpdateUsersAdminAccount");
             }
             finally
             {

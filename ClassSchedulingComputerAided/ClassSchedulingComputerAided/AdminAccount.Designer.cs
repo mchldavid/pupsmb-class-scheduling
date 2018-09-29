@@ -50,33 +50,37 @@
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnExit = new Bunifu.Framework.UI.BunifuImageButton();
             this.label12 = new System.Windows.Forms.Label();
             this.btnBack = new MetroFramework.Controls.MetroButton();
             this.btnSave = new MetroFramework.Controls.MetroButton();
             this.pnlAdmin = new System.Windows.Forms.Panel();
+            this.txtAnswer5 = new System.Windows.Forms.TextBox();
+            this.txtAnswer4 = new System.Windows.Forms.TextBox();
+            this.txtAnswer3 = new System.Windows.Forms.TextBox();
+            this.txtAnswer2 = new System.Windows.Forms.TextBox();
+            this.txtAnswer1 = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.lbl = new System.Windows.Forms.Label();
             this.btnNext = new MetroFramework.Controls.MetroButton();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtAnswer1 = new System.Windows.Forms.TextBox();
-            this.txtAnswer2 = new System.Windows.Forms.TextBox();
-            this.txtAnswer3 = new System.Windows.Forms.TextBox();
-            this.txtAnswer4 = new System.Windows.Forms.TextBox();
-            this.txtAnswer5 = new System.Windows.Forms.TextBox();
-            this.btnExit = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel1.SuspendLayout();
-            this.pnlAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
+            this.pnlAdmin.SuspendLayout();
             this.SuspendLayout();
             // 
             // cboGender
             // 
+            this.cboGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboGender.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboGender.FormattingEnabled = true;
+            this.cboGender.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
             this.cboGender.Location = new System.Drawing.Point(177, 191);
             this.cboGender.Name = "cboGender";
             this.cboGender.Size = new System.Drawing.Size(210, 25);
@@ -267,6 +271,20 @@
             this.panel1.Size = new System.Drawing.Size(443, 36);
             this.panel1.TabIndex = 221;
             // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(0)))), ((int)(((byte)(17)))));
+            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
+            this.btnExit.ImageActive = null;
+            this.btnExit.Location = new System.Drawing.Point(403, 6);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(24, 23);
+            this.btnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnExit.TabIndex = 227;
+            this.btnExit.TabStop = false;
+            this.btnExit.Zoom = 10;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -340,6 +358,105 @@
             this.pnlAdmin.TabIndex = 222;
             this.pnlAdmin.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
+            // txtAnswer5
+            // 
+            this.txtAnswer5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAnswer5.Location = new System.Drawing.Point(490, 407);
+            this.txtAnswer5.Name = "txtAnswer5";
+            this.txtAnswer5.Size = new System.Drawing.Size(330, 22);
+            this.txtAnswer5.TabIndex = 29;
+            // 
+            // txtAnswer4
+            // 
+            this.txtAnswer4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAnswer4.Location = new System.Drawing.Point(490, 354);
+            this.txtAnswer4.Name = "txtAnswer4";
+            this.txtAnswer4.Size = new System.Drawing.Size(330, 22);
+            this.txtAnswer4.TabIndex = 27;
+            // 
+            // txtAnswer3
+            // 
+            this.txtAnswer3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAnswer3.Location = new System.Drawing.Point(490, 306);
+            this.txtAnswer3.Name = "txtAnswer3";
+            this.txtAnswer3.Size = new System.Drawing.Size(330, 22);
+            this.txtAnswer3.TabIndex = 25;
+            // 
+            // txtAnswer2
+            // 
+            this.txtAnswer2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAnswer2.Location = new System.Drawing.Point(490, 256);
+            this.txtAnswer2.Name = "txtAnswer2";
+            this.txtAnswer2.Size = new System.Drawing.Size(330, 22);
+            this.txtAnswer2.TabIndex = 23;
+            // 
+            // txtAnswer1
+            // 
+            this.txtAnswer1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAnswer1.Location = new System.Drawing.Point(491, 210);
+            this.txtAnswer1.Name = "txtAnswer1";
+            this.txtAnswer1.Size = new System.Drawing.Size(329, 22);
+            this.txtAnswer1.TabIndex = 21;
+            // 
+            // label11
+            // 
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(463, 25);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(397, 27);
+            this.label11.TabIndex = 226;
+            this.label11.Text = "Note: Please set up your security questions and save.";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(486, 387);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(273, 17);
+            this.label21.TabIndex = 28;
+            this.label21.Text = "5. What is the name of your favorite pet?";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(487, 335);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(203, 17);
+            this.label20.TabIndex = 26;
+            this.label20.Text = "4. In what city were you born?";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(487, 285);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(200, 17);
+            this.label19.TabIndex = 24;
+            this.label19.Text = "3. What is your favortie color?";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(486, 238);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(264, 17);
+            this.label18.TabIndex = 22;
+            this.label18.Text = "2. What is your mother\'s maiden name?";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(486, 191);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(318, 17);
+            this.label17.TabIndex = 20;
+            this.label17.Text = "1. Who is your favorite actor, musician, or artist?";
+            // 
             // lbl
             // 
             this.lbl.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -359,119 +476,6 @@
             this.btnNext.Text = "NEXT";
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(486, 191);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(318, 17);
-            this.label17.TabIndex = 20;
-            this.label17.Text = "1. Who is your favorite actor, musician, or artist?";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(486, 238);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(264, 17);
-            this.label18.TabIndex = 22;
-            this.label18.Text = "2. What is your mother\'s maiden name?";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(487, 285);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(200, 17);
-            this.label19.TabIndex = 24;
-            this.label19.Text = "3. What is your favortie color?";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(487, 335);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(203, 17);
-            this.label20.TabIndex = 26;
-            this.label20.Text = "4. In what city were you born?";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(486, 387);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(273, 17);
-            this.label21.TabIndex = 28;
-            this.label21.Text = "5. What is the name of your favorite pet?";
-            // 
-            // label11
-            // 
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(463, 25);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(397, 27);
-            this.label11.TabIndex = 226;
-            this.label11.Text = "Note: Please set up your security questions and save.";
-            // 
-            // txtAnswer1
-            // 
-            this.txtAnswer1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAnswer1.Location = new System.Drawing.Point(491, 210);
-            this.txtAnswer1.Name = "txtAnswer1";
-            this.txtAnswer1.Size = new System.Drawing.Size(329, 22);
-            this.txtAnswer1.TabIndex = 21;
-            // 
-            // txtAnswer2
-            // 
-            this.txtAnswer2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAnswer2.Location = new System.Drawing.Point(490, 256);
-            this.txtAnswer2.Name = "txtAnswer2";
-            this.txtAnswer2.Size = new System.Drawing.Size(330, 22);
-            this.txtAnswer2.TabIndex = 23;
-            // 
-            // txtAnswer3
-            // 
-            this.txtAnswer3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAnswer3.Location = new System.Drawing.Point(490, 306);
-            this.txtAnswer3.Name = "txtAnswer3";
-            this.txtAnswer3.Size = new System.Drawing.Size(330, 22);
-            this.txtAnswer3.TabIndex = 25;
-            // 
-            // txtAnswer4
-            // 
-            this.txtAnswer4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAnswer4.Location = new System.Drawing.Point(490, 354);
-            this.txtAnswer4.Name = "txtAnswer4";
-            this.txtAnswer4.Size = new System.Drawing.Size(330, 22);
-            this.txtAnswer4.TabIndex = 27;
-            // 
-            // txtAnswer5
-            // 
-            this.txtAnswer5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAnswer5.Location = new System.Drawing.Point(490, 407);
-            this.txtAnswer5.Name = "txtAnswer5";
-            this.txtAnswer5.Size = new System.Drawing.Size(330, 22);
-            this.txtAnswer5.TabIndex = 29;
-            // 
-            // btnExit
-            // 
-            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(0)))), ((int)(((byte)(17)))));
-            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
-            this.btnExit.ImageActive = null;
-            this.btnExit.Location = new System.Drawing.Point(403, 6);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(24, 23);
-            this.btnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnExit.TabIndex = 227;
-            this.btnExit.TabStop = false;
-            this.btnExit.Zoom = 10;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
             // frmAdminAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -484,9 +488,9 @@
             this.Load += new System.EventHandler(this.AdminAccount_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
             this.pnlAdmin.ResumeLayout(false);
             this.pnlAdmin.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
             this.ResumeLayout(false);
 
         }

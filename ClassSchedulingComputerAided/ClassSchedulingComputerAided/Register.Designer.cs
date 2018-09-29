@@ -53,8 +53,6 @@
             this.rdoFemale = new MetroFramework.Controls.MetroRadioButton();
             this.rdoMale = new MetroFramework.Controls.MetroRadioButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtAddress = new MetroFramework.Controls.MetroTextBox();
-            this.txtMobileNumber = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtAnswer5 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtAnswer3 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtAnswer4 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
@@ -69,6 +67,10 @@
             this.txtFirstName = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
+            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.txtMobileNumber = new System.Windows.Forms.MaskedTextBox();
+            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -248,7 +250,7 @@
             this.groupBox2.Location = new System.Drawing.Point(61, 391);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(250, 56);
-            this.groupBox2.TabIndex = 204;
+            this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             // 
             // label13
@@ -311,7 +313,7 @@
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Size = new System.Drawing.Size(250, 51);
-            this.groupBox1.TabIndex = 203;
+            this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             // 
             // label2
@@ -365,36 +367,6 @@
             this.label1.Size = new System.Drawing.Size(55, 17);
             this.label1.TabIndex = 202;
             this.label1.Text = "Address";
-            // 
-            // txtAddress
-            // 
-            this.txtAddress.CustomBackground = true;
-            this.txtAddress.Location = new System.Drawing.Point(61, 234);
-            this.txtAddress.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtAddress.Multiline = true;
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(250, 91);
-            this.txtAddress.TabIndex = 3;
-            // 
-            // txtMobileNumber
-            // 
-            this.txtMobileNumber.BackColor = System.Drawing.Color.White;
-            this.txtMobileNumber.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtMobileNumber.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMobileNumber.ForeColor = System.Drawing.Color.Black;
-            this.txtMobileNumber.HintForeColor = System.Drawing.Color.Black;
-            this.txtMobileNumber.HintText = "Mobile Number";
-            this.txtMobileNumber.isPassword = false;
-            this.txtMobileNumber.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(0)))), ((int)(((byte)(17)))));
-            this.txtMobileNumber.LineIdleColor = System.Drawing.SystemColors.GrayText;
-            this.txtMobileNumber.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(4)))), ((int)(((byte)(0)))));
-            this.txtMobileNumber.LineThickness = 3;
-            this.txtMobileNumber.Location = new System.Drawing.Point(61, 589);
-            this.txtMobileNumber.Margin = new System.Windows.Forms.Padding(7);
-            this.txtMobileNumber.Name = "txtMobileNumber";
-            this.txtMobileNumber.Size = new System.Drawing.Size(250, 26);
-            this.txtMobileNumber.TabIndex = 11;
-            this.txtMobileNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // txtAnswer5
             // 
@@ -515,6 +487,7 @@
             this.txtConfirmPassword.Size = new System.Drawing.Size(250, 26);
             this.txtConfirmPassword.TabIndex = 14;
             this.txtConfirmPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtConfirmPassword.OnValueChanged += new System.EventHandler(this.txtConfirmPassword_OnValueChanged);
             // 
             // txtPassword
             // 
@@ -636,6 +609,7 @@
             this.txtFirstName.Size = new System.Drawing.Size(250, 26);
             this.txtFirstName.TabIndex = 0;
             this.txtFirstName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtFirstName.OnValueChanged += new System.EventHandler(this.txtFirstName_OnValueChanged);
             // 
             // panel1
             // 
@@ -657,12 +631,58 @@
             this.label12.TabIndex = 137;
             this.label12.Text = "Register";
             // 
+            // txtAddress
+            // 
+            this.txtAddress.Font = new System.Drawing.Font("Century Gothic", 9F);
+            this.txtAddress.Location = new System.Drawing.Point(61, 239);
+            this.txtAddress.Multiline = true;
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(250, 87);
+            this.txtAddress.TabIndex = 3;
+            // 
+            // txtMobileNumber
+            // 
+            this.txtMobileNumber.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMobileNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.txtMobileNumber.Location = new System.Drawing.Point(61, 589);
+            this.txtMobileNumber.Mask = "(+63)000-0000-000";
+            this.txtMobileNumber.Name = "txtMobileNumber";
+            this.txtMobileNumber.Size = new System.Drawing.Size(251, 15);
+            this.txtMobileNumber.TabIndex = 11;
+            this.txtMobileNumber.Enter += new System.EventHandler(this.txtMobileNumber_Enter);
+            this.txtMobileNumber.Leave += new System.EventHandler(this.txtMobileNumber_Leave);
+            this.txtMobileNumber.MouseLeave += new System.EventHandler(this.txtMobileNumber_MouseLeave);
+            this.txtMobileNumber.MouseHover += new System.EventHandler(this.txtMobileNumber_MouseHover);
+            // 
+            // shapeContainer1
+            // 
+            this.shapeContainer1.Location = new System.Drawing.Point(20, 60);
+            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
+            this.shapeContainer1.Name = "shapeContainer1";
+            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.lineShape1});
+            this.shapeContainer1.Size = new System.Drawing.Size(652, 557);
+            this.shapeContainer1.TabIndex = 220;
+            this.shapeContainer1.TabStop = false;
+            // 
+            // lineShape1
+            // 
+            this.lineShape1.BorderColor = System.Drawing.Color.DimGray;
+            this.lineShape1.BorderWidth = 3;
+            this.lineShape1.Name = "lineShape1";
+            this.lineShape1.X1 = 39;
+            this.lineShape1.X2 = 290;
+            this.lineShape1.Y1 = 550;
+            this.lineShape1.Y2 = 550;
+            // 
             // frmRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Drawing.MetroBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(692, 637);
+            this.Controls.Add(this.txtMobileNumber);
+            this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.bunifuSeparator3);
             this.Controls.Add(this.bunifuSeparator2);
@@ -680,8 +700,6 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtAddress);
-            this.Controls.Add(this.txtMobileNumber);
             this.Controls.Add(this.txtAnswer5);
             this.Controls.Add(this.txtAnswer3);
             this.Controls.Add(this.txtAnswer4);
@@ -696,6 +714,7 @@
             this.Controls.Add(this.txtFirstName);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.shapeContainer1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Movable = false;
@@ -737,8 +756,6 @@
         public MetroFramework.Controls.MetroRadioButton rdoFemale;
         public MetroFramework.Controls.MetroRadioButton rdoMale;
         public System.Windows.Forms.Label label1;
-        public MetroFramework.Controls.MetroTextBox txtAddress;
-        public Bunifu.Framework.UI.BunifuMaterialTextbox txtMobileNumber;
         public Bunifu.Framework.UI.BunifuMaterialTextbox txtAnswer5;
         public Bunifu.Framework.UI.BunifuMaterialTextbox txtAnswer3;
         public Bunifu.Framework.UI.BunifuMaterialTextbox txtAnswer4;
@@ -756,5 +773,9 @@
         public MetroFramework.Controls.MetroButton btnSave;
         public MetroFramework.Controls.MetroButton btnCancel;
         public System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txtAddress;
+        private System.Windows.Forms.MaskedTextBox txtMobileNumber;
+        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
     }
 }

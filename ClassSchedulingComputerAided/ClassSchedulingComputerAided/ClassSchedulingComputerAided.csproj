@@ -167,6 +167,7 @@
     <Compile Include="classes\StudentsScheduled.cs" />
     <Compile Include="classes\SubjectForStudents.cs" />
     <Compile Include="classes\CreateDatabase.cs" />
+    <Compile Include="EmailValidation.cs" />
     <Compile Include="NewPassword.cs">
       <SubType>Form</SubType>
     </Compile>

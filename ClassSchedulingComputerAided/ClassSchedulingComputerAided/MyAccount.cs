@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace ClassSchedulingComputerAided
 {
     public partial class frmMyAccount : MetroFramework.Forms.MetroForm
@@ -46,13 +47,57 @@ namespace ClassSchedulingComputerAided
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Do you want to save?", "Save", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-            if (dr == DialogResult.Yes)
+            //validation
+            if (txtFirstName.Text != ""
+                && txtLastName.Text != ""
+                && txtAddress.Text != ""
+                && txtEmailAddress.Text != ""
+                && txtMobileNumber.Text != "(+63)   -    -"
+                && txtUsername.Text != ""
+                && txtPassword.Text != ""
+                && txtConfirmPassword.Text != "")
             {
-                md.UpdateUsersAccount(usersData.a_id, txtUsername.Text, ms.encryptPassword(txtPassword.Text), txtFirstName.Text, txtMiddleName.Text, txtLastName.Text, txtAddress.Text, cboGender.Text, txtEmailAddress.Text, txtMobileNumber.Text);
-                frmAdminHomePage ahp = new frmAdminHomePage();
-                this.Hide();
-                ahp.Show();
+                EmailValidation email = new EmailValidation();
+                if (email.IsValidEmail(txtEmailAddress.Text) == true)
+                {
+                    if (txtPassword.Text == txtConfirmPassword.Text)
+                    {
+                        DialogResult dr = MessageBox.Show("Do you want to save?", "Save", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                        if (dr == DialogResult.Yes)
+                        {
+                            md.UpdateUsersAdminAccount(usersData.a_id, txtUsername.Text, ms.encryptPassword(txtPassword.Text), txtFirstName.Text, txtMiddleName.Text, txtLastName.Text, txtAddress.Text, cboGender.Text, txtEmailAddress.Text, txtMobileNumber.Text);
+                            frmAdminHomePage ahp = new frmAdminHomePage();
+                            this.Hide();
+                            ahp.Show();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("The specified password do not match!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        txtConfirmPassword.SelectionStart = 0;
+                        txtConfirmPassword.SelectionLength = txtConfirmPassword.TextLength;
+                        txtConfirmPassword.Focus();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("The specified email is invalid!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtEmailAddress.SelectionStart = 0;
+                    txtEmailAddress.SelectionLength = txtEmailAddress.TextLength;
+                    txtEmailAddress.Focus();
+                }
+            }
+            else
+            {
+                MessageBox.Show("All fields are required", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (txtConfirmPassword.Text == "") { txtConfirmPassword.Focus(); }
+                if (txtPassword.Text == "") { txtPassword.Focus(); }
+                if (txtUsername.Text == "") { txtUsername.Focus(); }
+                if (txtMobileNumber.Text == "") { txtMobileNumber.Focus(); }
+                if (txtEmailAddress.Text == "") { txtEmailAddress.Focus(); }
+                if (txtAddress.Text == "") { txtAddress.Focus(); }
+                if (txtLastName.Text == "") { txtLastName.Focus(); }
+                if (txtFirstName.Text == "") { txtFirstName.Focus(); }
             }
         }
     }

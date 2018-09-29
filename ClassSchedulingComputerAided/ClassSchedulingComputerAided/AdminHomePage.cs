@@ -57,9 +57,14 @@ namespace ClassSchedulingComputerAided
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            Form l = new frmLogin();
-            l.Show();
-            this.Hide();
+            DialogResult result = MessageBox.Show("Do you want to logout?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+            if (result == DialogResult.Yes)
+            {
+                Form l = new frmLogin();
+                l.Show();
+                this.Hide();
+            }
         }
 
         public void btnRooms_Click(object sender, EventArgs e)
