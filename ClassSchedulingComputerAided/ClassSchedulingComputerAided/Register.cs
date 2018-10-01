@@ -79,7 +79,7 @@ namespace ClassSchedulingComputerAided
                                             teachStatus = "Parttimer";
                                         if (rdoRetiree.Checked == true)
                                             teachStatus = "Retiree";
-                                        md.RegisterUser(txtUsername.Text, ms.encryptPassword(txtPassword.Text), txtFirstName.Text, txtMiddleName.Text, txtLastName.Text, txtAddress.Text, gender, teachStatus, cboCourseDepartment.Text, txtEmailAddress.Text, txtMobileNumber.Text);
+                                        md.RegisterUser(txtUsername.Text, ms.encryptPassword(txtPassword.Text), txtFirstName.Text, txtMiddleName.Text, txtLastName.Text, txtAddress.Text, gender, teachStatus, cboCourseDepartment.Text, txtEmailAddress.Text, cleanMobileNumber(txtMobileNumber.Text));
 
                                         //get set security questions
                                         string[] answer = new string[5];
@@ -144,6 +144,17 @@ namespace ClassSchedulingComputerAided
                 if (txtLastName.Text == "") { txtLastName.Focus(); }
                 if (txtFirstName.Text == "") { txtFirstName.Focus(); }
             }
+        }
+
+        //to fix the number
+        public string cleanMobileNumber(string s)
+        {
+            StringBuilder sb = new StringBuilder(s);
+
+            sb.Replace("(+63)", "0");
+            sb.Replace("-", "");
+
+            return sb.ToString();
         }
 
         private void panel4_Paint(object sender, PaintEventArgs e)

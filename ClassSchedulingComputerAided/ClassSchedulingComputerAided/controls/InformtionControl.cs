@@ -36,7 +36,7 @@ namespace ClassSchedulingComputerAided
             txtLastName.Text = userInfo[4];
             txtEmailAddress.Text = userInfo[5];
             txtAddress.Text = userInfo[6];
-            txtMobileNumber.Text = userInfo[7];
+            txtMobileNumber.Text = userInfo[7].Remove(0,1);
             cboCourseDepartment.Text = userInfo[9];
             txtUsername.Text = userInfo[0];
             txtPassword.Text = ms.decryptPassword(userInfo[1]);
@@ -55,7 +55,7 @@ namespace ClassSchedulingComputerAided
                 rdoRetiree.Checked = true;
         }
 
-        private void btnSave_Click(object sender, KeyEventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
             if (txtFirstName.Text != ""
                 && txtLastName.Text != ""
@@ -88,7 +88,7 @@ namespace ClassSchedulingComputerAided
                                             teachStatus = "Parttimer";
                                         if (rdoRetiree.Checked == true)
                                             teachStatus = "Retiree";
-                                        md.UpdateUsersAccount(usersData.p_id, txtUsername.Text, ms.encryptPassword(txtPassword.Text), txtFirstName.Text, txtMiddleName.Text, txtLastName.Text, txtAddress.Text, gender, teachStatus, cboCourseDepartment.Text, txtEmailAddress.Text, txtMobileNumber.Text);
+                                        md.UpdateUsersAccount(usersData.p_id, txtUsername.Text, ms.encryptPassword(txtPassword.Text), txtFirstName.Text, txtMiddleName.Text, txtLastName.Text, txtAddress.Text, gender, teachStatus, cboCourseDepartment.Text, txtEmailAddress.Text, cleanMobileNumber(txtMobileNumber.Text));
                                     }
                                 }
                                 else
@@ -122,7 +122,7 @@ namespace ClassSchedulingComputerAided
                 if (txtConfirmPassword.Text == "") { txtConfirmPassword.Focus(); }
                 if (txtPassword.Text == "") { txtPassword.Focus(); }
                 if (txtUsername.Text == "") { txtUsername.Focus(); }
-                if (txtMobileNumber.Text == "") { txtMobileNumber.Focus(); }
+                if (txtMobileNumber.Text == "(+63)   -    -") { txtMobileNumber.Focus(); }
                 if (txtEmailAddress.Text == "") { txtEmailAddress.Focus(); }
                 if (txtAddress.Text == "") { txtAddress.Focus(); }
                 if (txtLastName.Text == "") { txtLastName.Focus(); }
@@ -130,8 +130,20 @@ namespace ClassSchedulingComputerAided
             }
         }
 
+        //to fix the number
+        public string cleanMobileNumber(string s)
+        {
+            StringBuilder sb = new StringBuilder(s);
+
+            sb.Replace("(+63)", "0");
+            sb.Replace("-", "");
+
+            return sb.ToString();
+        }
+
         private void btnCancel_Click(object sender, EventArgs e)
         {
         }
+
     }
 }

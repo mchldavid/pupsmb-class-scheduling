@@ -233,9 +233,9 @@
             this.label10.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(52, 299);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(107, 17);
+            this.label10.Size = new System.Drawing.Size(111, 17);
             this.label10.TabIndex = 181;
-            this.label10.Text = "Mobile Number";
+            this.label10.Text = "Mobile Number:";
             // 
             // label8
             // 
@@ -324,6 +324,7 @@
             this.Movable = false;
             this.Name = "frmMyAccount";
             this.Style = MetroFramework.MetroColorStyle.White;
+            this.Text = " ";
             this.Load += new System.EventHandler(this.MyAccount_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -18,6 +18,7 @@ namespace ClassSchedulingComputerAided
         }
 
         MyDatabase md = new MyDatabase();
+        bool on_off = true;
 
         private void ClassScheduledProfessorControl_Load(object sender, EventArgs e)
         {
@@ -92,8 +93,8 @@ namespace ClassSchedulingComputerAided
         }
 
         private void btnSettings_Click(object sender, EventArgs e)
-        {
-            pnlStart.Visible = true;
+        { 
+            pnlStart.Visible = true; btnSettings.Visible = false; lblSemester.Text = "";
         }
     }
 }

@@ -38,19 +38,10 @@
             this.rdoFemale = new MetroFramework.Controls.MetroRadioButton();
             this.rdoMale = new MetroFramework.Controls.MetroRadioButton();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtAddress = new MetroFramework.Controls.MetroTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtLastName = new MetroFramework.Controls.MetroTextBox();
-            this.txtFirstName = new MetroFramework.Controls.MetroTextBox();
-            this.txtMiddleName = new MetroFramework.Controls.MetroTextBox();
             this.btnSave = new MetroFramework.Controls.MetroButton();
-            this.txtConfirmPassword = new MetroFramework.Controls.MetroTextBox();
-            this.txtPassword = new MetroFramework.Controls.MetroTextBox();
-            this.txtUsername = new MetroFramework.Controls.MetroTextBox();
-            this.txtMobileNumber = new MetroFramework.Controls.MetroTextBox();
-            this.txtEmailAddress = new MetroFramework.Controls.MetroTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.cboCourseDepartment = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -60,6 +51,15 @@
             this.label7 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
+            this.txtConfirmPassword = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.txtMobileNumber = new System.Windows.Forms.MaskedTextBox();
+            this.txtEmailAddress = new System.Windows.Forms.TextBox();
+            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.txtLastName = new System.Windows.Forms.TextBox();
+            this.txtMiddleName = new System.Windows.Forms.TextBox();
+            this.txtFirstName = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -194,17 +194,6 @@
             this.label4.TabIndex = 254;
             this.label4.Text = "Address";
             // 
-            // txtAddress
-            // 
-            this.txtAddress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.txtAddress.CustomBackground = true;
-            this.txtAddress.Location = new System.Drawing.Point(48, 229);
-            this.txtAddress.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtAddress.Multiline = true;
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(250, 91);
-            this.txtAddress.TabIndex = 253;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -238,31 +227,6 @@
             this.label1.TabIndex = 245;
             this.label1.Text = "First Name";
             // 
-            // txtLastName
-            // 
-            this.txtLastName.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtLastName.Location = new System.Drawing.Point(48, 180);
-            this.txtLastName.Multiline = true;
-            this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(250, 25);
-            this.txtLastName.TabIndex = 244;
-            // 
-            // txtFirstName
-            // 
-            this.txtFirstName.Location = new System.Drawing.Point(48, 85);
-            this.txtFirstName.Multiline = true;
-            this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(250, 25);
-            this.txtFirstName.TabIndex = 242;
-            // 
-            // txtMiddleName
-            // 
-            this.txtMiddleName.Location = new System.Drawing.Point(48, 134);
-            this.txtMiddleName.Multiline = true;
-            this.txtMiddleName.Name = "txtMiddleName";
-            this.txtMiddleName.Size = new System.Drawing.Size(250, 25);
-            this.txtMiddleName.TabIndex = 243;
-            // 
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(453, 437);
@@ -271,48 +235,6 @@
             this.btnSave.TabIndex = 264;
             this.btnSave.Text = "SAVE";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // txtConfirmPassword
-            // 
-            this.txtConfirmPassword.Location = new System.Drawing.Point(370, 324);
-            this.txtConfirmPassword.Multiline = true;
-            this.txtConfirmPassword.Name = "txtConfirmPassword";
-            this.txtConfirmPassword.PasswordChar = '*';
-            this.txtConfirmPassword.Size = new System.Drawing.Size(250, 25);
-            this.txtConfirmPassword.TabIndex = 263;
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Location = new System.Drawing.Point(370, 278);
-            this.txtPassword.Multiline = true;
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(250, 25);
-            this.txtPassword.TabIndex = 262;
-            // 
-            // txtUsername
-            // 
-            this.txtUsername.Location = new System.Drawing.Point(370, 229);
-            this.txtUsername.Multiline = true;
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(250, 25);
-            this.txtUsername.TabIndex = 261;
-            // 
-            // txtMobileNumber
-            // 
-            this.txtMobileNumber.Location = new System.Drawing.Point(370, 134);
-            this.txtMobileNumber.Multiline = true;
-            this.txtMobileNumber.Name = "txtMobileNumber";
-            this.txtMobileNumber.Size = new System.Drawing.Size(250, 25);
-            this.txtMobileNumber.TabIndex = 260;
-            // 
-            // txtEmailAddress
-            // 
-            this.txtEmailAddress.Location = new System.Drawing.Point(370, 85);
-            this.txtEmailAddress.Multiline = true;
-            this.txtEmailAddress.Name = "txtEmailAddress";
-            this.txtEmailAddress.Size = new System.Drawing.Size(250, 25);
-            this.txtEmailAddress.TabIndex = 259;
             // 
             // label6
             // 
@@ -411,27 +333,109 @@
             this.metroLabel8.Text = "Edit Professor\'s Information";
             this.metroLabel8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // txtConfirmPassword
+            // 
+            this.txtConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConfirmPassword.Location = new System.Drawing.Point(370, 328);
+            this.txtConfirmPassword.Name = "txtConfirmPassword";
+            this.txtConfirmPassword.PasswordChar = '•';
+            this.txtConfirmPassword.Size = new System.Drawing.Size(250, 22);
+            this.txtConfirmPassword.TabIndex = 274;
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(370, 279);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '•';
+            this.txtPassword.Size = new System.Drawing.Size(250, 22);
+            this.txtPassword.TabIndex = 273;
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.Location = new System.Drawing.Point(370, 229);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(250, 22);
+            this.txtUsername.TabIndex = 272;
+            // 
+            // txtMobileNumber
+            // 
+            this.txtMobileNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.txtMobileNumber.Location = new System.Drawing.Point(370, 136);
+            this.txtMobileNumber.Mask = "(+63)000-0000-000";
+            this.txtMobileNumber.Name = "txtMobileNumber";
+            this.txtMobileNumber.Size = new System.Drawing.Size(250, 22);
+            this.txtMobileNumber.TabIndex = 271;
+            // 
+            // txtEmailAddress
+            // 
+            this.txtEmailAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmailAddress.Location = new System.Drawing.Point(370, 85);
+            this.txtEmailAddress.Name = "txtEmailAddress";
+            this.txtEmailAddress.Size = new System.Drawing.Size(250, 22);
+            this.txtEmailAddress.TabIndex = 270;
+            // 
+            // txtAddress
+            // 
+            this.txtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAddress.Location = new System.Drawing.Point(48, 229);
+            this.txtAddress.Multiline = true;
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(250, 87);
+            this.txtAddress.TabIndex = 269;
+            // 
+            // txtLastName
+            // 
+            this.txtLastName.BackColor = System.Drawing.Color.White;
+            this.txtLastName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLastName.Location = new System.Drawing.Point(48, 183);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(250, 22);
+            this.txtLastName.TabIndex = 268;
+            // 
+            // txtMiddleName
+            // 
+            this.txtMiddleName.BackColor = System.Drawing.Color.White;
+            this.txtMiddleName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMiddleName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMiddleName.Location = new System.Drawing.Point(48, 136);
+            this.txtMiddleName.Name = "txtMiddleName";
+            this.txtMiddleName.Size = new System.Drawing.Size(250, 22);
+            this.txtMiddleName.TabIndex = 267;
+            // 
+            // txtFirstName
+            // 
+            this.txtFirstName.BackColor = System.Drawing.Color.White;
+            this.txtFirstName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFirstName.Location = new System.Drawing.Point(48, 85);
+            this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.Size = new System.Drawing.Size(250, 22);
+            this.txtFirstName.TabIndex = 266;
+            // 
             // L_EditProfessorsControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panel7);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtAddress);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtLastName);
-            this.Controls.Add(this.txtFirstName);
-            this.Controls.Add(this.txtMiddleName);
-            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtConfirmPassword);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.txtMobileNumber);
             this.Controls.Add(this.txtEmailAddress);
+            this.Controls.Add(this.txtAddress);
+            this.Controls.Add(this.txtLastName);
+            this.Controls.Add(this.txtMiddleName);
+            this.Controls.Add(this.txtFirstName);
+            this.Controls.Add(this.panel7);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cboCourseDepartment);
             this.Controls.Add(this.label11);
@@ -464,19 +468,10 @@
         public MetroFramework.Controls.MetroRadioButton rdoFemale;
         public MetroFramework.Controls.MetroRadioButton rdoMale;
         public System.Windows.Forms.Label label4;
-        public MetroFramework.Controls.MetroTextBox txtAddress;
         public System.Windows.Forms.Label label3;
         public System.Windows.Forms.Label label2;
         public System.Windows.Forms.Label label1;
-        public MetroFramework.Controls.MetroTextBox txtLastName;
-        public MetroFramework.Controls.MetroTextBox txtFirstName;
-        public MetroFramework.Controls.MetroTextBox txtMiddleName;
         public MetroFramework.Controls.MetroButton btnSave;
-        public MetroFramework.Controls.MetroTextBox txtConfirmPassword;
-        public MetroFramework.Controls.MetroTextBox txtPassword;
-        public MetroFramework.Controls.MetroTextBox txtUsername;
-        public MetroFramework.Controls.MetroTextBox txtMobileNumber;
-        public MetroFramework.Controls.MetroTextBox txtEmailAddress;
         public System.Windows.Forms.Label label6;
         public System.Windows.Forms.ComboBox cboCourseDepartment;
         public System.Windows.Forms.Label label11;
@@ -486,5 +481,14 @@
         public System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel7;
         public MetroFramework.Controls.MetroLabel metroLabel8;
+        private System.Windows.Forms.TextBox txtConfirmPassword;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.TextBox txtUsername;
+        private System.Windows.Forms.MaskedTextBox txtMobileNumber;
+        private System.Windows.Forms.TextBox txtEmailAddress;
+        private System.Windows.Forms.TextBox txtAddress;
+        private System.Windows.Forms.TextBox txtLastName;
+        private System.Windows.Forms.TextBox txtMiddleName;
+        private System.Windows.Forms.TextBox txtFirstName;
     }
 }
