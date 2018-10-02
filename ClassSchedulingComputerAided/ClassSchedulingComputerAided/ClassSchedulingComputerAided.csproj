@@ -167,6 +167,12 @@
     <Compile Include="classes\StudentsScheduled.cs" />
     <Compile Include="classes\SubjectForStudents.cs" />
     <Compile Include="classes\CreateDatabase.cs" />
+    <Compile Include="CreateProgram.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateProgram.Designer.cs">
+      <DependentUpon>CreateProgram.cs</DependentUpon>
+    </Compile>
     <Compile Include="EmailValidation.cs" />
     <Compile Include="NewPassword.cs">
       <SubType>Form</SubType>
@@ -229,10 +235,10 @@
     <Compile Include="trash\Information.Designer.cs">
       <DependentUpon>Information.cs</DependentUpon>
     </Compile>
-    <Compile Include="CreateCurriculum.cs">
+    <Compile Include="trash\CreateCurriculum.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreateCurriculum.Designer.cs">
+    <Compile Include="trash\CreateCurriculum.Designer.cs">
       <DependentUpon>CreateCurriculum.cs</DependentUpon>
     </Compile>
     <Compile Include="Curriculum.cs">
@@ -329,10 +335,10 @@
     <Compile Include="SecurityQuestions.Designer.cs">
       <DependentUpon>SecurityQuestions.cs</DependentUpon>
     </Compile>
-    <Compile Include="SetCourses.cs">
+    <Compile Include="trash\SetCourses.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SetCourses.Designer.cs">
+    <Compile Include="trash\SetCourses.Designer.cs">
       <DependentUpon>SetCourses.cs</DependentUpon>
     </Compile>
     <Compile Include="SetCurriculum.cs">
@@ -402,6 +408,9 @@
     <EmbeddedResource Include="controls\CSD_ProfTimeTable.resx">
       <DependentUpon>CSD_ProfTimeTable.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CreateProgram.resx">
+      <DependentUpon>CreateProgram.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NewPassword.resx">
       <DependentUpon>NewPassword.cs</DependentUpon>
     </EmbeddedResource>
@@ -432,7 +441,7 @@
     <EmbeddedResource Include="trash\Information.resx">
       <DependentUpon>Information.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CreateCurriculum.resx">
+    <EmbeddedResource Include="trash\CreateCurriculum.resx">
       <DependentUpon>CreateCurriculum.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Curriculum.resx">
@@ -489,7 +498,7 @@
     <EmbeddedResource Include="SecurityQuestions.resx">
       <DependentUpon>SecurityQuestions.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SetCourses.resx">
+    <EmbeddedResource Include="trash\SetCourses.resx">
       <DependentUpon>SetCourses.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SetCurriculum.resx">

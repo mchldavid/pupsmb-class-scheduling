@@ -1810,7 +1810,7 @@ namespace ClassSchedulingComputerAided
             SubjectForStudents.LecHrs = new string[11];
             SubjectForStudents.LabHrs = new string[11];
 
-            md.CSD_ShowSubjectsForStudents(cboCourse.Text, cboYear.Text, cboCurriculum.Text, cboSemester.Text, cboSchoolYear.Text);//to call function to get data into database
+            md.CSD_ShowSubjectsForStudents(cboCourse.Text, cboYear.Text, cboCurriculum.Text, cboSemester.Text);//to call function to get data into database
 
             //call a method to list data
             ListCourseCode();

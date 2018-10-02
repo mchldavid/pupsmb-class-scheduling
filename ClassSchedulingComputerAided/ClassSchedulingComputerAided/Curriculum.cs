@@ -27,8 +27,11 @@ namespace ClassSchedulingComputerAided
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            Form cc = new frmCreateCurriculum();
-            cc.Show();
+            //Form cc = new frmCreateCurriculum();
+            //cc.Show();
+            //this.Hide();
+            frmCreateProgram cp = new frmCreateProgram();
+            cp.Show();
             this.Hide();
         }
 
@@ -43,19 +46,20 @@ namespace ClassSchedulingComputerAided
         {
             foreach (DataGridViewRow row in dgvCurriculum.SelectedRows)
             {
-                frmCreateCurriculum c = new frmCreateCurriculum();
+                string id = row.Cells[0].Value.ToString();
+                frmCreateProgram c = new frmCreateProgram();
                 c.Show();
-                c.txtCurriculumTitle.Text = md.C_dgv_Edit(row.Cells[0].Value.ToString()).GetValue(0).ToString();
-                c.txtPublishedBy.Text = md.C_dgv_Edit(row.Cells[0].Value.ToString()).GetValue(1).ToString();
-                c.dtpDatePublished.Value.ToString(md.C_dgv_Edit(row.Cells[0].Value.ToString()).GetValue(2).ToString());
+                c.txtProgramName.Text = md.C_dgv_Edit(id).GetValue(0).ToString();
+                c.txtCurriculumYear.Text = md.C_dgv_Edit(id).GetValue(1).ToString();
+                c.txtProgramAcronym.Text = md.C_dgv_Edit(id).GetValue(4).ToString();
 
-                if (md.C_dgv_Edit(row.Cells[0].Value.ToString()).GetValue(3).ToString() == "active")
+                if (md.C_dgv_Edit(id).GetValue(2).ToString() == "active")
                     c.rdoActive.Checked = true;
                 else
                     c.rdoActive.Checked = false;
                 c.btnSave.Text = "EDIT";
                 curriculumData.c_id = row.Cells[0].Value.ToString();
-                
+
                 this.Hide();
             }
         }

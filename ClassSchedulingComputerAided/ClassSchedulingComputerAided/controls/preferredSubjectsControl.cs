@@ -65,7 +65,7 @@ namespace ClassSchedulingComputerAided
             pnlAddSubject.Visible = true;
             pnlAddSubject.BringToFront();
             cboSubjectBy.SelectedIndex = 0;
-            dgvAddSubject.DataSource = md.dgv_showAddPreferredSubjects("Course Subject", cboSemester.Text, cboSchoolYear.Text).DataSource;
+            dgvAddSubject.DataSource = md.dgv_showAddPreferredSubjects("Course Subject", cboSemester.Text).DataSource;
             dgvAddSubject.Columns[0].Visible = false;
         }
 
@@ -90,7 +90,7 @@ namespace ClassSchedulingComputerAided
 
         private void cboSubjectBy_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dgvAddSubject.DataSource = md.dgv_showAddPreferredSubjects(cboSubjectBy.SelectedItem.ToString(), cboSemester.Text, cboSchoolYear.Text).DataSource;
+            dgvAddSubject.DataSource = md.dgv_showAddPreferredSubjects(cboSubjectBy.SelectedItem.ToString(), cboSemester.Text).DataSource;
             dgvAddSubject.Columns[0].Visible = false;
         }
 
