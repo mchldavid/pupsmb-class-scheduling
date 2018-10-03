@@ -52,10 +52,11 @@
             // 
             // cboSemester
             // 
+            this.cboSemester.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSemester.FormattingEnabled = true;
-            this.cboSemester.Location = new System.Drawing.Point(152, 120);
+            this.cboSemester.Location = new System.Drawing.Point(153, 119);
             this.cboSemester.Name = "cboSemester";
-            this.cboSemester.Size = new System.Drawing.Size(121, 21);
+            this.cboSemester.Size = new System.Drawing.Size(121, 24);
             this.cboSemester.TabIndex = 182;
             // 
             // metroLabel5

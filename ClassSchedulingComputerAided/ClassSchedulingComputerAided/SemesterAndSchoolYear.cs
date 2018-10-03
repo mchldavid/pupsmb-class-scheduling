@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace ClassSchedulingComputerAided
 {
     public partial class frmSemesterAndSchoolYear : MetroFramework.Forms.MetroForm
@@ -38,11 +39,7 @@ namespace ClassSchedulingComputerAided
             sc.Show();
             sc.lbl_control_id.Text = curriculumData.c_id;
             sc.lbl_title.Text = curriculumData.c_curriculumTitle + " ["+ curriculumData.c_semester +" Semester]" ;
-            for (int x = 0; x < md.ListCourse(curriculumData.c_id).Length; x++)
-            {
-                if (md.ListCourse(curriculumData.c_id).GetValue(x).ToString() != "")
-                    sc.cboCourse.Items.Add(md.ListCourse(curriculumData.c_id).GetValue(x).ToString());
-            }
+            
             this.Hide();
         }
 

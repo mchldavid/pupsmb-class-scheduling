@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSetCurriculum));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
             this.txtSubjectCode = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
@@ -48,6 +48,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_course_id = new MetroFramework.Controls.MetroLabel();
             this.lbl_control_id = new MetroFramework.Controls.MetroLabel();
+            this.btnImport = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnAdd = new MetroFramework.Controls.MetroTile();
             this.btnFinish = new MetroFramework.Controls.MetroButton();
             this.btnBack = new MetroFramework.Controls.MetroButton();
@@ -60,6 +61,16 @@
             this.label12 = new System.Windows.Forms.Label();
             this.lbl_title = new MetroFramework.Controls.MetroLabel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.pnl_import = new System.Windows.Forms.Panel();
+            this.dgvData = new System.Windows.Forms.DataGridView();
+            this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
+            this.txtFile = new System.Windows.Forms.TextBox();
+            this.cboSheets = new System.Windows.Forms.ComboBox();
+            this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
+            this.btnImportData = new MetroFramework.Controls.MetroButton();
+            this.btnBrowse = new MetroFramework.Controls.MetroButton();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             this.pnl = new System.Windows.Forms.Panel();
@@ -71,6 +82,9 @@
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.pnl_import.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
+            this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.pnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListSubject)).BeginInit();
@@ -198,7 +212,7 @@
             this.btnAddSubject.IconVisible = true;
             this.btnAddSubject.IconZoom = 50D;
             this.btnAddSubject.IsTab = false;
-            this.btnAddSubject.Location = new System.Drawing.Point(0, 3);
+            this.btnAddSubject.Location = new System.Drawing.Point(0, 5);
             this.btnAddSubject.Name = "btnAddSubject";
             this.btnAddSubject.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnAddSubject.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
@@ -233,7 +247,7 @@
             this.btnHome.IconVisible = true;
             this.btnHome.IconZoom = 50D;
             this.btnHome.IsTab = false;
-            this.btnHome.Location = new System.Drawing.Point(1, 48);
+            this.btnHome.Location = new System.Drawing.Point(0, 95);
             this.btnHome.Name = "btnHome";
             this.btnHome.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnHome.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
@@ -253,6 +267,7 @@
             this.panel1.Controls.Add(this.lbl_course_id);
             this.panel1.Controls.Add(this.lbl_control_id);
             this.panel1.Controls.Add(this.btnAddSubject);
+            this.panel1.Controls.Add(this.btnImport);
             this.panel1.Controls.Add(this.btnHome);
             this.panel1.Location = new System.Drawing.Point(-1, 64);
             this.panel1.Name = "panel1";
@@ -266,7 +281,6 @@
             this.lbl_course_id.Size = new System.Drawing.Size(108, 18);
             this.lbl_course_id.TabIndex = 178;
             this.lbl_course_id.Text = "Course Id";
-            this.lbl_course_id.Visible = false;
             // 
             // lbl_control_id
             // 
@@ -276,6 +290,41 @@
             this.lbl_control_id.TabIndex = 178;
             this.lbl_control_id.Text = "Title";
             this.lbl_control_id.Visible = false;
+            // 
+            // btnImport
+            // 
+            this.btnImport.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnImport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btnImport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnImport.BorderRadius = 0;
+            this.btnImport.ButtonText = "    Import Course\'s";
+            this.btnImport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnImport.DisabledColor = System.Drawing.Color.White;
+            this.btnImport.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnImport.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnImport.Iconimage")));
+            this.btnImport.Iconimage_right = null;
+            this.btnImport.Iconimage_right_Selected = null;
+            this.btnImport.Iconimage_Selected = null;
+            this.btnImport.IconMarginLeft = 0;
+            this.btnImport.IconMarginRight = 0;
+            this.btnImport.IconRightVisible = true;
+            this.btnImport.IconRightZoom = 0D;
+            this.btnImport.IconVisible = true;
+            this.btnImport.IconZoom = 50D;
+            this.btnImport.IsTab = false;
+            this.btnImport.Location = new System.Drawing.Point(0, 50);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btnImport.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
+            this.btnImport.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnImport.selected = false;
+            this.btnImport.Size = new System.Drawing.Size(173, 42);
+            this.btnImport.TabIndex = 159;
+            this.btnImport.Text = "    Import Course\'s";
+            this.btnImport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnImport.Textcolor = System.Drawing.Color.White;
+            this.btnImport.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
             // 
             // btnAdd
             // 
@@ -406,9 +455,9 @@
             this.label12.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label12.Location = new System.Drawing.Point(5, 9);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(195, 36);
+            this.label12.Size = new System.Drawing.Size(331, 36);
             this.label12.TabIndex = 138;
-            this.label12.Text = "SET SUBJECTS";
+            this.label12.Text = "SET COURSES SUBJECTS";
             // 
             // lbl_title
             // 
@@ -424,6 +473,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel3.Controls.Add(this.pnl_import);
             this.panel3.Controls.Add(this.panel5);
             this.panel3.Controls.Add(this.metroLabel11);
             this.panel3.Controls.Add(this.metroLabel3);
@@ -446,6 +496,116 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(333, 437);
             this.panel3.TabIndex = 180;
+            // 
+            // pnl_import
+            // 
+            this.pnl_import.Controls.Add(this.dgvData);
+            this.pnl_import.Controls.Add(this.metroLabel12);
+            this.pnl_import.Controls.Add(this.txtFile);
+            this.pnl_import.Controls.Add(this.cboSheets);
+            this.pnl_import.Controls.Add(this.metroLabel10);
+            this.pnl_import.Controls.Add(this.btnImportData);
+            this.pnl_import.Controls.Add(this.btnBrowse);
+            this.pnl_import.Controls.Add(this.panel6);
+            this.pnl_import.Location = new System.Drawing.Point(-1, 0);
+            this.pnl_import.Name = "pnl_import";
+            this.pnl_import.Size = new System.Drawing.Size(334, 434);
+            this.pnl_import.TabIndex = 244;
+            this.pnl_import.Visible = false;
+            // 
+            // dgvData
+            // 
+            this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvData.Location = new System.Drawing.Point(17, 246);
+            this.dgvData.Name = "dgvData";
+            this.dgvData.Size = new System.Drawing.Size(121, 150);
+            this.dgvData.TabIndex = 250;
+            this.dgvData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellContentClick);
+            // 
+            // metroLabel12
+            // 
+            this.metroLabel12.CustomBackground = true;
+            this.metroLabel12.Location = new System.Drawing.Point(16, 39);
+            this.metroLabel12.Name = "metroLabel12";
+            this.metroLabel12.Size = new System.Drawing.Size(310, 117);
+            this.metroLabel12.TabIndex = 249;
+            this.metroLabel12.Text = "Note: Browse the excel file and select the sheets \r\nbelow to import. \r\n\r\nImportan" +
+    "t: Be sure that the sheets you select is in \r\nthe proper format of the header to" +
+    " import your \r\nexcel file.";
+            this.metroLabel12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtFile
+            // 
+            this.txtFile.BackColor = System.Drawing.Color.White;
+            this.txtFile.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtFile.Enabled = false;
+            this.txtFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFile.Location = new System.Drawing.Point(93, 171);
+            this.txtFile.Name = "txtFile";
+            this.txtFile.Size = new System.Drawing.Size(216, 22);
+            this.txtFile.TabIndex = 248;
+            // 
+            // cboSheets
+            // 
+            this.cboSheets.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSheets.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSheets.FormattingEnabled = true;
+            this.cboSheets.Location = new System.Drawing.Point(93, 208);
+            this.cboSheets.Name = "cboSheets";
+            this.cboSheets.Size = new System.Drawing.Size(216, 24);
+            this.cboSheets.TabIndex = 246;
+            this.cboSheets.SelectedIndexChanged += new System.EventHandler(this.cboSheets_SelectedIndexChanged);
+            // 
+            // metroLabel10
+            // 
+            this.metroLabel10.CustomBackground = true;
+            this.metroLabel10.CustomForeColor = true;
+            this.metroLabel10.ForeColor = System.Drawing.Color.Black;
+            this.metroLabel10.Location = new System.Drawing.Point(38, 204);
+            this.metroLabel10.Name = "metroLabel10";
+            this.metroLabel10.Size = new System.Drawing.Size(52, 29);
+            this.metroLabel10.TabIndex = 247;
+            this.metroLabel10.Text = "Sheets:";
+            this.metroLabel10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // btnImportData
+            // 
+            this.btnImportData.Location = new System.Drawing.Point(239, 246);
+            this.btnImportData.Name = "btnImportData";
+            this.btnImportData.Size = new System.Drawing.Size(70, 27);
+            this.btnImportData.TabIndex = 245;
+            this.btnImportData.Text = "IMPORT";
+            this.btnImportData.Click += new System.EventHandler(this.btnImportData_Click);
+            // 
+            // btnBrowse
+            // 
+            this.btnBrowse.Location = new System.Drawing.Point(17, 167);
+            this.btnBrowse.Name = "btnBrowse";
+            this.btnBrowse.Size = new System.Drawing.Size(70, 27);
+            this.btnBrowse.TabIndex = 245;
+            this.btnBrowse.Text = "BROWSE";
+            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
+            this.panel6.Controls.Add(this.metroLabel9);
+            this.panel6.Location = new System.Drawing.Point(1, -3);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(333, 37);
+            this.panel6.TabIndex = 244;
+            // 
+            // metroLabel9
+            // 
+            this.metroLabel9.CustomBackground = true;
+            this.metroLabel9.CustomForeColor = true;
+            this.metroLabel9.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.metroLabel9.Location = new System.Drawing.Point(4, 9);
+            this.metroLabel9.Name = "metroLabel9";
+            this.metroLabel9.Size = new System.Drawing.Size(271, 21);
+            this.metroLabel9.TabIndex = 136;
+            this.metroLabel9.Text = "Importing courses via excel format";
+            this.metroLabel9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel5
             // 
@@ -484,10 +644,10 @@
             this.dgvListSubject.AllowUserToDeleteRows = false;
             this.dgvListSubject.AllowUserToResizeColumns = false;
             this.dgvListSubject.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Gray;
-            this.dgvListSubject.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Gray;
+            this.dgvListSubject.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvListSubject.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -496,24 +656,24 @@
             this.dgvListSubject.BackgroundColor = System.Drawing.Color.White;
             this.dgvListSubject.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvListSubject.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvListSubject.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvListSubject.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvListSubject.ColumnHeadersHeight = 25;
             this.dgvListSubject.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvListSubject.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListSubject.DefaultCellStyle = dataGridViewCellStyle13;
             this.dgvListSubject.DoubleBuffered = true;
             this.dgvListSubject.EnableHeadersVisualStyles = false;
             this.dgvListSubject.GridColor = System.Drawing.Color.DarkGray;
@@ -524,22 +684,23 @@
             this.dgvListSubject.Name = "dgvListSubject";
             this.dgvListSubject.ReadOnly = true;
             this.dgvListSubject.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvListSubject.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvListSubject.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dgvListSubject.RowHeadersWidth = 15;
             this.dgvListSubject.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvListSubject.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvListSubject.RowsDefaultCellStyle = dataGridViewCellStyle15;
             this.dgvListSubject.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListSubject.Size = new System.Drawing.Size(605, 400);
             this.dgvListSubject.TabIndex = 247;
+            this.dgvListSubject.Visible = false;
             // 
             // panel4
             // 
@@ -602,6 +763,10 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
+            this.pnl_import.ResumeLayout(false);
+            this.pnl_import.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
+            this.panel6.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.pnl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListSubject)).EndInit();
@@ -646,5 +811,16 @@
         private System.Windows.Forms.Panel panel5;
         public MetroFramework.Controls.MetroLabel metroLabel8;
         private Bunifu.Framework.UI.BunifuCustomDataGrid dgvListSubject;
+        public Bunifu.Framework.UI.BunifuFlatButton btnImport;
+        private System.Windows.Forms.Panel pnl_import;
+        private System.Windows.Forms.Panel panel6;
+        public MetroFramework.Controls.MetroLabel metroLabel9;
+        public MetroFramework.Controls.MetroButton btnBrowse;
+        private System.Windows.Forms.ComboBox cboSheets;
+        public MetroFramework.Controls.MetroLabel metroLabel10;
+        private System.Windows.Forms.TextBox txtFile;
+        public MetroFramework.Controls.MetroButton btnImportData;
+        private MetroFramework.Controls.MetroLabel metroLabel12;
+        private System.Windows.Forms.DataGridView dgvData;
     }
 }

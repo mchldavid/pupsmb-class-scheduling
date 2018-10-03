@@ -126,15 +126,16 @@ namespace ClassSchedulingComputerAided
             using (MySqlConnection dbconn = new MySqlConnection(conn))
             {
                 using (MySqlCommand cmd = new MySqlCommand("CREATE TABLE  `"
-                    + name +"`.`tbl_curriculums` ("
-                    + "`curriculums_id` int(10) unsigned NOT NULL auto_increment,"
-                    + "`curriculumName` varchar(45) NOT NULL,"
-                    + "`publishedBy` varchar(45) NOT NULL,"
-                    + "`datePublished` varchar(45) NOT NULL,"
-                    + "`status` varchar(45) NOT NULL,"
-                    + "`inUsed` varchar(45) NOT NULL,"
-                    + "PRIMARY KEY  (`curriculums_id`)"
-                    + ") ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;", dbconn))
+                    + name +"`.`tbl_curriculums` ( "
+                    + "`curriculums_id` int(10) unsigned NOT NULL auto_increment, "
+                    + "`programName` varchar(100) NOT NULL, "
+                    + "`createdBy` int(10) unsigned NOT NULL, "
+                    + "`createdAt` varchar(45) NOT NULL, "
+                    + "`status` varchar(45) NOT NULL, "
+                    + "`inUsed` varchar(45) NOT NULL, "
+                    + "`curriculumYear` varchar(45) NOT NULL, "
+                    + "PRIMARY KEY  (`curriculums_id`) "
+                    + ") ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;", dbconn))
                 {
                     dbconn.Open();
                     cmd.ExecuteNonQuery();
@@ -148,15 +149,15 @@ namespace ClassSchedulingComputerAided
             using (MySqlConnection dbconn = new MySqlConnection(conn))
             {
                 using (MySqlCommand cmd = new MySqlCommand("CREATE TABLE  `"
-                    + name +"`.`tbl_course` ("
-                    + "`course_id` int(10) unsigned NOT NULL auto_increment,"
-                    + "`curriculums_id` int(10) unsigned NOT NULL,"
-                    + "`courseName` varchar(100) NOT NULL,"
-                    + "`courseAcronym` varchar(45) NOT NULL,"
-                    + "PRIMARY KEY  (`course_id`),"
-                    + "KEY `FK_tbl_course_1` (`curriculums_id`),"
-                    + "CONSTRAINT `FK_tbl_course_1` FOREIGN KEY (`curriculums_id`) REFERENCES `tbl_curriculums` (`curriculums_id`)"
-                    + ") ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;"
+                    + name +"`.`tbl_course` ( "
+                    + "`course_id` int(10) unsigned NOT NULL auto_increment, "
+                    + "`curriculums_id` int(10) unsigned NOT NULL, "
+                    + "`courseName` varchar(100) NOT NULL, "
+                    + "`courseAcronym` varchar(45) NOT NULL, "
+                    + "PRIMARY KEY  (`course_id`), "
+                    + "KEY `FK_tbl_course_1` (`curriculums_id`), "
+                    + "CONSTRAINT `FK_tbl_course_1` FOREIGN KEY (`curriculums_id`) REFERENCES `tbl_curriculums` (`curriculums_id`) "
+                    + ") ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;"
                     + "", dbconn))
                 {
                     dbconn.Open();
@@ -171,25 +172,24 @@ namespace ClassSchedulingComputerAided
             using (MySqlConnection dbconn = new MySqlConnection(conn))
             {
                 using (MySqlCommand cmd = new MySqlCommand("CREATE TABLE  `"
-                    + name +"`.`tbl_subjects` ("
-                    + "`subjects_id` int(10) unsigned NOT NULL auto_increment,"
-                    + "`curriculums_id` int(10) unsigned NOT NULL,"
-                    + "`course_id` int(10) unsigned NOT NULL,"
-                    + "`subjectCode` varchar(45) NOT NULL,"
-                    + "`subjectDescription` varchar(100) NOT NULL,"
-                    + "`lectureHours` int(10) unsigned NOT NULL,"
-                    + "`laboratoryHours` int(10) unsigned NOT NULL,"
-                    + "`units` int(10) unsigned NOT NULL,"
-                    + "`yearLevel` int(10) unsigned NOT NULL,"
-                    + "`course` varchar(45) NOT NULL,"
-                    + "`semester` varchar(45) NOT NULL,"
-                    + "`schoolYear` varchar(45) NOT NULL,"
-                    + "PRIMARY KEY  USING BTREE (`subjects_id`),"
-                    + "KEY `FK_tbl_subjects_1` (`curriculums_id`),"
-                    + "KEY `FK_tbl_subjects_2` (`course_id`),"
-                    + "CONSTRAINT `FK_tbl_subjects_1` FOREIGN KEY (`curriculums_id`) REFERENCES `tbl_curriculums` (`curriculums_id`),"
-                    + "CONSTRAINT `FK_tbl_subjects_2` FOREIGN KEY (`course_id`) REFERENCES `tbl_course` (`course_id`)"
-                    + ") ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=latin1;", dbconn))
+                    + name +"`.`tbl_subjects` ( "
+                    + "`subjects_id` int(10) unsigned NOT NULL auto_increment, "
+                    + "`curriculums_id` int(10) unsigned NOT NULL, "
+                    + "`course_id` int(10) unsigned NOT NULL, "
+                    + "`subjectCode` varchar(45) NOT NULL, "
+                    + "`subjectDescription` varchar(100) NOT NULL, "
+                    + "`lectureHours` int(10) unsigned NOT NULL, "
+                    + "`laboratoryHours` int(10) unsigned NOT NULL, "
+                    + "`units` int(10) unsigned NOT NULL, "
+                    + "`yearLevel` int(10) unsigned NOT NULL, "
+                    + "`course` varchar(45) NOT NULL, "
+                    + "`semester` varchar(45) NOT NULL, "
+                    + "PRIMARY KEY  USING BTREE (`subjects_id`), "
+                    + "KEY `FK_tbl_subjects_1` (`curriculums_id`), "
+                    + "KEY `FK_tbl_subjects_2` (`course_id`), "
+                    + "CONSTRAINT `FK_tbl_subjects_1` FOREIGN KEY (`curriculums_id`) REFERENCES `tbl_curriculums` (`curriculums_id`), "
+                    + "CONSTRAINT `FK_tbl_subjects_2` FOREIGN KEY (`course_id`) REFERENCES `tbl_course` (`course_id`) "
+                    + ") ENGINE=InnoDB AUTO_INCREMENT=65 DEFAULT CHARSET=latin1;", dbconn))
                 {
                     dbconn.Open();
                     cmd.ExecuteNonQuery();

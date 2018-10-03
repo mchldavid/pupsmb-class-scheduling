@@ -126,3 +126,8 @@ C:\Users\Michael David\Documents\GitHub\PUP_class_scheduling\ClassSchedulingComp
 C:\Users\Michael David\Documents\GitHub\PUP_class_scheduling\ClassSchedulingComputerAided\ClassSchedulingComputerAided\obj\Debug\ClassSchedulingComputerAided.NewPassword.resources
 C:\Users\Michael David\Documents\GitHub\PUP_class_scheduling\ClassSchedulingComputerAided\ClassSchedulingComputerAided\obj\Debug\ClassSchedulingComputerAided.PUPImageControl.resources
 C:\Users\Michael David\Documents\GitHub\PUP_class_scheduling\ClassSchedulingComputerAided\ClassSchedulingComputerAided\obj\Debug\ClassSchedulingComputerAided.frmCreateProgram.resources
+C:\Users\Michael David\Documents\GitHub\PUP_class_scheduling\ClassSchedulingComputerAided\ClassSchedulingComputerAided\obj\Debug\ClassSchedulingComputerAided.Importing.resources
+C:\Users\Michael David\Documents\GitHub\PUP_class_scheduling\ClassSchedulingComputerAided\ClassSchedulingComputerAided\bin\Debug\ExcelDataReader.DataSet.dll
+C:\Users\Michael David\Documents\GitHub\PUP_class_scheduling\ClassSchedulingComputerAided\ClassSchedulingComputerAided\bin\Debug\ExcelDataReader.dll
+C:\Users\Michael David\Documents\GitHub\PUP_class_scheduling\ClassSchedulingComputerAided\ClassSchedulingComputerAided\bin\Debug\ExcelDataReader.xml
+C:\Users\Michael David\Documents\GitHub\PUP_class_scheduling\ClassSchedulingComputerAided\ClassSchedulingComputerAided\bin\Debug\ExcelDataReader.DataSet.xml

@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.IO;
+using ExcelDataReader;
 
 namespace ClassSchedulingComputerAided
 {
@@ -28,6 +30,13 @@ namespace ClassSchedulingComputerAided
             cboYearLevel.SelectedIndex = 0;
             dgvListSubject.DataSource = md.dgv_showSubjectCurriculum().DataSource;
             dgvListSubject.Columns[0].Visible = false;
+
+            for (int x = 0; x < md.ListCourse(curriculumData.c_id).Length; x++)
+            {
+                if (md.ListCourse(curriculumData.c_id).GetValue(x).ToString() != "")
+                    cboCourse.Items.Add(md.ListCourse(curriculumData.c_id).GetValue(x).ToString());
+            }
+            cboCourse.SelectedIndex = 0;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -69,20 +78,87 @@ namespace ClassSchedulingComputerAided
         private void btnAdd_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Added Successfully", "Add Subject", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            md.C_AddSubjects(curriculumData.c_id, lbl_course_id.Text, cboCourse.SelectedItem.ToString(), txtSubjectCode.Text, txtSubjectDescription.Text, cboLectureHours.SelectedItem.ToString(), cboLabHours.SelectedItem.ToString(), cboUnits.SelectedItem.ToString(), cboYearLevel.SelectedItem.ToString(), curriculumData.c_semester);
+            md.C_AddSubjects(curriculumData.c_id, lbl_course_id.Text, cboCourse.Text, txtSubjectCode.Text, txtSubjectDescription.Text, cboLectureHours.SelectedItem.ToString(), cboLabHours.SelectedItem.ToString(), cboUnits.SelectedItem.ToString(), cboYearLevel.SelectedItem.ToString(), curriculumData.c_semester);
             dgvListSubject.DataSource = md.dgv_showSubjectCurriculum().DataSource;
             dgvListSubject.Columns[0].Visible = false;
         }
 
         private void cboCourse_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             lbl_course_id.Text = md.GetCourseID(cboCourse.SelectedItem.ToString(), curriculumData.c_id);
         }
 
         private void btnHome_Click(object sender, EventArgs e)
         {
 
+        }
+
+        DataSet result;
+
+        private void btnBrowse_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog opfd = new OpenFileDialog() { Filter = "Excel Workbook|*.xls;*.xlsx;*.xlsm", ValidateNames = true })
+            {
+                if (opfd.ShowDialog() == DialogResult.OK)
+                {
+                    txtFile.Text = opfd.FileName;
+                    FileStream fs = File.Open(opfd.FileName, FileMode.Open, FileAccess.Read);
+                    IExcelDataReader reader = ExcelReaderFactory.CreateReader(fs);
+                    result = reader.AsDataSet();
+                    cboSheets.Items.Clear();
+                    foreach (DataTable dt in result.Tables)
+                        cboSheets.Items.Add(dt.TableName);
+                    cboSheets.SelectedIndex = 0;
+                    reader.Close();
+
+                    dgvData.DataSource = result.Tables[cboSheets.Text];
+                }
+            }
+        }
+
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+            pnl_import.Visible = true;
+        }
+
+        private void dgvData_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void cboSheets_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dgvData.DataSource = result.Tables[cboSheets.SelectedIndex];
+        }
+
+        private void btnImportData_Click(object sender, EventArgs e)
+        {
+            lbl_course_id.Text = md.GetCourseID(cboCourse.Text, curriculumData.c_id);// to get course id
+            //dgvData.SelectAll();
+            for (int i = 0; i < dgvData.Rows.Count - 1; i++)
+            {
+                //md.C_AddSubjects(curriculumData.c_id, lbl_course_id.Text, cboCourse.Text, txtSubjectCode.Text, txtSubjectDescription.Text, cboLectureHours.SelectedItem.ToString(), cboLabHours.SelectedItem.ToString(), cboUnits.SelectedItem.ToString(), cboYearLevel.SelectedItem.ToString(), curriculumData.c_semester);
+
+                string pc = dgvData.Rows[i].Cells[0].Value.ToString();
+                string test = "";
+                for (int x = 0; x < pc.Length; x++)
+                {
+                    test = "";
+                    foreach (char p in pc)
+                    {
+                        if (p != ' ')
+                        {
+                            test += pc;
+                        }
+                        else
+                        {
+                            x = pc.Length;
+                        }
+                    }
+                }
+                if (test == cboCourse.Text)
+                    lbl_course_id.Text = pc;
+            }
         }
     }
 }
