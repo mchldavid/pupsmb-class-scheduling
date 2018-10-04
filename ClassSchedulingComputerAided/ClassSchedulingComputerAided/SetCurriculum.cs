@@ -97,22 +97,29 @@ namespace ClassSchedulingComputerAided
 
         private void btnBrowse_Click(object sender, EventArgs e)
         {
-            using (OpenFileDialog opfd = new OpenFileDialog() { Filter = "Excel Workbook|*.xls;*.xlsx;*.xlsm", ValidateNames = true })
+            try
             {
-                if (opfd.ShowDialog() == DialogResult.OK)
+                using (OpenFileDialog opfd = new OpenFileDialog() { Filter = "Excel Workbook|*.xls;*.xlsx;*.xlsm", ValidateNames = true })
                 {
-                    txtFile.Text = opfd.FileName;
-                    FileStream fs = File.Open(opfd.FileName, FileMode.Open, FileAccess.Read);
-                    IExcelDataReader reader = ExcelReaderFactory.CreateReader(fs);
-                    result = reader.AsDataSet();
-                    cboSheets.Items.Clear();
-                    foreach (DataTable dt in result.Tables)
-                        cboSheets.Items.Add(dt.TableName);
-                    cboSheets.SelectedIndex = 0;
-                    reader.Close();
+                    if (opfd.ShowDialog() == DialogResult.OK)
+                    {
+                        txtFile.Text = opfd.FileName;
+                        FileStream fs = File.Open(opfd.FileName, FileMode.Open, FileAccess.Read);
+                        IExcelDataReader reader = ExcelReaderFactory.CreateReader(fs);
+                        result = reader.AsDataSet();
+                        cboSheets.Items.Clear();
+                        foreach (DataTable dt in result.Tables)
+                            cboSheets.Items.Add(dt.TableName);
+                        cboSheets.SelectedIndex = 0;
+                        reader.Close();
 
-                    dgvData.DataSource = result.Tables[cboSheets.Text];
+                        dgvData.DataSource = result.Tables[cboSheets.Text];
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error Occured!");
             }
         }
 
@@ -135,30 +142,46 @@ namespace ClassSchedulingComputerAided
         {
             lbl_course_id.Text = md.GetCourseID(cboCourse.Text, curriculumData.c_id);// to get course id
             //dgvData.SelectAll();
-            for (int i = 0; i < dgvData.Rows.Count - 1; i++)
+            int r = 0;
+            for (int i = 1; i < dgvData.Rows.Count - 1; i++)
             {
                 //md.C_AddSubjects(curriculumData.c_id, lbl_course_id.Text, cboCourse.Text, txtSubjectCode.Text, txtSubjectDescription.Text, cboLectureHours.SelectedItem.ToString(), cboLabHours.SelectedItem.ToString(), cboUnits.SelectedItem.ToString(), cboYearLevel.SelectedItem.ToString(), curriculumData.c_semester);
 
                 string pc = dgvData.Rows[i].Cells[0].Value.ToString();
                 string test = "";
-                for (int x = 0; x < pc.Length; x++)
+                string testData = "";
+                int a = 0;
+                foreach (char p in pc)
                 {
-                    test = "";
-                    foreach (char p in pc)
+                    if (p != ' ') { test += p; }
+                    else { if (a == 0) {  testData = test; a++; } }
+                }
+                string getSection;
+                string getYear;
+
+                getSection = pc.Substring(pc.Length - 1, 1);
+                getYear = pc.Substring(pc.Length - 3, 1);
+                //if (getSection == '1')
+                //{
+                    
+                //}
+
+                if (testData == cboCourse.Text)
+                {
+                    if (getSection == "1")
                     {
-                        if (p != ' ')
-                        {
-                            test += pc;
-                        }
-                        else
-                        {
-                            x = pc.Length;
-                        }
+                        string subjectCode = dgvData.Rows[i].Cells[1].Value.ToString();
+                        string subjecDescription = dgvData.Rows[i].Cells[2].Value.ToString();
+                        string lecHours = dgvData.Rows[i].Cells[3].Value.ToString();
+                        string labHours = dgvData.Rows[i].Cells[4].Value.ToString();
+                        string units = dgvData.Rows[i].Cells[6].Value.ToString();
+                        string yearLevel = getYear;
+                        md.C_AddSubjects(curriculumData.c_id, lbl_course_id.Text, cboCourse.Text, subjectCode, subjecDescription, lecHours, labHours, units, yearLevel, curriculumData.c_semester);
                     }
                 }
-                if (test == cboCourse.Text)
-                    lbl_course_id.Text = pc;
             }
+            dgvListSubject.DataSource = md.dgv_showSubjectCurriculum().DataSource;
+            dgvListSubject.Columns[0].Visible = false;
         }
     }
 }

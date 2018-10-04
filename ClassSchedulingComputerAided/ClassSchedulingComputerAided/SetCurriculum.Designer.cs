@@ -281,6 +281,7 @@
             this.lbl_course_id.Size = new System.Drawing.Size(108, 18);
             this.lbl_course_id.TabIndex = 178;
             this.lbl_course_id.Text = "Course Id";
+            this.lbl_course_id.Visible = false;
             // 
             // lbl_control_id
             // 
@@ -520,6 +521,7 @@
             this.dgvData.Name = "dgvData";
             this.dgvData.Size = new System.Drawing.Size(121, 150);
             this.dgvData.TabIndex = 250;
+            this.dgvData.Visible = false;
             this.dgvData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellContentClick);
             // 
             // metroLabel12
@@ -700,7 +702,6 @@
             this.dgvListSubject.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListSubject.Size = new System.Drawing.Size(605, 400);
             this.dgvListSubject.TabIndex = 247;
-            this.dgvListSubject.Visible = false;
             // 
             // panel4
             // 
