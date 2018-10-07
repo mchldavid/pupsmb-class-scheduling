@@ -183,5 +183,10 @@ namespace ClassSchedulingComputerAided
             dgvListSubject.DataSource = md.dgv_showSubjectCurriculum().DataSource;
             dgvListSubject.Columns[0].Visible = false;
         }
+
+        private void btnClose_Click_1(object sender, EventArgs e)
+        {
+            pnl_import.Visible = false;
+        }
     }
 }
