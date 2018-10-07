@@ -70,6 +70,8 @@ namespace ClassSchedulingComputerAided
             lbl.BackColor = random();
             lbl.TextAlign = ContentAlignment.MiddleCenter;
             lbl.BringToFront();
+            lbl.BorderStyle = BorderStyle.Fixed3D;
+
             return lbl;
         }
 
