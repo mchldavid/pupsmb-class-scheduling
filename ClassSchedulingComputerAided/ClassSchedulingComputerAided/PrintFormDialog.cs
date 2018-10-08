@@ -30,34 +30,22 @@ namespace ClassSchedulingComputerAided
             cboTimeTable.Items.Add("PROFESSOR");
             cboTimeTable.Items.Add("ROOM");
             cboTimeTable.SelectedIndex = 0;
-            printPreview();
-            this.reportViewer1.RefreshReport();
         }
 
         private void printPreview()
         {
-            SummaryData.semester = "1ST";
-            SummaryData.schoolYear = "2018-2019";
-            dgvData.DataSource = md.dgv_Example().DataSource;
-            //DataSource = md.dgv_Example1().DataSource;
-            exampleBindingSource.DataSource = md.dgv_Example1().DataSource;
+            curriculumData.c_id = "8";
+            curriculumData.c_semester = "1ST";
+            PrintDataBindingSource.DataSource = md.dgv_Example(cboSelectProgram.Text).DataSource;
             Microsoft.Reporting.WinForms.ReportParameter[] p = new Microsoft.Reporting.WinForms.ReportParameter[]
             {
-                new Microsoft.Reporting.WinForms.ReportParameter("pSection", "Hello"),
-                new Microsoft.Reporting.WinForms.ReportParameter("pSubjectCode", "Hello"),
-                new Microsoft.Reporting.WinForms.ReportParameter("pDescription", "Hello"),
-                new Microsoft.Reporting.WinForms.ReportParameter("pLecHours", "Hello"),
-                new Microsoft.Reporting.WinForms.ReportParameter("pLabHours", "Hello"),
-                new Microsoft.Reporting.WinForms.ReportParameter("pCreditUnits", "Hello"),
-                new Microsoft.Reporting.WinForms.ReportParameter("pRoomNo", "Hello"),
-                new Microsoft.Reporting.WinForms.ReportParameter("pProfessor","Hello"),
-                new Microsoft.Reporting.WinForms.ReportParameter("pSlots", "Hello"),
-                new Microsoft.Reporting.WinForms.ReportParameter("pSchedule", "Hello")
+                new Microsoft.Reporting.WinForms.ReportParameter("pSemester", "1ST"),
+                new Microsoft.Reporting.WinForms.ReportParameter("pSchoolYear", "2018-2019"),
+                new Microsoft.Reporting.WinForms.ReportParameter("pDateNow", DateTime.Now.ToString("MM/dd/yyyy"))
             };
-
-            //var setup = reportViewer1.GetPageSettings();
-            //setup.Margins = new System.Drawing.Printing.Margins(0, 0, 0, 0);
-            //reportViewer1.SetPageSettings(setup);
+            var setup = reportViewer1.GetPageSettings();
+            setup.Margins = new System.Drawing.Printing.Margins(0, 0, 0, 0);
+            reportViewer1.SetPageSettings(setup);
             this.reportViewer1.LocalReport.SetParameters(p);
             this.reportViewer1.RefreshReport();
         }
@@ -142,6 +130,35 @@ namespace ClassSchedulingComputerAided
             btnMaximize.Visible = true;
             pnlStart.Visible = false;
             printPreview();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        Bitmap bmp;
+        private void btnViewPrintTimeTable_Click(object sender, EventArgs e)
+        {
+            Print(pnlStart);
+        } 
+
+        public void Print(Panel pnl)
+        {
+            getPrintArea(pnlStart);
+            printPreviewDialog1.Document = printDocument1;
+            printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(printDocument1_PrintPage);
+            printPreviewDialog1.ShowDialog();
+        }
+        public void getPrintArea(Panel pnl)
+        {
+            bmp = new Bitmap(pnlStart.Width, pnlStart.Height);
+            pnlStart.DrawToBitmap(bmp, new Rectangle(0, 0, pnlStart.Width, pnlStart.Height));
+        }
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            Rectangle pageArea = e.PageBounds;
+            e.Graphics.DrawImage(bmp, (pageArea.Width / 2) - (pnlStart.Width / 2), pnlStart.Location.Y);
         }
     }
 }

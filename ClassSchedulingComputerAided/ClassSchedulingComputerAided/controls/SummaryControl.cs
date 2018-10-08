@@ -151,7 +151,8 @@ namespace ClassSchedulingComputerAided
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-
+            frmPrintFormDialog pfd = new frmPrintFormDialog();
+            pfd.Show();
         }
     }
 }

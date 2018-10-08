@@ -34,6 +34,7 @@
             this.cboSectionName = new System.Windows.Forms.ComboBox();
             this.pnlSection = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnPrint = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnSettings = new Bunifu.Framework.UI.BunifuImageButton();
             this.lblCurriculum = new MetroFramework.Controls.MetroLabel();
             this.label12 = new System.Windows.Forms.Label();
@@ -53,15 +54,14 @@
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.label4 = new System.Windows.Forms.Label();
             this.btnOK = new MetroFramework.Controls.MetroButton();
-            this.btnPrint = new Bunifu.Framework.UI.BunifuImageButton();
             this.Students.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSettings)).BeginInit();
             this.tbCtrl_Students.SuspendLayout();
             this.Professors.SuspendLayout();
             this.Rooms.SuspendLayout();
             this.pnlStart.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnPrint)).BeginInit();
             this.SuspendLayout();
             // 
             // Students
@@ -74,7 +74,7 @@
             this.Students.Location = new System.Drawing.Point(4, 29);
             this.Students.Name = "Students";
             this.Students.Padding = new System.Windows.Forms.Padding(3);
-            this.Students.Size = new System.Drawing.Size(905, 589);
+            this.Students.Size = new System.Drawing.Size(910, 599);
             this.Students.TabIndex = 0;
             this.Students.Text = "Students";
             // 
@@ -122,6 +122,20 @@
             this.panel2.Size = new System.Drawing.Size(925, 38);
             this.panel2.TabIndex = 245;
             // 
+            // btnPrint
+            // 
+            this.btnPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(0)))), ((int)(((byte)(17)))));
+            this.btnPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.Image")));
+            this.btnPrint.ImageActive = null;
+            this.btnPrint.Location = new System.Drawing.Point(176, 6);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(24, 23);
+            this.btnPrint.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnPrint.TabIndex = 249;
+            this.btnPrint.TabStop = false;
+            this.btnPrint.Zoom = 10;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
             // btnSettings
             // 
             this.btnSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(0)))), ((int)(((byte)(17)))));
@@ -168,10 +182,10 @@
             this.tbCtrl_Students.Controls.Add(this.Professors);
             this.tbCtrl_Students.Controls.Add(this.Rooms);
             this.tbCtrl_Students.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCtrl_Students.Location = new System.Drawing.Point(7, 37);
+            this.tbCtrl_Students.Location = new System.Drawing.Point(2, 37);
             this.tbCtrl_Students.Name = "tbCtrl_Students";
             this.tbCtrl_Students.SelectedIndex = 0;
-            this.tbCtrl_Students.Size = new System.Drawing.Size(913, 622);
+            this.tbCtrl_Students.Size = new System.Drawing.Size(918, 632);
             this.tbCtrl_Students.TabIndex = 246;
             // 
             // Professors
@@ -183,7 +197,7 @@
             this.Professors.Location = new System.Drawing.Point(4, 29);
             this.Professors.Name = "Professors";
             this.Professors.Padding = new System.Windows.Forms.Padding(3);
-            this.Professors.Size = new System.Drawing.Size(905, 589);
+            this.Professors.Size = new System.Drawing.Size(910, 599);
             this.Professors.TabIndex = 1;
             this.Professors.Text = "Professors";
             this.Professors.UseVisualStyleBackColor = true;
@@ -226,7 +240,7 @@
             this.Rooms.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.Rooms.Location = new System.Drawing.Point(4, 29);
             this.Rooms.Name = "Rooms";
-            this.Rooms.Size = new System.Drawing.Size(905, 589);
+            this.Rooms.Size = new System.Drawing.Size(910, 599);
             this.Rooms.TabIndex = 2;
             this.Rooms.Text = "Rooms";
             this.Rooms.UseVisualStyleBackColor = true;
@@ -340,25 +354,11 @@
             this.btnOK.Text = "OK";
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
-            // btnPrint
-            // 
-            this.btnPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(0)))), ((int)(((byte)(17)))));
-            this.btnPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.Image")));
-            this.btnPrint.ImageActive = null;
-            this.btnPrint.Location = new System.Drawing.Point(176, 6);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(24, 23);
-            this.btnPrint.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnPrint.TabIndex = 249;
-            this.btnPrint.TabStop = false;
-            this.btnPrint.Visible = false;
-            this.btnPrint.Zoom = 10;
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
-            // 
             // SummaryControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.Controls.Add(this.tbCtrl_Students);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnlStart);
@@ -368,43 +368,43 @@
             this.Students.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPrint)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSettings)).EndInit();
             this.tbCtrl_Students.ResumeLayout(false);
             this.Professors.ResumeLayout(false);
             this.Rooms.ResumeLayout(false);
             this.pnlStart.ResumeLayout(false);
             this.pnlStart.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnPrint)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabPage Students;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TabControl tbCtrl_Students;
-        private System.Windows.Forms.TabPage Professors;
-        private System.Windows.Forms.TabPage Rooms;
-        private System.Windows.Forms.Label label1;
         public System.Windows.Forms.ComboBox cboRoom;
-        private System.Windows.Forms.Panel pnlRoomSummary;
-        private System.Windows.Forms.Panel pnlStart;
-        private System.Windows.Forms.ComboBox cboSchoolYear;
-        private System.Windows.Forms.ComboBox cboSemester;
-        private MetroFramework.Controls.MetroLabel metroLabel3;
-        private MetroFramework.Controls.MetroLabel metroLabel5;
-        private System.Windows.Forms.Label label4;
         public MetroFramework.Controls.MetroButton btnOK;
-        private System.Windows.Forms.Panel pnlSection;
-        private System.Windows.Forms.Label label2;
         public System.Windows.Forms.ComboBox cboSectionName;
-        private System.Windows.Forms.Label label3;
         public System.Windows.Forms.ComboBox cboProfessorName;
-        private System.Windows.Forms.Panel pnlProfessor;
         public MetroFramework.Controls.MetroLabel lblCurriculum;
-        private Bunifu.Framework.UI.BunifuImageButton btnSettings;
-        private Bunifu.Framework.UI.BunifuImageButton btnPrint;
+        public Bunifu.Framework.UI.BunifuImageButton btnPrint;
+        public System.Windows.Forms.TabPage Students;
+        public System.Windows.Forms.Panel panel2;
+        public System.Windows.Forms.Label label12;
+        public System.Windows.Forms.TabControl tbCtrl_Students;
+        public System.Windows.Forms.TabPage Professors;
+        public System.Windows.Forms.TabPage Rooms;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Panel pnlRoomSummary;
+        public System.Windows.Forms.Panel pnlStart;
+        public System.Windows.Forms.ComboBox cboSchoolYear;
+        public System.Windows.Forms.ComboBox cboSemester;
+        public MetroFramework.Controls.MetroLabel metroLabel3;
+        public MetroFramework.Controls.MetroLabel metroLabel5;
+        public System.Windows.Forms.Label label4;
+        public System.Windows.Forms.Panel pnlSection;
+        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Label label3;
+        public System.Windows.Forms.Panel pnlProfessor;
+        public Bunifu.Framework.UI.BunifuImageButton btnSettings;
     }
 }
