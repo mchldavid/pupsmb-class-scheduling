@@ -130,4 +130,9 @@ C:\Users\Michael David\Documents\GitHub\PUP_class_scheduling\ClassSchedulingComp
 C:\Users\Michael David\Documents\GitHub\PUP_class_scheduling\ClassSchedulingComputerAided\ClassSchedulingComputerAided\bin\Debug\ExcelDataReader.dll
 C:\Users\Michael David\Documents\GitHub\PUP_class_scheduling\ClassSchedulingComputerAided\ClassSchedulingComputerAided\bin\Debug\ExcelDataReader.xml
 C:\Users\Michael David\Documents\GitHub\PUP_class_scheduling\ClassSchedulingComputerAided\ClassSchedulingComputerAided\bin\Debug\ExcelDataReader.DataSet.xml
+C:\Users\Michael David\Documents\GitHub\PUP_class_scheduling\ClassSchedulingComputerAided\ClassSchedulingComputerAided\obj\Debug\ClassSchedulingComputerAided.frmReport.resources
+C:\Users\Michael David\Documents\GitHub\PUP_class_scheduling\ClassSchedulingComputerAided\ClassSchedulingComputerAided\obj\Debug\ClassSchedulingComputerAided.Print.resources
+C:\Users\Michael David\Documents\GitHub\PUP_class_scheduling\ClassSchedulingComputerAided\ClassSchedulingComputerAided\obj\Debug\RdlCompile.cache
+C:\Users\Michael David\Documents\GitHub\PUP_class_scheduling\ClassSchedulingComputerAided\ClassSchedulingComputerAided\obj\Debug\RdlCompile.compiled
 C:\Users\Michael David\Documents\GitHub\PUP_class_scheduling\ClassSchedulingComputerAided\ClassSchedulingComputerAided\obj\Debug\ClassSchedulingComputerAided.csprojResolveAssemblyReference.cache
+C:\Users\Michael David\Documents\GitHub\PUP_class_scheduling\ClassSchedulingComputerAided\ClassSchedulingComputerAided\obj\Debug\ClassSchedulingComputerAided.frmPrintFormDialog.resources

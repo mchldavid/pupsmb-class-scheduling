@@ -471,6 +471,7 @@ namespace ClassSchedulingComputerAided
         }
 
         //================SET CURRICULUM===============
+        
 
         public DataGridView dgv_showSubjectCurriculum()
         {
@@ -478,7 +479,7 @@ namespace ClassSchedulingComputerAided
             try
             {
                 con.Open();
-                string sql = "SELECT subjects_id AS 'ID', course AS 'Course', yearLevel AS 'Year Level', subjectCode AS 'Code', subjectDescription AS 'Description', lectureHours AS 'Lecture Hours', laboratoryHours AS 'Lab Hours', units AS 'Units' FROM tbl_subjects t WHERE curriculums_id = @id AND semester = @sem;";
+                string sql = "SELECT subjects_id AS 'ID', course AS 'Course', yearLevel AS 'Year_Level', subjectCode AS 'Code', subjectDescription AS 'Description', lectureHours AS 'Lecture_Hours', laboratoryHours AS 'Lab_Hours', units AS 'Units' FROM tbl_subjects t WHERE curriculums_id = @id AND semester = @sem;";
                 MySqlCommand com = new MySqlCommand(sql, con);
                 com.Parameters.AddWithValue("@id", curriculumData.c_id);
                 com.Parameters.AddWithValue("@sem", curriculumData.c_semester);
@@ -2361,6 +2362,37 @@ namespace ClassSchedulingComputerAided
                 con.Close();
             }
             return result;
+        }
+
+        //===============PRINT PREVIEW===============
+        public DataGridView dgv_Example()
+        {
+            DataGridView dgv1 = new DataGridView();
+            try
+            {
+                con.Open();
+                string sql = "SELECT subjects_id, course, yearLevel, subjectCode , subjectDescription , lectureHours , laboratoryHours , units FROM tbl_subjects t WHERE curriculums_id = @id AND semester = @sem;";
+                MySqlCommand com = new MySqlCommand(sql, con);
+                com.Parameters.AddWithValue("@id", curriculumData.c_id);
+                com.Parameters.AddWithValue("@sem", curriculumData.c_semester);
+                com.ExecuteNonQuery();
+                con.Close();
+
+                con.Open();
+                MySqlDataAdapter adapter = new MySqlDataAdapter(com);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+                dgv1.DataSource = ds.Tables[0];
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "dgv_showSubjectCurriculum");
+            }
+            finally
+            {
+                con.Close();
+            }
+            return dgv1;
         }
     }
 }

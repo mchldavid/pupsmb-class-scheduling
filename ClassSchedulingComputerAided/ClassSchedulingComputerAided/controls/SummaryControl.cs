@@ -87,6 +87,8 @@ namespace ClassSchedulingComputerAided
 
         private void btnOK_Click(object sender, EventArgs e)
         {
+            btnSettings.Visible = true;
+
             pnlStart.Visible = false;
             SummaryData.course = ClassSchedule_Data.course;
             SummaryData.year = ClassSchedule_Data.year;
@@ -129,6 +131,27 @@ namespace ClassSchedulingComputerAided
             SummaryProfessorScheduledControl professor = new SummaryProfessorScheduledControl();
             pnlProfessor.Controls.Clear();
             pnlProfessor.Controls.Add(professor);
+        }
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            pnlStart.Visible = true;
+
+            cboProfessorName.SelectedIndex = -1;
+            cboSectionName.SelectedIndex = -1;
+            cboRoom.SelectedIndex = -1;
+
+            pnlProfessor.Controls.Clear();
+            pnlRoomSummary.Controls.Clear();
+            pnlSection.Controls.Clear();
+
+            lblCurriculum.Text = "";
+            btnSettings.Visible = false;
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

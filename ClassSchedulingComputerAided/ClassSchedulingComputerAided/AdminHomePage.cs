@@ -163,5 +163,12 @@ namespace ClassSchedulingComputerAided
                 }
             }
         }
+
+        private void btnSummaryReport_Click(object sender, EventArgs e)
+        {
+            frmReport fr = new frmReport();
+            this.Hide();
+            fr.Show();
+        }
     }
 }

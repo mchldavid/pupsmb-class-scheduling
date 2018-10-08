@@ -55,6 +55,8 @@
       <HintPath>..\packages\MetroFramework.Fonts.1.2.0.3\lib\net40\MetroFramework.Fonts.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
@@ -62,6 +64,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -182,7 +185,7 @@
     <Compile Include="CreateProgram.Designer.cs">
       <DependentUpon>CreateProgram.cs</DependentUpon>
     </Compile>
-    <Compile Include="EmailValidation.cs" />
+    <Compile Include="classes\EmailValidation.cs" />
     <Compile Include="Importing.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +209,25 @@
     </Compile>
     <Compile Include="controls\PUPImageControl.Designer.cs">
       <DependentUpon>PUPImageControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Print.Designer.cs">
+      <DependentUpon>Print.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintData.cs" />
+    <Compile Include="PrintFormDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintFormDialog.Designer.cs">
+      <DependentUpon>PrintFormDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report.Designer.cs">
+      <DependentUpon>Report.cs</DependentUpon>
     </Compile>
     <Compile Include="SemesterAndSchoolYear.cs">
       <SubType>Form</SubType>
@@ -438,6 +460,16 @@
     <EmbeddedResource Include="controls\PUPImageControl.resx">
       <DependentUpon>PUPImageControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Print.resx">
+      <DependentUpon>Print.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintFormDialog.resx">
+      <DependentUpon>PrintFormDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report.resx">
+      <DependentUpon>Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptSubjects.rdlc" />
     <EmbeddedResource Include="SemesterAndSchoolYear.resx">
       <DependentUpon>SemesterAndSchoolYear.cs</DependentUpon>
     </EmbeddedResource>
@@ -529,6 +561,8 @@
       <DependentUpon>ViewList.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Print.datasource" />
+    <None Include="Properties\DataSources\PrintData.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
