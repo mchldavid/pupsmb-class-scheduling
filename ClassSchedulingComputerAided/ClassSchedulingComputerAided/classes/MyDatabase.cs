@@ -2374,6 +2374,38 @@ namespace ClassSchedulingComputerAided
             try
             {
                 con.Open();
+                string sql = "SELECT subjectCode, subjectDescription, lecHours, labHours, units, course ,year ,section , room, professor, scheduledDay, scheduledStartTime, scheduledEndTime FROM tbl_students_scheduled ";
+                    //+ "WHERE semester = @sem "
+                    //+ "AND schoolYear = @sY;";
+                MySqlCommand com = new MySqlCommand(sql, con);
+                com.Parameters.AddWithValue("@sem", SummaryData.semester);
+                com.Parameters.AddWithValue("@sY", SummaryData.schoolYear);
+                com.ExecuteNonQuery();
+                con.Close();
+
+                con.Open();
+                MySqlDataAdapter adapter = new MySqlDataAdapter(com);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+                dgv1.DataSource = ds.Tables[0];
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "dgv_example");
+            }
+            finally
+            {
+                con.Close();
+            }
+            return dgv1;
+        }
+
+        public DataGridView dgv_Example1()
+        {
+            DataGridView dgv1 = new DataGridView();
+            try
+            {
+                con.Open();
                 string sql = "SELECT subjects_id, course, yearLevel, subjectCode , subjectDescription , lectureHours , laboratoryHours , units FROM tbl_subjects t WHERE curriculums_id = @id AND semester = @sem;";
                 MySqlCommand com = new MySqlCommand(sql, con);
                 com.Parameters.AddWithValue("@id", curriculumData.c_id);

@@ -30,13 +30,17 @@ namespace ClassSchedulingComputerAided
             cboTimeTable.Items.Add("PROFESSOR");
             cboTimeTable.Items.Add("ROOM");
             cboTimeTable.SelectedIndex = 0;
+            printPreview();
+            this.reportViewer1.RefreshReport();
         }
 
         private void printPreview()
         {
-            curriculumData.c_id = "8";
-            curriculumData.c_semester = "1ST";
-            PrintDataBindingSource.DataSource = md.dgv_Example().DataSource;
+            SummaryData.semester = "1ST";
+            SummaryData.schoolYear = "2018-2019";
+            dgvData.DataSource = md.dgv_Example().DataSource;
+            //DataSource = md.dgv_Example1().DataSource;
+            exampleBindingSource.DataSource = md.dgv_Example1().DataSource;
             Microsoft.Reporting.WinForms.ReportParameter[] p = new Microsoft.Reporting.WinForms.ReportParameter[]
             {
                 new Microsoft.Reporting.WinForms.ReportParameter("pSection", "Hello"),
@@ -50,9 +54,10 @@ namespace ClassSchedulingComputerAided
                 new Microsoft.Reporting.WinForms.ReportParameter("pSlots", "Hello"),
                 new Microsoft.Reporting.WinForms.ReportParameter("pSchedule", "Hello")
             };
-            var setup = reportViewer1.GetPageSettings();
-            setup.Margins = new System.Drawing.Printing.Margins(0, 0, 0, 0);
-            reportViewer1.SetPageSettings(setup);
+
+            //var setup = reportViewer1.GetPageSettings();
+            //setup.Margins = new System.Drawing.Printing.Margins(0, 0, 0, 0);
+            //reportViewer1.SetPageSettings(setup);
             this.reportViewer1.LocalReport.SetParameters(p);
             this.reportViewer1.RefreshReport();
         }
@@ -136,6 +141,7 @@ namespace ClassSchedulingComputerAided
         {
             btnMaximize.Visible = true;
             pnlStart.Visible = false;
+            printPreview();
         }
     }
 }
