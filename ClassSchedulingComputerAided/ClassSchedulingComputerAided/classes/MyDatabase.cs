@@ -1969,7 +1969,7 @@ namespace ClassSchedulingComputerAided
                 con.Open();
                 for (int y = 0; y < count; y++)// from how many count that increment that to be insert the schedule for students
                 {
-                    string sqlInsertStudentsSched = "INSERT INTO tbl_students_scheduled(curriculums_id, course, year, section, semester, schoolYear, room, subjectCode, subjectDescription, scheduledBy, scheduledDate, professor, scheduledStartTime, scheduledEndTime, scheduledDay) VALUES(@c_id, @c, @y, @s, @sem, @sY, @r, @sC, @sD, @sB, @sDa, @p, @sS, @sE, @sDay)";
+                    string sqlInsertStudentsSched = "INSERT INTO tbl_students_scheduled(curriculums_id, course, year, section, semester, schoolYear, room, subjectCode, subjectDescription, scheduledBy, scheduledDate, professor, scheduledStartTime, scheduledEndTime, scheduledDay, lecHours, labHours, units) VALUES(@c_id, @c, @y, @s, @sem, @sY, @r, @sC, @sD, @sB, @sDa, @p, @sS, @sE, @sDay, @lec, @lab, @u)";
                     using (MySqlCommand cmd = new MySqlCommand(sqlInsertStudentsSched, con))//to insert new data
                     {
                         cmd.Parameters.AddWithValue("@c_id", cu);
@@ -1988,6 +1988,9 @@ namespace ClassSchedulingComputerAided
                         cmd.Parameters.AddWithValue("@sS", StudentsScheduled.startTime[x]);
                         cmd.Parameters.AddWithValue("@sE", StudentsScheduled.endTime[x]);
                         cmd.Parameters.AddWithValue("@sDay", StudentsScheduled.day[x]);
+                        cmd.Parameters.AddWithValue("@lec", StudentsScheduled.LecHrs[x]);
+                        cmd.Parameters.AddWithValue("@lab", StudentsScheduled.LabHrs[x]);
+                        cmd.Parameters.AddWithValue("@u", StudentsScheduled.Units[x]);
 
                         cmd.ExecuteNonQuery();
                         x++;

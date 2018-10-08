@@ -1756,6 +1756,9 @@ namespace ClassSchedulingComputerAided
             StudentsScheduled.startTime = new string[11];
             StudentsScheduled.endTime = new string[11];
             StudentsScheduled.day = new string[11];
+            StudentsScheduled.LecHrs = new string[11];
+            StudentsScheduled.LabHrs = new string[11];
+            StudentsScheduled.Units = new string[11];
 
             StudentsScheduled.CourseCode[0] = lblCode_1.Text;
             StudentsScheduled.CourseCode[1] = lblCode_2.Text;
@@ -1833,6 +1836,39 @@ namespace ClassSchedulingComputerAided
             StudentsScheduled.day[7] = cboDay_8.Text;
             StudentsScheduled.day[8] = cboDay_9.Text;
             StudentsScheduled.day[9] = cboDay_10.Text;
+
+            StudentsScheduled.LecHrs[0] = lblLecHours_1.Text;
+            StudentsScheduled.LecHrs[1] = lblLecHours_2.Text;
+            StudentsScheduled.LecHrs[2] = lblLecHours_3.Text;
+            StudentsScheduled.LecHrs[3] = lblLecHours_4.Text;
+            StudentsScheduled.LecHrs[4] = lblLecHours_5.Text;
+            StudentsScheduled.LecHrs[5] = lblLecHours_6.Text;
+            StudentsScheduled.LecHrs[6] = lblLecHours_7.Text;
+            StudentsScheduled.LecHrs[7] = lblLecHours_8.Text;
+            StudentsScheduled.LecHrs[8] = lblLecHours_9.Text;
+            StudentsScheduled.LecHrs[9] = lblLecHours_10.Text;
+
+            StudentsScheduled.LabHrs[0] = lbl_LabHours_1.Text;
+            StudentsScheduled.LabHrs[1] = lbl_LabHours_2.Text;
+            StudentsScheduled.LabHrs[2] = lbl_LabHours_3.Text;
+            StudentsScheduled.LabHrs[3] = lbl_LabHours_4.Text;
+            StudentsScheduled.LabHrs[4] = lbl_LabHours_5.Text;
+            StudentsScheduled.LabHrs[5] = lbl_LabHours_6.Text;
+            StudentsScheduled.LabHrs[6] = lbl_LabHours_7.Text;
+            StudentsScheduled.LabHrs[7] = lbl_LabHours_8.Text;
+            StudentsScheduled.LabHrs[8] = lbl_LabHours_9.Text;
+            StudentsScheduled.LabHrs[9] = lbl_LabHours_10.Text;
+
+            StudentsScheduled.Units[0] = lblUnits_1.Text;
+            StudentsScheduled.Units[1] = lblUnits_2.Text;
+            StudentsScheduled.Units[2] = lblUnits_3.Text;
+            StudentsScheduled.Units[3] = lblUnits_4.Text;
+            StudentsScheduled.Units[4] = lblUnits_5.Text;
+            StudentsScheduled.Units[5] = lblUnits_6.Text;
+            StudentsScheduled.Units[6] = lblUnits_7.Text;
+            StudentsScheduled.Units[7] = lblUnits_8.Text;
+            StudentsScheduled.Units[8] = lblUnits_9.Text;
+            StudentsScheduled.Units[9] = lblUnits_10.Text;
 
             md.CSD_insert_students_schedule(cboCourse.Text, cboYear.Text, cboSection.Text, cboCurriculum.Text, cboSemester.Text, cboSchoolYear.Text);
         }
