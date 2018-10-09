@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrintFormDialog));
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -38,31 +38,24 @@
             this.label12 = new System.Windows.Forms.Label();
             this.pnlStart = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cboOption = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnViewPrint = new MetroFramework.Controls.MetroButton();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.cboSelectProgram = new System.Windows.Forms.ComboBox();
             this.btnViewPrintTimeTable = new MetroFramework.Controls.MetroButton();
             this.cboTimeTable = new System.Windows.Forms.ComboBox();
-            this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.pnlPrintTimeTable = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.pdocSection = new System.Drawing.Printing.PrintDocument();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.PrintDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.panel3 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             this.pnlStart.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnlPrintTimeTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PrintDataBindingSource)).BeginInit();
@@ -73,9 +66,9 @@
             this.reportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.PrintDataBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource4.Name = "DataSet1";
+            reportDataSource4.Value = this.PrintDataBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource4);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "ClassSchedulingComputerAided.rptSubjects.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(3, 38);
             this.reportViewer1.Name = "reportViewer1";
@@ -153,41 +146,28 @@
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.cboOption);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.btnViewPrint);
             this.groupBox1.Controls.Add(this.pictureBox2);
-            this.groupBox1.Controls.Add(this.cboSelectProgram);
             this.groupBox1.Controls.Add(this.btnViewPrintTimeTable);
             this.groupBox1.Controls.Add(this.cboTimeTable);
-            this.groupBox1.Controls.Add(this.shapeContainer2);
-            this.groupBox1.Location = new System.Drawing.Point(54, 69);
+            this.groupBox1.Location = new System.Drawing.Point(254, 80);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(897, 383);
+            this.groupBox1.Size = new System.Drawing.Size(467, 383);
             this.groupBox1.TabIndex = 249;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Preview Setup";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(26, 19);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(378, 252);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // label3
             // 
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(467, 287);
+            this.label3.Location = new System.Drawing.Point(33, 305);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(146, 24);
+            this.label3.Size = new System.Drawing.Size(114, 24);
             this.label3.TabIndex = 248;
-            this.label3.Text = "Select Time Table:";
+            this.label3.Text = "Select Sort by:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // cboOption
@@ -196,54 +176,23 @@
             this.cboOption.Enabled = false;
             this.cboOption.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboOption.FormattingEnabled = true;
-            this.cboOption.Location = new System.Drawing.Point(619, 317);
+            this.cboOption.Location = new System.Drawing.Point(153, 335);
             this.cboOption.Name = "cboOption";
-            this.cboOption.Size = new System.Drawing.Size(158, 24);
+            this.cboOption.Size = new System.Drawing.Size(190, 24);
             this.cboOption.TabIndex = 247;
             this.cboOption.SelectedIndexChanged += new System.EventHandler(this.cboOption_SelectedIndexChanged);
             // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(26, 317);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 24);
-            this.label1.TabIndex = 248;
-            this.label1.Text = "Select Program:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // btnViewPrint
-            // 
-            this.btnViewPrint.Location = new System.Drawing.Point(320, 317);
-            this.btnViewPrint.Name = "btnViewPrint";
-            this.btnViewPrint.Size = new System.Drawing.Size(84, 24);
-            this.btnViewPrint.TabIndex = 180;
-            this.btnViewPrint.Text = "VIEW PRINT";
-            this.btnViewPrint.Click += new System.EventHandler(this.btnViewPrint_Click);
-            // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(470, 19);
+            this.pictureBox2.Location = new System.Drawing.Point(36, 37);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(378, 252);
+            this.pictureBox2.Size = new System.Drawing.Size(397, 252);
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             // 
-            // cboSelectProgram
-            // 
-            this.cboSelectProgram.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSelectProgram.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSelectProgram.FormattingEnabled = true;
-            this.cboSelectProgram.Location = new System.Drawing.Point(156, 317);
-            this.cboSelectProgram.Name = "cboSelectProgram";
-            this.cboSelectProgram.Size = new System.Drawing.Size(158, 24);
-            this.cboSelectProgram.TabIndex = 247;
-            // 
             // btnViewPrintTimeTable
             // 
-            this.btnViewPrintTimeTable.Location = new System.Drawing.Point(783, 317);
+            this.btnViewPrintTimeTable.Location = new System.Drawing.Point(349, 335);
             this.btnViewPrintTimeTable.Name = "btnViewPrintTimeTable";
             this.btnViewPrintTimeTable.Size = new System.Drawing.Size(84, 24);
             this.btnViewPrintTimeTable.TabIndex = 180;
@@ -255,32 +204,11 @@
             this.cboTimeTable.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTimeTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboTimeTable.FormattingEnabled = true;
-            this.cboTimeTable.Location = new System.Drawing.Point(619, 287);
+            this.cboTimeTable.Location = new System.Drawing.Point(153, 305);
             this.cboTimeTable.Name = "cboTimeTable";
-            this.cboTimeTable.Size = new System.Drawing.Size(158, 24);
+            this.cboTimeTable.Size = new System.Drawing.Size(190, 24);
             this.cboTimeTable.TabIndex = 247;
             this.cboTimeTable.SelectedIndexChanged += new System.EventHandler(this.cboTimeTable_SelectedIndexChanged);
-            // 
-            // shapeContainer2
-            // 
-            this.shapeContainer2.Location = new System.Drawing.Point(3, 16);
-            this.shapeContainer2.Margin = new System.Windows.Forms.Padding(0);
-            this.shapeContainer2.Name = "shapeContainer2";
-            this.shapeContainer2.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
-            this.lineShape1});
-            this.shapeContainer2.Size = new System.Drawing.Size(891, 364);
-            this.shapeContainer2.TabIndex = 249;
-            this.shapeContainer2.TabStop = false;
-            // 
-            // lineShape1
-            // 
-            this.lineShape1.BorderColor = System.Drawing.Color.DimGray;
-            this.lineShape1.BorderWidth = 3;
-            this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = 435;
-            this.lineShape1.X2 = 435;
-            this.lineShape1.Y1 = 2;
-            this.lineShape1.Y2 = 353;
             // 
             // pnlPrintTimeTable
             // 
@@ -289,6 +217,14 @@
             this.pnlPrintTimeTable.Name = "pnlPrintTimeTable";
             this.pnlPrintTimeTable.Size = new System.Drawing.Size(820, 561);
             this.pnlPrintTimeTable.TabIndex = 250;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Maroon;
+            this.panel3.Location = new System.Drawing.Point(304, 106);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(200, 100);
+            this.panel3.TabIndex = 0;
             // 
             // panel1
             // 
@@ -326,24 +262,16 @@
             // 
             this.PrintDataBindingSource.DataSource = typeof(ClassSchedulingComputerAided.PrintData);
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Maroon;
-            this.panel3.Location = new System.Drawing.Point(304, 106);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(200, 100);
-            this.panel3.TabIndex = 0;
-            // 
             // frmPrintFormDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(999, 566);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.pnlPrintTimeTable);
             this.Controls.Add(this.pnlStart);
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlPrintTimeTable);
             this.Name = "frmPrintFormDialog";
             this.Load += new System.EventHandler(this.PrintFormDialog_Load);
             this.panel2.ResumeLayout(false);
@@ -352,7 +280,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             this.pnlStart.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnlPrintTimeTable.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PrintDataBindingSource)).EndInit();
@@ -370,17 +297,11 @@
         private Bunifu.Framework.UI.BunifuImageButton btnMaximize;
         private System.Windows.Forms.Panel pnlStart;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
-        public MetroFramework.Controls.MetroButton btnViewPrint;
-        private System.Windows.Forms.ComboBox cboSelectProgram;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cboTimeTable;
         private System.Windows.Forms.ComboBox cboOption;
         public MetroFramework.Controls.MetroButton btnViewPrintTimeTable;
         private System.Windows.Forms.GroupBox groupBox1;
-        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer2;
         private System.Windows.Forms.Panel panel1;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;

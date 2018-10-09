@@ -186,6 +186,7 @@
       <DependentUpon>CreateProgram.cs</DependentUpon>
     </Compile>
     <Compile Include="classes\EmailValidation.cs" />
+    <Compile Include="CSD_defaultData.cs" />
     <Compile Include="Importing.cs">
       <SubType>Form</SubType>
     </Compile>

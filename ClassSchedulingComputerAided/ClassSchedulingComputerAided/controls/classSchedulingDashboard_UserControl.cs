@@ -602,6 +602,12 @@ namespace ClassSchedulingComputerAided
         {
             if (btnSet_1.Text == "SET")
             {
+                CSD_defaultData.professor = cboProfessor_1.Text;
+                CSD_defaultData.startTime = cboStart_1.Text;
+                CSD_defaultData.endTime = cboEnd_1.Text;
+                CSD_defaultData.day = cboDay_1.Text;
+                CSD_defaultData.room = cboRoom_1.Text;
+
                 btnCancel_1.Visible = true;
 
                 SetComboBoxToDisabled();
@@ -668,6 +674,12 @@ namespace ClassSchedulingComputerAided
         {
             if (btnSet_2.Text == "SET")
             {
+                CSD_defaultData.professor = cboProfessor_2.Text;
+                CSD_defaultData.startTime = cboStart_2.Text;
+                CSD_defaultData.endTime = cboEnd_2.Text;
+                CSD_defaultData.day = cboDay_2.Text;
+                CSD_defaultData.room = cboRoom_2.Text;
+
                 btnCancel_2.Visible = true;
 
                 SetComboBoxToDisabled();
@@ -734,6 +746,12 @@ namespace ClassSchedulingComputerAided
         {
             if (btnSet_3.Text == "SET")
             {
+                CSD_defaultData.professor = cboProfessor_3.Text;
+                CSD_defaultData.startTime = cboStart_3.Text;
+                CSD_defaultData.endTime = cboEnd_3.Text;
+                CSD_defaultData.day = cboDay_3.Text;
+                CSD_defaultData.room = cboRoom_3.Text;
+
                 btnCancel_3.Visible = true;
 
                 SetComboBoxToDisabled();
@@ -800,6 +818,12 @@ namespace ClassSchedulingComputerAided
         {
             if (btnSet_4.Text == "SET")
             {
+                CSD_defaultData.professor = cboProfessor_4.Text;
+                CSD_defaultData.startTime = cboStart_4.Text;
+                CSD_defaultData.endTime = cboEnd_4.Text;
+                CSD_defaultData.day = cboDay_4.Text;
+                CSD_defaultData.room = cboRoom_4.Text;
+
                 btnCancel_4.Visible = true;
 
                 SetComboBoxToDisabled();
@@ -866,6 +890,12 @@ namespace ClassSchedulingComputerAided
         {
             if (btnSet_5.Text == "SET")
             {
+                CSD_defaultData.professor = cboProfessor_5.Text;
+                CSD_defaultData.startTime = cboStart_5.Text;
+                CSD_defaultData.endTime = cboEnd_5.Text;
+                CSD_defaultData.day = cboDay_5.Text;
+                CSD_defaultData.room = cboRoom_5.Text;
+
                 btnCancel_5.Visible = true;
 
                 SetComboBoxToDisabled();
@@ -932,6 +962,12 @@ namespace ClassSchedulingComputerAided
         {
             if (btnSet_6.Text == "SET")
             {
+                CSD_defaultData.professor = cboProfessor_6.Text;
+                CSD_defaultData.startTime = cboStart_6.Text;
+                CSD_defaultData.endTime = cboEnd_6.Text;
+                CSD_defaultData.day = cboDay_6.Text;
+                CSD_defaultData.room = cboRoom_6.Text;
+
                 btnCancel_6.Visible = true;
 
                 SetComboBoxToDisabled();
@@ -998,6 +1034,12 @@ namespace ClassSchedulingComputerAided
         {
             if (btnSet_7.Text == "SET")
             {
+                CSD_defaultData.professor = cboProfessor_7.Text;
+                CSD_defaultData.startTime = cboStart_7.Text;
+                CSD_defaultData.endTime = cboEnd_7.Text;
+                CSD_defaultData.day = cboDay_7.Text;
+                CSD_defaultData.room = cboRoom_7.Text;
+
                 btnCancel_7.Visible = true;
 
                 SetComboBoxToDisabled();
@@ -1064,6 +1106,12 @@ namespace ClassSchedulingComputerAided
         {
             if (btnSet_8.Text == "SET")
             {
+                CSD_defaultData.professor = cboProfessor_8.Text;
+                CSD_defaultData.startTime = cboStart_8.Text;
+                CSD_defaultData.endTime = cboEnd_8.Text;
+                CSD_defaultData.day = cboDay_8.Text;
+                CSD_defaultData.room = cboRoom_8.Text;
+
                 btnCancel_8.Visible = true;
 
                 SetComboBoxToDisabled();
@@ -1130,6 +1178,12 @@ namespace ClassSchedulingComputerAided
         {
             if (btnSet_9.Text == "SET")
             {
+                CSD_defaultData.professor = cboProfessor_9.Text;
+                CSD_defaultData.startTime = cboStart_9.Text;
+                CSD_defaultData.endTime = cboEnd_9.Text;
+                CSD_defaultData.day = cboDay_9.Text;
+                CSD_defaultData.room = cboRoom_9.Text;
+
                 btnCancel_9.Visible = true;
 
                 SetComboBoxToDisabled();
@@ -1196,6 +1250,12 @@ namespace ClassSchedulingComputerAided
         {
             if (btnSet_10.Text == "SET")
             {
+                CSD_defaultData.professor = cboProfessor_10.Text;
+                CSD_defaultData.startTime = cboStart_10.Text;
+                CSD_defaultData.endTime = cboEnd_10.Text;
+                CSD_defaultData.day = cboDay_10.Text;
+                CSD_defaultData.room = cboRoom_10.Text;
+
                 btnCancel_10.Visible = true;
 
                 SetComboBoxToDisabled();
@@ -2292,6 +2352,167 @@ namespace ClassSchedulingComputerAided
             pnlStudentScheduling.Enabled = true;
             pnlRooms.Enabled = true;
             pnlProfessors.Enabled = true;
+        }
+
+        private void btnCancel_1_Click(object sender, EventArgs e)
+        {
+            cboProfessor_1.Text = CSD_defaultData.professor;
+            cboStart_1.Text = CSD_defaultData.startTime;
+            cboEnd_1.Text = CSD_defaultData.endTime;
+            cboDay_1.Text = CSD_defaultData.day;
+            cboRoom_1.Text = CSD_defaultData.room;
+
+            SetComboBoxToDisabled();
+            SetToEnabled();
+            btnSet_1.Text = "SET";
+            btnSAVE.Enabled = true;
+
+            btnCancel_1.Visible = false;
+
+        }
+
+        private void btnCancel_2_Click(object sender, EventArgs e)
+        {
+            cboProfessor_2.Text = CSD_defaultData.professor;
+            cboStart_2.Text = CSD_defaultData.startTime;
+            cboEnd_2.Text = CSD_defaultData.endTime;
+            cboDay_2.Text = CSD_defaultData.day;
+            cboRoom_2.Text = CSD_defaultData.room;
+
+            SetComboBoxToDisabled();
+            SetToEnabled();
+            btnSet_2.Text = "SET";
+            btnSAVE.Enabled = true;
+
+            btnCancel_2.Visible = false;
+        }
+
+        private void btnCancel_3_Click(object sender, EventArgs e)
+        {
+            cboProfessor_3.Text = CSD_defaultData.professor;
+            cboStart_3.Text = CSD_defaultData.startTime;
+            cboEnd_3.Text = CSD_defaultData.endTime;
+            cboDay_3.Text = CSD_defaultData.day;
+            cboRoom_3.Text = CSD_defaultData.room;
+
+            SetComboBoxToDisabled();
+            SetToEnabled();
+            btnSet_3.Text = "SET";
+            btnSAVE.Enabled = true;
+
+            btnCancel_3.Visible = false;
+        }
+
+        private void btnCancel_4_Click(object sender, EventArgs e)
+        {
+            cboProfessor_4.Text = CSD_defaultData.professor;
+            cboStart_4.Text = CSD_defaultData.startTime;
+            cboEnd_4.Text = CSD_defaultData.endTime;
+            cboDay_4.Text = CSD_defaultData.day;
+            cboRoom_4.Text = CSD_defaultData.room;
+
+            SetComboBoxToDisabled();
+            SetToEnabled();
+            btnSet_4.Text = "SET";
+            btnSAVE.Enabled = true;
+
+            btnCancel_4.Visible = false;
+        }
+
+        private void btnCancel_5_Click(object sender, EventArgs e)
+        {
+            cboProfessor_5.Text = CSD_defaultData.professor;
+            cboStart_5.Text = CSD_defaultData.startTime;
+            cboEnd_5.Text = CSD_defaultData.endTime;
+            cboDay_5.Text = CSD_defaultData.day;
+            cboRoom_5.Text = CSD_defaultData.room;
+
+            SetComboBoxToDisabled();
+            SetToEnabled();
+            btnSet_5.Text = "SET";
+            btnSAVE.Enabled = true;
+
+            btnCancel_5.Visible = false;
+        }
+
+        private void btnCancel_6_Click(object sender, EventArgs e)
+        {
+            cboProfessor_6.Text = CSD_defaultData.professor;
+            cboStart_6.Text = CSD_defaultData.startTime;
+            cboEnd_6.Text = CSD_defaultData.endTime;
+            cboDay_6.Text = CSD_defaultData.day;
+            cboRoom_6.Text = CSD_defaultData.room;
+
+            SetComboBoxToDisabled();
+            SetToEnabled();
+            btnSet_6.Text = "SET";
+            btnSAVE.Enabled = true;
+
+            btnCancel_6.Visible = false;
+        }
+
+        private void btnCancel_7_Click(object sender, EventArgs e)
+        {
+            cboProfessor_7.Text = CSD_defaultData.professor;
+            cboStart_7.Text = CSD_defaultData.startTime;
+            cboEnd_7.Text = CSD_defaultData.endTime;
+            cboDay_7.Text = CSD_defaultData.day;
+            cboRoom_7.Text = CSD_defaultData.room;
+
+            SetComboBoxToDisabled();
+            SetToEnabled();
+            btnSet_7.Text = "SET";
+            btnSAVE.Enabled = true;
+
+            btnCancel_7.Visible = false;
+        }
+
+        private void btnCancel_8_Click(object sender, EventArgs e)
+        {
+            cboProfessor_8.Text = CSD_defaultData.professor;
+            cboStart_8.Text = CSD_defaultData.startTime;
+            cboEnd_8.Text = CSD_defaultData.endTime;
+            cboDay_8.Text = CSD_defaultData.day;
+            cboRoom_8.Text = CSD_defaultData.room;
+
+            SetComboBoxToDisabled();
+            SetToEnabled();
+            btnSet_8.Text = "SET";
+            btnSAVE.Enabled = true;
+
+            btnCancel_8.Visible = false;
+        }
+
+        private void btnCancel_9_Click(object sender, EventArgs e)
+        {
+            cboProfessor_9.Text = CSD_defaultData.professor;
+            cboStart_9.Text = CSD_defaultData.startTime;
+            cboEnd_9.Text = CSD_defaultData.endTime;
+            cboDay_9.Text = CSD_defaultData.day;
+            cboRoom_9.Text = CSD_defaultData.room;
+
+            SetComboBoxToDisabled();
+            SetToEnabled();
+            btnSet_9.Text = "SET";
+            btnSAVE.Enabled = true;
+
+            btnCancel_9.Visible = false;
+        }
+
+        private void btnCancel_10_Click(object sender, EventArgs e)
+        {
+            cboProfessor_10.Text = CSD_defaultData.professor;
+            cboStart_10.Text = CSD_defaultData.startTime;
+            cboEnd_10.Text = CSD_defaultData.endTime;
+            cboDay_10.Text = CSD_defaultData.day;
+            cboRoom_10.Text = CSD_defaultData.room;
+
+            SetComboBoxToDisabled();
+            SetToEnabled();
+            btnSet_10.Text = "SET";
+            btnSAVE.Enabled = true;
+
+            btnCancel_10.Visible = false;
         }
     }
 }

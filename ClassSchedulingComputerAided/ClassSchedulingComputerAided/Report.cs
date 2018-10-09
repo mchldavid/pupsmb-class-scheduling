@@ -21,6 +21,14 @@ namespace ClassSchedulingComputerAided
         {
             SummaryControl sc = new SummaryControl();
             pnlReport.Controls.Add(sc);
+            btnClose.BringToFront();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            frmAdminHomePage ahp = new frmAdminHomePage();
+            ahp.Show();
+            this.Hide();
         }
     }
 }

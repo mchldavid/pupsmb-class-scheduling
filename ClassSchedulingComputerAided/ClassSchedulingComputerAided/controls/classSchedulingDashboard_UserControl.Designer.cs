@@ -145,16 +145,26 @@
             this.btnSettings = new Bunifu.Framework.UI.BunifuImageButton();
             this.lblCurriculumTitle = new MetroFramework.Controls.MetroLabel();
             this.lblSection = new MetroFramework.Controls.MetroLabel();
+            this.btnCancel_10 = new MetroFramework.Controls.MetroButton();
             this.btnSet_10 = new MetroFramework.Controls.MetroButton();
             this.btnSet_9 = new MetroFramework.Controls.MetroButton();
+            this.btnCancel_9 = new MetroFramework.Controls.MetroButton();
             this.btnSet_8 = new MetroFramework.Controls.MetroButton();
             this.btnSet_7 = new MetroFramework.Controls.MetroButton();
+            this.btnCancel_8 = new MetroFramework.Controls.MetroButton();
             this.btnSet_6 = new MetroFramework.Controls.MetroButton();
+            this.btnCancel_1 = new MetroFramework.Controls.MetroButton();
+            this.btnCancel_7 = new MetroFramework.Controls.MetroButton();
             this.btnSet_5 = new MetroFramework.Controls.MetroButton();
+            this.btnCancel_2 = new MetroFramework.Controls.MetroButton();
             this.btnSet_4 = new MetroFramework.Controls.MetroButton();
+            this.btnCancel_6 = new MetroFramework.Controls.MetroButton();
             this.btnSet_3 = new MetroFramework.Controls.MetroButton();
+            this.btnCancel_3 = new MetroFramework.Controls.MetroButton();
             this.btnSet_2 = new MetroFramework.Controls.MetroButton();
+            this.btnCancel_5 = new MetroFramework.Controls.MetroButton();
             this.btnSet_1 = new MetroFramework.Controls.MetroButton();
+            this.btnCancel_4 = new MetroFramework.Controls.MetroButton();
             this.btnSAVE = new MetroFramework.Controls.MetroButton();
             this.pnlStart = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -179,17 +189,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pnlReport = new System.Windows.Forms.Panel();
-            this.btnOKk = new MetroFramework.Controls.MetroButton();
-            this.btnCancel_1 = new MetroFramework.Controls.MetroButton();
-            this.btnCancel_2 = new MetroFramework.Controls.MetroButton();
-            this.btnCancel_3 = new MetroFramework.Controls.MetroButton();
-            this.btnCancel_4 = new MetroFramework.Controls.MetroButton();
-            this.btnCancel_5 = new MetroFramework.Controls.MetroButton();
-            this.btnCancel_6 = new MetroFramework.Controls.MetroButton();
-            this.btnCancel_7 = new MetroFramework.Controls.MetroButton();
-            this.btnCancel_8 = new MetroFramework.Controls.MetroButton();
-            this.btnCancel_9 = new MetroFramework.Controls.MetroButton();
-            this.btnCancel_10 = new MetroFramework.Controls.MetroButton();
+            this.btnOKk = new Bunifu.Framework.UI.BunifuImageButton();
             this.pnlStudentScheduling.SuspendLayout();
             this.tbl_pnl_layout.SuspendLayout();
             this.pnlHeader.SuspendLayout();
@@ -198,6 +198,7 @@
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.pnlReport.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnOKk)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlStudentScheduling
@@ -2559,6 +2560,16 @@
             this.lblSection.Text = "Settings";
             this.lblSection.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // btnCancel_10
+            // 
+            this.btnCancel_10.Location = new System.Drawing.Point(1243, 304);
+            this.btnCancel_10.Name = "btnCancel_10";
+            this.btnCancel_10.Size = new System.Drawing.Size(52, 21);
+            this.btnCancel_10.TabIndex = 155;
+            this.btnCancel_10.Text = "CANCEL";
+            this.btnCancel_10.Visible = false;
+            this.btnCancel_10.Click += new System.EventHandler(this.btnCancel_10_Click);
+            // 
             // btnSet_10
             // 
             this.btnSet_10.Location = new System.Drawing.Point(1195, 304);
@@ -2578,6 +2589,16 @@
             this.btnSet_9.Text = "SET";
             this.btnSet_9.Visible = false;
             this.btnSet_9.Click += new System.EventHandler(this.btnSet_9_Click);
+            // 
+            // btnCancel_9
+            // 
+            this.btnCancel_9.Location = new System.Drawing.Point(1243, 277);
+            this.btnCancel_9.Name = "btnCancel_9";
+            this.btnCancel_9.Size = new System.Drawing.Size(52, 21);
+            this.btnCancel_9.TabIndex = 155;
+            this.btnCancel_9.Text = "CANCEL";
+            this.btnCancel_9.Visible = false;
+            this.btnCancel_9.Click += new System.EventHandler(this.btnCancel_9_Click);
             // 
             // btnSet_8
             // 
@@ -2599,6 +2620,16 @@
             this.btnSet_7.Visible = false;
             this.btnSet_7.Click += new System.EventHandler(this.btnSet_7_Click);
             // 
+            // btnCancel_8
+            // 
+            this.btnCancel_8.Location = new System.Drawing.Point(1243, 250);
+            this.btnCancel_8.Name = "btnCancel_8";
+            this.btnCancel_8.Size = new System.Drawing.Size(52, 21);
+            this.btnCancel_8.TabIndex = 155;
+            this.btnCancel_8.Text = "CANCEL";
+            this.btnCancel_8.Visible = false;
+            this.btnCancel_8.Click += new System.EventHandler(this.btnCancel_8_Click);
+            // 
             // btnSet_6
             // 
             this.btnSet_6.Location = new System.Drawing.Point(1195, 196);
@@ -2608,6 +2639,26 @@
             this.btnSet_6.Text = "SET";
             this.btnSet_6.Visible = false;
             this.btnSet_6.Click += new System.EventHandler(this.btnSet_6_Click);
+            // 
+            // btnCancel_1
+            // 
+            this.btnCancel_1.Location = new System.Drawing.Point(1243, 61);
+            this.btnCancel_1.Name = "btnCancel_1";
+            this.btnCancel_1.Size = new System.Drawing.Size(52, 21);
+            this.btnCancel_1.TabIndex = 155;
+            this.btnCancel_1.Text = "CANCEL";
+            this.btnCancel_1.Visible = false;
+            this.btnCancel_1.Click += new System.EventHandler(this.btnCancel_1_Click);
+            // 
+            // btnCancel_7
+            // 
+            this.btnCancel_7.Location = new System.Drawing.Point(1243, 223);
+            this.btnCancel_7.Name = "btnCancel_7";
+            this.btnCancel_7.Size = new System.Drawing.Size(52, 21);
+            this.btnCancel_7.TabIndex = 155;
+            this.btnCancel_7.Text = "CANCEL";
+            this.btnCancel_7.Visible = false;
+            this.btnCancel_7.Click += new System.EventHandler(this.btnCancel_7_Click);
             // 
             // btnSet_5
             // 
@@ -2619,6 +2670,16 @@
             this.btnSet_5.Visible = false;
             this.btnSet_5.Click += new System.EventHandler(this.btnSet_5_Click);
             // 
+            // btnCancel_2
+            // 
+            this.btnCancel_2.Location = new System.Drawing.Point(1243, 88);
+            this.btnCancel_2.Name = "btnCancel_2";
+            this.btnCancel_2.Size = new System.Drawing.Size(52, 21);
+            this.btnCancel_2.TabIndex = 155;
+            this.btnCancel_2.Text = "CANCEL";
+            this.btnCancel_2.Visible = false;
+            this.btnCancel_2.Click += new System.EventHandler(this.btnCancel_2_Click);
+            // 
             // btnSet_4
             // 
             this.btnSet_4.Location = new System.Drawing.Point(1195, 142);
@@ -2628,6 +2689,16 @@
             this.btnSet_4.Text = "SET";
             this.btnSet_4.Visible = false;
             this.btnSet_4.Click += new System.EventHandler(this.btnSet_4_Click);
+            // 
+            // btnCancel_6
+            // 
+            this.btnCancel_6.Location = new System.Drawing.Point(1243, 196);
+            this.btnCancel_6.Name = "btnCancel_6";
+            this.btnCancel_6.Size = new System.Drawing.Size(52, 21);
+            this.btnCancel_6.TabIndex = 155;
+            this.btnCancel_6.Text = "CANCEL";
+            this.btnCancel_6.Visible = false;
+            this.btnCancel_6.Click += new System.EventHandler(this.btnCancel_6_Click);
             // 
             // btnSet_3
             // 
@@ -2639,6 +2710,16 @@
             this.btnSet_3.Visible = false;
             this.btnSet_3.Click += new System.EventHandler(this.btnSet_3_Click);
             // 
+            // btnCancel_3
+            // 
+            this.btnCancel_3.Location = new System.Drawing.Point(1243, 115);
+            this.btnCancel_3.Name = "btnCancel_3";
+            this.btnCancel_3.Size = new System.Drawing.Size(52, 21);
+            this.btnCancel_3.TabIndex = 155;
+            this.btnCancel_3.Text = "CANCEL";
+            this.btnCancel_3.Visible = false;
+            this.btnCancel_3.Click += new System.EventHandler(this.btnCancel_3_Click);
+            // 
             // btnSet_2
             // 
             this.btnSet_2.Location = new System.Drawing.Point(1195, 88);
@@ -2649,6 +2730,16 @@
             this.btnSet_2.Visible = false;
             this.btnSet_2.Click += new System.EventHandler(this.btnSet_2_Click);
             // 
+            // btnCancel_5
+            // 
+            this.btnCancel_5.Location = new System.Drawing.Point(1243, 169);
+            this.btnCancel_5.Name = "btnCancel_5";
+            this.btnCancel_5.Size = new System.Drawing.Size(52, 21);
+            this.btnCancel_5.TabIndex = 155;
+            this.btnCancel_5.Text = "CANCEL";
+            this.btnCancel_5.Visible = false;
+            this.btnCancel_5.Click += new System.EventHandler(this.btnCancel_5_Click);
+            // 
             // btnSet_1
             // 
             this.btnSet_1.Location = new System.Drawing.Point(1195, 61);
@@ -2658,6 +2749,16 @@
             this.btnSet_1.Text = "SET";
             this.btnSet_1.Visible = false;
             this.btnSet_1.Click += new System.EventHandler(this.btnSet_1_Click);
+            // 
+            // btnCancel_4
+            // 
+            this.btnCancel_4.Location = new System.Drawing.Point(1243, 142);
+            this.btnCancel_4.Name = "btnCancel_4";
+            this.btnCancel_4.Size = new System.Drawing.Size(52, 21);
+            this.btnCancel_4.TabIndex = 155;
+            this.btnCancel_4.Text = "CANCEL";
+            this.btnCancel_4.Visible = false;
+            this.btnCancel_4.Click += new System.EventHandler(this.btnCancel_4_Click);
             // 
             // btnSAVE
             // 
@@ -2945,115 +3046,31 @@
             // 
             // btnOKk
             // 
-            this.btnOKk.Location = new System.Drawing.Point(746, 625);
+            this.btnOKk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnOKk.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(0)))), ((int)(((byte)(17)))));
+            this.btnOKk.Image = ((System.Drawing.Image)(resources.GetObject("btnOKk.Image")));
+            this.btnOKk.ImageActive = null;
+            this.btnOKk.Location = new System.Drawing.Point(872, 6);
             this.btnOKk.Name = "btnOKk";
-            this.btnOKk.Size = new System.Drawing.Size(164, 38);
-            this.btnOKk.TabIndex = 159;
-            this.btnOKk.Text = "OK";
+            this.btnOKk.Size = new System.Drawing.Size(48, 25);
+            this.btnOKk.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnOKk.TabIndex = 252;
+            this.btnOKk.TabStop = false;
+            this.btnOKk.Zoom = 10;
             this.btnOKk.Click += new System.EventHandler(this.btnOKk_Click);
-            // 
-            // btnCancel_1
-            // 
-            this.btnCancel_1.Location = new System.Drawing.Point(1243, 61);
-            this.btnCancel_1.Name = "btnCancel_1";
-            this.btnCancel_1.Size = new System.Drawing.Size(52, 21);
-            this.btnCancel_1.TabIndex = 155;
-            this.btnCancel_1.Text = "CANCEL";
-            this.btnCancel_1.Visible = false;
-            // 
-            // btnCancel_2
-            // 
-            this.btnCancel_2.Location = new System.Drawing.Point(1243, 88);
-            this.btnCancel_2.Name = "btnCancel_2";
-            this.btnCancel_2.Size = new System.Drawing.Size(52, 21);
-            this.btnCancel_2.TabIndex = 155;
-            this.btnCancel_2.Text = "CANCEL";
-            this.btnCancel_2.Visible = false;
-            // 
-            // btnCancel_3
-            // 
-            this.btnCancel_3.Location = new System.Drawing.Point(1243, 115);
-            this.btnCancel_3.Name = "btnCancel_3";
-            this.btnCancel_3.Size = new System.Drawing.Size(52, 21);
-            this.btnCancel_3.TabIndex = 155;
-            this.btnCancel_3.Text = "CANCEL";
-            this.btnCancel_3.Visible = false;
-            // 
-            // btnCancel_4
-            // 
-            this.btnCancel_4.Location = new System.Drawing.Point(1243, 142);
-            this.btnCancel_4.Name = "btnCancel_4";
-            this.btnCancel_4.Size = new System.Drawing.Size(52, 21);
-            this.btnCancel_4.TabIndex = 155;
-            this.btnCancel_4.Text = "CANCEL";
-            this.btnCancel_4.Visible = false;
-            // 
-            // btnCancel_5
-            // 
-            this.btnCancel_5.Location = new System.Drawing.Point(1243, 169);
-            this.btnCancel_5.Name = "btnCancel_5";
-            this.btnCancel_5.Size = new System.Drawing.Size(52, 21);
-            this.btnCancel_5.TabIndex = 155;
-            this.btnCancel_5.Text = "CANCEL";
-            this.btnCancel_5.Visible = false;
-            // 
-            // btnCancel_6
-            // 
-            this.btnCancel_6.Location = new System.Drawing.Point(1243, 196);
-            this.btnCancel_6.Name = "btnCancel_6";
-            this.btnCancel_6.Size = new System.Drawing.Size(52, 21);
-            this.btnCancel_6.TabIndex = 155;
-            this.btnCancel_6.Text = "CANCEL";
-            this.btnCancel_6.Visible = false;
-            // 
-            // btnCancel_7
-            // 
-            this.btnCancel_7.Location = new System.Drawing.Point(1243, 223);
-            this.btnCancel_7.Name = "btnCancel_7";
-            this.btnCancel_7.Size = new System.Drawing.Size(52, 21);
-            this.btnCancel_7.TabIndex = 155;
-            this.btnCancel_7.Text = "CANCEL";
-            this.btnCancel_7.Visible = false;
-            // 
-            // btnCancel_8
-            // 
-            this.btnCancel_8.Location = new System.Drawing.Point(1243, 250);
-            this.btnCancel_8.Name = "btnCancel_8";
-            this.btnCancel_8.Size = new System.Drawing.Size(52, 21);
-            this.btnCancel_8.TabIndex = 155;
-            this.btnCancel_8.Text = "CANCEL";
-            this.btnCancel_8.Visible = false;
-            // 
-            // btnCancel_9
-            // 
-            this.btnCancel_9.Location = new System.Drawing.Point(1243, 277);
-            this.btnCancel_9.Name = "btnCancel_9";
-            this.btnCancel_9.Size = new System.Drawing.Size(52, 21);
-            this.btnCancel_9.TabIndex = 155;
-            this.btnCancel_9.Text = "CANCEL";
-            this.btnCancel_9.Visible = false;
-            // 
-            // btnCancel_10
-            // 
-            this.btnCancel_10.Location = new System.Drawing.Point(1243, 304);
-            this.btnCancel_10.Name = "btnCancel_10";
-            this.btnCancel_10.Size = new System.Drawing.Size(52, 21);
-            this.btnCancel_10.TabIndex = 155;
-            this.btnCancel_10.Text = "CANCEL";
-            this.btnCancel_10.Visible = false;
             // 
             // classSchedulingDashboard_UserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.Controls.Add(this.pnlReport);
             this.Controls.Add(this.pnlRooms);
             this.Controls.Add(this.pnlProfessors);
             this.Controls.Add(this.pnlStudentScheduling);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.pnlReport);
             this.Name = "classSchedulingDashboard_UserControl";
             this.Size = new System.Drawing.Size(1373, 763);
             this.Load += new System.EventHandler(this.classSchedulingDashboard_UserControl_Load);
@@ -3068,6 +3085,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.pnlReport.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnOKk)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3222,7 +3240,6 @@
         public System.Windows.Forms.Panel pnlProfessors;
         public System.Windows.Forms.Panel pnlRooms;
         public System.Windows.Forms.Panel pnlReport;
-        public MetroFramework.Controls.MetroButton btnOKk;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox1;
         private MetroFramework.Controls.MetroButton btnCancel_10;
@@ -3235,5 +3252,6 @@
         private MetroFramework.Controls.MetroButton btnCancel_3;
         private MetroFramework.Controls.MetroButton btnCancel_5;
         private MetroFramework.Controls.MetroButton btnCancel_4;
+        public Bunifu.Framework.UI.BunifuImageButton btnOKk;
     }
 }

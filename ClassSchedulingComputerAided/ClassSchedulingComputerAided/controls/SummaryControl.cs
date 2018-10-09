@@ -154,5 +154,12 @@ namespace ClassSchedulingComputerAided
             frmPrintFormDialog pfd = new frmPrintFormDialog();
             pfd.Show();
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            frmAdminHomePage ahp = new frmAdminHomePage();
+            ahp.Show();
+            this.Hide();
+        }
     }
 }

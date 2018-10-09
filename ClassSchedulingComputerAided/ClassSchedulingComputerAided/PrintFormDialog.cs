@@ -25,16 +25,12 @@ namespace ClassSchedulingComputerAided
 
         private void PrintFormDialog_Load(object sender, EventArgs e)
         {
-            cboSelectProgram.Items.Add("ALL");
-            for (int x = 0; x < md.Sections_ListCourse().Length; x++)
-                if (md.Sections_ListCourse().GetValue(x).ToString() != "")
-                    cboSelectProgram.Items.Add(md.Sections_ListCourse().GetValue(x).ToString());
-            cboSelectProgram.SelectedIndex = 0;
 
-            cboTimeTable.Items.Add("ALL");
+            cboTimeTable.Items.Add("PROGRAM");
             cboTimeTable.Items.Add("SECTION");
             cboTimeTable.Items.Add("PROFESSOR");
             cboTimeTable.Items.Add("ROOM");
+            
             cboTimeTable.SelectedIndex = 0;
 
             pnlPrintTimeTable.Controls.Clear();
@@ -49,22 +45,40 @@ namespace ClassSchedulingComputerAided
             Bitmap bm = new Bitmap(width, height);
             pnlPrintTimeTable.DrawToBitmap(bm, new Rectangle(0, 0, width, height));
 
-            SaveFileDialog dialog = new SaveFileDialog();
-            if (dialog.ShowDialog() == DialogResult.OK)
-            {
-               int w = Convert.ToInt32(pnlPrintTimeTable.Width); 
-               int h = Convert.ToInt32(pnlPrintTimeTable.Height);
-               Bitmap bmp = new Bitmap(w, h);        
-               pnlPrintTimeTable.DrawToBitmap(bmp, new Rectangle(0, 0, w, h));
-               bmp.Save(dialog.FileName, ImageFormat.Png);
-            }
+            //SaveFileDialog dialog = new SaveFileDialog();
+            //if (dialog.ShowDialog() == DialogResult.OK)
+            //{
+            //   int w = Convert.ToInt32(pnlPrintTimeTable.Width); 
+            //   int h = Convert.ToInt32(pnlPrintTimeTable.Height);
+            //   Bitmap bmp = new Bitmap(w, h);        
+            //   pnlPrintTimeTable.DrawToBitmap(bmp, new Rectangle(0, 0, w, h));
+            //   bmp.Save(dialog.FileName, ImageFormat.Png);
+            //}
         }
 
         private void printPreview()
         {
             curriculumData.c_id = "8";
             curriculumData.c_semester = "1ST";
-            PrintDataBindingSource.DataSource = md.dgv_Example(cboSelectProgram.Text).DataSource;
+            PrintDataBindingSource.DataSource = md.dgv_Example(cboTimeTable.Text, cboOption.Text).DataSource;
+            Microsoft.Reporting.WinForms.ReportParameter[] p = new Microsoft.Reporting.WinForms.ReportParameter[]
+            {
+                new Microsoft.Reporting.WinForms.ReportParameter("pSemester", "1ST"),
+                new Microsoft.Reporting.WinForms.ReportParameter("pSchoolYear", "2018-2019"),
+                new Microsoft.Reporting.WinForms.ReportParameter("pDateNow", DateTime.Now.ToString("MM/dd/yyyy"))
+            };
+            var setup = reportViewer1.GetPageSettings();
+            setup.Margins = new System.Drawing.Printing.Margins(0, 0, 0, 0);
+            reportViewer1.SetPageSettings(setup);
+            this.reportViewer1.LocalReport.SetParameters(p);
+            this.reportViewer1.RefreshReport();
+        }
+
+        private void printPreview1()
+        {
+            curriculumData.c_id = "8";
+            curriculumData.c_semester = "1ST";
+            PrintDataBindingSource.DataSource = md.dgv_Example(cboTimeTable.Text, cboOption.Text).DataSource;
             Microsoft.Reporting.WinForms.ReportParameter[] p = new Microsoft.Reporting.WinForms.ReportParameter[]
             {
                 new Microsoft.Reporting.WinForms.ReportParameter("pSemester", "1ST"),
@@ -106,7 +120,6 @@ namespace ClassSchedulingComputerAided
             if (cboTimeTable.Text == "ROOM")
             {
                 cboOption.Items.Clear();
-                cboOption.Items.Add("ALL");
                 //to list all active rooms
                 SubjectForStudents.Rooms = new string[100];
                 md.CSD_ListActiveRoom();
@@ -120,7 +133,6 @@ namespace ClassSchedulingComputerAided
             if (cboTimeTable.Text == "SECTION")
             {
                 cboOption.Items.Clear();
-                cboOption.Items.Add("ALL");
                 //to list all sections
                 SubjectForStudents.Sections = new string[100];
                 md.CSD_ListAllSections();
@@ -135,7 +147,6 @@ namespace ClassSchedulingComputerAided
             if (cboTimeTable.Text == "PROFESSOR")
             {
                 cboOption.Items.Clear();
-                cboOption.Items.Add("ALL");
                 //to list all professor that have their scheduled
                 SubjectForStudents.ProfessorsName = new string[100];
                 md.CSD_ListAllProfessors();
@@ -144,6 +155,16 @@ namespace ClassSchedulingComputerAided
                     if (SubjectForStudents.ProfessorsName[x] != "" && SubjectForStudents.ProfessorsName[x] != "TBA")
                         cboOption.Items.Add(SubjectForStudents.ProfessorsName[x]);
                 }
+                cboOption.SelectedIndex = 0;
+            }
+
+            if (cboTimeTable.Text == "PROGRAM")
+            {
+                cboOption.Items.Clear();
+                cboOption.Items.Add("ALL");
+                for (int x = 0; x < md.Sections_ListCourse().Length; x++)
+                    if (md.Sections_ListCourse().GetValue(x).ToString() != "")
+                        cboOption.Items.Add(md.Sections_ListCourse().GetValue(x).ToString());
                 cboOption.SelectedIndex = 0;
             }
         }
@@ -167,11 +188,15 @@ namespace ClassSchedulingComputerAided
 
         private void btnViewPrintTimeTable_Click(object sender, EventArgs e)
         {
-            printPreviewDialog1.Document = pdocSection;
-            ((ToolStripButton)((ToolStrip)printPreviewDialog1.Controls[1]).Items[0]).Enabled
-            = false;//disable the direct print from printpreview.as when we click that Print button PrintPage event fires again.
-            pdocSection.DefaultPageSettings.PaperSize = paperSize;
-            printPreviewDialog1.ShowDialog();
+            btnMaximize.Visible = true;
+            pnlStart.Visible = false;
+            printPreview1();
+
+            //printPreviewDialog1.Document = pdocSection;
+            //((ToolStripButton)((ToolStrip)printPreviewDialog1.Controls[1]).Items[0]).Enabled
+            //= false;//disable the direct print from printpreview.as when we click that Print button PrintPage event fires again.
+            //pdocSection.DefaultPageSettings.PaperSize = paperSize;
+            //printPreviewDialog1.ShowDialog();
         } 
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)

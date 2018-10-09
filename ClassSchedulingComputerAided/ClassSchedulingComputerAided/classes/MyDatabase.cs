@@ -2368,21 +2368,40 @@ namespace ClassSchedulingComputerAided
         }
 
         //===============PRINT PREVIEW===============
-        public DataGridView dgv_Example(string sortby)
+        public DataGridView dgv_Example(string selectedGroupby, string sortby)
         {
             DataGridView dgv1 = new DataGridView();
             try
             {
                 string sql = "";
                 con.Open();
-                if (sortby == "ALL")
+                if (sortby != "" && selectedGroupby != "")
                 {
-                    sql = "SELECT subjectCode, subjectDescription, lecHours, labHours, units, course ,year ,section , room, professor, scheduledDay, scheduledStartTime, scheduledEndTime FROM tbl_students_scheduled t WHERE semester = @sem AND schoolYear = @sY;";
+                    if (selectedGroupby == "PROGRAM")
+                    {
+                        if (sortby == "ALL")
+                        {
+                            sql = "SELECT subjectCode, subjectDescription, lecHours, labHours, units, course ,year ,section , room, professor, scheduledDay, scheduledStartTime, scheduledEndTime FROM tbl_students_scheduled t WHERE semester = @sem AND schoolYear = @sY;";
+                        }
+                        else
+                        {
+                            sql = "SELECT subjectCode, subjectDescription, lecHours, labHours, units, course ,year ,section , room, professor, scheduledDay, scheduledStartTime, scheduledEndTime FROM tbl_students_scheduled t WHERE course = @by AND semester = @sem AND schoolYear = @sY;";
+                        }
+                    }
+                    else if (selectedGroupby == "SECTION")
+                    {
+                        sql = "SELECT subjectCode, subjectDescription, lecHours, labHours, units, course ,year ,section , room, professor, scheduledDay, scheduledStartTime, scheduledEndTime FROM tbl_students_scheduled t WHERE semester = @sem AND schoolYear = @sY AND CONCAT(course,' ',year,' - ',section) = @by;";
+                    }
+                    else if (selectedGroupby == "PROFESSOR")
+                    {
+                        sql = "SELECT subjectCode, subjectDescription, lecHours, labHours, units, course ,year ,section , room, professor, scheduledDay, scheduledStartTime, scheduledEndTime FROM tbl_students_scheduled t WHERE semester = @sem AND schoolYear = @sY AND professor = @by;";
+                    }
+                    else if (selectedGroupby == "ROOM")
+                    {
+                        sql = "SELECT subjectCode, subjectDescription, lecHours, labHours, units, course ,year ,section , room, professor, scheduledDay, scheduledStartTime, scheduledEndTime FROM tbl_students_scheduled t WHERE semester = @sem AND schoolYear = @sY AND room = @by;";
+                    }
                 }
-                else
-                {
-                    sql = "SELECT subjectCode, subjectDescription, lecHours, labHours, units, course ,year ,section , room, professor, scheduledDay, scheduledStartTime, scheduledEndTime FROM tbl_students_scheduled t WHERE course = @by AND semester = @sem AND schoolYear = @sY;";
-                }
+                
                 MySqlCommand com = new MySqlCommand(sql, con);
                 com.Parameters.AddWithValue("@by", sortby);
                 com.Parameters.AddWithValue("@sem", SummaryData.semester);

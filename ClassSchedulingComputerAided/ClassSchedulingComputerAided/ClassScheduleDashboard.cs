@@ -53,14 +53,19 @@ namespace ClassSchedulingComputerAided
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            frmAdminHomePage ahp = new frmAdminHomePage();
-            ahp.Show();
-            this.Hide();
+            
         }
 
         private void pnlDashboard_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            frmAdminHomePage ahp = new frmAdminHomePage();
+            ahp.Show();
+            this.Hide();
         }
     }
 }

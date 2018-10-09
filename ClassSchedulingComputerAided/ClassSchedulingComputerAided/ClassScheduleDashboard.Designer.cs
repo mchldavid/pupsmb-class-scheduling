@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmClassScheduleDashboard));
             this.pnlDashboard = new System.Windows.Forms.Panel();
-            this.btnCancel = new MetroFramework.Controls.MetroButton();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label134 = new System.Windows.Forms.Label();
+            this.btnClose = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlDashboard
@@ -45,20 +47,11 @@
             this.pnlDashboard.TabIndex = 0;
             this.pnlDashboard.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlDashboard_Paint);
             // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(1281, 3);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(76, 21);
-            this.btnCancel.TabIndex = 156;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(0)))), ((int)(((byte)(17)))));
+            this.panel7.Controls.Add(this.btnClose);
             this.panel7.Controls.Add(this.label134);
-            this.panel7.Controls.Add(this.btnCancel);
             this.panel7.Location = new System.Drawing.Point(-2, 0);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1370, 55);
@@ -76,6 +69,21 @@
             this.label134.TabIndex = 138;
             this.label134.Text = "Class Scheduling Dashboard";
             // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(0)))), ((int)(((byte)(17)))));
+            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
+            this.btnClose.ImageActive = null;
+            this.btnClose.Location = new System.Drawing.Point(1319, 3);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(48, 25);
+            this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnClose.TabIndex = 230;
+            this.btnClose.TabStop = false;
+            this.btnClose.Zoom = 10;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // frmClassScheduleDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -92,6 +100,7 @@
             this.Load += new System.EventHandler(this.ClassScheduleDashboard_Load);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -99,9 +108,9 @@
         #endregion
 
         private System.Windows.Forms.Panel pnlDashboard;
-        private MetroFramework.Controls.MetroButton btnCancel;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label134;
+        private Bunifu.Framework.UI.BunifuImageButton btnClose;
 
     }
 }

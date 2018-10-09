@@ -21,16 +21,16 @@
               <Width>1.65333cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.55833cm</Width>
+              <Width>3.29374cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.71167cm</Width>
+              <Width>2.07667cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.0134cm</Width>
+              <Width>3.6959cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.78435cm</Width>
+              <Width>4.94852cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -732,7 +732,7 @@
         <Top>0.17639cm</Top>
         <Left>0.3175cm</Left>
         <Height>1.2cm</Height>
-        <Width>27.34666cm</Width>
+        <Width>27.29374cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -757,7 +757,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>CLASS SCHEDULE OF THE POLYTECHNIC UNIVERSITY OF THE PHILIPINES</Value>
+                  <Value>CLASS SCHEDULE OF THE POLYTECHNIC UNIVERSITY OF THE PHILIPINES SANTA MARIA CAMPUS</Value>
                   <Style>
                     <FontSize>14pt</FontSize>
                     <FontWeight>Bold</FontWeight>
@@ -771,9 +771,9 @@
           </Paragraphs>
           <rd:DefaultName>Textbox29</rd:DefaultName>
           <Top>0.3175cm</Top>
-          <Left>10.95424cm</Left>
+          <Left>9.91205cm</Left>
           <Height>1.78273cm</Height>
-          <Width>7.05083cm</Width>
+          <Width>9.68977cm</Width>
           <Style>
             <Border>
               <Style>None</Style>

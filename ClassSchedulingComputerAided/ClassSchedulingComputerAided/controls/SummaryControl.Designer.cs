@@ -141,7 +141,7 @@
             this.btnSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(0)))), ((int)(((byte)(17)))));
             this.btnSettings.Image = ((System.Drawing.Image)(resources.GetObject("btnSettings.Image")));
             this.btnSettings.ImageActive = null;
-            this.btnSettings.Location = new System.Drawing.Point(893, 9);
+            this.btnSettings.Location = new System.Drawing.Point(846, 8);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Size = new System.Drawing.Size(24, 23);
             this.btnSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -160,7 +160,7 @@
             this.lblCurriculum.ForeColor = System.Drawing.Color.White;
             this.lblCurriculum.Location = new System.Drawing.Point(335, 4);
             this.lblCurriculum.Name = "lblCurriculum";
-            this.lblCurriculum.Size = new System.Drawing.Size(553, 31);
+            this.lblCurriculum.Size = new System.Drawing.Size(512, 31);
             this.lblCurriculum.TabIndex = 178;
             this.lblCurriculum.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 

@@ -82,6 +82,7 @@ namespace ClassSchedulingComputerAided
             lbl.Size = new System.Drawing.Size(79, callShade);
             lbl.BackColor = System.Drawing.Color.Maroon;
             lbl.TextAlign = ContentAlignment.MiddleCenter;
+            lbl.BorderStyle = BorderStyle.Fixed3D;
             return lbl;
         }
 
@@ -307,7 +308,8 @@ namespace ClassSchedulingComputerAided
                         professor = md.get_info_ProfessorScheduled(ps_id).GetValue(3).ToString();
                         courseCode = md.get_info_ProfessorScheduled(ps_id).GetValue(4).ToString();
                         sections = md.get_info_ProfessorScheduled(ps_id).GetValue(5).ToString();
-                        AddLabelClassSchedule().BringToFront();
+                        if (ClassSchedule_Data.professors_name != "TBA")
+                            AddLabelClassSchedule().BringToFront();
                     }
                 }
             }
