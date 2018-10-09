@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SaveInfoData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Prof_1>TBA</Prof_1>
-  <Start_1>10</Start_1>
-  <End_1>16</End_1>
-  <Day_1>3</Day_1>
-  <Room_1>RM201</Room_1>
-  <Prof_2 />
-  <Start_2>-1</Start_2>
-  <End_2>-1</End_2>
-  <Day_2>-1</Day_2>
-  <Room_2 />
+  <Prof_1>Michael  David</Prof_1>
+  <Start_1>1</Start_1>
+  <End_1>7</End_1>
+  <Day_1>2</Day_1>
+  <Room_1>RM202</Room_1>
+  <Prof_2>TBA</Prof_2>
+  <Start_2>9</Start_2>
+  <End_2>15</End_2>
+  <Day_2>1</Day_2>
+  <Room_2>RM202</Room_2>
   <Prof_3 />
   <Start_3>-1</Start_3>
   <End_3>-1</End_3>

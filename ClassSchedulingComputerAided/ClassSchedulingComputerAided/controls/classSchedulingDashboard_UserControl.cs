@@ -602,9 +602,7 @@ namespace ClassSchedulingComputerAided
         {
             if (btnSet_1.Text == "SET")
             {
-                //clear all listed items
-                cboProfessor_1.Items.Clear();
-                cboRoom_1.Items.Clear();
+                btnCancel_1.Visible = true;
 
                 SetComboBoxToDisabled();
                 btnSet_1.Enabled = true;
@@ -615,27 +613,7 @@ namespace ClassSchedulingComputerAided
                 cboRoom_1.Enabled = true;
                 btnSet_1.Text = "OK";
                 btnSAVE.Enabled = false;
-
-                //set first value to TBA
-                cboRoom_1.Items.Add("TBA");
-                cboProfessor_1.Items.Add("TBA");
-
-                //to list all Active Rooms
-                SubjectForStudents.Rooms = new string[100];
-                md.CSD_ListActiveRoom();
-                for(int x = 0; x < 50; x++)//set to 50 loop
-                {
-                    if(SubjectForStudents.Rooms[x] != "")
-                        cboRoom_1.Items.Add(SubjectForStudents.Rooms[x]);
-                }
-                //to list all professors on that particular courseCode
-                SubjectForStudents.Professors = new string[100];
-                md.CSD_ListProfDedicated(lblCode_1.Text, cboSemester.Text, cboSchoolYear.Text);
-                for (int x = 0; x < 100; x++)//set to 50 loop
-                {
-                    if (SubjectForStudents.Professors[x] != "")
-                        cboProfessor_1.Items.Add(SubjectForStudents.Professors[x]);
-                }
+                
                 //to load all data if already
                 ClassSchedule_Data.professors_name = cboProfessor_1.Text;
                 ClassSchedule_Data.roomCode = cboRoom_1.Text;
@@ -660,6 +638,8 @@ namespace ClassSchedulingComputerAided
                     //Check constraints for Rooms
                     if (RoomCheckConstraints(cboRoom_1.Text, cboDay_1.Text, cboStart_1.Text, cboEnd_1.Text) == true)
                     {
+                        btnCancel_1.Visible = false;
+
                         MessageBox.Show("Scheduled Successful", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         SaveScheduled();
@@ -688,9 +668,7 @@ namespace ClassSchedulingComputerAided
         {
             if (btnSet_2.Text == "SET")
             {
-                //clear all listed items
-                cboProfessor_2.Items.Clear();
-                cboRoom_2.Items.Clear();
+                btnCancel_2.Visible = true;
 
                 SetComboBoxToDisabled();
                 btnSet_2.Enabled = true;
@@ -701,27 +679,6 @@ namespace ClassSchedulingComputerAided
                 cboRoom_2.Enabled = true;
                 btnSet_2.Text = "OK";
                 btnSAVE.Enabled = false;
-
-                //set first value to TBA
-                cboRoom_2.Items.Add("TBA");
-                cboProfessor_2.Items.Add("TBA");
-
-                //to list all Active Rooms
-                SubjectForStudents.Rooms = new string[100];
-                md.CSD_ListActiveRoom();
-                for (int x = 0; x < 50; x++)//set to 50 loop
-                {
-                    if (SubjectForStudents.Rooms[x] != "")
-                        cboRoom_2.Items.Add(SubjectForStudents.Rooms[x]);
-                }
-                //to list all professors on that particular courseCode
-                SubjectForStudents.Professors = new string[100];
-                md.CSD_ListProfDedicated(lblCode_2.Text, cboSemester.Text, cboSchoolYear.Text);
-                for (int x = 0; x < 100; x++)//set to 50 loop
-                {
-                    if (SubjectForStudents.Professors[x] != "")
-                        cboProfessor_2.Items.Add(SubjectForStudents.Professors[x]);
-                }
 
                 //to load all data if already
                 ClassSchedule_Data.professors_name = cboProfessor_2.Text;
@@ -747,6 +704,8 @@ namespace ClassSchedulingComputerAided
                     //Check constraints for Rooms
                     if (RoomCheckConstraints(cboRoom_2.Text, cboDay_2.Text, cboStart_2.Text, cboEnd_2.Text) == true)
                     {
+                        btnCancel_2.Visible = false;
+
                         MessageBox.Show("Scheduled Successful", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         SaveScheduled();
@@ -775,9 +734,7 @@ namespace ClassSchedulingComputerAided
         {
             if (btnSet_3.Text == "SET")
             {
-                //clear all listed items
-                cboProfessor_3.Items.Clear();
-                cboRoom_3.Items.Clear();
+                btnCancel_3.Visible = true;
 
                 SetComboBoxToDisabled();
                 btnSet_3.Enabled = true;
@@ -788,27 +745,6 @@ namespace ClassSchedulingComputerAided
                 cboRoom_3.Enabled = true;
                 btnSet_3.Text = "OK";
                 btnSAVE.Enabled = false;
-
-                //set first value to TBA
-                cboRoom_3.Items.Add("TBA");
-                cboProfessor_3.Items.Add("TBA");
-
-                //to list all Active Rooms
-                SubjectForStudents.Rooms = new string[100];
-                md.CSD_ListActiveRoom();
-                for (int x = 0; x < 50; x++)//set to 50 loop
-                {
-                    if (SubjectForStudents.Rooms[x] != "")
-                        cboRoom_3.Items.Add(SubjectForStudents.Rooms[x]);
-                }
-                //to list all professors on that particular courseCode
-                SubjectForStudents.Professors = new string[100];
-                md.CSD_ListProfDedicated(lblCode_3.Text, cboSemester.Text, cboSchoolYear.Text);
-                for (int x = 0; x < 100; x++)//set to 50 loop
-                {
-                    if (SubjectForStudents.Professors[x] != "")
-                        cboProfessor_3.Items.Add(SubjectForStudents.Professors[x]);
-                }
 
                 //to load all data if already
                 ClassSchedule_Data.professors_name = cboProfessor_3.Text;
@@ -834,6 +770,8 @@ namespace ClassSchedulingComputerAided
                     //Check constraints for Rooms
                     if (RoomCheckConstraints(cboRoom_3.Text, cboDay_3.Text, cboStart_3.Text, cboEnd_3.Text) == true)
                     {
+                        btnCancel_3.Visible = false;
+
                         MessageBox.Show("Scheduled Successful", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         SaveScheduled();
@@ -862,9 +800,7 @@ namespace ClassSchedulingComputerAided
         {
             if (btnSet_4.Text == "SET")
             {
-                //clear all listed items
-                cboProfessor_4.Items.Clear();
-                cboRoom_4.Items.Clear();
+                btnCancel_4.Visible = true;
 
                 SetComboBoxToDisabled();
                 btnSet_4.Enabled = true;
@@ -875,27 +811,6 @@ namespace ClassSchedulingComputerAided
                 cboRoom_4.Enabled = true;
                 btnSet_4.Text = "OK";
                 btnSAVE.Enabled = false;
-
-                //set first value to TBA
-                cboRoom_4.Items.Add("TBA");
-                cboProfessor_4.Items.Add("TBA");
-
-                //to list all Active Rooms
-                SubjectForStudents.Rooms = new string[100];
-                md.CSD_ListActiveRoom();
-                for (int x = 0; x < 50; x++)//set to 50 loop
-                {
-                    if (SubjectForStudents.Rooms[x] != "")
-                        cboRoom_4.Items.Add(SubjectForStudents.Rooms[x]);
-                }
-                //to list all professors on that particular courseCode
-                SubjectForStudents.Professors = new string[100];
-                md.CSD_ListProfDedicated(lblCode_4.Text, cboSemester.Text, cboSchoolYear.Text);
-                for (int x = 0; x < 100; x++)//set to 50 loop
-                {
-                    if (SubjectForStudents.Professors[x] != "")
-                        cboProfessor_4.Items.Add(SubjectForStudents.Professors[x]);
-                }
 
                 //to load all data if already
                 ClassSchedule_Data.professors_name = cboProfessor_4.Text;
@@ -921,6 +836,8 @@ namespace ClassSchedulingComputerAided
                     //Check constraints for Rooms
                     if (RoomCheckConstraints(cboRoom_4.Text, cboDay_4.Text, cboStart_4.Text, cboEnd_4.Text) == true)
                     {
+                        btnCancel_4.Visible = false;
+
                         MessageBox.Show("Scheduled Successful", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         SaveScheduled();
@@ -949,9 +866,7 @@ namespace ClassSchedulingComputerAided
         {
             if (btnSet_5.Text == "SET")
             {
-                //clear all listed items
-                cboProfessor_5.Items.Clear();
-                cboRoom_5.Items.Clear();
+                btnCancel_5.Visible = true;
 
                 SetComboBoxToDisabled();
                 btnSet_5.Enabled = true;
@@ -962,27 +877,6 @@ namespace ClassSchedulingComputerAided
                 cboRoom_5.Enabled = true;
                 btnSet_5.Text = "OK";
                 btnSAVE.Enabled = false;
-
-                //set first value to TBA
-                cboRoom_5.Items.Add("TBA");
-                cboProfessor_5.Items.Add("TBA");
-
-                //to list all Active Rooms
-                SubjectForStudents.Rooms = new string[100];
-                md.CSD_ListActiveRoom();
-                for (int x = 0; x < 50; x++)//set to 50 loop
-                {
-                    if (SubjectForStudents.Rooms[x] != "")
-                        cboRoom_5.Items.Add(SubjectForStudents.Rooms[x]);
-                }
-                //to list all professors on that particular courseCode
-                SubjectForStudents.Professors = new string[100];
-                md.CSD_ListProfDedicated(lblCode_5.Text, cboSemester.Text, cboSchoolYear.Text);
-                for (int x = 0; x < 100; x++)//set to 50 loop
-                {
-                    if (SubjectForStudents.Professors[x] != "")
-                        cboProfessor_5.Items.Add(SubjectForStudents.Professors[x]);
-                }
 
                 //to load all data if already
                 ClassSchedule_Data.professors_name = cboProfessor_5.Text;
@@ -1008,6 +902,8 @@ namespace ClassSchedulingComputerAided
                     //Check constraints for Rooms
                     if (RoomCheckConstraints(cboRoom_5.Text, cboDay_5.Text, cboStart_5.Text, cboEnd_5.Text) == true)
                     {
+                        btnCancel_5.Visible = false;
+
                         MessageBox.Show("Scheduled Successful", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         SaveScheduled();
@@ -1036,9 +932,7 @@ namespace ClassSchedulingComputerAided
         {
             if (btnSet_6.Text == "SET")
             {
-                //clear all listed items
-                cboProfessor_6.Items.Clear();
-                cboRoom_6.Items.Clear();
+                btnCancel_6.Visible = true;
 
                 SetComboBoxToDisabled();
                 btnSet_6.Enabled = true;
@@ -1049,27 +943,6 @@ namespace ClassSchedulingComputerAided
                 cboRoom_6.Enabled = true;
                 btnSet_6.Text = "OK";
                 btnSAVE.Enabled = false;
-
-                //set first value to TBA
-                cboRoom_6.Items.Add("TBA");
-                cboProfessor_6.Items.Add("TBA");
-
-                //to list all Active Rooms
-                SubjectForStudents.Rooms = new string[100];
-                md.CSD_ListActiveRoom();
-                for (int x = 0; x < 50; x++)//set to 50 loop
-                {
-                    if (SubjectForStudents.Rooms[x] != "")
-                        cboRoom_6.Items.Add(SubjectForStudents.Rooms[x]);
-                }
-                //to list all professors on that particular courseCode
-                SubjectForStudents.Professors = new string[100];
-                md.CSD_ListProfDedicated(lblCode_6.Text, cboSemester.Text, cboSchoolYear.Text);
-                for (int x = 0; x < 100; x++)//set to 50 loop
-                {
-                    if (SubjectForStudents.Professors[x] != "")
-                        cboProfessor_6.Items.Add(SubjectForStudents.Professors[x]);
-                }
 
                 //to load all data if already
                 ClassSchedule_Data.professors_name = cboProfessor_6.Text;
@@ -1095,6 +968,8 @@ namespace ClassSchedulingComputerAided
                     //Check constraints for Rooms
                     if (RoomCheckConstraints(cboRoom_6.Text, cboDay_6.Text, cboStart_6.Text, cboEnd_6.Text) == true)
                     {
+                        btnCancel_6.Visible = false;
+
                         MessageBox.Show("Scheduled Successful", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         SaveScheduled();
@@ -1123,9 +998,7 @@ namespace ClassSchedulingComputerAided
         {
             if (btnSet_7.Text == "SET")
             {
-                //clear all listed items
-                cboProfessor_7.Items.Clear();
-                cboRoom_7.Items.Clear();
+                btnCancel_7.Visible = true;
 
                 SetComboBoxToDisabled();
                 btnSet_7.Enabled = true;
@@ -1136,27 +1009,6 @@ namespace ClassSchedulingComputerAided
                 cboRoom_7.Enabled = true;
                 btnSet_7.Text = "OK";
                 btnSAVE.Enabled = false;
-
-                //set first value to TBA
-                cboRoom_7.Items.Add("TBA");
-                cboProfessor_7.Items.Add("TBA");
-
-                //to list all Active Rooms
-                SubjectForStudents.Rooms = new string[100];
-                md.CSD_ListActiveRoom();
-                for (int x = 0; x < 50; x++)//set to 50 loop
-                {
-                    if (SubjectForStudents.Rooms[x] != "")
-                        cboRoom_7.Items.Add(SubjectForStudents.Rooms[x]);
-                }
-                //to list all professors on that particular courseCode
-                SubjectForStudents.Professors = new string[100];
-                md.CSD_ListProfDedicated(lblCode_7.Text, cboSemester.Text, cboSchoolYear.Text);
-                for (int x = 0; x < 100; x++)//set to 50 loop
-                {
-                    if (SubjectForStudents.Professors[x] != "")
-                        cboProfessor_7.Items.Add(SubjectForStudents.Professors[x]);
-                }
 
                 //to load all data if already
                 ClassSchedule_Data.professors_name = cboProfessor_7.Text;
@@ -1182,6 +1034,8 @@ namespace ClassSchedulingComputerAided
                     //Check constraints for Rooms
                     if (RoomCheckConstraints(cboRoom_7.Text, cboDay_7.Text, cboStart_7.Text, cboEnd_7.Text) == true)
                     {
+                        btnCancel_7.Visible = false;
+
                         MessageBox.Show("Scheduled Successful", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         SaveScheduled();
@@ -1210,9 +1064,7 @@ namespace ClassSchedulingComputerAided
         {
             if (btnSet_8.Text == "SET")
             {
-                //clear all listed items
-                cboProfessor_8.Items.Clear();
-                cboRoom_8.Items.Clear();
+                btnCancel_8.Visible = true;
 
                 SetComboBoxToDisabled();
                 btnSet_8.Enabled = true;
@@ -1223,27 +1075,6 @@ namespace ClassSchedulingComputerAided
                 cboRoom_8.Enabled = true;
                 btnSet_8.Text = "OK";
                 btnSAVE.Enabled = false;
-
-                //set first value to TBA
-                cboRoom_8.Items.Add("TBA");
-                cboProfessor_8.Items.Add("TBA");
-
-                //to list all Active Rooms
-                SubjectForStudents.Rooms = new string[100];
-                md.CSD_ListActiveRoom();
-                for (int x = 0; x < 50; x++)//set to 50 loop
-                {
-                    if (SubjectForStudents.Rooms[x] != "")
-                        cboRoom_8.Items.Add(SubjectForStudents.Rooms[x]);
-                }
-                //to list all professors on that particular courseCode
-                SubjectForStudents.Professors = new string[100];
-                md.CSD_ListProfDedicated(lblCode_8.Text, cboSemester.Text, cboSchoolYear.Text);
-                for (int x = 0; x < 100; x++)//set to 50 loop
-                {
-                    if (SubjectForStudents.Professors[x] != "")
-                        cboProfessor_8.Items.Add(SubjectForStudents.Professors[x]);
-                }
 
                 //to load all data if already
                 ClassSchedule_Data.professors_name = cboProfessor_8.Text;
@@ -1269,6 +1100,8 @@ namespace ClassSchedulingComputerAided
                     //Check constraints for Rooms
                     if (RoomCheckConstraints(cboRoom_8.Text, cboDay_8.Text, cboStart_8.Text, cboEnd_8.Text) == true)
                     {
+                        btnCancel_8.Visible = false;
+
                         MessageBox.Show("Scheduled Successful", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         SaveScheduled();
@@ -1297,9 +1130,7 @@ namespace ClassSchedulingComputerAided
         {
             if (btnSet_9.Text == "SET")
             {
-                //clear all listed items
-                cboProfessor_9.Items.Clear();
-                cboRoom_9.Items.Clear();
+                btnCancel_9.Visible = true;
 
                 SetComboBoxToDisabled();
                 btnSet_9.Enabled = true;
@@ -1310,27 +1141,6 @@ namespace ClassSchedulingComputerAided
                 cboRoom_9.Enabled = true;
                 btnSet_9.Text = "OK";
                 btnSAVE.Enabled = false;
-
-                //set first value to TBA
-                cboRoom_9.Items.Add("TBA");
-                cboProfessor_9.Items.Add("TBA");
-
-                //to list all Active Rooms
-                SubjectForStudents.Rooms = new string[100];
-                md.CSD_ListActiveRoom();
-                for (int x = 0; x < 50; x++)//set to 50 loop
-                {
-                    if (SubjectForStudents.Rooms[x] != "")
-                        cboRoom_9.Items.Add(SubjectForStudents.Rooms[x]);
-                }
-                //to list all professors on that particular courseCode
-                SubjectForStudents.Professors = new string[100];
-                md.CSD_ListProfDedicated(lblCode_9.Text, cboSemester.Text, cboSchoolYear.Text);
-                for (int x = 0; x < 100; x++)//set to 50 loop
-                {
-                    if (SubjectForStudents.Professors[x] != "")
-                        cboProfessor_9.Items.Add(SubjectForStudents.Professors[x]);
-                }
 
                 //to load all data if already
                 ClassSchedule_Data.professors_name = cboProfessor_9.Text;
@@ -1356,6 +1166,8 @@ namespace ClassSchedulingComputerAided
                     //Check constraints for Rooms
                     if (RoomCheckConstraints(cboRoom_9.Text, cboDay_9.Text, cboStart_9.Text, cboEnd_9.Text) == true)
                     {
+                        btnCancel_9.Visible = false;
+
                         MessageBox.Show("Scheduled Successful", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         SaveScheduled();
@@ -1384,9 +1196,7 @@ namespace ClassSchedulingComputerAided
         {
             if (btnSet_10.Text == "SET")
             {
-                //clear all listed items
-                cboProfessor_10.Items.Clear();
-                cboRoom_10.Items.Clear();
+                btnCancel_10.Visible = true;
 
                 SetComboBoxToDisabled();
                 btnSet_10.Enabled = true;
@@ -1397,27 +1207,6 @@ namespace ClassSchedulingComputerAided
                 cboRoom_10.Enabled = true;
                 btnSet_10.Text = "OK";
                 btnSAVE.Enabled = false;
-
-                //set first value to TBA
-                cboRoom_10.Items.Add("TBA");
-                cboProfessor_10.Items.Add("TBA");
-
-                //to list all Active Rooms
-                SubjectForStudents.Rooms = new string[100];
-                md.CSD_ListActiveRoom();
-                for (int x = 0; x < 50; x++)//set to 50 loop
-                {
-                    if (SubjectForStudents.Rooms[x] != "")
-                        cboRoom_10.Items.Add(SubjectForStudents.Rooms[x]);
-                }
-                //to list all professors on that particular courseCode
-                SubjectForStudents.Professors = new string[100];
-                md.CSD_ListProfDedicated(lblCode_10.Text, cboSemester.Text, cboSchoolYear.Text);
-                for (int x = 0; x < 100; x++)//set to 50 loop
-                {
-                    if (SubjectForStudents.Professors[x] != "")
-                        cboProfessor_10.Items.Add(SubjectForStudents.Professors[x]);
-                }
 
                 //to load all data if already
                 ClassSchedule_Data.professors_name = cboProfessor_10.Text;
@@ -1443,6 +1232,8 @@ namespace ClassSchedulingComputerAided
                     //Check constraints for Rooms
                     if (RoomCheckConstraints(cboRoom_10.Text, cboDay_10.Text, cboStart_10.Text, cboEnd_10.Text) == true)
                     {
+                        btnCancel_10.Visible = false;
+
                         MessageBox.Show("Scheduled Successful", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         SaveScheduled();
@@ -1971,6 +1762,248 @@ namespace ClassSchedulingComputerAided
             }
         }
 
+        public void fill_prof_room()
+        {
+            //======================1=====================
+            //clear all listed items
+            cboProfessor_1.Items.Clear();
+            cboRoom_1.Items.Clear();
+            //set first value to TBA
+            cboProfessor_1.Items.Add("TBA");
+
+            //to list all Active Rooms
+            SubjectForStudents.Rooms = new string[100];
+            md.CSD_ListActiveRoom();
+            for (int x = 0; x < 50; x++)//set to 50 loop
+            {
+                if (SubjectForStudents.Rooms[x] != "")
+                    cboRoom_1.Items.Add(SubjectForStudents.Rooms[x]);
+            }
+            //to list all professors on that particular courseCode
+            SubjectForStudents.Professors = new string[100];
+            md.CSD_ListProfDedicated(lblCode_1.Text, cboSemester.Text, cboSchoolYear.Text);
+            for (int x = 0; x < 100; x++)//set to 50 loop
+            {
+                if (SubjectForStudents.Professors[x] != "")
+                    cboProfessor_1.Items.Add(SubjectForStudents.Professors[x]);
+            }
+
+            //=====================2================
+            //clear all listed items
+            cboProfessor_2.Items.Clear();
+            cboRoom_2.Items.Clear();
+            //set first value to TBA
+            cboProfessor_2.Items.Add("TBA");
+
+            //to list all Active Rooms
+            SubjectForStudents.Rooms = new string[100];
+            md.CSD_ListActiveRoom();
+            for (int x = 0; x < 50; x++)//set to 50 loop
+            {
+                if (SubjectForStudents.Rooms[x] != "")
+                    cboRoom_2.Items.Add(SubjectForStudents.Rooms[x]);
+            }
+            //to list all professors on that particular courseCode
+            SubjectForStudents.Professors = new string[100];
+            md.CSD_ListProfDedicated(lblCode_2.Text, cboSemester.Text, cboSchoolYear.Text);
+            for (int x = 0; x < 100; x++)//set to 50 loop
+            {
+                if (SubjectForStudents.Professors[x] != "")
+                    cboProfessor_2.Items.Add(SubjectForStudents.Professors[x]);
+            }
+            //===================3======================
+            //clear all listed items
+            cboProfessor_3.Items.Clear();
+            cboRoom_3.Items.Clear();
+            //set first value to TBA
+            cboProfessor_3.Items.Add("TBA");
+
+            //to list all Active Rooms
+            SubjectForStudents.Rooms = new string[100];
+            md.CSD_ListActiveRoom();
+            for (int x = 0; x < 50; x++)//set to 50 loop
+            {
+                if (SubjectForStudents.Rooms[x] != "")
+                    cboRoom_3.Items.Add(SubjectForStudents.Rooms[x]);
+            }
+            //to list all professors on that particular courseCode
+            SubjectForStudents.Professors = new string[100];
+            md.CSD_ListProfDedicated(lblCode_3.Text, cboSemester.Text, cboSchoolYear.Text);
+            for (int x = 0; x < 100; x++)//set to 50 loop
+            {
+                if (SubjectForStudents.Professors[x] != "")
+                    cboProfessor_3.Items.Add(SubjectForStudents.Professors[x]);
+            }
+
+            //======================4==================
+            //clear all listed items
+            cboProfessor_4.Items.Clear();
+            cboRoom_4.Items.Clear();
+            //set first value to TBA
+            cboProfessor_4.Items.Add("TBA");
+
+            //to list all Active Rooms
+            SubjectForStudents.Rooms = new string[100];
+            md.CSD_ListActiveRoom();
+            for (int x = 0; x < 50; x++)//set to 50 loop
+            {
+                if (SubjectForStudents.Rooms[x] != "")
+                    cboRoom_4.Items.Add(SubjectForStudents.Rooms[x]);
+            }
+            //to list all professors on that particular courseCode
+            SubjectForStudents.Professors = new string[100];
+            md.CSD_ListProfDedicated(lblCode_4.Text, cboSemester.Text, cboSchoolYear.Text);
+            for (int x = 0; x < 100; x++)//set to 50 loop
+            {
+                if (SubjectForStudents.Professors[x] != "")
+                    cboProfessor_4.Items.Add(SubjectForStudents.Professors[x]);
+            }
+
+            //=================5================
+            //clear all listed items
+            cboProfessor_5.Items.Clear();
+            cboRoom_5.Items.Clear();
+            //set first value to TBA
+            cboProfessor_5.Items.Add("TBA");
+
+            //to list all Active Rooms
+            SubjectForStudents.Rooms = new string[100];
+            md.CSD_ListActiveRoom();
+            for (int x = 0; x < 50; x++)//set to 50 loop
+            {
+                if (SubjectForStudents.Rooms[x] != "")
+                    cboRoom_5.Items.Add(SubjectForStudents.Rooms[x]);
+            }
+            //to list all professors on that particular courseCode
+            SubjectForStudents.Professors = new string[100];
+            md.CSD_ListProfDedicated(lblCode_5.Text, cboSemester.Text, cboSchoolYear.Text);
+            for (int x = 0; x < 100; x++)//set to 50 loop
+            {
+                if (SubjectForStudents.Professors[x] != "")
+                    cboProfessor_5.Items.Add(SubjectForStudents.Professors[x]);
+            }
+
+            //==================[6]===============
+            //clear all listed items
+            cboProfessor_6.Items.Clear();
+            cboRoom_6.Items.Clear();
+            //set first value to TBA
+            cboProfessor_6.Items.Add("TBA");
+
+            //to list all Active Rooms
+            SubjectForStudents.Rooms = new string[100];
+            md.CSD_ListActiveRoom();
+            for (int x = 0; x < 50; x++)//set to 50 loop
+            {
+                if (SubjectForStudents.Rooms[x] != "")
+                    cboRoom_6.Items.Add(SubjectForStudents.Rooms[x]);
+            }
+            //to list all professors on that particular courseCode
+            SubjectForStudents.Professors = new string[100];
+            md.CSD_ListProfDedicated(lblCode_6.Text, cboSemester.Text, cboSchoolYear.Text);
+            for (int x = 0; x < 100; x++)//set to 50 loop
+            {
+                if (SubjectForStudents.Professors[x] != "")
+                    cboProfessor_6.Items.Add(SubjectForStudents.Professors[x]);
+            }
+
+
+            //=================[7]===================
+            //clear all listed items
+            cboProfessor_7.Items.Clear();
+            cboRoom_7.Items.Clear();
+            //set first value to TBA
+            cboProfessor_7.Items.Add("TBA");
+
+            //to list all Active Rooms
+            SubjectForStudents.Rooms = new string[100];
+            md.CSD_ListActiveRoom();
+            for (int x = 0; x < 50; x++)//set to 50 loop
+            {
+                if (SubjectForStudents.Rooms[x] != "")
+                    cboRoom_7.Items.Add(SubjectForStudents.Rooms[x]);
+            }
+            //to list all professors on that particular courseCode
+            SubjectForStudents.Professors = new string[100];
+            md.CSD_ListProfDedicated(lblCode_7.Text, cboSemester.Text, cboSchoolYear.Text);
+            for (int x = 0; x < 100; x++)//set to 50 loop
+            {
+                if (SubjectForStudents.Professors[x] != "")
+                    cboProfessor_7.Items.Add(SubjectForStudents.Professors[x]);
+            }
+
+            //========================[8]====================
+            //clear all listed items
+            cboProfessor_8.Items.Clear();
+            cboRoom_8.Items.Clear();
+            //set first value to TBA
+            cboProfessor_8.Items.Add("TBA");
+
+            //to list all Active Rooms
+            SubjectForStudents.Rooms = new string[100];
+            md.CSD_ListActiveRoom();
+            for (int x = 0; x < 50; x++)//set to 50 loop
+            {
+                if (SubjectForStudents.Rooms[x] != "")
+                    cboRoom_8.Items.Add(SubjectForStudents.Rooms[x]);
+            }
+            //to list all professors on that particular courseCode
+            SubjectForStudents.Professors = new string[100];
+            md.CSD_ListProfDedicated(lblCode_8.Text, cboSemester.Text, cboSchoolYear.Text);
+            for (int x = 0; x < 100; x++)//set to 50 loop
+            {
+                if (SubjectForStudents.Professors[x] != "")
+                    cboProfessor_8.Items.Add(SubjectForStudents.Professors[x]);
+            }
+            //=======================[9]=====================
+            //clear all listed items
+            cboProfessor_9.Items.Clear();
+            cboRoom_9.Items.Clear();
+            //set first value to TBA
+            cboProfessor_9.Items.Add("TBA");
+
+            //to list all Active Rooms
+            SubjectForStudents.Rooms = new string[100];
+            md.CSD_ListActiveRoom();
+            for (int x = 0; x < 50; x++)//set to 50 loop
+            {
+                if (SubjectForStudents.Rooms[x] != "")
+                    cboRoom_9.Items.Add(SubjectForStudents.Rooms[x]);
+            }
+            //to list all professors on that particular courseCode
+            SubjectForStudents.Professors = new string[100];
+            md.CSD_ListProfDedicated(lblCode_9.Text, cboSemester.Text, cboSchoolYear.Text);
+            for (int x = 0; x < 100; x++)//set to 50 loop
+            {
+                if (SubjectForStudents.Professors[x] != "")
+                    cboProfessor_9.Items.Add(SubjectForStudents.Professors[x]);
+            }
+
+            //==========================[10]=================
+            //clear all listed items
+            cboProfessor_10.Items.Clear();
+            cboRoom_10.Items.Clear();
+            //set first value to TBA
+            cboProfessor_10.Items.Add("TBA");
+
+            //to list all Active Rooms
+            SubjectForStudents.Rooms = new string[100];
+            md.CSD_ListActiveRoom();
+            for (int x = 0; x < 50; x++)//set to 50 loop
+            {
+                if (SubjectForStudents.Rooms[x] != "")
+                    cboRoom_10.Items.Add(SubjectForStudents.Rooms[x]);
+            }
+            //to list all professors on that particular courseCode
+            SubjectForStudents.Professors = new string[100];
+            md.CSD_ListProfDedicated(lblCode_10.Text, cboSemester.Text, cboSchoolYear.Text);
+            for (int x = 0; x < 100; x++)//set to 50 loop
+            {
+                if (SubjectForStudents.Professors[x] != "")
+                    cboProfessor_10.Items.Add(SubjectForStudents.Professors[x]);
+            }
+        }
+
         private void btnOK_Click(object sender, EventArgs e)
         {
             ClearAll();//to clear
@@ -1982,7 +2015,6 @@ namespace ClassSchedulingComputerAided
 
             SaveDataCSD_Start();//to save the data from starts
 
-            LoadSaveData();//to load the save data
             btnSAVE.Visible = true;
 
             ClassSchedule_Data.course = cboCourse.Text;
@@ -2025,6 +2057,9 @@ namespace ClassSchedulingComputerAided
             ListDay();
             ListRoom();
             ListSet();
+
+            fill_prof_room();//to fill all comboboxes(prof,room)
+            LoadSaveData();//to load the save data
 
             //to load all data if already
             ClassSchedule_Data.professors_name = "";

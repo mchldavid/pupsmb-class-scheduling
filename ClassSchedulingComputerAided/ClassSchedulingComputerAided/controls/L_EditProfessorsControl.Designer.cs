@@ -93,6 +93,7 @@
             // 
             this.rdoFulltimer.AutoSize = true;
             this.rdoFulltimer.CustomBackground = true;
+            this.rdoFulltimer.Enabled = false;
             this.rdoFulltimer.Location = new System.Drawing.Point(18, 28);
             this.rdoFulltimer.Name = "rdoFulltimer";
             this.rdoFulltimer.Size = new System.Drawing.Size(75, 15);
@@ -106,6 +107,7 @@
             // 
             this.rdoParttimer.AutoSize = true;
             this.rdoParttimer.CustomBackground = true;
+            this.rdoParttimer.Enabled = false;
             this.rdoParttimer.Location = new System.Drawing.Point(99, 28);
             this.rdoParttimer.Name = "rdoParttimer";
             this.rdoParttimer.Size = new System.Drawing.Size(77, 15);
@@ -119,6 +121,7 @@
             // 
             this.rdoRetiree.AutoSize = true;
             this.rdoRetiree.CustomBackground = true;
+            this.rdoRetiree.Enabled = false;
             this.rdoRetiree.Location = new System.Drawing.Point(185, 28);
             this.rdoRetiree.Name = "rdoRetiree";
             this.rdoRetiree.Size = new System.Drawing.Size(59, 15);
@@ -157,6 +160,7 @@
             // 
             this.rdoFemale.AutoSize = true;
             this.rdoFemale.CustomBackground = true;
+            this.rdoFemale.Enabled = false;
             this.rdoFemale.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.rdoFemale.Location = new System.Drawing.Point(99, 25);
             this.rdoFemale.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -172,6 +176,7 @@
             // 
             this.rdoMale.AutoSize = true;
             this.rdoMale.CustomBackground = true;
+            this.rdoMale.Enabled = false;
             this.rdoMale.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.rdoMale.Location = new System.Drawing.Point(19, 25);
             this.rdoMale.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -250,6 +255,7 @@
             // cboCourseDepartment
             // 
             this.cboCourseDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCourseDepartment.Enabled = false;
             this.cboCourseDepartment.FormattingEnabled = true;
             this.cboCourseDepartment.Location = new System.Drawing.Point(170, 448);
             this.cboCourseDepartment.Name = "cboCourseDepartment";
@@ -335,6 +341,7 @@
             // 
             // txtConfirmPassword
             // 
+            this.txtConfirmPassword.Enabled = false;
             this.txtConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtConfirmPassword.Location = new System.Drawing.Point(370, 328);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
@@ -344,6 +351,7 @@
             // 
             // txtPassword
             // 
+            this.txtPassword.Enabled = false;
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(370, 279);
             this.txtPassword.Name = "txtPassword";
@@ -353,6 +361,7 @@
             // 
             // txtUsername
             // 
+            this.txtUsername.Enabled = false;
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.Location = new System.Drawing.Point(370, 229);
             this.txtUsername.Name = "txtUsername";
@@ -361,6 +370,7 @@
             // 
             // txtMobileNumber
             // 
+            this.txtMobileNumber.Enabled = false;
             this.txtMobileNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txtMobileNumber.Location = new System.Drawing.Point(370, 136);
             this.txtMobileNumber.Mask = "(+63)000-0000-000";
@@ -370,6 +380,7 @@
             // 
             // txtEmailAddress
             // 
+            this.txtEmailAddress.Enabled = false;
             this.txtEmailAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmailAddress.Location = new System.Drawing.Point(370, 85);
             this.txtEmailAddress.Name = "txtEmailAddress";
@@ -378,6 +389,7 @@
             // 
             // txtAddress
             // 
+            this.txtAddress.Enabled = false;
             this.txtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAddress.Location = new System.Drawing.Point(48, 229);
             this.txtAddress.Multiline = true;
@@ -389,6 +401,7 @@
             // 
             this.txtLastName.BackColor = System.Drawing.Color.White;
             this.txtLastName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtLastName.Enabled = false;
             this.txtLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastName.Location = new System.Drawing.Point(48, 183);
             this.txtLastName.Name = "txtLastName";
@@ -399,6 +412,7 @@
             // 
             this.txtMiddleName.BackColor = System.Drawing.Color.White;
             this.txtMiddleName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMiddleName.Enabled = false;
             this.txtMiddleName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMiddleName.Location = new System.Drawing.Point(48, 136);
             this.txtMiddleName.Name = "txtMiddleName";
@@ -409,6 +423,7 @@
             // 
             this.txtFirstName.BackColor = System.Drawing.Color.White;
             this.txtFirstName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtFirstName.Enabled = false;
             this.txtFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFirstName.Location = new System.Drawing.Point(48, 85);
             this.txtFirstName.Name = "txtFirstName";

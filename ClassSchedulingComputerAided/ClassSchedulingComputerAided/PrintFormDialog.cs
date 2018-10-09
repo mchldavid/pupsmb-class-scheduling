@@ -7,6 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Printing;
+using System.Threading;
+using System.Drawing.Imaging;
+using System.IO;
 
 namespace ClassSchedulingComputerAided
 {
@@ -17,6 +21,8 @@ namespace ClassSchedulingComputerAided
             InitializeComponent();
         }
         MyDatabase md = new MyDatabase();
+        PaperSize paperSize = new PaperSize("papersize", 792, 612);//set the paper size
+
         private void PrintFormDialog_Load(object sender, EventArgs e)
         {
             cboSelectProgram.Items.Add("ALL");
@@ -30,6 +36,28 @@ namespace ClassSchedulingComputerAided
             cboTimeTable.Items.Add("PROFESSOR");
             cboTimeTable.Items.Add("ROOM");
             cboTimeTable.SelectedIndex = 0;
+
+            pnlPrintTimeTable.Controls.Clear();
+            SummaryData.section = "BSA 3 - 1";
+            SummaryStudentScheduledControl section = new SummaryStudentScheduledControl();
+            pnlPrintTimeTable.Controls.Clear();
+            pnlPrintTimeTable.Controls.Add(section);
+
+            int width = pnlPrintTimeTable.Size.Width;
+            int height = pnlPrintTimeTable.Size.Height;
+
+            Bitmap bm = new Bitmap(width, height);
+            pnlPrintTimeTable.DrawToBitmap(bm, new Rectangle(0, 0, width, height));
+
+            SaveFileDialog dialog = new SaveFileDialog();
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+               int w = Convert.ToInt32(pnlPrintTimeTable.Width); 
+               int h = Convert.ToInt32(pnlPrintTimeTable.Height);
+               Bitmap bmp = new Bitmap(w, h);        
+               pnlPrintTimeTable.DrawToBitmap(bmp, new Rectangle(0, 0, w, h));
+               bmp.Save(dialog.FileName, ImageFormat.Png);
+            }
         }
 
         private void printPreview()
@@ -137,28 +165,43 @@ namespace ClassSchedulingComputerAided
             this.Hide();
         }
 
-        Bitmap bmp;
         private void btnViewPrintTimeTable_Click(object sender, EventArgs e)
         {
-            Print(pnlStart);
+            printPreviewDialog1.Document = pdocSection;
+            ((ToolStripButton)((ToolStrip)printPreviewDialog1.Controls[1]).Items[0]).Enabled
+            = false;//disable the direct print from printpreview.as when we click that Print button PrintPage event fires again.
+            pdocSection.DefaultPageSettings.PaperSize = paperSize;
+            printPreviewDialog1.ShowDialog();
         } 
 
-        public void Print(Panel pnl)
-        {
-            getPrintArea(pnlStart);
-            printPreviewDialog1.Document = printDocument1;
-            printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(printDocument1_PrintPage);
-            printPreviewDialog1.ShowDialog();
-        }
-        public void getPrintArea(Panel pnl)
-        {
-            bmp = new Bitmap(pnlStart.Width, pnlStart.Height);
-            pnlStart.DrawToBitmap(bmp, new Rectangle(0, 0, pnlStart.Width, pnlStart.Height));
-        }
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
+
+        }
+
+        int itemperPage = 0;
+        private void pdocSection_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            // declare  one variable for height measurement
+            e.Graphics.DrawString("Print in Multiple Pages", DefaultFont, Brushes.Black, 10, 0);//this will print one heading/title in every page of the document
+            //currentY += 15;
+            Bitmap bmp = new Bitmap(pnlPrintTimeTable.Width, pnlPrintTimeTable.Height);
+            pnlPrintTimeTable.DrawToBitmap(bmp, new Rectangle(0, 0, pnlPrintTimeTable.Width, pnlPrintTimeTable.Height));
             Rectangle pageArea = e.PageBounds;
-            e.Graphics.DrawImage(bmp, (pageArea.Width / 2) - (pnlStart.Width / 2), pnlStart.Location.Y);
+
+            while (itemperPage <= 5)
+            {
+                
+                itemperPage++;
+                e.Graphics.DrawImage(bmp, (pageArea.Width / 2) - (pnlPrintTimeTable.Width / 2), 20);
+                e.HasMorePages = true;
+                return;
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
         }
     }
 }

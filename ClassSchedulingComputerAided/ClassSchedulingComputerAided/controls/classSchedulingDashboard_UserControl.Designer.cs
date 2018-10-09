@@ -180,6 +180,16 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.pnlReport = new System.Windows.Forms.Panel();
             this.btnOKk = new MetroFramework.Controls.MetroButton();
+            this.btnCancel_1 = new MetroFramework.Controls.MetroButton();
+            this.btnCancel_2 = new MetroFramework.Controls.MetroButton();
+            this.btnCancel_3 = new MetroFramework.Controls.MetroButton();
+            this.btnCancel_4 = new MetroFramework.Controls.MetroButton();
+            this.btnCancel_5 = new MetroFramework.Controls.MetroButton();
+            this.btnCancel_6 = new MetroFramework.Controls.MetroButton();
+            this.btnCancel_7 = new MetroFramework.Controls.MetroButton();
+            this.btnCancel_8 = new MetroFramework.Controls.MetroButton();
+            this.btnCancel_9 = new MetroFramework.Controls.MetroButton();
+            this.btnCancel_10 = new MetroFramework.Controls.MetroButton();
             this.pnlStudentScheduling.SuspendLayout();
             this.tbl_pnl_layout.SuspendLayout();
             this.pnlHeader.SuspendLayout();
@@ -198,16 +208,26 @@
             this.pnlStudentScheduling.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlStudentScheduling.Controls.Add(this.tbl_pnl_layout);
             this.pnlStudentScheduling.Controls.Add(this.pnlHeader);
+            this.pnlStudentScheduling.Controls.Add(this.btnCancel_10);
             this.pnlStudentScheduling.Controls.Add(this.btnSet_10);
             this.pnlStudentScheduling.Controls.Add(this.btnSet_9);
+            this.pnlStudentScheduling.Controls.Add(this.btnCancel_9);
             this.pnlStudentScheduling.Controls.Add(this.btnSet_8);
             this.pnlStudentScheduling.Controls.Add(this.btnSet_7);
+            this.pnlStudentScheduling.Controls.Add(this.btnCancel_8);
             this.pnlStudentScheduling.Controls.Add(this.btnSet_6);
+            this.pnlStudentScheduling.Controls.Add(this.btnCancel_1);
+            this.pnlStudentScheduling.Controls.Add(this.btnCancel_7);
             this.pnlStudentScheduling.Controls.Add(this.btnSet_5);
+            this.pnlStudentScheduling.Controls.Add(this.btnCancel_2);
             this.pnlStudentScheduling.Controls.Add(this.btnSet_4);
+            this.pnlStudentScheduling.Controls.Add(this.btnCancel_6);
             this.pnlStudentScheduling.Controls.Add(this.btnSet_3);
+            this.pnlStudentScheduling.Controls.Add(this.btnCancel_3);
             this.pnlStudentScheduling.Controls.Add(this.btnSet_2);
+            this.pnlStudentScheduling.Controls.Add(this.btnCancel_5);
             this.pnlStudentScheduling.Controls.Add(this.btnSet_1);
+            this.pnlStudentScheduling.Controls.Add(this.btnCancel_4);
             this.pnlStudentScheduling.Controls.Add(this.btnSAVE);
             this.pnlStudentScheduling.Controls.Add(this.pnlStart);
             this.pnlStudentScheduling.Location = new System.Drawing.Point(12, 3);
@@ -339,7 +359,7 @@
             this.tbl_pnl_layout.Controls.Add(this.lblUnits_6, 2, 6);
             this.tbl_pnl_layout.Controls.Add(this.lblCode_5, 0, 5);
             this.tbl_pnl_layout.Controls.Add(this.lblCode_6, 0, 6);
-            this.tbl_pnl_layout.Location = new System.Drawing.Point(15, 43);
+            this.tbl_pnl_layout.Location = new System.Drawing.Point(15, 30);
             this.tbl_pnl_layout.Name = "tbl_pnl_layout";
             this.tbl_pnl_layout.RowCount = 11;
             this.tbl_pnl_layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.091001F));
@@ -492,6 +512,7 @@
             this.cboProfessor_1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboProfessor_1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboProfessor_1.Enabled = false;
             this.cboProfessor_1.FormattingEnabled = true;
             this.cboProfessor_1.Location = new System.Drawing.Point(535, 31);
@@ -517,6 +538,7 @@
             this.cboRoom_10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboRoom_10.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboRoom_10.Enabled = false;
             this.cboRoom_10.FormattingEnabled = true;
             this.cboRoom_10.Location = new System.Drawing.Point(1061, 274);
@@ -751,6 +773,7 @@
             this.cboProfessor_10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboProfessor_10.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboProfessor_10.Enabled = false;
             this.cboProfessor_10.FormattingEnabled = true;
             this.cboProfessor_10.Location = new System.Drawing.Point(535, 274);
@@ -764,6 +787,7 @@
             this.cboRoom_9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboRoom_9.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboRoom_9.Enabled = false;
             this.cboRoom_9.FormattingEnabled = true;
             this.cboRoom_9.Location = new System.Drawing.Point(1061, 247);
@@ -836,6 +860,7 @@
             this.cboRoom_1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboRoom_1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboRoom_1.Enabled = false;
             this.cboRoom_1.FormattingEnabled = true;
             this.cboRoom_1.Location = new System.Drawing.Point(1061, 31);
@@ -1019,6 +1044,7 @@
             this.cboProfessor_9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboProfessor_9.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboProfessor_9.Enabled = false;
             this.cboProfessor_9.FormattingEnabled = true;
             this.cboProfessor_9.Location = new System.Drawing.Point(535, 247);
@@ -1032,6 +1058,7 @@
             this.cboRoom_8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboRoom_8.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboRoom_8.Enabled = false;
             this.cboRoom_8.FormattingEnabled = true;
             this.cboRoom_8.Location = new System.Drawing.Point(1061, 220);
@@ -1058,6 +1085,7 @@
             this.cboProfessor_2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboProfessor_2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboProfessor_2.Enabled = false;
             this.cboProfessor_2.FormattingEnabled = true;
             this.cboProfessor_2.Location = new System.Drawing.Point(535, 58);
@@ -1350,6 +1378,7 @@
             this.cboProfessor_8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboProfessor_8.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboProfessor_8.Enabled = false;
             this.cboProfessor_8.FormattingEnabled = true;
             this.cboProfessor_8.Location = new System.Drawing.Point(535, 220);
@@ -1363,6 +1392,7 @@
             this.cboRoom_7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboRoom_7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboRoom_7.Enabled = false;
             this.cboRoom_7.FormattingEnabled = true;
             this.cboRoom_7.Location = new System.Drawing.Point(1061, 193);
@@ -1376,6 +1406,7 @@
             this.cboRoom_2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboRoom_2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboRoom_2.Enabled = false;
             this.cboRoom_2.FormattingEnabled = true;
             this.cboRoom_2.Location = new System.Drawing.Point(1061, 58);
@@ -1560,6 +1591,7 @@
             this.cboProfessor_7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboProfessor_7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboProfessor_7.Enabled = false;
             this.cboProfessor_7.FormattingEnabled = true;
             this.cboProfessor_7.Location = new System.Drawing.Point(535, 193);
@@ -1573,6 +1605,7 @@
             this.cboRoom_6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboRoom_6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboRoom_6.Enabled = false;
             this.cboRoom_6.FormattingEnabled = true;
             this.cboRoom_6.Location = new System.Drawing.Point(1061, 166);
@@ -1687,6 +1720,7 @@
             this.cboProfessor_3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboProfessor_3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboProfessor_3.Enabled = false;
             this.cboProfessor_3.FormattingEnabled = true;
             this.cboProfessor_3.Location = new System.Drawing.Point(535, 85);
@@ -1941,6 +1975,7 @@
             this.cboProfessor_6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboProfessor_6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboProfessor_6.Enabled = false;
             this.cboProfessor_6.FormattingEnabled = true;
             this.cboProfessor_6.Location = new System.Drawing.Point(535, 166);
@@ -1954,6 +1989,7 @@
             this.cboRoom_5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboRoom_5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboRoom_5.Enabled = false;
             this.cboRoom_5.FormattingEnabled = true;
             this.cboRoom_5.Location = new System.Drawing.Point(1061, 139);
@@ -1967,6 +2003,7 @@
             this.cboRoom_3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboRoom_3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboRoom_3.Enabled = false;
             this.cboRoom_3.FormattingEnabled = true;
             this.cboRoom_3.Location = new System.Drawing.Point(1061, 85);
@@ -2139,6 +2176,7 @@
             this.cboProfessor_5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboProfessor_5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboProfessor_5.Enabled = false;
             this.cboProfessor_5.FormattingEnabled = true;
             this.cboProfessor_5.Location = new System.Drawing.Point(535, 139);
@@ -2152,6 +2190,7 @@
             this.cboRoom_4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboRoom_4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboRoom_4.Enabled = false;
             this.cboRoom_4.FormattingEnabled = true;
             this.cboRoom_4.Location = new System.Drawing.Point(1061, 112);
@@ -2407,6 +2446,7 @@
             this.cboProfessor_4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboProfessor_4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboProfessor_4.Enabled = false;
             this.cboProfessor_4.FormattingEnabled = true;
             this.cboProfessor_4.Location = new System.Drawing.Point(535, 112);
@@ -2473,7 +2513,7 @@
             this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlHeader.Location = new System.Drawing.Point(0, 0);
             this.pnlHeader.Name = "pnlHeader";
-            this.pnlHeader.Size = new System.Drawing.Size(1340, 37);
+            this.pnlHeader.Size = new System.Drawing.Size(1340, 30);
             this.pnlHeader.TabIndex = 2;
             // 
             // btnSettings
@@ -2481,7 +2521,7 @@
             this.btnSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(21)))), ((int)(((byte)(24)))));
             this.btnSettings.Image = ((System.Drawing.Image)(resources.GetObject("btnSettings.Image")));
             this.btnSettings.ImageActive = null;
-            this.btnSettings.Location = new System.Drawing.Point(6, 8);
+            this.btnSettings.Location = new System.Drawing.Point(6, 1);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Size = new System.Drawing.Size(24, 23);
             this.btnSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -2498,7 +2538,7 @@
             this.lblCurriculumTitle.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.lblCurriculumTitle.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.lblCurriculumTitle.ForeColor = System.Drawing.Color.White;
-            this.lblCurriculumTitle.Location = new System.Drawing.Point(592, 2);
+            this.lblCurriculumTitle.Location = new System.Drawing.Point(592, -7);
             this.lblCurriculumTitle.Name = "lblCurriculumTitle";
             this.lblCurriculumTitle.Size = new System.Drawing.Size(745, 31);
             this.lblCurriculumTitle.TabIndex = 177;
@@ -2512,7 +2552,7 @@
             this.lblSection.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.lblSection.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.lblSection.ForeColor = System.Drawing.Color.White;
-            this.lblSection.Location = new System.Drawing.Point(38, 3);
+            this.lblSection.Location = new System.Drawing.Point(38, -4);
             this.lblSection.Name = "lblSection";
             this.lblSection.Size = new System.Drawing.Size(553, 31);
             this.lblSection.TabIndex = 177;
@@ -2521,9 +2561,9 @@
             // 
             // btnSet_10
             // 
-            this.btnSet_10.Location = new System.Drawing.Point(1195, 317);
+            this.btnSet_10.Location = new System.Drawing.Point(1195, 304);
             this.btnSet_10.Name = "btnSet_10";
-            this.btnSet_10.Size = new System.Drawing.Size(61, 21);
+            this.btnSet_10.Size = new System.Drawing.Size(44, 21);
             this.btnSet_10.TabIndex = 155;
             this.btnSet_10.Text = "SET";
             this.btnSet_10.Visible = false;
@@ -2531,9 +2571,9 @@
             // 
             // btnSet_9
             // 
-            this.btnSet_9.Location = new System.Drawing.Point(1195, 290);
+            this.btnSet_9.Location = new System.Drawing.Point(1195, 277);
             this.btnSet_9.Name = "btnSet_9";
-            this.btnSet_9.Size = new System.Drawing.Size(61, 21);
+            this.btnSet_9.Size = new System.Drawing.Size(44, 21);
             this.btnSet_9.TabIndex = 155;
             this.btnSet_9.Text = "SET";
             this.btnSet_9.Visible = false;
@@ -2541,9 +2581,9 @@
             // 
             // btnSet_8
             // 
-            this.btnSet_8.Location = new System.Drawing.Point(1195, 263);
+            this.btnSet_8.Location = new System.Drawing.Point(1195, 250);
             this.btnSet_8.Name = "btnSet_8";
-            this.btnSet_8.Size = new System.Drawing.Size(61, 21);
+            this.btnSet_8.Size = new System.Drawing.Size(44, 21);
             this.btnSet_8.TabIndex = 155;
             this.btnSet_8.Text = "SET";
             this.btnSet_8.Visible = false;
@@ -2551,9 +2591,9 @@
             // 
             // btnSet_7
             // 
-            this.btnSet_7.Location = new System.Drawing.Point(1195, 236);
+            this.btnSet_7.Location = new System.Drawing.Point(1195, 223);
             this.btnSet_7.Name = "btnSet_7";
-            this.btnSet_7.Size = new System.Drawing.Size(61, 21);
+            this.btnSet_7.Size = new System.Drawing.Size(44, 21);
             this.btnSet_7.TabIndex = 155;
             this.btnSet_7.Text = "SET";
             this.btnSet_7.Visible = false;
@@ -2561,9 +2601,9 @@
             // 
             // btnSet_6
             // 
-            this.btnSet_6.Location = new System.Drawing.Point(1195, 209);
+            this.btnSet_6.Location = new System.Drawing.Point(1195, 196);
             this.btnSet_6.Name = "btnSet_6";
-            this.btnSet_6.Size = new System.Drawing.Size(61, 21);
+            this.btnSet_6.Size = new System.Drawing.Size(44, 21);
             this.btnSet_6.TabIndex = 155;
             this.btnSet_6.Text = "SET";
             this.btnSet_6.Visible = false;
@@ -2571,9 +2611,9 @@
             // 
             // btnSet_5
             // 
-            this.btnSet_5.Location = new System.Drawing.Point(1195, 182);
+            this.btnSet_5.Location = new System.Drawing.Point(1195, 169);
             this.btnSet_5.Name = "btnSet_5";
-            this.btnSet_5.Size = new System.Drawing.Size(61, 21);
+            this.btnSet_5.Size = new System.Drawing.Size(44, 21);
             this.btnSet_5.TabIndex = 155;
             this.btnSet_5.Text = "SET";
             this.btnSet_5.Visible = false;
@@ -2581,9 +2621,9 @@
             // 
             // btnSet_4
             // 
-            this.btnSet_4.Location = new System.Drawing.Point(1195, 155);
+            this.btnSet_4.Location = new System.Drawing.Point(1195, 142);
             this.btnSet_4.Name = "btnSet_4";
-            this.btnSet_4.Size = new System.Drawing.Size(61, 21);
+            this.btnSet_4.Size = new System.Drawing.Size(44, 21);
             this.btnSet_4.TabIndex = 155;
             this.btnSet_4.Text = "SET";
             this.btnSet_4.Visible = false;
@@ -2591,9 +2631,9 @@
             // 
             // btnSet_3
             // 
-            this.btnSet_3.Location = new System.Drawing.Point(1195, 128);
+            this.btnSet_3.Location = new System.Drawing.Point(1195, 115);
             this.btnSet_3.Name = "btnSet_3";
-            this.btnSet_3.Size = new System.Drawing.Size(61, 21);
+            this.btnSet_3.Size = new System.Drawing.Size(44, 21);
             this.btnSet_3.TabIndex = 155;
             this.btnSet_3.Text = "SET";
             this.btnSet_3.Visible = false;
@@ -2601,9 +2641,9 @@
             // 
             // btnSet_2
             // 
-            this.btnSet_2.Location = new System.Drawing.Point(1195, 101);
+            this.btnSet_2.Location = new System.Drawing.Point(1195, 88);
             this.btnSet_2.Name = "btnSet_2";
-            this.btnSet_2.Size = new System.Drawing.Size(61, 21);
+            this.btnSet_2.Size = new System.Drawing.Size(44, 21);
             this.btnSet_2.TabIndex = 155;
             this.btnSet_2.Text = "SET";
             this.btnSet_2.Visible = false;
@@ -2611,9 +2651,9 @@
             // 
             // btnSet_1
             // 
-            this.btnSet_1.Location = new System.Drawing.Point(1195, 74);
+            this.btnSet_1.Location = new System.Drawing.Point(1195, 61);
             this.btnSet_1.Name = "btnSet_1";
-            this.btnSet_1.Size = new System.Drawing.Size(61, 21);
+            this.btnSet_1.Size = new System.Drawing.Size(44, 21);
             this.btnSet_1.TabIndex = 155;
             this.btnSet_1.Text = "SET";
             this.btnSet_1.Visible = false;
@@ -2621,9 +2661,9 @@
             // 
             // btnSAVE
             // 
-            this.btnSAVE.Location = new System.Drawing.Point(1269, 317);
+            this.btnSAVE.Location = new System.Drawing.Point(1266, 330);
             this.btnSAVE.Name = "btnSAVE";
-            this.btnSAVE.Size = new System.Drawing.Size(61, 21);
+            this.btnSAVE.Size = new System.Drawing.Size(61, 18);
             this.btnSAVE.TabIndex = 155;
             this.btnSAVE.Text = "SAVE";
             this.btnSAVE.Visible = false;
@@ -2636,9 +2676,9 @@
             this.pnlStart.Controls.Add(this.groupBox1);
             this.pnlStart.Controls.Add(this.btnOK);
             this.pnlStart.Controls.Add(this.label10);
-            this.pnlStart.Location = new System.Drawing.Point(-10, 36);
+            this.pnlStart.Location = new System.Drawing.Point(-10, 27);
             this.pnlStart.Name = "pnlStart";
-            this.pnlStart.Size = new System.Drawing.Size(1350, 315);
+            this.pnlStart.Size = new System.Drawing.Size(1351, 324);
             this.pnlStart.TabIndex = 181;
             // 
             // groupBox2
@@ -2912,6 +2952,96 @@
             this.btnOKk.Text = "OK";
             this.btnOKk.Click += new System.EventHandler(this.btnOKk_Click);
             // 
+            // btnCancel_1
+            // 
+            this.btnCancel_1.Location = new System.Drawing.Point(1243, 61);
+            this.btnCancel_1.Name = "btnCancel_1";
+            this.btnCancel_1.Size = new System.Drawing.Size(52, 21);
+            this.btnCancel_1.TabIndex = 155;
+            this.btnCancel_1.Text = "CANCEL";
+            this.btnCancel_1.Visible = false;
+            // 
+            // btnCancel_2
+            // 
+            this.btnCancel_2.Location = new System.Drawing.Point(1243, 88);
+            this.btnCancel_2.Name = "btnCancel_2";
+            this.btnCancel_2.Size = new System.Drawing.Size(52, 21);
+            this.btnCancel_2.TabIndex = 155;
+            this.btnCancel_2.Text = "CANCEL";
+            this.btnCancel_2.Visible = false;
+            // 
+            // btnCancel_3
+            // 
+            this.btnCancel_3.Location = new System.Drawing.Point(1243, 115);
+            this.btnCancel_3.Name = "btnCancel_3";
+            this.btnCancel_3.Size = new System.Drawing.Size(52, 21);
+            this.btnCancel_3.TabIndex = 155;
+            this.btnCancel_3.Text = "CANCEL";
+            this.btnCancel_3.Visible = false;
+            // 
+            // btnCancel_4
+            // 
+            this.btnCancel_4.Location = new System.Drawing.Point(1243, 142);
+            this.btnCancel_4.Name = "btnCancel_4";
+            this.btnCancel_4.Size = new System.Drawing.Size(52, 21);
+            this.btnCancel_4.TabIndex = 155;
+            this.btnCancel_4.Text = "CANCEL";
+            this.btnCancel_4.Visible = false;
+            // 
+            // btnCancel_5
+            // 
+            this.btnCancel_5.Location = new System.Drawing.Point(1243, 169);
+            this.btnCancel_5.Name = "btnCancel_5";
+            this.btnCancel_5.Size = new System.Drawing.Size(52, 21);
+            this.btnCancel_5.TabIndex = 155;
+            this.btnCancel_5.Text = "CANCEL";
+            this.btnCancel_5.Visible = false;
+            // 
+            // btnCancel_6
+            // 
+            this.btnCancel_6.Location = new System.Drawing.Point(1243, 196);
+            this.btnCancel_6.Name = "btnCancel_6";
+            this.btnCancel_6.Size = new System.Drawing.Size(52, 21);
+            this.btnCancel_6.TabIndex = 155;
+            this.btnCancel_6.Text = "CANCEL";
+            this.btnCancel_6.Visible = false;
+            // 
+            // btnCancel_7
+            // 
+            this.btnCancel_7.Location = new System.Drawing.Point(1243, 223);
+            this.btnCancel_7.Name = "btnCancel_7";
+            this.btnCancel_7.Size = new System.Drawing.Size(52, 21);
+            this.btnCancel_7.TabIndex = 155;
+            this.btnCancel_7.Text = "CANCEL";
+            this.btnCancel_7.Visible = false;
+            // 
+            // btnCancel_8
+            // 
+            this.btnCancel_8.Location = new System.Drawing.Point(1243, 250);
+            this.btnCancel_8.Name = "btnCancel_8";
+            this.btnCancel_8.Size = new System.Drawing.Size(52, 21);
+            this.btnCancel_8.TabIndex = 155;
+            this.btnCancel_8.Text = "CANCEL";
+            this.btnCancel_8.Visible = false;
+            // 
+            // btnCancel_9
+            // 
+            this.btnCancel_9.Location = new System.Drawing.Point(1243, 277);
+            this.btnCancel_9.Name = "btnCancel_9";
+            this.btnCancel_9.Size = new System.Drawing.Size(52, 21);
+            this.btnCancel_9.TabIndex = 155;
+            this.btnCancel_9.Text = "CANCEL";
+            this.btnCancel_9.Visible = false;
+            // 
+            // btnCancel_10
+            // 
+            this.btnCancel_10.Location = new System.Drawing.Point(1243, 304);
+            this.btnCancel_10.Name = "btnCancel_10";
+            this.btnCancel_10.Size = new System.Drawing.Size(52, 21);
+            this.btnCancel_10.TabIndex = 155;
+            this.btnCancel_10.Text = "CANCEL";
+            this.btnCancel_10.Visible = false;
+            // 
             // classSchedulingDashboard_UserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3095,5 +3225,15 @@
         public MetroFramework.Controls.MetroButton btnOKk;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox1;
+        private MetroFramework.Controls.MetroButton btnCancel_10;
+        private MetroFramework.Controls.MetroButton btnCancel_9;
+        private MetroFramework.Controls.MetroButton btnCancel_8;
+        private MetroFramework.Controls.MetroButton btnCancel_1;
+        private MetroFramework.Controls.MetroButton btnCancel_7;
+        private MetroFramework.Controls.MetroButton btnCancel_2;
+        private MetroFramework.Controls.MetroButton btnCancel_6;
+        private MetroFramework.Controls.MetroButton btnCancel_3;
+        private MetroFramework.Controls.MetroButton btnCancel_5;
+        private MetroFramework.Controls.MetroButton btnCancel_4;
     }
 }

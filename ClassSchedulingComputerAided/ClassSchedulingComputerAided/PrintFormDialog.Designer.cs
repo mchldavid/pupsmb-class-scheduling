@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrintFormDialog));
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -49,10 +49,14 @@
             this.cboTimeTable = new System.Windows.Forms.ComboBox();
             this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.pnlPrintTimeTable = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.PrintDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.pdocSection = new System.Drawing.Printing.PrintDocument();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.PrintDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
@@ -60,6 +64,7 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.pnlPrintTimeTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PrintDataBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,9 +73,9 @@
             this.reportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            reportDataSource3.Name = "DataSet1";
-            reportDataSource3.Value = this.PrintDataBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.PrintDataBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "ClassSchedulingComputerAided.rptSubjects.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(3, 38);
             this.reportViewer1.Name = "reportViewer1";
@@ -87,7 +92,7 @@
             this.panel2.Controls.Add(this.label12);
             this.panel2.Location = new System.Drawing.Point(0, -2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1001, 40);
+            this.panel2.Size = new System.Drawing.Size(1001, 44);
             this.panel2.TabIndex = 159;
             // 
             // btnMaximize
@@ -277,6 +282,14 @@
             this.lineShape1.Y1 = 2;
             this.lineShape1.Y2 = 353;
             // 
+            // pnlPrintTimeTable
+            // 
+            this.pnlPrintTimeTable.Controls.Add(this.panel3);
+            this.pnlPrintTimeTable.Location = new System.Drawing.Point(63, 22);
+            this.pnlPrintTimeTable.Name = "pnlPrintTimeTable";
+            this.pnlPrintTimeTable.Size = new System.Drawing.Size(820, 561);
+            this.pnlPrintTimeTable.TabIndex = 250;
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DimGray;
@@ -284,10 +297,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1001, 543);
             this.panel1.TabIndex = 250;
-            // 
-            // PrintDataBindingSource
-            // 
-            this.PrintDataBindingSource.DataSource = typeof(ClassSchedulingComputerAided.PrintData);
             // 
             // printDocument1
             // 
@@ -303,13 +312,36 @@
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
             // 
+            // pdocSection
+            // 
+            this.pdocSection.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.pdocSection_PrintPage);
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // PrintDataBindingSource
+            // 
+            this.PrintDataBindingSource.DataSource = typeof(ClassSchedulingComputerAided.PrintData);
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Maroon;
+            this.panel3.Location = new System.Drawing.Point(304, 106);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(200, 100);
+            this.panel3.TabIndex = 0;
+            // 
             // frmPrintFormDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(999, 566);
-            this.Controls.Add(this.pnlStart);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.pnlPrintTimeTable);
+            this.Controls.Add(this.pnlStart);
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.panel1);
             this.Name = "frmPrintFormDialog";
@@ -322,6 +354,7 @@
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.pnlPrintTimeTable.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PrintDataBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -351,5 +384,9 @@
         private System.Windows.Forms.Panel panel1;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private System.Windows.Forms.Panel pnlPrintTimeTable;
+        private System.Drawing.Printing.PrintDocument pdocSection;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Panel panel3;
     }
 }
