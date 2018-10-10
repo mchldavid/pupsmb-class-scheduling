@@ -27,7 +27,7 @@ namespace ClassSchedulingComputerAided
 
             cboSemester.Items.Add("1ST");
             cboSemester.Items.Add("2ND");
-            cboSemester.Items.Add("3RD");
+            cboSemester.Items.Add("SUMMER");
 
             //to fill the school year
             string sy = "";
@@ -87,6 +87,7 @@ namespace ClassSchedulingComputerAided
 
         private void btnOK_Click(object sender, EventArgs e)
         {
+            btnPrint.Visible = true;
             btnSettings.Visible = true;
 
             pnlStart.Visible = false;
@@ -136,7 +137,7 @@ namespace ClassSchedulingComputerAided
         private void btnSettings_Click(object sender, EventArgs e)
         {
             pnlStart.Visible = true;
-
+            btnPrint.Visible = false;
             cboProfessorName.SelectedIndex = -1;
             cboSectionName.SelectedIndex = -1;
             cboRoom.SelectedIndex = -1;

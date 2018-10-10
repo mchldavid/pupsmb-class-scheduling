@@ -71,7 +71,7 @@
             this.rdoActive.Name = "rdoActive";
             this.rdoActive.Size = new System.Drawing.Size(104, 24);
             this.rdoActive.Style = MetroFramework.MetroColorStyle.Red;
-            this.rdoActive.TabIndex = 248;
+            this.rdoActive.TabIndex = 6;
             this.rdoActive.Text = "Active";
             this.rdoActive.UseVisualStyleBackColor = true;
             // 
@@ -80,7 +80,7 @@
             this.btnCancel.Location = new System.Drawing.Point(360, 203);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(84, 32);
-            this.btnCancel.TabIndex = 247;
+            this.btnCancel.TabIndex = 8;
             this.btnCancel.Text = "CANCEL";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -89,7 +89,7 @@
             this.btnSave.Location = new System.Drawing.Point(270, 203);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(84, 32);
-            this.btnSave.TabIndex = 246;
+            this.btnSave.TabIndex = 7;
             this.btnSave.Text = "SAVE";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -98,7 +98,7 @@
             this.metroLabel3.Location = new System.Drawing.Point(16, 133);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(136, 25);
-            this.metroLabel3.TabIndex = 245;
+            this.metroLabel3.TabIndex = 4;
             this.metroLabel3.Text = "Curriculum Year:";
             this.metroLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -107,7 +107,7 @@
             this.metroLabel2.Location = new System.Drawing.Point(16, 97);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(136, 25);
-            this.metroLabel2.TabIndex = 243;
+            this.metroLabel2.TabIndex = 2;
             this.metroLabel2.Text = "Program Acronym:";
             this.metroLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -116,7 +116,7 @@
             this.metroLabel1.Location = new System.Drawing.Point(16, 61);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(136, 25);
-            this.metroLabel1.TabIndex = 241;
+            this.metroLabel1.TabIndex = 0;
             this.metroLabel1.Text = "Program Name:";
             this.metroLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -128,7 +128,7 @@
             this.txtProgramName.Location = new System.Drawing.Point(158, 64);
             this.txtProgramName.Name = "txtProgramName";
             this.txtProgramName.Size = new System.Drawing.Size(286, 22);
-            this.txtProgramName.TabIndex = 252;
+            this.txtProgramName.TabIndex = 1;
             // 
             // txtProgramAcronym
             // 
@@ -138,7 +138,7 @@
             this.txtProgramAcronym.Location = new System.Drawing.Point(158, 100);
             this.txtProgramAcronym.Name = "txtProgramAcronym";
             this.txtProgramAcronym.Size = new System.Drawing.Size(286, 22);
-            this.txtProgramAcronym.TabIndex = 252;
+            this.txtProgramAcronym.TabIndex = 3;
             // 
             // txtCurriculumYear
             // 
@@ -148,7 +148,7 @@
             this.txtCurriculumYear.Location = new System.Drawing.Point(158, 136);
             this.txtCurriculumYear.Name = "txtCurriculumYear";
             this.txtCurriculumYear.Size = new System.Drawing.Size(286, 22);
-            this.txtCurriculumYear.TabIndex = 252;
+            this.txtCurriculumYear.TabIndex = 5;
             // 
             // frmCreateProgram
             // 

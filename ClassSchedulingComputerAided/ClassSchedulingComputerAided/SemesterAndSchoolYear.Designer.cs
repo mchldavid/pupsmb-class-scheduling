@@ -52,12 +52,13 @@
             // 
             // cboSemester
             // 
+            this.cboSemester.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSemester.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSemester.FormattingEnabled = true;
             this.cboSemester.Location = new System.Drawing.Point(153, 119);
             this.cboSemester.Name = "cboSemester";
             this.cboSemester.Size = new System.Drawing.Size(121, 24);
-            this.cboSemester.TabIndex = 182;
+            this.cboSemester.TabIndex = 1;
             // 
             // metroLabel5
             // 
@@ -71,7 +72,7 @@
             this.metroLabel5.Location = new System.Drawing.Point(37, 116);
             this.metroLabel5.Name = "metroLabel5";
             this.metroLabel5.Size = new System.Drawing.Size(89, 25);
-            this.metroLabel5.TabIndex = 180;
+            this.metroLabel5.TabIndex = 0;
             this.metroLabel5.Text = "Semester:";
             // 
             // label1
@@ -90,8 +91,9 @@
             this.btnBack.Location = new System.Drawing.Point(26, 262);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(84, 32);
-            this.btnBack.TabIndex = 177;
+            this.btnBack.TabIndex = 2;
             this.btnBack.Text = "BACK";
+            this.btnBack.Visible = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnNext
@@ -99,7 +101,7 @@
             this.btnNext.Location = new System.Drawing.Point(204, 262);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(84, 32);
-            this.btnNext.TabIndex = 177;
+            this.btnNext.TabIndex = 3;
             this.btnNext.Text = "NEXT";
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 

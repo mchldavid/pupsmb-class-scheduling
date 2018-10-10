@@ -133,6 +133,7 @@
             this.btnPrint.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnPrint.TabIndex = 249;
             this.btnPrint.TabStop = false;
+            this.btnPrint.Visible = false;
             this.btnPrint.Zoom = 10;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
@@ -291,6 +292,7 @@
             // 
             // cboSchoolYear
             // 
+            this.cboSchoolYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSchoolYear.FormattingEnabled = true;
             this.cboSchoolYear.Location = new System.Drawing.Point(450, 312);
             this.cboSchoolYear.Name = "cboSchoolYear";
@@ -299,6 +301,7 @@
             // 
             // cboSemester
             // 
+            this.cboSemester.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSemester.FormattingEnabled = true;
             this.cboSemester.Location = new System.Drawing.Point(450, 275);
             this.cboSemester.Name = "cboSemester";
@@ -359,9 +362,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.Controls.Add(this.pnlStart);
             this.Controls.Add(this.tbCtrl_Students);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.pnlStart);
             this.Name = "SummaryControl";
             this.Size = new System.Drawing.Size(923, 672);
             this.Load += new System.EventHandler(this.SummaryControl_Load);

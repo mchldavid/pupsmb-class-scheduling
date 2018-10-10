@@ -536,7 +536,7 @@
                               </Style>
                             </TextRun>
                             <TextRun>
-                              <Value xml:space="preserve"> </Value>
+                              <Value> -SM </Value>
                               <Style>
                                 <FontSize>9pt</FontSize>
                               </Style>

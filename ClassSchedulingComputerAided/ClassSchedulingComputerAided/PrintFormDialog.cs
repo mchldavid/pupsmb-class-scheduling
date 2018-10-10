@@ -63,8 +63,8 @@ namespace ClassSchedulingComputerAided
             PrintDataBindingSource.DataSource = md.dgv_Example(cboTimeTable.Text, cboOption.Text).DataSource;
             Microsoft.Reporting.WinForms.ReportParameter[] p = new Microsoft.Reporting.WinForms.ReportParameter[]
             {
-                new Microsoft.Reporting.WinForms.ReportParameter("pSemester", "1ST"),
-                new Microsoft.Reporting.WinForms.ReportParameter("pSchoolYear", "2018-2019"),
+                new Microsoft.Reporting.WinForms.ReportParameter("pSemester", SummaryData.semester),
+                new Microsoft.Reporting.WinForms.ReportParameter("pSchoolYear", SummaryData.schoolYear),
                 new Microsoft.Reporting.WinForms.ReportParameter("pDateNow", DateTime.Now.ToString("MM/dd/yyyy"))
             };
             var setup = reportViewer1.GetPageSettings();
@@ -81,8 +81,8 @@ namespace ClassSchedulingComputerAided
             PrintDataBindingSource.DataSource = md.dgv_Example(cboTimeTable.Text, cboOption.Text).DataSource;
             Microsoft.Reporting.WinForms.ReportParameter[] p = new Microsoft.Reporting.WinForms.ReportParameter[]
             {
-                new Microsoft.Reporting.WinForms.ReportParameter("pSemester", "1ST"),
-                new Microsoft.Reporting.WinForms.ReportParameter("pSchoolYear", "2018-2019"),
+                new Microsoft.Reporting.WinForms.ReportParameter("pSemester", SummaryData.semester),
+                new Microsoft.Reporting.WinForms.ReportParameter("pSchoolYear", SummaryData.schoolYear),
                 new Microsoft.Reporting.WinForms.ReportParameter("pDateNow", DateTime.Now.ToString("MM/dd/yyyy"))
             };
             var setup = reportViewer1.GetPageSettings();

@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrintFormDialog));
+            this.PrintDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnMaximize = new Bunifu.Framework.UI.BunifuImageButton();
@@ -50,7 +51,7 @@
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.pdocSection = new System.Drawing.Printing.PrintDocument();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.PrintDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.PrintDataBindingSource)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
@@ -58,17 +59,20 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnlPrintTimeTable.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PrintDataBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // PrintDataBindingSource
+            // 
+            this.PrintDataBindingSource.DataSource = typeof(ClassSchedulingComputerAided.PrintData);
             // 
             // reportViewer1
             // 
             this.reportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            reportDataSource4.Name = "DataSet1";
-            reportDataSource4.Value = this.PrintDataBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource4);
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.PrintDataBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "ClassSchedulingComputerAided.rptSubjects.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(3, 38);
             this.reportViewer1.Name = "reportViewer1";
@@ -258,22 +262,19 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // PrintDataBindingSource
-            // 
-            this.PrintDataBindingSource.DataSource = typeof(ClassSchedulingComputerAided.PrintData);
-            // 
             // frmPrintFormDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(999, 566);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnlStart);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlPrintTimeTable);
             this.Name = "frmPrintFormDialog";
             this.Load += new System.EventHandler(this.PrintFormDialog_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.PrintDataBindingSource)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximize)).EndInit();
@@ -282,7 +283,6 @@
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnlPrintTimeTable.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.PrintDataBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

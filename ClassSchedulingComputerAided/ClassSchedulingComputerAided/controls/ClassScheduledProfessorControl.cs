@@ -32,7 +32,7 @@ namespace ClassSchedulingComputerAided
 
             cboSemester.Items.Add("1ST");
             cboSemester.Items.Add("2ND");
-            cboSemester.Items.Add("3RD");
+            cboSemester.Items.Add("SUMMER");
 
             //to fill the school year
             string sy = "";

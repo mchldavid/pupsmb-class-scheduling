@@ -33,6 +33,14 @@ namespace ClassSchedulingComputerAided
             cboSemester.Items.Add("2ND");
             cboSemester.Items.Add("3RD");
 
+            cboBy.Items.Add("Subject Code");
+            cboBy.Items.Add("Subject Description");
+            cboBy.SelectedIndex = 0;
+
+            cbo_pBy.Items.Add("Subject Code");
+            cbo_pBy.Items.Add("Subject Description");
+            cbo_pBy.SelectedIndex = 0;
+
             //to fill the school year
             string sy = "";
             DateTime dt = new DateTime(2015, DateTime.Now.Month, DateTime.Now.Day);
@@ -151,6 +159,18 @@ namespace ClassSchedulingComputerAided
                 cboSemester.SelectedIndex = sid.ProfSemester;
                 cboSchoolYear.SelectedIndex = sid.ProfSchoolYear;
             }
+        }
+
+        private void txtSearchSubjects_KeyUp(object sender, KeyEventArgs e)
+        {
+            dgvAddSubject.DataSource = md.dgv_SearchAddSubjects(cboSubjectBy.Text, cboSemester.Text, txtSearchSubjects.Text, cboBy.Text).DataSource;
+            dgvAddSubject.Columns[0].Visible = false;
+        }
+
+        private void txt_pSearch_KeyUp(object sender, KeyEventArgs e)
+        {
+            dgvListSubject.DataSource = md.dgv_SearchPreferredSubjects( cboSchoolYear.Text, cboSemester.Text,txt_pSearch.Text, cbo_pBy.Text).DataSource;
+            dgvListSubject.Columns[0].Visible = false;
         }
     }
 }

@@ -23,7 +23,8 @@ namespace ClassSchedulingComputerAided
         {
             cboSemester.Items.Add("1ST");
             cboSemester.Items.Add("2ND");
-            cboSemester.Items.Add("3RD");
+            cboSemester.Items.Add("SUMMER");
+            cboSemester.SelectedIndex = 0;
         }
 
         private void btnOk_Click(object sender, EventArgs e)

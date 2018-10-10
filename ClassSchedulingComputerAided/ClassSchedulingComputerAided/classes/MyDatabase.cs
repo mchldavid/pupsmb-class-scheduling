@@ -471,7 +471,63 @@ namespace ClassSchedulingComputerAided
         }
 
         //================SET CURRICULUM===============
-        
+        public DataGridView dgv_SearchSubjects(string search, string by)
+        {
+            DataGridView dgv1 = new DataGridView();
+            try
+            {
+                con.Open();
+                string sql = "";
+                if (by == "Subject Code")
+                {
+                    sql = "SELECT subjects_id AS 'ID', course AS 'Course', yearLevel AS 'Year_Level', subjectCode AS 'Code', subjectDescription AS 'Description', lectureHours AS 'Lecture_Hours', laboratoryHours AS 'Lab_Hours', units AS 'Units' FROM tbl_subjects t WHERE curriculums_id = @id AND semester = @sem AND subjectCode LIKE '" + search + "%';";
+                }
+                else if (by == "Subject Description")
+                {
+                    sql = "SELECT subjects_id AS 'ID', course AS 'Course', yearLevel AS 'Year_Level', subjectCode AS 'Code', subjectDescription AS 'Description', lectureHours AS 'Lecture_Hours', laboratoryHours AS 'Lab_Hours', units AS 'Units' FROM tbl_subjects t WHERE curriculums_id = @id AND semester = @sem AND subjectDescription LIKE '" + search + "%';";
+                }
+                MySqlCommand com = new MySqlCommand(sql, con);
+                com.Parameters.AddWithValue("@id", curriculumData.c_id);
+                com.Parameters.AddWithValue("@sem", curriculumData.c_semester);
+                com.ExecuteNonQuery();
+                con.Close();
+
+                con.Open();
+                MySqlDataAdapter adapter = new MySqlDataAdapter(com);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+                dgv1.DataSource = ds.Tables[0];
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "dgv_SearchSections");
+            }
+            finally
+            {
+                con.Close();
+            }
+            return dgv1;
+        }
+
+        public void C_DeleteSubjectCurriculum(string id)
+        {
+            try
+            {
+                con.Open();
+                string sqlCourse = "DELETE FROM tbl_subjects WHERE curriculums_id = @id";
+                MySqlCommand com1 = new MySqlCommand(sqlCourse, con);
+                com1.Parameters.AddWithValue("@id", id);
+                com1.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "S_DeleteSEcitons");
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
 
         public DataGridView dgv_showSubjectCurriculum()
         {
@@ -765,6 +821,87 @@ namespace ClassSchedulingComputerAided
         }
 
         //=====================SECTIONS===================
+        public DataGridView dgv_SearchSections(string search)
+        {
+            DataGridView dgv1 = new DataGridView();
+            try
+            {
+                con.Open();
+                string sql = "SELECT section_id AS 'ID' , course AS 'Course', year AS 'Year', section AS 'Section' FROM tbl_sections t "
++ "WHERE course LIKE '"+search+"%' ORDER BY year asc;";
+                MySqlCommand com = new MySqlCommand(sql, con);
+                com.Parameters.AddWithValue("@search", search);
+                com.ExecuteNonQuery();
+                con.Close();
+
+                con.Open();
+                MySqlDataAdapter adapter = new MySqlDataAdapter(com);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+                dgv1.DataSource = ds.Tables[0];
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "dgv_SearchSections");
+            }
+            finally
+            {
+                con.Close();
+            }
+            return dgv1;
+        }
+
+        public bool S_sectionExisting(string course, string year)
+        {
+            bool result = false;
+            try
+            {
+                con.Open();
+                string sql = "SELECT * FROM tbl_sections WHERE course = @c AND year = @y;";
+                MySqlCommand com = new MySqlCommand(sql, con);
+                com.Parameters.AddWithValue("@c", course);
+                com.Parameters.AddWithValue("@y", year);
+                com.ExecuteNonQuery();
+
+                MySqlDataReader dr = com.ExecuteReader();
+                if (dr.Read())
+                {
+                    result = true;
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+            }
+            finally
+            {
+                con.Close();
+            }
+            return result;
+
+        }
+
+        public void S_DeleteExistingSections(string course, string year)
+        {
+            try
+            {
+                con.Open();
+                string sqlCourse = "DELETE FROM tbl_sections WHERE course = @c AND year = @y";
+                MySqlCommand com1 = new MySqlCommand(sqlCourse, con);
+                com1.Parameters.AddWithValue("@c", course);
+                com1.Parameters.AddWithValue("@y", year);
+                com1.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "S_DeleteSEcitons");
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
         public string[] Sections_ListCourse()//to list all course available in the inUsed curriculum to the sectionForm
         {
             int x = 0;
@@ -988,6 +1125,142 @@ namespace ClassSchedulingComputerAided
         }
 
         // ====================P_SUBJECTS START============================
+        public DataGridView dgv_SearchAddSubjects(string courseBy, string semester, string search, string by)
+        {
+            DataGridView dgv1 = new DataGridView();
+            try
+            {
+                con.Open();
+                string sql = "";
+                //if (courseBy == "Course Subject")
+                //    sql = "SELECT subjects_id AS 'ID', subjectCode AS 'Code', subjectDescription AS 'Description', CONCAT('[',programName,']') AS 'Curriculum' FROM tbl_subjects su INNER JOIN tbl_curriculums cu ON su.curriculums_id = cu.curriculums_id WHERE status = 'active' AND su.course = @c ORDER BY cu.programName;";
+                if (courseBy == "Course Subject")
+                {
+                    if (by == "Subject Code")
+                    {
+                        sql = "SELECT subjects_id AS 'ID', su.course AS 'Course', subjectCode AS 'Code', subjectDescription AS 'Description', CONCAT('[',programName,']') AS 'Curriculum' "
+                            + "FROM tbl_subjects su "
+                            + "INNER JOIN tbl_curriculums cu ON su.curriculums_id = cu.curriculums_id "
+                            + "WHERE status = 'active' "
+                            + "AND su.course = @c "
+                            + "AND su.semester = @sem "
+                            + "AND subjectCode LIKE '"+search+"%' "
+                            + "ORDER BY cu.programName;";
+                    }
+                    if (by == "Subject Description")
+                    {
+                        sql = "SELECT subjects_id AS 'ID', su.course AS 'Course', subjectCode AS 'Code', subjectDescription AS 'Description', CONCAT('[',programName,']') AS 'Curriculum' "
+                            + "FROM tbl_subjects su "
+                            + "INNER JOIN tbl_curriculums cu ON su.curriculums_id = cu.curriculums_id "
+                            + "WHERE status = 'active' "
+                            + "AND su.course = @c "
+                            + "AND su.semester = @sem "
+                            + "AND subjectDescription LIKE '" + search + "%' "
+                            + "ORDER BY cu.programName;";
+                    }
+                }
+
+                //if (courseBy == "Other Subject")
+                //    sql = "SELECT subjects_id AS 'ID', subjectCode AS 'Code', subjectDescription AS 'Description', CONCAT('[',programName,']') AS 'Curriculum' FROM tbl_subjects su INNER JOIN tbl_curriculums cu ON su.curriculums_id = cu.curriculums_id WHERE status = 'active' ORDER BY cu.programName;";
+                if (courseBy == "Other Subject")
+                {
+                    if (by == "Subject Code")
+                    {
+                        sql = "SELECT subjects_id AS 'ID', su.course AS 'Course', subjectCode AS 'Code', subjectDescription AS 'Description', CONCAT('[',programName,']') AS 'Curriculum' "
+                        + "FROM tbl_subjects su "
+                        + "INNER JOIN tbl_curriculums cu ON su.curriculums_id = cu.curriculums_id "
+                        + "WHERE status = 'active' "
+                        + "AND su.semester = @sem "
+                        + "AND subjectCode LIKE '"+search+"%' "
+                        + "ORDER BY cu.programName;";
+                    }
+                    if (by == "Subject Description")
+                    {
+                        sql = "SELECT subjects_id AS 'ID', su.course AS 'Course', subjectCode AS 'Code', subjectDescription AS 'Description', CONCAT('[',programName,']') AS 'Curriculum' "
+                        + "FROM tbl_subjects su "
+                        + "INNER JOIN tbl_curriculums cu ON su.curriculums_id = cu.curriculums_id "
+                        + "WHERE status = 'active' "
+                        + "AND su.semester = @sem "
+                        + "AND subjectDescription LIKE '" + search + "%' "
+                        + "ORDER BY cu.programName;";
+                    }
+                }
+                    
+                MySqlCommand com = new MySqlCommand(sql, con);
+                com.Parameters.AddWithValue("@c", usersData.p_cDepartment);
+                com.Parameters.AddWithValue("@sem", semester);
+                com.ExecuteNonQuery();
+                con.Close();
+
+                con.Open();
+                MySqlDataAdapter adapter = new MySqlDataAdapter(com);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+                dgv1.DataSource = ds.Tables[0];
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "dgv_SearchSections");
+            }
+            finally
+            {
+                con.Close();
+            }
+            return dgv1;
+        }
+
+        public DataGridView dgv_SearchPreferredSubjects(string schoolYear, string semester, string search, string by)
+        {
+            DataGridView dgv1 = new DataGridView();
+            try
+            {
+                con.Open();
+                //string sql = "SELECT a.preferredSubjects_id AS 'ID', subjectCode AS 'CODE', subjectDescription AS 'DESCRIPTION', course AS 'COURSE', lectureHours AS 'LEC HRS', laboratoryHours AS 'LAB HRS', units AS 'UNITS', yearLevel AS 'YR LEVEL' FROM tbl_preferredSubjects a, tbl_subjects b WHERE a.users_id = @id AND b.subjects_id = a.subjects_id;";
+                string sql = "";
+                if (by == "Subject Code")
+                {
+                    sql = "SELECT a.preferredSubjects_id AS 'ID', subjectCode AS 'CODE', subjectDescription AS 'DESCRIPTION', course AS 'COURSE', lectureHours AS 'LEC HRS', laboratoryHours AS 'LAB HRS', units AS 'UNITS', yearLevel AS 'YR LEVEL' "
+                    + "FROM tbl_preferredSubjects a, tbl_subjects b "
+                    + "WHERE a.users_id = @id "
+                    + "AND b.subjects_id = a.subjects_id "
+                    + "AND a.semester = @sem "
+                    + "AND a.schoolYear = @sY "
+                    + "AND subjectCode LIKE '"+search+"%';";
+                }
+                if (by == "Subject Description")
+                {
+                    sql = "SELECT a.preferredSubjects_id AS 'ID', subjectCode AS 'CODE', subjectDescription AS 'DESCRIPTION', course AS 'COURSE', lectureHours AS 'LEC HRS', laboratoryHours AS 'LAB HRS', units AS 'UNITS', yearLevel AS 'YR LEVEL' "
+                    + "FROM tbl_preferredSubjects a, tbl_subjects b "
+                    + "WHERE a.users_id = @id "
+                    + "AND b.subjects_id = a.subjects_id "
+                    + "AND a.semester = @sem "
+                    + "AND a.schoolYear = @sY "
+                    + "AND subjectDescription LIKE '" + search + "%';";
+                }
+                MySqlCommand com = new MySqlCommand(sql, con);
+                com.Parameters.AddWithValue("@id", usersData.p_id);
+                com.Parameters.AddWithValue("@sem", semester);
+                com.Parameters.AddWithValue("@sY", schoolYear);
+                com.ExecuteNonQuery();
+                con.Close();
+
+                con.Open();
+                MySqlDataAdapter adapter = new MySqlDataAdapter(com);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+                dgv1.DataSource = ds.Tables[0];
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "dgv_SearchSections");
+            }
+            finally
+            {
+                con.Close();
+            }
+            return dgv1;
+        }
+
         public DataGridView dgv_showPreferredSubjects(string semester, string schoolYear)
         {
             DataGridView dgv = new DataGridView();

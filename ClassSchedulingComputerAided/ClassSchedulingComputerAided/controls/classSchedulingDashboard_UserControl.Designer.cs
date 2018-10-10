@@ -3064,13 +3064,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.Controls.Add(this.pnlReport);
             this.Controls.Add(this.pnlRooms);
             this.Controls.Add(this.pnlProfessors);
             this.Controls.Add(this.pnlStudentScheduling);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
+            this.Controls.Add(this.pnlReport);
             this.Name = "classSchedulingDashboard_UserControl";
             this.Size = new System.Drawing.Size(1373, 763);
             this.Load += new System.EventHandler(this.classSchedulingDashboard_UserControl_Load);
