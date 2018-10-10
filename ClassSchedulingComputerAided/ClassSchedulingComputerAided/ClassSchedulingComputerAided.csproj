@@ -93,6 +93,7 @@
     <Compile Include="AdminHomePage.Designer.cs">
       <DependentUpon>AdminHomePage.cs</DependentUpon>
     </Compile>
+    <Compile Include="classes\AuditTrailData.cs" />
     <Compile Include="ClassScheduled.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,6 +188,13 @@
     </Compile>
     <Compile Include="classes\EmailValidation.cs" />
     <Compile Include="CSD_defaultData.cs" />
+    <Compile Include="Eventlog.cs" />
+    <Compile Include="controls\EventLogControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\EventLogControl.Designer.cs">
+      <DependentUpon>EventLogControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Importing.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -449,6 +457,9 @@
     <EmbeddedResource Include="CreateProgram.resx">
       <DependentUpon>CreateProgram.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="controls\EventLogControl.resx">
+      <DependentUpon>EventLogControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Importing.resx">
       <DependentUpon>Importing.cs</DependentUpon>
     </EmbeddedResource>
@@ -562,6 +573,7 @@
       <DependentUpon>ViewList.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Eventlog.datasource" />
     <None Include="Properties\DataSources\Print.datasource" />
     <None Include="Properties\DataSources\PrintData.datasource" />
     <None Include="Properties\Settings.settings">

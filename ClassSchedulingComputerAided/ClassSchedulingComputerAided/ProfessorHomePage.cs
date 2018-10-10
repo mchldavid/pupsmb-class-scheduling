@@ -41,6 +41,9 @@ namespace ClassSchedulingComputerAided
                 Form l = new frmLogin();
                 l.Show();
                 this.Hide();
+
+                //audit
+                md.AuditTrail(AuditTrailData.username, "Logged Out", "Successfully");
             }
         }
 

@@ -65,6 +65,9 @@ namespace ClassSchedulingComputerAided
                 Form l = new frmLogin();
                 l.Show();
                 this.Hide();
+
+                //audit
+                md.AuditTrail(AuditTrailData.username, "Logged Out", "Successfully");
             }
         }
 
@@ -170,6 +173,14 @@ namespace ClassSchedulingComputerAided
             frmReport fr = new frmReport();
             this.Hide();
             fr.Show();
+        }
+
+        private void btnEventLog_Click(object sender, EventArgs e)
+        {
+            EventLogControl pup = new EventLogControl();
+            pnl.Controls.Clear();
+            pnl.Controls.Add(pup);
+            lbl_form_title.Text = "ADMIN HOME";
         }
     }
 }

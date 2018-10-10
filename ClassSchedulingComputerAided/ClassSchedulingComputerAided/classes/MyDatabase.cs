@@ -108,6 +108,8 @@ namespace ClassSchedulingComputerAided
                     usersInformation[1] = dr["users_id"].ToString();
                     usersInformation[0] = "PASSED";
 
+                    AuditTrailData.username = dr["username"].ToString();
+
                     usersData.p_id = dr["users_id"].ToString();
                     usersData.p_usr = dr["username"].ToString();
                     usersData.p_pwd = dr["password"].ToString();
@@ -1244,6 +1246,7 @@ namespace ClassSchedulingComputerAided
                 com1.Parameters.AddWithValue("@eT", endTime);
                 com1.Parameters.AddWithValue("@d", day);
                 com1.ExecuteNonQuery();
+
             }
             catch (MySqlException ex)
             {
@@ -1253,6 +1256,9 @@ namespace ClassSchedulingComputerAided
             {
                 con.Close();
             }
+
+            //audit
+            AuditTrail(AuditTrailData.username, "Added", startTime + "-" + endTime + " on " + day + " preferred schedule.");
         }
 
         public DataGridView dgv_showSchedule()
@@ -1662,6 +1668,9 @@ namespace ClassSchedulingComputerAided
             {
                 con.Close();
             }
+
+            //audit
+            AuditTrail(AuditTrailData.username, "Deleted", "Preferred schedule.");
         }
 
         public string[] C_dgv_Edit(string id)
@@ -2851,6 +2860,59 @@ namespace ClassSchedulingComputerAided
             catch (MySqlException ex)
             {
                 MessageBox.Show(ex.Message, "dgv_showSubjectCurriculum");
+            }
+            finally
+            {
+                con.Close();
+            }
+            return dgv1;
+        }
+
+
+        //===============AUDIT TRAIL================
+        public void AuditTrail(string username, string action, string description)
+        {
+            try
+            {
+                con.Open();
+                string sqlCourse = "INSERT INTO tbl_audittrail(dateTime, username, action, description) VALUES(@dT, @u, @a, @d);";
+                MySqlCommand com1 = new MySqlCommand(sqlCourse, con);
+                com1.Parameters.AddWithValue("@dT", DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"));
+                com1.Parameters.AddWithValue("@u", username);
+                com1.Parameters.AddWithValue("@a", action);
+                com1.Parameters.AddWithValue("@d", description);
+                com1.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "AuditTrail");
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public DataGridView dgv_AuditTrail()
+        {
+            DataGridView dgv1 = new DataGridView();
+            try
+            {
+                con.Open();
+                string sql = "SELECT dateTime, username, action, description FROM tbl_audittrail;";
+                MySqlCommand com = new MySqlCommand(sql, con);
+                com.ExecuteNonQuery();
+                con.Close();
+
+                con.Open();
+                MySqlDataAdapter adapter = new MySqlDataAdapter(com);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+                dgv1.DataSource = ds.Tables[0];
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "C_dgv_showCurriculum");
             }
             finally
             {
