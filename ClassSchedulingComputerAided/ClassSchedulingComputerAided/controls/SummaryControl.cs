@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ClassSchedulingComputerAided.Properties;
 
 namespace ClassSchedulingComputerAided
 {
@@ -30,8 +31,9 @@ namespace ClassSchedulingComputerAided
             cboSemester.Items.Add("SUMMER");
 
             //to fill the school year
+            string startYear = Settings.Default["Year"].ToString();
             string sy = "";
-            DateTime dt = new DateTime(2015, DateTime.Now.Month, DateTime.Now.Day);
+            DateTime dt = new DateTime(Convert.ToInt32(startYear), DateTime.Now.Month, DateTime.Now.Day);
             bool flag = true;
             while (flag)
             {

@@ -117,7 +117,7 @@ namespace ClassSchedulingComputerAided
                     {
                         if (DBExists(sqlConnection, dbName) == true)//to check if the database is already exist
                         {
-                            MessageBox.Show("The " + txtDatabase.Text + " [DATABASE] is already exist!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("The " + txtDatabase.Text + " [DATABASE] already exist!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             txtDatabase.SelectionStart = 0;
                             txtDatabase.SelectionLength = txtDatabase.TextLength;
                             txtDatabase.Focus();
@@ -126,9 +126,11 @@ namespace ClassSchedulingComputerAided
                         {
                             //creation of database 
                             cd.initCreateDatabase(txtHost.Text, txtDatabase.Text, txtUsername.Text, txtPassword.Text, txtPort.Text);
-                            MessageBox.Show(txtDatabase.Text + " [DATABASE] created successful!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            Settings.Default["Year"] = DateTime.Now.ToString("yyyy");
+                            MessageBox.Show(txtDatabase.Text + " [DATABASE] created successfully!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            
                             btnSAVE_Click(sender, e);
+                            //to save the year
+                            Settings.Default["Year"] = DateTime.Now.ToString("yyyy");
                         }
                     }
                     else

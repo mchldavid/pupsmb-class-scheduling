@@ -41,6 +41,9 @@ namespace ClassSchedulingComputerAided
                     frmSemesterAndSchoolYear sas = new frmSemesterAndSchoolYear();
                     sas.Show();
                     this.Hide();
+
+                    //audit
+                    md.AuditTrail(AuditTrailData.username, "Add", txtProgramName.Text + " program.");
                 }
             }
             else

@@ -22,27 +22,32 @@ namespace ClassSchedulingComputerAided
         {
             if (cboSelectCourse.Text != "" && cboSelectYear.Text != "" && txtNumberOfSection.Text != "")
             {
-                if (md.S_sectionExisting(cboSelectCourse.Text, cboSelectYear.Text) == true)
+                if (md.S_sectionExisting(cboSelectCourse.Text, cboSelectYear.Text) == true)//if the year is existing
                 {
-                    DialogResult result = MessageBox.Show(txtNumberOfSection.Text + " section(s) generated in course:[ " + cboSelectCourse.Text + " ] year:[ " + cboSelectYear.Text + " ]", "Generate", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                    if (result == DialogResult.Yes)
-                    {
-                        md.S_DeleteExistingSections(cboSelectCourse.Text, cboSelectYear.Text);
-                        for (int x = 1; x <= Convert.ToInt32(txtNumberOfSection.Text); x++)
-                            md.S_AddSections(cboSelectCourse.SelectedItem.ToString(), cboSelectYear.SelectedItem.ToString(), x.ToString());
-                        txtNumberOfSection.Text = "";
-                        dgvShowSections.DataSource = md.dgv_showSections().DataSource;
-                        dgvShowSections.Columns[0].Visible = false;
-                    }
+                    MessageBox.Show(txtNumberOfSection.Text + " section(s) generated in course:[ " + cboSelectCourse.Text + " ] year:[ " + cboSelectYear.Text + " ]", "Generate", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    md.S_DeleteExistingSections(cboSelectCourse.Text, cboSelectYear.Text);
+                    for (int x = 1; x <= Convert.ToInt32(txtNumberOfSection.Text); x++)
+                        md.S_AddSections(cboSelectCourse.SelectedItem.ToString(), cboSelectYear.SelectedItem.ToString(), x.ToString());
+
+                    dgvShowSections.DataSource = md.dgv_showSections().DataSource;
+                    dgvShowSections.Columns[0].Visible = false;
+
+                    //audit
+                    md.AuditTrail(AuditTrailData.username, "Add", cboSelectCourse.Text + " year "+cboSelectYear.Text+" generate "+txtNumberOfSection.Text+" section/s.");
+                    txtNumberOfSection.Text = "";
                 }
                 else
                 {
                     MessageBox.Show(txtNumberOfSection.Text + " section(s) generated in course:[ " + cboSelectCourse.Text + " ] year:[ " + cboSelectYear.Text + " ]", "Generate", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     for (int x = 1; x <= Convert.ToInt32(txtNumberOfSection.Text); x++)
                         md.S_AddSections(cboSelectCourse.SelectedItem.ToString(), cboSelectYear.SelectedItem.ToString(), x.ToString());
-                    txtNumberOfSection.Text = "";
+                    
                     dgvShowSections.DataSource = md.dgv_showSections().DataSource;
                     dgvShowSections.Columns[0].Visible = false;
+
+                    //audit
+                    md.AuditTrail(AuditTrailData.username, "Add", cboSelectCourse.Text + " year " + cboSelectYear.Text + " generate " + txtNumberOfSection.Text + " section/s.");
+                    txtNumberOfSection.Text = "";
                 }
             }
             else
@@ -70,6 +75,9 @@ namespace ClassSchedulingComputerAided
                     md.S_DeleteSections(dr.Cells[0].Value.ToString());
                     dgvShowSections.DataSource = md.dgv_showSections().DataSource;
                     dgvShowSections.Columns[0].Visible = false;
+
+                    //audit
+                    md.AuditTrail(AuditTrailData.username, "Delete", section + " was remove.");
                 }
             }
         }

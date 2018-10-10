@@ -52,6 +52,7 @@ namespace ClassSchedulingComputerAided
             DBtable_10(dbName, sqlConnection);
             DBtable_11(dbName, sqlConnection);
             DBtable_12(dbName, sqlConnection);
+            DBtable_13(dbName, sqlConnection);
         }
 
         //===============QUERIES==============
@@ -72,7 +73,8 @@ namespace ClassSchedulingComputerAided
         {
             using (MySqlConnection dbconn = new MySqlConnection(conn))
             {
-                using (MySqlCommand cmd = new MySqlCommand("CREATE TABLE  `db_finalnasana`.`tbl_users` ( "
+                using (MySqlCommand cmd = new MySqlCommand("CREATE TABLE  `"
+                    + name +"`.`tbl_users` ( "
                     + "`users_id` int(10) unsigned NOT NULL auto_increment, "
                     + "`username` varchar(45) NOT NULL, "
                     + "`password` varchar(100) NOT NULL, "
@@ -293,7 +295,8 @@ namespace ClassSchedulingComputerAided
         {
             using (MySqlConnection dbconn = new MySqlConnection(conn))
             {
-                using (MySqlCommand cmd = new MySqlCommand("CREATE TABLE  `db_finalnasana`.`tbl_students_scheduled` ( "
+                using (MySqlCommand cmd = new MySqlCommand("CREATE TABLE  `"
+                    + name +"`.`tbl_students_scheduled` ( "
                     + "`students_scheduled_id` int(10) unsigned NOT NULL auto_increment, "
                     + "`curriculums_id` int(10) unsigned NOT NULL, "
                     + "`course` varchar(45) NOT NULL, "
@@ -380,6 +383,27 @@ namespace ClassSchedulingComputerAided
                     + "`scheduledDay` varchar(45) NOT NULL,"
                     + "PRIMARY KEY  (`professorsScheduled_id`)"
                     + ") ENGINE=InnoDB DEFAULT CHARSET=latin1;", dbconn))
+                {
+                    dbconn.Open();
+                    cmd.ExecuteNonQuery();
+                    dbconn.Close();
+                }
+            }
+        }
+
+        private void DBtable_13(string name, string conn)
+        {
+            using (MySqlConnection dbconn = new MySqlConnection(conn))
+            {
+                using (MySqlCommand cmd = new MySqlCommand("CREATE TABLE  `"
+                    + name +"`.`tbl_audittrail` ( "
+                    + "`auditTrail_id` int(10) unsigned NOT NULL auto_increment, "
+                    + "`dateTime` datetime NOT NULL, "
+                    + "`username` varchar(100) NOT NULL, "
+                    + "`action` varchar(45) NOT NULL, "
+                    + "`description` varchar(100) NOT NULL, "
+                    + "PRIMARY KEY  (`auditTrail_id`) "
+                    + ") ENGINE=InnoDB AUTO_INCREMENT=98 DEFAULT CHARSET=latin1;", dbconn))
                 {
                     dbconn.Open();
                     cmd.ExecuteNonQuery();

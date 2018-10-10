@@ -35,6 +35,9 @@ namespace ClassSchedulingComputerAided
         {
             if (txtRoomName.Text != "" && txtRoomCode.Text != "" && txtSlots.Text != "")
             {
+                //audit
+                md.AuditTrail(AuditTrailData.username, "Add", txtRoomCode.Text + " was added to the rooms.");
+
                 md.R_AddRooms(txtRoomName.Text, txtRoomCode.Text, txtSlots.Text);
                 lstActiveRooms.Items.Add(txtRoomCode.Text);
                 dgvShowRooms.DataSource = md.dgv_showRooms().DataSource;
@@ -96,6 +99,9 @@ namespace ClassSchedulingComputerAided
         {
             if (lstActiveRooms.SelectedIndex != (-1))
             {
+                //audit
+                md.AuditTrail(AuditTrailData.username, "Update", lstActiveRooms.SelectedItem.ToString() + " was updated to Inactive room.");
+
                 md.R_UpdateRooms(lstActiveRooms.SelectedItem.ToString(), "INACTIVE");
                 lstActiveRooms.Items.RemoveAt(lstActiveRooms.SelectedIndex);
                 lstInActiveRooms.Items.Add(e.Data.GetData(DataFormats.Text));
@@ -126,6 +132,9 @@ namespace ClassSchedulingComputerAided
         {
             if (lstInActiveRooms.SelectedIndex != (-1))
             {
+                //audit
+                md.AuditTrail(AuditTrailData.username, "Update", lstInActiveRooms.SelectedItem.ToString() + " was updated to Active room.");
+
                 md.R_UpdateRooms(lstInActiveRooms.SelectedItem.ToString(), "ACTIVE");
                 lstInActiveRooms.Items.RemoveAt(lstInActiveRooms.SelectedIndex);
                 lstActiveRooms.Items.Add(e.Data.GetData(DataFormats.Text));
@@ -165,6 +174,9 @@ namespace ClassSchedulingComputerAided
             md.R_SetUpdateRooms(id, txtRoomName.Text, txtRoomCode.Text, txtSlots.Text);
             MessageBox.Show("Edit successful", "Edit Room", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+            //audit
+            md.AuditTrail(AuditTrailData.username, "Update", txtRoomCode.Text + " was updated to the rooms.");
+
             id = "";
             txtRoomCode.Text = "";
             txtRoomName.Text = "";
@@ -183,6 +195,9 @@ namespace ClassSchedulingComputerAided
         {
             md.R_DeleteRoom(id);
             MessageBox.Show("Delete successful", "Delete Room", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            //audit
+            md.AuditTrail(AuditTrailData.username, "Delete", txtRoomCode.Text + " was deleted to the rooms.");
 
             id = "";
             txtRoomCode.Text = "";

@@ -89,6 +89,9 @@ namespace ClassSchedulingComputerAided
                                         if (rdoRetiree.Checked == true)
                                             teachStatus = "Retiree";
                                         md.UpdateUsersAccount_1(usersData.p_id, txtUsername.Text, ms.encryptPassword(txtPassword.Text), txtFirstName.Text, txtMiddleName.Text, txtLastName.Text, txtAddress.Text, gender, teachStatus, cboCourseDepartment.Text, txtEmailAddress.Text, cleanMobileNumber(txtMobileNumber.Text));
+
+                                        //audit
+                                        md.AuditTrail(AuditTrailData.username, "Updated","User's information.");
                                     }
                                 }
                                 else

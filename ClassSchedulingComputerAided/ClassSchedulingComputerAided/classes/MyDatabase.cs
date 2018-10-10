@@ -740,6 +740,54 @@ namespace ClassSchedulingComputerAided
             }
         }
 
+        public void C_DeleteProgramCourse(string id)
+        {
+            try
+            {
+                con.Open();
+                string sqlCourse = "DELETE FROM tbl_subjects WHERE subjects_id = @id";
+                MySqlCommand com1 = new MySqlCommand(sqlCourse, con);
+                com1.Parameters.AddWithValue("@id", id);
+                com1.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "C_DeleteCourse");
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public void C_UpdateProgramCourse(string id, string subjectCode, string subjectDescription, string lec, string lab, string units, string yearLevel)
+        {
+            try
+            {
+                con.Open();
+                string sql = "UPDATE tbl_subjects SET subjectCode=@sC, subjectDescription=@sD, lectureHours=@lec, laboratoryHours=@lab, units=@u, yearLevel=@yL WHERE subjects_id = @id;";
+                MySqlCommand com = new MySqlCommand(sql, con);
+                com.Parameters.AddWithValue("@id", id);
+                com.Parameters.AddWithValue("@sC", subjectCode);
+                com.Parameters.AddWithValue("@sD", subjectDescription);
+                com.Parameters.AddWithValue("@lec", lec);
+                com.Parameters.AddWithValue("@lab", lab);
+                com.Parameters.AddWithValue("@u", units);
+                com.Parameters.AddWithValue("@yL", yearLevel);
+
+                com.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "C_UpdateProgramCourse");
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
         public string GetCourseID(string course, string c_control_id)
         {
             string id = "";
@@ -1258,7 +1306,7 @@ namespace ClassSchedulingComputerAided
             }
 
             //audit
-            AuditTrail(AuditTrailData.username, "Added", startTime + "-" + endTime + " on " + day + " preferred schedule.");
+            AuditTrail(AuditTrailData.username, "Add", startTime + "-" + endTime + " on " + day + " preferred schedule.");
         }
 
         public DataGridView dgv_showSchedule()
@@ -2859,7 +2907,7 @@ namespace ClassSchedulingComputerAided
             }
             catch (MySqlException ex)
             {
-                MessageBox.Show(ex.Message, "dgv_showSubjectCurriculum");
+                MessageBox.Show(ex.Message, "dgv_Example");
             }
             finally
             {
@@ -2899,7 +2947,7 @@ namespace ClassSchedulingComputerAided
             try
             {
                 con.Open();
-                string sql = "SELECT dateTime, username, action, description FROM tbl_audittrail;";
+                string sql = "SELECT dateTime, username, action, description FROM tbl_audittrail ORDER BY audittrail_id DESC;";
                 MySqlCommand com = new MySqlCommand(sql, con);
                 com.ExecuteNonQuery();
                 con.Close();

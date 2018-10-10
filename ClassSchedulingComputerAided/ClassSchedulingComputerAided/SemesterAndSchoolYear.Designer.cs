@@ -55,9 +55,9 @@
             this.cboSemester.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSemester.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSemester.FormattingEnabled = true;
-            this.cboSemester.Location = new System.Drawing.Point(153, 119);
+            this.cboSemester.Location = new System.Drawing.Point(132, 141);
             this.cboSemester.Name = "cboSemester";
-            this.cboSemester.Size = new System.Drawing.Size(121, 24);
+            this.cboSemester.Size = new System.Drawing.Size(156, 24);
             this.cboSemester.TabIndex = 1;
             // 
             // metroLabel5
@@ -69,7 +69,7 @@
             this.metroLabel5.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel5.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel5.ForeColor = System.Drawing.Color.White;
-            this.metroLabel5.Location = new System.Drawing.Point(37, 116);
+            this.metroLabel5.Location = new System.Drawing.Point(37, 138);
             this.metroLabel5.Name = "metroLabel5";
             this.metroLabel5.Size = new System.Drawing.Size(89, 25);
             this.metroLabel5.TabIndex = 0;
@@ -79,9 +79,9 @@
             // 
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(23, 40);
+            this.label1.Location = new System.Drawing.Point(37, 55);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(265, 61);
+            this.label1.Size = new System.Drawing.Size(262, 61);
             this.label1.TabIndex = 178;
             this.label1.Text = "Note: Please Set the semester before you proceed to the Set Courses.";
             // 
@@ -97,7 +97,7 @@
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(204, 262);
+            this.btnNext.Location = new System.Drawing.Point(204, 194);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(84, 32);
             this.btnNext.TabIndex = 3;

@@ -94,6 +94,7 @@
       <DependentUpon>AdminHomePage.cs</DependentUpon>
     </Compile>
     <Compile Include="classes\AuditTrailData.cs" />
+    <Compile Include="classes\StartSchoolYear.cs" />
     <Compile Include="ClassScheduled.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,7 +189,7 @@
     </Compile>
     <Compile Include="classes\EmailValidation.cs" />
     <Compile Include="CSD_defaultData.cs" />
-    <Compile Include="Eventlog.cs" />
+    <Compile Include="classes\Eventlog.cs" />
     <Compile Include="controls\EventLogControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

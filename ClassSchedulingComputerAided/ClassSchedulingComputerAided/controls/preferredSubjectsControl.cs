@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Xml.Serialization;
+using ClassSchedulingComputerAided.Properties;
 
 namespace ClassSchedulingComputerAided
 {
@@ -42,8 +43,9 @@ namespace ClassSchedulingComputerAided
             cbo_pBy.SelectedIndex = 0;
 
             //to fill the school year
+            string startYear = Settings.Default["Year"].ToString();
             string sy = "";
-            DateTime dt = new DateTime(2015, DateTime.Now.Month, DateTime.Now.Day);
+            DateTime dt = new DateTime(Convert.ToInt32(startYear), DateTime.Now.Month, DateTime.Now.Day);
             bool flag = true;
             while (flag)
             {
@@ -93,6 +95,9 @@ namespace ClassSchedulingComputerAided
                 lblTotalUnits.Text = md.getTotalUnits(cboSemester.Text, cboSchoolYear.Text).ToString();
                 lblTotalSubjects.Text = md.getTotalSubjects(cboSemester.Text, cboSchoolYear.Text).ToString();
                 MessageBox.Show("You added " + row.Cells[2].Value.ToString() + " into your preferred subjects", "Adding of Subject");
+
+                //audit
+                md.AuditTrail(AuditTrailData.username, "Added", row.Cells[2].Value.ToString() + " preferred subject.");
             }
         }
 
@@ -118,6 +123,9 @@ namespace ClassSchedulingComputerAided
                     lblTotalUnits.Text = md.getTotalUnits(cboSemester.Text, cboSchoolYear.Text).ToString();
                     lblTotalSubjects.Text = md.getTotalSubjects(cboSemester.Text, cboSchoolYear.Text).ToString();
                     //MessageBox.Show("["+s_code + "-" + s_desc +"] Deleted successfully!", "Delete Subject");
+
+                    //audit
+                    md.AuditTrail(AuditTrailData.username, "Deleted", s_code + " preferred subject.");
                 }
             }
         }
