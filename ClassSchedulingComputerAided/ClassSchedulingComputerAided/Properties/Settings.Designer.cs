@@ -82,5 +82,17 @@ namespace ClassSchedulingComputerAided.Properties {
                 this["Port"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Year {
+            get {
+                return ((string)(this["Year"]));
+            }
+            set {
+                this["Year"] = value;
+            }
+        }
     }
 }

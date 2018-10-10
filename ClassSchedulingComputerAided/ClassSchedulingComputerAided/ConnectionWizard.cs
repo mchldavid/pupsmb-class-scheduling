@@ -127,6 +127,7 @@ namespace ClassSchedulingComputerAided
                             //creation of database 
                             cd.initCreateDatabase(txtHost.Text, txtDatabase.Text, txtUsername.Text, txtPassword.Text, txtPort.Text);
                             MessageBox.Show(txtDatabase.Text + " [DATABASE] created successful!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Settings.Default["Year"] = DateTime.Now.ToString("yyyy");
                             btnSAVE_Click(sender, e);
                         }
                     }
