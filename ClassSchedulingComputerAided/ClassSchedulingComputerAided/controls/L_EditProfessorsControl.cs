@@ -27,7 +27,7 @@ namespace ClassSchedulingComputerAided
                 if (md.Sections_ListCourse().GetValue(x).ToString() != "")
                     cboCourseDepartment.Items.Add(md.Sections_ListCourse().GetValue(x).ToString());
 
-            string[] userInfo = new string[11];
+            string[] userInfo = new string[12];
 
             for (int x = 0; x < userInfo.Length; x++)
                 userInfo[x] = md.UsersInformation(ListOfProfessorsData.Selected_ID).GetValue(x).ToString();
@@ -42,6 +42,11 @@ namespace ClassSchedulingComputerAided
             txtUsername.Text = userInfo[0];
             txtPassword.Text = ms.decryptPassword(userInfo[1]);
             txtConfirmPassword.Text = ms.decryptPassword(userInfo[1]);
+
+            if (userInfo[11] == "active")
+                rdoActive.Checked = true;
+            else
+                rdoInactive.Checked = true;
 
             if (userInfo[8] == "Male")
                 rdoMale.Checked = true;
@@ -83,13 +88,13 @@ namespace ClassSchedulingComputerAided
                                         frmProfessorHomePage php = new frmProfessorHomePage();
                                         string gender = (rdoMale.Checked == true) ? "Male" : "Female";
                                         string teachStatus = "";
-                                        if (rdoFulltimer.Checked == true)
+                                        string status = (rdoActive.Checked == true) ? "active": "inactive";
                                             teachStatus = "Fulltimer";
                                         if (rdoParttimer.Checked == true)
                                             teachStatus = "Parttimer";
                                         if (rdoRetiree.Checked == true)
                                             teachStatus = "Retiree";
-                                        md.UpdateUsersAccount(ListOfProfessorsData.Selected_ID, txtUsername.Text, ms.encryptPassword(txtPassword.Text), txtFirstName.Text, txtMiddleName.Text, txtLastName.Text, txtAddress.Text, gender, teachStatus, cboCourseDepartment.Text, txtEmailAddress.Text, cleanMobileNumber(txtMobileNumber.Text));
+                                        md.UpdateUsersAccount(ListOfProfessorsData.Selected_ID, txtUsername.Text, ms.encryptPassword(txtPassword.Text), txtFirstName.Text, txtMiddleName.Text, txtLastName.Text, txtAddress.Text, gender, teachStatus, cboCourseDepartment.Text, txtEmailAddress.Text, cleanMobileNumber(txtMobileNumber.Text),status);
                                     }
                                 }
                                 else

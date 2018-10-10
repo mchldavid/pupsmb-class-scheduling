@@ -53,6 +53,7 @@ namespace ClassSchedulingComputerAided
                     flag = false;
                 }
             }
+            
 
             //to list all active rooms
             SubjectForStudents.Rooms = new string[100];
@@ -87,17 +88,24 @@ namespace ClassSchedulingComputerAided
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            btnPrint.Visible = true;
-            btnSettings.Visible = true;
+            if (cboSemester.Text != "" && cboSchoolYear.Text != "")
+            {
+                btnPrint.Visible = true;
+                btnSettings.Visible = true;
 
-            pnlStart.Visible = false;
-            SummaryData.course = ClassSchedule_Data.course;
-            SummaryData.year = ClassSchedule_Data.year;
-            SummaryData.section = ClassSchedule_Data.section;
-            SummaryData.semester = cboSemester.Text;
-            SummaryData.schoolYear = cboSchoolYear.Text;
+                pnlStart.Visible = false;
+                SummaryData.course = ClassSchedule_Data.course;
+                SummaryData.year = ClassSchedule_Data.year;
+                SummaryData.section = ClassSchedule_Data.section;
+                SummaryData.semester = cboSemester.Text;
+                SummaryData.schoolYear = cboSchoolYear.Text;
 
-            lblCurriculum.Text = " [" + cboSemester.Text + " Semester] [SY:" + cboSchoolYear.Text + "]";
+                lblCurriculum.Text = " [" + cboSemester.Text + " Semester] [SY:" + cboSchoolYear.Text + "]";
+            }
+            else
+            {
+                MessageBox.Show("Fill all fields are required!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnOKk_Click(object sender, EventArgs e)

@@ -37,6 +37,7 @@ namespace ClassSchedulingComputerAided
 
             if (dr == DialogResult.Yes)
             {
+                md.updateLogginStatus(usersData.p_id, "0");
                 Form l = new frmLogin();
                 l.Show();
                 this.Hide();

@@ -72,25 +72,25 @@ namespace ClassSchedulingComputerAided
         {
             using (MySqlConnection dbconn = new MySqlConnection(conn))
             {
-                using (MySqlCommand cmd = new MySqlCommand("CREATE TABLE  `"
-                      + name +"`.`tbl_users` ("
-                      + "`users_id` int(10) unsigned NOT NULL auto_increment,"
-                      + "`username` varchar(45) NOT NULL,"
-                      + "`password` varchar(100) NOT NULL,"
-                      + "`firstName` varchar(45) NOT NULL,"
-                      + "`middleName` varchar(45) NOT NULL,"
-                      + "`lastName` varchar(45) NOT NULL,"
-                      + "`address` varchar(120) NOT NULL,"
-                      + "`gender` varchar(45) NOT NULL,"
-                      + "`teachingStatus` varchar(45) NOT NULL,"
-                      + "`courseDepartment` varchar(45) NOT NULL,"
-                      + "`emailAddress` varchar(45) NOT NULL,"
-                      + "`mobileNumber` varchar(45) NOT NULL,"
-                      + "`status` varchar(45) NOT NULL,"
-                      + "`userLevel` varchar(45) NOT NULL,"
-                      + "`unitsAllowed` varchar(45) NOT NULL,"
-                      + "PRIMARY KEY  (`users_id`)"
-                      + ") ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;", dbconn))
+                using (MySqlCommand cmd = new MySqlCommand("CREATE TABLE  `db_finalnasana`.`tbl_users` ( "
+                    + "`users_id` int(10) unsigned NOT NULL auto_increment, "
+                    + "`username` varchar(45) NOT NULL, "
+                    + "`password` varchar(100) NOT NULL, "
+                    + "`firstName` varchar(45) NOT NULL, "
+                    + "`middleName` varchar(45) NOT NULL, "
+                    + "`lastName` varchar(45) NOT NULL, "
+                    + "`address` varchar(120) NOT NULL, "
+                    + "`gender` varchar(45) NOT NULL, "
+                    + "`teachingStatus` varchar(45) NOT NULL, "
+                    + "`courseDepartment` varchar(45) NOT NULL, "
+                    + "`emailAddress` varchar(45) NOT NULL, "
+                    + "`mobileNumber` varchar(45) NOT NULL, "
+                    + "`status` varchar(45) NOT NULL, "
+                    + "`userLevel` varchar(45) NOT NULL, "
+                    + "`unitsAllowed` varchar(45) NOT NULL, "
+                    + "`loginStatus` int(10) unsigned NOT NULL default '0', "
+                    + "PRIMARY KEY  (`users_id`) "
+                    + ") ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;", dbconn))
                 {
                     dbconn.Open();
                     cmd.ExecuteNonQuery();

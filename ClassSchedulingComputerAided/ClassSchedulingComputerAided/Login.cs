@@ -48,19 +48,28 @@ namespace ClassSchedulingComputerAided
                 //test the login request
                 if (md.LoginTest(txtUsername.Text, ms.encryptPassword(txtPassword.Text)).GetValue(0).ToString() == "PASSED")
                 {
-                    if (md.LoginTest(txtUsername.Text, ms.encryptPassword(txtPassword.Text)).GetValue(2).ToString() == "administrator")
+                    if (md.isLogin(txtUsername.Text, ms.encryptPassword(txtPassword.Text)) == false)
                     {
-                        frmAdminHomePage admin = new frmAdminHomePage();
-                        admin.Show();
-                        usersData.a_id = md.LoginTest(txtUsername.Text, ms.encryptPassword(txtPassword.Text)).GetValue(1).ToString();
-                        this.Hide();
+                        if (md.LoginTest(txtUsername.Text, ms.encryptPassword(txtPassword.Text)).GetValue(2).ToString() == "administrator")
+                        {
+                            frmAdminHomePage admin = new frmAdminHomePage();
+                            admin.Show();
+                            usersData.a_id = md.LoginTest(txtUsername.Text, ms.encryptPassword(txtPassword.Text)).GetValue(1).ToString();
+                            md.updateLogginStatus(usersData.a_id, "1");
+                            this.Hide();
+                        }
+                        else if (md.LoginTest(txtUsername.Text, ms.encryptPassword(txtPassword.Text)).GetValue(2).ToString() == "professor")
+                        {
+                            frmProfessorHomePage ph = new frmProfessorHomePage();
+                            ph.Show();
+                            usersData.p_id = md.LoginTest(txtUsername.Text, ms.encryptPassword(txtPassword.Text)).GetValue(1).ToString();
+                            md.updateLogginStatus(usersData.p_id, "1");
+                            this.Hide();
+                        }
                     }
-                    else if (md.LoginTest(txtUsername.Text, ms.encryptPassword(txtPassword.Text)).GetValue(2).ToString() == "professor")
+                    else
                     {
-                        frmProfessorHomePage ph = new frmProfessorHomePage();
-                        ph.Show();
-                        usersData.p_id = md.LoginTest(txtUsername.Text, ms.encryptPassword(txtPassword.Text)).GetValue(1).ToString();
-                        this.Hide();
+                        MessageBox.Show("The account is already in use!", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else

@@ -33,15 +33,23 @@ namespace ClassSchedulingComputerAided
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            md.R_AddRooms(txtRoomName.Text, txtRoomCode.Text, txtSlots.Text);
-            lstActiveRooms.Items.Add(txtRoomCode.Text);
-            dgvShowRooms.DataSource = md.dgv_showRooms().DataSource;
-            dgvShowRooms.Columns[0].Visible = false;
+            if (txtRoomName.Text != "" && txtRoomCode.Text != "" && txtSlots.Text != "")
+            {
+                md.R_AddRooms(txtRoomName.Text, txtRoomCode.Text, txtSlots.Text);
+                lstActiveRooms.Items.Add(txtRoomCode.Text);
+                dgvShowRooms.DataSource = md.dgv_showRooms().DataSource;
+                dgvShowRooms.Columns[0].Visible = false;
 
-            txtRoomName.Text = "";
-            txtRoomCode.Text = "";
-            txtSlots.Text = "";
-            txtRoomName.Focus();
+                txtRoomName.Text = "";
+                txtRoomCode.Text = "";
+                txtSlots.Text = "";
+                txtRoomName.Focus();
+            }
+            else
+            {
+                MessageBox.Show("Fill all fields are required!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtRoomName.Focus();
+            }
         }
 
         private void btnSetRooms_Click(object sender, EventArgs e)
@@ -55,6 +63,13 @@ namespace ClassSchedulingComputerAided
         private void btnCancel_Click(object sender, EventArgs e)
         {
             pnlSetRooms.Visible = false;
+            txtRoomName.Text = "";
+            txtRoomCode.Text = "";
+            txtSlots.Text = "";
+
+            btnEdit.Enabled = false;
+            btnDelete.Enabled = false;
+            btnAdd.Enabled = true;
         }
 
         //drag active to inactive

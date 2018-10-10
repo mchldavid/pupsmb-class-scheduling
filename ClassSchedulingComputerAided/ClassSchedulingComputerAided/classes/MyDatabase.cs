@@ -35,7 +35,58 @@ namespace ClassSchedulingComputerAided
                 con.Close();
             }
         }
+        //=========================LOGIN=========================
+        public bool isLogin(string username, string password)
+        {
+            bool result = false;
+            try
+            {
+                con.Open();
+                string sql = "SELECT * FROM tbl_users WHERE username = @u AND password = @p;";
+                MySqlCommand com = new MySqlCommand(sql, con);
+                com.Parameters.AddWithValue("@u", username);
+                com.Parameters.AddWithValue("@p", password);
+                com.ExecuteNonQuery();
 
+                MySqlDataReader dr = com.ExecuteReader();
+                if (dr.Read())
+                {
+                    if (dr["loginStatus"].ToString() == "1")
+                        result = true;
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "isLogin");
+            }
+            finally
+            {
+                con.Close();
+            }
+            return result;
+        }
+
+        public void updateLogginStatus(string id, string status)
+        {
+            try
+            {
+                con.Open();
+                string sql = "UPDATE tbl_users SET loginStatus = @s WHERE users_id = @id;";
+                MySqlCommand com = new MySqlCommand(sql, con);
+                com.Parameters.AddWithValue("@id", id);
+                com.Parameters.AddWithValue("@s", status);
+                com.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "updateLogginStatus");
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
         //test the user logging in
         public string[] LoginTest(string username, string password)
         {
@@ -57,6 +108,7 @@ namespace ClassSchedulingComputerAided
                     usersInformation[1] = dr["users_id"].ToString();
                     usersInformation[0] = "PASSED";
 
+                    usersData.p_id = dr["users_id"].ToString();
                     usersData.p_usr = dr["username"].ToString();
                     usersData.p_pwd = dr["password"].ToString();
                     usersData.p_fName = dr["firstName"].ToString();
@@ -162,7 +214,7 @@ namespace ClassSchedulingComputerAided
 
         public string[] UsersInformation(string id)
         {
-            string[] usersInfo = new string[11];
+            string[] usersInfo = new string[12];
             try
             {
                 con.Open();
@@ -184,6 +236,7 @@ namespace ClassSchedulingComputerAided
                     usersInfo[8] = dr["gender"].ToString();
                     usersInfo[9] = dr["courseDepartment"].ToString();
                     usersInfo[10] = dr["teachingStatus"].ToString();
+                    usersInfo[11] = dr["status"].ToString();
                 }
             }
             catch (MySqlException er)
@@ -197,12 +250,12 @@ namespace ClassSchedulingComputerAided
             return usersInfo;
         }
 
-        public void UpdateUsersAccount(string id, string username, string password, string firstname, string middlename, string lastname, string address, string gender, string teachingStatus, string courseDepartment, string emailAddress, string mobileNumber)
+        public void UpdateUsersAccount_1(string id, string username, string password, string firstname, string middlename, string lastname, string address, string gender, string teachingStatus, string courseDepartment, string emailAddress, string mobileNumber)
         {
             try
             {
                 con.Open();
-                string sqlUpdateUserInformation = "UPDATE tbl_users SET username=@u, password=@p, firstName=@fN, middleName=@mN, lastName=@lN, address=@a, gender=@g, teachingStatus=@tS, courseDepartment=@cD, emailAddress=@eA, mobileNumber=@moN, unitsAllowed=@uA WHERE users_id=@id;";
+                string sqlUpdateUserInformation = "UPDATE tbl_users SET username=@u, password=@p, firstName=@fN, middleName=@mN, lastName=@lN, address=@a, gender=@g, teachingStatus=@tS, courseDepartment=@cD, emailAddress=@eA, mobileNumber=@moN, unitsAllowed=@uA, status=@s WHERE users_id=@id;";
                 MySqlCommand com = new MySqlCommand(sqlUpdateUserInformation, con);
                 com.Parameters.AddWithValue("@id", id);
                 com.Parameters.AddWithValue("@u", username);
@@ -216,6 +269,69 @@ namespace ClassSchedulingComputerAided
                 com.Parameters.AddWithValue("@cD", courseDepartment);
                 com.Parameters.AddWithValue("@eA", emailAddress);
                 com.Parameters.AddWithValue("@moN", mobileNumber);
+                if (teachingStatus == "Fulltimer")
+                    com.Parameters.AddWithValue("@uA", 42);
+                if (teachingStatus == "Parttimer")
+                    com.Parameters.AddWithValue("@uA", 12);
+                if (teachingStatus == "Retiree")
+                    com.Parameters.AddWithValue("@uA", 6);
+                com.ExecuteNonQuery();
+                con.Close();
+
+                con.Open();
+                string SqlSelectUsers = "SELECT * FROM tbl_users WHERE users_id = @id;";
+                using (MySqlCommand cmd = new MySqlCommand(SqlSelectUsers, con))
+                {
+                    cmd.Parameters.AddWithValue("@id", usersData.p_id);
+                    cmd.ExecuteNonQuery();
+
+                    MySqlDataReader dr = cmd.ExecuteReader();
+                    if (dr.Read())
+                    {
+                        usersData.p_usr = dr["username"].ToString();
+                        usersData.p_pwd = dr["password"].ToString();
+                        usersData.p_fName = dr["firstName"].ToString();
+                        usersData.p_mName = dr["middleName"].ToString();
+                        usersData.p_lName = dr["lastName"].ToString();
+                        usersData.p_address = dr["address"].ToString();
+                        usersData.p_gender = dr["gender"].ToString();
+                        usersData.p_cDepartment = dr["courseDepartment"].ToString();
+                        usersData.p_tStatus = dr["teachingStatus"].ToString();
+                        usersData.p_uLevel = dr["userLevel"].ToString();
+                        usersData.p_uAllowed = dr["unitsAllowed"].ToString();
+                    }
+                }
+            }
+            catch (MySqlException er)
+            {
+                MessageBox.Show(er.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public void UpdateUsersAccount(string id, string username, string password, string firstname, string middlename, string lastname, string address, string gender, string teachingStatus, string courseDepartment, string emailAddress, string mobileNumber, string status)
+        {
+            try
+            {
+                con.Open();
+                string sqlUpdateUserInformation = "UPDATE tbl_users SET username=@u, password=@p, firstName=@fN, middleName=@mN, lastName=@lN, address=@a, gender=@g, teachingStatus=@tS, courseDepartment=@cD, emailAddress=@eA, mobileNumber=@moN, unitsAllowed=@uA, status=@s WHERE users_id=@id;";
+                MySqlCommand com = new MySqlCommand(sqlUpdateUserInformation, con);
+                com.Parameters.AddWithValue("@id", id);
+                com.Parameters.AddWithValue("@u", username);
+                com.Parameters.AddWithValue("@p", password);
+                com.Parameters.AddWithValue("@fN", firstname);
+                com.Parameters.AddWithValue("@mN", middlename);
+                com.Parameters.AddWithValue("@lN", lastname);
+                com.Parameters.AddWithValue("@a", address);
+                com.Parameters.AddWithValue("@g", gender);
+                com.Parameters.AddWithValue("@tS", teachingStatus);
+                com.Parameters.AddWithValue("@cD", courseDepartment);
+                com.Parameters.AddWithValue("@eA", emailAddress);
+                com.Parameters.AddWithValue("@moN", mobileNumber);
+                com.Parameters.AddWithValue("@s", status);
                 if (teachingStatus == "Fulltimer")
                     com.Parameters.AddWithValue("@uA", 42);
                 if (teachingStatus == "Parttimer")
@@ -680,7 +796,7 @@ namespace ClassSchedulingComputerAided
             try
             {
                 con.Open();
-                string sqlCourse = "DELETE FROM tbl_sections WHERE room_id = @id";
+                string sqlCourse = "DELETE FROM tbl_room WHERE room_id = @id";
                 MySqlCommand com1 = new MySqlCommand(sqlCourse, con);
                 com1.Parameters.AddWithValue("@id", id);
                 com1.ExecuteNonQuery();
