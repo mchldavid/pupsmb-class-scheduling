@@ -207,6 +207,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlStudentScheduling.BackColor = System.Drawing.Color.White;
             this.pnlStudentScheduling.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlStudentScheduling.Controls.Add(this.pnlStart);
             this.pnlStudentScheduling.Controls.Add(this.tbl_pnl_layout);
             this.pnlStudentScheduling.Controls.Add(this.pnlHeader);
             this.pnlStudentScheduling.Controls.Add(this.btnCancel_10);
@@ -230,7 +231,6 @@
             this.pnlStudentScheduling.Controls.Add(this.btnSet_1);
             this.pnlStudentScheduling.Controls.Add(this.btnCancel_4);
             this.pnlStudentScheduling.Controls.Add(this.btnSAVE);
-            this.pnlStudentScheduling.Controls.Add(this.pnlStart);
             this.pnlStudentScheduling.Location = new System.Drawing.Point(12, 3);
             this.pnlStudentScheduling.Name = "pnlStudentScheduling";
             this.pnlStudentScheduling.Size = new System.Drawing.Size(1342, 351);

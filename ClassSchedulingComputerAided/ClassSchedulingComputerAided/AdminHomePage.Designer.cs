@@ -40,6 +40,7 @@
             this.btnClassScheduleDashboard = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnSections = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnHome = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnSummaryReport = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnLogout = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnRooms = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnCurriculum = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -52,7 +53,6 @@
             this.lbl_form_title = new System.Windows.Forms.Label();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btnSummaryReport = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -320,6 +320,41 @@
             this.btnHome.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
+            // btnSummaryReport
+            // 
+            this.btnSummaryReport.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(149)))), ((int)(((byte)(1)))));
+            this.btnSummaryReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btnSummaryReport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSummaryReport.BorderRadius = 0;
+            this.btnSummaryReport.ButtonText = "    Summary Report";
+            this.btnSummaryReport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSummaryReport.DisabledColor = System.Drawing.Color.Gray;
+            this.btnSummaryReport.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnSummaryReport.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnSummaryReport.Iconimage")));
+            this.btnSummaryReport.Iconimage_right = null;
+            this.btnSummaryReport.Iconimage_right_Selected = null;
+            this.btnSummaryReport.Iconimage_Selected = null;
+            this.btnSummaryReport.IconMarginLeft = 27;
+            this.btnSummaryReport.IconMarginRight = 0;
+            this.btnSummaryReport.IconRightVisible = true;
+            this.btnSummaryReport.IconRightZoom = 0D;
+            this.btnSummaryReport.IconVisible = true;
+            this.btnSummaryReport.IconZoom = 50D;
+            this.btnSummaryReport.IsTab = false;
+            this.btnSummaryReport.Location = new System.Drawing.Point(-3, 401);
+            this.btnSummaryReport.Name = "btnSummaryReport";
+            this.btnSummaryReport.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btnSummaryReport.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
+            this.btnSummaryReport.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnSummaryReport.selected = false;
+            this.btnSummaryReport.Size = new System.Drawing.Size(252, 42);
+            this.btnSummaryReport.TabIndex = 109;
+            this.btnSummaryReport.Text = "    Summary Report";
+            this.btnSummaryReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSummaryReport.Textcolor = System.Drawing.Color.LightGray;
+            this.btnSummaryReport.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSummaryReport.Click += new System.EventHandler(this.btnSummaryReport_Click);
+            // 
             // btnLogout
             // 
             this.btnLogout.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(149)))), ((int)(((byte)(1)))));
@@ -522,41 +557,6 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // btnSummaryReport
-            // 
-            this.btnSummaryReport.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(149)))), ((int)(((byte)(1)))));
-            this.btnSummaryReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btnSummaryReport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSummaryReport.BorderRadius = 0;
-            this.btnSummaryReport.ButtonText = "    Summary Report";
-            this.btnSummaryReport.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSummaryReport.DisabledColor = System.Drawing.Color.Gray;
-            this.btnSummaryReport.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnSummaryReport.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnSummaryReport.Iconimage")));
-            this.btnSummaryReport.Iconimage_right = null;
-            this.btnSummaryReport.Iconimage_right_Selected = null;
-            this.btnSummaryReport.Iconimage_Selected = null;
-            this.btnSummaryReport.IconMarginLeft = 27;
-            this.btnSummaryReport.IconMarginRight = 0;
-            this.btnSummaryReport.IconRightVisible = true;
-            this.btnSummaryReport.IconRightZoom = 0D;
-            this.btnSummaryReport.IconVisible = true;
-            this.btnSummaryReport.IconZoom = 50D;
-            this.btnSummaryReport.IsTab = false;
-            this.btnSummaryReport.Location = new System.Drawing.Point(-3, 401);
-            this.btnSummaryReport.Name = "btnSummaryReport";
-            this.btnSummaryReport.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btnSummaryReport.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
-            this.btnSummaryReport.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnSummaryReport.selected = false;
-            this.btnSummaryReport.Size = new System.Drawing.Size(252, 42);
-            this.btnSummaryReport.TabIndex = 109;
-            this.btnSummaryReport.Text = "    Summary Report";
-            this.btnSummaryReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSummaryReport.Textcolor = System.Drawing.Color.LightGray;
-            this.btnSummaryReport.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSummaryReport.Click += new System.EventHandler(this.btnSummaryReport_Click);
-            // 
             // frmAdminHomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -567,7 +567,6 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.pnl);
             this.MaximizeBox = false;
-            this.Movable = false;
             this.Name = "frmAdminHomePage";
             this.Style = MetroFramework.MetroColorStyle.White;
             this.Load += new System.EventHandler(this.AdminHomePage_Load);
@@ -596,7 +595,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.Panel pnl;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbl_form_title;
         public MetroFramework.Controls.MetroLabel metroLabel4;
         public Bunifu.Framework.UI.BunifuFlatButton btnHome;
@@ -606,6 +604,7 @@
         private System.Windows.Forms.Label lblDay;
         public MetroFramework.Controls.MetroLabel lbl_title;
         public Bunifu.Framework.UI.BunifuFlatButton btnSummaryReport;
+        private System.Windows.Forms.Panel panel1;
 
 
     }

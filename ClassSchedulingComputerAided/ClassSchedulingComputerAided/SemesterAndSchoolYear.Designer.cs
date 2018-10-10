@@ -83,8 +83,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(265, 61);
             this.label1.TabIndex = 178;
-            this.label1.Text = "Please Set the semester and school year before you proceed to the Set Curriculum." +
-    "";
+            this.label1.Text = "Note: Please Set the semester before you proceed to the Set Courses.";
             // 
             // btnBack
             // 

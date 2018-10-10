@@ -60,7 +60,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.btnProfessorsInfo = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnHome = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnDeleteProfessors = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnEditProfessors = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -424,7 +423,6 @@
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.panel9.Controls.Add(this.btnProfessorsInfo);
             this.panel9.Controls.Add(this.btnHome);
             this.panel9.Controls.Add(this.btnDeleteProfessors);
             this.panel9.Controls.Add(this.btnEditProfessors);
@@ -432,41 +430,7 @@
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(151, 505);
             this.panel9.TabIndex = 181;
-            // 
-            // btnProfessorsInfo
-            // 
-            this.btnProfessorsInfo.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(149)))), ((int)(((byte)(1)))));
-            this.btnProfessorsInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btnProfessorsInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnProfessorsInfo.BorderRadius = 0;
-            this.btnProfessorsInfo.ButtonText = "    Prof Info";
-            this.btnProfessorsInfo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnProfessorsInfo.DisabledColor = System.Drawing.Color.Gray;
-            this.btnProfessorsInfo.ForeColor = System.Drawing.Color.White;
-            this.btnProfessorsInfo.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnProfessorsInfo.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnProfessorsInfo.Iconimage")));
-            this.btnProfessorsInfo.Iconimage_right = null;
-            this.btnProfessorsInfo.Iconimage_right_Selected = null;
-            this.btnProfessorsInfo.Iconimage_Selected = null;
-            this.btnProfessorsInfo.IconMarginLeft = 15;
-            this.btnProfessorsInfo.IconMarginRight = 0;
-            this.btnProfessorsInfo.IconRightVisible = true;
-            this.btnProfessorsInfo.IconRightZoom = 0D;
-            this.btnProfessorsInfo.IconVisible = true;
-            this.btnProfessorsInfo.IconZoom = 50D;
-            this.btnProfessorsInfo.IsTab = false;
-            this.btnProfessorsInfo.Location = new System.Drawing.Point(0, 4);
-            this.btnProfessorsInfo.Name = "btnProfessorsInfo";
-            this.btnProfessorsInfo.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btnProfessorsInfo.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
-            this.btnProfessorsInfo.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnProfessorsInfo.selected = false;
-            this.btnProfessorsInfo.Size = new System.Drawing.Size(160, 42);
-            this.btnProfessorsInfo.TabIndex = 159;
-            this.btnProfessorsInfo.Text = "    Prof Info";
-            this.btnProfessorsInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProfessorsInfo.Textcolor = System.Drawing.Color.White;
-            this.btnProfessorsInfo.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel9.Paint += new System.Windows.Forms.PaintEventHandler(this.panel9_Paint);
             // 
             // btnHome
             // 
@@ -490,7 +454,7 @@
             this.btnHome.IconVisible = true;
             this.btnHome.IconZoom = 50D;
             this.btnHome.IsTab = false;
-            this.btnHome.Location = new System.Drawing.Point(0, 130);
+            this.btnHome.Location = new System.Drawing.Point(0, 92);
             this.btnHome.Name = "btnHome";
             this.btnHome.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnHome.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
@@ -526,7 +490,7 @@
             this.btnDeleteProfessors.IconVisible = true;
             this.btnDeleteProfessors.IconZoom = 50D;
             this.btnDeleteProfessors.IsTab = false;
-            this.btnDeleteProfessors.Location = new System.Drawing.Point(0, 88);
+            this.btnDeleteProfessors.Location = new System.Drawing.Point(0, 49);
             this.btnDeleteProfessors.Name = "btnDeleteProfessors";
             this.btnDeleteProfessors.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnDeleteProfessors.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
@@ -562,7 +526,7 @@
             this.btnEditProfessors.IconVisible = true;
             this.btnEditProfessors.IconZoom = 50D;
             this.btnEditProfessors.IsTab = false;
-            this.btnEditProfessors.Location = new System.Drawing.Point(0, 46);
+            this.btnEditProfessors.Location = new System.Drawing.Point(0, 6);
             this.btnEditProfessors.Name = "btnEditProfessors";
             this.btnEditProfessors.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnEditProfessors.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
@@ -618,7 +582,6 @@
         public System.Windows.Forms.ComboBox cboSearchBy;
         private System.Windows.Forms.Panel pnl;
         public System.Windows.Forms.Panel panel9;
-        public Bunifu.Framework.UI.BunifuFlatButton btnProfessorsInfo;
         public Bunifu.Framework.UI.BunifuFlatButton btnHome;
         public Bunifu.Framework.UI.BunifuFlatButton btnDeleteProfessors;
         public Bunifu.Framework.UI.BunifuFlatButton btnEditProfessors;

@@ -675,6 +675,26 @@ namespace ClassSchedulingComputerAided
             }
         }
 
+        public void R_DeleteRoom(string id)
+        {
+            try
+            {
+                con.Open();
+                string sqlCourse = "DELETE FROM tbl_sections WHERE room_id = @id";
+                MySqlCommand com1 = new MySqlCommand(sqlCourse, con);
+                com1.Parameters.AddWithValue("@id", id);
+                com1.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "R_DeleteRoom");
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
         public void R_UpdateRooms(string code, string status)
         {
             try
@@ -684,6 +704,30 @@ namespace ClassSchedulingComputerAided
                 MySqlCommand com = new MySqlCommand(sqlAddRoom, con);
                 com.Parameters.AddWithValue("@s", status);
                 com.Parameters.AddWithValue("@c", code);
+                com.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "R_UpdateRooms");
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public void R_SetUpdateRooms(string id, string name, string code, string slots)
+        {
+            try
+            {
+                con.Open();
+                string sqlAddRoom = "UPDATE tbl_room SET roomName = @rN, roomCode = @rC, roomSlots = @rS WHERE room_id = @id;";
+                MySqlCommand com = new MySqlCommand(sqlAddRoom, con);
+                com.Parameters.AddWithValue("@id", id);
+                com.Parameters.AddWithValue("@rN", name);
+                com.Parameters.AddWithValue("@rC", code);
+                com.Parameters.AddWithValue("@rS", slots);
                 com.ExecuteNonQuery();
                 con.Close();
             }
@@ -1462,7 +1506,7 @@ namespace ClassSchedulingComputerAided
             try
             {
                 con.Open();
-                string sql = "SELECT curriculums_id AS 'ID', programName AS 'Curriculum Title', createdBy AS 'Published by', createdAt AS 'Date published', status AS 'Status'  from tbl_curriculumS ORDER BY status ASC;";
+                string sql = "SELECT curriculums_id AS 'ID', programName AS 'Program Title', curriculumYear AS 'Curriculum Year', createdAt AS 'Date Created', status AS 'Status'  from tbl_curriculumS ORDER BY status ASC;";
                 MySqlCommand com = new MySqlCommand(sql, con);
                 com.ExecuteNonQuery();
                 con.Close();

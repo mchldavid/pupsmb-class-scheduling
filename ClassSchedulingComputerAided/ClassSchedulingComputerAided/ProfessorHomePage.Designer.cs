@@ -441,7 +441,6 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.pnl);
             this.MaximizeBox = false;
-            this.Movable = false;
             this.Name = "frmProfessorHomePage";
             this.Style = MetroFramework.MetroColorStyle.White;
             this.TextAlign = System.Windows.Forms.VisualStyles.HorizontalAlign.Center;

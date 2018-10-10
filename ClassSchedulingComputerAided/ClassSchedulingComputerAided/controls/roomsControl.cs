@@ -18,6 +18,8 @@ namespace ClassSchedulingComputerAided
         }
         MyDatabase md = new MyDatabase();
 
+        string id = "";
+
         private void roomsControl_Load(object sender, EventArgs e)
         {
             for (int x = 0; x < md.R_ListRooms_Active().Length; x++)
@@ -35,6 +37,11 @@ namespace ClassSchedulingComputerAided
             lstActiveRooms.Items.Add(txtRoomCode.Text);
             dgvShowRooms.DataSource = md.dgv_showRooms().DataSource;
             dgvShowRooms.Columns[0].Visible = false;
+
+            txtRoomName.Text = "";
+            txtRoomCode.Text = "";
+            txtSlots.Text = "";
+            txtRoomName.Focus();
         }
 
         private void btnSetRooms_Click(object sender, EventArgs e)
@@ -42,7 +49,7 @@ namespace ClassSchedulingComputerAided
             pnlSetRooms.Visible = true;
             dgvShowRooms.DataSource = md.dgv_showRooms().DataSource;
             dgvShowRooms.Columns[0].Visible = false;
-
+            txtRoomName.Focus();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -122,6 +129,58 @@ namespace ClassSchedulingComputerAided
         private void btnActive_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dgvShowRooms_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            foreach (DataGridViewRow dr in dgvShowRooms.SelectedRows)
+            {
+                txtRoomName.Text = dr.Cells[2].Value.ToString();
+                txtRoomCode.Text = dr.Cells[1].Value.ToString();
+                txtSlots.Text = dr.Cells[3].Value.ToString();
+                id = dr.Cells[0].Value.ToString();
+                btnEdit.Enabled = true;
+                btnDelete.Enabled = true;
+                btnAdd.Enabled = false;
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            md.R_SetUpdateRooms(id, txtRoomName.Text, txtRoomCode.Text, txtSlots.Text);
+            MessageBox.Show("Edit successful", "Edit Room", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            id = "";
+            txtRoomCode.Text = "";
+            txtRoomName.Text = "";
+            txtSlots.Text = "";
+
+            btnEdit.Enabled = false;
+            btnDelete.Enabled = false;
+            btnAdd.Enabled = true;
+
+            dgvShowRooms.DataSource = md.dgv_showRooms().DataSource;
+            dgvShowRooms.Columns[0].Visible = false;
+            txtRoomName.Focus();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            md.R_DeleteRoom(id);
+            MessageBox.Show("Delete successful", "Delete Room", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            id = "";
+            txtRoomCode.Text = "";
+            txtRoomName.Text = "";
+            txtSlots.Text = "";
+
+            btnEdit.Enabled = false;
+            btnDelete.Enabled = false;
+            btnAdd.Enabled = true;
+
+            dgvShowRooms.DataSource = md.dgv_showRooms().DataSource;
+            dgvShowRooms.Columns[0].Visible = false;
+            txtRoomName.Focus();
         }
     }
 }

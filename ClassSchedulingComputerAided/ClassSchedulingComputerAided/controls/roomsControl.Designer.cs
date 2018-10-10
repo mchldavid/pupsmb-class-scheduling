@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.lstInActiveRooms = new System.Windows.Forms.ListBox();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
@@ -51,14 +51,14 @@
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.btnRoomCancel = new MetroFramework.Controls.MetroButton();
             this.btnDelete = new MetroFramework.Controls.MetroButton();
-            this.txtSlots = new MetroFramework.Controls.MetroTextBox();
-            this.txtRoomCode = new MetroFramework.Controls.MetroTextBox();
-            this.txtRoomName = new MetroFramework.Controls.MetroTextBox();
             this.btnEdit = new MetroFramework.Controls.MetroButton();
             this.btnAdd = new MetroFramework.Controls.MetroButton();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
+            this.txtRoomName = new System.Windows.Forms.TextBox();
+            this.txtRoomCode = new System.Windows.Forms.TextBox();
+            this.txtSlots = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.pnlSetRooms.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShowRooms)).BeginInit();
@@ -197,22 +197,22 @@
             // 
             this.pnlSetRooms.BackColor = System.Drawing.Color.Gainsboro;
             this.pnlSetRooms.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlSetRooms.Controls.Add(this.txtSlots);
+            this.pnlSetRooms.Controls.Add(this.txtRoomCode);
+            this.pnlSetRooms.Controls.Add(this.txtRoomName);
             this.pnlSetRooms.Controls.Add(this.dgvShowRooms);
             this.pnlSetRooms.Controls.Add(this.btnCancel);
             this.pnlSetRooms.Controls.Add(this.panel2);
             this.pnlSetRooms.Controls.Add(this.btnRoomCancel);
             this.pnlSetRooms.Controls.Add(this.btnDelete);
-            this.pnlSetRooms.Controls.Add(this.txtSlots);
-            this.pnlSetRooms.Controls.Add(this.txtRoomCode);
-            this.pnlSetRooms.Controls.Add(this.txtRoomName);
             this.pnlSetRooms.Controls.Add(this.btnEdit);
             this.pnlSetRooms.Controls.Add(this.btnAdd);
             this.pnlSetRooms.Controls.Add(this.metroLabel3);
             this.pnlSetRooms.Controls.Add(this.metroLabel7);
             this.pnlSetRooms.Controls.Add(this.metroLabel8);
-            this.pnlSetRooms.Location = new System.Drawing.Point(49, 56);
+            this.pnlSetRooms.Location = new System.Drawing.Point(0, 0);
             this.pnlSetRooms.Name = "pnlSetRooms";
-            this.pnlSetRooms.Size = new System.Drawing.Size(613, 336);
+            this.pnlSetRooms.Size = new System.Drawing.Size(700, 451);
             this.pnlSetRooms.TabIndex = 248;
             this.pnlSetRooms.Visible = false;
             // 
@@ -222,10 +222,10 @@
             this.dgvShowRooms.AllowUserToDeleteRows = false;
             this.dgvShowRooms.AllowUserToResizeColumns = false;
             this.dgvShowRooms.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Gray;
-            this.dgvShowRooms.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle26.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.Gray;
+            this.dgvShowRooms.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle26;
             this.dgvShowRooms.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -234,56 +234,57 @@
             this.dgvShowRooms.BackgroundColor = System.Drawing.Color.White;
             this.dgvShowRooms.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvShowRooms.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvShowRooms.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle27.ForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvShowRooms.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle27;
             this.dgvShowRooms.ColumnHeadersHeight = 25;
             this.dgvShowRooms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvShowRooms.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle28.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            dataGridViewCellStyle28.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvShowRooms.DefaultCellStyle = dataGridViewCellStyle28;
             this.dgvShowRooms.DoubleBuffered = true;
             this.dgvShowRooms.EnableHeadersVisualStyles = false;
             this.dgvShowRooms.GridColor = System.Drawing.Color.DarkGray;
             this.dgvShowRooms.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
             this.dgvShowRooms.HeaderForeColor = System.Drawing.Color.Gold;
-            this.dgvShowRooms.Location = new System.Drawing.Point(308, 61);
+            this.dgvShowRooms.Location = new System.Drawing.Point(408, 48);
             this.dgvShowRooms.MultiSelect = false;
             this.dgvShowRooms.Name = "dgvShowRooms";
             this.dgvShowRooms.ReadOnly = true;
             this.dgvShowRooms.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvShowRooms.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle29.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvShowRooms.RowHeadersDefaultCellStyle = dataGridViewCellStyle29;
             this.dgvShowRooms.RowHeadersWidth = 15;
             this.dgvShowRooms.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvShowRooms.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvShowRooms.RowsDefaultCellStyle = dataGridViewCellStyle30;
             this.dgvShowRooms.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvShowRooms.Size = new System.Drawing.Size(300, 261);
+            this.dgvShowRooms.Size = new System.Drawing.Size(287, 389);
             this.dgvShowRooms.TabIndex = 243;
+            this.dgvShowRooms.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvShowRooms_CellContentClick);
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(13, 280);
+            this.btnCancel.Location = new System.Drawing.Point(21, 292);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(290, 42);
+            this.btnCancel.Size = new System.Drawing.Size(372, 42);
             this.btnCancel.TabIndex = 242;
             this.btnCancel.Text = "CANCEL";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -295,7 +296,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(611, 42);
+            this.panel2.Size = new System.Drawing.Size(698, 42);
             this.panel2.TabIndex = 241;
             // 
             // metroLabel5
@@ -320,49 +321,29 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(14, 238);
+            this.btnDelete.Enabled = false;
+            this.btnDelete.Location = new System.Drawing.Point(22, 247);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(288, 42);
+            this.btnDelete.Size = new System.Drawing.Size(370, 42);
             this.btnDelete.TabIndex = 169;
             this.btnDelete.Text = "DELETE";
-            // 
-            // txtSlots
-            // 
-            this.txtSlots.Location = new System.Drawing.Point(105, 123);
-            this.txtSlots.Multiline = true;
-            this.txtSlots.Name = "txtSlots";
-            this.txtSlots.Size = new System.Drawing.Size(101, 25);
-            this.txtSlots.TabIndex = 157;
-            // 
-            // txtRoomCode
-            // 
-            this.txtRoomCode.Location = new System.Drawing.Point(105, 92);
-            this.txtRoomCode.Multiline = true;
-            this.txtRoomCode.Name = "txtRoomCode";
-            this.txtRoomCode.Size = new System.Drawing.Size(197, 25);
-            this.txtRoomCode.TabIndex = 157;
-            // 
-            // txtRoomName
-            // 
-            this.txtRoomName.Location = new System.Drawing.Point(105, 61);
-            this.txtRoomName.Multiline = true;
-            this.txtRoomName.Name = "txtRoomName";
-            this.txtRoomName.Size = new System.Drawing.Size(197, 25);
-            this.txtRoomName.TabIndex = 157;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(14, 196);
+            this.btnEdit.Enabled = false;
+            this.btnEdit.Location = new System.Drawing.Point(22, 202);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(288, 42);
+            this.btnEdit.Size = new System.Drawing.Size(370, 42);
             this.btnEdit.TabIndex = 166;
             this.btnEdit.Text = "EDIT";
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(14, 154);
+            this.btnAdd.Location = new System.Drawing.Point(22, 157);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(288, 42);
+            this.btnAdd.Size = new System.Drawing.Size(370, 42);
             this.btnAdd.TabIndex = 165;
             this.btnAdd.Text = "ADD";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -382,7 +363,7 @@
             // 
             this.metroLabel7.BackColor = System.Drawing.Color.Gainsboro;
             this.metroLabel7.CustomBackground = true;
-            this.metroLabel7.Location = new System.Drawing.Point(13, 123);
+            this.metroLabel7.Location = new System.Drawing.Point(14, 120);
             this.metroLabel7.Name = "metroLabel7";
             this.metroLabel7.Size = new System.Drawing.Size(91, 25);
             this.metroLabel7.TabIndex = 173;
@@ -393,12 +374,42 @@
             // 
             this.metroLabel8.BackColor = System.Drawing.Color.Gainsboro;
             this.metroLabel8.CustomBackground = true;
-            this.metroLabel8.Location = new System.Drawing.Point(13, 92);
+            this.metroLabel8.Location = new System.Drawing.Point(13, 89);
             this.metroLabel8.Name = "metroLabel8";
             this.metroLabel8.Size = new System.Drawing.Size(91, 25);
             this.metroLabel8.TabIndex = 163;
             this.metroLabel8.Text = "Room Code:";
             this.metroLabel8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtRoomName
+            // 
+            this.txtRoomName.BackColor = System.Drawing.Color.White;
+            this.txtRoomName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtRoomName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRoomName.Location = new System.Drawing.Point(110, 64);
+            this.txtRoomName.Name = "txtRoomName";
+            this.txtRoomName.Size = new System.Drawing.Size(283, 22);
+            this.txtRoomName.TabIndex = 244;
+            // 
+            // txtRoomCode
+            // 
+            this.txtRoomCode.BackColor = System.Drawing.Color.White;
+            this.txtRoomCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtRoomCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRoomCode.Location = new System.Drawing.Point(110, 94);
+            this.txtRoomCode.Name = "txtRoomCode";
+            this.txtRoomCode.Size = new System.Drawing.Size(283, 22);
+            this.txtRoomCode.TabIndex = 245;
+            // 
+            // txtSlots
+            // 
+            this.txtSlots.BackColor = System.Drawing.Color.White;
+            this.txtSlots.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSlots.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSlots.Location = new System.Drawing.Point(110, 123);
+            this.txtSlots.Name = "txtSlots";
+            this.txtSlots.Size = new System.Drawing.Size(283, 22);
+            this.txtSlots.TabIndex = 246;
             // 
             // roomsControl
             // 
@@ -421,6 +432,7 @@
             this.Load += new System.EventHandler(this.roomsControl_Load);
             this.panel1.ResumeLayout(false);
             this.pnlSetRooms.ResumeLayout(false);
+            this.pnlSetRooms.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShowRooms)).EndInit();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -443,7 +455,6 @@
         public System.Windows.Forms.Panel pnlSetRooms;
         public MetroFramework.Controls.MetroButton btnRoomCancel;
         public MetroFramework.Controls.MetroButton btnDelete;
-        public MetroFramework.Controls.MetroTextBox txtRoomName;
         public MetroFramework.Controls.MetroButton btnEdit;
         public MetroFramework.Controls.MetroButton btnAdd;
         public MetroFramework.Controls.MetroLabel metroLabel3;
@@ -452,8 +463,9 @@
         private System.Windows.Forms.Panel panel2;
         public MetroFramework.Controls.MetroLabel metroLabel5;
         public MetroFramework.Controls.MetroButton btnCancel;
-        public MetroFramework.Controls.MetroTextBox txtSlots;
-        public MetroFramework.Controls.MetroTextBox txtRoomCode;
         private Bunifu.Framework.UI.BunifuCustomDataGrid dgvShowRooms;
+        private System.Windows.Forms.TextBox txtSlots;
+        private System.Windows.Forms.TextBox txtRoomCode;
+        private System.Windows.Forms.TextBox txtRoomName;
     }
 }

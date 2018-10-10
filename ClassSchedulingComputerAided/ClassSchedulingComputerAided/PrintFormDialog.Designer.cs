@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrintFormDialog));
             this.PrintDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -70,9 +70,9 @@
             this.reportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.PrintDataBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource2.Name = "DataSet1";
+            reportDataSource2.Value = this.PrintDataBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "ClassSchedulingComputerAided.rptSubjects.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(3, 38);
             this.reportViewer1.Name = "reportViewer1";
@@ -142,6 +142,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlStart.BackColor = System.Drawing.Color.White;
             this.pnlStart.Controls.Add(this.groupBox1);
+            this.pnlStart.Controls.Add(this.pictureBox2);
             this.pnlStart.Location = new System.Drawing.Point(3, 38);
             this.pnlStart.Name = "pnlStart";
             this.pnlStart.Size = new System.Drawing.Size(993, 524);
@@ -152,12 +153,11 @@
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.cboOption);
-            this.groupBox1.Controls.Add(this.pictureBox2);
             this.groupBox1.Controls.Add(this.btnViewPrintTimeTable);
             this.groupBox1.Controls.Add(this.cboTimeTable);
-            this.groupBox1.Location = new System.Drawing.Point(254, 80);
+            this.groupBox1.Location = new System.Drawing.Point(271, 333);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(467, 383);
+            this.groupBox1.Size = new System.Drawing.Size(467, 125);
             this.groupBox1.TabIndex = 249;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Preview Setup";
@@ -167,7 +167,7 @@
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(33, 305);
+            this.label3.Location = new System.Drawing.Point(20, 41);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(114, 24);
             this.label3.TabIndex = 248;
@@ -180,23 +180,25 @@
             this.cboOption.Enabled = false;
             this.cboOption.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboOption.FormattingEnabled = true;
-            this.cboOption.Location = new System.Drawing.Point(153, 335);
+            this.cboOption.Location = new System.Drawing.Point(140, 71);
             this.cboOption.Name = "cboOption";
-            this.cboOption.Size = new System.Drawing.Size(190, 24);
+            this.cboOption.Size = new System.Drawing.Size(202, 24);
             this.cboOption.TabIndex = 247;
             this.cboOption.SelectedIndexChanged += new System.EventHandler(this.cboOption_SelectedIndexChanged);
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(36, 37);
+            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(271, 38);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(397, 252);
+            this.pictureBox2.Size = new System.Drawing.Size(467, 280);
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             // 
             // btnViewPrintTimeTable
             // 
-            this.btnViewPrintTimeTable.Location = new System.Drawing.Point(349, 335);
+            this.btnViewPrintTimeTable.Location = new System.Drawing.Point(359, 71);
             this.btnViewPrintTimeTable.Name = "btnViewPrintTimeTable";
             this.btnViewPrintTimeTable.Size = new System.Drawing.Size(84, 24);
             this.btnViewPrintTimeTable.TabIndex = 180;
@@ -208,9 +210,9 @@
             this.cboTimeTable.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTimeTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboTimeTable.FormattingEnabled = true;
-            this.cboTimeTable.Location = new System.Drawing.Point(153, 305);
+            this.cboTimeTable.Location = new System.Drawing.Point(140, 41);
             this.cboTimeTable.Name = "cboTimeTable";
-            this.cboTimeTable.Size = new System.Drawing.Size(190, 24);
+            this.cboTimeTable.Size = new System.Drawing.Size(202, 24);
             this.cboTimeTable.TabIndex = 247;
             this.cboTimeTable.SelectedIndexChanged += new System.EventHandler(this.cboTimeTable_SelectedIndexChanged);
             // 
