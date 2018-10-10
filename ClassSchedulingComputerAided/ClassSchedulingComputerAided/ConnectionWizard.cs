@@ -130,7 +130,7 @@ namespace ClassSchedulingComputerAided
                             
                             btnSAVE_Click(sender, e);
                             //to save the year
-                            Settings.Default["Year"] = DateTime.Now.ToString("yyyy");
+                            Settings.Default["Year"] = DateTime.Now.Year.ToString();
                         }
                     }
                     else

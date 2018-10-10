@@ -134,7 +134,7 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
             this.dgvEventLog.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvEventLog.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEventLog.Size = new System.Drawing.Size(700, 423);
+            this.dgvEventLog.Size = new System.Drawing.Size(700, 420);
             this.dgvEventLog.TabIndex = 253;
             // 
             // eventlogBindingSource
@@ -170,7 +170,7 @@
             this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
             this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
             this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.descriptionDataGridViewTextBoxColumn.Width = 300;
+            this.descriptionDataGridViewTextBoxColumn.Width = 500;
             // 
             // EventLogControl
             // 

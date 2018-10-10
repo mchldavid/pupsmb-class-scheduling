@@ -648,6 +648,15 @@ namespace ClassSchedulingComputerAided
                         //Check constraints for Rooms
                         if (RoomCheckConstraints(cboRoom_1.Text, cboDay_1.Text, cboStart_1.Text, cboEnd_1.Text) == true)
                         {
+                            //audit
+                            md.AuditTrail(AuditTrailData.username, "Update", lblCode_1.Text + " was scheduled to"
+                                + cboProfessor_1.Text + " from"
+                                + cboStart_1.Text
+                                + " to "
+                                + cboEnd_1.Text + " "
+                                + cboDay_1.Text + " in "
+                                + cboRoom_1.Text);
+
                             btnCancel_1.Visible = false;
 
                             MessageBox.Show("Scheduled Successful", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -727,6 +736,15 @@ namespace ClassSchedulingComputerAided
                         //Check constraints for Rooms
                         if (RoomCheckConstraints(cboRoom_2.Text, cboDay_2.Text, cboStart_2.Text, cboEnd_2.Text) == true)
                         {
+                            //audit
+                            md.AuditTrail(AuditTrailData.username, "Update", lblCode_2.Text + " was scheduled to" 
+                                + cboProfessor_2.Text + " from"
+                                + cboStart_2.Text
+                                + " to " 
+                                + cboEnd_2.Text + " " 
+                                + cboDay_2.Text + " in " 
+                                + cboRoom_2.Text);
+
                             btnCancel_2.Visible = false;
 
                             MessageBox.Show("Scheduled Successful", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -806,6 +824,15 @@ namespace ClassSchedulingComputerAided
                         //Check constraints for Rooms
                         if (RoomCheckConstraints(cboRoom_3.Text, cboDay_3.Text, cboStart_3.Text, cboEnd_3.Text) == true)
                         {
+                            //audit
+                            md.AuditTrail(AuditTrailData.username, "Update", lblCode_3.Text + " was scheduled to"
+                                + cboProfessor_3.Text + " from"
+                                + cboStart_3.Text
+                                + " to "
+                                + cboEnd_3.Text + " "
+                                + cboDay_3.Text + " in "
+                                + cboRoom_3.Text);
+
                             btnCancel_3.Visible = false;
 
                             MessageBox.Show("Scheduled Successful", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -885,6 +912,15 @@ namespace ClassSchedulingComputerAided
                         //Check constraints for Rooms
                         if (RoomCheckConstraints(cboRoom_4.Text, cboDay_4.Text, cboStart_4.Text, cboEnd_4.Text) == true)
                         {
+                            //audit
+                            md.AuditTrail(AuditTrailData.username, "Update", lblCode_4.Text + " was scheduled to"
+                                + cboProfessor_4.Text + " from"
+                                + cboStart_4.Text
+                                + " to "
+                                + cboEnd_4.Text + " "
+                                + cboDay_4.Text + " in "
+                                + cboRoom_4.Text);
+
                             btnCancel_4.Visible = false;
 
                             MessageBox.Show("Scheduled Successful", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -964,6 +1000,15 @@ namespace ClassSchedulingComputerAided
                         //Check constraints for Rooms
                         if (RoomCheckConstraints(cboRoom_5.Text, cboDay_5.Text, cboStart_5.Text, cboEnd_5.Text) == true)
                         {
+                            //audit
+                            md.AuditTrail(AuditTrailData.username, "Update", lblCode_5.Text + " was scheduled to"
+                                + cboProfessor_5.Text + " from"
+                                + cboStart_5.Text
+                                + " to "
+                                + cboEnd_5.Text + " "
+                                + cboDay_5.Text + " in "
+                                + cboRoom_5.Text);
+
                             btnCancel_5.Visible = false;
 
                             MessageBox.Show("Scheduled Successful", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -1043,6 +1088,15 @@ namespace ClassSchedulingComputerAided
                         //Check constraints for Rooms
                         if (RoomCheckConstraints(cboRoom_6.Text, cboDay_6.Text, cboStart_6.Text, cboEnd_6.Text) == true)
                         {
+                            //audit
+                            md.AuditTrail(AuditTrailData.username, "Update", lblCode_6.Text + " was scheduled to"
+                                + cboProfessor_6.Text + " from"
+                                + cboStart_6.Text
+                                + " to "
+                                + cboEnd_6.Text + " "
+                                + cboDay_6.Text + " in "
+                                + cboRoom_6.Text);
+
                             btnCancel_6.Visible = false;
 
                             MessageBox.Show("Scheduled Successful", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -1122,6 +1176,15 @@ namespace ClassSchedulingComputerAided
                         //Check constraints for Rooms
                         if (RoomCheckConstraints(cboRoom_7.Text, cboDay_7.Text, cboStart_7.Text, cboEnd_7.Text) == true)
                         {
+                            //audit
+                            md.AuditTrail(AuditTrailData.username, "Update", lblCode_7.Text + " was scheduled to"
+                                + cboProfessor_7.Text + " from"
+                                + cboStart_7.Text
+                                + " to "
+                                + cboEnd_7.Text + " "
+                                + cboDay_7.Text + " in "
+                                + cboRoom_7.Text);
+
                             btnCancel_7.Visible = false;
 
                             MessageBox.Show("Scheduled Successful", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -1201,6 +1264,15 @@ namespace ClassSchedulingComputerAided
                         //Check constraints for Rooms
                         if (RoomCheckConstraints(cboRoom_8.Text, cboDay_8.Text, cboStart_8.Text, cboEnd_8.Text) == true)
                         {
+                            //audit
+                            md.AuditTrail(AuditTrailData.username, "Update", lblCode_8.Text + " was scheduled to"
+                                + cboProfessor_8.Text + " from"
+                                + cboStart_8.Text
+                                + " to "
+                                + cboEnd_8.Text + " "
+                                + cboDay_8.Text + " in "
+                                + cboRoom_8.Text);
+
                             btnCancel_8.Visible = false;
 
                             MessageBox.Show("Scheduled Successful", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -1280,6 +1352,15 @@ namespace ClassSchedulingComputerAided
                         //Check constraints for Rooms
                         if (RoomCheckConstraints(cboRoom_9.Text, cboDay_9.Text, cboStart_9.Text, cboEnd_9.Text) == true)
                         {
+                            //audit
+                            md.AuditTrail(AuditTrailData.username, "Update", lblCode_9.Text + " was scheduled to"
+                                + cboProfessor_9.Text + " from"
+                                + cboStart_9.Text
+                                + " to "
+                                + cboEnd_9.Text + " "
+                                + cboDay_9.Text + " in "
+                                + cboRoom_9.Text);
+
                             btnCancel_9.Visible = false;
 
                             MessageBox.Show("Scheduled Successful", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -1359,6 +1440,15 @@ namespace ClassSchedulingComputerAided
                         //Check constraints for Rooms
                         if (RoomCheckConstraints(cboRoom_10.Text, cboDay_10.Text, cboStart_10.Text, cboEnd_10.Text) == true)
                         {
+                            //audit
+                            md.AuditTrail(AuditTrailData.username, "Update", lblCode_10.Text + " was scheduled to"
+                                + cboProfessor_10.Text + " from"
+                                + cboStart_10.Text
+                                + " to "
+                                + cboEnd_10.Text + " "
+                                + cboDay_10.Text + " in "
+                                + cboRoom_10.Text);
+
                             btnCancel_10.Visible = false;
 
                             MessageBox.Show("Scheduled Successful", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
