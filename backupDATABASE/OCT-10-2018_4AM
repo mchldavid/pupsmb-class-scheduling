@@ -1,0 +1,1069 @@
+-- MySQL Administrator dump 1.4
+--
+-- ------------------------------------------------------
+-- Server version	5.0.91-community-nt
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+
+--
+-- Create schema db_finalnasana
+--
+
+CREATE DATABASE IF NOT EXISTS db_finalnasana;
+USE db_finalnasana;
+
+--
+-- Definition of table `tbl_audittrail`
+--
+
+DROP TABLE IF EXISTS `tbl_audittrail`;
+CREATE TABLE `tbl_audittrail` (
+  `auditTrail_id` int(10) unsigned NOT NULL auto_increment,
+  `dateTime` datetime NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `action` varchar(45) NOT NULL,
+  `description` varchar(100) NOT NULL,
+  PRIMARY KEY  (`auditTrail_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_audittrail`
+--
+
+/*!40000 ALTER TABLE `tbl_audittrail` DISABLE KEYS */;
+INSERT INTO `tbl_audittrail` (`auditTrail_id`,`dateTime`,`username`,`action`,`description`) VALUES 
+ (1,'2018-10-10 03:58:47','asdf','Logged In','Successfully!.'),
+ (2,'2018-10-10 04:14:18','asdf','Logged In','Successfully!.'),
+ (3,'2018-10-10 04:15:50','asdf','Logged In','Successfully!.'),
+ (4,'2018-10-10 04:18:26','asdf','Logged In','Successfully!.'),
+ (5,'2018-10-10 04:21:40','asdf','Logged In','Successfully!.'),
+ (6,'2018-10-10 04:21:54','asdf','Logged Out','Successfully'),
+ (7,'2018-10-10 04:22:34','michael','Logged In','Successfully!.'),
+ (8,'2018-10-10 04:22:37','michael','Logged Out','Successfully'),
+ (9,'2018-10-10 04:22:42','asdf','Logged In','Successfully!.'),
+ (10,'2018-10-10 04:32:40','michael','Logged In','Successfully!.'),
+ (11,'2018-10-10 04:34:18','michael','Logged In','Successfully!.'),
+ (12,'2018-10-10 04:34:33','michael','Added','7:30 AM-1:00 PM on Thursday preferred schedule.'),
+ (13,'2018-10-10 04:34:36','michael','Logged Out','Successfully'),
+ (14,'2018-10-10 04:34:39','asdf','Logged In','Successfully!.'),
+ (15,'2018-10-10 04:35:08','asdf','Logged Out','Successfully'),
+ (16,'2018-10-10 04:37:34','michael','Logged In','Successfully!.'),
+ (17,'2018-10-10 04:37:40','michael','Deleted','Preferred schedule.'),
+ (18,'2018-10-10 04:37:48','michael','Logged Out','Successfully'),
+ (19,'2018-10-10 04:37:53','asdf','Logged In','Successfully!.'),
+ (20,'2018-10-10 04:38:05','asdf','Logged Out','Successfully');
+/*!40000 ALTER TABLE `tbl_audittrail` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tbl_course`
+--
+
+DROP TABLE IF EXISTS `tbl_course`;
+CREATE TABLE `tbl_course` (
+  `course_id` int(10) unsigned NOT NULL auto_increment,
+  `curriculums_id` int(10) unsigned NOT NULL,
+  `courseName` varchar(100) NOT NULL,
+  `courseAcronym` varchar(45) NOT NULL,
+  PRIMARY KEY  (`course_id`),
+  KEY `FK_tbl_course_1` (`curriculums_id`),
+  CONSTRAINT `FK_tbl_course_1` FOREIGN KEY (`curriculums_id`) REFERENCES `tbl_curriculums` (`curriculums_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_course`
+--
+
+/*!40000 ALTER TABLE `tbl_course` DISABLE KEYS */;
+INSERT INTO `tbl_course` (`course_id`,`curriculums_id`,`courseName`,`courseAcronym`) VALUES 
+ (15,2,'Bachelor of Science in Accountancy','BSA'),
+ (16,3,'badflakjsdf','asdfasdf'),
+ (17,4,'Bachelor of Science in Hospitality Management','BSHM'),
+ (18,5,'Bachelor of Science in Information Technology','BSIT'),
+ (19,6,'Bachelor of  Science in Civil Engineering','BSCE'),
+ (20,7,'Bachelor of Science in Education Major in Mathematics','BSEDMT'),
+ (21,8,'Bachelor of Science in Education Major in English','BSEDEN'),
+ (22,9,'Diploma in Office Management Technology','DOMTLOM'),
+ (23,10,'yowowyow','BSA');
+/*!40000 ALTER TABLE `tbl_course` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tbl_curriculums`
+--
+
+DROP TABLE IF EXISTS `tbl_curriculums`;
+CREATE TABLE `tbl_curriculums` (
+  `curriculums_id` int(10) unsigned NOT NULL auto_increment,
+  `programName` varchar(100) NOT NULL,
+  `createdBy` int(10) unsigned NOT NULL,
+  `createdAt` varchar(45) NOT NULL,
+  `status` varchar(45) NOT NULL,
+  `inUsed` varchar(45) NOT NULL,
+  `curriculumYear` varchar(45) NOT NULL,
+  PRIMARY KEY  (`curriculums_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_curriculums`
+--
+
+/*!40000 ALTER TABLE `tbl_curriculums` DISABLE KEYS */;
+INSERT INTO `tbl_curriculums` (`curriculums_id`,`programName`,`createdBy`,`createdAt`,`status`,`inUsed`,`curriculumYear`) VALUES 
+ (2,'Bachelor of Science in Accountancy',7,'Tuesday, 09 October 2018','active','NO','2011'),
+ (3,'badflakjsdf',7,'Monday, 01 October 2018','active','NO','2015'),
+ (4,'Bachelor of Science in Hospitality Management',7,'Monday, 01 October 2018','active','NO','2011'),
+ (5,'Bachelor of Science in Information Technology',7,'Wednesday, 03 October 2018','active','NO','2012'),
+ (6,'Bachelor of  Science in Civil Engineering',7,'Wednesday, 03 October 2018','active','NO','2011'),
+ (7,'Bachelor of Science in Education Major in Mathematics',7,'Wednesday, 03 October 2018','active','NO','2011'),
+ (8,'Bachelor of Science in Education Major in English',7,'Wednesday, 03 October 2018','active','NO','2011'),
+ (9,'Diploma in Office Management Technology',7,'Tuesday, 09 October 2018','active','NO','2011'),
+ (10,'yowowyow',7,'Tuesday, 09 October 2018','active','YES','2011');
+/*!40000 ALTER TABLE `tbl_curriculums` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tbl_preferredschedules`
+--
+
+DROP TABLE IF EXISTS `tbl_preferredschedules`;
+CREATE TABLE `tbl_preferredschedules` (
+  `preferredSchedule_id` int(10) unsigned NOT NULL auto_increment,
+  `users_id` int(10) unsigned NOT NULL,
+  `startTime` varchar(45) NOT NULL,
+  `endTime` varchar(45) NOT NULL,
+  `ps_Day` varchar(45) NOT NULL,
+  PRIMARY KEY  USING BTREE (`preferredSchedule_id`),
+  KEY `FK_tbl_preferredschedules_1` (`users_id`),
+  CONSTRAINT `FK_tbl_preferredschedules_1` FOREIGN KEY (`users_id`) REFERENCES `tbl_users` (`users_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_preferredschedules`
+--
+
+/*!40000 ALTER TABLE `tbl_preferredschedules` DISABLE KEYS */;
+INSERT INTO `tbl_preferredschedules` (`preferredSchedule_id`,`users_id`,`startTime`,`endTime`,`ps_Day`) VALUES 
+ (22,8,'7:30 AM','10:00 AM','Monday'),
+ (23,8,'10:00 AM','5:00 PM','Tuesday'),
+ (25,8,'1:00 PM','4:30 PM','Monday'),
+ (26,8,'7:30 AM','1:00 PM','Thursday');
+/*!40000 ALTER TABLE `tbl_preferredschedules` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tbl_preferredsubjects`
+--
+
+DROP TABLE IF EXISTS `tbl_preferredsubjects`;
+CREATE TABLE `tbl_preferredsubjects` (
+  `preferredSubjects_id` int(10) unsigned NOT NULL auto_increment,
+  `users_id` int(10) unsigned NOT NULL,
+  `subjects_id` int(10) unsigned NOT NULL,
+  `semester` varchar(45) NOT NULL,
+  `schoolYear` varchar(45) NOT NULL,
+  PRIMARY KEY  (`preferredSubjects_id`),
+  KEY `FK_tbl_preferredsubjects_1` (`users_id`),
+  KEY `FK_tbl_preferredsubjects_2` (`subjects_id`),
+  CONSTRAINT `FK_tbl_preferredsubjects_1` FOREIGN KEY (`users_id`) REFERENCES `tbl_users` (`users_id`),
+  CONSTRAINT `FK_tbl_preferredsubjects_2` FOREIGN KEY (`subjects_id`) REFERENCES `tbl_subjects` (`subjects_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_preferredsubjects`
+--
+
+/*!40000 ALTER TABLE `tbl_preferredsubjects` DISABLE KEYS */;
+INSERT INTO `tbl_preferredsubjects` (`preferredSubjects_id`,`users_id`,`subjects_id`,`semester`,`schoolYear`) VALUES 
+ (28,8,47,'1ST','2018-2019'),
+ (29,8,48,'1ST','2018-2019'),
+ (30,8,41,'1ST','2018-2019'),
+ (31,8,228,'1ST','2018-2019'),
+ (32,8,229,'1ST','2018-2019'),
+ (33,8,227,'1ST','2018-2019'),
+ (34,8,128,'1ST','2018-2019'),
+ (35,8,143,'1ST','2018-2019');
+/*!40000 ALTER TABLE `tbl_preferredsubjects` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tbl_professor_scheduled`
+--
+
+DROP TABLE IF EXISTS `tbl_professor_scheduled`;
+CREATE TABLE `tbl_professor_scheduled` (
+  `professorsScheduled_id` int(10) unsigned NOT NULL auto_increment,
+  `curriculumns_id` int(10) unsigned NOT NULL,
+  `course` varchar(45) NOT NULL,
+  `year` varchar(45) NOT NULL,
+  `section` varchar(45) NOT NULL,
+  `scheduledBy` varchar(45) NOT NULL,
+  `scheduledDate` varchar(45) NOT NULL,
+  `semester` varchar(45) NOT NULL,
+  `schoolYear` varchar(45) NOT NULL,
+  `room` varchar(45) NOT NULL,
+  `subjectCode` varchar(45) NOT NULL,
+  `subjectDescription` varchar(100) NOT NULL,
+  `professor` varchar(100) NOT NULL,
+  `scheduledStartTime` varchar(45) NOT NULL,
+  `scheduledEndTime` varchar(45) NOT NULL,
+  `scheduledDay` varchar(45) NOT NULL,
+  PRIMARY KEY  (`professorsScheduled_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_professor_scheduled`
+--
+
+/*!40000 ALTER TABLE `tbl_professor_scheduled` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_professor_scheduled` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tbl_room`
+--
+
+DROP TABLE IF EXISTS `tbl_room`;
+CREATE TABLE `tbl_room` (
+  `room_id` int(10) unsigned NOT NULL auto_increment,
+  `roomCode` varchar(45) NOT NULL,
+  `roomName` varchar(45) NOT NULL,
+  `roomSlots` int(10) unsigned NOT NULL,
+  `roomStatus` varchar(45) NOT NULL,
+  PRIMARY KEY  (`room_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_room`
+--
+
+/*!40000 ALTER TABLE `tbl_room` DISABLE KEYS */;
+INSERT INTO `tbl_room` (`room_id`,`roomCode`,`roomName`,`roomSlots`,`roomStatus`) VALUES 
+ (8,'RM203','Room 203',60,'ACTIVE'),
+ (10,'RM201','Room 201',60,'ACTIVE'),
+ (11,'RM202','Room 202',60,'INACTIVE');
+/*!40000 ALTER TABLE `tbl_room` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tbl_room_scheduled`
+--
+
+DROP TABLE IF EXISTS `tbl_room_scheduled`;
+CREATE TABLE `tbl_room_scheduled` (
+  `room_scheduled_id` int(10) unsigned NOT NULL auto_increment,
+  `roomCode` varchar(45) NOT NULL,
+  `roomStartTime` varchar(45) NOT NULL,
+  `roomEndTime` varchar(45) NOT NULL,
+  `roomDay` varchar(45) NOT NULL,
+  `assignedProfessor` varchar(100) NOT NULL,
+  `subjectCode` varchar(45) NOT NULL,
+  `course` varchar(45) NOT NULL,
+  `year` varchar(45) NOT NULL,
+  `section` varchar(45) NOT NULL,
+  `semester` varchar(45) NOT NULL,
+  `schoolYear` varchar(45) NOT NULL,
+  `curriculums_id` int(10) unsigned NOT NULL,
+  PRIMARY KEY  (`room_scheduled_id`),
+  KEY `FK_tbl_room_scheduled_1` (`curriculums_id`),
+  CONSTRAINT `FK_tbl_room_scheduled_1` FOREIGN KEY (`curriculums_id`) REFERENCES `tbl_curriculums` (`curriculums_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=446 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_room_scheduled`
+--
+
+/*!40000 ALTER TABLE `tbl_room_scheduled` DISABLE KEYS */;
+INSERT INTO `tbl_room_scheduled` (`room_scheduled_id`,`roomCode`,`roomStartTime`,`roomEndTime`,`roomDay`,`assignedProfessor`,`subjectCode`,`course`,`year`,`section`,`semester`,`schoolYear`,`curriculums_id`) VALUES 
+ (49,'RM201','10:30 AM','1:30 PM','Monday','TBA','CWTS 1013','BSHM','1','1','1ST','2015-2016',4),
+ (77,'RM201','8:00 AM','11:00 AM','Monday','Michael  David','ACCO 2143','BSIT','1','1','1ST','2018-2019',5),
+ (78,'RM201','10:30 AM','12:00 PM','Tuesday','TBA','COMP 20123','BSIT','1','1','1ST','2018-2019',5),
+ (79,'','','','','','COMP 2013','BSIT','1','1','1ST','2018-2019',5),
+ (80,'','','','','','CWTS 1013','BSIT','1','1','1ST','2018-2019',5),
+ (81,'','','','','','ENGL 1013','BSIT','1','1','1ST','2018-2019',5),
+ (82,'','','','','','FILI 1013','BSIT','1','1','1ST','2018-2019',5),
+ (83,'','','','','','MATH 1013','BSIT','1','1','1ST','2018-2019',5),
+ (84,'','','','','','OFAD 3003','BSIT','1','1','1ST','2018-2019',5),
+ (85,'','','','','','PHED 1012','BSIT','1','1','1ST','2018-2019',5),
+ (95,'RM201','10:30 AM','11:30 AM','Wednesday','TBA','ACCO 2143','BSIT','1','1','1ST','2015-2016',5),
+ (96,'','','','','','COMP 20123','BSIT','1','1','1ST','2015-2016',5),
+ (97,'','','','','','COMP 2013','BSIT','1','1','1ST','2015-2016',5),
+ (98,'','','','','','CWTS 1013','BSIT','1','1','1ST','2015-2016',5),
+ (99,'','','','','','ENGL 1013','BSIT','1','1','1ST','2015-2016',5),
+ (100,'','','','','','FILI 1013','BSIT','1','1','1ST','2015-2016',5),
+ (101,'','','','','','MATH 1013','BSIT','1','1','1ST','2015-2016',5),
+ (102,'','','','','','OFAD 3003','BSIT','1','1','1ST','2015-2016',5),
+ (103,'','','','','','PHED 1012','BSIT','1','1','1ST','2015-2016',5),
+ (144,'','','','','','OMMT 112','DOMT','3','1','1ST','2017-2018',9),
+ (145,'','','','','','OMT 311','DOMT','3','1','1ST','2017-2018',9),
+ (146,'','','','','','OMT 312','DOMT','3','1','1ST','2017-2018',9),
+ (147,'','','','','','OMT 313','DOMT','3','1','1ST','2017-2018',9),
+ (148,'','','','','','OMT 314','DOMT','3','1','1ST','2017-2018',9),
+ (149,'','','','','','OMT 315','DOMT','3','1','1ST','2017-2018',9),
+ (150,'','','','','','OMT 316','DOMT','3','1','1ST','2017-2018',9),
+ (151,'','','','','','OMT 317','DOMT','3','1','1ST','2017-2018',9),
+ (304,'RM201','3:00 PM','6:00 PM','Monday','Michael  David','OMMT 112','DOMT','3','1','1ST','2018-2019',9),
+ (305,'RM201','11:30 AM','2:30 PM','Monday','Michael  David','OMT 311','DOMT','3','1','1ST','2018-2019',9),
+ (306,'RM201','1:00 PM','4:00 PM','Tuesday','Michael  David','OMT 312','DOMT','3','1','1ST','2018-2019',9),
+ (307,'','','','','','OMT 313','DOMT','3','1','1ST','2018-2019',9),
+ (308,'','','','','','OMT 314','DOMT','3','1','1ST','2018-2019',9),
+ (309,'','','','','','OMT 315','DOMT','3','1','1ST','2018-2019',9),
+ (310,'','','','','','OMT 316','DOMT','3','1','1ST','2018-2019',9),
+ (311,'','','','','','OMT 317','DOMT','3','1','1ST','2018-2019',9),
+ (403,'RM202','7:30 AM','10:30 AM','Wednesday','Michael  David','ACCO 3046','BSA','3','1','1ST','2018-2019',2),
+ (404,'RM202','11:30 AM','2:30 PM','Tuesday','TBA','ACCO 3053','BSA','3','1','1ST','2018-2019',2),
+ (405,'','','','','','ACCO 3073','BSA','3','1','1ST','2018-2019',2),
+ (406,'','','','','','ACCO 3093','BSA','3','1','1ST','2018-2019',2),
+ (407,'','','','','','CCO 3033','BSA','3','1','1ST','2018-2019',2),
+ (408,'','','','','','LAW 3013','BSA','3','1','1ST','2018-2019',2),
+ (409,'','','','','','MATH 3173','BSA','3','1','1ST','2018-2019',2),
+ (418,'RM201','10:00 AM','1:00 PM','Thursday','TBA','ACCO 2093','BSA','4','1','1ST','2018-2019',10),
+ (419,'','','','','','ACCO 3133','BSA','4','1','1ST','2018-2019',10),
+ (420,'','','','','','ACCO 3143','BSA','4','1','1ST','2018-2019',10),
+ (421,'','','','','','ACCO 3153','BSA','4','1','1ST','2018-2019',10),
+ (422,'','','','','','ACCO 3166','BSA','4','1','1ST','2018-2019',10),
+ (423,'','','','','','ACCO 4011','BSA','4','1','1ST','2018-2019',10),
+ (424,'','','','','','ACCO 4143','BSA','4','1','1ST','2018-2019',10),
+ (425,'','','','','','LAW 3033','BSA','4','1','1ST','2018-2019',10),
+ (436,'','7:00 AM','10:00 AM','Monday','TBA','CIEN 3053','BSCE','3','1','1ST','2018-2019',6),
+ (437,'','','','','','CIEN 3063','BSCE','3','1','1ST','2018-2019',6),
+ (438,'','','','','','CIEN 3073','BSCE','3','1','1ST','2018-2019',6),
+ (439,'','','','','','CIEN 3342','BSCE','3','1','1ST','2018-2019',6),
+ (440,'','','','','','ENSC 2043','BSCE','3','1','1ST','2018-2019',6),
+ (441,'','','','','','ENSC 2063','BSCE','3','1','1ST','2018-2019',6),
+ (442,'','','','','','ENSC 2083','BSCE','3','1','1ST','2018-2019',6),
+ (443,'','','','','','ENSC 2112','BSCE','3','1','1ST','2018-2019',6),
+ (444,'','','','','','ENSC 2192','BSCE','3','1','1ST','2018-2019',6),
+ (445,'','','','','','MATH 2103','BSCE','3','1','1ST','2018-2019',6);
+/*!40000 ALTER TABLE `tbl_room_scheduled` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tbl_sections`
+--
+
+DROP TABLE IF EXISTS `tbl_sections`;
+CREATE TABLE `tbl_sections` (
+  `section_id` int(10) unsigned NOT NULL auto_increment,
+  `course` varchar(45) NOT NULL,
+  `year` int(10) unsigned NOT NULL,
+  `section` varchar(45) NOT NULL,
+  PRIMARY KEY  (`section_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=83 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_sections`
+--
+
+/*!40000 ALTER TABLE `tbl_sections` DISABLE KEYS */;
+INSERT INTO `tbl_sections` (`section_id`,`course`,`year`,`section`) VALUES 
+ (33,'BSHM',1,'1'),
+ (34,'BSHM',1,'2'),
+ (35,'BSHM',1,'3'),
+ (36,'BSIT',1,'1'),
+ (40,'BSCE',2,'1'),
+ (41,'BSCE',2,'2'),
+ (42,'BSCE',3,'1'),
+ (43,'BSCE',4,'1'),
+ (44,'BSCE',5,'1'),
+ (45,'DOMT',1,'1'),
+ (46,'DOMT',1,'2'),
+ (47,'DOMT',3,'1'),
+ (48,'DOMTLOM',2,'1'),
+ (49,'BSA',3,'1'),
+ (50,'BSA',4,'1'),
+ (60,'BSCE',1,'1'),
+ (61,'BSCE',6,'1'),
+ (62,'BSCE',6,'2'),
+ (63,'BSCE',6,'3'),
+ (64,'BSCE',6,'4'),
+ (80,'BSA',1,'1'),
+ (81,'BSA',1,'2'),
+ (82,'BSA',1,'3');
+/*!40000 ALTER TABLE `tbl_sections` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tbl_securityquestions`
+--
+
+DROP TABLE IF EXISTS `tbl_securityquestions`;
+CREATE TABLE `tbl_securityquestions` (
+  `sq_id` int(10) unsigned NOT NULL auto_increment,
+  `users_id` int(10) unsigned NOT NULL,
+  `answer` varchar(45) NOT NULL,
+  `question` varchar(100) NOT NULL,
+  PRIMARY KEY  (`sq_id`),
+  KEY `FK_tbl_securityquestions_1` (`users_id`),
+  CONSTRAINT `FK_tbl_securityquestions_1` FOREIGN KEY (`users_id`) REFERENCES `tbl_users` (`users_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_securityquestions`
+--
+
+/*!40000 ALTER TABLE `tbl_securityquestions` DISABLE KEYS */;
+INSERT INTO `tbl_securityquestions` (`sq_id`,`users_id`,`answer`,`question`) VALUES 
+ (6,7,'asdf','Who is your favorite actor, musician, or artist?'),
+ (7,7,'asdf','What is your mother’s maiden name?'),
+ (8,7,'asdfasdf','What is your favorite color?'),
+ (9,7,'asdf','In what city were you born?'),
+ (10,7,'asdf','What is the name of your favorite pet?'),
+ (11,8,'michael','Who is your favorite actor, musician, or artist?'),
+ (12,8,'michael','What is your mother’s maiden name?'),
+ (13,8,'michael','What is your favorite color?'),
+ (14,8,'michael','In what city were you born?'),
+ (15,8,'MICHAEL','What is the name of your favorite pet?');
+/*!40000 ALTER TABLE `tbl_securityquestions` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tbl_students_scheduled`
+--
+
+DROP TABLE IF EXISTS `tbl_students_scheduled`;
+CREATE TABLE `tbl_students_scheduled` (
+  `students_scheduled_id` int(10) unsigned NOT NULL auto_increment,
+  `curriculums_id` int(10) unsigned NOT NULL,
+  `course` varchar(45) NOT NULL,
+  `year` varchar(45) NOT NULL,
+  `section` varchar(45) NOT NULL,
+  `scheduledBy` varchar(45) NOT NULL,
+  `scheduledDate` datetime NOT NULL,
+  `semester` varchar(45) NOT NULL,
+  `schoolYear` varchar(45) NOT NULL,
+  `room` varchar(45) NOT NULL,
+  `subjectCode` varchar(45) NOT NULL,
+  `subjectDescription` varchar(200) NOT NULL,
+  `professor` varchar(100) NOT NULL,
+  `scheduledStartTime` varchar(45) NOT NULL,
+  `scheduledEndTime` varchar(45) NOT NULL,
+  `scheduledDay` varchar(45) NOT NULL,
+  `lecHours` varchar(45) NOT NULL,
+  `labHours` varchar(45) NOT NULL,
+  `units` varchar(45) NOT NULL,
+  PRIMARY KEY  USING BTREE (`students_scheduled_id`),
+  KEY `FK_tbl_students_scheduled_1` (`curriculums_id`),
+  CONSTRAINT `FK_tbl_students_scheduled_1` FOREIGN KEY (`curriculums_id`) REFERENCES `tbl_curriculums` (`curriculums_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=425 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_students_scheduled`
+--
+
+/*!40000 ALTER TABLE `tbl_students_scheduled` DISABLE KEYS */;
+INSERT INTO `tbl_students_scheduled` (`students_scheduled_id`,`curriculums_id`,`course`,`year`,`section`,`scheduledBy`,`scheduledDate`,`semester`,`schoolYear`,`room`,`subjectCode`,`subjectDescription`,`professor`,`scheduledStartTime`,`scheduledEndTime`,`scheduledDay`,`lecHours`,`labHours`,`units`) VALUES 
+ (28,4,'BSHM','1','1','7','2018-10-01 13:50:34','1ST','2015-2016','RM201','CWTS 1013','Civic Welfare Training Service 1','TBA','10:30 AM','1:30 PM','Monday','','',''),
+ (56,5,'BSIT','1','1','7','2018-10-01 17:38:17','1ST','2018-2019','RM201','ACCO 2143','Accounting Principles','Michael  David','8:00 AM','11:00 AM','Monday','','',''),
+ (57,5,'BSIT','1','1','7','2018-10-01 17:38:17','1ST','2018-2019','RM201','COMP 20123','Information Technology Fundamentals','TBA','10:30 AM','12:00 PM','Tuesday','','',''),
+ (58,5,'BSIT','1','1','7','2018-10-01 17:38:17','1ST','2018-2019','','COMP 2013','Fundamentals of Problem Solving and Programming 1','','','','','','',''),
+ (59,5,'BSIT','1','1','7','2018-10-01 17:38:17','1ST','2018-2019','','CWTS 1013','Civic Welfare Training Service 1','','','','','','',''),
+ (60,5,'BSIT','1','1','7','2018-10-01 17:38:18','1ST','2018-2019','','ENGL 1013','Study and Thinking Skills in English','','','','','','',''),
+ (61,5,'BSIT','1','1','7','2018-10-01 17:38:18','1ST','2018-2019','','FILI 1013','Komunikasyon sa Akademikong Filipino','','','','','','',''),
+ (62,5,'BSIT','1','1','7','2018-10-01 17:38:18','1ST','2018-2019','','MATH 1013','College Algebra','','','','','','',''),
+ (63,5,'BSIT','1','1','7','2018-10-01 17:38:18','1ST','2018-2019','','OFAD 3003','Keyboarding Laboratory','','','','','','',''),
+ (64,5,'BSIT','1','1','7','2018-10-01 17:38:18','1ST','2018-2019','','PHED 1012','Physical Fitness and Self-Testing Activities - Physical Fitness','','','','','','',''),
+ (74,5,'BSIT','1','1','7','2018-10-01 17:56:04','1ST','2015-2016','RM201','ACCO 2143','Accounting Principles','TBA','10:30 AM','11:30 AM','Wednesday','','',''),
+ (75,5,'BSIT','1','1','7','2018-10-01 17:56:04','1ST','2015-2016','','COMP 20123','Information Technology Fundamentals','','','','','','',''),
+ (76,5,'BSIT','1','1','7','2018-10-01 17:56:04','1ST','2015-2016','','COMP 2013','Fundamentals of Problem Solving and Programming 1','','','','','','',''),
+ (77,5,'BSIT','1','1','7','2018-10-01 17:56:04','1ST','2015-2016','','CWTS 1013','Civic Welfare Training Service 1','','','','','','',''),
+ (78,5,'BSIT','1','1','7','2018-10-01 17:56:04','1ST','2015-2016','','ENGL 1013','Study and Thinking Skills in English','','','','','','',''),
+ (79,5,'BSIT','1','1','7','2018-10-01 17:56:04','1ST','2015-2016','','FILI 1013','Komunikasyon sa Akademikong Filipino','','','','','','',''),
+ (80,5,'BSIT','1','1','7','2018-10-01 17:56:04','1ST','2015-2016','','MATH 1013','College Algebra','','','','','','',''),
+ (81,5,'BSIT','1','1','7','2018-10-01 17:56:04','1ST','2015-2016','','OFAD 3003','Keyboarding Laboratory','','','','','','',''),
+ (82,5,'BSIT','1','1','7','2018-10-01 17:56:04','1ST','2015-2016','','PHED 1012','Physical Fitness and Self-Testing Activities - Physical Fitness','','','','','','',''),
+ (123,9,'DOMT','3','1','7','2018-10-06 07:53:25','1ST','2017-2018','','OMMT 112','Math of Investment','','','','','','',''),
+ (124,9,'DOMT','3','1','7','2018-10-06 07:53:25','1ST','2017-2018','','OMT 311','Introduction to Internet and Basic Web Design','','','','','','',''),
+ (125,9,'DOMT','3','1','7','2018-10-06 07:53:25','1ST','2017-2018','','OMT 312','Management Information System','','','','','','',''),
+ (126,9,'DOMT','3','1','7','2018-10-06 07:53:25','1ST','2017-2018','','OMT 313','Financial Business Management','','','','','','',''),
+ (127,9,'DOMT','3','1','7','2018-10-06 07:53:25','1ST','2017-2018','','OMT 314','Events Management','','','','','','',''),
+ (128,9,'DOMT','3','1','7','2018-10-06 07:53:25','1ST','2017-2018','','OMT 315','Introduction to Research','','','','','','',''),
+ (129,9,'DOMT','3','1','7','2018-10-06 07:53:25','1ST','2017-2018','','OMT 316','Office Administration e-Learning Approach','','','','','','',''),
+ (130,9,'DOMT','3','1','7','2018-10-06 07:53:25','1ST','2017-2018','','OMT 317','General Psychology','','','','','','',''),
+ (283,9,'DOMT','3','1','7','2018-10-07 00:48:22','1ST','2018-2019','RM201','OMMT 112','Math of Investment','Michael  David','3:00 PM','6:00 PM','Monday','','',''),
+ (284,9,'DOMT','3','1','7','2018-10-07 00:48:22','1ST','2018-2019','RM201','OMT 311','Introduction to Internet and Basic Web Design','Michael  David','11:30 AM','2:30 PM','Monday','','',''),
+ (285,9,'DOMT','3','1','7','2018-10-07 00:48:22','1ST','2018-2019','RM201','OMT 312','Management Information System','Michael  David','1:00 PM','4:00 PM','Tuesday','','',''),
+ (286,9,'DOMT','3','1','7','2018-10-07 00:48:22','1ST','2018-2019','','OMT 313','Financial Business Management','','','','','','',''),
+ (287,9,'DOMT','3','1','7','2018-10-07 00:48:22','1ST','2018-2019','','OMT 314','Events Management','','','','','','',''),
+ (288,9,'DOMT','3','1','7','2018-10-07 00:48:22','1ST','2018-2019','','OMT 315','Introduction to Research','','','','','','',''),
+ (289,9,'DOMT','3','1','7','2018-10-07 00:48:22','1ST','2018-2019','','OMT 316','Office Administration e-Learning Approach','','','','','','',''),
+ (290,9,'DOMT','3','1','7','2018-10-07 00:48:22','1ST','2018-2019','','OMT 317','General Psychology','','','','','','',''),
+ (382,2,'BSA','3','1','7','2018-10-09 15:04:42','1ST','2018-2019','RM202','ACCO 3046','Cost Accounting and Cost Management','Michael  David','7:30 AM','10:30 AM','Wednesday','6','0','6'),
+ (383,2,'BSA','3','1','7','2018-10-09 15:04:42','1ST','2018-2019','RM202','ACCO 3053','Advanced Financial Accounting & Reporting, Part 1','TBA','11:30 AM','2:30 PM','Tuesday','3','0','3'),
+ (384,2,'BSA','3','1','7','2018-10-09 15:04:42','1ST','2018-2019','','ACCO 3073','Production and Operations Management','','','','','3','0','3'),
+ (385,2,'BSA','3','1','7','2018-10-09 15:04:42','1ST','2018-2019','','ACCO 3093','Financial Management, Part 2','','','','','3','0','3'),
+ (386,2,'BSA','3','1','7','2018-10-09 15:04:42','1ST','2018-2019','','CCO 3033','Financial Accounting and Reporting, Part 3','','','','','3','0','3'),
+ (387,2,'BSA','3','1','7','2018-10-09 15:04:42','1ST','2018-2019','','LAW 3013','Law on Business Organizations','','','','','3','0','3'),
+ (388,2,'BSA','3','1','7','2018-10-09 15:04:42','1ST','2018-2019','','MATH 3173','Quantitative Techniques for Decision Making','','','','','3','0','3'),
+ (397,10,'BSA','4','1','7','2018-10-09 22:16:11','1ST','2018-2019','RM201','ACCO 2093','Auditing in a CIS Environment','TBA','10:00 AM','1:00 PM','Thursday','1.5','1.5','3'),
+ (398,10,'BSA','4','1','7','2018-10-09 22:16:11','1ST','2018-2019','','ACCO 3133','Management Accounting, Part 2','','','','','3','0','3'),
+ (399,10,'BSA','4','1','7','2018-10-09 22:16:11','1ST','2018-2019','','ACCO 3143','Management Consultancy','','','','','3','0','3'),
+ (400,10,'BSA','4','1','7','2018-10-09 22:16:11','1ST','2018-2019','','ACCO 3153','Business and Transfer Taxes','','','','','3','0','3'),
+ (401,10,'BSA','4','1','7','2018-10-09 22:16:11','1ST','2018-2019','','ACCO 3166','Applied Auditing','','','','','6','0','6'),
+ (402,10,'BSA','4','1','7','2018-10-09 22:16:11','1ST','2018-2019','','ACCO 4011','Synthesis','','','','','1','0','1'),
+ (403,10,'BSA','4','1','7','2018-10-09 22:16:11','1ST','2018-2019','','ACCO 4143','Internship / Thesis','','','','','3','0','3'),
+ (404,10,'BSA','4','1','7','2018-10-09 22:16:11','1ST','2018-2019','','LAW 3033','Negotiable Instruments','','','','','3','0','3'),
+ (415,6,'BSCE','3','1','7','2018-10-10 00:21:22','1ST','2018-2019','','CIEN 3053','Elementary Surveying','TBA','7:00 AM','10:00 AM','Monday','1','6','3'),
+ (416,6,'BSCE','3','1','7','2018-10-10 00:21:22','1ST','2018-2019','','CIEN 3063','Methods of Engineering Research','','','','','3','0','3'),
+ (417,6,'BSCE','3','1','7','2018-10-10 00:21:22','1ST','2018-2019','','CIEN 3073','Engineering Geology and Rock Mechanics','','','','','3','0','3'),
+ (418,6,'BSCE','3','1','7','2018-10-10 00:21:22','1ST','2018-2019','','CIEN 3342','Construction Estimating','','','','','1','3','2'),
+ (419,6,'BSCE','3','1','7','2018-10-10 00:21:22','1ST','2018-2019','','ENSC 2043','Static of Rigid Bodies','','','','','3','0','3'),
+ (420,6,'BSCE','3','1','7','2018-10-10 00:21:22','1ST','2018-2019','','ENSC 2063','Engineering Economy','','','','','3','0','3'),
+ (421,6,'BSCE','3','1','7','2018-10-10 00:21:22','1ST','2018-2019','','ENSC 2083','Dynamics of Rigid Bodies','','','','','3','0','3'),
+ (422,6,'BSCE','3','1','7','2018-10-10 00:21:22','1ST','2018-2019','','ENSC 2112','Environmental Engineering','','','','','2','0','2'),
+ (423,6,'BSCE','3','1','7','2018-10-10 00:21:22','1ST','2018-2019','','ENSC 2192','Computer Fundamentals and Programming','','','','','0','6','2'),
+ (424,6,'BSCE','3','1','7','2018-10-10 00:21:22','1ST','2018-2019','','MATH 2103','Elementary Differential Equations','','','','','3','0','3');
+/*!40000 ALTER TABLE `tbl_students_scheduled` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tbl_subjects`
+--
+
+DROP TABLE IF EXISTS `tbl_subjects`;
+CREATE TABLE `tbl_subjects` (
+  `subjects_id` int(10) unsigned NOT NULL auto_increment,
+  `curriculums_id` int(10) unsigned NOT NULL,
+  `course_id` int(10) unsigned NOT NULL,
+  `subjectCode` varchar(45) NOT NULL,
+  `subjectDescription` varchar(100) NOT NULL,
+  `lectureHours` float NOT NULL,
+  `laboratoryHours` float NOT NULL,
+  `units` int(10) unsigned NOT NULL,
+  `yearLevel` int(10) unsigned NOT NULL,
+  `course` varchar(45) NOT NULL,
+  `semester` varchar(45) NOT NULL,
+  PRIMARY KEY  USING BTREE (`subjects_id`),
+  KEY `FK_tbl_subjects_1` (`curriculums_id`),
+  KEY `FK_tbl_subjects_2` (`course_id`),
+  CONSTRAINT `FK_tbl_subjects_1` FOREIGN KEY (`curriculums_id`) REFERENCES `tbl_curriculums` (`curriculums_id`),
+  CONSTRAINT `FK_tbl_subjects_2` FOREIGN KEY (`course_id`) REFERENCES `tbl_course` (`course_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=895 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_subjects`
+--
+
+/*!40000 ALTER TABLE `tbl_subjects` DISABLE KEYS */;
+INSERT INTO `tbl_subjects` (`subjects_id`,`curriculums_id`,`course_id`,`subjectCode`,`subjectDescription`,`lectureHours`,`laboratoryHours`,`units`,`yearLevel`,`course`,`semester`) VALUES 
+ (38,4,17,'CWTS 1013','Civic Welfare Training Service 1',3,1,3,1,'BSHM','1ST'),
+ (39,4,17,'CWTS 1013','Civil Welfare Training Service 1',3,1,3,1,'BSHM','1ST'),
+ (40,4,17,'ENGL 1013','Study and Thinking Skills in English',3,1,3,1,'BSHM','1ST'),
+ (41,4,17,'FILI ','Komunikasyon sa Akademikong Filipino',3,1,3,1,'BSHM','1ST'),
+ (42,4,17,'HORE 1013','Culinary Arts',3,6,5,1,'BSHM','1ST'),
+ (43,4,17,'HORE 3083','Introduction to Hospitality Management',3,1,3,1,'BSHM','1ST'),
+ (44,4,17,'MATH 1133','Mathematics in Business',3,1,3,1,'BSHM','1ST'),
+ (45,4,17,'NASC 2163','Principles of Safety, Hygiene and Sanitation',3,1,3,1,'BSHM','1ST'),
+ (46,4,17,'PHED 1012','Physical Fitness and Self-Testing Activities - Physical Fitness',2,1,2,1,'BSHM','1ST'),
+ (47,5,18,'ACCO 2143','Accounting Principles',3,1,3,1,'BSIT','1ST'),
+ (48,5,18,'COMP 2013','Fundamentals of Problem Solving and Programming 1',2,3,3,1,'BSIT','1ST'),
+ (49,5,18,'COMP 20123','Information Technology Fundamentals',2,3,3,1,'BSIT','1ST'),
+ (50,5,18,'CWTS 1013','Civic Welfare Training Service 1',3,1,3,1,'BSIT','1ST'),
+ (51,5,18,'ENGL 1013','Study and Thinking Skills in English',3,1,3,1,'BSIT','1ST'),
+ (52,5,18,'FILI 1013','Komunikasyon sa Akademikong Filipino',3,1,3,1,'BSIT','1ST'),
+ (53,5,18,'MATH 1013','College Algebra',3,1,3,1,'BSIT','1ST'),
+ (54,5,18,'OFAD 3003','Keyboarding Laboratory',1,2,3,1,'BSIT','1ST'),
+ (55,5,18,'PHED 1012','Physical Fitness and Self-Testing Activities - Physical Fitness',2,1,3,1,'BSIT','1ST'),
+ (56,5,18,'COMP 2103','Object-Oriented Programming',2,3,3,2,'BSIT','1ST'),
+ (57,5,18,'COMP 21033023','Data Communication and Networking',2,3,3,2,'BSIT','1ST'),
+ (58,5,18,'ENGL 1033','Speech Communication',3,1,3,2,'BSIT','1ST'),
+ (59,5,18,'HIST 1013','Heyograpiya at Kasaysayan ng Pilipinas',3,1,3,2,'BSIT','1ST'),
+ (60,5,18,'INTE 2033','Computer System Organization',2,3,3,2,'BSIT','1ST'),
+ (61,5,18,'INTE 2053','Programming 3',2,3,3,2,'BSIT','1ST'),
+ (62,5,18,'PHED 1252','Individual/Dual/Combative Sports - Badminton',2,1,2,2,'BSIT','1ST'),
+ (63,5,18,'POSC 1013','Politics and Governance with Philippine Constitution',3,1,3,2,'BSIT','1ST'),
+ (64,5,18,'STAT 2053','Statistics and Probability',3,1,3,2,'BSIT','1ST'),
+ (125,5,18,'asfasf','asdfsad',1,1,1,4,'BSIT','1ST'),
+ (126,2,15,'ACCO 4444','ACCOUNTING 1',1,1,1,1,'BSA','1ST'),
+ (127,2,15,'CCO 3033','Financial Accounting and Reporting, Part 3',3,0,3,3,'BSA','1ST'),
+ (128,2,15,'ACCO 3046','Cost Accounting and Cost Management',6,0,6,3,'BSA','1ST'),
+ (129,2,15,'ACCO 3053','Advanced Financial Accounting & Reporting, Part 1',3,0,3,3,'BSA','1ST'),
+ (130,2,15,'ACCO 3073','Production and Operations Management',3,0,3,3,'BSA','1ST'),
+ (131,2,15,'ACCO 3093','Financial Management, Part 2',3,0,3,3,'BSA','1ST'),
+ (132,2,15,'LAW 3013','Law on Business Organizations',3,0,3,3,'BSA','1ST'),
+ (133,2,15,'MATH 3173','Quantitative Techniques for Decision Making',3,0,3,3,'BSA','1ST'),
+ (134,2,15,'ACCO 2093','Auditing in a CIS Environment',2,2,3,4,'BSA','1ST'),
+ (135,2,15,'ACCO 3133','Management Accounting, Part 2',3,0,3,4,'BSA','1ST'),
+ (136,2,15,'ACCO 3143','Management Consultancy',3,0,3,4,'BSA','1ST'),
+ (137,2,15,'ACCO 3153','Business and Transfer Taxes',3,0,3,4,'BSA','1ST'),
+ (138,2,15,'ACCO 3166','Applied Auditing',6,0,6,4,'BSA','1ST'),
+ (139,2,15,'ACCO 4011','Synthesis',1,0,1,4,'BSA','1ST'),
+ (140,2,15,'ACCO 4143','Internship / Thesis',3,0,3,4,'BSA','1ST'),
+ (141,2,15,'LAW 3033','Negotiable Instruments',3,0,3,4,'BSA','1ST'),
+ (142,6,19,'CIEN 3053','Elementary Surveying',1,6,3,3,'BSCE','1ST'),
+ (143,6,19,'CIEN 3063','Methods of Engineering Research',3,0,3,3,'BSCE','1ST'),
+ (144,6,19,'CIEN 3073','Engineering Geology and Rock Mechanics',3,0,3,3,'BSCE','1ST'),
+ (145,6,19,'CIEN 3342','Construction Estimating',1,3,2,3,'BSCE','1ST'),
+ (146,6,19,'ENSC 2043','Static of Rigid Bodies',3,0,3,3,'BSCE','1ST'),
+ (147,6,19,'ENSC 2063','Engineering Economy',3,0,3,3,'BSCE','1ST'),
+ (148,6,19,'ENSC 2083','Dynamics of Rigid Bodies',3,0,3,3,'BSCE','1ST'),
+ (149,6,19,'ENSC 2112','Environmental Engineering',2,0,2,3,'BSCE','1ST'),
+ (150,6,19,'ENSC 2192','Computer Fundamentals and Programming',0,6,2,3,'BSCE','1ST'),
+ (151,6,19,'MATH 2103','Elementary Differential Equations',3,0,3,3,'BSCE','1ST'),
+ (152,6,19,'BSCE-ELEC1','BSCE ELECTIVE 1',2,0,2,4,'BSCE','1ST'),
+ (153,6,19,'CIEN 3123','Construction Project Management',2,3,3,4,'BSCE','1ST'),
+ (154,6,19,'CIEN 3134','Soil Mechanics',3,3,4,4,'BSCE','1ST'),
+ (155,6,19,'CIEN 3144','Structural Theory 1',2,6,4,4,'BSCE','1ST'),
+ (156,6,19,'CIEN 3153','Fluid Mechanics',2,3,3,4,'BSCE','1ST'),
+ (157,6,19,'CIEN 3164','Route Surveying and Earthworks',3,3,4,4,'BSCE','1ST'),
+ (158,6,19,'CIEN 3402','Building Design 1',1,3,2,4,'BSCE','1ST'),
+ (159,6,19,'CIEN 3412','Value Engineering',2,0,2,4,'BSCE','1ST'),
+ (160,6,19,'BSCE-ELEC3','BSCE ELECTIVE 3',2,0,2,5,'BSCE','1ST'),
+ (161,6,19,'BSCE-ELEC4','BSCE ELECTIVE 4',2,0,2,5,'BSCE','1ST'),
+ (162,6,19,'CIEN 3103','Computer Application in Civil Engineering',2,3,3,5,'BSCE','1ST'),
+ (163,6,19,'CIEN 3234','Steel Design',3,3,4,5,'BSCE','1ST'),
+ (164,6,19,'CIEN 3242','Timber Design',1,3,2,5,'BSCE','1ST'),
+ (165,6,19,'CIEN 3262','Earthquake Engineering',1,3,2,5,'BSCE','1ST'),
+ (166,6,19,'CIEN 3322','Civil Engineering Project 2',1,3,2,5,'BSCE','1ST'),
+ (167,6,19,'CIEN 3454','Principles of Concrete Design',3,3,4,5,'BSCE','1ST'),
+ (168,6,19,'CIEN 3463','Transportation Engineering',3,0,3,5,'BSCE','1ST'),
+ (169,6,19,'CIEN 4122','Traffic Engineering(ELECTIVE 3)',2,0,2,5,'BSCE','1ST'),
+ (170,7,20,'EDUC 2073','Principles and Strategies of Teaching 1',3,0,3,3,'BSEDMT','1ST'),
+ (171,7,20,'EDUC 2081','Field Study 2-Experiencing the Teaching-Learning Process',1,0,1,3,'BSEDMT','1ST'),
+ (172,7,20,'EDUC 2093','Educational Technology 2',3,0,3,3,'BSEDMT','1ST'),
+ (173,7,20,'EDUC 2101','Field Study 3-Technology in the Learning Environment',1,0,1,3,'BSEDMT','1ST'),
+ (174,7,20,'EDUC 2113','Philosophy of Education',3,0,3,3,'BSEDMT','1ST'),
+ (175,7,20,'MATH 2073','Differential Calculus',3,0,3,3,'BSEDMT','1ST'),
+ (176,7,20,'MATH 2213','Number Theory',3,0,3,3,'BSEDMT','1ST'),
+ (177,7,20,'MATH 2393','History of Mathematics',3,0,3,3,'BSEDMT','1ST'),
+ (178,7,20,'NUDI 1013','Principles of Nutrition and Wellness Education',3,0,3,3,'BSEDMT','1ST'),
+ (179,7,20,'STAT 2313','Basic Statistical Methods',3,0,3,3,'BSEDMT','1ST'),
+ (180,7,20,'EDUC 2153','Measurement and Evaluation',3,0,3,4,'BSEDMT','1ST'),
+ (181,7,20,'EDUC 2161','Fields Study 5-Assessment and Evaluation of Learning',1,0,1,4,'BSEDMT','1ST'),
+ (182,7,20,'EDUC 2173','Principles of Guidance and Values Education',3,0,3,4,'BSEDMT','1ST'),
+ (183,7,20,'EDUC 2183','The Teaching Profession',3,0,3,4,'BSEDMT','1ST'),
+ (184,7,20,'EDUC 2191','Field Study 6-On Becoming A Teacher',1,0,1,4,'BSEDMT','1ST'),
+ (185,7,20,'MATH 2103','Elementary Differential Equations',3,0,3,4,'BSEDMT','1ST'),
+ (186,7,20,'MATH 2243','Modern Geometry',3,0,3,4,'BSEDMT','1ST'),
+ (187,7,20,'SEED 4063','Thesis Writing',3,0,3,4,'BSEDMT','1ST'),
+ (188,7,20,'STAT 2303','Statistical Inference with SPSS',3,0,3,4,'BSEDMT','1ST'),
+ (189,8,21,'COMP 1153','Introduction to Information and Communications Technology',3,0,3,1,'BSEDEN','1ST'),
+ (190,8,21,'ENGL 1013','Study and Thinking Skills in English',3,0,3,1,'BSEDEN','1ST'),
+ (191,8,21,'FILI 1013','Komunikasyon sa Akademikong Filipino',3,0,3,1,'BSEDEN','1ST'),
+ (192,8,21,'HIST 1013','Heyograpiya at Kasaysayan ng Pilipinas',3,0,3,1,'BSEDEN','1ST'),
+ (193,8,21,'MATH 1013','College Algebra',3,0,3,1,'BSEDEN','1ST'),
+ (194,8,21,'PHED 1012_','Physical Fitness and Self-Testing Activities - Physical Fitness',2,0,2,1,'BSEDEN','1ST'),
+ (195,8,21,'PSYC 1013','General Psychology',3,0,3,1,'BSEDEN','1ST'),
+ (196,8,21,'SOCI 1013','Sosyolohiya, Kultura at Pagpapamilya',3,0,3,1,'BSEDEN','1ST'),
+ (197,8,21,'EDUC 2023','Educational Technology 1',3,0,3,2,'BSEDEN','1ST'),
+ (198,8,21,'EDUC 2203','Developmental Reading',3,0,3,2,'BSEDEN','1ST'),
+ (199,8,21,'ENGL 1033','Speech Communication',3,0,3,2,'BSEDEN','1ST'),
+ (200,8,21,'ENGL 2023','Introduction to Linguistics',3,0,3,2,'BSEDEN','1ST'),
+ (201,8,21,'FILI 1033','Retorika (Masining na Pagpapahayag)',3,0,3,2,'BSEDEN','1ST'),
+ (202,8,21,'HIST 1023','Buhay, Mga Gawain at Sinulat ni Rizal',3,0,3,2,'BSEDEN','1ST'),
+ (203,8,21,'NUDI 1013','Principles of Nutrition and Wellness Education',3,0,3,2,'BSEDEN','1ST'),
+ (204,8,21,'PHED 1252_','Individual/Dual/Combative Sports-Badminton',2,0,2,2,'BSEDEN','1ST'),
+ (205,8,21,'PHIL 1013','Logic',3,0,3,2,'BSEDEN','1ST'),
+ (206,8,21,'SEED 3193','Language Curriculum for Secondary School',3,0,3,2,'BSEDEN','1ST'),
+ (207,8,21,'EDUC 2073','Principles and Strategies of Teaching 1',3,0,3,3,'BSEDEN','1ST'),
+ (208,8,21,'EDUC 2081','Field Study 2-Experiencing the Teaching-Learning Process',1,0,1,3,'BSEDEN','1ST'),
+ (209,8,21,'EDUC 2093','Educational Technology 2',3,0,3,3,'BSEDEN','1ST'),
+ (210,8,21,'EDUC 2101','Field Study 3-Technology in the Learning Environment',1,0,1,3,'BSEDEN','1ST'),
+ (211,8,21,'EDUC 2113','Philosophy of Education',3,0,3,3,'BSEDEN','1ST'),
+ (212,8,21,'ENGL 3393','English and American Literature',3,0,3,3,'BSEDEN','1ST'),
+ (213,8,21,'ENGL 3403','The Teaching of Speaking',3,0,3,3,'BSEDEN','1ST'),
+ (214,8,21,'ENGL 3413','The Teaching of Listening and Reading',3,0,3,3,'BSEDEN','1ST'),
+ (215,8,21,'ENGL 3423','Teaching and Testing Literature',3,0,3,3,'BSEDEN','1ST'),
+ (216,8,21,'SEED 4053','Fundamentals of Research',3,0,3,3,'BSEDEN','1ST'),
+ (217,8,21,'EDUC 2153','Measurement and Evaluation',3,0,3,4,'BSEDEN','1ST'),
+ (218,8,21,'EDUC 2161','Fields Study 5-Assessment and Evaluation of Learning',1,0,1,4,'BSEDEN','1ST'),
+ (219,8,21,'EDUC 2173','Principles of Guidance and Values Education',3,0,3,4,'BSEDEN','1ST'),
+ (220,8,21,'EDUC 2183','The Teaching Profession',3,0,3,4,'BSEDEN','1ST'),
+ (221,8,21,'EDUC 2191','Field Study 6-On Becoming A Teacher',1,0,1,4,'BSEDEN','1ST'),
+ (222,8,21,'ENGL 2053','Advanced English Grammar',3,0,3,4,'BSEDEN','1ST'),
+ (223,8,21,'ENGL 3103','Creative Writing',3,0,3,4,'BSEDEN','1ST'),
+ (224,8,21,'ENGL 3323','Introduction to Stylistics',3,0,3,4,'BSEDEN','1ST'),
+ (225,8,21,'ENGL 3453','Speech and Stage Arts',3,0,3,4,'BSEDEN','1ST'),
+ (226,8,21,'ENGL 3463','Translation and Editing of Text',3,0,3,4,'BSEDEN','1ST'),
+ (227,9,22,'OMMT 112','Math of Investment',3,0,3,3,'DOMT','1ST'),
+ (228,9,22,'OMT 311','Introduction to Internet and Basic Web Design',2,3,3,3,'DOMT','1ST'),
+ (229,9,22,'OMT 312','Management Information System',3,0,3,3,'DOMT','1ST'),
+ (230,9,22,'OMT 313','Financial Business Management',2,3,3,3,'DOMT','1ST'),
+ (231,9,22,'OMT 314','Events Management',3,0,3,3,'DOMT','1ST'),
+ (232,9,22,'OMT 315','Introduction to Research',3,0,3,3,'DOMT','1ST'),
+ (233,9,22,'OMT 316','Office Administration e-Learning Approach',3,0,3,3,'DOMT','1ST'),
+ (234,9,22,'OMT 317','General Psychology',3,0,3,3,'DOMT','1ST'),
+ (235,9,22,'OMT 321','Internship (Office Management Technology Practicum - 600 hours)',6,0,6,3,'DOMTLOM','2ND'),
+ (236,9,22,'LOMT 221','Legal Transcription 2',2,3,3,2,'DOMTLOM','2ND'),
+ (237,9,22,'LOMT 222','Legal Terminology 2',3,0,3,2,'DOMTLOM','2ND'),
+ (238,9,22,'OMT 221','Computer Graphics with Multimedia',2,3,3,2,'DOMTLOM','2ND'),
+ (239,9,22,'OMT 222','Human Behavior in Organization',3,0,3,2,'DOMTLOM','2ND'),
+ (240,9,22,'OMT 223','Introduction to Business',3,0,3,2,'DOMTLOM','2ND'),
+ (241,9,22,'OMT 224','Filipino Steno 2',3,0,3,2,'DOMTLOM','2ND'),
+ (242,9,22,'OMT 225','Machine Shorthand 2',2,3,3,2,'DOMTLOM','2ND'),
+ (243,9,22,'PE 114','Physical Education 4',2,0,2,2,'DOMTLOM','2ND'),
+ (577,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (578,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (579,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (580,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (581,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (582,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (583,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (584,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (585,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (586,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (587,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (588,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (589,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (590,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (591,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (592,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (593,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (594,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (595,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (596,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (597,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (598,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (599,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (600,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (601,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (602,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (603,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (604,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (605,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (606,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (607,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (608,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (609,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (610,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (611,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (612,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (613,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (614,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (615,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (616,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (617,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (618,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (619,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (620,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (621,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (622,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (623,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (624,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (625,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (626,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (627,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (628,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (629,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (630,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (631,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (632,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (633,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (634,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (635,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (636,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (637,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (638,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (639,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (640,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (641,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (642,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (643,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (644,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (645,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (646,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (647,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (648,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (649,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (650,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (651,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (652,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (653,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (654,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (655,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (656,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (657,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (658,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (659,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (660,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (661,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (662,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (663,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (664,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (665,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (666,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (667,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (668,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (669,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (670,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (671,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (672,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (673,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (674,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (675,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (676,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (677,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (678,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (679,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (680,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (681,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (682,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (683,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (684,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (685,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (686,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (687,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (688,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (689,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (690,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (691,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (692,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (693,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (694,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (695,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (696,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (697,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (698,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (699,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (700,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (701,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (702,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (703,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (704,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (705,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (706,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (707,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (708,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (709,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (710,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (711,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (712,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (713,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (714,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (715,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (716,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (717,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (718,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (719,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (720,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (721,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (722,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (723,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (724,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (725,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (726,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (727,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (728,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (729,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (730,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (731,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (732,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (733,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (734,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (735,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (736,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (737,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (738,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (739,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (740,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (741,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (742,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (743,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (744,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (745,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (746,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (747,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (748,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (749,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (750,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (751,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (752,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (753,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (754,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (755,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (756,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (757,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (758,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (759,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (760,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (761,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (762,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (763,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (764,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (765,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (766,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (767,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (768,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (769,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (770,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (771,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (772,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (773,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (774,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (775,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (776,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (777,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (778,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (779,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (780,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (781,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (782,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (783,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (784,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (785,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (786,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (787,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (788,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (789,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (790,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (791,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (792,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (793,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (794,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (795,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (796,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (797,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (798,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (799,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (800,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (801,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (802,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (803,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (804,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (805,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (806,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (807,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (808,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (809,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (810,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (811,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (812,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (813,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (814,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (815,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (816,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (817,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (818,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (819,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (820,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (821,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (822,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (823,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (824,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (825,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (826,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (827,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (828,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (829,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (830,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (831,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (832,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (833,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (834,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (835,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (836,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (837,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (838,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (839,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (840,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (841,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (842,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (843,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (844,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (845,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (846,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (847,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (848,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (849,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (850,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (851,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (852,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (853,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (854,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (855,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (856,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (857,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (858,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (859,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (860,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (861,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (862,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (863,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (864,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (865,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (866,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (867,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (868,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (869,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (870,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (871,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (872,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (873,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (874,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (875,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (876,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (877,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (878,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (879,9,22,'','',0,0,0,1,'DOMTLOM','1ST'),
+ (880,10,23,'CCO 3033','Financial Accounting and Reporting, Part 3',3,0,3,3,'BSA','1ST'),
+ (881,10,23,'ACCO 3046','Cost Accounting and Cost Management',6,0,6,3,'BSA','1ST'),
+ (882,10,23,'ACCO 3053','Advanced Financial Accounting & Reporting, Part 1',3,0,3,3,'BSA','1ST'),
+ (883,10,23,'ACCO 3073','Production and Operations Management',3,0,3,3,'BSA','1ST'),
+ (884,10,23,'ACCO 3093','Financial Management, Part 2',3,0,3,3,'BSA','1ST'),
+ (885,10,23,'LAW 3013','Law on Business Organizations',3,0,3,3,'BSA','1ST'),
+ (886,10,23,'MATH 3173','Quantitative Techniques for Decision Making',3,0,3,3,'BSA','1ST'),
+ (887,10,23,'ACCO 2093','Auditing in a CIS Environment',1.5,1.5,3,4,'BSA','1ST'),
+ (888,10,23,'ACCO 3133','Management Accounting, Part 2',3,0,3,4,'BSA','1ST'),
+ (889,10,23,'ACCO 3143','Management Consultancy',3,0,3,4,'BSA','1ST'),
+ (890,10,23,'ACCO 3153','Business and Transfer Taxes',3,0,3,4,'BSA','1ST'),
+ (891,10,23,'ACCO 3166','Applied Auditing',6,0,6,4,'BSA','1ST'),
+ (892,10,23,'ACCO 4011','Synthesis',1,0,1,4,'BSA','1ST'),
+ (893,10,23,'ACCO 4143','Internship / Thesis',3,0,3,4,'BSA','1ST'),
+ (894,10,23,'LAW 3033','Negotiable Instruments',3,0,3,4,'BSA','1ST');
+/*!40000 ALTER TABLE `tbl_subjects` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tbl_users`
+--
+
+DROP TABLE IF EXISTS `tbl_users`;
+CREATE TABLE `tbl_users` (
+  `users_id` int(10) unsigned NOT NULL auto_increment,
+  `username` varchar(45) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `firstName` varchar(45) NOT NULL,
+  `middleName` varchar(45) NOT NULL,
+  `lastName` varchar(45) NOT NULL,
+  `address` varchar(120) NOT NULL,
+  `gender` varchar(45) NOT NULL,
+  `teachingStatus` varchar(45) NOT NULL,
+  `courseDepartment` varchar(45) NOT NULL,
+  `emailAddress` varchar(45) NOT NULL,
+  `mobileNumber` varchar(45) NOT NULL,
+  `status` varchar(45) NOT NULL,
+  `userLevel` varchar(45) NOT NULL,
+  `unitsAllowed` varchar(45) NOT NULL,
+  `loginStatus` int(10) unsigned NOT NULL default '0',
+  PRIMARY KEY  (`users_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_users`
+--
+
+/*!40000 ALTER TABLE `tbl_users` DISABLE KEYS */;
+INSERT INTO `tbl_users` (`users_id`,`username`,`password`,`firstName`,`middleName`,`lastName`,`address`,`gender`,`teachingStatus`,`courseDepartment`,`emailAddress`,`mobileNumber`,`status`,`userLevel`,`unitsAllowed`,`loginStatus`) VALUES 
+ (7,'asdf','TYFFSpD4pCQ=','asdf','asdf','asdf','asdf','Male','administrator','administrator','arman@yahoo.com','(+63)173-8717-171','active','administrator','administrator',0),
+ (8,'michael','P92nrqYSbI4=','Michael','','David','PUPSMB','Male','Fulltimer','BSIT','david.michael@yahoo.com','09173871717','active','professor','42',0);
+/*!40000 ALTER TABLE `tbl_users` ENABLE KEYS */;
+
+
+
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
