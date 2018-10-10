@@ -70,6 +70,7 @@ namespace ClassSchedulingComputerAided
             foreach (DataGridViewRow dr in dgvShow.SelectedRows)
             {
                 ListOfProfessorsData.Selected_ID = dr.Cells[0].Value.ToString();
+                ListOfProfessorsData.Selected_Prof = dr.Cells[1].Value.ToString();
                 L_EditProfessorsControl l = new L_EditProfessorsControl();
                 pnlShowUserControl.Controls.Clear();
                 pnlShowUserControl.Controls.Add(l);
@@ -89,10 +90,13 @@ namespace ClassSchedulingComputerAided
                 DialogResult result =  MessageBox.Show("Are you sure you want to delete '"+ name +"' on the list?", "Delete Professor", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (result == DialogResult.Yes)
                 {
+                    //audit
+                    md.AuditTrail(AuditTrailData.username, "Delete", dr.Cells[1].Value.ToString() +" was remove.");
                     md.L_DeleteProfessor(ListOfProfessorsData.Selected_ID);
                     dgvShow.DataSource = md.dgv_showListOfProfessors().DataSource;
                     dgvShow.Columns[0].Visible = false;
                     MessageBox.Show("hello");
+
                 }
             }
         }
@@ -122,6 +126,11 @@ namespace ClassSchedulingComputerAided
         }
 
         private void panel9_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dgvShow_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClassSchedulingComputerAided.classes
+namespace ClassSchedulingComputerAided
 {
     public class StartSchoolYear
     {
-
+        public static string year { get; set; }
     }
 }

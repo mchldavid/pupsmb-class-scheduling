@@ -2322,6 +2322,9 @@ namespace ClassSchedulingComputerAided
             {
                 try
                 {
+                    //audit
+                    md.AuditTrail(AuditTrailData.username, "Update", cboCourse.Text + " "+cboYear.Text+"-"+cboSection.Text+" schedule was saved for "+ cboCurriculum.Text+".");
+
                     SaveScheduled();
                     SaveData();
 

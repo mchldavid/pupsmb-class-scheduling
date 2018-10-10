@@ -94,7 +94,11 @@ namespace ClassSchedulingComputerAided
                                             teachStatus = "Parttimer";
                                         if (rdoRetiree.Checked == true)
                                             teachStatus = "Retiree";
+                                        //audit
+                                        md.AuditTrail(AuditTrailData.username, "Update", ListOfProfessorsData.Selected_Prof + "'s account was set to " + status + ".");
                                         md.UpdateUsersAccount(ListOfProfessorsData.Selected_ID, txtUsername.Text, ms.encryptPassword(txtPassword.Text), txtFirstName.Text, txtMiddleName.Text, txtLastName.Text, txtAddress.Text, gender, teachStatus, cboCourseDepartment.Text, txtEmailAddress.Text, cleanMobileNumber(txtMobileNumber.Text),status);
+
+                                        
                                     }
                                 }
                                 else

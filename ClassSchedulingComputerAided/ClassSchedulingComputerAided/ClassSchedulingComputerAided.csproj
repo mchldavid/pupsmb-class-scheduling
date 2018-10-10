@@ -94,7 +94,6 @@
       <DependentUpon>AdminHomePage.cs</DependentUpon>
     </Compile>
     <Compile Include="classes\AuditTrailData.cs" />
-    <Compile Include="classes\StartSchoolYear.cs" />
     <Compile Include="ClassScheduled.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -245,6 +244,7 @@
     <Compile Include="SemesterAndSchoolYear.Designer.cs">
       <DependentUpon>SemesterAndSchoolYear.cs</DependentUpon>
     </Compile>
+    <Compile Include="StartSchoolYear.cs" />
     <Compile Include="Summary.cs">
       <SubType>Form</SubType>
     </Compile>

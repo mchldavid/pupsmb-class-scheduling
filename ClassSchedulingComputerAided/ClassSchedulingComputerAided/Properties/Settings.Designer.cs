@@ -85,7 +85,7 @@ namespace ClassSchedulingComputerAided.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("2014")]
         public string Year {
             get {
                 return ((string)(this["Year"]));

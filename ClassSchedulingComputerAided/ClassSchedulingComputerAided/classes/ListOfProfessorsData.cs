@@ -13,5 +13,11 @@ namespace ClassSchedulingComputerAided
             get;
             set;
         }
+
+        public static string Selected_Prof
+        {
+            get;
+            set;
+        }
     }
 }
