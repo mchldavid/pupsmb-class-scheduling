@@ -1,7 +1,7 @@
 REFERENCES
 
 usercontrol
-https://www.codeproject.com/Questions/441940/How-to-use-user-control-in-csharp-windows-applicat
+https://www.codeproject.com/Questions/441940/How-to-use-user-control-in-csharp-windows-application
 
 UI
 https://www.youtube.com/watch?v=nLfzH4xOVqo
@@ -47,3 +47,31 @@ https://stackoverflow.com/questions/9547145/c-sharp-process-cannot-access-file-b
 
 get ip address
 https://stackoverflow.com/questions/6803073/get-local-ip-address
+
+email is valid
+https://docs.microsoft.com/en-us/dotnet/standard/base-types/how-to-verify-that-strings-are-in-valid-email-format
+
+should an admin see the user'spassword
+https://security.stackexchange.com/questions/12339g/should-an-admin-user-be-able-to-edit-passwords
+
+replace string
+https://www.c-sharpcorner.com/UploadFile/mahesh/add-remove-replace-strings-in-C-Sharp/
+
+importing excel data
+https://www.youtube.com/watch?v=t9Wjp0Rl568
+
+multiple filter format in excel
+https://stackoverflow.com/questions/17116045/open-file-dialog-one-filter-for-multiple-excel-extensions
+
+substring
+https://stackoverflow.com/questions/2902394/how-to-get-the-substring-in-c
+
+margins
+https://stackoverflow.com/questions/19103636/how-to-set-page-margin-in-reportviewer
+
+printing using reportviewer
+https://www.youtube.com/watch?v=ek9FAXvTqGs
+
+print using printDialog panel
+https://www.codeproject.com/Tips/733680/Printing-and-Previewing-multiple-pages-in-Csharp
+https://www.youtube.com/watch?v=DBgfRUJEEAI

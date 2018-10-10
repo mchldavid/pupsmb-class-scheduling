@@ -94,6 +94,10 @@ namespace ClassSchedulingComputerAided
 
         private void btnHome_Click(object sender, EventArgs e)
         {
+            PUPImageControl pup = new PUPImageControl();
+            pnl.Controls.Clear();
+            pnl.Controls.Add(pup);
+
             pnl.Controls.Clear();
             sidePanel.Height = btnHome.Height - 1;
             sidePanel.Top = btnHome.Top;
