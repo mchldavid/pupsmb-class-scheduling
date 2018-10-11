@@ -22,6 +22,36 @@ namespace ClassSchedulingComputerAided
 
 
         //=============BACKUP AND RESTORE=================
+        public bool confimationPassword(string id, string password)
+        {
+            bool result = false;
+            try
+            {
+                con.Open();
+                string sql = "SELECT * FROM tbl_users WHERE users_id = @id AND password = @p;";
+                MySqlCommand com = new MySqlCommand(sql, con);
+                com.Parameters.AddWithValue("@id", id);
+                com.Parameters.AddWithValue("@p", password);
+                com.ExecuteNonQuery();
+
+                MySqlDataReader dr = com.ExecuteReader();
+                if (dr.Read())
+                {
+                    result = true;
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "confimationPassword");
+            }
+            finally
+            {
+                con.Close();
+            }
+            return result;
+        }
+
         public void CreateBackup(string filepath)
         {
             string constr = "server=" + Settings.Default["Server"].ToString() + ";";
@@ -31,7 +61,7 @@ namespace ClassSchedulingComputerAided
             constr += "charset=utf8; convertzerodatetime=true;";
             try
             {
-                string fileName = string.Format("pupsmb_backupDatabase_{0}.sql", DateTime.Now.ToString("MM'-'dd'-'yyyy'-'hhtt"));
+                string fileName = string.Format("pupsmb_backupDatabase_{0}.sql", DateTime.Now.ToString("MM'-'dd'-'yyyy'-'hh'-'sstt"));
                 string backupFile = Path.Combine(filepath,fileName);
                 //string file = @"C:\Users\Michael David\Documents\PUP\pam\backup.sql";
                 using(MySqlConnection connection = new MySqlConnection(constr))

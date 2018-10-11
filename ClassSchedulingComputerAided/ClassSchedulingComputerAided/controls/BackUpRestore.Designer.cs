@@ -40,9 +40,20 @@
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.pnlConfirmation = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.btnOk = new MetroFramework.Controls.MetroButton();
+            this.btnCancel = new MetroFramework.Controls.MetroButton();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.pnlConfirmation.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtBackupPath
@@ -174,11 +185,99 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Create Restore";
             // 
+            // pnlConfirmation
+            // 
+            this.pnlConfirmation.BackColor = System.Drawing.Color.DimGray;
+            this.pnlConfirmation.Controls.Add(this.panel3);
+            this.pnlConfirmation.Controls.Add(this.panel4);
+            this.pnlConfirmation.Location = new System.Drawing.Point(181, 135);
+            this.pnlConfirmation.Name = "pnlConfirmation";
+            this.pnlConfirmation.Size = new System.Drawing.Size(315, 198);
+            this.pnlConfirmation.TabIndex = 255;
+            this.pnlConfirmation.Visible = false;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
+            this.panel3.Controls.Add(this.metroLabel1);
+            this.panel3.Location = new System.Drawing.Point(0, 1);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(315, 31);
+            this.panel3.TabIndex = 253;
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.CustomBackground = true;
+            this.metroLabel1.CustomForeColor = true;
+            this.metroLabel1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.metroLabel1.Location = new System.Drawing.Point(10, 4);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(198, 21);
+            this.metroLabel1.TabIndex = 135;
+            this.metroLabel1.Text = "Confirmation";
+            this.metroLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel4
+            // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel4.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel4.Controls.Add(this.label2);
+            this.panel4.Controls.Add(this.btnCancel);
+            this.panel4.Controls.Add(this.btnOk);
+            this.panel4.Controls.Add(this.txtPassword);
+            this.panel4.Location = new System.Drawing.Point(3, 29);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(309, 166);
+            this.panel4.TabIndex = 254;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(29, 41);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(158, 18);
+            this.label2.TabIndex = 245;
+            this.label2.Text = "Enter your password:";
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.BackColor = System.Drawing.Color.White;
+            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(32, 67);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '•';
+            this.txtPassword.Size = new System.Drawing.Size(248, 26);
+            this.txtPassword.TabIndex = 243;
+            // 
+            // btnOk
+            // 
+            this.btnOk.Location = new System.Drawing.Point(100, 113);
+            this.btnOk.Name = "btnOk";
+            this.btnOk.Size = new System.Drawing.Size(87, 29);
+            this.btnOk.TabIndex = 244;
+            this.btnOk.Text = "OK";
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(193, 113);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(87, 29);
+            this.btnCancel.TabIndex = 244;
+            this.btnCancel.Text = "CANCEL";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // BackUpRestore
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Controls.Add(this.pnlConfirmation);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
@@ -189,6 +288,10 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.pnlConfirmation.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -207,5 +310,13 @@
         public MetroFramework.Controls.MetroLabel metroLabel2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Panel pnlConfirmation;
+        private System.Windows.Forms.Panel panel3;
+        public MetroFramework.Controls.MetroLabel metroLabel1;
+        private System.Windows.Forms.Panel panel4;
+        public System.Windows.Forms.Label label2;
+        public MetroFramework.Controls.MetroButton btnCancel;
+        public MetroFramework.Controls.MetroButton btnOk;
+        private System.Windows.Forms.TextBox txtPassword;
     }
 }

@@ -81,7 +81,7 @@
             this.txtConfirmPassword.Name = "txtConfirmPassword";
             this.txtConfirmPassword.PasswordChar = '*';
             this.txtConfirmPassword.Size = new System.Drawing.Size(210, 22);
-            this.txtConfirmPassword.TabIndex = 19;
+            this.txtConfirmPassword.TabIndex = 18;
             // 
             // label7
             // 
@@ -90,7 +90,7 @@
             this.label7.Location = new System.Drawing.Point(485, 132);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(129, 17);
-            this.label7.TabIndex = 18;
+            this.label7.TabIndex = 17;
             this.label7.Text = "Confirm Password:";
             // 
             // txtPassword
@@ -100,7 +100,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(210, 22);
-            this.txtPassword.TabIndex = 17;
+            this.txtPassword.TabIndex = 16;
             // 
             // label6
             // 
@@ -109,7 +109,7 @@
             this.label6.Location = new System.Drawing.Point(485, 104);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(73, 17);
-            this.label6.TabIndex = 16;
+            this.label6.TabIndex = 15;
             this.label6.Text = "Password:";
             // 
             // txtUsername
@@ -118,7 +118,7 @@
             this.txtUsername.Location = new System.Drawing.Point(612, 73);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(210, 22);
-            this.txtUsername.TabIndex = 15;
+            this.txtUsername.TabIndex = 14;
             // 
             // label5
             // 
@@ -127,7 +127,7 @@
             this.label5.Location = new System.Drawing.Point(485, 76);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(75, 17);
-            this.label5.TabIndex = 14;
+            this.label5.TabIndex = 13;
             this.label5.Text = "Username:";
             // 
             // txtAddress
@@ -137,7 +137,7 @@
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(210, 87);
-            this.txtAddress.TabIndex = 9;
+            this.txtAddress.TabIndex = 8;
             // 
             // txtEmailAddress
             // 
@@ -145,7 +145,7 @@
             this.txtEmailAddress.Location = new System.Drawing.Point(177, 346);
             this.txtEmailAddress.Name = "txtEmailAddress";
             this.txtEmailAddress.Size = new System.Drawing.Size(210, 22);
-            this.txtEmailAddress.TabIndex = 11;
+            this.txtEmailAddress.TabIndex = 10;
             // 
             // label9
             // 
@@ -154,7 +154,7 @@
             this.label9.Location = new System.Drawing.Point(50, 225);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(57, 17);
-            this.label9.TabIndex = 8;
+            this.label9.TabIndex = 7;
             this.label9.Text = "Address";
             // 
             // label10
@@ -164,7 +164,7 @@
             this.label10.Location = new System.Drawing.Point(50, 377);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(107, 17);
-            this.label10.TabIndex = 12;
+            this.label10.TabIndex = 11;
             this.label10.Text = "Mobile Number";
             // 
             // label8
@@ -184,7 +184,7 @@
             this.label4.Location = new System.Drawing.Point(50, 349);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(100, 17);
-            this.label4.TabIndex = 10;
+            this.label4.TabIndex = 9;
             this.label4.Text = "Email Address:";
             // 
             // txtLastName
@@ -351,7 +351,7 @@
             this.cboQuestion3.Location = new System.Drawing.Point(490, 315);
             this.cboQuestion3.Name = "cboQuestion3";
             this.cboQuestion3.Size = new System.Drawing.Size(330, 21);
-            this.cboQuestion3.TabIndex = 252;
+            this.cboQuestion3.TabIndex = 23;
             // 
             // cboQuestion2
             // 
@@ -367,7 +367,7 @@
             this.cboQuestion2.Location = new System.Drawing.Point(491, 249);
             this.cboQuestion2.Name = "cboQuestion2";
             this.cboQuestion2.Size = new System.Drawing.Size(330, 21);
-            this.cboQuestion2.TabIndex = 253;
+            this.cboQuestion2.TabIndex = 21;
             // 
             // txtMobileNumber
             // 
@@ -376,7 +376,7 @@
             this.txtMobileNumber.Mask = "(+63)000-0000-000";
             this.txtMobileNumber.Name = "txtMobileNumber";
             this.txtMobileNumber.Size = new System.Drawing.Size(210, 22);
-            this.txtMobileNumber.TabIndex = 248;
+            this.txtMobileNumber.TabIndex = 12;
             // 
             // label16
             // 
@@ -403,7 +403,7 @@
             this.cboQuestion1.Location = new System.Drawing.Point(491, 183);
             this.cboQuestion1.Name = "cboQuestion1";
             this.cboQuestion1.Size = new System.Drawing.Size(330, 21);
-            this.cboQuestion1.TabIndex = 254;
+            this.cboQuestion1.TabIndex = 19;
             // 
             // label15
             // 
@@ -422,7 +422,7 @@
             this.txtAnswer3.Location = new System.Drawing.Point(490, 342);
             this.txtAnswer3.Name = "txtAnswer3";
             this.txtAnswer3.Size = new System.Drawing.Size(330, 22);
-            this.txtAnswer3.TabIndex = 25;
+            this.txtAnswer3.TabIndex = 24;
             // 
             // label14
             // 
@@ -441,7 +441,7 @@
             this.txtAnswer2.Location = new System.Drawing.Point(490, 276);
             this.txtAnswer2.Name = "txtAnswer2";
             this.txtAnswer2.Size = new System.Drawing.Size(330, 22);
-            this.txtAnswer2.TabIndex = 23;
+            this.txtAnswer2.TabIndex = 22;
             // 
             // txtAnswer1
             // 
@@ -449,7 +449,7 @@
             this.txtAnswer1.Location = new System.Drawing.Point(491, 210);
             this.txtAnswer1.Name = "txtAnswer1";
             this.txtAnswer1.Size = new System.Drawing.Size(329, 22);
-            this.txtAnswer1.TabIndex = 21;
+            this.txtAnswer1.TabIndex = 20;
             // 
             // label11
             // 
@@ -512,7 +512,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(442, 538);
+            this.ClientSize = new System.Drawing.Size(440, 538);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlAdmin);
             this.Controls.Add(this.txtAnswer4);

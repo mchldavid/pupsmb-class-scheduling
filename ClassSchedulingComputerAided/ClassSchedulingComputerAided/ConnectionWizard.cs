@@ -232,6 +232,35 @@ namespace ClassSchedulingComputerAided
             }
         }
 
+        public static bool isDB_Empty(string conn, string dbName)
+        {
+            bool isEmpty = false;
+            try
+            {
+                using (MySqlConnection dbconn = new MySqlConnection(conn))
+                {
+                    using (MySqlCommand cmd = new MySqlCommand("SELECT COUNT(*) FROM tbl_users;", dbconn))
+                    {
+                        isEmpty = false;
+                        dbconn.Open();
+                        cmd.ExecuteNonQuery();
+                        MySqlDataReader dr = cmd.ExecuteReader();
+                        if (dr.Read())
+                        {
+                            if (Convert.ToInt32(dr["COUNT(*)"].ToString()) == 0)
+                                isEmpty = true;
+                        }
+                        dbconn.Close();
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+
+            }
+            return isEmpty;
+        }
+
         public static bool DBExists(string conn, string dbName)
         {
             bool isExists = false;
@@ -294,35 +323,6 @@ namespace ClassSchedulingComputerAided
             }
 
             return isExistDB;
-        }
-
-        public static bool isDB_Empty(string conn, string dbName)
-        {
-            bool isEmpty = false;
-            try
-            {
-                using (MySqlConnection dbconn = new MySqlConnection(conn))
-                {
-                    using (MySqlCommand cmd = new MySqlCommand("SELECT COUNT(*) FROM tbl_users;", dbconn))
-                    {
-                        isEmpty = false;
-                        dbconn.Open();
-                        cmd.ExecuteNonQuery();
-                        MySqlDataReader dr = cmd.ExecuteReader();
-                        if (dr.Read())
-                        {
-                            if (Convert.ToInt32(dr["COUNT(*)"].ToString()) == 0)
-                                isEmpty = true;
-                        }
-                        dbconn.Close();
-                    }
-                }
-            }
-            catch (MySqlException ex)
-            {
-
-            }
-            return isEmpty;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

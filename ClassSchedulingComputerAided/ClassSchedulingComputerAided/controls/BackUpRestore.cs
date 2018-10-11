@@ -18,6 +18,7 @@ namespace ClassSchedulingComputerAided
         }
 
         MyDatabase md = new MyDatabase();
+        MySecurity ms = new MySecurity();
 
         private void btnBrowseBackup_Click(object sender, EventArgs e)
         {
@@ -41,8 +42,12 @@ namespace ClassSchedulingComputerAided
             }
             else
             {
+                md.updateLogginStatus(usersData.a_id, "0");//update the user to 0
                 md.CreateBackup(txtBackupPath.Text);
                 MessageBox.Show("Backup taken successfully", "Backup successs", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                md.updateLogginStatus(usersData.a_id, "1");//update the user to 1 after the buckup
+                txtBackupPath.Text = "";
+
             }
         }
 
@@ -61,15 +66,34 @@ namespace ClassSchedulingComputerAided
         {
             if (txtRestorePath.Text != string.Empty)
             {
-                md.RestoreBackup(txtRestorePath.Text);
-                MessageBox.Show("Restore taken successfully", "Restore successs", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                MessageBox.Show("The system will now close.", "Exiting", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                System.Environment.Exit(0);
+                DialogResult dr = MessageBox.Show("This will delete and replace all of your data. Do you want to proceed?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (DialogResult.Yes == dr)
+                {
+                    pnlConfirmation.Visible = true;
+                }
             }
             else
             {
                 MessageBox.Show("please enter the restore file location");
             }
+        }
+
+        private void btnOk_Click(object sender, EventArgs e)
+        {
+
+            if (md.confimationPassword(usersData.a_id, ms.encryptPassword(txtPassword.Text)) == true)
+            {
+                md.RestoreBackup(txtRestorePath.Text);
+                MessageBox.Show("Restore taken successfully", "Restore successs", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("The system will terminate. Please re-open the program.", "Exiting", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                System.Environment.Exit(0);
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            pnlConfirmation.Visible = false;
+            txtPassword.Text = "";
         }
     }
 }

@@ -25,6 +25,9 @@ namespace ClassSchedulingComputerAided
         private void AdminAccount_Load(object sender, EventArgs e)
         {
             txtFirstName.Focus();
+            cboQuestion1.SelectedIndex = 0;
+            cboQuestion2.SelectedIndex = 0;
+            cboQuestion3.SelectedIndex = 0;
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -261,8 +264,19 @@ namespace ClassSchedulingComputerAided
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            pnlAdmin.Location = new Point(-437, 35);
-            txtUsername.Focus();
+            if (txtFirstName.Text != ""
+                && txtLastName.Text != ""
+                && txtAddress.Text != ""
+                && txtEmailAddress.Text != ""
+                && txtMobileNumber.Text != "(+63)   -    -")
+            {
+                EmailValidation email = new EmailValidation();
+                if (email.IsValidEmail(txtEmailAddress.Text) == true)
+                {
+                    pnlAdmin.Location = new Point(-437, 35);
+                    txtUsername.Focus();
+                }
+            }
         }
 
         private void btnBack_Click(object sender, EventArgs e)

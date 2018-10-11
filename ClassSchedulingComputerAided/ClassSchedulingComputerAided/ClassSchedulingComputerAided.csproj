@@ -100,10 +100,10 @@
     <Compile Include="AdminHomePage.Designer.cs">
       <DependentUpon>AdminHomePage.cs</DependentUpon>
     </Compile>
-    <Compile Include="BackUpRestore.cs">
+    <Compile Include="controls\BackUpRestore.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="BackUpRestore.Designer.cs">
+    <Compile Include="controls\BackUpRestore.Designer.cs">
       <DependentUpon>BackUpRestore.cs</DependentUpon>
     </Compile>
     <Compile Include="classes\AuditTrailData.cs" />
@@ -429,7 +429,7 @@
     <EmbeddedResource Include="AdminHomePage.resx">
       <DependentUpon>AdminHomePage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BackUpRestore.resx">
+    <EmbeddedResource Include="controls\BackUpRestore.resx">
       <DependentUpon>BackUpRestore.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ClassScheduled.resx">
