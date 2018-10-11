@@ -432,7 +432,7 @@ namespace ClassSchedulingComputerAided
                     int dt2 = DateTime.Compare(PS_endTime, endTime);
                     int dt3 = DateTime.Compare(PS_startTime, endTime);
                     int dt4 = DateTime.Compare(PS_endTime, startTime);
-                    string promptMessage = System.String.Format("There's a conflict on {0} from {1} to {2} \r\n affected: {3}", day, sT, eT, section);
+                    string promptMessage = System.String.Format("There's a conflict on \r\n{0} from {1} to {2} \r\n affected: {3}", day, sT, eT, section);
 
                     if (md.get_info_roomScheduled(ps_id).GetValue(2).ToString() == day)
                     {
@@ -500,7 +500,7 @@ namespace ClassSchedulingComputerAided
             }
             else
             {
-                MessageBox.Show(message, "ROOM SCHEDULED CONFLICT");
+                MessageBox.Show(message, "ROOM SCHEDULED CONFLICT", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return isValid;
         }
@@ -527,7 +527,7 @@ namespace ClassSchedulingComputerAided
                     int dt2 = DateTime.Compare(PS_endTime, endTime);
                     int dt3 = DateTime.Compare(PS_startTime, endTime);
                     int dt4 = DateTime.Compare(PS_endTime, startTime);
-                    string promptMessage = System.String.Format("There's a conflict on {0} from {1} to {2} \r\n affected: {3}", day, sT, eT, section);
+                    string promptMessage = System.String.Format("There's a conflict on \r\n{0} from {1} to {2} \r\n affected: {3}", day, sT, eT, section);
 
                     if (md.get_info_ProfessorScheduled(ps_id).GetValue(2).ToString() == day)
                     {
@@ -595,7 +595,75 @@ namespace ClassSchedulingComputerAided
             }
             else
             {
-                MessageBox.Show(message, "PROFESSOR'S SCHEDULED CONFLICT");
+                MessageBox.Show(message, "PROFESSOR'S SCHEDULED CONFLICT", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return isValid;
+        }
+
+        //check the preferred scheduled of prof
+        public bool ProfPreferedSchedCheckConstraints(string rC, string day, string sec_sT, string sec_eT)
+        {
+            bool isValid = true;
+            int scheduleIsFree = 0;
+            string message = "";
+            for (int x = 0; x < md.get_id_PreferredScheduled(rC, cboSemester.Text, cboSchoolYear.Text).Length; x++)
+            {
+                string ps_id = md.get_id_PreferredScheduled(rC, cboSemester.Text, cboSchoolYear.Text).GetValue(x).ToString();
+                if (ps_id != "")
+                {
+                    string sT = md.get_info_PreferredScheduled(ps_id).GetValue(0).ToString();
+                    string eT = md.get_info_PreferredScheduled(ps_id).GetValue(1).ToString();
+                    DateTime PS_startTime = DateTime.Parse(sT);
+                    DateTime PS_endTime = DateTime.Parse(eT);
+                    DateTime startTime = DateTime.Parse(sec_sT);
+                    DateTime endTime = DateTime.Parse(sec_eT);
+                    int dt1 = DateTime.Compare(PS_startTime, startTime);
+                    int dt2 = DateTime.Compare(PS_endTime, endTime);
+                    int dt3 = DateTime.Compare(PS_startTime, endTime);
+                    int dt4 = DateTime.Compare(PS_endTime, startTime);
+                    string promptMessage = System.String.Format("The [New Schedule] does not fit with the professor's [Preferred Schedule] \r\n Do you want to force \r\n {0} [{1} {2}-{3} ]", rC, day, sec_sT, sec_eT);
+
+                    if (md.get_info_PreferredScheduled(ps_id).GetValue(2).ToString() == day)
+                    {
+                        if (dt1 == 1 && dt2 == 1 && dt4 == -1)
+                        {
+                            scheduleIsFree++;
+                            message = promptMessage;
+                            isValid = false;
+                        }
+                        if (dt1 == -1 && dt2 == -1 && dt4 == 1)
+                        {
+                            scheduleIsFree++;
+                            message = promptMessage;
+                            isValid = false;
+                        }
+                        if (dt1 == 1 && dt2 == 1 && dt4 == 1)
+                        {
+                            scheduleIsFree++;
+                            message = promptMessage;
+                            isValid = false;
+                        }
+                        if (dt1 == -1 && dt2 == -1 && dt4 == -1)
+                        {
+                            scheduleIsFree++;
+                            message = promptMessage;
+                            isValid = false;
+                        }
+                    }
+                }
+            }
+            if (scheduleIsFree < 1)
+            {
+                isValid = true;
+                //MessageBox.Show("Your preferred schedule has been added", day);
+            }
+            else
+            {
+                DialogResult dr = MessageBox.Show(message, "PROFESSOR'S PREFERRED SCHEDULED CONFLICT", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (dr == DialogResult.Yes)
+                    isValid = true;
+                else
+                    isValid = false;
             }
             return isValid;
         }
@@ -639,45 +707,49 @@ namespace ClassSchedulingComputerAided
             {
                 if (cboProfessor_1.Text != "" && cboStart_1.Text != "" && cboEnd_1.Text != "" && cboDay_1.Text != "" && cboRoom_1.Text != "")
                 {
-                    //to determine the TBA professor
-                    bool professorsConstraints = (cboProfessor_1.Text != "TBA") ? ProfCheckConstraints(cboProfessor_1.Text, cboDay_1.Text, cboStart_1.Text, cboEnd_1.Text) : true;
-
-                    //Check constraints for professors
-                    if (professorsConstraints == true)
+                    //check constraint for preferred schedule
+                    if (ProfPreferedSchedCheckConstraints(cboProfessor_1.Text, cboDay_1.Text, cboStart_1.Text, cboEnd_1.Text) == true)
                     {
-                        //Check constraints for Rooms
-                        if (RoomCheckConstraints(cboRoom_1.Text, cboDay_1.Text, cboStart_1.Text, cboEnd_1.Text) == true)
+                        //to determine the TBA professor
+                        bool professorsConstraints = (cboProfessor_1.Text != "TBA") ? ProfCheckConstraints(cboProfessor_1.Text, cboDay_1.Text, cboStart_1.Text, cboEnd_1.Text) : true;
+
+                        //Check constraints for professors
+                        if (professorsConstraints == true)
                         {
-                            //audit
-                            md.AuditTrail(AuditTrailData.username, "Update", lblCode_1.Text + " was scheduled to"
-                                + cboProfessor_1.Text + " from"
-                                + cboStart_1.Text
-                                + " to "
-                                + cboEnd_1.Text + " "
-                                + cboDay_1.Text + " in "
-                                + cboRoom_1.Text);
+                            //Check constraints for Rooms
+                            if (RoomCheckConstraints(cboRoom_1.Text, cboDay_1.Text, cboStart_1.Text, cboEnd_1.Text) == true)
+                            {
+                                //audit
+                                md.AuditTrail(AuditTrailData.username, "Update", lblCode_1.Text + " was scheduled to"
+                                    + cboProfessor_1.Text + " from"
+                                    + cboStart_1.Text
+                                    + " to "
+                                    + cboEnd_1.Text + " "
+                                    + cboDay_1.Text + " in "
+                                    + cboRoom_1.Text);
 
-                            btnCancel_1.Visible = false;
+                                btnCancel_1.Visible = false;
 
-                            MessageBox.Show("Scheduled Successful", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Scheduled Successful", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                            SaveScheduled();
-                            SaveData();
+                                SaveScheduled();
+                                SaveData();
 
-                            SetComboBoxToDisabled();
-                            SetToEnabled();
-                            btnSet_1.Text = "SET";
-                            btnSAVE.Enabled = true;
+                                SetComboBoxToDisabled();
+                                SetToEnabled();
+                                btnSet_1.Text = "SET";
+                                btnSAVE.Enabled = true;
 
-                            //previewing
-                            RoomTimeTableControl rttc = new RoomTimeTableControl();
-                            pnlRooms.Controls.Clear();
-                            pnlRooms.Controls.Add(rttc);
+                                //previewing
+                                RoomTimeTableControl rttc = new RoomTimeTableControl();
+                                pnlRooms.Controls.Clear();
+                                pnlRooms.Controls.Add(rttc);
 
-                            md.CSD_get_professors_id(cboProfessor_1.Text);
-                            CSD_ProfTimeTable ptt = new CSD_ProfTimeTable();
-                            pnlProfessors.Controls.Clear();
-                            pnlProfessors.Controls.Add(ptt);
+                                md.CSD_get_professors_id(cboProfessor_1.Text);
+                                CSD_ProfTimeTable ptt = new CSD_ProfTimeTable();
+                                pnlProfessors.Controls.Clear();
+                                pnlProfessors.Controls.Add(ptt);
+                            }
                         }
                     }
                 }
@@ -727,45 +799,49 @@ namespace ClassSchedulingComputerAided
             {
                 if (cboProfessor_2.Text != "" && cboStart_2.Text != "" && cboEnd_2.Text != "" && cboDay_2.Text != "" && cboRoom_2.Text != "")
                 {
-                    //to determine the TBA professor
-                    bool professorsConstraints = (cboProfessor_2.Text != "TBA") ? ProfCheckConstraints(cboProfessor_2.Text, cboDay_2.Text, cboStart_2.Text, cboEnd_2.Text) : true;
-
-                    //Check constraints for professors
-                    if (professorsConstraints == true)
+                    //check constraint for preferred schedule
+                    if (ProfPreferedSchedCheckConstraints(cboProfessor_2.Text, cboDay_2.Text, cboStart_2.Text, cboEnd_2.Text) == true)
                     {
-                        //Check constraints for Rooms
-                        if (RoomCheckConstraints(cboRoom_2.Text, cboDay_2.Text, cboStart_2.Text, cboEnd_2.Text) == true)
+                        //to determine the TBA professor
+                        bool professorsConstraints = (cboProfessor_2.Text != "TBA") ? ProfCheckConstraints(cboProfessor_2.Text, cboDay_2.Text, cboStart_2.Text, cboEnd_2.Text) : true;
+
+                        //Check constraints for professors
+                        if (professorsConstraints == true)
                         {
-                            //audit
-                            md.AuditTrail(AuditTrailData.username, "Update", lblCode_2.Text + " was scheduled to" 
-                                + cboProfessor_2.Text + " from"
-                                + cboStart_2.Text
-                                + " to " 
-                                + cboEnd_2.Text + " " 
-                                + cboDay_2.Text + " in " 
-                                + cboRoom_2.Text);
+                            //Check constraints for Rooms
+                            if (RoomCheckConstraints(cboRoom_2.Text, cboDay_2.Text, cboStart_2.Text, cboEnd_2.Text) == true)
+                            {
+                                //audit
+                                md.AuditTrail(AuditTrailData.username, "Update", lblCode_2.Text + " was scheduled to"
+                                    + cboProfessor_2.Text + " from"
+                                    + cboStart_2.Text
+                                    + " to "
+                                    + cboEnd_2.Text + " "
+                                    + cboDay_2.Text + " in "
+                                    + cboRoom_2.Text);
 
-                            btnCancel_2.Visible = false;
+                                btnCancel_2.Visible = false;
 
-                            MessageBox.Show("Scheduled Successful", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Scheduled Successful", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                            SaveScheduled();
-                            SaveData();
+                                SaveScheduled();
+                                SaveData();
 
-                            SetComboBoxToDisabled();
-                            SetToEnabled();
-                            btnSet_2.Text = "SET";
-                            btnSAVE.Enabled = true;
+                                SetComboBoxToDisabled();
+                                SetToEnabled();
+                                btnSet_2.Text = "SET";
+                                btnSAVE.Enabled = true;
 
-                            //previewing
-                            RoomTimeTableControl rttc = new RoomTimeTableControl();
-                            pnlRooms.Controls.Clear();
-                            pnlRooms.Controls.Add(rttc);
+                                //previewing
+                                RoomTimeTableControl rttc = new RoomTimeTableControl();
+                                pnlRooms.Controls.Clear();
+                                pnlRooms.Controls.Add(rttc);
 
-                            md.CSD_get_professors_id(cboProfessor_2.Text);
-                            CSD_ProfTimeTable ptt = new CSD_ProfTimeTable();
-                            pnlProfessors.Controls.Clear();
-                            pnlProfessors.Controls.Add(ptt);
+                                md.CSD_get_professors_id(cboProfessor_2.Text);
+                                CSD_ProfTimeTable ptt = new CSD_ProfTimeTable();
+                                pnlProfessors.Controls.Clear();
+                                pnlProfessors.Controls.Add(ptt);
+                            }
                         }
                     }
                 }
@@ -815,45 +891,49 @@ namespace ClassSchedulingComputerAided
             {
                 if (cboProfessor_3.Text != "" && cboStart_3.Text != "" && cboEnd_3.Text != "" && cboDay_3.Text != "" && cboRoom_3.Text != "")
                 {
-                    //to determine the TBA professor
-                    bool professorsConstraints = (cboProfessor_3.Text != "TBA") ? ProfCheckConstraints(cboProfessor_3.Text, cboDay_3.Text, cboStart_3.Text, cboEnd_3.Text) : true;
-
-                    //Check constraints for professors
-                    if (professorsConstraints == true)
+                    //check constraint for preferred schedule
+                    if (ProfPreferedSchedCheckConstraints(cboProfessor_3.Text, cboDay_3.Text, cboStart_3.Text, cboEnd_3.Text) == true)
                     {
-                        //Check constraints for Rooms
-                        if (RoomCheckConstraints(cboRoom_3.Text, cboDay_3.Text, cboStart_3.Text, cboEnd_3.Text) == true)
+                        //to determine the TBA professor
+                        bool professorsConstraints = (cboProfessor_3.Text != "TBA") ? ProfCheckConstraints(cboProfessor_3.Text, cboDay_3.Text, cboStart_3.Text, cboEnd_3.Text) : true;
+
+                        //Check constraints for professors
+                        if (professorsConstraints == true)
                         {
-                            //audit
-                            md.AuditTrail(AuditTrailData.username, "Update", lblCode_3.Text + " was scheduled to"
-                                + cboProfessor_3.Text + " from"
-                                + cboStart_3.Text
-                                + " to "
-                                + cboEnd_3.Text + " "
-                                + cboDay_3.Text + " in "
-                                + cboRoom_3.Text);
+                            //Check constraints for Rooms
+                            if (RoomCheckConstraints(cboRoom_3.Text, cboDay_3.Text, cboStart_3.Text, cboEnd_3.Text) == true)
+                            {
+                                //audit
+                                md.AuditTrail(AuditTrailData.username, "Update", lblCode_3.Text + " was scheduled to"
+                                    + cboProfessor_3.Text + " from"
+                                    + cboStart_3.Text
+                                    + " to "
+                                    + cboEnd_3.Text + " "
+                                    + cboDay_3.Text + " in "
+                                    + cboRoom_3.Text);
 
-                            btnCancel_3.Visible = false;
+                                btnCancel_3.Visible = false;
 
-                            MessageBox.Show("Scheduled Successful", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Scheduled Successful", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                            SaveScheduled();
-                            SaveData();
+                                SaveScheduled();
+                                SaveData();
 
-                            SetComboBoxToDisabled();
-                            SetToEnabled();
-                            btnSet_3.Text = "SET";
-                            btnSAVE.Enabled = true;
+                                SetComboBoxToDisabled();
+                                SetToEnabled();
+                                btnSet_3.Text = "SET";
+                                btnSAVE.Enabled = true;
 
-                            //previewing
-                            RoomTimeTableControl rttc = new RoomTimeTableControl();
-                            pnlRooms.Controls.Clear();
-                            pnlRooms.Controls.Add(rttc);
+                                //previewing
+                                RoomTimeTableControl rttc = new RoomTimeTableControl();
+                                pnlRooms.Controls.Clear();
+                                pnlRooms.Controls.Add(rttc);
 
-                            md.CSD_get_professors_id(cboProfessor_3.Text);
-                            CSD_ProfTimeTable ptt = new CSD_ProfTimeTable();
-                            pnlProfessors.Controls.Clear();
-                            pnlProfessors.Controls.Add(ptt);
+                                md.CSD_get_professors_id(cboProfessor_3.Text);
+                                CSD_ProfTimeTable ptt = new CSD_ProfTimeTable();
+                                pnlProfessors.Controls.Clear();
+                                pnlProfessors.Controls.Add(ptt);
+                            }
                         }
                     }
                 }
@@ -903,45 +983,49 @@ namespace ClassSchedulingComputerAided
             {
                 if (cboProfessor_4.Text != "" && cboStart_4.Text != "" && cboEnd_4.Text != "" && cboDay_4.Text != "" && cboRoom_4.Text != "")
                 {
-                    //to determine the TBA professor
-                    bool professorsConstraints = (cboProfessor_4.Text != "TBA") ? ProfCheckConstraints(cboProfessor_4.Text, cboDay_4.Text, cboStart_4.Text, cboEnd_4.Text) : true;
-
-                    //Check constraints for professors
-                    if (professorsConstraints == true)
+                    //check constraint for preferred schedule
+                    if (ProfPreferedSchedCheckConstraints(cboProfessor_4.Text, cboDay_4.Text, cboStart_4.Text, cboEnd_4.Text) == true)
                     {
-                        //Check constraints for Rooms
-                        if (RoomCheckConstraints(cboRoom_4.Text, cboDay_4.Text, cboStart_4.Text, cboEnd_4.Text) == true)
+                        //to determine the TBA professor
+                        bool professorsConstraints = (cboProfessor_4.Text != "TBA") ? ProfCheckConstraints(cboProfessor_4.Text, cboDay_4.Text, cboStart_4.Text, cboEnd_4.Text) : true;
+
+                        //Check constraints for professors
+                        if (professorsConstraints == true)
                         {
-                            //audit
-                            md.AuditTrail(AuditTrailData.username, "Update", lblCode_4.Text + " was scheduled to"
-                                + cboProfessor_4.Text + " from"
-                                + cboStart_4.Text
-                                + " to "
-                                + cboEnd_4.Text + " "
-                                + cboDay_4.Text + " in "
-                                + cboRoom_4.Text);
+                            //Check constraints for Rooms
+                            if (RoomCheckConstraints(cboRoom_4.Text, cboDay_4.Text, cboStart_4.Text, cboEnd_4.Text) == true)
+                            {
+                                //audit
+                                md.AuditTrail(AuditTrailData.username, "Update", lblCode_4.Text + " was scheduled to"
+                                    + cboProfessor_4.Text + " from"
+                                    + cboStart_4.Text
+                                    + " to "
+                                    + cboEnd_4.Text + " "
+                                    + cboDay_4.Text + " in "
+                                    + cboRoom_4.Text);
 
-                            btnCancel_4.Visible = false;
+                                btnCancel_4.Visible = false;
 
-                            MessageBox.Show("Scheduled Successful", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Scheduled Successful", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                            SaveScheduled();
-                            SaveData();
+                                SaveScheduled();
+                                SaveData();
 
-                            SetComboBoxToDisabled();
-                            SetToEnabled();
-                            btnSet_4.Text = "SET";
-                            btnSAVE.Enabled = true;
+                                SetComboBoxToDisabled();
+                                SetToEnabled();
+                                btnSet_4.Text = "SET";
+                                btnSAVE.Enabled = true;
 
-                            //previewing
-                            RoomTimeTableControl rttc = new RoomTimeTableControl();
-                            pnlRooms.Controls.Clear();
-                            pnlRooms.Controls.Add(rttc);
+                                //previewing
+                                RoomTimeTableControl rttc = new RoomTimeTableControl();
+                                pnlRooms.Controls.Clear();
+                                pnlRooms.Controls.Add(rttc);
 
-                            md.CSD_get_professors_id(cboProfessor_4.Text);
-                            CSD_ProfTimeTable ptt = new CSD_ProfTimeTable();
-                            pnlProfessors.Controls.Clear();
-                            pnlProfessors.Controls.Add(ptt);
+                                md.CSD_get_professors_id(cboProfessor_4.Text);
+                                CSD_ProfTimeTable ptt = new CSD_ProfTimeTable();
+                                pnlProfessors.Controls.Clear();
+                                pnlProfessors.Controls.Add(ptt);
+                            }
                         }
                     }
                 }
@@ -991,45 +1075,49 @@ namespace ClassSchedulingComputerAided
             {
                 if (cboProfessor_5.Text != "" && cboStart_5.Text != "" && cboEnd_5.Text != "" && cboDay_5.Text != "" && cboRoom_5.Text != "")
                 {
-                    //to determine the TBA professor
-                    bool professorsConstraints = (cboProfessor_5.Text != "TBA") ? ProfCheckConstraints(cboProfessor_5.Text, cboDay_5.Text, cboStart_5.Text, cboEnd_5.Text) : true;
-
-                    //Check constraints for professors
-                    if (professorsConstraints == true)
+                    //check constraint for preferred schedule
+                    if (ProfPreferedSchedCheckConstraints(cboProfessor_5.Text, cboDay_5.Text, cboStart_5.Text, cboEnd_5.Text) == true)
                     {
-                        //Check constraints for Rooms
-                        if (RoomCheckConstraints(cboRoom_5.Text, cboDay_5.Text, cboStart_5.Text, cboEnd_5.Text) == true)
+                        //to determine the TBA professor
+                        bool professorsConstraints = (cboProfessor_5.Text != "TBA") ? ProfCheckConstraints(cboProfessor_5.Text, cboDay_5.Text, cboStart_5.Text, cboEnd_5.Text) : true;
+
+                        //Check constraints for professors
+                        if (professorsConstraints == true)
                         {
-                            //audit
-                            md.AuditTrail(AuditTrailData.username, "Update", lblCode_5.Text + " was scheduled to"
-                                + cboProfessor_5.Text + " from"
-                                + cboStart_5.Text
-                                + " to "
-                                + cboEnd_5.Text + " "
-                                + cboDay_5.Text + " in "
-                                + cboRoom_5.Text);
+                            //Check constraints for Rooms
+                            if (RoomCheckConstraints(cboRoom_5.Text, cboDay_5.Text, cboStart_5.Text, cboEnd_5.Text) == true)
+                            {
+                                //audit
+                                md.AuditTrail(AuditTrailData.username, "Update", lblCode_5.Text + " was scheduled to"
+                                    + cboProfessor_5.Text + " from"
+                                    + cboStart_5.Text
+                                    + " to "
+                                    + cboEnd_5.Text + " "
+                                    + cboDay_5.Text + " in "
+                                    + cboRoom_5.Text);
 
-                            btnCancel_5.Visible = false;
+                                btnCancel_5.Visible = false;
 
-                            MessageBox.Show("Scheduled Successful", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Scheduled Successful", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                            SaveScheduled();
-                            SaveData();
+                                SaveScheduled();
+                                SaveData();
 
-                            SetComboBoxToDisabled();
-                            SetToEnabled();
-                            btnSet_5.Text = "SET";
-                            btnSAVE.Enabled = true;
+                                SetComboBoxToDisabled();
+                                SetToEnabled();
+                                btnSet_5.Text = "SET";
+                                btnSAVE.Enabled = true;
 
-                            //previewing
-                            RoomTimeTableControl rttc = new RoomTimeTableControl();
-                            pnlRooms.Controls.Clear();
-                            pnlRooms.Controls.Add(rttc);
+                                //previewing
+                                RoomTimeTableControl rttc = new RoomTimeTableControl();
+                                pnlRooms.Controls.Clear();
+                                pnlRooms.Controls.Add(rttc);
 
-                            md.CSD_get_professors_id(cboProfessor_5.Text);
-                            CSD_ProfTimeTable ptt = new CSD_ProfTimeTable();
-                            pnlProfessors.Controls.Clear();
-                            pnlProfessors.Controls.Add(ptt);
+                                md.CSD_get_professors_id(cboProfessor_5.Text);
+                                CSD_ProfTimeTable ptt = new CSD_ProfTimeTable();
+                                pnlProfessors.Controls.Clear();
+                                pnlProfessors.Controls.Add(ptt);
+                            }
                         }
                     }
                 }
@@ -1079,45 +1167,49 @@ namespace ClassSchedulingComputerAided
             {
                 if (cboProfessor_6.Text != "" && cboStart_6.Text != "" && cboEnd_6.Text != "" && cboDay_6.Text != "" && cboRoom_6.Text != "")
                 {
-                    //to determine the TBA professor
-                    bool professorsConstraints = (cboProfessor_6.Text != "TBA") ? ProfCheckConstraints(cboProfessor_6.Text, cboDay_6.Text, cboStart_6.Text, cboEnd_6.Text) : true;
-
-                    //Check constraints for professors
-                    if (professorsConstraints == true)
+                    //check constraint for preferred schedule
+                    if (ProfPreferedSchedCheckConstraints(cboProfessor_6.Text, cboDay_6.Text, cboStart_6.Text, cboEnd_6.Text) == true)
                     {
-                        //Check constraints for Rooms
-                        if (RoomCheckConstraints(cboRoom_6.Text, cboDay_6.Text, cboStart_6.Text, cboEnd_6.Text) == true)
+                        //to determine the TBA professor
+                        bool professorsConstraints = (cboProfessor_6.Text != "TBA") ? ProfCheckConstraints(cboProfessor_6.Text, cboDay_6.Text, cboStart_6.Text, cboEnd_6.Text) : true;
+
+                        //Check constraints for professors
+                        if (professorsConstraints == true)
                         {
-                            //audit
-                            md.AuditTrail(AuditTrailData.username, "Update", lblCode_6.Text + " was scheduled to"
-                                + cboProfessor_6.Text + " from"
-                                + cboStart_6.Text
-                                + " to "
-                                + cboEnd_6.Text + " "
-                                + cboDay_6.Text + " in "
-                                + cboRoom_6.Text);
+                            //Check constraints for Rooms
+                            if (RoomCheckConstraints(cboRoom_6.Text, cboDay_6.Text, cboStart_6.Text, cboEnd_6.Text) == true)
+                            {
+                                //audit
+                                md.AuditTrail(AuditTrailData.username, "Update", lblCode_6.Text + " was scheduled to"
+                                    + cboProfessor_6.Text + " from"
+                                    + cboStart_6.Text
+                                    + " to "
+                                    + cboEnd_6.Text + " "
+                                    + cboDay_6.Text + " in "
+                                    + cboRoom_6.Text);
 
-                            btnCancel_6.Visible = false;
+                                btnCancel_6.Visible = false;
 
-                            MessageBox.Show("Scheduled Successful", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Scheduled Successful", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                            SaveScheduled();
-                            SaveData();
+                                SaveScheduled();
+                                SaveData();
 
-                            SetComboBoxToDisabled();
-                            SetToEnabled();
-                            btnSet_6.Text = "SET";
-                            btnSAVE.Enabled = true;
+                                SetComboBoxToDisabled();
+                                SetToEnabled();
+                                btnSet_6.Text = "SET";
+                                btnSAVE.Enabled = true;
 
-                            //previewing
-                            RoomTimeTableControl rttc = new RoomTimeTableControl();
-                            pnlRooms.Controls.Clear();
-                            pnlRooms.Controls.Add(rttc);
+                                //previewing
+                                RoomTimeTableControl rttc = new RoomTimeTableControl();
+                                pnlRooms.Controls.Clear();
+                                pnlRooms.Controls.Add(rttc);
 
-                            md.CSD_get_professors_id(cboProfessor_6.Text);
-                            CSD_ProfTimeTable ptt = new CSD_ProfTimeTable();
-                            pnlProfessors.Controls.Clear();
-                            pnlProfessors.Controls.Add(ptt);
+                                md.CSD_get_professors_id(cboProfessor_6.Text);
+                                CSD_ProfTimeTable ptt = new CSD_ProfTimeTable();
+                                pnlProfessors.Controls.Clear();
+                                pnlProfessors.Controls.Add(ptt);
+                            }
                         }
                     }
                 }
@@ -1167,45 +1259,49 @@ namespace ClassSchedulingComputerAided
             {
                 if (cboProfessor_7.Text != "" && cboStart_7.Text != "" && cboEnd_7.Text != "" && cboDay_7.Text != "" && cboRoom_7.Text != "")
                 {
-                    //to determine the TBA professor
-                    bool professorsConstraints = (cboProfessor_7.Text != "TBA") ? ProfCheckConstraints(cboProfessor_7.Text, cboDay_7.Text, cboStart_7.Text, cboEnd_7.Text) : true;
-
-                    //Check constraints for professors
-                    if (professorsConstraints == true)
+                    //check constraint for preferred schedule
+                    if (ProfPreferedSchedCheckConstraints(cboProfessor_7.Text, cboDay_7.Text, cboStart_7.Text, cboEnd_7.Text) == true)
                     {
-                        //Check constraints for Rooms
-                        if (RoomCheckConstraints(cboRoom_7.Text, cboDay_7.Text, cboStart_7.Text, cboEnd_7.Text) == true)
+                        //to determine the TBA professor
+                        bool professorsConstraints = (cboProfessor_7.Text != "TBA") ? ProfCheckConstraints(cboProfessor_7.Text, cboDay_7.Text, cboStart_7.Text, cboEnd_7.Text) : true;
+
+                        //Check constraints for professors
+                        if (professorsConstraints == true)
                         {
-                            //audit
-                            md.AuditTrail(AuditTrailData.username, "Update", lblCode_7.Text + " was scheduled to"
-                                + cboProfessor_7.Text + " from"
-                                + cboStart_7.Text
-                                + " to "
-                                + cboEnd_7.Text + " "
-                                + cboDay_7.Text + " in "
-                                + cboRoom_7.Text);
+                            //Check constraints for Rooms
+                            if (RoomCheckConstraints(cboRoom_7.Text, cboDay_7.Text, cboStart_7.Text, cboEnd_7.Text) == true)
+                            {
+                                //audit
+                                md.AuditTrail(AuditTrailData.username, "Update", lblCode_7.Text + " was scheduled to"
+                                    + cboProfessor_7.Text + " from"
+                                    + cboStart_7.Text
+                                    + " to "
+                                    + cboEnd_7.Text + " "
+                                    + cboDay_7.Text + " in "
+                                    + cboRoom_7.Text);
 
-                            btnCancel_7.Visible = false;
+                                btnCancel_7.Visible = false;
 
-                            MessageBox.Show("Scheduled Successful", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Scheduled Successful", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                            SaveScheduled();
-                            SaveData();
+                                SaveScheduled();
+                                SaveData();
 
-                            SetComboBoxToDisabled();
-                            SetToEnabled();
-                            btnSet_7.Text = "SET";
-                            btnSAVE.Enabled = true;
+                                SetComboBoxToDisabled();
+                                SetToEnabled();
+                                btnSet_7.Text = "SET";
+                                btnSAVE.Enabled = true;
 
-                            //previewing
-                            RoomTimeTableControl rttc = new RoomTimeTableControl();
-                            pnlRooms.Controls.Clear();
-                            pnlRooms.Controls.Add(rttc);
+                                //previewing
+                                RoomTimeTableControl rttc = new RoomTimeTableControl();
+                                pnlRooms.Controls.Clear();
+                                pnlRooms.Controls.Add(rttc);
 
-                            md.CSD_get_professors_id(cboProfessor_7.Text);
-                            CSD_ProfTimeTable ptt = new CSD_ProfTimeTable();
-                            pnlProfessors.Controls.Clear();
-                            pnlProfessors.Controls.Add(ptt);
+                                md.CSD_get_professors_id(cboProfessor_7.Text);
+                                CSD_ProfTimeTable ptt = new CSD_ProfTimeTable();
+                                pnlProfessors.Controls.Clear();
+                                pnlProfessors.Controls.Add(ptt);
+                            }
                         }
                     }
                 }
@@ -1255,45 +1351,49 @@ namespace ClassSchedulingComputerAided
             {
                 if (cboProfessor_8.Text != "" && cboStart_8.Text != "" && cboEnd_8.Text != "" && cboDay_8.Text != "" && cboRoom_8.Text != "")
                 {
-                    //to determine the TBA professor
-                    bool professorsConstraints = (cboProfessor_8.Text != "TBA") ? ProfCheckConstraints(cboProfessor_8.Text, cboDay_8.Text, cboStart_8.Text, cboEnd_8.Text) : true;
-
-                    //Check constraints for professors
-                    if (professorsConstraints == true)
+                    //check constraint for preferred schedule
+                    if (ProfPreferedSchedCheckConstraints(cboProfessor_8.Text, cboDay_8.Text, cboStart_8.Text, cboEnd_8.Text) == true)
                     {
-                        //Check constraints for Rooms
-                        if (RoomCheckConstraints(cboRoom_8.Text, cboDay_8.Text, cboStart_8.Text, cboEnd_8.Text) == true)
+                        //to determine the TBA professor
+                        bool professorsConstraints = (cboProfessor_8.Text != "TBA") ? ProfCheckConstraints(cboProfessor_8.Text, cboDay_8.Text, cboStart_8.Text, cboEnd_8.Text) : true;
+
+                        //Check constraints for professors
+                        if (professorsConstraints == true)
                         {
-                            //audit
-                            md.AuditTrail(AuditTrailData.username, "Update", lblCode_8.Text + " was scheduled to"
-                                + cboProfessor_8.Text + " from"
-                                + cboStart_8.Text
-                                + " to "
-                                + cboEnd_8.Text + " "
-                                + cboDay_8.Text + " in "
-                                + cboRoom_8.Text);
+                            //Check constraints for Rooms
+                            if (RoomCheckConstraints(cboRoom_8.Text, cboDay_8.Text, cboStart_8.Text, cboEnd_8.Text) == true)
+                            {
+                                //audit
+                                md.AuditTrail(AuditTrailData.username, "Update", lblCode_8.Text + " was scheduled to"
+                                    + cboProfessor_8.Text + " from"
+                                    + cboStart_8.Text
+                                    + " to "
+                                    + cboEnd_8.Text + " "
+                                    + cboDay_8.Text + " in "
+                                    + cboRoom_8.Text);
 
-                            btnCancel_8.Visible = false;
+                                btnCancel_8.Visible = false;
 
-                            MessageBox.Show("Scheduled Successful", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Scheduled Successful", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                            SaveScheduled();
-                            SaveData();
+                                SaveScheduled();
+                                SaveData();
 
-                            SetComboBoxToDisabled();
-                            SetToEnabled();
-                            btnSet_8.Text = "SET";
-                            btnSAVE.Enabled = true;
+                                SetComboBoxToDisabled();
+                                SetToEnabled();
+                                btnSet_8.Text = "SET";
+                                btnSAVE.Enabled = true;
 
-                            //previewing
-                            RoomTimeTableControl rttc = new RoomTimeTableControl();
-                            pnlRooms.Controls.Clear();
-                            pnlRooms.Controls.Add(rttc);
+                                //previewing
+                                RoomTimeTableControl rttc = new RoomTimeTableControl();
+                                pnlRooms.Controls.Clear();
+                                pnlRooms.Controls.Add(rttc);
 
-                            md.CSD_get_professors_id(cboProfessor_8.Text);
-                            CSD_ProfTimeTable ptt = new CSD_ProfTimeTable();
-                            pnlProfessors.Controls.Clear();
-                            pnlProfessors.Controls.Add(ptt);
+                                md.CSD_get_professors_id(cboProfessor_8.Text);
+                                CSD_ProfTimeTable ptt = new CSD_ProfTimeTable();
+                                pnlProfessors.Controls.Clear();
+                                pnlProfessors.Controls.Add(ptt);
+                            }
                         }
                     }
                 }
@@ -1343,45 +1443,49 @@ namespace ClassSchedulingComputerAided
             {
                 if (cboProfessor_9.Text != "" && cboStart_9.Text != "" && cboEnd_9.Text != "" && cboDay_9.Text != "" && cboRoom_9.Text != "")
                 {
-                    //to determine the TBA professor
-                    bool professorsConstraints = (cboProfessor_9.Text != "TBA") ? ProfCheckConstraints(cboProfessor_9.Text, cboDay_9.Text, cboStart_9.Text, cboEnd_9.Text) : true;
-
-                    //Check constraints for professors
-                    if (professorsConstraints == true)
+                    //check constraint for preferred schedule
+                    if (ProfPreferedSchedCheckConstraints(cboProfessor_9.Text, cboDay_9.Text, cboStart_9.Text, cboEnd_9.Text) == true)
                     {
-                        //Check constraints for Rooms
-                        if (RoomCheckConstraints(cboRoom_9.Text, cboDay_9.Text, cboStart_9.Text, cboEnd_9.Text) == true)
+                        //to determine the TBA professor
+                        bool professorsConstraints = (cboProfessor_9.Text != "TBA") ? ProfCheckConstraints(cboProfessor_9.Text, cboDay_9.Text, cboStart_9.Text, cboEnd_9.Text) : true;
+
+                        //Check constraints for professors
+                        if (professorsConstraints == true)
                         {
-                            //audit
-                            md.AuditTrail(AuditTrailData.username, "Update", lblCode_9.Text + " was scheduled to"
-                                + cboProfessor_9.Text + " from"
-                                + cboStart_9.Text
-                                + " to "
-                                + cboEnd_9.Text + " "
-                                + cboDay_9.Text + " in "
-                                + cboRoom_9.Text);
+                            //Check constraints for Rooms
+                            if (RoomCheckConstraints(cboRoom_9.Text, cboDay_9.Text, cboStart_9.Text, cboEnd_9.Text) == true)
+                            {
+                                //audit
+                                md.AuditTrail(AuditTrailData.username, "Update", lblCode_9.Text + " was scheduled to"
+                                    + cboProfessor_9.Text + " from"
+                                    + cboStart_9.Text
+                                    + " to "
+                                    + cboEnd_9.Text + " "
+                                    + cboDay_9.Text + " in "
+                                    + cboRoom_9.Text);
 
-                            btnCancel_9.Visible = false;
+                                btnCancel_9.Visible = false;
 
-                            MessageBox.Show("Scheduled Successful", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Scheduled Successful", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                            SaveScheduled();
-                            SaveData();
+                                SaveScheduled();
+                                SaveData();
 
-                            SetComboBoxToDisabled();
-                            SetToEnabled();
-                            btnSet_9.Text = "SET";
-                            btnSAVE.Enabled = true;
+                                SetComboBoxToDisabled();
+                                SetToEnabled();
+                                btnSet_9.Text = "SET";
+                                btnSAVE.Enabled = true;
 
-                            //previewing
-                            RoomTimeTableControl rttc = new RoomTimeTableControl();
-                            pnlRooms.Controls.Clear();
-                            pnlRooms.Controls.Add(rttc);
+                                //previewing
+                                RoomTimeTableControl rttc = new RoomTimeTableControl();
+                                pnlRooms.Controls.Clear();
+                                pnlRooms.Controls.Add(rttc);
 
-                            md.CSD_get_professors_id(cboProfessor_9.Text);
-                            CSD_ProfTimeTable ptt = new CSD_ProfTimeTable();
-                            pnlProfessors.Controls.Clear();
-                            pnlProfessors.Controls.Add(ptt);
+                                md.CSD_get_professors_id(cboProfessor_9.Text);
+                                CSD_ProfTimeTable ptt = new CSD_ProfTimeTable();
+                                pnlProfessors.Controls.Clear();
+                                pnlProfessors.Controls.Add(ptt);
+                            }
                         }
                     }
                 }
@@ -1431,45 +1535,49 @@ namespace ClassSchedulingComputerAided
             {
                 if (cboProfessor_10.Text != "" && cboStart_10.Text != "" && cboEnd_10.Text != "" && cboDay_10.Text != "" && cboRoom_10.Text != "")
                 {
-                    //to determine the TBA professor
-                    bool professorsConstraints = (cboProfessor_10.Text != "TBA") ? ProfCheckConstraints(cboProfessor_10.Text, cboDay_10.Text, cboStart_10.Text, cboEnd_10.Text) : true;
-
-                    //Check constraints for professors
-                    if (professorsConstraints == true)
+                    //check constraint for preferred schedule
+                    if (ProfPreferedSchedCheckConstraints(cboProfessor_10.Text, cboDay_10.Text, cboStart_10.Text, cboEnd_10.Text) == true)
                     {
-                        //Check constraints for Rooms
-                        if (RoomCheckConstraints(cboRoom_10.Text, cboDay_10.Text, cboStart_10.Text, cboEnd_10.Text) == true)
+                        //to determine the TBA professor
+                        bool professorsConstraints = (cboProfessor_10.Text != "TBA") ? ProfCheckConstraints(cboProfessor_10.Text, cboDay_10.Text, cboStart_10.Text, cboEnd_10.Text) : true;
+
+                        //Check constraints for professors
+                        if (professorsConstraints == true)
                         {
-                            //audit
-                            md.AuditTrail(AuditTrailData.username, "Update", lblCode_10.Text + " was scheduled to"
-                                + cboProfessor_10.Text + " from"
-                                + cboStart_10.Text
-                                + " to "
-                                + cboEnd_10.Text + " "
-                                + cboDay_10.Text + " in "
-                                + cboRoom_10.Text);
+                            //Check constraints for Rooms
+                            if (RoomCheckConstraints(cboRoom_10.Text, cboDay_10.Text, cboStart_10.Text, cboEnd_10.Text) == true)
+                            {
+                                //audit
+                                md.AuditTrail(AuditTrailData.username, "Update", lblCode_10.Text + " was scheduled to"
+                                    + cboProfessor_10.Text + " from"
+                                    + cboStart_10.Text
+                                    + " to "
+                                    + cboEnd_10.Text + " "
+                                    + cboDay_10.Text + " in "
+                                    + cboRoom_10.Text);
 
-                            btnCancel_10.Visible = false;
+                                btnCancel_10.Visible = false;
 
-                            MessageBox.Show("Scheduled Successful", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Scheduled Successful", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                            SaveScheduled();
-                            SaveData();
+                                SaveScheduled();
+                                SaveData();
 
-                            SetComboBoxToDisabled();
-                            SetToEnabled();
-                            btnSet_10.Text = "SET";
-                            btnSAVE.Enabled = true;
+                                SetComboBoxToDisabled();
+                                SetToEnabled();
+                                btnSet_10.Text = "SET";
+                                btnSAVE.Enabled = true;
 
-                            //previewing
-                            RoomTimeTableControl rttc = new RoomTimeTableControl();
-                            pnlRooms.Controls.Clear();
-                            pnlRooms.Controls.Add(rttc);
+                                //previewing
+                                RoomTimeTableControl rttc = new RoomTimeTableControl();
+                                pnlRooms.Controls.Clear();
+                                pnlRooms.Controls.Add(rttc);
 
-                            md.CSD_get_professors_id(cboProfessor_10.Text);
-                            CSD_ProfTimeTable ptt = new CSD_ProfTimeTable();
-                            pnlProfessors.Controls.Clear();
-                            pnlProfessors.Controls.Add(ptt);
+                                md.CSD_get_professors_id(cboProfessor_10.Text);
+                                CSD_ProfTimeTable ptt = new CSD_ProfTimeTable();
+                                pnlProfessors.Controls.Clear();
+                                pnlProfessors.Controls.Add(ptt);
+                            }
                         }
                     }
                 }

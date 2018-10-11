@@ -2151,6 +2151,86 @@ namespace ClassSchedulingComputerAided
             return cboCurriculum;
         }
 
+        public string[] get_id_PreferredScheduled(string professor, string semester, string schoolYear)//to get id of the preferred schedule professor
+        {
+            string[] id = new string[100];
+            int x = 0;
+            for (x = 0; x < 100; x++)
+                id[x] = "";
+
+            x = 0;
+            try
+            {
+                string u_id = "";
+                con.Open();
+                string user = "SELECT * FROM tbl_users t "
+                    + "WHERE CONCAT(firstName,' ',middleName,' ',lastName) = @prof ;";
+                MySqlCommand com1 = new MySqlCommand(user, con);
+                com1.Parameters.AddWithValue("@prof", professor);
+                com1.ExecuteNonQuery();
+
+                MySqlDataReader dr = com1.ExecuteReader();
+                if (dr.Read())
+                {
+                    u_id = dr["users_id"].ToString();
+                }
+                con.Close();
+
+
+                con.Open();
+                string sql = "SELECT * FROM tbl_preferredschedules t "
+                    + "WHERE users_id = @id;";
+                MySqlCommand com = new MySqlCommand(sql, con);
+                com.Parameters.AddWithValue("@id", u_id);
+                com.ExecuteNonQuery();
+
+                MySqlDataReader drr = com.ExecuteReader();
+                while (drr.Read())
+                {
+                    id[x] = drr["preferredSchedule_id"].ToString();
+                    x++;
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "get_id_PreferredScheduled");
+            }
+            finally
+            {
+                con.Close();
+            }
+            return id;
+        }
+
+        public string[] get_info_PreferredScheduled(string sS_id)//get the info from preferredschedule
+        {
+            string[] roomSchedule = new string[50];
+            try
+            {
+                con.Open();
+                string testSqlUsers = "SELECT * FROM tbl_preferredschedules WHERE preferredSchedule_id = @id";
+                MySqlCommand com = new MySqlCommand(testSqlUsers, con);
+                com.Parameters.AddWithValue("@id", sS_id);
+                com.ExecuteNonQuery();
+                MySqlDataReader dr = com.ExecuteReader();
+                if (dr.Read())
+                {
+                    roomSchedule[0] = dr["startTime"].ToString();
+                    roomSchedule[1] = dr["endTime"].ToString();
+                    roomSchedule[2] = dr["ps_Day"].ToString();
+                }
+            }
+            catch (MySqlException er)
+            {
+                MessageBox.Show(er.Message, "get_info_PreferredScheduled");
+            }
+            finally
+            {
+                con.Close();
+            }
+            return roomSchedule;
+        }
+
         public string[] get_id_ProfessorScheduled(string professor, string semester, string schoolYear)//to get id of the professor
         {
             string[] id = new string[100];
