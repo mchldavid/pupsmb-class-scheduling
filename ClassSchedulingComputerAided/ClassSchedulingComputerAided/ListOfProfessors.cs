@@ -134,5 +134,11 @@ namespace ClassSchedulingComputerAided
         {
 
         }
+
+        private void txtSearch_KeyUp(object sender, KeyEventArgs e)
+        {
+            dgvShow.DataSource = md.dgv_showListOfProfessors().DataSource;
+            dgvShow.Columns[0].Visible = false;
+        }
     }
 }

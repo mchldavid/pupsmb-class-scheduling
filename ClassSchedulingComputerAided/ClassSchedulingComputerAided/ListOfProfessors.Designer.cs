@@ -38,9 +38,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.lbl_title = new MetroFramework.Controls.MetroLabel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.txtSearch = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
-            this.cboSearchBy = new System.Windows.Forms.ComboBox();
             this.pnl = new System.Windows.Forms.Panel();
             this.dgvShow = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.label1 = new System.Windows.Forms.Label();
@@ -63,6 +60,9 @@
             this.btnHome = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnDeleteProfessors = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnEditProfessors = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.cboBy = new System.Windows.Forms.ComboBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
             this.pnl.SuspendLayout();
@@ -113,44 +113,13 @@
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
+            this.panel7.Controls.Add(this.cboBy);
             this.panel7.Controls.Add(this.txtSearch);
-            this.panel7.Controls.Add(this.metroLabel8);
-            this.panel7.Controls.Add(this.cboSearchBy);
+            this.panel7.Controls.Add(this.metroLabel3);
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(668, 42);
+            this.panel7.Size = new System.Drawing.Size(668, 39);
             this.panel7.TabIndex = 241;
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtSearch.CustomBackground = true;
-            this.txtSearch.Location = new System.Drawing.Point(86, 11);
-            this.txtSearch.Multiline = true;
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(144, 21);
-            this.txtSearch.TabIndex = 134;
-            // 
-            // metroLabel8
-            // 
-            this.metroLabel8.CustomBackground = true;
-            this.metroLabel8.CustomForeColor = true;
-            this.metroLabel8.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.metroLabel8.Location = new System.Drawing.Point(17, 11);
-            this.metroLabel8.Name = "metroLabel8";
-            this.metroLabel8.Size = new System.Drawing.Size(63, 21);
-            this.metroLabel8.TabIndex = 135;
-            this.metroLabel8.Text = "Search:";
-            this.metroLabel8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // cboSearchBy
-            // 
-            this.cboSearchBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSearchBy.FormattingEnabled = true;
-            this.cboSearchBy.Location = new System.Drawing.Point(236, 11);
-            this.cboSearchBy.Name = "cboSearchBy";
-            this.cboSearchBy.Size = new System.Drawing.Size(128, 21);
-            this.cboSearchBy.TabIndex = 236;
             // 
             // pnl
             // 
@@ -206,7 +175,7 @@
             this.dgvShow.GridColor = System.Drawing.Color.DarkGray;
             this.dgvShow.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
             this.dgvShow.HeaderForeColor = System.Drawing.Color.Gold;
-            this.dgvShow.Location = new System.Drawing.Point(2, 64);
+            this.dgvShow.Location = new System.Drawing.Point(2, 62);
             this.dgvShow.MultiSelect = false;
             this.dgvShow.Name = "dgvShow";
             this.dgvShow.ReadOnly = true;
@@ -225,7 +194,7 @@
             dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
             this.dgvShow.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvShow.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvShow.Size = new System.Drawing.Size(666, 436);
+            this.dgvShow.Size = new System.Drawing.Size(663, 438);
             this.dgvShow.TabIndex = 267;
             this.dgvShow.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvShow_CellContentClick);
             // 
@@ -234,7 +203,7 @@
             this.label1.BackColor = System.Drawing.Color.LightGray;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Maroon;
-            this.label1.Location = new System.Drawing.Point(3, 42);
+            this.label1.Location = new System.Drawing.Point(3, 40);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(406, 19);
             this.label1.TabIndex = 266;
@@ -541,6 +510,39 @@
             this.btnEditProfessors.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditProfessors.Click += new System.EventHandler(this.btnEditProfessors_Click);
             // 
+            // cboBy
+            // 
+            this.cboBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboBy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboBy.FormattingEnabled = true;
+            this.cboBy.Location = new System.Drawing.Point(314, 8);
+            this.cboBy.Name = "cboBy";
+            this.cboBy.Size = new System.Drawing.Size(171, 24);
+            this.cboBy.TabIndex = 257;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.BackColor = System.Drawing.Color.White;
+            this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(69, 9);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(239, 22);
+            this.txtSearch.TabIndex = 256;
+            this.txtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyUp);
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.CustomBackground = true;
+            this.metroLabel3.CustomForeColor = true;
+            this.metroLabel3.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.metroLabel3.Location = new System.Drawing.Point(11, 9);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(55, 21);
+            this.metroLabel3.TabIndex = 255;
+            this.metroLabel3.Text = "Search:";
+            this.metroLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // frmListOfProfessors
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -558,6 +560,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.pnl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvShow)).EndInit();
             this.pnlShowUserControl.ResumeLayout(false);
@@ -578,9 +581,6 @@
         private System.Windows.Forms.Label label12;
         public MetroFramework.Controls.MetroLabel lbl_title;
         private System.Windows.Forms.Panel panel7;
-        public MetroFramework.Controls.MetroTextBox txtSearch;
-        public MetroFramework.Controls.MetroLabel metroLabel8;
-        public System.Windows.Forms.ComboBox cboSearchBy;
         private System.Windows.Forms.Panel pnl;
         public System.Windows.Forms.Panel panel9;
         public Bunifu.Framework.UI.BunifuFlatButton btnHome;
@@ -603,5 +603,8 @@
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private Bunifu.Framework.UI.BunifuCustomDataGrid dgvShow;
         private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.ComboBox cboBy;
+        private System.Windows.Forms.TextBox txtSearch;
+        public MetroFramework.Controls.MetroLabel metroLabel3;
     }
 }

@@ -77,6 +77,7 @@ namespace ClassSchedulingComputerAided
             cboSubjectBy.SelectedIndex = 0;
             dgvAddSubject.DataSource = md.dgv_showAddPreferredSubjects("Course Subject", cboSemester.Text).DataSource;
             dgvAddSubject.Columns[0].Visible = false;
+            dgvAddSubject.Columns[5].Visible = false;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -88,7 +89,7 @@ namespace ClassSchedulingComputerAided
         {
             foreach (DataGridViewRow row in dgvAddSubject.SelectedRows)
             {
-                md.Prof_AddSubjects(row.Cells[0].Value.ToString(), cboSemester.Text, cboSchoolYear.Text);
+                md.Prof_AddSubjects(row.Cells[0].Value.ToString(), cboSemester.Text, cboSchoolYear.Text, row.Cells[5].Value.ToString());
 
                 dgvListSubject.DataSource = md.dgv_showPreferredSubjects(cboSemester.Text, cboSchoolYear.Text).DataSource;
                 dgvListSubject.Columns[0].Visible = false;
@@ -105,6 +106,7 @@ namespace ClassSchedulingComputerAided
         {
             dgvAddSubject.DataSource = md.dgv_showAddPreferredSubjects(cboSubjectBy.SelectedItem.ToString(), cboSemester.Text).DataSource;
             dgvAddSubject.Columns[0].Visible = false;
+            dgvAddSubject.Columns[5].Visible = false;
         }
 
         private void btnDeleteSubject_Click(object sender, EventArgs e)
@@ -179,6 +181,11 @@ namespace ClassSchedulingComputerAided
         {
             dgvListSubject.DataSource = md.dgv_SearchPreferredSubjects( cboSchoolYear.Text, cboSemester.Text,txt_pSearch.Text, cbo_pBy.Text).DataSource;
             dgvListSubject.Columns[0].Visible = false;
+        }
+
+        private void dgvAddSubject_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
