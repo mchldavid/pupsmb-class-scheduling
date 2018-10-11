@@ -2612,12 +2612,50 @@ namespace ClassSchedulingComputerAided
                     + "AND su.semester = @sem "
                     + "AND ps.schoolYear = @sY "
                     + "AND ps.users_id = usr.users_id "
+                    + "AND usr.status = 'active' "
                     + "ORDER BY usr.FirstName ASC;";
 
                 MySqlCommand com = new MySqlCommand(sql, con);
                 com.Parameters.AddWithValue("@sC", courseCode);
                 com.Parameters.AddWithValue("@sem", semester);
                 com.Parameters.AddWithValue("@sY", schoolYear);
+                com.ExecuteNonQuery();
+
+                MySqlDataReader dr = com.ExecuteReader();
+                while (dr.Read())
+                {
+                    SubjectForStudents.Professors[x] = dr["CONCAT(usr.firstName,' ',usr.middleName,' ', usr.lastName)"].ToString();
+                    x++;
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "CSD_ListProfDedicated");
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public void CSD_ListProfNotDedicated()// to add item of professors not dedicated to his/her preferred subjects into combobox
+        {
+            int x = 0;
+            for (x = 0; x < 100; x++)//to set all accessors into null value - set to 100 loop
+            {
+                SubjectForStudents.Professors[x] = "";
+            }
+            x = 0;
+            try
+            {
+                con.Open();
+                string sql = "SELECT DISTINCT CONCAT(usr.firstName,' ',usr.middleName,' ', usr.lastName) "
+                    + "FROM tbl_users usr, tbl_preferredsubjects ps, tbl_subjects su "
+                    + "WHERE NOT ps.users_id = usr.users_id "
+                    + "AND usr.status= 'active' "
+                    + "AND usr.userLevel = 'professor';";
+
+                MySqlCommand com = new MySqlCommand(sql, con);
                 com.ExecuteNonQuery();
 
                 MySqlDataReader dr = com.ExecuteReader();

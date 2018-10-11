@@ -704,7 +704,7 @@
             this.cboQuestion2.Items.AddRange(new object[] {
             "Select Question",
             "Who was your childhood hero?",
-            "What is your mother\'s middle name? ",
+            "What is your mother(s) middle name? ",
             "What was your dream job as a child ",
             "What is the name of the company of your first job?",
             "What is the country of your ultimate dream vacation?"});

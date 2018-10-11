@@ -158,6 +158,7 @@
             this.Controls.Add(this.lblQuestion1);
             this.Controls.Add(this.panel7);
             this.Name = "NewPassword";
+            this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.White;
             this.Load += new System.EventHandler(this.frmNewPassword_Load);
             this.panel7.ResumeLayout(false);

@@ -202,6 +202,7 @@
             this.MaximizeBox = false;
             this.Movable = false;
             this.Name = "frmTryInOtherWay";
+            this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.White;
             this.Load += new System.EventHandler(this.TryInOtherWay_Load);
             this.Click += new System.EventHandler(this.s);

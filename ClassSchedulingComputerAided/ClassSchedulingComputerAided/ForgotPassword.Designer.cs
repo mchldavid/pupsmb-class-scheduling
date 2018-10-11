@@ -53,6 +53,7 @@
             // 
             // btnLogin
             // 
+            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogin.FontWeight = MetroFramework.MetroLinkWeight.Light;
             this.btnLogin.ForeColor = System.Drawing.SystemColors.Highlight;
             this.btnLogin.Location = new System.Drawing.Point(53, 227);
@@ -66,6 +67,7 @@
             // 
             // btnRegister
             // 
+            this.btnRegister.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRegister.FontWeight = MetroFramework.MetroLinkWeight.Light;
             this.btnRegister.ForeColor = System.Drawing.SystemColors.Highlight;
             this.btnRegister.Location = new System.Drawing.Point(53, 247);
@@ -93,6 +95,7 @@
             // 
             // btnOtherWay
             // 
+            this.btnOtherWay.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnOtherWay.FontWeight = MetroFramework.MetroLinkWeight.Light;
             this.btnOtherWay.ForeColor = System.Drawing.SystemColors.Highlight;
             this.btnOtherWay.Location = new System.Drawing.Point(53, 207);
@@ -171,6 +174,7 @@
             this.MaximizeBox = false;
             this.Movable = false;
             this.Name = "frmForgotPassword";
+            this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.White;
             this.Load += new System.EventHandler(this.ForgotPassword_Load);
             this.panel7.ResumeLayout(false);

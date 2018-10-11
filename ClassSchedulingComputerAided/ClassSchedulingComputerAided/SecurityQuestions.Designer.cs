@@ -221,6 +221,7 @@
             this.MaximizeBox = false;
             this.Movable = false;
             this.Name = "frmSecurityQuestions";
+            this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.White;
             this.Load += new System.EventHandler(this.SecurityQuestions_Load);
             this.panel7.ResumeLayout(false);

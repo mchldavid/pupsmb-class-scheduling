@@ -22,6 +22,8 @@ namespace ClassSchedulingComputerAided
 
         MyDatabase md = new MyDatabase();
 
+        int countForColor = 0;
+
         private void lblLecHours_4_Click(object sender, EventArgs e)
         {
 
@@ -2118,6 +2120,32 @@ namespace ClassSchedulingComputerAided
                     cboProfessor_1.Items.Add(SubjectForStudents.Professors[x]);
             }
 
+            //to generate other prof
+            countForColor = 0;
+            for (int z = 0; z < cboProfessor_1.Items.Count; z++)
+                countForColor++;
+
+            cboProfessor_1.DrawMode = DrawMode.OwnerDrawFixed;
+            cboProfessor_1.DrawItem += new DrawItemEventHandler(cboProfessor_1_DrawItem);
+            //to list all professors that is not particular to courseCode
+            SubjectForStudents.Professors = new string[100];
+            md.CSD_ListProfNotDedicated();
+            for (int x = 0; x < 100; x++)//set to 50 loop
+            {
+                if (SubjectForStudents.Professors[x] != "")
+                {
+                    bool toOthers = true;
+                    for (int y = 0; y < cboProfessor_1.Items.Count; y++)
+                    {
+                        if (cboProfessor_1.Items[y].ToString() == SubjectForStudents.Professors[x])
+                            toOthers = false;
+                    }
+                    if(toOthers == true)
+                        cboProfessor_1.Items.Add(SubjectForStudents.Professors[x]);
+                }
+            }
+
+
             //=====================2================
             //clear all listed items
             cboProfessor_2.Items.Clear();
@@ -2140,6 +2168,31 @@ namespace ClassSchedulingComputerAided
             {
                 if (SubjectForStudents.Professors[x] != "")
                     cboProfessor_2.Items.Add(SubjectForStudents.Professors[x]);
+            }
+
+            //to generate other prof
+            countForColor = 0;
+            for (int z = 0; z < cboProfessor_2.Items.Count; z++)
+                countForColor++;
+
+            cboProfessor_2.DrawMode = DrawMode.OwnerDrawFixed;
+            cboProfessor_2.DrawItem += new DrawItemEventHandler(cboProfessor_2_DrawItem);
+            //to list all professors that is not particular to courseCode
+            SubjectForStudents.Professors = new string[100];
+            md.CSD_ListProfNotDedicated();
+            for (int x = 0; x < 100; x++)//set to 50 loop
+            {
+                if (SubjectForStudents.Professors[x] != "")
+                {
+                    bool toOthers = true;
+                    for (int y = 0; y < cboProfessor_2.Items.Count; y++)
+                    {
+                        if (cboProfessor_2.Items[y].ToString() == SubjectForStudents.Professors[x])
+                            toOthers = false;
+                    }
+                    if (toOthers == true)
+                        cboProfessor_2.Items.Add(SubjectForStudents.Professors[x]);
+                }
             }
             //===================3======================
             //clear all listed items
@@ -2165,6 +2218,30 @@ namespace ClassSchedulingComputerAided
                     cboProfessor_3.Items.Add(SubjectForStudents.Professors[x]);
             }
 
+            //to generate other prof
+            countForColor = 0;
+            for (int z = 0; z < cboProfessor_3.Items.Count; z++)
+                countForColor++;
+
+            cboProfessor_3.DrawMode = DrawMode.OwnerDrawFixed;
+            cboProfessor_3.DrawItem += new DrawItemEventHandler(cboProfessor_3_DrawItem);
+            //to list all professors that is not particular to courseCode
+            SubjectForStudents.Professors = new string[100];
+            md.CSD_ListProfNotDedicated();
+            for (int x = 0; x < 100; x++)//set to 50 loop
+            {
+                if (SubjectForStudents.Professors[x] != "")
+                {
+                    bool toOthers = true;
+                    for (int y = 0; y < cboProfessor_3.Items.Count; y++)
+                    {
+                        if (cboProfessor_3.Items[y].ToString() == SubjectForStudents.Professors[x])
+                            toOthers = false;
+                    }
+                    if (toOthers == true)
+                        cboProfessor_3.Items.Add(SubjectForStudents.Professors[x]);
+                }
+            }
             //======================4==================
             //clear all listed items
             cboProfessor_4.Items.Clear();
@@ -2187,6 +2264,31 @@ namespace ClassSchedulingComputerAided
             {
                 if (SubjectForStudents.Professors[x] != "")
                     cboProfessor_4.Items.Add(SubjectForStudents.Professors[x]);
+            }
+
+            //to generate other prof
+            countForColor = 0;
+            for (int z = 0; z < cboProfessor_4.Items.Count; z++)
+                countForColor++;
+
+            cboProfessor_4.DrawMode = DrawMode.OwnerDrawFixed;
+            cboProfessor_4.DrawItem += new DrawItemEventHandler(cboProfessor_4_DrawItem);
+            //to list all professors that is not particular to courseCode
+            SubjectForStudents.Professors = new string[100];
+            md.CSD_ListProfNotDedicated();
+            for (int x = 0; x < 100; x++)//set to 50 loop
+            {
+                if (SubjectForStudents.Professors[x] != "")
+                {
+                    bool toOthers = true;
+                    for (int y = 0; y < cboProfessor_4.Items.Count; y++)
+                    {
+                        if (cboProfessor_4.Items[y].ToString() == SubjectForStudents.Professors[x])
+                            toOthers = false;
+                    }
+                    if (toOthers == true)
+                        cboProfessor_4.Items.Add(SubjectForStudents.Professors[x]);
+                }
             }
 
             //=================5================
@@ -2213,6 +2315,31 @@ namespace ClassSchedulingComputerAided
                     cboProfessor_5.Items.Add(SubjectForStudents.Professors[x]);
             }
 
+            //to generate other prof
+            countForColor = 0;
+            for (int z = 0; z < cboProfessor_5.Items.Count; z++)
+                countForColor++;
+
+            cboProfessor_5.DrawMode = DrawMode.OwnerDrawFixed;
+            cboProfessor_5.DrawItem += new DrawItemEventHandler(cboProfessor_5_DrawItem);
+            //to list all professors that is not particular to courseCode
+            SubjectForStudents.Professors = new string[100];
+            md.CSD_ListProfNotDedicated();
+            for (int x = 0; x < 100; x++)//set to 50 loop
+            {
+                if (SubjectForStudents.Professors[x] != "")
+                {
+                    bool toOthers = true;
+                    for (int y = 0; y < cboProfessor_5.Items.Count; y++)
+                    {
+                        if (cboProfessor_5.Items[y].ToString() == SubjectForStudents.Professors[x])
+                            toOthers = false;
+                    }
+                    if (toOthers == true)
+                        cboProfessor_5.Items.Add(SubjectForStudents.Professors[x]);
+                }
+            }
+
             //==================[6]===============
             //clear all listed items
             cboProfessor_6.Items.Clear();
@@ -2237,6 +2364,30 @@ namespace ClassSchedulingComputerAided
                     cboProfessor_6.Items.Add(SubjectForStudents.Professors[x]);
             }
 
+            //to generate other prof
+            countForColor = 0;
+            for (int z = 0; z < cboProfessor_6.Items.Count; z++)
+                countForColor++;
+
+            cboProfessor_6.DrawMode = DrawMode.OwnerDrawFixed;
+            cboProfessor_6.DrawItem += new DrawItemEventHandler(cboProfessor_6_DrawItem);
+            //to list all professors that is not particular to courseCode
+            SubjectForStudents.Professors = new string[100];
+            md.CSD_ListProfNotDedicated();
+            for (int x = 0; x < 100; x++)//set to 50 loop
+            {
+                if (SubjectForStudents.Professors[x] != "")
+                {
+                    bool toOthers = true;
+                    for (int y = 0; y < cboProfessor_6.Items.Count; y++)
+                    {
+                        if (cboProfessor_6.Items[y].ToString() == SubjectForStudents.Professors[x])
+                            toOthers = false;
+                    }
+                    if (toOthers == true)
+                        cboProfessor_6.Items.Add(SubjectForStudents.Professors[x]);
+                }
+            }
 
             //=================[7]===================
             //clear all listed items
@@ -2262,6 +2413,32 @@ namespace ClassSchedulingComputerAided
                     cboProfessor_7.Items.Add(SubjectForStudents.Professors[x]);
             }
 
+
+            //to generate other prof
+            countForColor = 0;
+            for (int z = 0; z < cboProfessor_7.Items.Count; z++)
+                countForColor++;
+
+            cboProfessor_7.DrawMode = DrawMode.OwnerDrawFixed;
+            cboProfessor_7.DrawItem += new DrawItemEventHandler(cboProfessor_7_DrawItem);
+            //to list all professors that is not particular to courseCode
+            SubjectForStudents.Professors = new string[100];
+            md.CSD_ListProfNotDedicated();
+            for (int x = 0; x < 100; x++)//set to 50 loop
+            {
+                if (SubjectForStudents.Professors[x] != "")
+                {
+                    bool toOthers = true;
+                    for (int y = 0; y < cboProfessor_7.Items.Count; y++)
+                    {
+                        if (cboProfessor_7.Items[y].ToString() == SubjectForStudents.Professors[x])
+                            toOthers = false;
+                    }
+                    if (toOthers == true)
+                        cboProfessor_7.Items.Add(SubjectForStudents.Professors[x]);
+                }
+            }
+
             //========================[8]====================
             //clear all listed items
             cboProfessor_8.Items.Clear();
@@ -2284,6 +2461,31 @@ namespace ClassSchedulingComputerAided
             {
                 if (SubjectForStudents.Professors[x] != "")
                     cboProfessor_8.Items.Add(SubjectForStudents.Professors[x]);
+            }
+
+            //to generate other prof
+            countForColor = 0;
+            for (int z = 0; z < cboProfessor_8.Items.Count; z++)
+                countForColor++;
+
+            cboProfessor_8.DrawMode = DrawMode.OwnerDrawFixed;
+            cboProfessor_8.DrawItem += new DrawItemEventHandler(cboProfessor_8_DrawItem);
+            //to list all professors that is not particular to courseCode
+            SubjectForStudents.Professors = new string[100];
+            md.CSD_ListProfNotDedicated();
+            for (int x = 0; x < 100; x++)//set to 50 loop
+            {
+                if (SubjectForStudents.Professors[x] != "")
+                {
+                    bool toOthers = true;
+                    for (int y = 0; y < cboProfessor_8.Items.Count; y++)
+                    {
+                        if (cboProfessor_8.Items[y].ToString() == SubjectForStudents.Professors[x])
+                            toOthers = false;
+                    }
+                    if (toOthers == true)
+                        cboProfessor_8.Items.Add(SubjectForStudents.Professors[x]);
+                }
             }
             //=======================[9]=====================
             //clear all listed items
@@ -2309,6 +2511,31 @@ namespace ClassSchedulingComputerAided
                     cboProfessor_9.Items.Add(SubjectForStudents.Professors[x]);
             }
 
+            //to generate other prof
+            countForColor = 0;
+            for (int z = 0; z < cboProfessor_9.Items.Count; z++)
+                countForColor++;
+
+            cboProfessor_9.DrawMode = DrawMode.OwnerDrawFixed;
+            cboProfessor_9.DrawItem += new DrawItemEventHandler(cboProfessor_9_DrawItem);
+            //to list all professors that is not particular to courseCode
+            SubjectForStudents.Professors = new string[100];
+            md.CSD_ListProfNotDedicated();
+            for (int x = 0; x < 100; x++)//set to 50 loop
+            {
+                if (SubjectForStudents.Professors[x] != "")
+                {
+                    bool toOthers = true;
+                    for (int y = 0; y < cboProfessor_9.Items.Count; y++)
+                    {
+                        if (cboProfessor_9.Items[y].ToString() == SubjectForStudents.Professors[x])
+                            toOthers = false;
+                    }
+                    if (toOthers == true)
+                        cboProfessor_9.Items.Add(SubjectForStudents.Professors[x]);
+                }
+            }
+
             //==========================[10]=================
             //clear all listed items
             cboProfessor_10.Items.Clear();
@@ -2331,6 +2558,31 @@ namespace ClassSchedulingComputerAided
             {
                 if (SubjectForStudents.Professors[x] != "")
                     cboProfessor_10.Items.Add(SubjectForStudents.Professors[x]);
+            }
+
+            //to generate other prof
+            countForColor = 0;
+            for (int z = 0; z < cboProfessor_10.Items.Count; z++)
+                countForColor++;
+
+            cboProfessor_10.DrawMode = DrawMode.OwnerDrawFixed;
+            cboProfessor_10.DrawItem += new DrawItemEventHandler(cboProfessor_10_DrawItem);
+            //to list all professors that is not particular to courseCode
+            SubjectForStudents.Professors = new string[100];
+            md.CSD_ListProfNotDedicated();
+            for (int x = 0; x < 100; x++)//set to 50 loop
+            {
+                if (SubjectForStudents.Professors[x] != "")
+                {
+                    bool toOthers = true;
+                    for (int y = 0; y < cboProfessor_10.Items.Count; y++)
+                    {
+                        if (cboProfessor_10.Items[y].ToString() == SubjectForStudents.Professors[x])
+                            toOthers = false;
+                    }
+                    if (toOthers == true)
+                        cboProfessor_10.Items.Add(SubjectForStudents.Professors[x]);
+                }
             }
         }
 
@@ -2793,6 +3045,226 @@ namespace ClassSchedulingComputerAided
             btnSAVE.Enabled = true;
 
             btnCancel_10.Visible = false;
+        }
+
+        private void cboProfessor_1_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            Font font = cboProfessor_1.Font;
+            Brush brush = Brushes.Black;
+            string text = "";
+            if (e.Index != -1)
+            {
+                text = cboProfessor_1.Items[e.Index].ToString();
+            }
+            if (e.Index < countForColor)
+            {
+                font = new Font(font, FontStyle.Bold);
+                brush = Brushes.DarkGreen;
+            }
+            else
+            {
+                brush = Brushes.DarkOrange;
+            }
+
+            e.Graphics.DrawString(text, font, brush, e.Bounds);
+        }
+
+        private void cboProfessor_2_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            Font font = cboProfessor_2.Font;
+            Brush brush = Brushes.Black;
+            string text = "";
+            if (e.Index != -1)
+            {
+                text = cboProfessor_2.Items[e.Index].ToString();
+            }
+            if (e.Index < countForColor)
+            {
+                font = new Font(font, FontStyle.Bold);
+                brush = Brushes.DarkGreen;
+            }
+            else
+            {
+                brush = Brushes.DarkOrange;
+            }
+
+            e.Graphics.DrawString(text, font, brush, e.Bounds);
+        }
+
+        private void cboProfessor_3_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            Font font = cboProfessor_3.Font;
+            Brush brush = Brushes.Black;
+            string text = "";
+            if (e.Index != -1)
+            {
+                text = cboProfessor_3.Items[e.Index].ToString();
+            }
+            if (e.Index < countForColor)
+            {
+                font = new Font(font, FontStyle.Bold);
+                brush = Brushes.DarkGreen;
+            }
+            else
+            {
+                brush = Brushes.DarkOrange;
+            }
+
+            e.Graphics.DrawString(text, font, brush, e.Bounds);
+        }
+
+        private void cboProfessor_4_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            Font font = cboProfessor_4.Font;
+            Brush brush = Brushes.Black;
+            string text = "";
+            if (e.Index != -1)
+            {
+                text = cboProfessor_4.Items[e.Index].ToString();
+            }
+            if (e.Index < countForColor)
+            {
+                font = new Font(font, FontStyle.Bold);
+                brush = Brushes.DarkGreen;
+            }
+            else
+            {
+                brush = Brushes.DarkOrange;
+            }
+
+            e.Graphics.DrawString(text, font, brush, e.Bounds);
+        }
+
+        private void cboProfessor_5_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            Font font = cboProfessor_5.Font;
+            Brush brush = Brushes.Black;
+            string text = "";
+            if (e.Index != -1)
+            {
+                text = cboProfessor_5.Items[e.Index].ToString();
+            }
+            if (e.Index < countForColor)
+            {
+                font = new Font(font, FontStyle.Bold);
+                brush = Brushes.DarkGreen;
+            }
+            else
+            {
+                brush = Brushes.DarkOrange;
+            }
+
+            e.Graphics.DrawString(text, font, brush, e.Bounds);
+        }
+
+        private void cboProfessor_6_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            Font font = cboProfessor_6.Font;
+            Brush brush = Brushes.Black;
+            string text = "";
+            if (e.Index != -1)
+            {
+                text = cboProfessor_6.Items[e.Index].ToString();
+            }
+            if (e.Index < countForColor)
+            {
+                font = new Font(font, FontStyle.Bold);
+                brush = Brushes.DarkGreen;
+            }
+            else
+            {
+                brush = Brushes.DarkOrange;
+            }
+
+            e.Graphics.DrawString(text, font, brush, e.Bounds);
+        }
+
+        private void cboProfessor_7_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            Font font = cboProfessor_7.Font;
+            Brush brush = Brushes.Black;
+            string text = "";
+            if (e.Index != -1)
+            {
+                text = cboProfessor_7.Items[e.Index].ToString();
+            }
+            if (e.Index < countForColor)
+            {
+                font = new Font(font, FontStyle.Bold);
+                brush = Brushes.DarkGreen;
+            }
+            else
+            {
+                brush = Brushes.DarkOrange;
+            }
+
+            e.Graphics.DrawString(text, font, brush, e.Bounds);
+        }
+
+        private void cboProfessor_8_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            Font font = cboProfessor_8.Font;
+            Brush brush = Brushes.Black;
+            string text = "";
+            if (e.Index != -1)
+            {
+                text = cboProfessor_8.Items[e.Index].ToString();
+            }
+            if (e.Index < countForColor)
+            {
+                font = new Font(font, FontStyle.Bold);
+                brush = Brushes.DarkGreen;
+            }
+            else
+            {
+                brush = Brushes.DarkOrange;
+            }
+
+            e.Graphics.DrawString(text, font, brush, e.Bounds);
+        }
+
+        private void cboProfessor_9_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            Font font = cboProfessor_9.Font;
+            Brush brush = Brushes.Black;
+            string text = "";
+            if (e.Index != -1)
+            {
+                text = cboProfessor_9.Items[e.Index].ToString();
+            }
+            if (e.Index < countForColor)
+            {
+                font = new Font(font, FontStyle.Bold);
+                brush = Brushes.DarkGreen;
+            }
+            else
+            {
+                brush = Brushes.DarkOrange;
+            }
+
+            e.Graphics.DrawString(text, font, brush, e.Bounds);
+        }
+
+        private void cboProfessor_10_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            Font font = cboProfessor_10.Font;
+            Brush brush = Brushes.Black;
+            string text = "";
+            if (e.Index != -1)
+            {
+                text = cboProfessor_10.Items[e.Index].ToString();
+            }
+            if (e.Index < countForColor)
+            {
+                font = new Font(font, FontStyle.Bold);
+                brush = Brushes.DarkGreen;
+            }
+            else
+            {
+                brush = Brushes.DarkOrange;
+            }
+
+            e.Graphics.DrawString(text, font, brush, e.Bounds);
         }
     }
 }

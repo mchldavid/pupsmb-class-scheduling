@@ -56,7 +56,7 @@ namespace ClassSchedulingComputerAided
             }
             else
             {
-                MessageBox.Show("Please enter a valid username", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("The credentials doesn't match in our records.", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtUsername1.Text = "";
                 txtUsername1.Focus();
             }

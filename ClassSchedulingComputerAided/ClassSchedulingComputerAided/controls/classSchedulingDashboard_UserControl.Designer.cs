@@ -207,7 +207,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlStudentScheduling.BackColor = System.Drawing.Color.White;
             this.pnlStudentScheduling.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlStudentScheduling.Controls.Add(this.pnlStart);
             this.pnlStudentScheduling.Controls.Add(this.tbl_pnl_layout);
             this.pnlStudentScheduling.Controls.Add(this.pnlHeader);
             this.pnlStudentScheduling.Controls.Add(this.btnCancel_10);
@@ -231,6 +230,7 @@
             this.pnlStudentScheduling.Controls.Add(this.btnSet_1);
             this.pnlStudentScheduling.Controls.Add(this.btnCancel_4);
             this.pnlStudentScheduling.Controls.Add(this.btnSAVE);
+            this.pnlStudentScheduling.Controls.Add(this.pnlStart);
             this.pnlStudentScheduling.Location = new System.Drawing.Point(12, 3);
             this.pnlStudentScheduling.Name = "pnlStudentScheduling";
             this.pnlStudentScheduling.Size = new System.Drawing.Size(1342, 351);
@@ -740,6 +740,7 @@
             this.cboProfessor_1.Name = "cboProfessor_1";
             this.cboProfessor_1.Size = new System.Drawing.Size(200, 21);
             this.cboProfessor_1.TabIndex = 11;
+            this.cboProfessor_1.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.cboProfessor_1_DrawItem);
             this.cboProfessor_1.SelectedIndexChanged += new System.EventHandler(this.cboProfessor_1_SelectedIndexChanged);
             // 
             // lblCode_1
@@ -1001,6 +1002,7 @@
             this.cboProfessor_10.Name = "cboProfessor_10";
             this.cboProfessor_10.Size = new System.Drawing.Size(200, 21);
             this.cboProfessor_10.TabIndex = 13;
+            this.cboProfessor_10.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.cboProfessor_10_DrawItem);
             this.cboProfessor_10.SelectedIndexChanged += new System.EventHandler(this.cboProfessor_10_SelectedIndexChanged);
             // 
             // cboRoom_9
@@ -1272,6 +1274,7 @@
             this.cboProfessor_9.Name = "cboProfessor_9";
             this.cboProfessor_9.Size = new System.Drawing.Size(200, 21);
             this.cboProfessor_9.TabIndex = 13;
+            this.cboProfessor_9.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.cboProfessor_9_DrawItem);
             this.cboProfessor_9.SelectedIndexChanged += new System.EventHandler(this.cboProfessor_9_SelectedIndexChanged);
             // 
             // cboRoom_8
@@ -1313,6 +1316,7 @@
             this.cboProfessor_2.Name = "cboProfessor_2";
             this.cboProfessor_2.Size = new System.Drawing.Size(200, 21);
             this.cboProfessor_2.TabIndex = 13;
+            this.cboProfessor_2.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.cboProfessor_2_DrawItem);
             this.cboProfessor_2.SelectedIndexChanged += new System.EventHandler(this.cboProfessor_2_SelectedIndexChanged);
             // 
             // cboDay_8
@@ -1606,6 +1610,7 @@
             this.cboProfessor_8.Name = "cboProfessor_8";
             this.cboProfessor_8.Size = new System.Drawing.Size(200, 21);
             this.cboProfessor_8.TabIndex = 13;
+            this.cboProfessor_8.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.cboProfessor_8_DrawItem);
             this.cboProfessor_8.SelectedIndexChanged += new System.EventHandler(this.cboProfessor_8_SelectedIndexChanged);
             // 
             // cboRoom_7
@@ -1819,6 +1824,7 @@
             this.cboProfessor_7.Name = "cboProfessor_7";
             this.cboProfessor_7.Size = new System.Drawing.Size(200, 21);
             this.cboProfessor_7.TabIndex = 13;
+            this.cboProfessor_7.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.cboProfessor_7_DrawItem);
             this.cboProfessor_7.SelectedIndexChanged += new System.EventHandler(this.cboProfessor_7_SelectedIndexChanged);
             // 
             // cboRoom_6
@@ -1948,6 +1954,7 @@
             this.cboProfessor_3.Name = "cboProfessor_3";
             this.cboProfessor_3.Size = new System.Drawing.Size(200, 21);
             this.cboProfessor_3.TabIndex = 13;
+            this.cboProfessor_3.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.cboProfessor_3_DrawItem);
             this.cboProfessor_3.SelectedIndexChanged += new System.EventHandler(this.cboProfessor_3_SelectedIndexChanged);
             // 
             // lblUnits_7
@@ -2203,6 +2210,7 @@
             this.cboProfessor_6.Name = "cboProfessor_6";
             this.cboProfessor_6.Size = new System.Drawing.Size(200, 21);
             this.cboProfessor_6.TabIndex = 13;
+            this.cboProfessor_6.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.cboProfessor_6_DrawItem);
             this.cboProfessor_6.SelectedIndexChanged += new System.EventHandler(this.cboProfessor_6_SelectedIndexChanged);
             // 
             // cboRoom_5
@@ -2404,6 +2412,7 @@
             this.cboProfessor_5.Name = "cboProfessor_5";
             this.cboProfessor_5.Size = new System.Drawing.Size(200, 21);
             this.cboProfessor_5.TabIndex = 13;
+            this.cboProfessor_5.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.cboProfessor_5_DrawItem);
             this.cboProfessor_5.SelectedIndexChanged += new System.EventHandler(this.cboProfessor_5_SelectedIndexChanged);
             // 
             // cboRoom_4
@@ -2674,6 +2683,7 @@
             this.cboProfessor_4.Name = "cboProfessor_4";
             this.cboProfessor_4.Size = new System.Drawing.Size(200, 21);
             this.cboProfessor_4.TabIndex = 13;
+            this.cboProfessor_4.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.cboProfessor_4_DrawItem);
             this.cboProfessor_4.SelectedIndexChanged += new System.EventHandler(this.cboProfessor_4_SelectedIndexChanged);
             // 
             // lblDescription_6
