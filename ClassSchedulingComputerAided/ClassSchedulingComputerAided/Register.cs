@@ -38,6 +38,10 @@ namespace ClassSchedulingComputerAided
                 if (md.Sections_ListCourse().GetValue(x).ToString() != "")
                     cboCourseDepartment.Items.Add(md.Sections_ListCourse().GetValue(x).ToString());
             cboCourseDepartment.SelectedIndex = 0;
+
+            cboQuestion1.SelectedIndex = 0;
+            cboQuestion2.SelectedIndex = 0;
+            cboQuestion3.SelectedIndex = 0;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -54,9 +58,7 @@ namespace ClassSchedulingComputerAided
                 && txtPassword.Text != "" 
                 && txtAnswer1.Text != "" 
                 && txtAnswer2.Text != "" 
-                && txtAnswer3.Text != "" 
-                && txtAnswer4.Text != "" 
-                && txtAnswer5.Text != "")
+                && txtAnswer3.Text != "")
             {
                 if (!(rdoFemale.Checked == false && rdoMale.Checked == false))
                 {
@@ -70,46 +72,49 @@ namespace ClassSchedulingComputerAided
                             {
                                 if (txtPassword.Text == txtConfirmPassword.Text)
                                 {
-                                    DialogResult dr = MessageBox.Show("Do you want to save?", "Save", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                                    if (dr == DialogResult.Yes)
+                                    if (cboQuestion1.SelectedIndex != 0 && cboQuestion2.SelectedIndex != 0 && cboQuestion3.SelectedIndex != 0)
                                     {
-                                        //check if the new username is existing
-                                        if (md.existUsername(txtUsername.Text) == false)
+                                        DialogResult dr = MessageBox.Show("Do you want to save?", "Save", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                                        if (dr == DialogResult.Yes)
                                         {
-                                            if (rdoFulltimer.Checked == true)
-                                                teachStatus = "Fulltimer";
-                                            if (rdoParttimer.Checked == true)
-                                                teachStatus = "Parttimer";
-                                            if (rdoRetiree.Checked == true)
-                                                teachStatus = "Retiree";
-                                            md.RegisterUser(txtUsername.Text, ms.encryptPassword(txtPassword.Text), txtFirstName.Text, txtMiddleName.Text, txtLastName.Text, txtAddress.Text, gender, teachStatus, cboCourseDepartment.Text, txtEmailAddress.Text, cleanMobileNumber(txtMobileNumber.Text));
+                                            //check if the new username is existing
+                                            if (md.existUsername(txtUsername.Text) == false)
+                                            {
+                                                if (rdoFulltimer.Checked == true)
+                                                    teachStatus = "Fulltimer";
+                                                if (rdoParttimer.Checked == true)
+                                                    teachStatus = "Parttimer";
+                                                if (rdoRetiree.Checked == true)
+                                                    teachStatus = "Retiree";
+                                                md.RegisterUser(txtUsername.Text, ms.encryptPassword(txtPassword.Text), txtFirstName.Text, txtMiddleName.Text, txtLastName.Text, txtAddress.Text, gender, teachStatus, cboCourseDepartment.Text, txtEmailAddress.Text, cleanMobileNumber(txtMobileNumber.Text));
 
-                                            //get set security questions
-                                            string[] answer = new string[5];
-                                            string[] question = new string[5];
+                                                //get set security questions
+                                                string[] answer = new string[3];
+                                                string[] question = new string[3];
 
-                                            answer[0] = txtAnswer1.Text;
-                                            answer[1] = txtAnswer2.Text;
-                                            answer[2] = txtAnswer3.Text;
-                                            answer[3] = txtAnswer4.Text;
-                                            answer[4] = txtAnswer5.Text;
+                                                answer[0] = txtAnswer1.Text;
+                                                answer[1] = txtAnswer2.Text;
+                                                answer[2] = txtAnswer3.Text;
 
-                                            question[0] = "Who is your favorite actor, musician, or artist?";
-                                            question[1] = "What is your mother’s maiden name?";
-                                            question[2] = "What is your favorite color?";
-                                            question[3] = "In what city were you born?";
-                                            question[4] = "What is the name of your favorite pet?";
+                                                question[0] = cboQuestion1.Text;
+                                                question[1] = cboQuestion2.Text;
+                                                question[2] = cboQuestion3.Text;
 
-                                            md.RegisterSecurityQuestion(txtUsername.Text, ms.encryptPassword(txtPassword.Text), answer, question);
-                                            frmLogin l = new frmLogin();
-                                            l.Show();
-                                            this.Hide();
+                                                md.RegisterSecurityQuestion(txtUsername.Text, ms.encryptPassword(txtPassword.Text), answer, question);
+                                                frmLogin l = new frmLogin();
+                                                l.Show();
+                                                this.Hide();
+                                            }
+                                            else
+                                            {
+                                                MessageBox.Show("The username is already exist!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                                txtUsername.Focus();
+                                            }
                                         }
-                                        else
-                                        {
-                                            MessageBox.Show("The username is already exist!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                            txtUsername.Focus();
-                                        }
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Please select questions.", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     }
                                 }
                                 else
@@ -139,8 +144,7 @@ namespace ClassSchedulingComputerAided
             else
             {
                 MessageBox.Show("All Fields are required", "Fields", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                if (txtAnswer5.Text == "") { txtAnswer5.Focus(); }
-                if (txtAnswer4.Text == "") { txtAnswer4.Focus(); }
+
                 if (txtAnswer3.Text == "") { txtAnswer3.Focus(); }
                 if (txtAnswer2.Text == "") { txtAnswer2.Focus(); }
                 if (txtAnswer1.Text == "") { txtAnswer1.Focus(); }

@@ -142,6 +142,7 @@
             this.btnCancel.Size = new System.Drawing.Size(343, 32);
             this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "CANCEL";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // NewPassword
             // 

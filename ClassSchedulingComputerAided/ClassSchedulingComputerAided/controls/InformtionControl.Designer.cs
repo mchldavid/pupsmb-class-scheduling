@@ -360,6 +360,8 @@
             // 
             // txtEmailAddress
             // 
+            this.txtEmailAddress.BackColor = System.Drawing.Color.White;
+            this.txtEmailAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEmailAddress.Enabled = false;
             this.txtEmailAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmailAddress.Location = new System.Drawing.Point(355, 54);
@@ -369,6 +371,8 @@
             // 
             // txtMobileNumber
             // 
+            this.txtMobileNumber.BackColor = System.Drawing.Color.White;
+            this.txtMobileNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMobileNumber.Enabled = false;
             this.txtMobileNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txtMobileNumber.Location = new System.Drawing.Point(355, 105);
@@ -379,6 +383,8 @@
             // 
             // txtUsername
             // 
+            this.txtUsername.BackColor = System.Drawing.Color.White;
+            this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUsername.Enabled = false;
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.Location = new System.Drawing.Point(355, 198);
@@ -388,6 +394,8 @@
             // 
             // txtPassword
             // 
+            this.txtPassword.BackColor = System.Drawing.Color.White;
+            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPassword.Enabled = false;
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(355, 248);
@@ -398,6 +406,8 @@
             // 
             // txtConfirmPassword
             // 
+            this.txtConfirmPassword.BackColor = System.Drawing.Color.White;
+            this.txtConfirmPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtConfirmPassword.Enabled = false;
             this.txtConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtConfirmPassword.Location = new System.Drawing.Point(355, 297);

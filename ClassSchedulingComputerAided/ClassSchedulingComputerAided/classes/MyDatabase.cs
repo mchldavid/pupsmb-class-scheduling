@@ -194,7 +194,7 @@ namespace ClassSchedulingComputerAided
                 }
                 con.Close();
                 con.Open();
-                for (int x = 0; x < 5; x++)
+                for (int x = 0; x < 3; x++)
                 {
                     string sqlInsertSQ = "INSERT INTO tbl_securityquestions(users_id, answer, question) VALUES('" + id + "', @a, @q)";
                     MySqlCommand com1 = new MySqlCommand(sqlInsertSQ, con);
@@ -2761,6 +2761,35 @@ namespace ClassSchedulingComputerAided
         }
 
         //===============Forgot Password==============
+        public string[] ShowMyQuestions(string id)
+        {
+            string[] question = new string[3];
+            try
+            {
+                con.Open();
+                string testSqlUsers = "SELECT * FROM tbl_securityquestions WHERE users_id=@id";
+                MySqlCommand com = new MySqlCommand(testSqlUsers, con);
+                com.Parameters.AddWithValue("@id", id);
+                com.ExecuteNonQuery();
+                MySqlDataReader dr = com.ExecuteReader();
+                int x = 0;
+                while (dr.Read())
+                {
+                    question[x] = dr["question"].ToString();
+                    x++;
+                }
+            }
+            catch (MySqlException er)
+            {
+                MessageBox.Show(er.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+            return question;
+        }
+
         public bool UserExists(string username)
         {
             bool result = false;

@@ -30,39 +30,39 @@ namespace ClassSchedulingComputerAided
             int num = rnd.Next(1, 6);
             if (num == 1)
             {
-                lblQuestion1.Text = "Who is your favorite actor, musician, or artist?";
-                lblQuestion2.Text = "What is your mother’s maiden name?";
-                lblQuestion3.Text = "What is your favorite color?";
+                lblQuestion1.Text = md.ShowMyQuestions(usersData.p_id).GetValue(0).ToString();
+                lblQuestion2.Text = md.ShowMyQuestions(usersData.p_id).GetValue(1).ToString();
+                lblQuestion3.Text = md.ShowMyQuestions(usersData.p_id).GetValue(2).ToString();
             }
             if (num == 2)
             {
-                lblQuestion1.Text = "In what city were you born?";
-                lblQuestion2.Text = "What is the name of your favorite pet?";
-                lblQuestion3.Text = "What is your favorite color?";
+                lblQuestion1.Text = md.ShowMyQuestions(usersData.p_id).GetValue(2).ToString();
+                lblQuestion2.Text = md.ShowMyQuestions(usersData.p_id).GetValue(1).ToString();
+                lblQuestion3.Text = md.ShowMyQuestions(usersData.p_id).GetValue(0).ToString();
             }
             if (num == 3)
             {
-                lblQuestion1.Text = "What is your mother’s maiden name?";
-                lblQuestion2.Text = "What is the name of your favorite pet?";
-                lblQuestion3.Text = "In what city were you born?";
+                lblQuestion1.Text = md.ShowMyQuestions(usersData.p_id).GetValue(1).ToString();
+                lblQuestion2.Text = md.ShowMyQuestions(usersData.p_id).GetValue(2).ToString();
+                lblQuestion3.Text = md.ShowMyQuestions(usersData.p_id).GetValue(0).ToString();
             }
             if (num == 4)
             {
-                lblQuestion1.Text = "What is your favorite color?";
-                lblQuestion2.Text = "What is the name of your favorite pet?";
-                lblQuestion3.Text = "Who is your favorite actor, musician, or artist?";
+                lblQuestion1.Text = md.ShowMyQuestions(usersData.p_id).GetValue(2).ToString();
+                lblQuestion2.Text = md.ShowMyQuestions(usersData.p_id).GetValue(0).ToString();
+                lblQuestion3.Text = md.ShowMyQuestions(usersData.p_id).GetValue(1).ToString();
             }
             if (num == 5)
             {
-                lblQuestion1.Text = "What is the name of your favorite pet?";
-                lblQuestion2.Text = "What is your mother’s maiden name?";
-                lblQuestion3.Text = "Who is your favorite actor, musician, or artist?";
+                lblQuestion1.Text = md.ShowMyQuestions(usersData.p_id).GetValue(1).ToString();
+                lblQuestion2.Text = md.ShowMyQuestions(usersData.p_id).GetValue(0).ToString();
+                lblQuestion3.Text = md.ShowMyQuestions(usersData.p_id).GetValue(2).ToString();
             }
             if (num == 6)
             {
-                lblQuestion1.Text = "What is the name of your favorite pet?";
-                lblQuestion2.Text = "Who is your favorite actor, musician, or artist?";
-                lblQuestion3.Text = "What is your mother’s maiden name?";
+                lblQuestion1.Text = md.ShowMyQuestions(usersData.p_id).GetValue(1).ToString();
+                lblQuestion2.Text = md.ShowMyQuestions(usersData.p_id).GetValue(2).ToString();
+                lblQuestion3.Text = md.ShowMyQuestions(usersData.p_id).GetValue(0).ToString();
             }
 
         }

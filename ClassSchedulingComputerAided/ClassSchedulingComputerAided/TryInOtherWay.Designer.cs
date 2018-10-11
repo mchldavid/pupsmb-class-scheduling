@@ -41,7 +41,7 @@
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.txtMiddleName = new System.Windows.Forms.TextBox();
             this.txtLastName = new System.Windows.Forms.TextBox();
-            this.txtContactNumber = new System.Windows.Forms.TextBox();
+            this.txtContactNumber = new System.Windows.Forms.MaskedTextBox();
             this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -174,8 +174,9 @@
             // 
             // txtContactNumber
             // 
-            this.txtContactNumber.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContactNumber.Location = new System.Drawing.Point(31, 249);
+            this.txtContactNumber.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.txtContactNumber.Location = new System.Drawing.Point(31, 248);
+            this.txtContactNumber.Mask = "(+63)000-0000-000";
             this.txtContactNumber.Name = "txtContactNumber";
             this.txtContactNumber.Size = new System.Drawing.Size(343, 26);
             this.txtContactNumber.TabIndex = 7;
@@ -226,6 +227,6 @@
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.TextBox txtMiddleName;
         private System.Windows.Forms.TextBox txtLastName;
-        private System.Windows.Forms.TextBox txtContactNumber;
+        private System.Windows.Forms.MaskedTextBox txtContactNumber;
     }
 }

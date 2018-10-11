@@ -59,6 +59,9 @@ namespace ClassSchedulingComputerAided
                 rdoParttimer.Checked = true;
             else
                 rdoRetiree.Checked = true;
+
+            if (cboCourseDepartment.Text == "")
+                cboCourseDepartment.SelectedIndex = 0;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -88,17 +91,17 @@ namespace ClassSchedulingComputerAided
                                         frmProfessorHomePage php = new frmProfessorHomePage();
                                         string gender = (rdoMale.Checked == true) ? "Male" : "Female";
                                         string teachStatus = "";
-                                        string status = (rdoActive.Checked == true) ? "active": "inactive";
-                                            teachStatus = "Fulltimer";
+                                        string status = (rdoActive.Checked == true) ? "active" : "inactive";
+                                        teachStatus = "Fulltimer";
                                         if (rdoParttimer.Checked == true)
                                             teachStatus = "Parttimer";
                                         if (rdoRetiree.Checked == true)
                                             teachStatus = "Retiree";
                                         //audit
                                         md.AuditTrail(AuditTrailData.username, "Update", ListOfProfessorsData.Selected_Prof + "'s account was set to " + status + ".");
-                                        md.UpdateUsersAccount(ListOfProfessorsData.Selected_ID, txtUsername.Text, ms.encryptPassword(txtPassword.Text), txtFirstName.Text, txtMiddleName.Text, txtLastName.Text, txtAddress.Text, gender, teachStatus, cboCourseDepartment.Text, txtEmailAddress.Text, cleanMobileNumber(txtMobileNumber.Text),status);
+                                        md.UpdateUsersAccount(ListOfProfessorsData.Selected_ID, txtUsername.Text, ms.encryptPassword(txtPassword.Text), txtFirstName.Text, txtMiddleName.Text, txtLastName.Text, txtAddress.Text, gender, teachStatus, cboCourseDepartment.Text, txtEmailAddress.Text, cleanMobileNumber(txtMobileNumber.Text), status);
 
-                                        
+
                                     }
                                 }
                                 else
@@ -113,6 +116,10 @@ namespace ClassSchedulingComputerAided
                                 MessageBox.Show("The specified email is invalid!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 txtEmailAddress.Focus();
                             }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please select your program Department.", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
                     else

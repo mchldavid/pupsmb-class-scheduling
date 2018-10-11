@@ -47,10 +47,23 @@ namespace ClassSchedulingComputerAided
                     frmAdminHomePage admin = new frmAdminHomePage();
                     admin.Show();
                     admin.btnMyAccount_Click(sender, e);
-                    
+
                     this.Hide();
                 }
             }
+            else
+            {
+                MessageBox.Show("The specified password do not match!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtConfirmNewPassword.Text = "";
+                txtConfirmNewPassword.Focus();
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            frmForgotPassword fp = new frmForgotPassword();
+            this.Hide();
+            fp.Show();
         }
     }
 }

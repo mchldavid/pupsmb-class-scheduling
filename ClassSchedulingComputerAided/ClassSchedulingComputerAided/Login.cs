@@ -59,7 +59,7 @@ namespace ClassSchedulingComputerAided
                             md.updateLogginStatus(usersData.a_id, "1");
                             this.Hide();
                             //audit
-                            md.AuditTrail(AuditTrailData.username, "Logged In", "Successfully!.");
+                            md.AuditTrail(AuditTrailData.username, "Logged In", "Successfully!");
                         }
                         else if (md.LoginTest(txtUsername.Text, ms.encryptPassword(txtPassword.Text)).GetValue(2).ToString() == "professor")
                         {
@@ -70,7 +70,7 @@ namespace ClassSchedulingComputerAided
                             this.Hide();
 
                             //audit
-                            md.AuditTrail(AuditTrailData.username, "Logged In", "Successfully!.");
+                            md.AuditTrail(AuditTrailData.username, "Logged In", "Successfully!");
                         }
                     }
                     else

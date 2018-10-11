@@ -53,21 +53,22 @@
             this.btnBack = new MetroFramework.Controls.MetroButton();
             this.btnSave = new MetroFramework.Controls.MetroButton();
             this.pnlAdmin = new System.Windows.Forms.Panel();
-            this.txtAnswer5 = new System.Windows.Forms.TextBox();
-            this.txtAnswer4 = new System.Windows.Forms.TextBox();
+            this.cboQuestion3 = new System.Windows.Forms.ComboBox();
+            this.cboQuestion2 = new System.Windows.Forms.ComboBox();
+            this.txtMobileNumber = new System.Windows.Forms.MaskedTextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.cboQuestion1 = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.txtAnswer3 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.txtAnswer2 = new System.Windows.Forms.TextBox();
             this.txtAnswer1 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
             this.lbl = new System.Windows.Forms.Label();
-            this.btnNext = new MetroFramework.Controls.MetroButton();
-            this.txtMobileNumber = new System.Windows.Forms.MaskedTextBox();
             this.cboGender = new System.Windows.Forms.ComboBox();
+            this.btnNext = new MetroFramework.Controls.MetroButton();
+            this.txtAnswer5 = new System.Windows.Forms.TextBox();
+            this.txtAnswer4 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
             this.pnlAdmin.SuspendLayout();
@@ -295,19 +296,18 @@
             // 
             // pnlAdmin
             // 
-            this.pnlAdmin.BackColor = System.Drawing.Color.Gainsboro;
+            this.pnlAdmin.BackColor = System.Drawing.Color.White;
+            this.pnlAdmin.Controls.Add(this.cboQuestion3);
+            this.pnlAdmin.Controls.Add(this.cboQuestion2);
             this.pnlAdmin.Controls.Add(this.txtMobileNumber);
-            this.pnlAdmin.Controls.Add(this.txtAnswer5);
-            this.pnlAdmin.Controls.Add(this.txtAnswer4);
+            this.pnlAdmin.Controls.Add(this.label16);
+            this.pnlAdmin.Controls.Add(this.cboQuestion1);
+            this.pnlAdmin.Controls.Add(this.label15);
             this.pnlAdmin.Controls.Add(this.txtAnswer3);
+            this.pnlAdmin.Controls.Add(this.label14);
             this.pnlAdmin.Controls.Add(this.txtAnswer2);
             this.pnlAdmin.Controls.Add(this.txtAnswer1);
             this.pnlAdmin.Controls.Add(this.label11);
-            this.pnlAdmin.Controls.Add(this.label21);
-            this.pnlAdmin.Controls.Add(this.label20);
-            this.pnlAdmin.Controls.Add(this.label19);
-            this.pnlAdmin.Controls.Add(this.label18);
-            this.pnlAdmin.Controls.Add(this.label17);
             this.pnlAdmin.Controls.Add(this.lbl);
             this.pnlAdmin.Controls.Add(this.cboGender);
             this.pnlAdmin.Controls.Add(this.txtConfirmPassword);
@@ -333,38 +333,112 @@
             this.pnlAdmin.Controls.Add(this.btnSave);
             this.pnlAdmin.Location = new System.Drawing.Point(0, 35);
             this.pnlAdmin.Name = "pnlAdmin";
-            this.pnlAdmin.Size = new System.Drawing.Size(886, 502);
+            this.pnlAdmin.Size = new System.Drawing.Size(875, 502);
             this.pnlAdmin.TabIndex = 222;
             this.pnlAdmin.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // txtAnswer5
+            // cboQuestion3
             // 
-            this.txtAnswer5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAnswer5.Location = new System.Drawing.Point(490, 407);
-            this.txtAnswer5.Name = "txtAnswer5";
-            this.txtAnswer5.Size = new System.Drawing.Size(330, 22);
-            this.txtAnswer5.TabIndex = 29;
+            this.cboQuestion3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboQuestion3.FormattingEnabled = true;
+            this.cboQuestion3.Items.AddRange(new object[] {
+            "Select Question",
+            "In what city did you meet your spouse/significant other?",
+            "In what year was your father born?",
+            "What sports team do you love to see lose?",
+            "What is your favorite sport?",
+            "What is the name of a college you applied to but didn\'t attend?"});
+            this.cboQuestion3.Location = new System.Drawing.Point(490, 315);
+            this.cboQuestion3.Name = "cboQuestion3";
+            this.cboQuestion3.Size = new System.Drawing.Size(330, 21);
+            this.cboQuestion3.TabIndex = 252;
             // 
-            // txtAnswer4
+            // cboQuestion2
             // 
-            this.txtAnswer4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAnswer4.Location = new System.Drawing.Point(490, 354);
-            this.txtAnswer4.Name = "txtAnswer4";
-            this.txtAnswer4.Size = new System.Drawing.Size(330, 22);
-            this.txtAnswer4.TabIndex = 27;
+            this.cboQuestion2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboQuestion2.FormattingEnabled = true;
+            this.cboQuestion2.Items.AddRange(new object[] {
+            "Select Question",
+            "Who was your childhood hero?",
+            "What is your mother\'s middle name? ",
+            "What was your dream job as a child ",
+            "What is the name of the company of your first job?",
+            "What is the country of your ultimate dream vacation?"});
+            this.cboQuestion2.Location = new System.Drawing.Point(491, 249);
+            this.cboQuestion2.Name = "cboQuestion2";
+            this.cboQuestion2.Size = new System.Drawing.Size(330, 21);
+            this.cboQuestion2.TabIndex = 253;
+            // 
+            // txtMobileNumber
+            // 
+            this.txtMobileNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.txtMobileNumber.Location = new System.Drawing.Point(177, 377);
+            this.txtMobileNumber.Mask = "(+63)000-0000-000";
+            this.txtMobileNumber.Name = "txtMobileNumber";
+            this.txtMobileNumber.Size = new System.Drawing.Size(210, 22);
+            this.txtMobileNumber.TabIndex = 248;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label16.Location = new System.Drawing.Point(474, 318);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(18, 16);
+            this.label16.TabIndex = 249;
+            this.label16.Text = "3.";
+            // 
+            // cboQuestion1
+            // 
+            this.cboQuestion1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboQuestion1.FormattingEnabled = true;
+            this.cboQuestion1.Items.AddRange(new object[] {
+            "Select question",
+            "What was the last name of your third grade teacher?",
+            "What was the name of your first stuffed animal?",
+            "What is your oldest cousin\'s first name?",
+            "In what city or town was your first job?",
+            "What was your childhood nickname? "});
+            this.cboQuestion1.Location = new System.Drawing.Point(491, 183);
+            this.cboQuestion1.Name = "cboQuestion1";
+            this.cboQuestion1.Size = new System.Drawing.Size(330, 21);
+            this.cboQuestion1.TabIndex = 254;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label15.Location = new System.Drawing.Point(475, 251);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(18, 16);
+            this.label15.TabIndex = 250;
+            this.label15.Text = "2.";
             // 
             // txtAnswer3
             // 
             this.txtAnswer3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAnswer3.Location = new System.Drawing.Point(490, 306);
+            this.txtAnswer3.Location = new System.Drawing.Point(490, 342);
             this.txtAnswer3.Name = "txtAnswer3";
             this.txtAnswer3.Size = new System.Drawing.Size(330, 22);
             this.txtAnswer3.TabIndex = 25;
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label14.Location = new System.Drawing.Point(473, 185);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(18, 16);
+            this.label14.TabIndex = 251;
+            this.label14.Text = "1.";
+            // 
             // txtAnswer2
             // 
             this.txtAnswer2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAnswer2.Location = new System.Drawing.Point(490, 256);
+            this.txtAnswer2.Location = new System.Drawing.Point(490, 276);
             this.txtAnswer2.Name = "txtAnswer2";
             this.txtAnswer2.Size = new System.Drawing.Size(330, 22);
             this.txtAnswer2.TabIndex = 23;
@@ -386,83 +460,15 @@
             this.label11.TabIndex = 226;
             this.label11.Text = "Note: Please set up your security questions and save.";
             // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(486, 387);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(273, 17);
-            this.label21.TabIndex = 28;
-            this.label21.Text = "5. What is the name of your favorite pet?";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(487, 335);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(203, 17);
-            this.label20.TabIndex = 26;
-            this.label20.Text = "4. In what city were you born?";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(487, 285);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(200, 17);
-            this.label19.TabIndex = 24;
-            this.label19.Text = "3. What is your favortie color?";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(486, 238);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(264, 17);
-            this.label18.TabIndex = 22;
-            this.label18.Text = "2. What is your mother\'s maiden name?";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(486, 191);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(318, 17);
-            this.label17.TabIndex = 20;
-            this.label17.Text = "1. Who is your favorite actor, musician, or artist?";
-            // 
             // lbl
             // 
             this.lbl.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl.Location = new System.Drawing.Point(24, 16);
             this.lbl.Name = "lbl";
-            this.lbl.Size = new System.Drawing.Size(397, 50);
+            this.lbl.Size = new System.Drawing.Size(393, 50);
             this.lbl.TabIndex = 184;
             this.lbl.Text = "Note: This is the first time you use the application. Please fill-up the field be" +
     "low to create an admin account.";
-            // 
-            // btnNext
-            // 
-            this.btnNext.Location = new System.Drawing.Point(303, 448);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(84, 32);
-            this.btnNext.TabIndex = 179;
-            this.btnNext.Text = "NEXT";
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
-            // 
-            // txtMobileNumber
-            // 
-            this.txtMobileNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.txtMobileNumber.Location = new System.Drawing.Point(177, 377);
-            this.txtMobileNumber.Mask = "(+63)000-0000-000";
-            this.txtMobileNumber.Name = "txtMobileNumber";
-            this.txtMobileNumber.Size = new System.Drawing.Size(210, 22);
-            this.txtMobileNumber.TabIndex = 248;
             // 
             // cboGender
             // 
@@ -477,13 +483,40 @@
             this.cboGender.Size = new System.Drawing.Size(210, 25);
             this.cboGender.TabIndex = 7;
             // 
+            // btnNext
+            // 
+            this.btnNext.Location = new System.Drawing.Point(303, 448);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(84, 32);
+            this.btnNext.TabIndex = 179;
+            this.btnNext.Text = "NEXT";
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
+            // txtAnswer5
+            // 
+            this.txtAnswer5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAnswer5.Location = new System.Drawing.Point(881, 418);
+            this.txtAnswer5.Name = "txtAnswer5";
+            this.txtAnswer5.Size = new System.Drawing.Size(330, 22);
+            this.txtAnswer5.TabIndex = 29;
+            // 
+            // txtAnswer4
+            // 
+            this.txtAnswer4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAnswer4.Location = new System.Drawing.Point(881, 365);
+            this.txtAnswer4.Name = "txtAnswer4";
+            this.txtAnswer4.Size = new System.Drawing.Size(330, 22);
+            this.txtAnswer4.TabIndex = 27;
+            // 
             // frmAdminAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(440, 538);
+            this.ClientSize = new System.Drawing.Size(442, 538);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlAdmin);
+            this.Controls.Add(this.txtAnswer4);
+            this.Controls.Add(this.txtAnswer5);
             this.Name = "frmAdminAccount";
             this.Style = MetroFramework.MetroColorStyle.White;
             this.Load += new System.EventHandler(this.AdminAccount_Load);
@@ -493,6 +526,7 @@
             this.pnlAdmin.ResumeLayout(false);
             this.pnlAdmin.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -529,13 +563,14 @@
         private System.Windows.Forms.TextBox txtAnswer2;
         private System.Windows.Forms.TextBox txtAnswer1;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label17;
         private Bunifu.Framework.UI.BunifuImageButton btnExit;
         private System.Windows.Forms.MaskedTextBox txtMobileNumber;
         private System.Windows.Forms.ComboBox cboGender;
+        public System.Windows.Forms.ComboBox cboQuestion3;
+        public System.Windows.Forms.ComboBox cboQuestion2;
+        public System.Windows.Forms.Label label16;
+        public System.Windows.Forms.ComboBox cboQuestion1;
+        public System.Windows.Forms.Label label15;
+        public System.Windows.Forms.Label label14;
     }
 }

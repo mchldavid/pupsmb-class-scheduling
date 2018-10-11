@@ -52,7 +52,7 @@
             this.metroLabel9.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel9.Location = new System.Drawing.Point(16, 74);
             this.metroLabel9.Name = "metroLabel9";
-            this.metroLabel9.Size = new System.Drawing.Size(25, 25);
+            this.metroLabel9.Size = new System.Drawing.Size(156, 25);
             this.metroLabel9.TabIndex = 0;
             this.metroLabel9.Text = "1.";
             this.metroLabel9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -63,7 +63,7 @@
             this.metroLabel10.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel10.Location = new System.Drawing.Point(15, 122);
             this.metroLabel10.Name = "metroLabel10";
-            this.metroLabel10.Size = new System.Drawing.Size(26, 25);
+            this.metroLabel10.Size = new System.Drawing.Size(157, 25);
             this.metroLabel10.TabIndex = 2;
             this.metroLabel10.Text = "2.";
             this.metroLabel10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -74,7 +74,7 @@
             this.metroLabel18.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel18.Location = new System.Drawing.Point(15, 168);
             this.metroLabel18.Name = "metroLabel18";
-            this.metroLabel18.Size = new System.Drawing.Size(26, 25);
+            this.metroLabel18.Size = new System.Drawing.Size(157, 25);
             this.metroLabel18.TabIndex = 4;
             this.metroLabel18.Text = "3.";
             this.metroLabel18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -83,7 +83,7 @@
             // 
             this.btnSubmit.Location = new System.Drawing.Point(23, 229);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(343, 40);
+            this.btnSubmit.Size = new System.Drawing.Size(474, 40);
             this.btnSubmit.Style = MetroFramework.MetroColorStyle.Red;
             this.btnSubmit.TabIndex = 157;
             this.btnSubmit.Text = "Submit";
@@ -97,7 +97,7 @@
             // 
             this.btnCancel.Location = new System.Drawing.Point(23, 275);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(345, 32);
+            this.btnCancel.Size = new System.Drawing.Size(476, 32);
             this.btnCancel.TabIndex = 158;
             this.btnCancel.Text = "CANCEL";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -109,7 +109,7 @@
             this.panel7.Controls.Add(this.metroButton1);
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(393, 38);
+            this.panel7.Size = new System.Drawing.Size(524, 38);
             this.panel7.TabIndex = 161;
             // 
             // label134
@@ -128,7 +128,7 @@
             // 
             this.metroButton1.Location = new System.Drawing.Point(1281, 3);
             this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(76, 21);
+            this.metroButton1.Size = new System.Drawing.Size(207, 21);
             this.metroButton1.TabIndex = 156;
             this.metroButton1.Text = "Cancel";
             // 
@@ -137,7 +137,7 @@
             this.txtAnswer1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAnswer1.Location = new System.Drawing.Point(23, 100);
             this.txtAnswer1.Name = "txtAnswer1";
-            this.txtAnswer1.Size = new System.Drawing.Size(343, 26);
+            this.txtAnswer1.Size = new System.Drawing.Size(474, 26);
             this.txtAnswer1.TabIndex = 1;
             // 
             // txtAnswer2
@@ -145,7 +145,7 @@
             this.txtAnswer2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAnswer2.Location = new System.Drawing.Point(23, 146);
             this.txtAnswer2.Name = "txtAnswer2";
-            this.txtAnswer2.Size = new System.Drawing.Size(343, 26);
+            this.txtAnswer2.Size = new System.Drawing.Size(474, 26);
             this.txtAnswer2.TabIndex = 3;
             // 
             // txtAnswer3
@@ -153,7 +153,7 @@
             this.txtAnswer3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAnswer3.Location = new System.Drawing.Point(23, 194);
             this.txtAnswer3.Name = "txtAnswer3";
-            this.txtAnswer3.Size = new System.Drawing.Size(343, 26);
+            this.txtAnswer3.Size = new System.Drawing.Size(474, 26);
             this.txtAnswer3.TabIndex = 5;
             // 
             // lblQuestion1
@@ -162,7 +162,7 @@
             this.lblQuestion1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.lblQuestion1.Location = new System.Drawing.Point(33, 74);
             this.lblQuestion1.Name = "lblQuestion1";
-            this.lblQuestion1.Size = new System.Drawing.Size(333, 25);
+            this.lblQuestion1.Size = new System.Drawing.Size(464, 25);
             this.lblQuestion1.TabIndex = 103;
             this.lblQuestion1.Text = "Question1";
             this.lblQuestion1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -173,7 +173,7 @@
             this.lblQuestion2.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.lblQuestion2.Location = new System.Drawing.Point(33, 122);
             this.lblQuestion2.Name = "lblQuestion2";
-            this.lblQuestion2.Size = new System.Drawing.Size(333, 25);
+            this.lblQuestion2.Size = new System.Drawing.Size(464, 25);
             this.lblQuestion2.TabIndex = 103;
             this.lblQuestion2.Text = "Question2";
             this.lblQuestion2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -184,7 +184,7 @@
             this.lblQuestion3.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.lblQuestion3.Location = new System.Drawing.Point(33, 168);
             this.lblQuestion3.Name = "lblQuestion3";
-            this.lblQuestion3.Size = new System.Drawing.Size(333, 25);
+            this.lblQuestion3.Size = new System.Drawing.Size(464, 25);
             this.lblQuestion3.TabIndex = 103;
             this.lblQuestion3.Text = "Question3";
             this.lblQuestion3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -204,7 +204,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Drawing.MetroBorderStyle.FixedSingle;
-            this.ClientSize = new System.Drawing.Size(391, 331);
+            this.ClientSize = new System.Drawing.Size(522, 331);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.txtAnswer3);
             this.Controls.Add(this.txtAnswer2);

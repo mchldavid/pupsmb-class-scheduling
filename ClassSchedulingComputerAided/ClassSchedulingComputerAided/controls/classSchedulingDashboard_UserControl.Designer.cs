@@ -2740,6 +2740,7 @@
             // btnSettings
             // 
             this.btnSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(21)))), ((int)(((byte)(24)))));
+            this.btnSettings.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSettings.Image = ((System.Drawing.Image)(resources.GetObject("btnSettings.Image")));
             this.btnSettings.ImageActive = null;
             this.btnSettings.Location = new System.Drawing.Point(6, 1);
@@ -2759,7 +2760,7 @@
             this.lblCurriculumTitle.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.lblCurriculumTitle.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.lblCurriculumTitle.ForeColor = System.Drawing.Color.White;
-            this.lblCurriculumTitle.Location = new System.Drawing.Point(592, -7);
+            this.lblCurriculumTitle.Location = new System.Drawing.Point(592, -2);
             this.lblCurriculumTitle.Name = "lblCurriculumTitle";
             this.lblCurriculumTitle.Size = new System.Drawing.Size(745, 31);
             this.lblCurriculumTitle.TabIndex = 177;
@@ -3048,6 +3049,7 @@
             // 
             this.btnOKk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnOKk.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(0)))), ((int)(((byte)(17)))));
+            this.btnOKk.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnOKk.Image = ((System.Drawing.Image)(resources.GetObject("btnOKk.Image")));
             this.btnOKk.ImageActive = null;
             this.btnOKk.Location = new System.Drawing.Point(872, 6);

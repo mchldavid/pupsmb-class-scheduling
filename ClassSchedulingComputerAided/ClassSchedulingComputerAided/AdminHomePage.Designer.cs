@@ -62,6 +62,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.panel3.Controls.Add(this.btnSummaryReport);
             this.panel3.Controls.Add(this.panel2);
             this.panel3.Controls.Add(this.lbl_curriculum_id);
             this.panel3.Controls.Add(this.btnEventLog);
@@ -70,7 +71,6 @@
             this.panel3.Controls.Add(this.btnClassScheduleDashboard);
             this.panel3.Controls.Add(this.btnSections);
             this.panel3.Controls.Add(this.btnHome);
-            this.panel3.Controls.Add(this.btnSummaryReport);
             this.panel3.Controls.Add(this.btnLogout);
             this.panel3.Controls.Add(this.btnRooms);
             this.panel3.Controls.Add(this.btnCurriculum);
@@ -132,7 +132,7 @@
             this.btnEventLog.IconVisible = true;
             this.btnEventLog.IconZoom = 52D;
             this.btnEventLog.IsTab = false;
-            this.btnEventLog.Location = new System.Drawing.Point(-3, 319);
+            this.btnEventLog.Location = new System.Drawing.Point(-5, 367);
             this.btnEventLog.Name = "btnEventLog";
             this.btnEventLog.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnEventLog.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
@@ -167,7 +167,7 @@
             this.btnMyAccount.IconVisible = true;
             this.btnMyAccount.IconZoom = 52D;
             this.btnMyAccount.IsTab = false;
-            this.btnMyAccount.Location = new System.Drawing.Point(-3, 360);
+            this.btnMyAccount.Location = new System.Drawing.Point(-5, 409);
             this.btnMyAccount.Name = "btnMyAccount";
             this.btnMyAccount.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnMyAccount.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
@@ -202,7 +202,7 @@
             this.btnListOfProfessors.IconVisible = true;
             this.btnListOfProfessors.IconZoom = 52D;
             this.btnListOfProfessors.IsTab = false;
-            this.btnListOfProfessors.Location = new System.Drawing.Point(-2, 278);
+            this.btnListOfProfessors.Location = new System.Drawing.Point(-4, 325);
             this.btnListOfProfessors.Name = "btnListOfProfessors";
             this.btnListOfProfessors.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnListOfProfessors.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
@@ -237,7 +237,7 @@
             this.btnClassScheduleDashboard.IconVisible = true;
             this.btnClassScheduleDashboard.IconZoom = 51D;
             this.btnClassScheduleDashboard.IsTab = false;
-            this.btnClassScheduleDashboard.Location = new System.Drawing.Point(-3, 237);
+            this.btnClassScheduleDashboard.Location = new System.Drawing.Point(-5, 241);
             this.btnClassScheduleDashboard.Name = "btnClassScheduleDashboard";
             this.btnClassScheduleDashboard.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnClassScheduleDashboard.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
@@ -272,7 +272,7 @@
             this.btnSections.IconVisible = true;
             this.btnSections.IconZoom = 50D;
             this.btnSections.IsTab = false;
-            this.btnSections.Location = new System.Drawing.Point(-1, 155);
+            this.btnSections.Location = new System.Drawing.Point(-3, 157);
             this.btnSections.Name = "btnSections";
             this.btnSections.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnSections.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
@@ -307,7 +307,7 @@
             this.btnHome.IconVisible = true;
             this.btnHome.IconZoom = 50D;
             this.btnHome.IsTab = false;
-            this.btnHome.Location = new System.Drawing.Point(-3, 73);
+            this.btnHome.Location = new System.Drawing.Point(-5, 73);
             this.btnHome.Name = "btnHome";
             this.btnHome.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnHome.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
@@ -342,7 +342,7 @@
             this.btnSummaryReport.IconVisible = true;
             this.btnSummaryReport.IconZoom = 50D;
             this.btnSummaryReport.IsTab = false;
-            this.btnSummaryReport.Location = new System.Drawing.Point(-3, 401);
+            this.btnSummaryReport.Location = new System.Drawing.Point(-5, 283);
             this.btnSummaryReport.Name = "btnSummaryReport";
             this.btnSummaryReport.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnSummaryReport.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
@@ -377,7 +377,7 @@
             this.btnLogout.IconVisible = true;
             this.btnLogout.IconZoom = 50D;
             this.btnLogout.IsTab = false;
-            this.btnLogout.Location = new System.Drawing.Point(-3, 442);
+            this.btnLogout.Location = new System.Drawing.Point(-5, 451);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnLogout.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
@@ -412,7 +412,7 @@
             this.btnRooms.IconVisible = true;
             this.btnRooms.IconZoom = 50D;
             this.btnRooms.IsTab = false;
-            this.btnRooms.Location = new System.Drawing.Point(-3, 196);
+            this.btnRooms.Location = new System.Drawing.Point(-5, 199);
             this.btnRooms.Name = "btnRooms";
             this.btnRooms.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnRooms.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
@@ -447,7 +447,7 @@
             this.btnCurriculum.IconVisible = true;
             this.btnCurriculum.IconZoom = 55D;
             this.btnCurriculum.IsTab = false;
-            this.btnCurriculum.Location = new System.Drawing.Point(-3, 114);
+            this.btnCurriculum.Location = new System.Drawing.Point(-5, 115);
             this.btnCurriculum.Name = "btnCurriculum";
             this.btnCurriculum.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnCurriculum.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));

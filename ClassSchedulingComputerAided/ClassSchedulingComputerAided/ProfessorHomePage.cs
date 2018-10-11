@@ -43,7 +43,7 @@ namespace ClassSchedulingComputerAided
                 this.Hide();
 
                 //audit
-                md.AuditTrail(AuditTrailData.username, "Logged Out", "Successfully");
+                md.AuditTrail(AuditTrailData.username, "Logged Out", "Successfully!");
             }
         }
 

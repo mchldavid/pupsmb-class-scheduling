@@ -43,43 +43,44 @@ namespace ClassSchedulingComputerAided
                 && txtPassword.Text != ""
                 && txtAnswer1.Text != ""
                 && txtAnswer2.Text != ""
-                && txtAnswer3.Text != ""
-                && txtAnswer4.Text != ""
-                && txtAnswer5.Text != "")
+                && txtAnswer3.Text != "")
             {
                 EmailValidation email = new EmailValidation();
                 if (email.IsValidEmail(txtEmailAddress.Text) == true)
                 {
                     if (txtPassword.Text == txtConfirmPassword.Text)
                     {
-                        DialogResult result = MessageBox.Show("Do you want to save?", "Admin", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-
-                        if (result == DialogResult.Yes)
+                        if (cboQuestion1.SelectedIndex != 0 && cboQuestion2.SelectedIndex != 0 && cboQuestion3.SelectedIndex != 0)
                         {
-                            md.RegisterAdmin(txtUsername.Text, ms.encryptPassword(txtPassword.Text), txtFirstName.Text, txtMiddleName.Text, txtLastName.Text, txtAddress.Text, cboGender.Text, txtEmailAddress.Text, txtMobileNumber.Text);
+                            DialogResult result = MessageBox.Show("Do you want to save?", "Admin", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
-                            //get set security questions
-                            string[] answer = new string[5];
-                            string[] question = new string[5];
+                            if (result == DialogResult.Yes)
+                            {
+                                md.RegisterAdmin(txtUsername.Text, ms.encryptPassword(txtPassword.Text), txtFirstName.Text, txtMiddleName.Text, txtLastName.Text, txtAddress.Text, cboGender.Text, txtEmailAddress.Text, cleanMobileNumber(txtMobileNumber.Text));
 
-                            answer[0] = txtAnswer1.Text;
-                            answer[1] = txtAnswer2.Text;
-                            answer[2] = txtAnswer3.Text;
-                            answer[3] = txtAnswer4.Text;
-                            answer[4] = txtAnswer5.Text;
+                                //get set security questions
+                                string[] answer = new string[3];
+                                string[] question = new string[3];
 
-                            question[0] = "Who is your favorite actor, musician, or artist?";
-                            question[1] = "What is your mother’s maiden name?";
-                            question[2] = "What is your favorite color?";
-                            question[3] = "In what city were you born?";
-                            question[4] = "What is the name of your favorite pet?";
+                                answer[0] = txtAnswer1.Text;
+                                answer[1] = txtAnswer2.Text;
+                                answer[2] = txtAnswer3.Text;
 
-                            md.RegisterAdminSecurityQuestion(txtUsername.Text, ms.encryptPassword(txtPassword.Text), answer, question);
+                                question[0] = "Who is your favorite actor, musician, or artist?";
+                                question[1] = "What is your mother’s maiden name?";
+                                question[2] = "What is your favorite color?";
 
-                            MessageBox.Show("Admin account created succesdul", "Success!", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                                md.RegisterAdminSecurityQuestion(txtUsername.Text, ms.encryptPassword(txtPassword.Text), answer, question);
 
-                            this.Hide();
-                            RestartsApp();//to restart the app
+                                MessageBox.Show("Admin account created succesdul", "Success!", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                                this.Hide();
+                                RestartsApp();//to restart the app
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please select questions.", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
                     else
@@ -276,6 +277,17 @@ namespace ClassSchedulingComputerAided
             {
                 System.Environment.Exit(0);
             }
+        }
+
+        //to fix the number
+        public string cleanMobileNumber(string s)
+        {
+            StringBuilder sb = new StringBuilder(s);
+
+            sb.Replace("(+63)", "0");
+            sb.Replace("-", "");
+
+            return sb.ToString();
         }
     }
 }

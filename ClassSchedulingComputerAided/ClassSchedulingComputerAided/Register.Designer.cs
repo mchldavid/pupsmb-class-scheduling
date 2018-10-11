@@ -71,6 +71,12 @@
             this.txtMobileNumber = new System.Windows.Forms.MaskedTextBox();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.cboQuestion1 = new System.Windows.Forms.ComboBox();
+            this.cboQuestion2 = new System.Windows.Forms.ComboBox();
+            this.cboQuestion3 = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -78,7 +84,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(461, 589);
+            this.btnSave.Location = new System.Drawing.Point(522, 582);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(84, 32);
             this.btnSave.TabIndex = 32;
@@ -87,7 +93,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(550, 589);
+            this.btnCancel.Location = new System.Drawing.Point(611, 582);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(84, 32);
             this.btnCancel.TabIndex = 33;
@@ -102,7 +108,7 @@
             this.bunifuSeparator3.Location = new System.Drawing.Point(384, 67);
             this.bunifuSeparator3.Margin = new System.Windows.Forms.Padding(3, 7, 3, 7);
             this.bunifuSeparator3.Name = "bunifuSeparator3";
-            this.bunifuSeparator3.Size = new System.Drawing.Size(250, 14);
+            this.bunifuSeparator3.Size = new System.Drawing.Size(310, 14);
             this.bunifuSeparator3.TabIndex = 217;
             this.bunifuSeparator3.Transparency = 255;
             this.bunifuSeparator3.Vertical = false;
@@ -115,7 +121,7 @@
             this.bunifuSeparator2.Location = new System.Drawing.Point(60, 527);
             this.bunifuSeparator2.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.bunifuSeparator2.Name = "bunifuSeparator2";
-            this.bunifuSeparator2.Size = new System.Drawing.Size(250, 11);
+            this.bunifuSeparator2.Size = new System.Drawing.Size(289, 11);
             this.bunifuSeparator2.TabIndex = 216;
             this.bunifuSeparator2.Transparency = 255;
             this.bunifuSeparator2.Vertical = false;
@@ -128,7 +134,7 @@
             this.bunifuSeparator1.Location = new System.Drawing.Point(60, 69);
             this.bunifuSeparator1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bunifuSeparator1.Name = "bunifuSeparator1";
-            this.bunifuSeparator1.Size = new System.Drawing.Size(250, 12);
+            this.bunifuSeparator1.Size = new System.Drawing.Size(284, 12);
             this.bunifuSeparator1.TabIndex = 215;
             this.bunifuSeparator1.Transparency = 255;
             this.bunifuSeparator1.Vertical = false;
@@ -138,7 +144,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label8.Location = new System.Drawing.Point(371, 424);
+            this.label8.Location = new System.Drawing.Point(764, 262);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(238, 16);
             this.label8.TabIndex = 214;
@@ -149,7 +155,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label7.Location = new System.Drawing.Point(371, 380);
+            this.label7.Location = new System.Drawing.Point(764, 218);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(182, 16);
             this.label7.TabIndex = 213;
@@ -160,7 +166,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label6.Location = new System.Drawing.Point(371, 333);
+            this.label6.Location = new System.Drawing.Point(764, 171);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(178, 16);
             this.label6.TabIndex = 212;
@@ -171,7 +177,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label5.Location = new System.Drawing.Point(371, 282);
+            this.label5.Location = new System.Drawing.Point(764, 120);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(234, 16);
             this.label5.TabIndex = 211;
@@ -182,7 +188,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(371, 234);
+            this.label4.Location = new System.Drawing.Point(764, 72);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(280, 16);
             this.label4.TabIndex = 210;
@@ -238,7 +244,7 @@
             this.cboCourseDepartment.FormattingEnabled = true;
             this.cboCourseDepartment.Location = new System.Drawing.Point(187, 455);
             this.cboCourseDepartment.Name = "cboCourseDepartment";
-            this.cboCourseDepartment.Size = new System.Drawing.Size(128, 21);
+            this.cboCourseDepartment.Size = new System.Drawing.Size(162, 21);
             this.cboCourseDepartment.TabIndex = 9;
             // 
             // groupBox2
@@ -249,7 +255,7 @@
             this.groupBox2.Controls.Add(this.rdoRetiree);
             this.groupBox2.Location = new System.Drawing.Point(61, 391);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(250, 56);
+            this.groupBox2.Size = new System.Drawing.Size(284, 56);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             // 
@@ -312,7 +318,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(250, 51);
+            this.groupBox1.Size = new System.Drawing.Size(284, 51);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             // 
@@ -381,7 +387,7 @@
             this.txtAnswer5.LineIdleColor = System.Drawing.SystemColors.GrayText;
             this.txtAnswer5.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(4)))), ((int)(((byte)(0)))));
             this.txtAnswer5.LineThickness = 3;
-            this.txtAnswer5.Location = new System.Drawing.Point(387, 442);
+            this.txtAnswer5.Location = new System.Drawing.Point(780, 280);
             this.txtAnswer5.Margin = new System.Windows.Forms.Padding(7);
             this.txtAnswer5.Name = "txtAnswer5";
             this.txtAnswer5.Size = new System.Drawing.Size(250, 26);
@@ -401,10 +407,10 @@
             this.txtAnswer3.LineIdleColor = System.Drawing.SystemColors.GrayText;
             this.txtAnswer3.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(4)))), ((int)(((byte)(0)))));
             this.txtAnswer3.LineThickness = 3;
-            this.txtAnswer3.Location = new System.Drawing.Point(387, 347);
+            this.txtAnswer3.Location = new System.Drawing.Point(384, 378);
             this.txtAnswer3.Margin = new System.Windows.Forms.Padding(7);
             this.txtAnswer3.Name = "txtAnswer3";
-            this.txtAnswer3.Size = new System.Drawing.Size(250, 26);
+            this.txtAnswer3.Size = new System.Drawing.Size(309, 26);
             this.txtAnswer3.TabIndex = 17;
             this.txtAnswer3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -421,7 +427,7 @@
             this.txtAnswer4.LineIdleColor = System.Drawing.SystemColors.GrayText;
             this.txtAnswer4.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(4)))), ((int)(((byte)(0)))));
             this.txtAnswer4.LineThickness = 3;
-            this.txtAnswer4.Location = new System.Drawing.Point(387, 391);
+            this.txtAnswer4.Location = new System.Drawing.Point(780, 229);
             this.txtAnswer4.Margin = new System.Windows.Forms.Padding(7);
             this.txtAnswer4.Name = "txtAnswer4";
             this.txtAnswer4.Size = new System.Drawing.Size(250, 26);
@@ -441,10 +447,10 @@
             this.txtAnswer2.LineIdleColor = System.Drawing.SystemColors.GrayText;
             this.txtAnswer2.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(4)))), ((int)(((byte)(0)))));
             this.txtAnswer2.LineThickness = 3;
-            this.txtAnswer2.Location = new System.Drawing.Point(387, 300);
+            this.txtAnswer2.Location = new System.Drawing.Point(385, 319);
             this.txtAnswer2.Margin = new System.Windows.Forms.Padding(7);
             this.txtAnswer2.Name = "txtAnswer2";
-            this.txtAnswer2.Size = new System.Drawing.Size(250, 26);
+            this.txtAnswer2.Size = new System.Drawing.Size(309, 26);
             this.txtAnswer2.TabIndex = 16;
             this.txtAnswer2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -461,10 +467,10 @@
             this.txtAnswer1.LineIdleColor = System.Drawing.SystemColors.GrayText;
             this.txtAnswer1.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(4)))), ((int)(((byte)(0)))));
             this.txtAnswer1.LineThickness = 3;
-            this.txtAnswer1.Location = new System.Drawing.Point(387, 249);
+            this.txtAnswer1.Location = new System.Drawing.Point(385, 259);
             this.txtAnswer1.Margin = new System.Windows.Forms.Padding(7);
             this.txtAnswer1.Name = "txtAnswer1";
-            this.txtAnswer1.Size = new System.Drawing.Size(250, 26);
+            this.txtAnswer1.Size = new System.Drawing.Size(309, 26);
             this.txtAnswer1.TabIndex = 15;
             this.txtAnswer1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -484,7 +490,7 @@
             this.txtConfirmPassword.Location = new System.Drawing.Point(385, 172);
             this.txtConfirmPassword.Margin = new System.Windows.Forms.Padding(7);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
-            this.txtConfirmPassword.Size = new System.Drawing.Size(250, 26);
+            this.txtConfirmPassword.Size = new System.Drawing.Size(310, 26);
             this.txtConfirmPassword.TabIndex = 14;
             this.txtConfirmPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtConfirmPassword.OnValueChanged += new System.EventHandler(this.txtConfirmPassword_OnValueChanged);
@@ -505,7 +511,7 @@
             this.txtPassword.Location = new System.Drawing.Point(385, 132);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(7);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(250, 26);
+            this.txtPassword.Size = new System.Drawing.Size(310, 26);
             this.txtPassword.TabIndex = 13;
             this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtPassword.OnValueChanged += new System.EventHandler(this.txtPassword_OnValueChanged);
@@ -526,7 +532,7 @@
             this.txtUsername.Location = new System.Drawing.Point(385, 92);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(7);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(250, 26);
+            this.txtUsername.Size = new System.Drawing.Size(310, 26);
             this.txtUsername.TabIndex = 12;
             this.txtUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -546,7 +552,7 @@
             this.txtEmailAddress.Location = new System.Drawing.Point(61, 549);
             this.txtEmailAddress.Margin = new System.Windows.Forms.Padding(7);
             this.txtEmailAddress.Name = "txtEmailAddress";
-            this.txtEmailAddress.Size = new System.Drawing.Size(250, 26);
+            this.txtEmailAddress.Size = new System.Drawing.Size(284, 26);
             this.txtEmailAddress.TabIndex = 10;
             this.txtEmailAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -566,7 +572,7 @@
             this.txtLastName.Location = new System.Drawing.Point(61, 172);
             this.txtLastName.Margin = new System.Windows.Forms.Padding(7);
             this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(250, 26);
+            this.txtLastName.Size = new System.Drawing.Size(284, 26);
             this.txtLastName.TabIndex = 2;
             this.txtLastName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -586,7 +592,7 @@
             this.txtMiddleName.Location = new System.Drawing.Point(61, 132);
             this.txtMiddleName.Margin = new System.Windows.Forms.Padding(7);
             this.txtMiddleName.Name = "txtMiddleName";
-            this.txtMiddleName.Size = new System.Drawing.Size(250, 26);
+            this.txtMiddleName.Size = new System.Drawing.Size(284, 26);
             this.txtMiddleName.TabIndex = 1;
             this.txtMiddleName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -606,7 +612,7 @@
             this.txtFirstName.Location = new System.Drawing.Point(61, 92);
             this.txtFirstName.Margin = new System.Windows.Forms.Padding(7);
             this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(250, 26);
+            this.txtFirstName.Size = new System.Drawing.Size(284, 26);
             this.txtFirstName.TabIndex = 0;
             this.txtFirstName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtFirstName.OnValueChanged += new System.EventHandler(this.txtFirstName_OnValueChanged);
@@ -617,7 +623,7 @@
             this.panel1.Controls.Add(this.label12);
             this.panel1.Location = new System.Drawing.Point(-5, -2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(698, 36);
+            this.panel1.Size = new System.Drawing.Size(777, 36);
             this.panel1.TabIndex = 218;
             // 
             // label12
@@ -637,7 +643,7 @@
             this.txtAddress.Location = new System.Drawing.Point(61, 239);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(250, 87);
+            this.txtAddress.Size = new System.Drawing.Size(284, 87);
             this.txtAddress.TabIndex = 3;
             // 
             // txtMobileNumber
@@ -647,7 +653,7 @@
             this.txtMobileNumber.Location = new System.Drawing.Point(61, 589);
             this.txtMobileNumber.Mask = "(+63)000-0000-000";
             this.txtMobileNumber.Name = "txtMobileNumber";
-            this.txtMobileNumber.Size = new System.Drawing.Size(251, 15);
+            this.txtMobileNumber.Size = new System.Drawing.Size(285, 15);
             this.txtMobileNumber.TabIndex = 11;
             this.txtMobileNumber.Enter += new System.EventHandler(this.txtMobileNumber_Enter);
             this.txtMobileNumber.Leave += new System.EventHandler(this.txtMobileNumber_Leave);
@@ -661,7 +667,7 @@
             this.shapeContainer1.Name = "shapeContainer1";
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(652, 557);
+            this.shapeContainer1.Size = new System.Drawing.Size(728, 557);
             this.shapeContainer1.TabIndex = 220;
             this.shapeContainer1.TabStop = false;
             // 
@@ -671,22 +677,106 @@
             this.lineShape1.BorderWidth = 3;
             this.lineShape1.Name = "lineShape1";
             this.lineShape1.X1 = 39;
-            this.lineShape1.X2 = 290;
+            this.lineShape1.X2 = 326;
             this.lineShape1.Y1 = 550;
             this.lineShape1.Y2 = 550;
+            // 
+            // cboQuestion1
+            // 
+            this.cboQuestion1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboQuestion1.FormattingEnabled = true;
+            this.cboQuestion1.Items.AddRange(new object[] {
+            "Select question",
+            "What was the last name of your third grade teacher?",
+            "What was the name of your first stuffed animal?",
+            "What is your oldest cousin\'s first name?",
+            "In what city or town was your first job?",
+            "What was your childhood nickname? "});
+            this.cboQuestion1.Location = new System.Drawing.Point(384, 238);
+            this.cboQuestion1.Name = "cboQuestion1";
+            this.cboQuestion1.Size = new System.Drawing.Size(309, 21);
+            this.cboQuestion1.TabIndex = 221;
+            // 
+            // cboQuestion2
+            // 
+            this.cboQuestion2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboQuestion2.FormattingEnabled = true;
+            this.cboQuestion2.Items.AddRange(new object[] {
+            "Select Question",
+            "Who was your childhood hero?",
+            "What is your mother\'s middle name? ",
+            "What was your dream job as a child ",
+            "What is the name of the company of your first job?",
+            "What is the country of your ultimate dream vacation?"});
+            this.cboQuestion2.Location = new System.Drawing.Point(384, 297);
+            this.cboQuestion2.Name = "cboQuestion2";
+            this.cboQuestion2.Size = new System.Drawing.Size(309, 21);
+            this.cboQuestion2.TabIndex = 221;
+            // 
+            // cboQuestion3
+            // 
+            this.cboQuestion3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboQuestion3.FormattingEnabled = true;
+            this.cboQuestion3.Items.AddRange(new object[] {
+            "Select Question",
+            "In what city did you meet your spouse/significant other?",
+            "In what year was your father born?",
+            "What sports team do you love to see lose?",
+            "What is your favorite sport?",
+            "What is the name of a college you applied to but didn\'t attend?"});
+            this.cboQuestion3.Location = new System.Drawing.Point(384, 355);
+            this.cboQuestion3.Name = "cboQuestion3";
+            this.cboQuestion3.Size = new System.Drawing.Size(309, 21);
+            this.cboQuestion3.TabIndex = 221;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label14.Location = new System.Drawing.Point(366, 240);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(18, 16);
+            this.label14.TabIndex = 210;
+            this.label14.Text = "1.";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label15.Location = new System.Drawing.Point(368, 299);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(18, 16);
+            this.label15.TabIndex = 210;
+            this.label15.Text = "2.";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label16.Location = new System.Drawing.Point(368, 358);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(18, 16);
+            this.label16.TabIndex = 210;
+            this.label16.Text = "3.";
             // 
             // frmRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Drawing.MetroBorderStyle.FixedSingle;
-            this.ClientSize = new System.Drawing.Size(692, 637);
+            this.ClientSize = new System.Drawing.Size(768, 637);
+            this.Controls.Add(this.cboQuestion3);
+            this.Controls.Add(this.cboQuestion2);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.cboQuestion1);
             this.Controls.Add(this.txtMobileNumber);
             this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.bunifuSeparator3);
-            this.Controls.Add(this.bunifuSeparator2);
-            this.Controls.Add(this.bunifuSeparator1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -699,19 +789,22 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtAnswer5);
-            this.Controls.Add(this.txtAnswer3);
-            this.Controls.Add(this.txtAnswer4);
-            this.Controls.Add(this.txtAnswer2);
+            this.Controls.Add(this.bunifuSeparator2);
+            this.Controls.Add(this.bunifuSeparator1);
+            this.Controls.Add(this.bunifuSeparator3);
             this.Controls.Add(this.txtAnswer1);
-            this.Controls.Add(this.txtConfirmPassword);
-            this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.txtEmailAddress);
-            this.Controls.Add(this.txtLastName);
-            this.Controls.Add(this.txtMiddleName);
+            this.Controls.Add(this.txtConfirmPassword);
+            this.Controls.Add(this.txtAnswer4);
             this.Controls.Add(this.txtFirstName);
+            this.Controls.Add(this.txtAnswer3);
+            this.Controls.Add(this.txtUsername);
+            this.Controls.Add(this.txtAnswer2);
+            this.Controls.Add(this.txtMiddleName);
+            this.Controls.Add(this.txtLastName);
+            this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.txtAnswer5);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.shapeContainer1);
@@ -777,5 +870,11 @@
         private System.Windows.Forms.MaskedTextBox txtMobileNumber;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
+        public System.Windows.Forms.ComboBox cboQuestion1;
+        public System.Windows.Forms.ComboBox cboQuestion2;
+        public System.Windows.Forms.ComboBox cboQuestion3;
+        public System.Windows.Forms.Label label14;
+        public System.Windows.Forms.Label label15;
+        public System.Windows.Forms.Label label16;
     }
 }

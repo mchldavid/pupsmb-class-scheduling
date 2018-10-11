@@ -94,6 +94,7 @@ namespace ClassSchedulingComputerAided
             {
                 btnPrint.Visible = true;
                 btnSettings.Visible = true;
+                btnButtonPrint.Visible = true;
 
                 pnlStart.Visible = false;
                 SummaryData.course = ClassSchedule_Data.course;
@@ -171,6 +172,11 @@ namespace ClassSchedulingComputerAided
             frmAdminHomePage ahp = new frmAdminHomePage();
             ahp.Show();
             this.Hide();
+        }
+
+        private void btnButtonPrint_Click(object sender, EventArgs e)
+        {
+            btnPrint_Click(sender, e);
         }
     }
 }

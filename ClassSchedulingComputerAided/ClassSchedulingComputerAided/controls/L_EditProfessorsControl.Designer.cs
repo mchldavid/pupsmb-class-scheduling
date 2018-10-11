@@ -253,16 +253,16 @@
             this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(45, 451);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(125, 17);
+            this.label6.Size = new System.Drawing.Size(137, 17);
             this.label6.TabIndex = 257;
-            this.label6.Text = "Course Department";
+            this.label6.Text = "Program Department:";
             // 
             // cboCourseDepartment
             // 
             this.cboCourseDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCourseDepartment.Enabled = false;
             this.cboCourseDepartment.FormattingEnabled = true;
-            this.cboCourseDepartment.Location = new System.Drawing.Point(170, 448);
+            this.cboCourseDepartment.Location = new System.Drawing.Point(178, 450);
             this.cboCourseDepartment.Name = "cboCourseDepartment";
             this.cboCourseDepartment.Size = new System.Drawing.Size(128, 21);
             this.cboCourseDepartment.TabIndex = 258;
@@ -512,13 +512,13 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.cboCourseDepartment);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
             this.Name = "L_EditProfessorsControl";
             this.Size = new System.Drawing.Size(668, 501);
             this.Load += new System.EventHandler(this.L_EditProfessorsControl_Load);

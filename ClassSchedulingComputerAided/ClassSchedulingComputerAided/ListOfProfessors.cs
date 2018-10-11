@@ -101,7 +101,11 @@ namespace ClassSchedulingComputerAided
                     md.L_DeleteProfessor(ListOfProfessorsData.Selected_ID);
                     dgvShow.DataSource = md.dgv_showListOfProfessors().DataSource;
                     dgvShow.Columns[0].Visible = false;
-                    MessageBox.Show("hello");
+                    MessageBox.Show("Account deleted successfully!", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    pnlShowUserControl.Controls.Clear();
+                    pnlShowUserControl.Visible = false;
+                    btnCancel.Visible = false;
 
                 }
             }

@@ -54,6 +54,9 @@ namespace ClassSchedulingComputerAided
                 rdoParttimer.Checked = true;
             else
                 rdoRetiree.Checked = true;
+
+            if (cboCourseDepartment.Text == "")
+                cboCourseDepartment.SelectedIndex = 0;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -91,8 +94,10 @@ namespace ClassSchedulingComputerAided
                                             teachStatus = "Retiree";
                                         md.UpdateUsersAccount_1(usersData.p_id, txtUsername.Text, ms.encryptPassword(txtPassword.Text), txtFirstName.Text, txtMiddleName.Text, txtLastName.Text, txtAddress.Text, gender, teachStatus, cboCourseDepartment.Text, txtEmailAddress.Text, cleanMobileNumber(txtMobileNumber.Text));
 
+                                        btnCancel_Click_1(sender, e);
+
                                         //audit
-                                        md.AuditTrail(AuditTrailData.username, "Updated","User's information.");
+                                        md.AuditTrail(AuditTrailData.username, "Updated", "User's information.");
                                     }
                                 }
                                 else
@@ -108,20 +113,24 @@ namespace ClassSchedulingComputerAided
                                 txtEmailAddress.Focus();
                             }
                         }
+                        else
+                        {
+                            MessageBox.Show("Please select your program Department.", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Please select your teaching status", "Teaching Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Please select your teaching status", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Please select gender", "Gender", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Please select gender", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else
             {
-                MessageBox.Show("All Fields are required", "Fields", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("All Fields are required", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 
                 if (txtConfirmPassword.Text == "") { txtConfirmPassword.Focus(); }
                 if (txtPassword.Text == "") { txtPassword.Focus(); }
@@ -191,6 +200,11 @@ namespace ClassSchedulingComputerAided
             txtConfirmPassword.Enabled = false;
 
             InformtionControl_Load(sender, e);
+        }
+
+        private void btnSave_Click_1(object sender, EventArgs e)
+        {
+
         }
 
     }
