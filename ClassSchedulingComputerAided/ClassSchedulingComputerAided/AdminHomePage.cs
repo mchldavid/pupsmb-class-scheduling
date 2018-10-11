@@ -182,5 +182,12 @@ namespace ClassSchedulingComputerAided
             pnl.Controls.Add(pup);
             lbl_form_title.Text = "ADMIN HOME";
         }
+
+        private void btnBackupRestore_Click(object sender, EventArgs e)
+        {
+            BackUpRestore br = new BackUpRestore();
+            pnl.Controls.Clear();
+            pnl.Controls.Add(br);
+        }
     }
 }

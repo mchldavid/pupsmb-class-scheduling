@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdminHomePage));
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnSummaryReport = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbl_curriculum_id = new System.Windows.Forms.Label();
@@ -40,7 +41,6 @@
             this.btnClassScheduleDashboard = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnSections = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnHome = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnSummaryReport = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnLogout = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnRooms = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnCurriculum = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -53,6 +53,7 @@
             this.lbl_form_title = new System.Windows.Forms.Label();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnBackupRestore = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -62,6 +63,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.panel3.Controls.Add(this.btnBackupRestore);
             this.panel3.Controls.Add(this.btnSummaryReport);
             this.panel3.Controls.Add(this.panel2);
             this.panel3.Controls.Add(this.lbl_curriculum_id);
@@ -76,9 +78,44 @@
             this.panel3.Controls.Add(this.btnCurriculum);
             this.panel3.Location = new System.Drawing.Point(-1, -1);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(245, 517);
+            this.panel3.Size = new System.Drawing.Size(245, 546);
             this.panel3.TabIndex = 2;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // btnSummaryReport
+            // 
+            this.btnSummaryReport.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(149)))), ((int)(((byte)(1)))));
+            this.btnSummaryReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btnSummaryReport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSummaryReport.BorderRadius = 0;
+            this.btnSummaryReport.ButtonText = "    Summary Report";
+            this.btnSummaryReport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSummaryReport.DisabledColor = System.Drawing.Color.Gray;
+            this.btnSummaryReport.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnSummaryReport.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnSummaryReport.Iconimage")));
+            this.btnSummaryReport.Iconimage_right = null;
+            this.btnSummaryReport.Iconimage_right_Selected = null;
+            this.btnSummaryReport.Iconimage_Selected = null;
+            this.btnSummaryReport.IconMarginLeft = 27;
+            this.btnSummaryReport.IconMarginRight = 0;
+            this.btnSummaryReport.IconRightVisible = true;
+            this.btnSummaryReport.IconRightZoom = 0D;
+            this.btnSummaryReport.IconVisible = true;
+            this.btnSummaryReport.IconZoom = 50D;
+            this.btnSummaryReport.IsTab = false;
+            this.btnSummaryReport.Location = new System.Drawing.Point(-5, 283);
+            this.btnSummaryReport.Name = "btnSummaryReport";
+            this.btnSummaryReport.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btnSummaryReport.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
+            this.btnSummaryReport.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnSummaryReport.selected = false;
+            this.btnSummaryReport.Size = new System.Drawing.Size(252, 42);
+            this.btnSummaryReport.TabIndex = 109;
+            this.btnSummaryReport.Text = "    Summary Report";
+            this.btnSummaryReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSummaryReport.Textcolor = System.Drawing.Color.LightGray;
+            this.btnSummaryReport.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSummaryReport.Click += new System.EventHandler(this.btnSummaryReport_Click);
             // 
             // panel2
             // 
@@ -94,7 +131,7 @@
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(21, -29);
+            this.pictureBox1.Location = new System.Drawing.Point(21, -35);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(195, 140);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -104,7 +141,7 @@
             // lbl_curriculum_id
             // 
             this.lbl_curriculum_id.AutoSize = true;
-            this.lbl_curriculum_id.Location = new System.Drawing.Point(3, 504);
+            this.lbl_curriculum_id.Location = new System.Drawing.Point(179, 504);
             this.lbl_curriculum_id.Name = "lbl_curriculum_id";
             this.lbl_curriculum_id.Size = new System.Drawing.Size(68, 13);
             this.lbl_curriculum_id.TabIndex = 3;
@@ -321,41 +358,6 @@
             this.btnHome.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
-            // btnSummaryReport
-            // 
-            this.btnSummaryReport.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(149)))), ((int)(((byte)(1)))));
-            this.btnSummaryReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btnSummaryReport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSummaryReport.BorderRadius = 0;
-            this.btnSummaryReport.ButtonText = "    Summary Report";
-            this.btnSummaryReport.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSummaryReport.DisabledColor = System.Drawing.Color.Gray;
-            this.btnSummaryReport.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnSummaryReport.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnSummaryReport.Iconimage")));
-            this.btnSummaryReport.Iconimage_right = null;
-            this.btnSummaryReport.Iconimage_right_Selected = null;
-            this.btnSummaryReport.Iconimage_Selected = null;
-            this.btnSummaryReport.IconMarginLeft = 27;
-            this.btnSummaryReport.IconMarginRight = 0;
-            this.btnSummaryReport.IconRightVisible = true;
-            this.btnSummaryReport.IconRightZoom = 0D;
-            this.btnSummaryReport.IconVisible = true;
-            this.btnSummaryReport.IconZoom = 50D;
-            this.btnSummaryReport.IsTab = false;
-            this.btnSummaryReport.Location = new System.Drawing.Point(-5, 283);
-            this.btnSummaryReport.Name = "btnSummaryReport";
-            this.btnSummaryReport.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btnSummaryReport.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
-            this.btnSummaryReport.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnSummaryReport.selected = false;
-            this.btnSummaryReport.Size = new System.Drawing.Size(252, 42);
-            this.btnSummaryReport.TabIndex = 109;
-            this.btnSummaryReport.Text = "    Summary Report";
-            this.btnSummaryReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSummaryReport.Textcolor = System.Drawing.Color.LightGray;
-            this.btnSummaryReport.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSummaryReport.Click += new System.EventHandler(this.btnSummaryReport_Click);
-            // 
             // btnLogout
             // 
             this.btnLogout.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(149)))), ((int)(((byte)(1)))));
@@ -377,7 +379,7 @@
             this.btnLogout.IconVisible = true;
             this.btnLogout.IconZoom = 50D;
             this.btnLogout.IsTab = false;
-            this.btnLogout.Location = new System.Drawing.Point(-5, 451);
+            this.btnLogout.Location = new System.Drawing.Point(-5, 493);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnLogout.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
@@ -466,7 +468,7 @@
             this.pnl.BackColor = System.Drawing.Color.Gainsboro;
             this.pnl.Location = new System.Drawing.Point(242, 72);
             this.pnl.Name = "pnl";
-            this.pnl.Size = new System.Drawing.Size(700, 451);
+            this.pnl.Size = new System.Drawing.Size(700, 473);
             this.pnl.TabIndex = 142;
             this.pnl.Click += new System.EventHandler(this.s);
             // 
@@ -489,7 +491,7 @@
             this.lbl_title.CustomBackground = true;
             this.lbl_title.CustomForeColor = true;
             this.lbl_title.ForeColor = System.Drawing.Color.LightCoral;
-            this.lbl_title.Location = new System.Drawing.Point(12, 43);
+            this.lbl_title.Location = new System.Drawing.Point(12, 38);
             this.lbl_title.Name = "lbl_title";
             this.lbl_title.Size = new System.Drawing.Size(511, 18);
             this.lbl_title.TabIndex = 244;
@@ -537,7 +539,7 @@
             this.lbl_form_title.BackColor = System.Drawing.Color.Transparent;
             this.lbl_form_title.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_form_title.ForeColor = System.Drawing.Color.LightCoral;
-            this.lbl_form_title.Location = new System.Drawing.Point(8, 11);
+            this.lbl_form_title.Location = new System.Drawing.Point(8, 6);
             this.lbl_form_title.Name = "lbl_form_title";
             this.lbl_form_title.Size = new System.Drawing.Size(203, 36);
             this.lbl_form_title.TabIndex = 138;
@@ -558,12 +560,47 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // btnBackupRestore
+            // 
+            this.btnBackupRestore.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(149)))), ((int)(((byte)(1)))));
+            this.btnBackupRestore.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btnBackupRestore.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBackupRestore.BorderRadius = 0;
+            this.btnBackupRestore.ButtonText = "    Backup and Restore";
+            this.btnBackupRestore.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBackupRestore.DisabledColor = System.Drawing.Color.Gray;
+            this.btnBackupRestore.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnBackupRestore.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnBackupRestore.Iconimage")));
+            this.btnBackupRestore.Iconimage_right = null;
+            this.btnBackupRestore.Iconimage_right_Selected = null;
+            this.btnBackupRestore.Iconimage_Selected = null;
+            this.btnBackupRestore.IconMarginLeft = 27;
+            this.btnBackupRestore.IconMarginRight = 0;
+            this.btnBackupRestore.IconRightVisible = true;
+            this.btnBackupRestore.IconRightZoom = 0D;
+            this.btnBackupRestore.IconVisible = true;
+            this.btnBackupRestore.IconZoom = 50D;
+            this.btnBackupRestore.IsTab = false;
+            this.btnBackupRestore.Location = new System.Drawing.Point(-5, 451);
+            this.btnBackupRestore.Name = "btnBackupRestore";
+            this.btnBackupRestore.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btnBackupRestore.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
+            this.btnBackupRestore.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnBackupRestore.selected = false;
+            this.btnBackupRestore.Size = new System.Drawing.Size(252, 42);
+            this.btnBackupRestore.TabIndex = 109;
+            this.btnBackupRestore.Text = "    Backup and Restore";
+            this.btnBackupRestore.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBackupRestore.Textcolor = System.Drawing.Color.LightGray;
+            this.btnBackupRestore.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackupRestore.Click += new System.EventHandler(this.btnBackupRestore_Click);
+            // 
             // frmAdminHomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Drawing.MetroBorderStyle.FixedSingle;
-            this.ClientSize = new System.Drawing.Size(939, 515);
+            this.ClientSize = new System.Drawing.Size(939, 544);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.pnl);
@@ -606,6 +643,7 @@
         public MetroFramework.Controls.MetroLabel lbl_title;
         public Bunifu.Framework.UI.BunifuFlatButton btnSummaryReport;
         private System.Windows.Forms.Panel panel1;
+        public Bunifu.Framework.UI.BunifuFlatButton btnBackupRestore;
 
 
     }

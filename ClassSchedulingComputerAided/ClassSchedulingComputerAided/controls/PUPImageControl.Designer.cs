@@ -38,7 +38,8 @@
             this.pbPupImage.Image = ((System.Drawing.Image)(resources.GetObject("pbPupImage.Image")));
             this.pbPupImage.Location = new System.Drawing.Point(0, 0);
             this.pbPupImage.Name = "pbPupImage";
-            this.pbPupImage.Size = new System.Drawing.Size(700, 451);
+            this.pbPupImage.Size = new System.Drawing.Size(700, 473);
+            this.pbPupImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPupImage.TabIndex = 0;
             this.pbPupImage.TabStop = false;
             // 
@@ -48,7 +49,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pbPupImage);
             this.Name = "PUPImageControl";
-            this.Size = new System.Drawing.Size(700, 451);
+            this.Size = new System.Drawing.Size(700, 473);
             ((System.ComponentModel.ISupportInitialize)(this.pbPupImage)).EndInit();
             this.ResumeLayout(false);
 

@@ -1,0 +1,1079 @@
+-- MySQL Administrator dump 1.4
+--
+-- ------------------------------------------------------
+-- Server version	5.0.91-community-nt
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+
+--
+-- Create schema db_finalnasana
+--
+
+CREATE DATABASE IF NOT EXISTS db_finalnasana;
+USE db_finalnasana;
+
+--
+-- Definition of table `tbl_audittrail`
+--
+
+DROP TABLE IF EXISTS `tbl_audittrail`;
+CREATE TABLE `tbl_audittrail` (
+  `auditTrail_id` int(10) unsigned NOT NULL auto_increment,
+  `dateTime` datetime NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `action` varchar(45) NOT NULL,
+  `description` varchar(100) NOT NULL,
+  PRIMARY KEY  (`auditTrail_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=434 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_audittrail`
+--
+
+/*!40000 ALTER TABLE `tbl_audittrail` DISABLE KEYS */;
+INSERT INTO `tbl_audittrail` (`auditTrail_id`,`dateTime`,`username`,`action`,`description`) VALUES 
+ (1,'2018-10-10 03:58:47','asdf','Logged In','Successfully!.'),
+ (2,'2018-10-10 04:14:18','asdf','Logged In','Successfully!.'),
+ (3,'2018-10-10 04:15:50','asdf','Logged In','Successfully!.'),
+ (4,'2018-10-10 04:18:26','asdf','Logged In','Successfully!.'),
+ (5,'2018-10-10 04:21:40','asdf','Logged In','Successfully!.'),
+ (6,'2018-10-10 04:21:54','asdf','Logged Out','Successfully'),
+ (7,'2018-10-10 04:22:34','michael','Logged In','Successfully!.'),
+ (8,'2018-10-10 04:22:37','michael','Logged Out','Successfully'),
+ (9,'2018-10-10 04:22:42','asdf','Logged In','Successfully!.'),
+ (10,'2018-10-10 04:32:40','michael','Logged In','Successfully!.'),
+ (11,'2018-10-10 04:34:18','michael','Logged In','Successfully!.'),
+ (12,'2018-10-10 04:34:33','michael','Added','7:30 AM-1:00 PM on Thursday preferred schedule.'),
+ (13,'2018-10-10 04:34:36','michael','Logged Out','Successfully'),
+ (14,'2018-10-10 04:34:39','asdf','Logged In','Successfully!.'),
+ (15,'2018-10-10 04:35:08','asdf','Logged Out','Successfully'),
+ (16,'2018-10-10 04:37:34','michael','Logged In','Successfully!.'),
+ (17,'2018-10-10 04:37:40','michael','Deleted','Preferred schedule.'),
+ (18,'2018-10-10 04:37:48','michael','Logged Out','Successfully'),
+ (19,'2018-10-10 04:37:53','asdf','Logged In','Successfully!.'),
+ (20,'2018-10-10 04:38:05','asdf','Logged Out','Successfully'),
+ (21,'2018-10-10 11:13:15','michael','Logged In','Successfully!.'),
+ (22,'2018-10-10 11:17:19','michael','Logged Out','Successfully'),
+ (23,'2018-10-10 11:18:20','michael','Logged In','Successfully!.'),
+ (24,'2018-10-10 11:25:39','michael','Logged In','Successfully!.'),
+ (25,'2018-10-10 11:25:51','michael','Added','CIEN 3123 preferred subject.'),
+ (26,'2018-10-10 11:25:58','michael','Deleted','FILI  preferred subject.'),
+ (27,'2018-10-10 11:26:01','michael','Logged Out','Successfully'),
+ (28,'2018-10-10 11:26:44','asdf','Logged In','Successfully!.'),
+ (29,'2018-10-10 11:27:11','asdf','Logged Out','Successfully'),
+ (30,'2018-10-10 11:27:16','michael','Logged In','Successfully!.'),
+ (31,'2018-10-10 11:27:44','michael','Added','FILI 1033 preferred subject.'),
+ (32,'2018-10-10 11:27:48','michael','Logged Out','Successfully'),
+ (33,'2018-10-10 11:46:54','asdf','Logged In','Successfully!.'),
+ (34,'2018-10-10 11:53:03','asdf','Logged In','Successfully!.'),
+ (35,'2018-10-10 12:15:18','asdf','Logged In','Successfully!.'),
+ (36,'2018-10-10 12:16:34','asdf','Logged In','Successfully!.'),
+ (37,'2018-10-10 12:17:38','asdf','Logged In','Successfully!.'),
+ (38,'2018-10-10 12:19:12','asdf','Logged In','Successfully!.'),
+ (39,'2018-10-10 12:19:57','asdf','Deleted','BSA courses from yowowyow [1ST Semester].'),
+ (40,'2018-10-10 12:22:36','asdf','Logged In','Successfully!.'),
+ (41,'2018-10-10 12:22:55','asdf','Added','BSA imported from section offering 17-18.'),
+ (42,'2018-10-10 12:22:55','asdf','Added','BSA imported from section offering 17-18.'),
+ (43,'2018-10-10 12:22:55','asdf','Added','BSA imported from section offering 17-18.'),
+ (44,'2018-10-10 12:22:55','asdf','Added','BSA imported from section offering 17-18.'),
+ (45,'2018-10-10 12:22:55','asdf','Added','BSA imported from section offering 17-18.'),
+ (46,'2018-10-10 12:22:55','asdf','Added','BSA imported from section offering 17-18.'),
+ (47,'2018-10-10 12:22:55','asdf','Added','BSA imported from section offering 17-18.'),
+ (48,'2018-10-10 12:22:55','asdf','Added','BSA imported from section offering 17-18.'),
+ (49,'2018-10-10 12:22:55','asdf','Added','BSA imported from section offering 17-18.'),
+ (50,'2018-10-10 12:22:55','asdf','Added','BSA imported from section offering 17-18.'),
+ (51,'2018-10-10 12:22:56','asdf','Added','BSA imported from section offering 17-18.'),
+ (52,'2018-10-10 12:22:56','asdf','Added','BSA imported from section offering 17-18.'),
+ (53,'2018-10-10 12:22:56','asdf','Added','BSA imported from section offering 17-18.'),
+ (54,'2018-10-10 12:22:56','asdf','Added','BSA imported from section offering 17-18.'),
+ (55,'2018-10-10 12:22:56','asdf','Added','BSA imported from section offering 17-18.'),
+ (56,'2018-10-10 12:26:00','asdf','Logged In','Successfully!.'),
+ (57,'2018-10-10 12:27:07','asdf','Added','course to the yowowyow [1ST Semester] program.'),
+ (58,'2018-10-10 12:28:33','asdf','Logged In','Successfully!.'),
+ (59,'2018-10-10 12:45:14','michael','Logged In','Successfully!.'),
+ (60,'2018-10-10 13:15:17','michael','Logged In','Successfully!.'),
+ (61,'2018-10-10 13:16:12','michael','Logged In','Successfully!.'),
+ (62,'2018-10-10 13:21:03','michael','Logged In','Successfully!.'),
+ (63,'2018-10-10 13:21:55','michael','Logged In','Successfully!.'),
+ (64,'2018-10-10 13:22:51','michael','Logged In','Successfully!.'),
+ (65,'2018-10-10 13:23:20','michael','Logged Out','Successfully'),
+ (66,'2018-10-10 13:26:04','michael','Logged In','Successfully!.'),
+ (67,'2018-10-10 13:26:10','michael','Logged Out','Successfully'),
+ (68,'2018-10-10 13:26:13','asdf','Logged In','Successfully!.'),
+ (69,'2018-10-10 13:28:09','asdf','Logged In','Successfully!.'),
+ (70,'2018-10-10 13:29:32','michael','Logged In','Successfully!.'),
+ (71,'2018-10-10 13:30:03','michael','Logged Out','Successfully'),
+ (72,'2018-10-10 13:31:33','asdf','Logged In','Successfully!.'),
+ (73,'2018-10-10 13:34:53','asdf','Logged In','Successfully!.'),
+ (74,'2018-10-10 13:41:53','asdf','Logged In','Successfully!.'),
+ (75,'2018-10-10 13:42:07','asdf','Added','BSA year4 generate  section/s.'),
+ (76,'2018-10-10 13:42:44','asdf','Logged In','Successfully!.'),
+ (77,'2018-10-10 13:43:03','asdf','Added','DOMTLOM year1 generate  section/s.'),
+ (78,'2018-10-10 13:43:09','asdf','Added','DOMTLOM year1 generate  section/s.'),
+ (79,'2018-10-10 13:44:01','asdf','Logged In','Successfully!.'),
+ (80,'2018-10-10 13:44:47','asdf','Logged Out','Successfully'),
+ (81,'2018-10-10 13:47:17','asdf','Logged In','Successfully!.'),
+ (82,'2018-10-10 13:48:54','michael','Logged In','Successfully!.'),
+ (83,'2018-10-10 13:48:56','michael','Logged Out','Successfully'),
+ (84,'2018-10-10 13:49:12','asdf','Logged In','Successfully!.'),
+ (85,'2018-10-10 13:49:20','asdf','Added','BSA year5 generate 2 section/s.'),
+ (86,'2018-10-10 14:02:30','asdf','Logged In','Successfully!.'),
+ (87,'2018-10-10 14:03:27','asdf','Logged In','Successfully!.'),
+ (88,'2018-10-10 14:03:38','asdf','Update','System.Windows.Forms.ListBox+SelectedObjectCollection was updated to Active room.'),
+ (89,'2018-10-10 14:03:40','asdf','Update','System.Windows.Forms.ListBox+SelectedObjectCollection was updated to Active room.'),
+ (90,'2018-10-10 14:06:35','asdf','Logged In','Successfully!.'),
+ (91,'2018-10-10 14:08:28','asdf','Logged In','Successfully!.'),
+ (92,'2018-10-10 14:09:30','asdf','Logged In','Successfully!.'),
+ (93,'2018-10-10 14:09:35','asdf','Update','RM202 was updated to Active room.'),
+ (94,'2018-10-10 14:09:51','asdf','Logged Out','Successfully'),
+ (95,'2018-10-10 14:10:12','asdf','Logged In','Successfully!.'),
+ (96,'2018-10-10 14:10:27','asdf','Add','RM204 was added to the rooms.'),
+ (97,'2018-10-10 14:10:31','asdf','Update','RM204 was updated to Inactive room.'),
+ (98,'2018-10-10 14:25:03','asdf','Logged In','Successfully!.'),
+ (99,'2018-10-10 14:36:55','michael','Logged In','Successfully!.'),
+ (100,'2018-10-10 14:40:00','michael','Logged Out','Successfully'),
+ (101,'2018-10-10 14:45:44','asdf','Logged In','Successfully!.'),
+ (102,'2018-10-10 14:47:36','asdf','Add','CWTS 1013 was scheduled toTBA from7:30 AM to 10:30 AM Tuesday in RM201'),
+ (103,'2018-10-10 14:48:58','asdf','Logged In','Successfully!.'),
+ (104,'2018-10-10 14:45:35','michael','Logged In','Successfully!.'),
+ (105,'2018-10-10 14:45:49','michael','Logged Out','Successfully'),
+ (106,'2018-10-10 14:49:41','asdf','Logged Out','Successfully'),
+ (107,'2018-10-10 14:49:52','asdf','Logged In','Successfully!.'),
+ (108,'2018-10-10 14:50:04','asdf','Logged Out','Successfully'),
+ (109,'2018-10-10 14:56:21','asdf','Logged In','Successfully!.'),
+ (110,'2018-10-10 14:59:03','asdf','Logged In','Successfully!.'),
+ (111,'2018-10-10 14:59:07','asdf','Logged Out','Successfully'),
+ (112,'2018-10-10 14:59:38','asdf','Logged In','Successfully!.'),
+ (113,'2018-10-10 15:01:32','asdf','Logged In','Successfully!.'),
+ (114,'2018-10-10 15:01:45','asdf','Logged Out','Successfully'),
+ (115,'2018-10-10 15:02:21','asdf','Logged In','Successfully!.'),
+ (116,'2018-10-10 15:02:35','asdf','Logged Out','Successfully'),
+ (117,'2018-10-10 15:17:20','asdf','Logged In','Successfully!.'),
+ (118,'2018-10-10 15:26:49','asdf','Logged In','Successfully!.'),
+ (119,'2018-10-10 15:27:31','asdf','Logged In','Successfully!.'),
+ (120,'2018-10-10 15:27:34','asdf','Logged Out','Successfully'),
+ (121,'2018-10-10 15:28:04','asdf','Logged In','Successfully!.'),
+ (122,'2024-06-01 15:48:24','michael','Logged In','Successfully!.'),
+ (123,'2018-10-10 15:49:01','michael','Logged Out','Successfully'),
+ (124,'2018-10-10 15:55:09','asdf','Logged In','Successfully!.'),
+ (125,'2018-10-10 16:20:01','asdf','Logged In','Successfully!.'),
+ (126,'2018-10-10 16:21:15','asdf','Logged In','Successfully!.'),
+ (127,'2018-10-10 16:22:37','asdf','Logged In','Successfully!.'),
+ (128,'2018-10-10 16:24:07','michael','Logged In','Successfully!.'),
+ (129,'2018-10-10 16:24:09','michael','Logged Out','Successfully'),
+ (130,'2018-10-10 16:24:25','asdf','Logged In','Successfully!.'),
+ (131,'2018-10-10 16:27:07','asdf','Logged In','Successfully!.'),
+ (132,'2018-10-10 16:24:34','michael','Logged In','Successfully!.'),
+ (133,'2018-10-10 16:31:38','michael','Logged In','Successfully!.'),
+ (134,'2018-10-10 16:31:55','michael','Add','7:00 AM-9:00 AM on Saturday preferred schedule.'),
+ (135,'2018-10-10 16:32:04','michael','Added','MATH 1013 preferred subject.'),
+ (136,'2018-10-10 16:32:06','michael','Logged Out','Successfully'),
+ (137,'2018-10-10 16:32:11','asdf','Logged In','Successfully!.'),
+ (138,'2018-10-10 16:32:27','asdf','Logged Out','Successfully'),
+ (139,'2018-10-10 16:34:27','asdf','Logged In','Successfully!.'),
+ (140,'2018-10-10 16:30:49','michael','Logged In','Successfully!.'),
+ (141,'2018-10-10 16:34:34','asdf','Update','hahahahahahahahah'),
+ (142,'2018-10-10 16:35:10','asdf','Logged In','Successfully!.'),
+ (143,'2018-10-10 16:35:16','asdf','Update','Michael  David\'s account was set to inactive.'),
+ (144,'2018-10-10 16:36:11','michael','Logged In','Successfully!.'),
+ (145,'2018-10-10 16:38:21','michael','Logged Out','Successfully'),
+ (146,'2018-10-10 16:38:40','michael','Logged In','Successfully!.'),
+ (147,'2018-10-10 16:42:32','asdf','Logged In','Successfully!.'),
+ (148,'2018-10-10 16:42:52','asdf','Delete','DOMTLOM courses from Diploma in Office Management Technology [1ST Semester].'),
+ (149,'2018-10-10 16:43:36','asdf','Delete','DOMTLOM courses from Diploma in Office Management Technology [1ST Semester].'),
+ (150,'2018-10-10 16:43:44','asdf','Logged Out','Successfully'),
+ (151,'2018-10-10 16:43:01','michael','Deleted','OMT 312 preferred subject.'),
+ (152,'2018-10-10 16:46:45','asdf','Logged In','Successfully!.'),
+ (153,'2018-10-10 16:47:43','asdf','Delete','DOMTLOM courses from Diploma in Office Management Technology [1ST Semester].'),
+ (154,'2018-10-10 16:47:49','asdf','Logged Out','Successfully'),
+ (155,'2018-10-10 16:49:09','michael','Logged Out','Successfully'),
+ (156,'2018-10-10 16:49:32','asdf','Logged In','Successfully!.'),
+ (157,'2018-10-10 17:01:57','michael','Logged In','Successfully!.'),
+ (158,'2018-10-10 16:58:49','asdf','Logged Out','Successfully'),
+ (159,'2018-10-10 17:03:44','michael','Logged In','Successfully!.'),
+ (160,'2018-10-10 17:00:28','asdf','Logged In','Successfully!.'),
+ (161,'2018-10-10 17:04:38','michael','Logged In','Successfully!.'),
+ (162,'2018-10-10 17:04:50','michael','Logged Out','Successfully'),
+ (163,'2018-10-10 17:07:15','michael','Logged In','Successfully!.'),
+ (164,'2018-10-10 17:07:30','michael','Added','ACCO 2143 preferred subject.'),
+ (165,'2018-10-10 17:07:37','michael','Added','ACCO 2143 preferred subject.'),
+ (166,'2018-10-10 17:09:38','michael','Logged In','Successfully!.'),
+ (167,'2018-10-10 17:09:50','michael','Added','ACCO 2143 preferred subject.'),
+ (168,'2018-10-10 17:09:53','michael','Added','ACCO 2143 preferred subject.'),
+ (169,'2018-10-10 17:09:54','michael','Added','CWTS 1013 preferred subject.'),
+ (170,'2018-10-10 17:09:56','michael','Added','HIST 1013 preferred subject.'),
+ (171,'2018-10-10 17:10:58','michael','Logged In','Successfully!.'),
+ (172,'2018-10-10 17:11:08','michael','Added','HIST 1013 preferred subject.'),
+ (173,'2018-10-10 17:11:20','michael','Added','ENGL 1013 preferred subject.'),
+ (174,'2018-10-10 17:11:23','michael','Added','HIST 1013 preferred subject.'),
+ (175,'2018-10-10 17:11:33','michael','Updated','User\'s information.'),
+ (176,'2018-10-10 17:11:43','michael','Updated','User\'s information.'),
+ (177,'2018-10-10 17:11:48','michael','Updated','User\'s information.'),
+ (178,'2018-10-10 17:11:51','michael','Logged Out','Successfully'),
+ (179,'2018-10-10 17:13:29','michael','Logged In','Successfully!.'),
+ (180,'2018-10-10 17:13:39','michael','Added','asfasf preferred subject.'),
+ (181,'2018-10-10 17:13:41','michael','Added','PHED 1252 preferred subject.'),
+ (182,'2018-10-10 17:14:12','michael','Added','ACCO 3046 preferred subject.'),
+ (183,'2018-10-10 17:14:16','michael','Added',' preferred subject.'),
+ (184,'2018-10-10 17:14:20','michael','Added',' preferred subject.'),
+ (185,'2018-10-10 17:14:32','michael','Updated','User\'s information.'),
+ (186,'2018-10-10 17:14:34','michael','Logged Out','Successfully'),
+ (187,'2018-10-10 17:14:38','asdf','Logged In','Successfully!.'),
+ (188,'2018-10-10 17:14:56','asdf','Delete','DOMTLOM courses from Diploma in Office Management Technology [1ST Semester].'),
+ (189,'2018-10-10 17:15:38','asdf','Logged In','Successfully!.'),
+ (190,'2018-10-10 17:15:51','asdf','Delete','DOMTLOM courses from Diploma in Office Management Technology [1ST Semester].'),
+ (191,'2018-10-10 17:15:57','asdf','Logged Out','Successfully'),
+ (192,'2018-10-10 17:16:00','michael','Logged In','Successfully!.'),
+ (193,'2018-10-10 17:16:56','michael','Updated','User\'s information.'),
+ (194,'2018-10-10 17:15:18','asdf','Logged In','Successfully!.'),
+ (195,'2018-10-10 17:20:59','michael','Logged In','Successfully!.'),
+ (196,'2018-10-10 17:21:14','michael','Updated','User\'s information.'),
+ (197,'2018-10-10 17:23:01','michael','Logged In','Successfully!.'),
+ (198,'2018-10-10 17:19:21','asdf','Logged Out','Successfully'),
+ (199,'2018-10-10 17:23:05','michael','Updated','User\'s information.'),
+ (200,'2018-10-10 17:23:13','michael','Logged Out','Successfully'),
+ (201,'2018-10-10 17:23:17','asdf','Logged In','Successfully!.'),
+ (202,'2018-10-10 17:24:07','asdf','Add','DOMTLOM imported from Sheet1.'),
+ (203,'2018-10-10 17:24:08','asdf','Add','DOMTLOM imported from Sheet1.'),
+ (204,'2018-10-10 17:24:09','asdf','Add','DOMTLOM imported from Sheet1.'),
+ (205,'2018-10-10 17:24:09','asdf','Add','DOMTLOM imported from Sheet1.'),
+ (206,'2018-10-10 17:24:10','asdf','Add','DOMTLOM imported from Sheet1.'),
+ (207,'2018-10-10 17:24:10','asdf','Add','DOMTLOM imported from Sheet1.'),
+ (208,'2018-10-10 17:24:10','asdf','Add','DOMTLOM imported from Sheet1.'),
+ (209,'2018-10-10 17:24:11','asdf','Add','DOMTLOM imported from Sheet1.'),
+ (210,'2018-10-10 17:24:11','asdf','Add','DOMTLOM imported from Sheet1.'),
+ (211,'2018-10-10 17:25:43','asdf','Logged In','Successfully!.'),
+ (212,'2018-10-10 17:26:17','asdf','Delete','DOMTLOM courses from Diploma in Office Management Technology [2ND Semester].'),
+ (213,'2018-10-10 17:26:25','asdf','Add','DOMTLOM imported from Sheet1.'),
+ (214,'2018-10-10 17:26:58','asdf','Logged Out','Successfully'),
+ (215,'2018-10-10 17:29:50','asdf','Logged In','Successfully!.'),
+ (216,'2018-10-10 17:30:09','asdf','Add','DOMTLOM imported from section offering 17-18.'),
+ (217,'2018-10-10 17:36:47','asdf','Logged In','Successfully!.'),
+ (218,'2018-10-10 17:37:09','asdf','Add','DOMTLOM imported from section offering 17-18.'),
+ (219,'2018-10-10 17:37:21','asdf','Add','DOMTLOM imported from section offering 17-18.'),
+ (220,'2018-10-10 17:37:30','asdf','Add','DOMTLOM imported from Sheet1.'),
+ (221,'2018-10-10 17:37:43','asdf','Delete','DOMTLOM courses from Diploma in Office Management Technology [1ST Semester].'),
+ (222,'2018-10-10 17:38:03','asdf','Logged Out','Successfully'),
+ (223,'2018-10-10 17:45:45','asdf','Logged In','Successfully!.'),
+ (224,'2018-10-10 17:47:53','asdf','Logged In','Successfully!.'),
+ (225,'2018-10-10 17:51:32','asdf','Logged In','Successfully!.'),
+ (226,'2018-10-10 17:52:00','asdf','Logged Out','Successfully'),
+ (227,'2018-10-10 17:53:11','asdf','Logged In','Successfully!.'),
+ (228,'2018-10-10 18:17:14','asdf','Logged In','Successfully!.'),
+ (229,'2018-10-10 18:30:01','asdf','Update',' from Bachelor of Science in Hospitality Management [1ST Semester].'),
+ (230,'2018-10-10 18:35:19','asdf','Logged In','Successfully!.'),
+ (231,'2018-10-10 18:35:45','asdf','Delete','BSHM courses from Bachelor of Science in Hospitality Management [1ST Semester].'),
+ (232,'2018-10-10 18:36:11','asdf','Add','BSHM imported from section offering 17-18.'),
+ (233,'2018-10-10 18:36:26','asdf','Delete','BSHM courses from Bachelor of Science in Hospitality Management [1ST Semester].'),
+ (234,'2018-10-10 18:36:43','asdf','Add','BSHM imported from section offering 17-18.'),
+ (235,'2018-10-10 18:36:56','asdf','Add','BSHM imported from section offering 17-18.'),
+ (236,'2018-10-10 18:37:08','asdf','Delete','BSHM courses from Bachelor of Science in Hospitality Management [1ST Semester].'),
+ (237,'2018-10-10 18:37:14','asdf','Add','BSHM imported from section offering 17-18.'),
+ (238,'2018-10-10 18:39:49','asdf','Logged Out','Successfully'),
+ (239,'2018-10-10 18:50:24','asdf','Logged In','Successfully!.'),
+ (240,'2018-10-10 18:57:19','michael','Logged In','Successfully!.'),
+ (241,'2018-10-10 19:00:47','michael','Logged In','Successfully!.'),
+ (242,'2018-10-10 19:02:28','michael','Logged In','Successfully!.'),
+ (243,'2018-10-10 19:02:35','michael','Added','COMP 2013 preferred subject.'),
+ (244,'2018-10-10 19:02:39','michael','Added','COMP 2013 preferred subject.'),
+ (245,'2018-10-10 19:05:02','michael','Logged In','Successfully!.'),
+ (246,'2018-10-10 19:05:24','michael','Added','ACCO 2143 preferred subject.'),
+ (247,'2018-10-10 19:06:00','michael','Added','ENGL 1013 preferred subject.'),
+ (248,'2018-10-10 19:06:03','michael','Added','INTE 2053 preferred subject.'),
+ (249,'2018-10-10 19:08:03','michael','Logged In','Successfully!.'),
+ (250,'2018-10-10 19:08:20','michael','Deleted','ACCO 2143 preferred subject.'),
+ (251,'2018-10-10 19:08:25','michael','Deleted','HIST 1013 preferred subject.'),
+ (252,'2018-10-10 19:08:47','michael','Logged Out','Successfully'),
+ (253,'2018-10-10 20:22:58','asdf','Logged In','Successfully!.'),
+ (254,'2018-10-10 20:30:33','michael','Logged In','Successfully!.'),
+ (255,'2018-10-10 20:31:01','michael','Logged Out','Successfully'),
+ (256,'2018-10-10 20:31:06','michael','Logged In','Successfully!.'),
+ (257,'2018-10-10 20:31:53','michael','Logged Out','Successfully'),
+ (258,'2018-10-10 21:20:51','asdf','Logged In','Successfully!.'),
+ (259,'2018-10-10 21:21:12','asdf','Add','DOMTLOM imported from section offering 17-18.'),
+ (260,'2018-10-10 21:21:35','asdf','Add','DOMTLOM imported from Sheet1.'),
+ (261,'2018-10-10 21:21:38','asdf','Add','DOMTLOM imported from Sheet1.'),
+ (262,'2018-10-10 21:22:17','asdf','Logged In','Successfully!.'),
+ (263,'2018-10-10 21:22:32','asdf','Delete','DOMTLOM courses from Diploma in Office Management Technology [2ND Semester].'),
+ (264,'2018-10-10 21:22:49','asdf','Add','DOMTLOM imported from Sheet1.'),
+ (265,'2018-10-10 21:24:07','asdf','Logged In','Successfully!.'),
+ (266,'2018-10-10 21:24:20','asdf','Delete','BSEDEN courses from Bachelor of Science in Education Major in English [1ST Semester].'),
+ (267,'2018-10-10 21:24:34','asdf','Add','BSEDEN imported from section offering 17-18.'),
+ (268,'2018-10-10 21:25:47','asdf','Delete','BSEDEN courses from Bachelor of Science in Education Major in English [1ST Semester].'),
+ (269,'2018-10-10 21:25:59','asdf','Add','BSEDEN imported from section offering 17-18.'),
+ (270,'2018-10-10 21:26:51','asdf','Delete','BSEDEN courses from Bachelor of Science in Education Major in English [1ST Semester].'),
+ (271,'2018-10-10 21:27:19','asdf','Add','BSEDEN imported from section offering 17-18.'),
+ (272,'2018-10-10 21:27:27','asdf','Delete',' from Bachelor of Science in Education Major in English [1ST Semester].'),
+ (273,'2018-10-10 21:27:32','asdf','Delete',' from Bachelor of Science in Education Major in English [1ST Semester].'),
+ (274,'2018-10-10 21:27:34','asdf','Delete',' from Bachelor of Science in Education Major in English [1ST Semester].'),
+ (275,'2018-10-10 21:27:36','asdf','Delete',' from Bachelor of Science in Education Major in English [1ST Semester].'),
+ (276,'2018-10-10 21:27:38','asdf','Delete',' from Bachelor of Science in Education Major in English [1ST Semester].'),
+ (277,'2018-10-10 21:27:41','asdf','Delete',' from Bachelor of Science in Education Major in English [1ST Semester].'),
+ (278,'2018-10-10 21:27:43','asdf','Delete',' from Bachelor of Science in Education Major in English [1ST Semester].'),
+ (279,'2018-10-10 21:27:46','asdf','Delete',' from Bachelor of Science in Education Major in English [1ST Semester].'),
+ (280,'2018-10-10 21:27:49','asdf','Delete',' from Bachelor of Science in Education Major in English [1ST Semester].'),
+ (281,'2018-10-10 21:27:52','asdf','Delete',' from Bachelor of Science in Education Major in English [1ST Semester].'),
+ (282,'2018-10-10 21:27:54','asdf','Delete',' from Bachelor of Science in Education Major in English [1ST Semester].'),
+ (283,'2018-10-10 21:28:07','asdf','Add','BSEDEN imported from section offering 17-18.'),
+ (284,'2018-10-10 21:29:13','asdf','Logged In','Successfully!.'),
+ (285,'2018-10-10 21:29:23','asdf','Delete','BSEDEN courses from Bachelor of Science in Education Major in English [1ST Semester].'),
+ (286,'2018-10-10 21:29:33','asdf','Add','BSEDEN imported from section offering 17-18.'),
+ (287,'2018-10-10 21:29:45','asdf','Add','BSEDEN imported from section offering 17-18.'),
+ (288,'2018-10-10 21:30:00','asdf','Add','BSEDEN imported from Sheet1.'),
+ (289,'2018-10-10 21:30:11','asdf','Delete','BSEDEN courses from Bachelor of Science in Education Major in English [1ST Semester].'),
+ (290,'2018-10-10 21:32:07','asdf','Add','BSEDEN imported from Sheet1.'),
+ (291,'2018-10-10 21:32:14','asdf','Add','BSEDEN imported from Sheet1.'),
+ (292,'2018-10-10 21:32:50','asdf','Delete',' from Bachelor of Science in Education Major in English [1ST Semester].'),
+ (293,'2018-10-10 21:32:54','asdf','Delete',' from Bachelor of Science in Education Major in English [1ST Semester].'),
+ (294,'2018-10-10 21:32:56','asdf','Delete',' from Bachelor of Science in Education Major in English [1ST Semester].'),
+ (295,'2018-10-10 21:33:09','asdf','Add','BSEDEN imported from Sheet1.'),
+ (296,'2018-10-10 21:33:12','asdf','Delete','BSEDEN courses from Bachelor of Science in Education Major in English [1ST Semester].'),
+ (297,'2018-10-10 21:33:19','asdf','Add','BSEDEN imported from Sheet1.'),
+ (298,'2018-10-10 21:31:40','asdf','Logged In','Successfully!.'),
+ (299,'2018-10-10 21:35:34','asdf','Logged In','Successfully!.'),
+ (300,'2018-10-10 21:36:27','asdf','Logged In','Successfully!.'),
+ (301,'2018-10-10 21:37:06','asdf','Add','DOMTLOM imported from Sheet1.'),
+ (302,'2018-10-10 21:37:21','asdf','Add','DOMTLOM imported from Sheet1.'),
+ (303,'2018-10-10 21:37:32','asdf','Delete','DOMTLOM courses from Diploma in Office Management Technology [1ST Semester].'),
+ (304,'2018-10-10 21:38:22','asdf','Add','DOMTLOM imported from section offering 17-18.'),
+ (305,'2018-10-10 21:38:28','asdf','Add','DOMTLOM imported from Sheet1.'),
+ (306,'2018-10-10 21:38:33','asdf','Add','DOMTLOM imported from Sheet1.'),
+ (307,'2018-10-10 21:43:44','asdf','Logged In','Successfully!.'),
+ (308,'2018-10-10 21:51:30','asdf','Add','BSIT year 1 generate 2 section/s.'),
+ (309,'2018-10-10 21:51:51','asdf','Add','BSIT year 1 generate 3 section/s.'),
+ (310,'2018-10-10 21:52:01','asdf','Add','BSIT year 1 generate 3 section/s.'),
+ (311,'2018-10-10 21:52:55','asdf','Update','RM201 was updated to Inactive room.'),
+ (312,'2018-10-10 21:52:56','asdf','Update','RM201 was updated to Active room.'),
+ (313,'2018-10-10 21:52:58','asdf','Update','RM203 was updated to Active room.'),
+ (314,'2018-10-10 21:53:27','asdf','Update','RM202 was updated to Inactive room.'),
+ (315,'2018-10-10 21:53:28','asdf','Update','RM202 was updated to Active room.'),
+ (316,'2018-10-10 21:58:53','asdf','Logged In','Successfully!.'),
+ (317,'2018-10-10 22:10:38','asdf','Update','RM201 was updated to the rooms.'),
+ (318,'2018-10-10 22:11:25','asdf','Update','RM202 was updated to the rooms.'),
+ (319,'2018-10-10 22:15:15','asdf','Logged In','Successfully!.'),
+ (320,'2018-10-10 22:15:29','asdf','Logged Out','Successfully'),
+ (321,'2018-10-10 22:15:49','asdf','Logged In','Successfully!.'),
+ (322,'2018-10-10 22:36:11','asdf','Logged In','Successfully!.'),
+ (323,'2018-10-10 22:36:49','asdf','Logged In','Successfully!.'),
+ (324,'2018-10-10 22:37:40','asdf','Logged Out','Successfully'),
+ (325,'2018-10-10 22:41:11','asdf','Logged In','Successfully!.'),
+ (326,'2018-10-10 22:42:17','asdf','Logged Out','Successfully'),
+ (327,'2018-10-10 22:54:07','michael','Logged In','Successfully!.'),
+ (328,'2018-10-10 22:56:29','michael','Logged In','Successfully!.'),
+ (329,'2018-10-10 22:57:39','michael','Logged In','Successfully!.'),
+ (330,'2018-10-10 22:58:11','michael','Logged Out','Successfully'),
+ (331,'2018-10-10 23:00:24','michael','Logged In','Successfully!.'),
+ (332,'2018-10-10 23:00:41','michael','Logged Out','Successfully'),
+ (333,'2018-10-10 23:00:52','asdf','Logged In','Successfully!.'),
+ (334,'2018-10-10 23:01:06','asdf','Logged Out','Successfully'),
+ (335,'2018-10-10 23:01:09','michael','Logged In','Successfully!.'),
+ (336,'2018-10-10 23:01:16','michael','Logged Out','Successfully'),
+ (337,'2018-10-10 22:58:46','asdf','Logged In','Successfully!.'),
+ (338,'2018-10-10 23:06:46','asdf','Logged In','Successfully!.'),
+ (339,'2018-10-10 23:08:54','asdf','Logged In','Successfully!.'),
+ (340,'2018-10-10 23:07:40','asdf','Update','BSA 1-1 schedule was saved for Bachelor of Science in Accountancy 2011.'),
+ (341,'2018-10-10 23:11:40','asdf','Logged In','Successfully!.'),
+ (342,'2018-10-10 23:15:02','asdf','Logged Out','Successfully'),
+ (343,'2018-10-10 23:15:05','michael','Logged In','Successfully!.'),
+ (344,'2018-10-10 23:19:12','asdf','Logged Out','Successfully'),
+ (345,'2018-10-10 23:31:39','michael','Logged In','Successfully!.'),
+ (346,'2018-10-10 23:32:01','michael','Logged Out','Successfully'),
+ (347,'2018-10-10 23:33:52','michael','Logged In','Successfully!.'),
+ (348,'2018-10-10 23:34:51','michael','Logged In','Successfully!.'),
+ (349,'2018-10-10 23:36:02','michael','Logged In','Successfully!.'),
+ (350,'2018-10-10 23:36:33','michael','Logged Out','Successfully'),
+ (351,'2018-10-10 23:37:26','michael','Logged In','Successfully!.'),
+ (352,'2018-10-10 23:37:36','michael','Added','CIEN 3053 preferred subject.'),
+ (353,'2018-10-10 23:43:14','asdf','Logged In','Successfully!.'),
+ (354,'2018-10-11 00:10:18','asdf','Logged In','Successfully!.'),
+ (355,'2018-10-11 00:29:24','david','Updated','User\'s information.'),
+ (356,'2018-10-11 00:29:34','david','Logged Out','Successfully'),
+ (357,'2018-10-11 00:31:20','david','Updated','User\'s information.'),
+ (358,'2018-10-11 00:31:23','david','Logged Out','Successfully'),
+ (359,'2018-10-11 00:29:39','asdf','Update','RM202 was updated to Inactive room.'),
+ (360,'2018-10-11 00:29:47','asdf','Update','RM204 was updated to Active room.'),
+ (361,'2018-10-11 01:03:04','asdf','Update','david david david\'s account was set to inactive.'),
+ (362,'2018-10-11 01:03:07','asdf','Update','david david david\'s account was set to active.'),
+ (363,'2018-10-11 01:03:17','asdf','Update','david david david\'s account was set to active.'),
+ (364,'2018-10-11 01:04:46','asdf','Delete','david david david was remove.'),
+ (365,'2018-10-11 01:06:24','asdf','Logged Out','Successfully'),
+ (366,'2018-10-11 01:07:24','asdf','Logged In','Successfully!.'),
+ (367,'2018-10-11 01:07:32','asdf','Delete','Job job job was remove.'),
+ (368,'2018-10-11 01:29:26','asdf','Logged In','Successfully!'),
+ (369,'2018-10-11 01:29:41','asdf','Update','BSHM 1-2 schedule was saved for Bachelor of Science in Hospitality Management 2011.'),
+ (370,'2018-10-11 01:35:09','asdf','Logged Out','Successfully!'),
+ (371,'2018-10-11 01:34:41','asdf','Logged Out','Successfully'),
+ (372,'2018-10-11 01:34:47','michael','Logged In','Successfully!.'),
+ (373,'2018-10-11 01:40:06','michael','Logged In','Successfully!'),
+ (374,'2018-10-11 01:42:14','michael','Logged In','Successfully!'),
+ (375,'2018-10-11 01:43:45','michael','Logged In','Successfully!'),
+ (376,'2018-10-11 01:47:15','asdf','Logged In','Successfully!'),
+ (377,'2018-10-11 01:47:18','asdf','Logged Out','Successfully!'),
+ (378,'2018-10-11 01:47:24','michael','Logged In','Successfully!'),
+ (379,'2018-10-11 01:48:26','asdf','Logged In','Successfully!'),
+ (380,'2018-10-11 01:49:03','asdf','Logged Out','Successfully!'),
+ (381,'2018-10-11 01:55:24','michael','Logged In','Successfully!'),
+ (382,'2018-10-11 01:59:55','michael','Logged In','Successfully!'),
+ (383,'2018-10-11 02:00:03','michael','Updated','User\'s information.'),
+ (384,'2018-10-11 02:00:07','michael','Logged Out','Successfully!'),
+ (385,'2018-10-11 02:00:10','michael','Logged In','Successfully!'),
+ (386,'2018-10-11 02:00:37','michael','Logged Out','Successfully!'),
+ (387,'2018-10-11 03:02:54','asdf','Logged In','Successfully!.'),
+ (388,'2018-10-11 03:13:32','asdf','Logged In','Successfully!'),
+ (389,'2018-10-11 03:13:36','asdf','Logged Out','Successfully!'),
+ (390,'2018-10-11 04:52:25','asdf','Logged In','Successfully!'),
+ (391,'2018-10-11 04:54:26','asdf','Logged Out','Successfully!'),
+ (392,'2018-10-11 04:54:31','michael','Logged In','Successfully!'),
+ (393,'2018-10-11 04:54:41','michael','Logged Out','Successfully!'),
+ (394,'2018-10-11 05:01:28','asdf','Logged In','Successfully!'),
+ (395,'2018-10-11 05:04:34','asdf','Logged In','Successfully!'),
+ (396,'2018-10-11 05:07:05','asdf','Logged In','Successfully!'),
+ (397,'2018-10-11 05:10:19','asdf','Logged In','Successfully!'),
+ (398,'2018-10-11 05:25:56','asdf','Logged In','Successfully!'),
+ (399,'2018-10-11 05:26:19','asdf','Logged Out','Successfully!'),
+ (400,'2018-10-11 05:28:10','asdf','Logged In','Successfully!'),
+ (401,'2018-10-11 05:29:04','asdf','Logged In','Successfully!'),
+ (402,'2018-10-11 05:31:39','asdf','Logged In','Successfully!'),
+ (403,'2018-10-11 05:32:50','asdf','Logged In','Successfully!'),
+ (404,'2018-10-11 05:45:47','asdf','Logged In','Successfully!'),
+ (405,'2018-10-11 05:47:21','asdf','Logged In','Successfully!'),
+ (406,'2018-10-11 05:49:12','asdf','Logged In','Successfully!'),
+ (407,'2018-10-11 05:51:03','asdf','Logged In','Successfully!'),
+ (408,'2018-10-11 05:54:29','asdf','Logged In','Successfully!'),
+ (409,'2018-10-11 05:56:51','asdf','Logged In','Successfully!'),
+ (410,'2018-10-11 05:57:49','asdf','Logged In','Successfully!'),
+ (411,'2018-10-11 05:58:53','asdf','Logged In','Successfully!'),
+ (412,'2018-10-11 06:00:01','asdf','Logged In','Successfully!'),
+ (413,'2018-10-11 06:08:24','asdf','Logged In','Successfully!'),
+ (414,'2018-10-11 06:17:03','asdf','Logged In','Successfully!'),
+ (415,'2018-10-11 06:20:45','asdf','Logged In','Successfully!'),
+ (416,'2018-10-11 06:21:47','asdf','Logged In','Successfully!'),
+ (417,'2018-10-11 06:24:08','asdf','Logged In','Successfully!'),
+ (418,'2018-10-11 06:25:35','asdf','Logged In','Successfully!'),
+ (419,'2018-10-11 06:27:01','asdf','Logged In','Successfully!'),
+ (420,'2018-10-11 06:28:14','asdf','Logged In','Successfully!'),
+ (421,'2018-10-11 06:37:37','asdf','Logged In','Successfully!'),
+ (422,'2018-10-11 06:39:02','asdf','Logged In','Successfully!'),
+ (423,'2018-10-11 06:39:33','asdf','Logged In','Successfully!'),
+ (424,'2018-10-11 06:42:11','asdf','Logged In','Successfully!'),
+ (425,'2018-10-11 06:42:54','asdf','Logged In','Successfully!'),
+ (426,'2018-10-11 06:43:26','asdf','Logged In','Successfully!'),
+ (427,'2018-10-11 06:47:24','asdf','Logged In','Successfully!'),
+ (428,'2018-10-11 06:47:56','asdf','Logged In','Successfully!'),
+ (429,'2018-10-11 06:48:40','asdf','Logged In','Successfully!'),
+ (430,'2018-10-11 06:50:37','asdf','Logged In','Successfully!'),
+ (431,'2018-10-11 06:52:32','asdf','Logged Out','Successfully!'),
+ (432,'2018-10-11 06:58:25','asdf','Logged In','Successfully!'),
+ (433,'2018-10-11 06:59:27','asdf','Logged In','Successfully!');
+/*!40000 ALTER TABLE `tbl_audittrail` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tbl_course`
+--
+
+DROP TABLE IF EXISTS `tbl_course`;
+CREATE TABLE `tbl_course` (
+  `course_id` int(10) unsigned NOT NULL auto_increment,
+  `curriculums_id` int(10) unsigned NOT NULL,
+  `courseName` varchar(100) NOT NULL,
+  `courseAcronym` varchar(45) NOT NULL,
+  PRIMARY KEY  (`course_id`),
+  KEY `FK_tbl_course_1` (`curriculums_id`),
+  CONSTRAINT `FK_tbl_course_1` FOREIGN KEY (`curriculums_id`) REFERENCES `tbl_curriculums` (`curriculums_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_course`
+--
+
+/*!40000 ALTER TABLE `tbl_course` DISABLE KEYS */;
+INSERT INTO `tbl_course` (`course_id`,`curriculums_id`,`courseName`,`courseAcronym`) VALUES 
+ (17,4,'Bachelor of Science in Hospitality Management','BSHM'),
+ (19,6,'Bachelor of  Science in Civil Engineering','BSCE'),
+ (21,8,'Bachelor of Science in Education Major in English','BSEDEN'),
+ (22,9,'Diploma in Office Management Technology','DOMTLOM'),
+ (23,10,'yowowyow','BSA');
+/*!40000 ALTER TABLE `tbl_course` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tbl_curriculums`
+--
+
+DROP TABLE IF EXISTS `tbl_curriculums`;
+CREATE TABLE `tbl_curriculums` (
+  `curriculums_id` int(10) unsigned NOT NULL auto_increment,
+  `programName` varchar(100) NOT NULL,
+  `createdBy` int(10) unsigned NOT NULL,
+  `createdAt` varchar(45) NOT NULL,
+  `status` varchar(45) NOT NULL,
+  `inUsed` varchar(45) NOT NULL,
+  `curriculumYear` varchar(45) NOT NULL,
+  PRIMARY KEY  (`curriculums_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_curriculums`
+--
+
+/*!40000 ALTER TABLE `tbl_curriculums` DISABLE KEYS */;
+INSERT INTO `tbl_curriculums` (`curriculums_id`,`programName`,`createdBy`,`createdAt`,`status`,`inUsed`,`curriculumYear`) VALUES 
+ (4,'Bachelor of Science in Hospitality Management',7,'Wednesday, 10 October 2018','active','NO','2011'),
+ (6,'Bachelor of  Science in Civil Engineering',7,'Wednesday, 10 October 2018','active','NO','2011'),
+ (8,'Bachelor of Science in Education Major in English',7,'Wednesday, 10 October 2018','active','NO','2011'),
+ (9,'Diploma in Office Management Technology',7,'Wednesday, 10 October 2018','active','NO','2011'),
+ (10,'yowowyow',7,'Wednesday, 10 October 2018','active','YES','2011');
+/*!40000 ALTER TABLE `tbl_curriculums` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tbl_preferredschedules`
+--
+
+DROP TABLE IF EXISTS `tbl_preferredschedules`;
+CREATE TABLE `tbl_preferredschedules` (
+  `preferredSchedule_id` int(10) unsigned NOT NULL auto_increment,
+  `users_id` int(10) unsigned NOT NULL,
+  `startTime` varchar(45) NOT NULL,
+  `endTime` varchar(45) NOT NULL,
+  `ps_Day` varchar(45) NOT NULL,
+  PRIMARY KEY  USING BTREE (`preferredSchedule_id`),
+  KEY `FK_tbl_preferredschedules_1` (`users_id`),
+  CONSTRAINT `FK_tbl_preferredschedules_1` FOREIGN KEY (`users_id`) REFERENCES `tbl_users` (`users_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_preferredschedules`
+--
+
+/*!40000 ALTER TABLE `tbl_preferredschedules` DISABLE KEYS */;
+INSERT INTO `tbl_preferredschedules` (`preferredSchedule_id`,`users_id`,`startTime`,`endTime`,`ps_Day`) VALUES 
+ (22,8,'7:30 AM','10:00 AM','Monday'),
+ (23,8,'10:00 AM','5:00 PM','Tuesday'),
+ (25,8,'1:00 PM','4:30 PM','Monday'),
+ (26,8,'7:30 AM','1:00 PM','Thursday'),
+ (27,8,'7:00 AM','9:00 AM','Saturday');
+/*!40000 ALTER TABLE `tbl_preferredschedules` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tbl_preferredsubjects`
+--
+
+DROP TABLE IF EXISTS `tbl_preferredsubjects`;
+CREATE TABLE `tbl_preferredsubjects` (
+  `preferredSubjects_id` int(10) unsigned NOT NULL auto_increment,
+  `users_id` int(10) unsigned NOT NULL,
+  `subjects_id` int(10) unsigned NOT NULL,
+  `semester` varchar(45) NOT NULL,
+  `schoolYear` varchar(45) NOT NULL,
+  `curriculums_id` int(10) unsigned NOT NULL,
+  PRIMARY KEY  (`preferredSubjects_id`),
+  KEY `FK_tbl_preferredsubjects_1` (`users_id`),
+  KEY `FK_tbl_preferredsubjects_2` (`subjects_id`),
+  KEY `FK_tbl_preferredsubjects_3` (`curriculums_id`),
+  CONSTRAINT `FK_tbl_preferredsubjects_1` FOREIGN KEY (`users_id`) REFERENCES `tbl_users` (`users_id`),
+  CONSTRAINT `FK_tbl_preferredsubjects_2` FOREIGN KEY (`subjects_id`) REFERENCES `tbl_subjects` (`subjects_id`),
+  CONSTRAINT `FK_tbl_preferredsubjects_3` FOREIGN KEY (`curriculums_id`) REFERENCES `tbl_curriculums` (`curriculums_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_preferredsubjects`
+--
+
+/*!40000 ALTER TABLE `tbl_preferredsubjects` DISABLE KEYS */;
+INSERT INTO `tbl_preferredsubjects` (`preferredSubjects_id`,`users_id`,`subjects_id`,`semester`,`schoolYear`,`curriculums_id`) VALUES 
+ (18,8,142,'1ST','2018-2019',6);
+/*!40000 ALTER TABLE `tbl_preferredsubjects` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tbl_professor_scheduled`
+--
+
+DROP TABLE IF EXISTS `tbl_professor_scheduled`;
+CREATE TABLE `tbl_professor_scheduled` (
+  `professorsScheduled_id` int(10) unsigned NOT NULL auto_increment,
+  `curriculumns_id` int(10) unsigned NOT NULL,
+  `course` varchar(45) NOT NULL,
+  `year` varchar(45) NOT NULL,
+  `section` varchar(45) NOT NULL,
+  `scheduledBy` varchar(45) NOT NULL,
+  `scheduledDate` varchar(45) NOT NULL,
+  `semester` varchar(45) NOT NULL,
+  `schoolYear` varchar(45) NOT NULL,
+  `room` varchar(45) NOT NULL,
+  `subjectCode` varchar(45) NOT NULL,
+  `subjectDescription` varchar(100) NOT NULL,
+  `professor` varchar(100) NOT NULL,
+  `scheduledStartTime` varchar(45) NOT NULL,
+  `scheduledEndTime` varchar(45) NOT NULL,
+  `scheduledDay` varchar(45) NOT NULL,
+  PRIMARY KEY  (`professorsScheduled_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_professor_scheduled`
+--
+
+/*!40000 ALTER TABLE `tbl_professor_scheduled` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_professor_scheduled` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tbl_room`
+--
+
+DROP TABLE IF EXISTS `tbl_room`;
+CREATE TABLE `tbl_room` (
+  `room_id` int(10) unsigned NOT NULL auto_increment,
+  `roomCode` varchar(45) NOT NULL,
+  `roomName` varchar(45) NOT NULL,
+  `roomSlots` int(10) unsigned NOT NULL,
+  `roomStatus` varchar(45) NOT NULL,
+  PRIMARY KEY  (`room_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_room`
+--
+
+/*!40000 ALTER TABLE `tbl_room` DISABLE KEYS */;
+INSERT INTO `tbl_room` (`room_id`,`roomCode`,`roomName`,`roomSlots`,`roomStatus`) VALUES 
+ (8,'RM203','Room 203',60,'ACTIVE'),
+ (10,'RM201','Room 201',60,'ACTIVE'),
+ (11,'RM202','Room 202',60,'INACTIVE'),
+ (12,'RM204','Room 204',60,'ACTIVE');
+/*!40000 ALTER TABLE `tbl_room` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tbl_room_scheduled`
+--
+
+DROP TABLE IF EXISTS `tbl_room_scheduled`;
+CREATE TABLE `tbl_room_scheduled` (
+  `room_scheduled_id` int(10) unsigned NOT NULL auto_increment,
+  `roomCode` varchar(45) NOT NULL,
+  `roomStartTime` varchar(45) NOT NULL,
+  `roomEndTime` varchar(45) NOT NULL,
+  `roomDay` varchar(45) NOT NULL,
+  `assignedProfessor` varchar(100) NOT NULL,
+  `subjectCode` varchar(45) NOT NULL,
+  `course` varchar(45) NOT NULL,
+  `year` varchar(45) NOT NULL,
+  `section` varchar(45) NOT NULL,
+  `semester` varchar(45) NOT NULL,
+  `schoolYear` varchar(45) NOT NULL,
+  `curriculums_id` int(10) unsigned NOT NULL,
+  PRIMARY KEY  (`room_scheduled_id`),
+  KEY `FK_tbl_room_scheduled_1` (`curriculums_id`),
+  CONSTRAINT `FK_tbl_room_scheduled_1` FOREIGN KEY (`curriculums_id`) REFERENCES `tbl_curriculums` (`curriculums_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=453 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_room_scheduled`
+--
+
+/*!40000 ALTER TABLE `tbl_room_scheduled` DISABLE KEYS */;
+INSERT INTO `tbl_room_scheduled` (`room_scheduled_id`,`roomCode`,`roomStartTime`,`roomEndTime`,`roomDay`,`assignedProfessor`,`subjectCode`,`course`,`year`,`section`,`semester`,`schoolYear`,`curriculums_id`) VALUES 
+ (49,'RM201','10:30 AM','1:30 PM','Monday','TBA','CWTS 1013','BSHM','1','1','1ST','2015-2016',4),
+ (144,'','','','','','OMMT 112','DOMT','3','1','1ST','2017-2018',9),
+ (145,'','','','','','OMT 311','DOMT','3','1','1ST','2017-2018',9),
+ (146,'','','','','','OMT 312','DOMT','3','1','1ST','2017-2018',9),
+ (147,'','','','','','OMT 313','DOMT','3','1','1ST','2017-2018',9),
+ (148,'','','','','','OMT 314','DOMT','3','1','1ST','2017-2018',9),
+ (149,'','','','','','OMT 315','DOMT','3','1','1ST','2017-2018',9),
+ (150,'','','','','','OMT 316','DOMT','3','1','1ST','2017-2018',9),
+ (151,'','','','','','OMT 317','DOMT','3','1','1ST','2017-2018',9),
+ (304,'RM201','3:00 PM','6:00 PM','Monday','Michael  David','OMMT 112','DOMT','3','1','1ST','2018-2019',9),
+ (305,'RM201','11:30 AM','2:30 PM','Monday','Michael  David','OMT 311','DOMT','3','1','1ST','2018-2019',9),
+ (306,'RM201','1:00 PM','4:00 PM','Tuesday','Michael  David','OMT 312','DOMT','3','1','1ST','2018-2019',9),
+ (307,'','','','','','OMT 313','DOMT','3','1','1ST','2018-2019',9),
+ (308,'','','','','','OMT 314','DOMT','3','1','1ST','2018-2019',9),
+ (309,'','','','','','OMT 315','DOMT','3','1','1ST','2018-2019',9),
+ (310,'','','','','','OMT 316','DOMT','3','1','1ST','2018-2019',9),
+ (311,'','','','','','OMT 317','DOMT','3','1','1ST','2018-2019',9),
+ (418,'RM201','10:00 AM','1:00 PM','Thursday','TBA','ACCO 2093','BSA','4','1','1ST','2018-2019',10),
+ (419,'','','','','','ACCO 3133','BSA','4','1','1ST','2018-2019',10),
+ (420,'','','','','','ACCO 3143','BSA','4','1','1ST','2018-2019',10),
+ (421,'','','','','','ACCO 3153','BSA','4','1','1ST','2018-2019',10),
+ (422,'','','','','','ACCO 3166','BSA','4','1','1ST','2018-2019',10),
+ (423,'','','','','','ACCO 4011','BSA','4','1','1ST','2018-2019',10),
+ (424,'','','','','','ACCO 4143','BSA','4','1','1ST','2018-2019',10),
+ (425,'','','','','','LAW 3033','BSA','4','1','1ST','2018-2019',10),
+ (436,'','7:00 AM','10:00 AM','Monday','TBA','CIEN 3053','BSCE','3','1','1ST','2018-2019',6),
+ (437,'','','','','','CIEN 3063','BSCE','3','1','1ST','2018-2019',6),
+ (438,'','','','','','CIEN 3073','BSCE','3','1','1ST','2018-2019',6),
+ (439,'','','','','','CIEN 3342','BSCE','3','1','1ST','2018-2019',6),
+ (440,'','','','','','ENSC 2043','BSCE','3','1','1ST','2018-2019',6),
+ (441,'','','','','','ENSC 2063','BSCE','3','1','1ST','2018-2019',6),
+ (442,'','','','','','ENSC 2083','BSCE','3','1','1ST','2018-2019',6),
+ (443,'','','','','','ENSC 2112','BSCE','3','1','1ST','2018-2019',6),
+ (444,'','','','','','ENSC 2192','BSCE','3','1','1ST','2018-2019',6),
+ (445,'','','','','','MATH 2103','BSCE','3','1','1ST','2018-2019',6),
+ (446,'RM201','7:30 AM','10:30 AM','Tuesday','TBA','ENGL 1013','BSHM','1','2','1ST','2017-2018',4),
+ (447,'','','','','','FILI 1013','BSHM','1','2','1ST','2017-2018',4),
+ (448,'','','','','','HORE 2075','BSHM','1','2','1ST','2017-2018',4),
+ (449,'','','','','','HORE 3083','BSHM','1','2','1ST','2017-2018',4),
+ (450,'','','','','','MATH 1133','BSHM','1','2','1ST','2017-2018',4),
+ (451,'','','','','','NASC 2163','BSHM','1','2','1ST','2017-2018',4),
+ (452,'','','','','','PHED 1012_','BSHM','1','2','1ST','2017-2018',4);
+/*!40000 ALTER TABLE `tbl_room_scheduled` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tbl_sections`
+--
+
+DROP TABLE IF EXISTS `tbl_sections`;
+CREATE TABLE `tbl_sections` (
+  `section_id` int(10) unsigned NOT NULL auto_increment,
+  `course` varchar(45) NOT NULL,
+  `year` int(10) unsigned NOT NULL,
+  `section` varchar(45) NOT NULL,
+  PRIMARY KEY  (`section_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=99 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_sections`
+--
+
+/*!40000 ALTER TABLE `tbl_sections` DISABLE KEYS */;
+INSERT INTO `tbl_sections` (`section_id`,`course`,`year`,`section`) VALUES 
+ (33,'BSHM',1,'1'),
+ (34,'BSHM',1,'2'),
+ (35,'BSHM',1,'3'),
+ (40,'BSCE',2,'1'),
+ (41,'BSCE',2,'2'),
+ (42,'BSCE',3,'1'),
+ (43,'BSCE',4,'1'),
+ (44,'BSCE',5,'1'),
+ (45,'DOMT',1,'1'),
+ (46,'DOMT',1,'2'),
+ (47,'DOMT',3,'1'),
+ (48,'DOMTLOM',2,'1'),
+ (49,'BSA',3,'1'),
+ (60,'BSCE',1,'1'),
+ (61,'BSCE',6,'1'),
+ (62,'BSCE',6,'2'),
+ (63,'BSCE',6,'3'),
+ (64,'BSCE',6,'4'),
+ (80,'BSA',1,'1'),
+ (81,'BSA',1,'2'),
+ (82,'BSA',1,'3'),
+ (83,'BSHM',2,'1'),
+ (84,'BSA',4,'1'),
+ (85,'BSA',4,'2'),
+ (86,'BSA',4,'3'),
+ (88,'DOMTLOM',1,'1'),
+ (89,'BSA',5,'1'),
+ (90,'BSA',5,'2'),
+ (96,'BSIT',1,'1'),
+ (97,'BSIT',1,'2'),
+ (98,'BSIT',1,'3');
+/*!40000 ALTER TABLE `tbl_sections` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tbl_securityquestions`
+--
+
+DROP TABLE IF EXISTS `tbl_securityquestions`;
+CREATE TABLE `tbl_securityquestions` (
+  `sq_id` int(10) unsigned NOT NULL auto_increment,
+  `users_id` int(10) unsigned NOT NULL,
+  `answer` varchar(45) NOT NULL,
+  `question` varchar(100) NOT NULL,
+  PRIMARY KEY  (`sq_id`),
+  KEY `FK_tbl_securityquestions_1` (`users_id`),
+  CONSTRAINT `FK_tbl_securityquestions_1` FOREIGN KEY (`users_id`) REFERENCES `tbl_users` (`users_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_securityquestions`
+--
+
+/*!40000 ALTER TABLE `tbl_securityquestions` DISABLE KEYS */;
+INSERT INTO `tbl_securityquestions` (`sq_id`,`users_id`,`answer`,`question`) VALUES 
+ (6,7,'asdf','Who is your favorite actor, musician, or artist?'),
+ (7,7,'asdf','What is your mother’s maiden name?'),
+ (8,7,'asdfasdf','What is your favorite color?'),
+ (11,8,'michael','Who is your favorite actor, musician, or artist?'),
+ (12,8,'michael','What is your mother’s maiden name?'),
+ (13,8,'michael','What is your favorite color?');
+/*!40000 ALTER TABLE `tbl_securityquestions` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tbl_students_scheduled`
+--
+
+DROP TABLE IF EXISTS `tbl_students_scheduled`;
+CREATE TABLE `tbl_students_scheduled` (
+  `students_scheduled_id` int(10) unsigned NOT NULL auto_increment,
+  `curriculums_id` int(10) unsigned NOT NULL,
+  `course` varchar(45) NOT NULL,
+  `year` varchar(45) NOT NULL,
+  `section` varchar(45) NOT NULL,
+  `scheduledBy` varchar(45) NOT NULL,
+  `scheduledDate` datetime NOT NULL,
+  `semester` varchar(45) NOT NULL,
+  `schoolYear` varchar(45) NOT NULL,
+  `room` varchar(45) NOT NULL,
+  `subjectCode` varchar(45) NOT NULL,
+  `subjectDescription` varchar(200) NOT NULL,
+  `professor` varchar(100) NOT NULL,
+  `scheduledStartTime` varchar(45) NOT NULL,
+  `scheduledEndTime` varchar(45) NOT NULL,
+  `scheduledDay` varchar(45) NOT NULL,
+  `lecHours` varchar(45) NOT NULL,
+  `labHours` varchar(45) NOT NULL,
+  `units` varchar(45) NOT NULL,
+  PRIMARY KEY  USING BTREE (`students_scheduled_id`),
+  KEY `FK_tbl_students_scheduled_1` (`curriculums_id`),
+  CONSTRAINT `FK_tbl_students_scheduled_1` FOREIGN KEY (`curriculums_id`) REFERENCES `tbl_curriculums` (`curriculums_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=432 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_students_scheduled`
+--
+
+/*!40000 ALTER TABLE `tbl_students_scheduled` DISABLE KEYS */;
+INSERT INTO `tbl_students_scheduled` (`students_scheduled_id`,`curriculums_id`,`course`,`year`,`section`,`scheduledBy`,`scheduledDate`,`semester`,`schoolYear`,`room`,`subjectCode`,`subjectDescription`,`professor`,`scheduledStartTime`,`scheduledEndTime`,`scheduledDay`,`lecHours`,`labHours`,`units`) VALUES 
+ (28,4,'BSHM','1','1','7','2018-10-01 13:50:34','1ST','2015-2016','RM201','CWTS 1013','Civic Welfare Training Service 1','TBA','10:30 AM','1:30 PM','Monday','','',''),
+ (123,9,'DOMT','3','1','7','2018-10-06 07:53:25','1ST','2017-2018','','OMMT 112','Math of Investment','','','','','','',''),
+ (124,9,'DOMT','3','1','7','2018-10-06 07:53:25','1ST','2017-2018','','OMT 311','Introduction to Internet and Basic Web Design','','','','','','',''),
+ (125,9,'DOMT','3','1','7','2018-10-06 07:53:25','1ST','2017-2018','','OMT 312','Management Information System','','','','','','',''),
+ (126,9,'DOMT','3','1','7','2018-10-06 07:53:25','1ST','2017-2018','','OMT 313','Financial Business Management','','','','','','',''),
+ (127,9,'DOMT','3','1','7','2018-10-06 07:53:25','1ST','2017-2018','','OMT 314','Events Management','','','','','','',''),
+ (128,9,'DOMT','3','1','7','2018-10-06 07:53:25','1ST','2017-2018','','OMT 315','Introduction to Research','','','','','','',''),
+ (129,9,'DOMT','3','1','7','2018-10-06 07:53:25','1ST','2017-2018','','OMT 316','Office Administration e-Learning Approach','','','','','','',''),
+ (130,9,'DOMT','3','1','7','2018-10-06 07:53:25','1ST','2017-2018','','OMT 317','General Psychology','','','','','','',''),
+ (283,9,'DOMT','3','1','7','2018-10-07 00:48:22','1ST','2018-2019','RM201','OMMT 112','Math of Investment','Michael  David','3:00 PM','6:00 PM','Monday','','',''),
+ (284,9,'DOMT','3','1','7','2018-10-07 00:48:22','1ST','2018-2019','RM201','OMT 311','Introduction to Internet and Basic Web Design','Michael  David','11:30 AM','2:30 PM','Monday','','',''),
+ (285,9,'DOMT','3','1','7','2018-10-07 00:48:22','1ST','2018-2019','RM201','OMT 312','Management Information System','Michael  David','1:00 PM','4:00 PM','Tuesday','','',''),
+ (286,9,'DOMT','3','1','7','2018-10-07 00:48:22','1ST','2018-2019','','OMT 313','Financial Business Management','','','','','','',''),
+ (287,9,'DOMT','3','1','7','2018-10-07 00:48:22','1ST','2018-2019','','OMT 314','Events Management','','','','','','',''),
+ (288,9,'DOMT','3','1','7','2018-10-07 00:48:22','1ST','2018-2019','','OMT 315','Introduction to Research','','','','','','',''),
+ (289,9,'DOMT','3','1','7','2018-10-07 00:48:22','1ST','2018-2019','','OMT 316','Office Administration e-Learning Approach','','','','','','',''),
+ (290,9,'DOMT','3','1','7','2018-10-07 00:48:22','1ST','2018-2019','','OMT 317','General Psychology','','','','','','',''),
+ (397,10,'BSA','4','1','7','2018-10-09 22:16:11','1ST','2018-2019','RM201','ACCO 2093','Auditing in a CIS Environment','TBA','10:00 AM','1:00 PM','Thursday','1.5','1.5','3'),
+ (398,10,'BSA','4','1','7','2018-10-09 22:16:11','1ST','2018-2019','','ACCO 3133','Management Accounting, Part 2','','','','','3','0','3'),
+ (399,10,'BSA','4','1','7','2018-10-09 22:16:11','1ST','2018-2019','','ACCO 3143','Management Consultancy','','','','','3','0','3'),
+ (400,10,'BSA','4','1','7','2018-10-09 22:16:11','1ST','2018-2019','','ACCO 3153','Business and Transfer Taxes','','','','','3','0','3'),
+ (401,10,'BSA','4','1','7','2018-10-09 22:16:11','1ST','2018-2019','','ACCO 3166','Applied Auditing','','','','','6','0','6'),
+ (402,10,'BSA','4','1','7','2018-10-09 22:16:11','1ST','2018-2019','','ACCO 4011','Synthesis','','','','','1','0','1'),
+ (403,10,'BSA','4','1','7','2018-10-09 22:16:11','1ST','2018-2019','','ACCO 4143','Internship / Thesis','','','','','3','0','3'),
+ (404,10,'BSA','4','1','7','2018-10-09 22:16:11','1ST','2018-2019','','LAW 3033','Negotiable Instruments','','','','','3','0','3'),
+ (415,6,'BSCE','3','1','7','2018-10-10 00:21:22','1ST','2018-2019','','CIEN 3053','Elementary Surveying','TBA','7:00 AM','10:00 AM','Monday','1','6','3'),
+ (416,6,'BSCE','3','1','7','2018-10-10 00:21:22','1ST','2018-2019','','CIEN 3063','Methods of Engineering Research','','','','','3','0','3'),
+ (417,6,'BSCE','3','1','7','2018-10-10 00:21:22','1ST','2018-2019','','CIEN 3073','Engineering Geology and Rock Mechanics','','','','','3','0','3'),
+ (418,6,'BSCE','3','1','7','2018-10-10 00:21:22','1ST','2018-2019','','CIEN 3342','Construction Estimating','','','','','1','3','2'),
+ (419,6,'BSCE','3','1','7','2018-10-10 00:21:22','1ST','2018-2019','','ENSC 2043','Static of Rigid Bodies','','','','','3','0','3'),
+ (420,6,'BSCE','3','1','7','2018-10-10 00:21:22','1ST','2018-2019','','ENSC 2063','Engineering Economy','','','','','3','0','3'),
+ (421,6,'BSCE','3','1','7','2018-10-10 00:21:22','1ST','2018-2019','','ENSC 2083','Dynamics of Rigid Bodies','','','','','3','0','3'),
+ (422,6,'BSCE','3','1','7','2018-10-10 00:21:22','1ST','2018-2019','','ENSC 2112','Environmental Engineering','','','','','2','0','2'),
+ (423,6,'BSCE','3','1','7','2018-10-10 00:21:22','1ST','2018-2019','','ENSC 2192','Computer Fundamentals and Programming','','','','','0','6','2'),
+ (424,6,'BSCE','3','1','7','2018-10-10 00:21:22','1ST','2018-2019','','MATH 2103','Elementary Differential Equations','','','','','3','0','3'),
+ (425,4,'BSHM','1','2','7','2018-10-11 01:29:41','1ST','2017-2018','RM201','ENGL 1013','Study and Thinking Skills in English','TBA','7:30 AM','10:30 AM','Tuesday','3','0','3'),
+ (426,4,'BSHM','1','2','7','2018-10-11 01:29:41','1ST','2017-2018','','FILI 1013','Komunikasyon sa Akademikong Filipino','','','','','3','0','3'),
+ (427,4,'BSHM','1','2','7','2018-10-11 01:29:41','1ST','2017-2018','','HORE 2075','Culinary Arts','','','','','3','6','5'),
+ (428,4,'BSHM','1','2','7','2018-10-11 01:29:41','1ST','2017-2018','','HORE 3083','Introduction to Hospitality Management','','','','','3','0','3'),
+ (429,4,'BSHM','1','2','7','2018-10-11 01:29:41','1ST','2017-2018','','MATH 1133','Mathematics in Business','','','','','3','0','3'),
+ (430,4,'BSHM','1','2','7','2018-10-11 01:29:41','1ST','2017-2018','','NASC 2163','Principles of Safety, Hygiene and Sanitation','','','','','3','0','3'),
+ (431,4,'BSHM','1','2','7','2018-10-11 01:29:41','1ST','2017-2018','','PHED 1012_','Physical Fitness and Self-Testing Activities - Physical Fitness','','','','','2','0','2');
+/*!40000 ALTER TABLE `tbl_students_scheduled` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tbl_subjects`
+--
+
+DROP TABLE IF EXISTS `tbl_subjects`;
+CREATE TABLE `tbl_subjects` (
+  `subjects_id` int(10) unsigned NOT NULL auto_increment,
+  `curriculums_id` int(10) unsigned NOT NULL,
+  `course_id` int(10) unsigned NOT NULL,
+  `subjectCode` varchar(45) NOT NULL,
+  `subjectDescription` varchar(100) NOT NULL,
+  `lectureHours` float NOT NULL,
+  `laboratoryHours` float NOT NULL,
+  `units` int(10) unsigned NOT NULL,
+  `yearLevel` int(10) unsigned NOT NULL,
+  `course` varchar(45) NOT NULL,
+  `semester` varchar(45) NOT NULL,
+  PRIMARY KEY  USING BTREE (`subjects_id`),
+  KEY `FK_tbl_subjects_1` (`curriculums_id`),
+  KEY `FK_tbl_subjects_2` (`course_id`),
+  CONSTRAINT `FK_tbl_subjects_1` FOREIGN KEY (`curriculums_id`) REFERENCES `tbl_curriculums` (`curriculums_id`),
+  CONSTRAINT `FK_tbl_subjects_2` FOREIGN KEY (`course_id`) REFERENCES `tbl_course` (`course_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1296 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_subjects`
+--
+
+/*!40000 ALTER TABLE `tbl_subjects` DISABLE KEYS */;
+INSERT INTO `tbl_subjects` (`subjects_id`,`curriculums_id`,`course_id`,`subjectCode`,`subjectDescription`,`lectureHours`,`laboratoryHours`,`units`,`yearLevel`,`course`,`semester`) VALUES 
+ (142,6,19,'CIEN 3053','Elementary Surveying',1,6,3,3,'BSCE','1ST'),
+ (143,6,19,'CIEN 3063','Methods of Engineering Research',3,0,3,3,'BSCE','1ST'),
+ (144,6,19,'CIEN 3073','Engineering Geology and Rock Mechanics',3,0,3,3,'BSCE','1ST'),
+ (145,6,19,'CIEN 3342','Construction Estimating',1,3,2,3,'BSCE','1ST'),
+ (146,6,19,'ENSC 2043','Static of Rigid Bodies',3,0,3,3,'BSCE','1ST'),
+ (147,6,19,'ENSC 2063','Engineering Economy',3,0,3,3,'BSCE','1ST'),
+ (148,6,19,'ENSC 2083','Dynamics of Rigid Bodies',3,0,3,3,'BSCE','1ST'),
+ (149,6,19,'ENSC 2112','Environmental Engineering',2,0,2,3,'BSCE','1ST'),
+ (150,6,19,'ENSC 2192','Computer Fundamentals and Programming',0,6,2,3,'BSCE','1ST'),
+ (151,6,19,'MATH 2103','Elementary Differential Equations',3,0,3,3,'BSCE','1ST'),
+ (152,6,19,'BSCE-ELEC1','BSCE ELECTIVE 1',2,0,2,4,'BSCE','1ST'),
+ (153,6,19,'CIEN 3123','Construction Project Management',2,3,3,4,'BSCE','1ST'),
+ (154,6,19,'CIEN 3134','Soil Mechanics',3,3,4,4,'BSCE','1ST'),
+ (155,6,19,'CIEN 3144','Structural Theory 1',2,6,4,4,'BSCE','1ST'),
+ (156,6,19,'CIEN 3153','Fluid Mechanics',2,3,3,4,'BSCE','1ST'),
+ (157,6,19,'CIEN 3164','Route Surveying and Earthworks',3,3,4,4,'BSCE','1ST'),
+ (158,6,19,'CIEN 3402','Building Design 1',1,3,2,4,'BSCE','1ST'),
+ (159,6,19,'CIEN 3412','Value Engineering',2,0,2,4,'BSCE','1ST'),
+ (160,6,19,'BSCE-ELEC3','BSCE ELECTIVE 3',2,0,2,5,'BSCE','1ST'),
+ (161,6,19,'BSCE-ELEC4','BSCE ELECTIVE 4',2,0,2,5,'BSCE','1ST'),
+ (162,6,19,'CIEN 3103','Computer Application in Civil Engineering',2,3,3,5,'BSCE','1ST'),
+ (163,6,19,'CIEN 3234','Steel Design',3,3,4,5,'BSCE','1ST'),
+ (164,6,19,'CIEN 3242','Timber Design',1,3,2,5,'BSCE','1ST'),
+ (165,6,19,'CIEN 3262','Earthquake Engineering',1,3,2,5,'BSCE','1ST'),
+ (166,6,19,'CIEN 3322','Civil Engineering Project 2',1,3,2,5,'BSCE','1ST'),
+ (167,6,19,'CIEN 3454','Principles of Concrete Design',3,3,4,5,'BSCE','1ST'),
+ (168,6,19,'CIEN 3463','Transportation Engineering',3,0,3,5,'BSCE','1ST'),
+ (169,6,19,'CIEN 4122','Traffic Engineering(ELECTIVE 3)',2,0,2,5,'BSCE','1ST'),
+ (895,10,23,'CCO 3033','Financial Accounting and Reporting, Part 3',3,0,3,3,'BSA','1ST'),
+ (896,10,23,'ACCO 3046','Cost Accounting and Cost Management',6,0,6,3,'BSA','1ST'),
+ (897,10,23,'ACCO 3053','Advanced Financial Accounting & Reporting, Part 1',3,0,3,3,'BSA','1ST'),
+ (898,10,23,'ACCO 3074','Production and Operations Management',3,0,3,3,'BSA','1ST'),
+ (899,10,23,'ACCO 3093','Financial Management, Part 2',3,0,3,3,'BSA','1ST'),
+ (900,10,23,'LAW 3013','Law on Business Organizations',3,0,3,3,'BSA','1ST'),
+ (901,10,23,'MATH 3173','Quantitative Techniques for Decision Making',3,0,3,3,'BSA','1ST'),
+ (902,10,23,'ACCO 2093','Auditing in a CIS Environment',1.5,1.5,3,4,'BSA','1ST'),
+ (903,10,23,'ACCO 3133','Management Accounting, Part 2',3,0,3,4,'BSA','1ST'),
+ (904,10,23,'ACCO 3143','Management Consultancy',3,0,3,4,'BSA','1ST'),
+ (905,10,23,'ACCO 3153','Business and Transfer Taxes',3,0,3,4,'BSA','1ST'),
+ (906,10,23,'ACCO 3166','Applied Auditing',6,0,6,4,'BSA','1ST'),
+ (907,10,23,'ACCO 4011','Synthesis',1,0,1,4,'BSA','1ST'),
+ (908,10,23,'ACCO 41433','Internship / Thesis',3,0,3,4,'BSA','1ST'),
+ (910,10,23,'ACCO 1234','Accounting Principles',3,0,3,3,'BSA','1ST'),
+ (1001,4,17,'ENGL 1013','Study and Thinking Skills in English',3,0,3,1,'BSHM','1ST'),
+ (1002,4,17,'FILI 1013','Komunikasyon sa Akademikong Filipino',3,0,3,1,'BSHM','1ST'),
+ (1003,4,17,'HORE 2075','Culinary Arts',3,6,5,1,'BSHM','1ST'),
+ (1004,4,17,'HORE 3083','Introduction to Hospitality Management',3,0,3,1,'BSHM','1ST'),
+ (1005,4,17,'MATH 1133','Mathematics in Business',3,0,3,1,'BSHM','1ST'),
+ (1006,4,17,'NASC 2163','Principles of Safety, Hygiene and Sanitation',3,0,3,1,'BSHM','1ST'),
+ (1007,4,17,'PHED 1012_','Physical Fitness and Self-Testing Activities - Physical Fitness',2,0,2,1,'BSHM','1ST'),
+ (1008,4,17,'ANTH 2033','Cultural Anthropology',3,0,3,3,'BSHM','1ST'),
+ (1009,4,17,'HIST 1033','Philippine History with Politics and Governance',3,0,3,3,'BSHM','1ST'),
+ (1010,4,17,'HORE 3043','Food and Beverage Control System',3,0,3,3,'BSHM','1ST'),
+ (1011,4,17,'HORE 3055','Banquets and Catering Management',3,6,5,3,'BSHM','1ST'),
+ (1012,4,17,'HORE 4043','Bar Management (1/2)',1,6,3,3,'BSHM','1ST'),
+ (1013,4,17,'STAT 1013','General Statistics',3,0,3,3,'BSHM','1ST'),
+ (1014,4,17,'TOUR 2043','Tourism Planning and Development',3,0,3,3,'BSHM','1ST'),
+ (1015,4,17,'FOLA 2023','Foreign Language 2',3,0,3,4,'BSHM','1ST'),
+ (1016,4,17,'HIST 1023','Buhay, Mga Gawain at Sinulat ni Rizal',3,0,3,4,'BSHM','1ST'),
+ (1017,4,17,'HORE 2043','Total Quality Management in Hospitality Industry (TQM)',3,0,3,4,'BSHM','1ST'),
+ (1018,4,17,'HORE 4093','Hospitality and Operational Management',3,0,3,4,'BSHM','1ST'),
+ (1019,4,17,'HORE 4123','Research Project in Tourism and Hospitality Industry',3,0,3,4,'BSHM','1ST'),
+ (1020,4,17,'HUMA 1013','Introduction to the Humanities',3,0,3,4,'BSHM','1ST'),
+ (1021,4,17,'PHIL 1013','Logic',3,0,3,4,'BSHM','1ST'),
+ (1257,8,21,'CWTS 1023','Civic Welfare Training Service 2',3,0,3,1,'BSEDEN','1ST'),
+ (1258,8,21,'ECON 1013','Basic Economics with Taxation and Agrarian Reform',3,0,3,1,'BSEDEN','1ST'),
+ (1259,8,21,'EDUC 2033','Educational Systems and Current Issues in Education',3,0,3,2,'BSEDEN','1ST'),
+ (1260,8,21,'EDUC 2043','Child and Adolescent Development',3,0,3,2,'BSEDEN','1ST'),
+ (1261,8,21,'EDUC 2051','Field Study 1 - The Learner`s Development and Environment',1,0,1,2,'BSEDEN','1ST'),
+ (1262,8,21,'EDUC 2123','Principles and Strategies of Teaching 2',3,0,3,3,'BSEDEN','1ST'),
+ (1263,8,21,'EDUC 2133','Introduction to Curriculum Development',3,0,3,3,'BSEDEN','1ST'),
+ (1264,8,21,'EDUC 2141','Field Study 4-Exploring the Curriculum',1,0,1,3,'BSEDEN','1ST'),
+ (1265,8,21,'EDUC 2343','Ethics and Social Responsibility',3,0,3,2,'BSEDEN','1ST'),
+ (1266,8,21,'ENGL 1023','Writing in the Discipline',3,0,3,1,'BSEDEN','1ST'),
+ (1267,8,21,'ENGL 3023','Mythology and Folklore',3,0,3,3,'BSEDEN','1ST'),
+ (1268,8,21,'ENGL 3043','Afro-Asian Literature',3,0,3,2,'BSEDEN','1ST'),
+ (1269,8,21,'ENGL 3053','Structure of the English Language',3,0,3,2,'BSEDEN','1ST'),
+ (1270,8,21,'ENGL 3173','Principles of Literary Criticism',3,0,3,2,'BSEDEN','1ST'),
+ (1271,8,21,'ENGL 3433','Language and Literature Assessment',3,0,3,3,'BSEDEN','1ST'),
+ (1272,8,21,'ENGL 3443','Campus Journalism',3,0,3,3,'BSEDEN','1ST'),
+ (1273,8,21,'FILI 1023','Pagbasa at Pagsulat Tungo sa Pananaliksik',3,0,3,1,'BSEDEN','1ST'),
+ (1274,8,21,'HUMA 1013','Introduction to the Humanities',3,0,3,1,'BSEDEN','1ST'),
+ (1275,8,21,'LITE 1013','Philippine Literature',3,0,3,1,'BSEDEN','1ST'),
+ (1276,8,21,'LITE 1023','World Literature',3,0,3,2,'BSEDEN','1ST'),
+ (1277,8,21,'MATH 1033','Fundamentals of Mathematics',3,0,3,1,'BSEDEN','1ST'),
+ (1278,8,21,'MATH 1043','Contemporary Mathematics',3,0,3,1,'BSEDEN','1ST'),
+ (1279,8,21,'NASC 1083','Biological Science',3,0,3,1,'BSEDEN','1ST'),
+ (1280,8,21,'NASC 1093','Ecology',3,0,3,2,'BSEDEN','1ST'),
+ (1281,8,21,'PHED 1122_','Rhythmic Activities-Social Dance',2,0,2,1,'BSEDEN','1ST'),
+ (1282,8,21,'PHED 1332_','Team Sports-Volleyball',2,0,2,2,'BSEDEN','1ST'),
+ (1283,8,21,'POSC 1013','Politics and Governance with Philippine Constitution',3,0,3,3,'BSEDEN','1ST'),
+ (1284,8,21,'SEED 3203','Preparation and Evaluation of Instructional Materials',3,0,3,3,'BSEDEN','1ST'),
+ (1285,8,21,'SEED 4063','Thesis Writing',3,0,3,3,'BSEDEN','1ST'),
+ (1286,8,21,'SEED 4076','Practice Teaching',6,0,6,4,'BSEDEN','1ST'),
+ (1287,9,22,'OMT 321','Internship (Office Management Technology Practicum - 600 hours)',6,0,6,3,'DOMTLOM','1ST'),
+ (1288,9,22,'LOMT 221','Legal Transcription 2',2,3,3,2,'DOMTLOM','1ST'),
+ (1289,9,22,'LOMT 222','Legal Terminology 2',3,0,3,2,'DOMTLOM','1ST'),
+ (1290,9,22,'OMT 221','Computer Graphics with Multimedia',2,3,3,2,'DOMTLOM','1ST'),
+ (1291,9,22,'OMT 222','Human Behavior in Organization',3,0,3,2,'DOMTLOM','1ST'),
+ (1292,9,22,'OMT 223','Introduction to Business',3,0,3,2,'DOMTLOM','1ST'),
+ (1293,9,22,'OMT 224','Filipino Steno 2',3,0,3,2,'DOMTLOM','1ST'),
+ (1294,9,22,'OMT 225','Machine Shorthand 2',2,3,3,2,'DOMTLOM','1ST'),
+ (1295,9,22,'PE 114','Physical Education 4',2,0,2,2,'DOMTLOM','1ST');
+/*!40000 ALTER TABLE `tbl_subjects` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tbl_users`
+--
+
+DROP TABLE IF EXISTS `tbl_users`;
+CREATE TABLE `tbl_users` (
+  `users_id` int(10) unsigned NOT NULL auto_increment,
+  `username` varchar(45) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `firstName` varchar(45) NOT NULL,
+  `middleName` varchar(45) NOT NULL,
+  `lastName` varchar(45) NOT NULL,
+  `address` varchar(120) NOT NULL,
+  `gender` varchar(45) NOT NULL,
+  `teachingStatus` varchar(45) NOT NULL,
+  `courseDepartment` varchar(45) NOT NULL,
+  `emailAddress` varchar(45) NOT NULL,
+  `mobileNumber` varchar(45) NOT NULL,
+  `status` varchar(45) NOT NULL,
+  `userLevel` varchar(45) NOT NULL,
+  `unitsAllowed` varchar(45) NOT NULL,
+  `loginStatus` int(10) unsigned NOT NULL default '0',
+  PRIMARY KEY  (`users_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_users`
+--
+
+/*!40000 ALTER TABLE `tbl_users` DISABLE KEYS */;
+INSERT INTO `tbl_users` (`users_id`,`username`,`password`,`firstName`,`middleName`,`lastName`,`address`,`gender`,`teachingStatus`,`courseDepartment`,`emailAddress`,`mobileNumber`,`status`,`userLevel`,`unitsAllowed`,`loginStatus`) VALUES 
+ (7,'asdf','TYFFSpD4pCQ=','asdf','asdf','asdf','asdf','Male','administrator','administrator','arman@yahoo.com','09173871717','active','administrator','administrator',1),
+ (8,'michael','P92nrqYSbI4=','Michael','','David','PUPSMB','Male','Fulltimer','BSHM','david.michael@yahoo.com','09173871717','inactive','professor','42',0);
+/*!40000 ALTER TABLE `tbl_users` ENABLE KEYS */;
+
+
+
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

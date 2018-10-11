@@ -7,6 +7,7 @@ using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 using System.Data;
 using ClassSchedulingComputerAided.Properties;
+using System.IO;
 
 namespace ClassSchedulingComputerAided
 {
@@ -19,6 +20,73 @@ namespace ClassSchedulingComputerAided
             + "; database=" + Settings.Default["DatabaseName"].ToString()
             + "; port=" + Settings.Default["Port"].ToString() + ";");
 
+
+        //=============BACKUP AND RESTORE=================
+        public void CreateBackup(string filepath)
+        {
+            string constr = "server=" + Settings.Default["Server"].ToString() + ";";
+            constr += "username=" + Settings.Default["UsernameDB"].ToString() + ";";
+            constr += "password=" + Settings.Default["PasswordDB"].ToString() + ";";
+            constr += "database=" + Settings.Default["DatabaseName"].ToString() + ";";
+            constr += "charset=utf8; convertzerodatetime=true;";
+            try
+            {
+                string fileName = string.Format("pupsmb_backupDatabase_{0}.sql", DateTime.Now.ToString("MM'-'dd'-'yyyy'-'hhtt"));
+                string backupFile = Path.Combine(filepath,fileName);
+                //string file = @"C:\Users\Michael David\Documents\PUP\pam\backup.sql";
+                using(MySqlConnection connection = new MySqlConnection(constr))
+                using (MySqlCommand cmd = new MySqlCommand())
+                {
+                    using (MySqlBackup mb = new MySqlBackup(cmd))
+                    {
+
+                        cmd.Connection = connection;
+                        connection.Open();
+                        mb.ExportToFile(backupFile);
+                        connection.Close();
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "CreateBackup");
+            }
+            finally
+            {
+            }
+        }
+
+        public void RestoreBackup(string filepath)
+        {
+            string constr = "server=" + Settings.Default["Server"].ToString() + ";";
+            constr += "username=" + Settings.Default["UsernameDB"].ToString() + ";";
+            constr += "password=" + Settings.Default["PasswordDB"].ToString() + ";";
+            constr += "database=" + Settings.Default["DatabaseName"].ToString() + ";";
+            constr += "charset=utf8; convertzerodatetime=true;";
+            try
+            {
+                //string file = @"C:\Users\Michael David\Documents\PUP\pam\backup.sql";
+                using (MySqlConnection connection = new MySqlConnection(constr))
+                using (MySqlCommand cmd = new MySqlCommand())
+                {
+                    using (MySqlBackup mb = new MySqlBackup(cmd))
+                    {
+
+                        cmd.Connection = connection;
+                        connection.Open();
+                        mb.ImportFromFile(filepath);
+                        connection.Close();
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "CreateBackup");
+            }
+            finally
+            {
+            }
+        }
         //check the database connection
         public void ConnectSql()
         {
@@ -2740,7 +2808,7 @@ namespace ClassSchedulingComputerAided
                 }
                 con.Close();
                 con.Open();
-                for (int x = 0; x < 5; x++)
+                for (int x = 0; x < 3; x++)
                 {
                     string sqlInsertSQ = "INSERT INTO tbl_securityquestions(users_id, answer, question) VALUES('" + id + "', @a, @q)";
                     MySqlCommand com1 = new MySqlCommand(sqlInsertSQ, con);

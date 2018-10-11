@@ -59,7 +59,14 @@
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
-    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.9.12.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.9.12\lib\net45\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySqlBackup, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySqlBackup.1.0.1\lib\MySqlBackup.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.IO.Compression" />
@@ -92,6 +99,12 @@
     </Compile>
     <Compile Include="AdminHomePage.Designer.cs">
       <DependentUpon>AdminHomePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BackUpRestore.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BackUpRestore.Designer.cs">
+      <DependentUpon>BackUpRestore.cs</DependentUpon>
     </Compile>
     <Compile Include="classes\AuditTrailData.cs" />
     <Compile Include="ClassScheduled.cs">
@@ -415,6 +428,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminHomePage.resx">
       <DependentUpon>AdminHomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BackUpRestore.resx">
+      <DependentUpon>BackUpRestore.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ClassScheduled.resx">
       <DependentUpon>ClassScheduled.cs</DependentUpon>

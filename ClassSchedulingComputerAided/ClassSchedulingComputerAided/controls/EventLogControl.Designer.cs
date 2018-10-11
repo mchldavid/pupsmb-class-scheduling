@@ -37,11 +37,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.dgvEventLog = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.eventlogBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dateTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.actionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eventlogBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEventLog)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventlogBindingSource)).BeginInit();
@@ -134,12 +134,8 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
             this.dgvEventLog.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvEventLog.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEventLog.Size = new System.Drawing.Size(700, 420);
+            this.dgvEventLog.Size = new System.Drawing.Size(700, 442);
             this.dgvEventLog.TabIndex = 253;
-            // 
-            // eventlogBindingSource
-            // 
-            this.eventlogBindingSource.DataSource = typeof(ClassSchedulingComputerAided.Eventlog);
             // 
             // dateTimeDataGridViewTextBoxColumn
             // 
@@ -172,6 +168,10 @@
             this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
             this.descriptionDataGridViewTextBoxColumn.Width = 500;
             // 
+            // eventlogBindingSource
+            // 
+            this.eventlogBindingSource.DataSource = typeof(ClassSchedulingComputerAided.Eventlog);
+            // 
             // EventLogControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -179,7 +179,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvEventLog);
             this.Name = "EventLogControl";
-            this.Size = new System.Drawing.Size(700, 451);
+            this.Size = new System.Drawing.Size(700, 473);
             this.Load += new System.EventHandler(this.EventLogControl_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEventLog)).EndInit();
