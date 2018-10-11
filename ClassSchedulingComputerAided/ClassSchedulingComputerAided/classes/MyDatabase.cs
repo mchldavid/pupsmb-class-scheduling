@@ -1570,7 +1570,7 @@ namespace ClassSchedulingComputerAided
                 string sql = "";
                 //if (courseBy == "Course Subject")
                 //    sql = "SELECT subjects_id AS 'ID', subjectCode AS 'Code', subjectDescription AS 'Description', CONCAT('[',programName,']') AS 'Curriculum' FROM tbl_subjects su INNER JOIN tbl_curriculums cu ON su.curriculums_id = cu.curriculums_id WHERE status = 'active' AND su.course = @c ORDER BY cu.programName;";
-                if (courseBy == "Course Subject")
+                if (courseBy == "Courses from program department.")
                     sql = "SELECT subjects_id AS 'ID', su.course AS 'Course', subjectCode AS 'Code', subjectDescription AS 'Description', CONCAT('[',programName,']') AS 'Curriculum', su.curriculums_id "
                         + "FROM tbl_subjects su "
                         + "INNER JOIN tbl_curriculums cu ON su.curriculums_id = cu.curriculums_id "
@@ -1580,7 +1580,7 @@ namespace ClassSchedulingComputerAided
                         + "ORDER BY cu.programName;";
                 //if (courseBy == "Other Subject")
                 //    sql = "SELECT subjects_id AS 'ID', subjectCode AS 'Code', subjectDescription AS 'Description', CONCAT('[',programName,']') AS 'Curriculum' FROM tbl_subjects su INNER JOIN tbl_curriculums cu ON su.curriculums_id = cu.curriculums_id WHERE status = 'active' ORDER BY cu.programName;";
-                if (courseBy == "Other Subject")
+                if (courseBy == "All courses from all programs.")
                     sql = "SELECT subjects_id AS 'ID', su.course AS 'Course', subjectCode AS 'Code', subjectDescription AS 'Description', CONCAT('[',programName,']') AS 'Curriculum', su.curriculums_id "
                         + "FROM tbl_subjects su "
                         + "INNER JOIN tbl_curriculums cu ON su.curriculums_id = cu.curriculums_id "
@@ -1753,10 +1753,10 @@ namespace ClassSchedulingComputerAided
             try
             {
                 con.Open();
-                string subjects = "DELETE FROM tbl_subjects WHERE curriculums_id = @id";
-                MySqlCommand com5 = new MySqlCommand(subjects, con);
-                com5.Parameters.AddWithValue("@id", id);
-                com5.ExecuteNonQuery();
+                string preferredsubjects = "DELETE FROM tbl_preferredsubjects WHERE curriculums_id = @id";
+                MySqlCommand com2 = new MySqlCommand(preferredsubjects, con);
+                com2.Parameters.AddWithValue("@id", id);
+                com2.ExecuteNonQuery();
                 con.Close();
 
                 con.Open();
@@ -1774,10 +1774,10 @@ namespace ClassSchedulingComputerAided
                 con.Close();
 
                 con.Open();
-                string preferredsubjects = "DELETE FROM tbl_preferredsubejects WHERE curriculums_id = @id";
-                MySqlCommand com2 = new MySqlCommand(preferredsubjects, con);
-                com2.Parameters.AddWithValue("@id", id);
-                com2.ExecuteNonQuery();
+                string subjects = "DELETE FROM tbl_subjects WHERE curriculums_id = @id";
+                MySqlCommand com5 = new MySqlCommand(subjects, con);
+                com5.Parameters.AddWithValue("@id", id);
+                com5.ExecuteNonQuery();
                 con.Close();
 
                 con.Open();

@@ -226,17 +226,17 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(58, 458);
+            this.label3.Location = new System.Drawing.Point(53, 457);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(125, 17);
+            this.label3.Size = new System.Drawing.Size(134, 17);
             this.label3.TabIndex = 205;
-            this.label3.Text = "Course Department";
+            this.label3.Text = "Program Department";
             // 
             // cboCourseDepartment
             // 
             this.cboCourseDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCourseDepartment.FormattingEnabled = true;
-            this.cboCourseDepartment.Location = new System.Drawing.Point(183, 455);
+            this.cboCourseDepartment.Location = new System.Drawing.Point(187, 455);
             this.cboCourseDepartment.Name = "cboCourseDepartment";
             this.cboCourseDepartment.Size = new System.Drawing.Size(128, 21);
             this.cboCourseDepartment.TabIndex = 9;
@@ -695,7 +695,6 @@
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.cboCourseDepartment);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -714,6 +713,7 @@
             this.Controls.Add(this.txtFirstName);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.shapeContainer1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

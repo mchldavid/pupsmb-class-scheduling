@@ -72,10 +72,13 @@ namespace ClassSchedulingComputerAided
 
         private void btnAddSubject_Click(object sender, EventArgs e)
         {
+            cboSubjectBy.Items.Clear();
+            cboSubjectBy.Items.Add("Courses from program department.");
+            cboSubjectBy.Items.Add("All courses from all programs.");
             pnlAddSubject.Visible = true;
             pnlAddSubject.BringToFront();
             cboSubjectBy.SelectedIndex = 0;
-            dgvAddSubject.DataSource = md.dgv_showAddPreferredSubjects("Course Subject", cboSemester.Text).DataSource;
+            dgvAddSubject.DataSource = md.dgv_showAddPreferredSubjects("Courses from program department.", cboSemester.Text).DataSource;
             dgvAddSubject.Columns[0].Visible = false;
             dgvAddSubject.Columns[5].Visible = false;
         }
@@ -103,7 +106,7 @@ namespace ClassSchedulingComputerAided
                 }
                 else
                 {
-                    MessageBox.Show("The " + row.Cells[2].Value.ToString() + " is already on your preferred subjects", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("The " + row.Cells[2].Value.ToString() + " is already on your preferred subjects", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
