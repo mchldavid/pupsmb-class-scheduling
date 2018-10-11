@@ -257,7 +257,7 @@ namespace ClassSchedulingComputerAided
             try
             {
                 con.Open();
-                string sqlUpdateUserInformation = "UPDATE tbl_users SET username=@u, password=@p, firstName=@fN, middleName=@mN, lastName=@lN, address=@a, gender=@g, teachingStatus=@tS, courseDepartment=@cD, emailAddress=@eA, mobileNumber=@moN, unitsAllowed=@uA, status=@s WHERE users_id=@id;";
+                string sqlUpdateUserInformation = "UPDATE tbl_users SET username=@u, password=@p, firstName=@fN, middleName=@mN, lastName=@lN, address=@a, gender=@g, teachingStatus=@tS, courseDepartment=@cD, emailAddress=@eA, mobileNumber=@moN, unitsAllowed=@uA WHERE users_id=@id;";
                 MySqlCommand com = new MySqlCommand(sqlUpdateUserInformation, con);
                 com.Parameters.AddWithValue("@id", id);
                 com.Parameters.AddWithValue("@u", username);
@@ -306,7 +306,7 @@ namespace ClassSchedulingComputerAided
             }
             catch (MySqlException er)
             {
-                MessageBox.Show(er.Message);
+                MessageBox.Show(er.Message, "UpdateUsersAccount_1");
             }
             finally
             {
@@ -432,13 +432,17 @@ namespace ClassSchedulingComputerAided
             {
                 con.Open();
                 string sql = "";
-                if (by == "Subject Code")
+                if (by == "Name")
                 {
-                    sql = "SELECT subjects_id AS 'ID', course AS 'Course', yearLevel AS 'Year_Level', subjectCode AS 'Code', subjectDescription AS 'Description', lectureHours AS 'Lecture_Hours', laboratoryHours AS 'Lab_Hours', units AS 'Units' FROM tbl_subjects t WHERE curriculums_id = @id AND semester = @sem AND subjectCode LIKE '" + search + "%';";
+                    sql = "SELECT users_id AS 'ID', CONCAT(firstName,' ',middleName,' ', lastName) AS 'Name',address AS 'Address', gender AS 'Gender',teachingStatus AS 'Teaching Status', courseDepartment AS 'Department',emailAddress AS 'Email', mobileNumber AS 'Number', unitsAllowed AS 'Units Allowed', status AS 'Status' FROM tbl_users t WHERE userLevel = 'professor' AND CONCAT(firstName,' ',middleName,' ', lastName) LIKE '"+search+"%';";
                 }
-                else if (by == "Subject Description")
+                else if (by == "Teaching Status")
                 {
-                    sql = "SELECT subjects_id AS 'ID', course AS 'Course', yearLevel AS 'Year_Level', subjectCode AS 'Code', subjectDescription AS 'Description', lectureHours AS 'Lecture_Hours', laboratoryHours AS 'Lab_Hours', units AS 'Units' FROM tbl_subjects t WHERE curriculums_id = @id AND semester = @sem AND subjectDescription LIKE '" + search + "%';";
+                    sql = "SELECT users_id AS 'ID', CONCAT(firstName,' ',middleName,' ', lastName) AS 'Name',address AS 'Address', gender AS 'Gender',teachingStatus AS 'Teaching Status', courseDepartment AS 'Department',emailAddress AS 'Email', mobileNumber AS 'Number', unitsAllowed AS 'Units Allowed', status AS 'Status' FROM tbl_users t WHERE userLevel = 'professor' AND teachingStatus LIKE '" + search + "%';";
+                }
+                else if (by == "Email")
+                {
+                    sql = "SELECT users_id AS 'ID', CONCAT(firstName,' ',middleName,' ', lastName) AS 'Name',address AS 'Address', gender AS 'Gender',teachingStatus AS 'Teaching Status', courseDepartment AS 'Department',emailAddress AS 'Email', mobileNumber AS 'Number', unitsAllowed AS 'Units Allowed', status AS 'Status' FROM tbl_users t WHERE userLevel = 'professor' AND emailAddress LIKE '" + search + "%';";
                 }
                 MySqlCommand com = new MySqlCommand(sql, con);
                 com.Parameters.AddWithValue("@id", curriculumData.c_id);

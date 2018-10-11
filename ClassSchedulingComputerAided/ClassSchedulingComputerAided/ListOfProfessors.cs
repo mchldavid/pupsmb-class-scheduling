@@ -20,8 +20,13 @@ namespace ClassSchedulingComputerAided
 
         private void ListOfProfessors_Load(object sender, EventArgs e)
         {
-           dgvShow.DataSource = md.dgv_showListOfProfessors().DataSource;
-           dgvShow.Columns[0].Visible = false;
+            dgvShow.DataSource = md.dgv_showListOfProfessors().DataSource;
+            dgvShow.Columns[0].Visible = false;
+
+            cboBy.Items.Add("Name");
+            cboBy.Items.Add("Teaching Status");
+            cboBy.Items.Add("Email");
+            cboBy.SelectedIndex = 0;
         }
 
         private void bunifuSeparator1_Load(object sender, EventArgs e)
@@ -92,6 +97,7 @@ namespace ClassSchedulingComputerAided
                 {
                     //audit
                     md.AuditTrail(AuditTrailData.username, "Delete", dr.Cells[1].Value.ToString() +" was remove.");
+
                     md.L_DeleteProfessor(ListOfProfessorsData.Selected_ID);
                     dgvShow.DataSource = md.dgv_showListOfProfessors().DataSource;
                     dgvShow.Columns[0].Visible = false;
@@ -137,7 +143,7 @@ namespace ClassSchedulingComputerAided
 
         private void txtSearch_KeyUp(object sender, KeyEventArgs e)
         {
-            dgvShow.DataSource = md.dgv_showListOfProfessors().DataSource;
+            dgvShow.DataSource = md.dgv_SearchListProfessors(txtSearch.Text, cboBy.Text).DataSource;
             dgvShow.Columns[0].Visible = false;
         }
     }

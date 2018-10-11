@@ -209,6 +209,7 @@ namespace ClassSchedulingComputerAided
 
         private void btnImportData_Click(object sender, EventArgs e)
         {
+            int countRetrieveData = 0;
             lbl_course_id.Text = md.GetCourseID(cboCourse.Text, curriculumData.c_id);// to get course id
             //dgvData.SelectAll();
             int r = 0;
@@ -246,17 +247,20 @@ namespace ClassSchedulingComputerAided
                         string units = dgvData.Rows[i].Cells[6].Value.ToString();
                         string yearLevel = getYear;
                         md.C_AddSubjects(curriculumData.c_id, lbl_course_id.Text, cboCourse.Text, subjectCode, subjecDescription, lecHours, labHours, units, yearLevel, curriculumData.c_semester);
-
-                        MessageBox.Show("Import Program Course successfully", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                        countRetrieveData++;
                         pnl_import.Visible = false;
-                        //audit
-                        md.AuditTrail(AuditTrailData.username, "Add", cboCourse.Text + " imported from "+ cboSheets.Text +".");
                     }
                 }
             }
             dgvListSubject.DataSource = md.dgv_showSubjectCurriculum().DataSource;
             dgvListSubject.Columns[0].Visible = false;
+            if(countRetrieveData > 0)
+                MessageBox.Show("Import Program Course successfully", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+                MessageBox.Show("No data was found! Please try to check program acronym if it match with the program acronym in the CSV file you try to import.", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            //audit
+            md.AuditTrail(AuditTrailData.username, "Add", cboCourse.Text + " imported from " + cboSheets.Text + ".");
         }
 
         private void btnClose_Click_1(object sender, EventArgs e)

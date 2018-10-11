@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSetCurriculum));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
@@ -44,6 +44,7 @@
             this.btnAddSubject = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnHome = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCurriculum = new Bunifu.Framework.UI.BunifuFlatButton();
             this.lbl_course_id = new MetroFramework.Controls.MetroLabel();
             this.lbl_control_id = new MetroFramework.Controls.MetroLabel();
             this.btnImport = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -59,6 +60,11 @@
             this.label12 = new System.Windows.Forms.Label();
             this.lbl_title = new MetroFramework.Controls.MetroLabel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.txtSubjectCode = new System.Windows.Forms.TextBox();
+            this.txtSubjectDescription = new System.Windows.Forms.TextBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
+            this.btnDelete = new MetroFramework.Controls.MetroTile();
             this.pnl_import = new System.Windows.Forms.Panel();
             this.dgvData = new System.Windows.Forms.DataGridView();
             this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
@@ -70,25 +76,19 @@
             this.btnBrowse = new MetroFramework.Controls.MetroButton();
             this.panel6 = new System.Windows.Forms.Panel();
             this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
-            this.txtSubjectCode = new System.Windows.Forms.TextBox();
-            this.txtSubjectDescription = new System.Windows.Forms.TextBox();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             this.pnl = new System.Windows.Forms.Panel();
             this.dgvListSubject = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.cboBy = new System.Windows.Forms.ComboBox();
-            this.btnDelete = new MetroFramework.Controls.MetroTile();
-            this.btnCurriculum = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.pnl_import.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.panel6.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.pnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListSubject)).BeginInit();
             this.panel4.SuspendLayout();
@@ -101,9 +101,9 @@
             this.metroLabel11.ForeColor = System.Drawing.Color.Black;
             this.metroLabel11.Location = new System.Drawing.Point(4, 40);
             this.metroLabel11.Name = "metroLabel11";
-            this.metroLabel11.Size = new System.Drawing.Size(116, 29);
+            this.metroLabel11.Size = new System.Drawing.Size(125, 29);
             this.metroLabel11.TabIndex = 146;
-            this.metroLabel11.Text = "Select Course:";
+            this.metroLabel11.Text = "Program Acronym:";
             this.metroLabel11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // metroLabel3
@@ -235,7 +235,7 @@
             this.btnHome.IconVisible = true;
             this.btnHome.IconZoom = 50D;
             this.btnHome.IsTab = false;
-            this.btnHome.Location = new System.Drawing.Point(3, 140);
+            this.btnHome.Location = new System.Drawing.Point(3, 139);
             this.btnHome.Name = "btnHome";
             this.btnHome.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnHome.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
@@ -263,6 +263,41 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(172, 441);
             this.panel1.TabIndex = 161;
+            // 
+            // btnCurriculum
+            // 
+            this.btnCurriculum.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnCurriculum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btnCurriculum.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCurriculum.BorderRadius = 0;
+            this.btnCurriculum.ButtonText = "    Curriculum";
+            this.btnCurriculum.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCurriculum.DisabledColor = System.Drawing.Color.White;
+            this.btnCurriculum.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnCurriculum.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnCurriculum.Iconimage")));
+            this.btnCurriculum.Iconimage_right = null;
+            this.btnCurriculum.Iconimage_right_Selected = null;
+            this.btnCurriculum.Iconimage_Selected = null;
+            this.btnCurriculum.IconMarginLeft = 0;
+            this.btnCurriculum.IconMarginRight = 0;
+            this.btnCurriculum.IconRightVisible = true;
+            this.btnCurriculum.IconRightZoom = 0D;
+            this.btnCurriculum.IconVisible = true;
+            this.btnCurriculum.IconZoom = 50D;
+            this.btnCurriculum.IsTab = false;
+            this.btnCurriculum.Location = new System.Drawing.Point(3, 95);
+            this.btnCurriculum.Name = "btnCurriculum";
+            this.btnCurriculum.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btnCurriculum.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
+            this.btnCurriculum.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnCurriculum.selected = false;
+            this.btnCurriculum.Size = new System.Drawing.Size(173, 42);
+            this.btnCurriculum.TabIndex = 179;
+            this.btnCurriculum.Text = "    Curriculum";
+            this.btnCurriculum.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCurriculum.Textcolor = System.Drawing.Color.White;
+            this.btnCurriculum.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCurriculum.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // lbl_course_id
             // 
@@ -303,7 +338,7 @@
             this.btnImport.IconVisible = true;
             this.btnImport.IconZoom = 50D;
             this.btnImport.IsTab = false;
-            this.btnImport.Location = new System.Drawing.Point(3, 6);
+            this.btnImport.Location = new System.Drawing.Point(3, 5);
             this.btnImport.Name = "btnImport";
             this.btnImport.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnImport.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
@@ -338,7 +373,7 @@
             this.btnDeleteAll.IconVisible = true;
             this.btnDeleteAll.IconZoom = 50D;
             this.btnDeleteAll.IsTab = false;
-            this.btnDeleteAll.Location = new System.Drawing.Point(3, 52);
+            this.btnDeleteAll.Location = new System.Drawing.Point(3, 51);
             this.btnDeleteAll.Name = "btnDeleteAll";
             this.btnDeleteAll.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnDeleteAll.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
@@ -489,6 +524,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel3.Controls.Add(this.cboCourse);
             this.panel3.Controls.Add(this.txtSubjectCode);
             this.panel3.Controls.Add(this.txtSubjectDescription);
             this.panel3.Controls.Add(this.panel5);
@@ -502,7 +538,6 @@
             this.panel3.Controls.Add(this.btnDelete);
             this.panel3.Controls.Add(this.cboUnits);
             this.panel3.Controls.Add(this.metroLabel2);
-            this.panel3.Controls.Add(this.cboCourse);
             this.panel3.Controls.Add(this.metroLabel4);
             this.panel3.Controls.Add(this.metroLabel5);
             this.panel3.Controls.Add(this.btnAdd);
@@ -511,6 +546,62 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(333, 437);
             this.panel3.TabIndex = 180;
+            // 
+            // txtSubjectCode
+            // 
+            this.txtSubjectCode.BackColor = System.Drawing.Color.White;
+            this.txtSubjectCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSubjectCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSubjectCode.Location = new System.Drawing.Point(126, 74);
+            this.txtSubjectCode.Name = "txtSubjectCode";
+            this.txtSubjectCode.Size = new System.Drawing.Size(200, 22);
+            this.txtSubjectCode.TabIndex = 0;
+            // 
+            // txtSubjectDescription
+            // 
+            this.txtSubjectDescription.BackColor = System.Drawing.Color.White;
+            this.txtSubjectDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSubjectDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSubjectDescription.Location = new System.Drawing.Point(126, 102);
+            this.txtSubjectDescription.Multiline = true;
+            this.txtSubjectDescription.Name = "txtSubjectDescription";
+            this.txtSubjectDescription.Size = new System.Drawing.Size(200, 70);
+            this.txtSubjectDescription.TabIndex = 1;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
+            this.panel5.Controls.Add(this.metroLabel8);
+            this.panel5.Location = new System.Drawing.Point(0, -3);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(336, 37);
+            this.panel5.TabIndex = 243;
+            // 
+            // metroLabel8
+            // 
+            this.metroLabel8.CustomBackground = true;
+            this.metroLabel8.CustomForeColor = true;
+            this.metroLabel8.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.metroLabel8.Location = new System.Drawing.Point(4, 10);
+            this.metroLabel8.Name = "metroLabel8";
+            this.metroLabel8.Size = new System.Drawing.Size(133, 21);
+            this.metroLabel8.TabIndex = 136;
+            this.metroLabel8.Text = "Add Subject Section";
+            this.metroLabel8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(6, 343);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(320, 40);
+            this.btnDelete.Style = MetroFramework.MetroColorStyle.Red;
+            this.btnDelete.TabIndex = 164;
+            this.btnDelete.Text = "DELETE";
+            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnDelete.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnDelete.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+            this.btnDelete.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // pnl_import
             // 
@@ -633,48 +724,6 @@
             this.metroLabel9.Text = "Importing courses via excel format";
             this.metroLabel9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // txtSubjectCode
-            // 
-            this.txtSubjectCode.BackColor = System.Drawing.Color.White;
-            this.txtSubjectCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSubjectCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSubjectCode.Location = new System.Drawing.Point(126, 74);
-            this.txtSubjectCode.Name = "txtSubjectCode";
-            this.txtSubjectCode.Size = new System.Drawing.Size(200, 22);
-            this.txtSubjectCode.TabIndex = 0;
-            // 
-            // txtSubjectDescription
-            // 
-            this.txtSubjectDescription.BackColor = System.Drawing.Color.White;
-            this.txtSubjectDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSubjectDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSubjectDescription.Location = new System.Drawing.Point(126, 102);
-            this.txtSubjectDescription.Multiline = true;
-            this.txtSubjectDescription.Name = "txtSubjectDescription";
-            this.txtSubjectDescription.Size = new System.Drawing.Size(200, 70);
-            this.txtSubjectDescription.TabIndex = 1;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
-            this.panel5.Controls.Add(this.metroLabel8);
-            this.panel5.Location = new System.Drawing.Point(0, -3);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(336, 37);
-            this.panel5.TabIndex = 243;
-            // 
-            // metroLabel8
-            // 
-            this.metroLabel8.CustomBackground = true;
-            this.metroLabel8.CustomForeColor = true;
-            this.metroLabel8.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.metroLabel8.Location = new System.Drawing.Point(4, 10);
-            this.metroLabel8.Name = "metroLabel8";
-            this.metroLabel8.Size = new System.Drawing.Size(133, 21);
-            this.metroLabel8.TabIndex = 136;
-            this.metroLabel8.Text = "Add Subject Section";
-            this.metroLabel8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // pnl
             // 
             this.pnl.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -691,10 +740,10 @@
             this.dgvListSubject.AllowUserToDeleteRows = false;
             this.dgvListSubject.AllowUserToResizeColumns = false;
             this.dgvListSubject.AllowUserToResizeRows = false;
-            dataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.Gray;
-            this.dgvListSubject.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Gray;
+            this.dgvListSubject.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvListSubject.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -703,24 +752,24 @@
             this.dgvListSubject.BackgroundColor = System.Drawing.Color.White;
             this.dgvListSubject.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvListSubject.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvListSubject.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvListSubject.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvListSubject.ColumnHeadersHeight = 25;
             this.dgvListSubject.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvListSubject.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListSubject.DefaultCellStyle = dataGridViewCellStyle13;
             this.dgvListSubject.DoubleBuffered = true;
             this.dgvListSubject.EnableHeadersVisualStyles = false;
             this.dgvListSubject.GridColor = System.Drawing.Color.DarkGray;
@@ -731,19 +780,19 @@
             this.dgvListSubject.Name = "dgvListSubject";
             this.dgvListSubject.ReadOnly = true;
             this.dgvListSubject.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvListSubject.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvListSubject.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dgvListSubject.RowHeadersWidth = 15;
             this.dgvListSubject.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvListSubject.RowsDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvListSubject.RowsDefaultCellStyle = dataGridViewCellStyle15;
             this.dgvListSubject.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListSubject.Size = new System.Drawing.Size(605, 400);
             this.dgvListSubject.TabIndex = 247;
@@ -793,65 +842,16 @@
             this.cboBy.Size = new System.Drawing.Size(182, 24);
             this.cboBy.TabIndex = 236;
             // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(6, 343);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(320, 40);
-            this.btnDelete.Style = MetroFramework.MetroColorStyle.Red;
-            this.btnDelete.TabIndex = 164;
-            this.btnDelete.Text = "DELETE";
-            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnDelete.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnDelete.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
-            this.btnDelete.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnCurriculum
-            // 
-            this.btnCurriculum.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnCurriculum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btnCurriculum.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCurriculum.BorderRadius = 0;
-            this.btnCurriculum.ButtonText = "    Curriculum";
-            this.btnCurriculum.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCurriculum.DisabledColor = System.Drawing.Color.White;
-            this.btnCurriculum.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnCurriculum.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnCurriculum.Iconimage")));
-            this.btnCurriculum.Iconimage_right = null;
-            this.btnCurriculum.Iconimage_right_Selected = null;
-            this.btnCurriculum.Iconimage_Selected = null;
-            this.btnCurriculum.IconMarginLeft = 0;
-            this.btnCurriculum.IconMarginRight = 0;
-            this.btnCurriculum.IconRightVisible = true;
-            this.btnCurriculum.IconRightZoom = 0D;
-            this.btnCurriculum.IconVisible = true;
-            this.btnCurriculum.IconZoom = 50D;
-            this.btnCurriculum.IsTab = false;
-            this.btnCurriculum.Location = new System.Drawing.Point(3, 96);
-            this.btnCurriculum.Name = "btnCurriculum";
-            this.btnCurriculum.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btnCurriculum.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
-            this.btnCurriculum.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnCurriculum.selected = false;
-            this.btnCurriculum.Size = new System.Drawing.Size(173, 42);
-            this.btnCurriculum.TabIndex = 179;
-            this.btnCurriculum.Text = "    Curriculum";
-            this.btnCurriculum.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCurriculum.Textcolor = System.Drawing.Color.White;
-            this.btnCurriculum.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCurriculum.Click += new System.EventHandler(this.btnClose_Click);
-            // 
             // frmSetCurriculum
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Drawing.MetroBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(1111, 501);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnl);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.pnl_import);
             this.MaximizeBox = false;
             this.Movable = false;
@@ -863,11 +863,11 @@
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel5.ResumeLayout(false);
             this.pnl_import.ResumeLayout(false);
             this.pnl_import.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
             this.panel6.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
             this.pnl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListSubject)).EndInit();
             this.panel4.ResumeLayout(false);
