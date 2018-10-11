@@ -34,34 +34,83 @@ namespace ClassSchedulingComputerAided
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Do you want to save?", "Admin", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-
-            if (result == DialogResult.Yes)
+            if (txtFirstName.Text != ""
+                && txtLastName.Text != ""
+                && txtAddress.Text != ""
+                && txtEmailAddress.Text != ""
+                && txtMobileNumber.Text != "(+63)   -    -"
+                && txtUsername.Text != ""
+                && txtPassword.Text != ""
+                && txtAnswer1.Text != ""
+                && txtAnswer2.Text != ""
+                && txtAnswer3.Text != ""
+                && txtAnswer4.Text != ""
+                && txtAnswer5.Text != "")
             {
-                md.RegisterAdmin(txtUsername.Text, ms.encryptPassword(txtPassword.Text), txtFirstName.Text, txtMiddleName.Text, txtLastName.Text, txtAddress.Text, cboGender.Text, txtEmailAddress.Text, txtMobileNumber.Text);
+                EmailValidation email = new EmailValidation();
+                if (email.IsValidEmail(txtEmailAddress.Text) == true)
+                {
+                    if (txtPassword.Text == txtConfirmPassword.Text)
+                    {
+                        DialogResult result = MessageBox.Show("Do you want to save?", "Admin", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
-                //get set security questions
-                string[] answer = new string[5];
-                string[] question = new string[5];
+                        if (result == DialogResult.Yes)
+                        {
+                            md.RegisterAdmin(txtUsername.Text, ms.encryptPassword(txtPassword.Text), txtFirstName.Text, txtMiddleName.Text, txtLastName.Text, txtAddress.Text, cboGender.Text, txtEmailAddress.Text, txtMobileNumber.Text);
 
-                answer[0] = txtAnswer1.Text;
-                answer[1] = txtAnswer2.Text;
-                answer[2] = txtAnswer3.Text;
-                answer[3] = txtAnswer4.Text;
-                answer[4] = txtAnswer5.Text;
+                            //get set security questions
+                            string[] answer = new string[5];
+                            string[] question = new string[5];
 
-                question[0] = "Who is your favorite actor, musician, or artist?";
-                question[1] = "What is your mother’s maiden name?";
-                question[2] = "What is your favorite color?";
-                question[3] = "In what city were you born?";
-                question[4] = "What is the name of your favorite pet?";
+                            answer[0] = txtAnswer1.Text;
+                            answer[1] = txtAnswer2.Text;
+                            answer[2] = txtAnswer3.Text;
+                            answer[3] = txtAnswer4.Text;
+                            answer[4] = txtAnswer5.Text;
 
-                md.RegisterAdminSecurityQuestion(txtUsername.Text, ms.encryptPassword(txtPassword.Text), answer, question);
-                
-                MessageBox.Show("Admin account created succesdul", "Success!", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                            question[0] = "Who is your favorite actor, musician, or artist?";
+                            question[1] = "What is your mother’s maiden name?";
+                            question[2] = "What is your favorite color?";
+                            question[3] = "In what city were you born?";
+                            question[4] = "What is the name of your favorite pet?";
 
-                this.Hide();
-                RestartsApp();//to restart the app
+                            md.RegisterAdminSecurityQuestion(txtUsername.Text, ms.encryptPassword(txtPassword.Text), answer, question);
+
+                            MessageBox.Show("Admin account created succesdul", "Success!", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                            this.Hide();
+                            RestartsApp();//to restart the app
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("The specified password do not match!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        txtConfirmPassword.Text = "";
+                        txtConfirmPassword.Focus();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("The specified email is invalid!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtEmailAddress.Focus();
+                }
+            }
+            else
+            {
+                MessageBox.Show("All Fields are required", "Fields", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (txtAnswer5.Text == "") { txtAnswer5.Focus(); }
+                if (txtAnswer4.Text == "") { txtAnswer4.Focus(); }
+                if (txtAnswer3.Text == "") { txtAnswer3.Focus(); }
+                if (txtAnswer2.Text == "") { txtAnswer2.Focus(); }
+                if (txtAnswer1.Text == "") { txtAnswer1.Focus(); }
+                if (txtConfirmPassword.Text == "") { txtConfirmPassword.Focus(); }
+                if (txtPassword.Text == "") { txtPassword.Focus(); }
+                if (txtUsername.Text == "") { txtUsername.Focus(); }
+                if (txtMobileNumber.Text == "") { txtMobileNumber.Focus(); }
+                if (txtEmailAddress.Text == "") { txtEmailAddress.Focus(); }
+                if (txtAddress.Text == "") { txtAddress.Focus(); }
+                if (txtLastName.Text == "") { txtLastName.Focus(); }
+                if (txtFirstName.Text == "") { txtFirstName.Focus(); }
             }
         }
 
@@ -212,6 +261,7 @@ namespace ClassSchedulingComputerAided
         private void btnNext_Click(object sender, EventArgs e)
         {
             pnlAdmin.Location = new Point(-437, 35);
+            txtUsername.Focus();
         }
 
         private void btnBack_Click(object sender, EventArgs e)

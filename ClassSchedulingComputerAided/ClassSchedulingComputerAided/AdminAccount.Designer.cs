@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdminAccount));
-            this.cboGender = new System.Windows.Forms.ComboBox();
             this.txtConfirmPassword = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
@@ -37,7 +36,6 @@
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtAddress = new System.Windows.Forms.TextBox();
-            this.txtMobileNumber = new System.Windows.Forms.TextBox();
             this.txtEmailAddress = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -68,23 +66,12 @@
             this.label17 = new System.Windows.Forms.Label();
             this.lbl = new System.Windows.Forms.Label();
             this.btnNext = new MetroFramework.Controls.MetroButton();
+            this.txtMobileNumber = new System.Windows.Forms.MaskedTextBox();
+            this.cboGender = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
             this.pnlAdmin.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // cboGender
-            // 
-            this.cboGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboGender.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboGender.FormattingEnabled = true;
-            this.cboGender.Items.AddRange(new object[] {
-            "Male",
-            "Female"});
-            this.cboGender.Location = new System.Drawing.Point(177, 191);
-            this.cboGender.Name = "cboGender";
-            this.cboGender.Size = new System.Drawing.Size(210, 25);
-            this.cboGender.TabIndex = 7;
             // 
             // txtConfirmPassword
             // 
@@ -150,14 +137,6 @@
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(210, 87);
             this.txtAddress.TabIndex = 9;
-            // 
-            // txtMobileNumber
-            // 
-            this.txtMobileNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMobileNumber.Location = new System.Drawing.Point(177, 374);
-            this.txtMobileNumber.Name = "txtMobileNumber";
-            this.txtMobileNumber.Size = new System.Drawing.Size(210, 22);
-            this.txtMobileNumber.TabIndex = 13;
             // 
             // txtEmailAddress
             // 
@@ -317,6 +296,7 @@
             // pnlAdmin
             // 
             this.pnlAdmin.BackColor = System.Drawing.Color.Gainsboro;
+            this.pnlAdmin.Controls.Add(this.txtMobileNumber);
             this.pnlAdmin.Controls.Add(this.txtAnswer5);
             this.pnlAdmin.Controls.Add(this.txtAnswer4);
             this.pnlAdmin.Controls.Add(this.txtAnswer3);
@@ -337,7 +317,6 @@
             this.pnlAdmin.Controls.Add(this.txtUsername);
             this.pnlAdmin.Controls.Add(this.label5);
             this.pnlAdmin.Controls.Add(this.txtAddress);
-            this.pnlAdmin.Controls.Add(this.txtMobileNumber);
             this.pnlAdmin.Controls.Add(this.txtEmailAddress);
             this.pnlAdmin.Controls.Add(this.label9);
             this.pnlAdmin.Controls.Add(this.label10);
@@ -476,11 +455,33 @@
             this.btnNext.Text = "NEXT";
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
+            // txtMobileNumber
+            // 
+            this.txtMobileNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.txtMobileNumber.Location = new System.Drawing.Point(177, 377);
+            this.txtMobileNumber.Mask = "(+63)000-0000-000";
+            this.txtMobileNumber.Name = "txtMobileNumber";
+            this.txtMobileNumber.Size = new System.Drawing.Size(210, 22);
+            this.txtMobileNumber.TabIndex = 248;
+            // 
+            // cboGender
+            // 
+            this.cboGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboGender.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboGender.FormattingEnabled = true;
+            this.cboGender.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.cboGender.Location = new System.Drawing.Point(177, 191);
+            this.cboGender.Name = "cboGender";
+            this.cboGender.Size = new System.Drawing.Size(210, 25);
+            this.cboGender.TabIndex = 7;
+            // 
             // frmAdminAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(440, 538);
+            this.ClientSize = new System.Drawing.Size(867, 538);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlAdmin);
             this.Name = "frmAdminAccount";
@@ -497,7 +498,6 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox cboGender;
         private System.Windows.Forms.TextBox txtConfirmPassword;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtPassword;
@@ -505,7 +505,6 @@
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtAddress;
-        private System.Windows.Forms.TextBox txtMobileNumber;
         private System.Windows.Forms.TextBox txtEmailAddress;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
@@ -536,5 +535,7 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
         private Bunifu.Framework.UI.BunifuImageButton btnExit;
+        private System.Windows.Forms.MaskedTextBox txtMobileNumber;
+        private System.Windows.Forms.ComboBox cboGender;
     }
 }
