@@ -57,7 +57,7 @@ namespace ClassSchedulingComputerAided
                     c.rdoActive.Checked = true;
                 else
                     c.rdoActive.Checked = false;
-                c.btnSave.Text = "EDIT";
+                c.btnSave.Text = "SAVE ";
                 curriculumData.c_id = row.Cells[0].Value.ToString();
 
                 this.Hide();
@@ -67,6 +67,28 @@ namespace ClassSchedulingComputerAided
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvCurriculum.SelectedRows)
+            {
+                string id = row.Cells[0].Value.ToString();
+                string programName = row.Cells[1].Value.ToString();
+                string year = row.Cells[2].Value.ToString();
+                DialogResult dr = MessageBox.Show("Are you sure to delete "+programName+" "+year +"?\n This will affect all data such as: \n Professor's schedule \n Professor's preferred time \n Class Schedule.", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (DialogResult.Yes == dr)
+                {
+                    DialogResult drr = MessageBox.Show("You may not able to view some schedules affected. Are you sure you want to proceed?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (DialogResult.Yes == drr)
+                    {
+                        md.C_DeleteCurriculumProgram(id);
+
+                        dgvCurriculum.DataSource = md.C_dgv_showCurriculum().DataSource;
+                        dgvCurriculum.Columns[0].Visible = false;
+                    }
+                }
+            }
         }
     }
 }

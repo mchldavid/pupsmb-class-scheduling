@@ -23,6 +23,7 @@ namespace ClassSchedulingComputerAided
         {
             string[] userInfo = new string[11];
 
+            cboCourseDepartment.Items.Clear();
             cboCourseDepartment.Items.Add("NONE");
             for (int x = 0; x < md.Sections_ListCourse().Length; x++)
                 if (md.Sections_ListCourse().GetValue(x).ToString() != "")
@@ -146,6 +147,50 @@ namespace ClassSchedulingComputerAided
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            btnCancel.Visible = true;
+            btnSave.Visible = true;
+
+            btnEdit.Visible = false;
+
+            txtFirstName.Enabled = true;
+            txtMiddleName.Enabled = true;
+            txtLastName.Enabled = true;
+            txtAddress.Enabled = true;
+            groupBox1.Enabled = true;
+            groupBox2.Enabled = true;
+            cboCourseDepartment.Enabled = true;
+            txtEmailAddress.Enabled = true;
+            txtMobileNumber.Enabled = true;
+            txtUsername.Enabled = true;
+            txtPassword.Enabled = true;
+            txtConfirmPassword.Enabled = true;
+        }
+
+        private void btnCancel_Click_1(object sender, EventArgs e)
+        {
+            btnCancel.Visible = false;
+            btnSave.Visible = false;
+
+            btnEdit.Visible = true;
+
+            txtFirstName.Enabled = false;
+            txtMiddleName.Enabled = false;
+            txtLastName.Enabled = false;
+            txtAddress.Enabled = false;
+            groupBox1.Enabled = false;
+            groupBox2.Enabled = false;
+            cboCourseDepartment.Enabled = false;
+            txtEmailAddress.Enabled = false;
+            txtMobileNumber.Enabled = false;
+            txtUsername.Enabled = false;
+            txtPassword.Enabled = false;
+            txtConfirmPassword.Enabled = false;
+
+            InformtionControl_Load(sender, e);
         }
 
     }

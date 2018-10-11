@@ -640,11 +640,11 @@ namespace ClassSchedulingComputerAided
                 string sql = "";
                 if (by == "Subject Code")
                 {
-                    sql = "SELECT subjects_id AS 'ID', course AS 'Course', yearLevel AS 'Year_Level', subjectCode AS 'Code', subjectDescription AS 'Description', lectureHours AS 'Lecture_Hours', laboratoryHours AS 'Lab_Hours', units AS 'Units' FROM tbl_subjects t WHERE curriculums_id = @id AND semester = @sem AND subjectCode LIKE '" + search + "%';";
+                    sql = "SELECT subjects_id AS 'ID', course AS 'Program', yearLevel AS 'Year Level', subjectCode AS 'Code', subjectDescription AS 'Description', lectureHours AS 'Lecture Hours', laboratoryHours AS 'Lab Hours', units AS 'Units' FROM tbl_subjects t WHERE curriculums_id = @id AND semester = @sem AND subjectCode LIKE '" + search + "%' ORDER BY yearLevel ASC;";
                 }
                 else if (by == "Subject Description")
                 {
-                    sql = "SELECT subjects_id AS 'ID', course AS 'Course', yearLevel AS 'Year_Level', subjectCode AS 'Code', subjectDescription AS 'Description', lectureHours AS 'Lecture_Hours', laboratoryHours AS 'Lab_Hours', units AS 'Units' FROM tbl_subjects t WHERE curriculums_id = @id AND semester = @sem AND subjectDescription LIKE '" + search + "%';";
+                    sql = "SELECT subjects_id AS 'ID', course AS 'Course', yearLevel AS 'Year_Level', subjectCode AS 'Code', subjectDescription AS 'Description', lectureHours AS 'Lecture_Hours', laboratoryHours AS 'Lab_Hours', units AS 'Units' FROM tbl_subjects t WHERE curriculums_id = @id AND semester = @sem AND subjectDescription LIKE '" + search + "%' ORDER BY yearLevel ASC;";
                 }
                 MySqlCommand com = new MySqlCommand(sql, con);
                 com.Parameters.AddWithValue("@id", curriculumData.c_id);
@@ -702,7 +702,7 @@ namespace ClassSchedulingComputerAided
             try
             {
                 con.Open();
-                string sql = "SELECT subjects_id AS 'ID', course AS 'Course', yearLevel AS 'Year_Level', subjectCode AS 'Code', subjectDescription AS 'Description', lectureHours AS 'Lecture_Hours', laboratoryHours AS 'Lab_Hours', units AS 'Units' FROM tbl_subjects t WHERE curriculums_id = @id AND semester = @sem;";
+                string sql = "SELECT subjects_id AS 'ID', course AS 'Program', yearLevel AS 'Year Level', subjectCode AS 'Code', subjectDescription AS 'Description', lectureHours AS 'Lecture Hours', laboratoryHours AS 'Lab Hours', units AS 'Units' FROM tbl_subjects t WHERE curriculums_id = @id AND semester = @sem ORDER BY yearLevel ASC;";
                 MySqlCommand com = new MySqlCommand(sql, con);
                 com.Parameters.AddWithValue("@id", curriculumData.c_id);
                 com.Parameters.AddWithValue("@sem", curriculumData.c_semester);
@@ -1746,6 +1746,61 @@ namespace ClassSchedulingComputerAided
                 con.Close();
             }
             return dgv1;
+        }
+
+        public void C_DeleteCurriculumProgram(string id)
+        {
+            try
+            {
+                con.Open();
+                string subjects = "DELETE FROM tbl_subjects WHERE curriculums_id = @id";
+                MySqlCommand com5 = new MySqlCommand(subjects, con);
+                com5.Parameters.AddWithValue("@id", id);
+                com5.ExecuteNonQuery();
+                con.Close();
+
+                con.Open();
+                string studentScheduled = "DELETE FROM tbl_students_scheduled WHERE curriculums_id = @id";
+                MySqlCommand com4 = new MySqlCommand(studentScheduled, con);
+                com4.Parameters.AddWithValue("@id", id);
+                com4.ExecuteNonQuery();
+                con.Close();
+
+                con.Open();
+                string roomScheduled = "DELETE FROM tbl_room_scheduled WHERE curriculums_id = @id";
+                MySqlCommand com3 = new MySqlCommand(roomScheduled, con);
+                com3.Parameters.AddWithValue("@id", id);
+                com3.ExecuteNonQuery();
+                con.Close();
+
+                con.Open();
+                string preferredsubjects = "DELETE FROM tbl_preferredsubejects WHERE curriculums_id = @id";
+                MySqlCommand com2 = new MySqlCommand(preferredsubjects, con);
+                com2.Parameters.AddWithValue("@id", id);
+                com2.ExecuteNonQuery();
+                con.Close();
+
+                con.Open();
+                string course = "DELETE FROM tbl_course WHERE curriculums_id = @id";
+                MySqlCommand com = new MySqlCommand(course, con);
+                com.Parameters.AddWithValue("@id", id);
+                com.ExecuteNonQuery();
+                con.Close();
+
+                con.Open();
+                string curriculum = "DELETE FROM tbl_curriculums WHERE curriculums_id = @id";
+                MySqlCommand com1 = new MySqlCommand(curriculum, con);
+                com1.Parameters.AddWithValue("@id", id);
+                com1.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "C_DeleteCurriculumProgram");
+            }
+            finally
+            {
+                con.Close();
+            }
         }
 
         public void Prof_DeleteSchedule(string prefSched_id)
@@ -3018,5 +3073,128 @@ namespace ClassSchedulingComputerAided
             }
             return dgv1;
         }
+
+        //=================CHECK IF EXISITING==============
+        public bool existUsername(string username)
+        {
+            bool result = false;
+            try
+            {
+                con.Open();
+                string sql = "SELECT * FROM tbl_users WHERE username = @u;";
+                MySqlCommand com = new MySqlCommand(sql, con);
+                com.Parameters.AddWithValue("@u", username);
+                com.ExecuteNonQuery();
+
+                MySqlDataReader dr = com.ExecuteReader();
+                if (dr.Read())
+                {
+                    result = true;
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "existUsername");
+            }
+            finally
+            {
+                con.Close();
+            }
+            return result;
+        }
+
+        public bool existPreferredSubject(string id, string semester, string schoolYear)
+        {
+            bool result = false;
+            try
+            {
+                con.Open();
+                string sql = "SELECT * FROM tbl_preferredsubjects WHERE subjects_id = @id AND semester = @sem AND schoolYear = @sY;";
+                MySqlCommand com = new MySqlCommand(sql, con);
+                com.Parameters.AddWithValue("@id", id);
+                com.Parameters.AddWithValue("@sem", semester);
+                com.Parameters.AddWithValue("@sY", schoolYear);
+                com.ExecuteNonQuery();
+
+                MySqlDataReader dr = com.ExecuteReader();
+                if (dr.Read())
+                {
+                    result = true;
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "existUsername");
+            }
+            finally
+            {
+                con.Close();
+            }
+            return result;
+        }
+
+        public bool existProgramCourse(string id, string code, string description)
+        {
+            bool result = false;
+            try
+            {
+                con.Open();
+                string sql = "SELECT * FROM tbl_subjects WHERE curriculums_id = @id AND subjectCode = @sC AND subjectDescription = @sD;";
+                MySqlCommand com = new MySqlCommand(sql, con);
+                com.Parameters.AddWithValue("@id", id);
+                com.Parameters.AddWithValue("@sC", code);
+                com.Parameters.AddWithValue("@sD", description);
+                com.ExecuteNonQuery();
+
+                MySqlDataReader dr = com.ExecuteReader();
+                if (dr.Read())
+                {
+                    result = true;
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "existUsername");
+            }
+            finally
+            {
+                con.Close();
+            }
+            return result;
+        }
+
+        public bool existProgram(string name, string year)
+        {
+            bool result = false;
+            try
+            {
+                con.Open();
+                string sql = "SELECT * FROM tbl_curriculums WHERE programName = @id AND curriculumYear = @sC;";
+                MySqlCommand com = new MySqlCommand(sql, con);
+                com.Parameters.AddWithValue("@id", name);
+                com.Parameters.AddWithValue("@sC", year);
+                com.ExecuteNonQuery();
+
+                MySqlDataReader dr = com.ExecuteReader();
+                if (dr.Read())
+                {
+                    result = true;
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "existUsername");
+            }
+            finally
+            {
+                con.Close();
+            }
+            return result;
+        }
+
     }
 }

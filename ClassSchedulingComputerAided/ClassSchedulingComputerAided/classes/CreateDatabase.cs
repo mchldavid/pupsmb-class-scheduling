@@ -239,10 +239,10 @@ namespace ClassSchedulingComputerAided
                     + "KEY `FK_tbl_preferredsubjects_1` (`users_id`), "
                     + "KEY `FK_tbl_preferredsubjects_2` (`subjects_id`), "
                     + "KEY `FK_tbl_preferredsubjects_3` (`curriculums_id`), "
-                    + "CONSTRAINT `FK_tbl_preferredsubjects_3` FOREIGN KEY (`curriculums_id`) REFERENCES `tbl_curriculums` (`curriculums_id`), "
                     + "CONSTRAINT `FK_tbl_preferredsubjects_1` FOREIGN KEY (`users_id`) REFERENCES `tbl_users` (`users_id`), "
-                    + "CONSTRAINT `FK_tbl_preferredsubjects_2` FOREIGN KEY (`subjects_id`) REFERENCES `tbl_subjects` (`subjects_id`) "
-                    + ") ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;"
+                    + "CONSTRAINT `FK_tbl_preferredsubjects_2` FOREIGN KEY (`subjects_id`) REFERENCES `tbl_subjects` (`subjects_id`), "
+                    + "CONSTRAINT `FK_tbl_preferredsubjects_3` FOREIGN KEY (`curriculums_id`) REFERENCES `tbl_curriculums` (`curriculums_id`) "
++ ") ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;"
                     + "", dbconn))
                 {
                     dbconn.Open();

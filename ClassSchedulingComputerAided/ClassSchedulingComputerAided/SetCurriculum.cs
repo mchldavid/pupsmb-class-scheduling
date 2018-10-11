@@ -210,6 +210,7 @@ namespace ClassSchedulingComputerAided
         private void btnImportData_Click(object sender, EventArgs e)
         {
             int countRetrieveData = 0;
+            int countReplaced = 0;
             lbl_course_id.Text = md.GetCourseID(cboCourse.Text, curriculumData.c_id);// to get course id
             //dgvData.SelectAll();
             int r = 0;
@@ -240,13 +241,23 @@ namespace ClassSchedulingComputerAided
                 {
                     if (getSection == "1")
                     {
+
                         string subjectCode = dgvData.Rows[i].Cells[1].Value.ToString();
                         string subjecDescription = dgvData.Rows[i].Cells[2].Value.ToString();
                         string lecHours = dgvData.Rows[i].Cells[3].Value.ToString();
                         string labHours = dgvData.Rows[i].Cells[4].Value.ToString();
                         string units = dgvData.Rows[i].Cells[6].Value.ToString();
                         string yearLevel = getYear;
-                        md.C_AddSubjects(curriculumData.c_id, lbl_course_id.Text, cboCourse.Text, subjectCode, subjecDescription, lecHours, labHours, units, yearLevel, curriculumData.c_semester);
+
+                        if (md.existProgramCourse(curriculumData.c_id, subjectCode, subjecDescription) == false)
+                        {
+                            md.C_AddSubjects(curriculumData.c_id, lbl_course_id.Text, cboCourse.Text, subjectCode, subjecDescription, lecHours, labHours, units, yearLevel, curriculumData.c_semester);
+                        }
+                        else
+                        {
+                            countReplaced++;
+                        }
+                        
                         countRetrieveData++;
                         pnl_import.Visible = false;
                     }
@@ -254,8 +265,23 @@ namespace ClassSchedulingComputerAided
             }
             dgvListSubject.DataSource = md.dgv_showSubjectCurriculum().DataSource;
             dgvListSubject.Columns[0].Visible = false;
-            if(countRetrieveData > 0)
-                MessageBox.Show("Import Program Course successfully", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            //prompt if the import had a data
+            if (countRetrieveData > 0)
+            {
+                if (countReplaced == 0)
+                {
+                    MessageBox.Show("Import Program Course successfully.", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtFile.Text = "";
+                    cboSheets.Items.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Import Program Course successfully. Some courses are already on the list.", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtFile.Text = "";
+                    cboSheets.Items.Clear();
+                }
+            }
             else
                 MessageBox.Show("No data was found! Please try to check program acronym if it match with the program acronym in the CSV file you try to import.", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

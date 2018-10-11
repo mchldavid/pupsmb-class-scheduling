@@ -73,34 +73,43 @@ namespace ClassSchedulingComputerAided
                                     DialogResult dr = MessageBox.Show("Do you want to save?", "Save", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                                     if (dr == DialogResult.Yes)
                                     {
-                                        if (rdoFulltimer.Checked == true)
-                                            teachStatus = "Fulltimer";
-                                        if (rdoParttimer.Checked == true)
-                                            teachStatus = "Parttimer";
-                                        if (rdoRetiree.Checked == true)
-                                            teachStatus = "Retiree";
-                                        md.RegisterUser(txtUsername.Text, ms.encryptPassword(txtPassword.Text), txtFirstName.Text, txtMiddleName.Text, txtLastName.Text, txtAddress.Text, gender, teachStatus, cboCourseDepartment.Text, txtEmailAddress.Text, cleanMobileNumber(txtMobileNumber.Text));
+                                        //check if the new username is existing
+                                        if (md.existUsername(txtUsername.Text) == false)
+                                        {
+                                            if (rdoFulltimer.Checked == true)
+                                                teachStatus = "Fulltimer";
+                                            if (rdoParttimer.Checked == true)
+                                                teachStatus = "Parttimer";
+                                            if (rdoRetiree.Checked == true)
+                                                teachStatus = "Retiree";
+                                            md.RegisterUser(txtUsername.Text, ms.encryptPassword(txtPassword.Text), txtFirstName.Text, txtMiddleName.Text, txtLastName.Text, txtAddress.Text, gender, teachStatus, cboCourseDepartment.Text, txtEmailAddress.Text, cleanMobileNumber(txtMobileNumber.Text));
 
-                                        //get set security questions
-                                        string[] answer = new string[5];
-                                        string[] question = new string[5];
+                                            //get set security questions
+                                            string[] answer = new string[5];
+                                            string[] question = new string[5];
 
-                                        answer[0] = txtAnswer1.Text;
-                                        answer[1] = txtAnswer2.Text;
-                                        answer[2] = txtAnswer3.Text;
-                                        answer[3] = txtAnswer4.Text;
-                                        answer[4] = txtAnswer5.Text;
+                                            answer[0] = txtAnswer1.Text;
+                                            answer[1] = txtAnswer2.Text;
+                                            answer[2] = txtAnswer3.Text;
+                                            answer[3] = txtAnswer4.Text;
+                                            answer[4] = txtAnswer5.Text;
 
-                                        question[0] = "Who is your favorite actor, musician, or artist?";
-                                        question[1] = "What is your mother’s maiden name?";
-                                        question[2] = "What is your favorite color?";
-                                        question[3] = "In what city were you born?";
-                                        question[4] = "What is the name of your favorite pet?";
+                                            question[0] = "Who is your favorite actor, musician, or artist?";
+                                            question[1] = "What is your mother’s maiden name?";
+                                            question[2] = "What is your favorite color?";
+                                            question[3] = "In what city were you born?";
+                                            question[4] = "What is the name of your favorite pet?";
 
-                                        md.RegisterSecurityQuestion(txtUsername.Text, ms.encryptPassword(txtPassword.Text), answer, question);
-                                        frmLogin l = new frmLogin();
-                                        l.Show();
-                                        this.Hide();
+                                            md.RegisterSecurityQuestion(txtUsername.Text, ms.encryptPassword(txtPassword.Text), answer, question);
+                                            frmLogin l = new frmLogin();
+                                            l.Show();
+                                            this.Hide();
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("The username is already exist!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                            txtUsername.Focus();
+                                        }
                                     }
                                 }
                                 else

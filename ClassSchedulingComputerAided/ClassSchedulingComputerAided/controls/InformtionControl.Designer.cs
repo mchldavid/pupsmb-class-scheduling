@@ -60,6 +60,8 @@
             this.txtConfirmPassword = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.btnEdit = new MetroFramework.Controls.MetroButton();
+            this.btnCancel = new MetroFramework.Controls.MetroButton();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -187,7 +189,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(53, 177);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 17);
@@ -198,7 +200,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(53, 129);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(71, 17);
@@ -209,7 +211,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(53, 83);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(88, 17);
@@ -220,7 +222,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(53, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 17);
@@ -229,18 +231,19 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(535, 406);
+            this.btnSave.Location = new System.Drawing.Point(442, 406);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(87, 32);
             this.btnSave.TabIndex = 241;
             this.btnSave.Text = "SAVE";
+            this.btnSave.Visible = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(47, 420);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(125, 17);
@@ -250,6 +253,7 @@
             // cboCourseDepartment
             // 
             this.cboCourseDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCourseDepartment.Enabled = false;
             this.cboCourseDepartment.FormattingEnabled = true;
             this.cboCourseDepartment.Location = new System.Drawing.Point(172, 417);
             this.cboCourseDepartment.Name = "cboCourseDepartment";
@@ -260,7 +264,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label11.ForeColor = System.Drawing.Color.Black;
             this.label11.Location = new System.Drawing.Point(378, 273);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(112, 17);
@@ -271,7 +275,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label8.ForeColor = System.Drawing.Color.Black;
             this.label8.Location = new System.Drawing.Point(378, 83);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(99, 17);
@@ -282,7 +286,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label10.ForeColor = System.Drawing.Color.Black;
             this.label10.Location = new System.Drawing.Point(378, 227);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(63, 17);
@@ -293,7 +297,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label9.ForeColor = System.Drawing.Color.Black;
             this.label9.Location = new System.Drawing.Point(378, 178);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(67, 17);
@@ -304,7 +308,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.Location = new System.Drawing.Point(378, 34);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(89, 17);
@@ -315,6 +319,7 @@
             // 
             this.txtFirstName.BackColor = System.Drawing.Color.White;
             this.txtFirstName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtFirstName.Enabled = false;
             this.txtFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFirstName.Location = new System.Drawing.Point(50, 54);
             this.txtFirstName.Name = "txtFirstName";
@@ -325,6 +330,7 @@
             // 
             this.txtMiddleName.BackColor = System.Drawing.Color.White;
             this.txtMiddleName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMiddleName.Enabled = false;
             this.txtMiddleName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMiddleName.Location = new System.Drawing.Point(50, 105);
             this.txtMiddleName.Name = "txtMiddleName";
@@ -335,6 +341,7 @@
             // 
             this.txtLastName.BackColor = System.Drawing.Color.White;
             this.txtLastName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtLastName.Enabled = false;
             this.txtLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastName.Location = new System.Drawing.Point(50, 152);
             this.txtLastName.Name = "txtLastName";
@@ -343,6 +350,7 @@
             // 
             // txtAddress
             // 
+            this.txtAddress.Enabled = false;
             this.txtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAddress.Location = new System.Drawing.Point(50, 198);
             this.txtAddress.Multiline = true;
@@ -352,6 +360,7 @@
             // 
             // txtEmailAddress
             // 
+            this.txtEmailAddress.Enabled = false;
             this.txtEmailAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmailAddress.Location = new System.Drawing.Point(372, 54);
             this.txtEmailAddress.Name = "txtEmailAddress";
@@ -360,6 +369,7 @@
             // 
             // txtMobileNumber
             // 
+            this.txtMobileNumber.Enabled = false;
             this.txtMobileNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txtMobileNumber.Location = new System.Drawing.Point(372, 105);
             this.txtMobileNumber.Mask = "(+63)000-0000-000";
@@ -369,6 +379,7 @@
             // 
             // txtUsername
             // 
+            this.txtUsername.Enabled = false;
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.Location = new System.Drawing.Point(372, 198);
             this.txtUsername.Name = "txtUsername";
@@ -377,6 +388,7 @@
             // 
             // txtPassword
             // 
+            this.txtPassword.Enabled = false;
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(372, 248);
             this.txtPassword.Name = "txtPassword";
@@ -386,6 +398,7 @@
             // 
             // txtConfirmPassword
             // 
+            this.txtConfirmPassword.Enabled = false;
             this.txtConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtConfirmPassword.Location = new System.Drawing.Point(372, 297);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
@@ -413,6 +426,25 @@
             this.metroLabel2.TabIndex = 135;
             this.metroLabel2.Text = "Edit Information";
             this.metroLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(535, 406);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(87, 32);
+            this.btnEdit.TabIndex = 241;
+            this.btnEdit.Text = "EDIT";
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(535, 406);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(87, 32);
+            this.btnCancel.TabIndex = 241;
+            this.btnCancel.Text = "CANCEL";
+            this.btnCancel.Visible = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click_1);
             // 
             // InformtionControl
             // 
@@ -443,6 +475,8 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label7);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnEdit);
             this.Name = "InformtionControl";
             this.Size = new System.Drawing.Size(668, 451);
             this.Load += new System.EventHandler(this.InformtionControl_Load);
@@ -490,5 +524,7 @@
         private System.Windows.Forms.TextBox txtConfirmPassword;
         private System.Windows.Forms.Panel panel1;
         public MetroFramework.Controls.MetroLabel metroLabel2;
+        public MetroFramework.Controls.MetroButton btnEdit;
+        public MetroFramework.Controls.MetroButton btnCancel;
     }
 }

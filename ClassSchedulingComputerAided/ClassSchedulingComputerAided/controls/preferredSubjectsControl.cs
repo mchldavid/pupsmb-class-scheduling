@@ -89,16 +89,22 @@ namespace ClassSchedulingComputerAided
         {
             foreach (DataGridViewRow row in dgvAddSubject.SelectedRows)
             {
-                md.Prof_AddSubjects(row.Cells[0].Value.ToString(), cboSemester.Text, cboSchoolYear.Text, row.Cells[5].Value.ToString());
+                if (md.existPreferredSubject(row.Cells[0].Value.ToString(), cboSemester.Text, cboSchoolYear.Text) == false)
+                {
+                    md.Prof_AddSubjects(row.Cells[0].Value.ToString(), cboSemester.Text, cboSchoolYear.Text, row.Cells[5].Value.ToString());
 
-                dgvListSubject.DataSource = md.dgv_showPreferredSubjects(cboSemester.Text, cboSchoolYear.Text).DataSource;
-                dgvListSubject.Columns[0].Visible = false;
-                lblTotalUnits.Text = md.getTotalUnits(cboSemester.Text, cboSchoolYear.Text).ToString();
-                lblTotalSubjects.Text = md.getTotalSubjects(cboSemester.Text, cboSchoolYear.Text).ToString();
-                MessageBox.Show("You added " + row.Cells[2].Value.ToString() + " into your preferred subjects", "Adding of Subject");
-
-                //audit
-                md.AuditTrail(AuditTrailData.username, "Added", row.Cells[2].Value.ToString() + " preferred subject.");
+                    dgvListSubject.DataSource = md.dgv_showPreferredSubjects(cboSemester.Text, cboSchoolYear.Text).DataSource;
+                    dgvListSubject.Columns[0].Visible = false;
+                    lblTotalUnits.Text = md.getTotalUnits(cboSemester.Text, cboSchoolYear.Text).ToString();
+                    lblTotalSubjects.Text = md.getTotalSubjects(cboSemester.Text, cboSchoolYear.Text).ToString();
+                    MessageBox.Show("You added " + row.Cells[2].Value.ToString() + " into your preferred subjects", "Adding of Subject",MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //audit
+                    md.AuditTrail(AuditTrailData.username, "Added", row.Cells[2].Value.ToString() + " preferred subject.");
+                }
+                else
+                {
+                    MessageBox.Show("The " + row.Cells[2].Value.ToString() + " is already on your preferred subjects", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
 

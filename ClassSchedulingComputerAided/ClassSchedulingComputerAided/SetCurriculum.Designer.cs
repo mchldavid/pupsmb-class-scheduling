@@ -506,9 +506,9 @@
             this.label12.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label12.Location = new System.Drawing.Point(5, 9);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(331, 36);
+            this.label12.Size = new System.Drawing.Size(193, 36);
             this.label12.TabIndex = 138;
-            this.label12.Text = "SET COURSES SUBJECTS";
+            this.label12.Text = "SET COURSES";
             // 
             // lbl_title
             // 
@@ -544,7 +544,7 @@
             this.panel3.Controls.Add(this.metroLabel6);
             this.panel3.Location = new System.Drawing.Point(171, 68);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(333, 437);
+            this.panel3.Size = new System.Drawing.Size(334, 437);
             this.panel3.TabIndex = 180;
             // 
             // txtSubjectCode
@@ -605,6 +605,7 @@
             // 
             // pnl_import
             // 
+            this.pnl_import.BackColor = System.Drawing.Color.Gainsboro;
             this.pnl_import.Controls.Add(this.dgvData);
             this.pnl_import.Controls.Add(this.metroLabel12);
             this.pnl_import.Controls.Add(this.txtFile);
@@ -616,7 +617,7 @@
             this.pnl_import.Controls.Add(this.panel6);
             this.pnl_import.Location = new System.Drawing.Point(171, 68);
             this.pnl_import.Name = "pnl_import";
-            this.pnl_import.Size = new System.Drawing.Size(334, 434);
+            this.pnl_import.Size = new System.Drawing.Size(333, 434);
             this.pnl_import.TabIndex = 244;
             this.pnl_import.Visible = false;
             // 
@@ -851,8 +852,8 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnl);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.pnl_import);
+            this.Controls.Add(this.panel3);
             this.MaximizeBox = false;
             this.Movable = false;
             this.Name = "frmSetCurriculum";

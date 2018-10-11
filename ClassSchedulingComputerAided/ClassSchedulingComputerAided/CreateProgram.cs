@@ -32,24 +32,30 @@ namespace ClassSchedulingComputerAided
                 DialogResult dr = MessageBox.Show("Do you want to save?", "Save", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (dr == DialogResult.Yes)
                 {
-                    
-                    //create program into a curriculum
-                    curriculumData.c_id = md.CreateCurriculum(txtProgramName.Text, usersData.a_id, dt, txtCurriculumYear.Text);
-                    //create course into a curriculum
-                    md.C_AddCourses(curriculumData.c_id, txtProgramName.Text, txtProgramAcronym.Text);
+                    if (md.existProgram(txtProgramName.Text, txtCurriculumYear.Text) == false)
+                    {
+                        //create program into a curriculum
+                        curriculumData.c_id = md.CreateCurriculum(txtProgramName.Text, usersData.a_id, dt, txtCurriculumYear.Text);
+                        //create course into a curriculum
+                        md.C_AddCourses(curriculumData.c_id, txtProgramName.Text, txtProgramAcronym.Text);
 
-                    frmSemesterAndSchoolYear sas = new frmSemesterAndSchoolYear();
-                    sas.Show();
-                    this.Hide();
+                        frmSemesterAndSchoolYear sas = new frmSemesterAndSchoolYear();
+                        sas.Show();
+                        this.Hide();
 
-                    //audit
-                    md.AuditTrail(AuditTrailData.username, "Add", txtProgramName.Text + " program.");
+                        //audit
+                        md.AuditTrail(AuditTrailData.username, "Add", txtProgramName.Text + " program.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("The Program is already on the list.", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
             }
             else
             {
                 string dt = DateTime.Now.ToString("dddd, dd MMMM yyyy");
-                DialogResult dr = MessageBox.Show("Do you want to save the edit?", "Edit", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                DialogResult dr = MessageBox.Show("Save changes?", "SAVE", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (dr == DialogResult.Yes)
                 {
                     frmSemesterAndSchoolYear sc = new frmSemesterAndSchoolYear();
