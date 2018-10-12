@@ -212,84 +212,91 @@ namespace ClassSchedulingComputerAided
 
         private void btnImportData_Click(object sender, EventArgs e)
         {
-            int countRetrieveData = 0;
-            int countReplaced = 0;
-            lbl_course_id.Text = md.GetCourseID(cboCourse.Text, curriculumData.c_id);// to get course id
-            //dgvData.SelectAll();
-            int r = 0;
-            for (int i = 1; i < dgvData.Rows.Count - 1; i++)
+            try
             {
-                //md.C_AddSubjects(curriculumData.c_id, lbl_course_id.Text, cboCourse.Text, txtSubjectCode.Text, txtSubjectDescription.Text, cboLectureHours.SelectedItem.ToString(), cboLabHours.SelectedItem.ToString(), cboUnits.SelectedItem.ToString(), cboYearLevel.SelectedItem.ToString(), curriculumData.c_semester);
-
-                string pc = dgvData.Rows[i].Cells[0].Value.ToString();
-                string test = "";
-                string testData = "";
-                int a = 0;
-                foreach (char p in pc)
+                int countRetrieveData = 0;
+                int countReplaced = 0;
+                lbl_course_id.Text = md.GetCourseID(cboCourse.Text, curriculumData.c_id);// to get course id
+                //dgvData.SelectAll();
+                int r = 0;
+                for (int i = 1; i < dgvData.Rows.Count - 1; i++)
                 {
-                    if (p != ' ') { test += p; }
-                    else { if (a == 0) {  testData = test; a++; } }
-                }
-                string getSection;
-                string getYear;
+                    //md.C_AddSubjects(curriculumData.c_id, lbl_course_id.Text, cboCourse.Text, txtSubjectCode.Text, txtSubjectDescription.Text, cboLectureHours.SelectedItem.ToString(), cboLabHours.SelectedItem.ToString(), cboUnits.SelectedItem.ToString(), cboYearLevel.SelectedItem.ToString(), curriculumData.c_semester);
 
-                getSection = pc.Substring(pc.Length - 1, 1);
-                getYear = pc.Substring(pc.Length - 3, 1);
-                //if (getSection == '1')
-                //{
-                    
-                //}
-
-                if (testData == cboCourse.Text)
-                {
-                    if (getSection == "1")
+                    string pc = dgvData.Rows[i].Cells[0].Value.ToString();
+                    string test = "";
+                    string testData = "";
+                    int a = 0;
+                    foreach (char p in pc)
                     {
+                        if (p != ' ') { test += p; }
+                        else { if (a == 0) { testData = test; a++; } }
+                    }
+                    string getSection;
+                    string getYear;
 
-                        string subjectCode = dgvData.Rows[i].Cells[1].Value.ToString();
-                        string subjecDescription = dgvData.Rows[i].Cells[2].Value.ToString();
-                        string lecHours = dgvData.Rows[i].Cells[3].Value.ToString();
-                        string labHours = dgvData.Rows[i].Cells[4].Value.ToString();
-                        string units = dgvData.Rows[i].Cells[6].Value.ToString();
-                        string yearLevel = getYear;
+                    getSection = pc.Substring(pc.Length - 1, 1);
+                    getYear = pc.Substring(pc.Length - 3, 1);
+                    //if (getSection == '1')
+                    //{
 
-                        if (md.existProgramCourse(curriculumData.c_id, subjectCode, subjecDescription) == false)
+                    //}
+
+                    if (testData == cboCourse.Text)
+                    {
+                        if (getSection == "1")
                         {
-                            md.C_AddSubjects(curriculumData.c_id, lbl_course_id.Text, cboCourse.Text, subjectCode, subjecDescription, lecHours, labHours, units, yearLevel, curriculumData.c_semester);
+
+                            string subjectCode = dgvData.Rows[i].Cells[1].Value.ToString();
+                            string subjecDescription = dgvData.Rows[i].Cells[2].Value.ToString();
+                            string lecHours = dgvData.Rows[i].Cells[3].Value.ToString();
+                            string labHours = dgvData.Rows[i].Cells[4].Value.ToString();
+                            string units = dgvData.Rows[i].Cells[6].Value.ToString();
+                            string yearLevel = getYear;
+
+                            if (md.existProgramCourse(curriculumData.c_id, subjectCode, subjecDescription) == false)
+                            {
+                                md.C_AddSubjects(curriculumData.c_id, lbl_course_id.Text, cboCourse.Text, subjectCode, subjecDescription, lecHours, labHours, units, yearLevel, curriculumData.c_semester);
+                            }
+                            else
+                            {
+                                countReplaced++;
+                            }
+
+                            countRetrieveData++;
+                            pnl_import.Visible = false;
                         }
-                        else
-                        {
-                            countReplaced++;
-                        }
-                        
-                        countRetrieveData++;
-                        pnl_import.Visible = false;
                     }
                 }
-            }
-            dgvListSubject.DataSource = md.dgv_showSubjectCurriculum().DataSource;
-            dgvListSubject.Columns[0].Visible = false;
+                dgvListSubject.DataSource = md.dgv_showSubjectCurriculum().DataSource;
+                dgvListSubject.Columns[0].Visible = false;
 
-            //prompt if the import had a data
-            if (countRetrieveData > 0)
-            {
-                if (countReplaced == 0)
+                //prompt if the import had a data
+                if (countRetrieveData > 0)
                 {
-                    MessageBox.Show("Import Program Course successfully.", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    txtFile.Text = "";
-                    cboSheets.Items.Clear();
+                    if (countReplaced == 0)
+                    {
+                        MessageBox.Show("Import Program Course successfully.", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        txtFile.Text = "";
+                        cboSheets.Items.Clear();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Import Program Course successfully. Some courses are already on the list.", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        txtFile.Text = "";
+                        cboSheets.Items.Clear();
+                    }
                 }
                 else
-                {
-                    MessageBox.Show("Import Program Course successfully. Some courses are already on the list.", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    txtFile.Text = "";
-                    cboSheets.Items.Clear();
-                }
-            }
-            else
-                MessageBox.Show("No data was found! Please try to check program acronym if it match with the program acronym in the CSV file you try to import.", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("No data was found! Please try to check program acronym if it match with the program acronym in the CSV file you try to import.", "Unsuccessful", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            //audit
-            md.AuditTrail(AuditTrailData.username, "Add", cboCourse.Text + " imported from " + cboSheets.Text + ".");
+                //audit
+                md.AuditTrail(AuditTrailData.username, "Add", cboCourse.Text + " imported from " + cboSheets.Text + ".");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Invalid data in your file youre trying to import. Please recheck!", "Import", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnClose_Click_1(object sender, EventArgs e)
