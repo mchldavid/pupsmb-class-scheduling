@@ -37,19 +37,40 @@ namespace ClassSchedulingComputerAided
 
         private void btnSAVE_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Do you want to save connection configuration?", "Save connection", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-            if (DialogResult.Yes == dr)
-            {
-                Settings.Default["Server"] = txtHost.Text;
-                Settings.Default["DatabaseName"] = txtDatabase.Text;
-                Settings.Default["UsernameDB"] = txtUsername.Text;
-                Settings.Default["PasswordDB"] = txtPassword.Text;
-                Settings.Default["Port"] = txtPort.Text;
-                Settings.Default.Save();
 
-                this.Hide();
-                RestartsApp();
+            if (txtPort.Text != "")
+            {
+                if (txtHost.Text != "")
+                {
+                    if (txtDatabase.Text != "")
+                    {
+                        if (txtUsername.Text != "")
+                        {
+                            DialogResult dr = MessageBox.Show("Do you want to save connection configuration?", "Save connection", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                            if (DialogResult.Yes == dr)
+                            {
+                                Settings.Default["Server"] = txtHost.Text;
+                                Settings.Default["DatabaseName"] = txtDatabase.Text;
+                                Settings.Default["UsernameDB"] = txtUsername.Text;
+                                Settings.Default["PasswordDB"] = txtPassword.Text;
+                                Settings.Default["Port"] = txtPort.Text;
+                                Settings.Default.Save();
+
+                                this.Hide();
+                                RestartsApp();
+                            }
+                        }
+                        else
+                            MessageBox.Show("Please specified the username.", "Username", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                        MessageBox.Show("Please specified the database.", "Database", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                    MessageBox.Show("Please specified the host.", "Host", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            else
+                MessageBox.Show("Please specified the port.", "Port", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void btnTest_Click(object sender, EventArgs e)
@@ -269,7 +290,7 @@ namespace ClassSchedulingComputerAided
             }
             catch (MySqlException ex)
             {
-                MessageBox.Show("Connection Failed!", "DBexists");
+                MessageBox.Show(ex.Message, "Database", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             return isExists;
         }

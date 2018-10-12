@@ -152,7 +152,7 @@ namespace ClassSchedulingComputerAided
 
         private void btnExit_Click_1(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Do you want to Exit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            DialogResult result = MessageBox.Show("Do you want to Exit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
                 System.Environment.Exit(0);

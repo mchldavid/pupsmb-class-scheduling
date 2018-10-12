@@ -74,7 +74,7 @@ namespace ClassSchedulingComputerAided
                                 {
                                     if (cboQuestion1.SelectedIndex != 0 && cboQuestion2.SelectedIndex != 0 && cboQuestion3.SelectedIndex != 0)
                                     {
-                                        DialogResult dr = MessageBox.Show("Do you want to save?", "Save", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                                        DialogResult dr = MessageBox.Show("Do you want to save?", "Save", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                                         if (dr == DialogResult.Yes)
                                         {
                                             //check if the new username is existing
@@ -107,43 +107,43 @@ namespace ClassSchedulingComputerAided
                                             }
                                             else
                                             {
-                                                MessageBox.Show("The username is already exist!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                                MessageBox.Show("The username is already exist!", "Username", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                                 txtUsername.Focus();
                                             }
                                         }
                                     }
                                     else
                                     {
-                                        MessageBox.Show("Please select questions.", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        MessageBox.Show("Please select questions.", "Questions", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                     }
                                 }
                                 else
                                 {
-                                    MessageBox.Show("The specified password do not match!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    MessageBox.Show("The specified password do not match!", "Confirm Password", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                     txtConfirmPassword.Text = "";
                                     txtConfirmPassword.Focus();
                                 }
                             }
                             else
                             {
-                                MessageBox.Show("The specified email is invalid!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("The specified email is invalid!", "Email", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 txtEmailAddress.Focus();
                             }
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Please select your teaching status", "Teaching Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Please select your teaching status", "Teaching Status", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Please select gender", "Gender", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Please select gender", "Gender", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("All Fields are required", "Fields", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("All Fields are required", "Fields", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 if (txtAnswer3.Text == "") { txtAnswer3.Focus(); }
                 if (txtAnswer2.Text == "") { txtAnswer2.Focus(); }

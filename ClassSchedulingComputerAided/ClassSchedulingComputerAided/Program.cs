@@ -91,7 +91,7 @@ namespace ClassSchedulingComputerAided
             }
             catch (MySqlException ex)
             {
-                MessageBox.Show("Connection Failed!", "DBexists");
+                MessageBox.Show(ex.Message, "Database", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             return isExists;
         }
