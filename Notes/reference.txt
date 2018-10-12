@@ -75,3 +75,15 @@ https://www.youtube.com/watch?v=ek9FAXvTqGs
 print using printDialog panel
 https://www.codeproject.com/Tips/733680/Printing-and-Previewing-multiple-pages-in-Csharp
 https://www.youtube.com/watch?v=DBgfRUJEEAI
+
+framework
+https://commercetools.com/blog/2015/11/19/framework-vs-platform.html
+
+backup &restore
+https://archive.codeplex.com/?p=mysqlbackupnet
+
+items color
+https://stackoverflow.com/questions/1790199/changing-the-format-of-a-combobox-item
+
+toUpper
+https://stackoverflow.com/questions/10104515/how-to-convert-string-to-uppercase-in-windows-textbox

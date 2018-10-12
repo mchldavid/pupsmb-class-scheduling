@@ -1,0 +1,13 @@
+sells items and offers a repair service to consumers
+counting inventory and stock items
+caloocan
+valenzuela
+marikina
+
+asking what are the items has been removed
+buy items to the supplier
+
+reporting tools- report all items on the transactions
+inventory alerts - alerts the users from error or conflicts on the items
+accounting tools - accounts all the items
+auditing items - audit all the items in the transactions.
