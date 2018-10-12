@@ -1522,7 +1522,7 @@ namespace ClassSchedulingComputerAided
                 string sql = "";
                 //if (courseBy == "Course Subject")
                 //    sql = "SELECT subjects_id AS 'ID', subjectCode AS 'Code', subjectDescription AS 'Description', CONCAT('[',programName,']') AS 'Curriculum' FROM tbl_subjects su INNER JOIN tbl_curriculums cu ON su.curriculums_id = cu.curriculums_id WHERE status = 'active' AND su.course = @c ORDER BY cu.programName;";
-                if (courseBy == "Course Subject")
+                if (courseBy == "Courses from program department.")
                 {
                     if (by == "Subject Code")
                     {
@@ -1532,7 +1532,7 @@ namespace ClassSchedulingComputerAided
                             + "WHERE status = 'active' "
                             + "AND su.course = @c "
                             + "AND su.semester = @sem "
-                            + "AND subjectCode LIKE '"+search+"%' "
+                            + "AND subjectCode LIKE '" + search + "%' "
                             + "ORDER BY cu.programName;";
                     }
                     if (by == "Subject Description")
@@ -1550,7 +1550,7 @@ namespace ClassSchedulingComputerAided
 
                 //if (courseBy == "Other Subject")
                 //    sql = "SELECT subjects_id AS 'ID', subjectCode AS 'Code', subjectDescription AS 'Description', CONCAT('[',programName,']') AS 'Curriculum' FROM tbl_subjects su INNER JOIN tbl_curriculums cu ON su.curriculums_id = cu.curriculums_id WHERE status = 'active' ORDER BY cu.programName;";
-                if (courseBy == "Other Subject")
+                if (courseBy == "All courses from all programs.")
                 {
                     if (by == "Subject Code")
                     {
@@ -1559,7 +1559,7 @@ namespace ClassSchedulingComputerAided
                         + "INNER JOIN tbl_curriculums cu ON su.curriculums_id = cu.curriculums_id "
                         + "WHERE status = 'active' "
                         + "AND su.semester = @sem "
-                        + "AND subjectCode LIKE '"+search+"%' "
+                        + "AND subjectCode LIKE '" + search + "%' "
                         + "ORDER BY cu.programName;";
                     }
                     if (by == "Subject Description")
@@ -1573,7 +1573,7 @@ namespace ClassSchedulingComputerAided
                         + "ORDER BY cu.programName;";
                     }
                 }
-                    
+
                 MySqlCommand com = new MySqlCommand(sql, con);
                 com.Parameters.AddWithValue("@c", usersData.p_cDepartment);
                 com.Parameters.AddWithValue("@sem", semester);

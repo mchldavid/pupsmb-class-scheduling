@@ -520,6 +520,7 @@
             this.Controls.Add(this.pnlAdmin);
             this.Controls.Add(this.txtAnswer4);
             this.Controls.Add(this.txtAnswer5);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmAdminAccount";
             this.Style = MetroFramework.MetroColorStyle.White;
             this.Load += new System.EventHandler(this.AdminAccount_Load);

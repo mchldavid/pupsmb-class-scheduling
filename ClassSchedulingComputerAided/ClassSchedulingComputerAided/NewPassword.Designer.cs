@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewPassword));
             this.panel7 = new System.Windows.Forms.Panel();
             this.label134 = new System.Windows.Forms.Label();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
@@ -157,6 +158,7 @@
             this.Controls.Add(this.txtNewPassword);
             this.Controls.Add(this.lblQuestion1);
             this.Controls.Add(this.panel7);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NewPassword";
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.White;

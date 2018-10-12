@@ -440,6 +440,7 @@
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.pnl);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmProfessorHomePage";
             this.Style = MetroFramework.MetroColorStyle.White;

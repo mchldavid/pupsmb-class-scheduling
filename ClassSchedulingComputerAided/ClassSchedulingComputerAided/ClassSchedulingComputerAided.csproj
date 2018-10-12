@@ -82,10 +82,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddSubject.cs">
+    <Compile Include="trash\AddSubject.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddSubject.Designer.cs">
+    <Compile Include="trash\AddSubject.Designer.cs">
       <DependentUpon>AddSubject.cs</DependentUpon>
     </Compile>
     <Compile Include="AdminAccount.cs">
@@ -426,7 +426,7 @@
     <Compile Include="trash\ViewList.Designer.cs">
       <DependentUpon>ViewList.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AddSubject.resx">
+    <EmbeddedResource Include="trash\AddSubject.resx">
       <DependentUpon>AddSubject.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminAccount.resx">

@@ -93,6 +93,7 @@
             this.ClientSize = new System.Drawing.Size(1366, 711);
             this.Controls.Add(this.pnlDashboard);
             this.Controls.Add(this.panel7);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Movable = false;
             this.Name = "frmClassScheduleDashboard";
             this.Resizable = false;

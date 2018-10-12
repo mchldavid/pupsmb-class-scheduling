@@ -145,32 +145,8 @@ namespace ClassSchedulingComputerAided
                 lblDay.Text = DateTime.Now.ToString("dddd");
                 lblDate.Text = DateTime.Now.ToString("dd MMMM yyyy");
             }
-            if (md.EmptyCurriculum() == false)
-            {
-                btnRooms.Enabled = false;
-                btnSections.Enabled = false;
-                btnClassScheduleDashboard.Enabled = false;
-            }
-            else
-            {
-                if (md.EmptySection() == false)
-                {
-                    btnRooms.Enabled = false;
-                    btnClassScheduleDashboard.Enabled = false;
-                }
-                else
-                {
-                    btnRooms.Enabled = true;
-                    if (md.EmptyRoom() == false)
-                    {
-                        btnClassScheduleDashboard.Enabled = false;
-                    }
-                    else
-                    {
-                        btnClassScheduleDashboard.Enabled = true;
-                    }
-                }
-            }
+
+            
         }
 
         private void btnSummaryReport_Click(object sender, EventArgs e)
@@ -195,6 +171,40 @@ namespace ClassSchedulingComputerAided
             pnl.Controls.Add(br);
             lbl_form_title.Text = "BACK-UP AND RESTORE";
 
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            if (timer2.Interval == 1000)
+            {
+                if (md.EmptyCurriculum() == false)
+                {
+                    btnRooms.Enabled = false;
+                    btnSections.Enabled = false;
+                    btnClassScheduleDashboard.Enabled = false;
+                }
+                else
+                {
+                    if (md.EmptySection() == false)
+                    {
+                        btnRooms.Enabled = false;
+                        btnClassScheduleDashboard.Enabled = false;
+                    }
+                    else
+                    {
+                        btnRooms.Enabled = true;
+                        if (md.EmptyRoom() == false)
+                        {
+                            btnClassScheduleDashboard.Enabled = false;
+                        }
+                        else
+                        {
+                            timer2.Enabled = false;
+                            btnClassScheduleDashboard.Enabled = true;
+                        }
+                    }
+                }
+            }
         }
     }
 }

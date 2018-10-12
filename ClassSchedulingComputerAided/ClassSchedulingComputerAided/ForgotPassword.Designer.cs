@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmForgotPassword));
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.btnLogin = new MetroFramework.Controls.MetroLink();
             this.btnRegister = new MetroFramework.Controls.MetroLink();
@@ -171,6 +172,7 @@
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.metroLabel2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Movable = false;
             this.Name = "frmForgotPassword";

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSemesterAndSchoolYear));
             this.panel2 = new System.Windows.Forms.Panel();
             this.cboSemester = new System.Windows.Forms.ComboBox();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
@@ -110,6 +111,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(322, 316);
             this.Controls.Add(this.panel2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmSemesterAndSchoolYear";
             this.Style = MetroFramework.MetroColorStyle.White;
             this.Load += new System.EventHandler(this.SemesterAndSchoolYear_Load);

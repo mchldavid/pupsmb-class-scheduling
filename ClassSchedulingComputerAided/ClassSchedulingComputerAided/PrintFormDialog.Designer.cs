@@ -276,6 +276,7 @@
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlPrintTimeTable);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPrintFormDialog";
             this.Load += new System.EventHandler(this.PrintFormDialog_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PrintDataBindingSource)).EndInit();

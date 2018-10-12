@@ -54,6 +54,7 @@
             this.lbl_form_title = new System.Windows.Forms.Label();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -103,7 +104,7 @@
             this.btnBackupRestore.IconVisible = true;
             this.btnBackupRestore.IconZoom = 50D;
             this.btnBackupRestore.IsTab = false;
-            this.btnBackupRestore.Location = new System.Drawing.Point(-5, 451);
+            this.btnBackupRestore.Location = new System.Drawing.Point(-5, 442);
             this.btnBackupRestore.Name = "btnBackupRestore";
             this.btnBackupRestore.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnBackupRestore.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
@@ -138,7 +139,7 @@
             this.btnSummaryReport.IconVisible = true;
             this.btnSummaryReport.IconZoom = 50D;
             this.btnSummaryReport.IsTab = false;
-            this.btnSummaryReport.Location = new System.Drawing.Point(-5, 283);
+            this.btnSummaryReport.Location = new System.Drawing.Point(-5, 278);
             this.btnSummaryReport.Name = "btnSummaryReport";
             this.btnSummaryReport.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnSummaryReport.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
@@ -204,7 +205,7 @@
             this.btnEventLog.IconVisible = true;
             this.btnEventLog.IconZoom = 52D;
             this.btnEventLog.IsTab = false;
-            this.btnEventLog.Location = new System.Drawing.Point(-5, 367);
+            this.btnEventLog.Location = new System.Drawing.Point(-5, 360);
             this.btnEventLog.Name = "btnEventLog";
             this.btnEventLog.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnEventLog.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
@@ -239,7 +240,7 @@
             this.btnMyAccount.IconVisible = true;
             this.btnMyAccount.IconZoom = 52D;
             this.btnMyAccount.IsTab = false;
-            this.btnMyAccount.Location = new System.Drawing.Point(-5, 409);
+            this.btnMyAccount.Location = new System.Drawing.Point(-5, 401);
             this.btnMyAccount.Name = "btnMyAccount";
             this.btnMyAccount.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnMyAccount.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
@@ -274,7 +275,7 @@
             this.btnListOfProfessors.IconVisible = true;
             this.btnListOfProfessors.IconZoom = 52D;
             this.btnListOfProfessors.IsTab = false;
-            this.btnListOfProfessors.Location = new System.Drawing.Point(-4, 325);
+            this.btnListOfProfessors.Location = new System.Drawing.Point(-4, 319);
             this.btnListOfProfessors.Name = "btnListOfProfessors";
             this.btnListOfProfessors.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnListOfProfessors.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
@@ -309,7 +310,7 @@
             this.btnClassScheduleDashboard.IconVisible = true;
             this.btnClassScheduleDashboard.IconZoom = 51D;
             this.btnClassScheduleDashboard.IsTab = false;
-            this.btnClassScheduleDashboard.Location = new System.Drawing.Point(-5, 241);
+            this.btnClassScheduleDashboard.Location = new System.Drawing.Point(-5, 237);
             this.btnClassScheduleDashboard.Name = "btnClassScheduleDashboard";
             this.btnClassScheduleDashboard.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnClassScheduleDashboard.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
@@ -344,7 +345,7 @@
             this.btnSections.IconVisible = true;
             this.btnSections.IconZoom = 50D;
             this.btnSections.IsTab = false;
-            this.btnSections.Location = new System.Drawing.Point(-3, 157);
+            this.btnSections.Location = new System.Drawing.Point(-3, 155);
             this.btnSections.Name = "btnSections";
             this.btnSections.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnSections.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
@@ -414,7 +415,7 @@
             this.btnLogout.IconVisible = true;
             this.btnLogout.IconZoom = 50D;
             this.btnLogout.IsTab = false;
-            this.btnLogout.Location = new System.Drawing.Point(-5, 493);
+            this.btnLogout.Location = new System.Drawing.Point(-5, 483);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnLogout.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
@@ -449,7 +450,7 @@
             this.btnRooms.IconVisible = true;
             this.btnRooms.IconZoom = 50D;
             this.btnRooms.IsTab = false;
-            this.btnRooms.Location = new System.Drawing.Point(-5, 199);
+            this.btnRooms.Location = new System.Drawing.Point(-5, 196);
             this.btnRooms.Name = "btnRooms";
             this.btnRooms.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnRooms.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
@@ -484,7 +485,7 @@
             this.btnCurriculum.IconVisible = true;
             this.btnCurriculum.IconZoom = 55D;
             this.btnCurriculum.IsTab = false;
-            this.btnCurriculum.Location = new System.Drawing.Point(-5, 115);
+            this.btnCurriculum.Location = new System.Drawing.Point(-5, 114);
             this.btnCurriculum.Name = "btnCurriculum";
             this.btnCurriculum.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnCurriculum.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
@@ -595,6 +596,12 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // timer2
+            // 
+            this.timer2.Enabled = true;
+            this.timer2.Interval = 1000;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
             // frmAdminHomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -604,6 +611,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.pnl);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmAdminHomePage";
             this.Style = MetroFramework.MetroColorStyle.White;
@@ -644,6 +652,7 @@
         public Bunifu.Framework.UI.BunifuFlatButton btnSummaryReport;
         private System.Windows.Forms.Panel panel1;
         public Bunifu.Framework.UI.BunifuFlatButton btnBackupRestore;
+        private System.Windows.Forms.Timer timer2;
 
 
     }

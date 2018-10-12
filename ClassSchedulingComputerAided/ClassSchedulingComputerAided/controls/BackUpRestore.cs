@@ -38,7 +38,7 @@ namespace ClassSchedulingComputerAided
         {
             if (txtBackupPath.Text == string.Empty)
             {
-                MessageBox.Show("please enter the backup file location");
+                MessageBox.Show("please enter the backup file location", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -76,7 +76,7 @@ namespace ClassSchedulingComputerAided
             }
             else
             {
-                MessageBox.Show("please enter the restore file location");
+                MessageBox.Show("please enter the restore file location", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

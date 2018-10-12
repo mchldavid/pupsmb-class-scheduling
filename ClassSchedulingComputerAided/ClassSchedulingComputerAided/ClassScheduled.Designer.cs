@@ -64,6 +64,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(832, 645);
             this.Controls.Add(this.pnl);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmClassScheduled";
             this.Style = MetroFramework.MetroColorStyle.White;
             this.Load += new System.EventHandler(this.ClassScheduled_Load);

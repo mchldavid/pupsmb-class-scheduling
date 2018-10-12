@@ -176,15 +176,62 @@ namespace ClassSchedulingComputerAided
                             if (chkMonday.Checked == true)
                             {
                                 if (checkConstraints("Monday") == true)
-                                {
                                     md.Prof_AddSchedule(usersData.p_id, cboStartTime.SelectedItem.ToString(), cboEndTime.SelectedItem.ToString(), "Monday");
-                                    defaultStatus();
+                            }
+                            if (chkTuesday.Checked == true)
+                            {
+                                if (checkConstraints("Tuesday") == true)
+                                    md.Prof_AddSchedule(usersData.p_id, cboStartTime.SelectedItem.ToString(), cboEndTime.SelectedItem.ToString(), "Tuesday");
+                            }
+                            if (chkWednesday.Checked == true)
+                            {
+                                if (checkConstraints("Wednesday") == true)
+                                    md.Prof_AddSchedule(usersData.p_id, cboStartTime.SelectedItem.ToString(), cboEndTime.SelectedItem.ToString(), "Wednesday");
+                            }
+                            if (chkThursday.Checked == true)
+                            {
+                                if (checkConstraints("Thursday") == true)
+                                    md.Prof_AddSchedule(usersData.p_id, cboStartTime.SelectedItem.ToString(), cboEndTime.SelectedItem.ToString(), "Thursday");
+                            }
+                            if (chkFriday.Checked == true)
+                            {
+                                if (checkConstraints("Friday") == true)
+                                    md.Prof_AddSchedule(usersData.p_id, cboStartTime.SelectedItem.ToString(), cboEndTime.SelectedItem.ToString(), "Friday");
+                            }
+                            if (chkSaturday.Checked == true)
+                            {
+                                if (checkConstraints("Saturday") == true)
+                                    md.Prof_AddSchedule(usersData.p_id, cboStartTime.SelectedItem.ToString(), cboEndTime.SelectedItem.ToString(), "Saturday");
+                            }
+                            if (chkSunday.Checked == true)
+                            {
+                                if (checkConstraints("Sunday") == true)
+                                    md.Prof_AddSchedule(usersData.p_id, cboStartTime.SelectedItem.ToString(), cboEndTime.SelectedItem.ToString(), "Sunday");
+                            }
+
+                            if (successfulSchedule != "")
+                                MessageBox.Show("Your preferred schedule was added: \r\n" + successfulSchedule, "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            if (errorSchedule != "")
+                                MessageBox.Show("There was a conflict on these schedule: \r\n" + errorSchedule, "Unsuccessful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            DialogResult dr = MessageBox.Show("Save changes?", "Save", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                            if (dr == DialogResult.Yes)
+                            {
+                                if (chkMonday.Checked == true)
+                                {
+                                    if (checkConstraints("Monday") == true)
+                                    {
+                                        md.Prof_UpdatePrefSchedule(id, cboStartTime.Text, cboEndTime.Text, "Monday");
+                                        defaultStatus();
+                                    }
                                 }
                                 if (chkTuesday.Checked == true)
                                 {
                                     if (checkConstraints("Tuesday") == true)
                                     {
-                                        md.Prof_AddSchedule(usersData.p_id, cboStartTime.SelectedItem.ToString(), cboEndTime.SelectedItem.ToString(), "Tuesday");
+                                        md.Prof_UpdatePrefSchedule(id, cboStartTime.Text, cboEndTime.Text, "Tuesday");
                                         defaultStatus();
                                     }
                                 }
@@ -192,7 +239,7 @@ namespace ClassSchedulingComputerAided
                                 {
                                     if (checkConstraints("Wednesday") == true)
                                     {
-                                        md.Prof_AddSchedule(usersData.p_id, cboStartTime.SelectedItem.ToString(), cboEndTime.SelectedItem.ToString(), "Wednesday");
+                                        md.Prof_UpdatePrefSchedule(id, cboStartTime.Text, cboEndTime.Text, "Wednesday");
                                         defaultStatus();
                                     }
                                 }
@@ -200,7 +247,7 @@ namespace ClassSchedulingComputerAided
                                 {
                                     if (checkConstraints("Thursday") == true)
                                     {
-                                        md.Prof_AddSchedule(usersData.p_id, cboStartTime.SelectedItem.ToString(), cboEndTime.SelectedItem.ToString(), "Thursday");
+                                        md.Prof_UpdatePrefSchedule(id, cboStartTime.Text, cboEndTime.Text, "Thursday");
                                         defaultStatus();
                                     }
                                 }
@@ -208,7 +255,7 @@ namespace ClassSchedulingComputerAided
                                 {
                                     if (checkConstraints("Friday") == true)
                                     {
-                                        md.Prof_AddSchedule(usersData.p_id, cboStartTime.SelectedItem.ToString(), cboEndTime.SelectedItem.ToString(), "Friday");
+                                        md.Prof_UpdatePrefSchedule(id, cboStartTime.Text, cboEndTime.Text, "Friday");
                                         defaultStatus();
                                     }
                                 }
@@ -216,7 +263,7 @@ namespace ClassSchedulingComputerAided
                                 {
                                     if (checkConstraints("Saturday") == true)
                                     {
-                                        md.Prof_AddSchedule(usersData.p_id, cboStartTime.SelectedItem.ToString(), cboEndTime.SelectedItem.ToString(), "Saturday");
+                                        md.Prof_UpdatePrefSchedule(id, cboStartTime.Text, cboEndTime.Text, "Saturday");
                                         defaultStatus();
                                     }
                                 }
@@ -224,96 +271,28 @@ namespace ClassSchedulingComputerAided
                                 {
                                     if (checkConstraints("Sunday") == true)
                                     {
-                                        md.Prof_AddSchedule(usersData.p_id, cboStartTime.SelectedItem.ToString(), cboEndTime.SelectedItem.ToString(), "Sunday");
+                                        md.Prof_UpdatePrefSchedule(id, cboStartTime.Text, cboEndTime.Text, "Sunday");
                                         defaultStatus();
                                     }
                                 }
-
                                 if (successfulSchedule != "")
                                     MessageBox.Show("Your preferred schedule was added: \r\n" + successfulSchedule, "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 if (errorSchedule != "")
                                     MessageBox.Show("There was a conflict on these schedule: \r\n" + errorSchedule, "Unsuccessful", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
-                            else
-                            {
-                                DialogResult dr = MessageBox.Show("Save changes?", "Save", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                                if (dr == DialogResult.Yes)
-                                {
-                                    if (chkMonday.Checked == true)
-                                    {
-                                        if (checkConstraints("Monday") == true)
-                                        {
-                                            md.Prof_UpdatePrefSchedule(id, cboStartTime.Text, cboEndTime.Text, "Monday");
-                                            defaultStatus();
-                                        }
-                                    }
-                                    if (chkTuesday.Checked == true)
-                                    {
-                                        if (checkConstraints("Tuesday") == true)
-                                        {
-                                            md.Prof_UpdatePrefSchedule(id, cboStartTime.Text, cboEndTime.Text, "Tuesday");
-                                            defaultStatus();
-                                        }
-                                    }
-                                    if (chkWednesday.Checked == true)
-                                    {
-                                        if (checkConstraints("Wednesday") == true)
-                                        {
-                                            md.Prof_UpdatePrefSchedule(id, cboStartTime.Text, cboEndTime.Text, "Wednesday");
-                                            defaultStatus();
-                                        }
-                                    }
-                                    if (chkThursday.Checked == true)
-                                    {
-                                        if (checkConstraints("Thursday") == true)
-                                        {
-                                            md.Prof_UpdatePrefSchedule(id, cboStartTime.Text, cboEndTime.Text, "Thursday");
-                                            defaultStatus();
-                                        }
-                                    }
-                                    if (chkFriday.Checked == true)
-                                    {
-                                        if (checkConstraints("Friday") == true)
-                                        {
-                                            md.Prof_UpdatePrefSchedule(id, cboStartTime.Text, cboEndTime.Text, "Friday");
-                                            defaultStatus();
-                                        }
-                                    }
-                                    if (chkSaturday.Checked == true)
-                                    {
-                                        if (checkConstraints("Saturday") == true)
-                                        {
-                                            md.Prof_UpdatePrefSchedule(id, cboStartTime.Text, cboEndTime.Text, "Saturday");
-                                            defaultStatus();
-                                        }
-                                    }
-                                    if (chkSunday.Checked == true)
-                                    {
-                                        if (checkConstraints("Sunday") == true)
-                                        {
-                                            md.Prof_UpdatePrefSchedule(id, cboStartTime.Text, cboEndTime.Text, "Sunday");
-                                            defaultStatus();
-                                        }
-                                    }
-                                    if (successfulSchedule != "")
-                                        MessageBox.Show("Your preferred schedule was added: \r\n" + successfulSchedule, "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    if (errorSchedule != "")
-                                        MessageBox.Show("There was a conflict on these schedule: \r\n" + errorSchedule, "Unsuccessful", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                }
 
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("Please check a day/s", "Invalid Day", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
+                    else
+                    {
+                        MessageBox.Show("Please check a day/s", "Invalid Day", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
-                else
-                    MessageBox.Show("Please select time before you add", "Invalid Time", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                dgvShow.DataSource = md.dgv_showSchedule().DataSource;
             }
+            else
+                MessageBox.Show("Please select time before you add", "Invalid Time", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            dgvShow.DataSource = md.dgv_showSchedule().DataSource;
         }
 
         public void defaultStatus()

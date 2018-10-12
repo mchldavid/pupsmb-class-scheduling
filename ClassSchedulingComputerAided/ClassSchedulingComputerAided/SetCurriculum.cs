@@ -478,5 +478,10 @@ namespace ClassSchedulingComputerAided
             if (cboYearLevel.Text == "")
             cboYearLevel.Text = "0";
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -88,6 +88,7 @@
             this.ClientSize = new System.Drawing.Size(655, 435);
             this.Controls.Add(this.dgvPrint);
             this.Controls.Add(this.btnPrint);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Print";
             this.Text = "Print";
             this.Load += new System.EventHandler(this.Print_Load);
