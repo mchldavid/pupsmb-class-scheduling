@@ -35,18 +35,26 @@ namespace ClassSchedulingComputerAided
         {
             if (txtRoomName.Text != "" && txtRoomCode.Text != "" && txtSlots.Text != "")
             {
-                //audit
-                md.AuditTrail(AuditTrailData.username, "Add", txtRoomCode.Text + " was added to the rooms.");
+                if (md.existRoom(txtRoomCode.Text, txtRoomName.Text) == false)
+                {
+                    //audit
+                    md.AuditTrail(AuditTrailData.username, "Add", txtRoomCode.Text + " was added to the rooms.");
 
-                md.R_AddRooms(txtRoomName.Text, txtRoomCode.Text, txtSlots.Text);
-                lstActiveRooms.Items.Add(txtRoomCode.Text);
-                dgvShowRooms.DataSource = md.dgv_showRooms().DataSource;
-                dgvShowRooms.Columns[0].Visible = false;
+                    md.R_AddRooms(txtRoomName.Text, txtRoomCode.Text, txtSlots.Text);
+                    lstActiveRooms.Items.Add(txtRoomCode.Text);
+                    dgvShowRooms.DataSource = md.dgv_showRooms().DataSource;
+                    dgvShowRooms.Columns[0].Visible = false;
 
-                txtRoomName.Text = "";
-                txtRoomCode.Text = "";
-                txtSlots.Text = "";
-                txtRoomName.Focus();
+                    txtRoomName.Text = "";
+                    txtRoomCode.Text = "";
+                    txtSlots.Text = "";
+                    txtRoomName.Focus();
+                }
+                else
+                {
+                    MessageBox.Show("The "+txtRoomCode.Text+" is already on the list!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtRoomName.Focus();
+                }
             }
             else
             {
@@ -211,6 +219,33 @@ namespace ClassSchedulingComputerAided
             dgvShowRooms.DataSource = md.dgv_showRooms().DataSource;
             dgvShowRooms.Columns[0].Visible = false;
             txtRoomName.Focus();
+        }
+
+        private void txtRoomCode_TextChanged(object sender, EventArgs e)
+        {
+            txtRoomCode.CharacterCasing = CharacterCasing.Upper;
+        }
+
+        private void txtSlots_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // allows 0-9, backspace, and decimal
+            if (((e.KeyChar < 48 || e.KeyChar > 57) && e.KeyChar != 8 && e.KeyChar != 13))
+            {
+                e.Handled = true;
+                return;
+            }
+
+            // checks to make sure only 1 decimal is allowed
+            if (e.KeyChar == 46)
+            {
+                if (txtSlots.Text.IndexOf(e.KeyChar) != -1)
+                    e.Handled = true;
+            }
+
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                btnAdd_Click(sender, e);
+            }
         }
     }
 }

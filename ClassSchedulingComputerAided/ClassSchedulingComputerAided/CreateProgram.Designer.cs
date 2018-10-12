@@ -139,6 +139,7 @@
             this.txtProgramAcronym.Name = "txtProgramAcronym";
             this.txtProgramAcronym.Size = new System.Drawing.Size(286, 22);
             this.txtProgramAcronym.TabIndex = 3;
+            this.txtProgramAcronym.TextChanged += new System.EventHandler(this.txtProgramAcronym_TextChanged);
             // 
             // txtCurriculumYear
             // 
@@ -149,6 +150,7 @@
             this.txtCurriculumYear.Name = "txtCurriculumYear";
             this.txtCurriculumYear.Size = new System.Drawing.Size(286, 22);
             this.txtCurriculumYear.TabIndex = 5;
+            this.txtCurriculumYear.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCurriculumYear_KeyPress);
             // 
             // frmCreateProgram
             // 

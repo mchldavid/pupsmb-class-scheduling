@@ -176,37 +176,57 @@ namespace ClassSchedulingComputerAided
                             if (chkMonday.Checked == true)
                             {
                                 if (checkConstraints("Monday") == true)
+                                    {
                                     md.Prof_AddSchedule(usersData.p_id, cboStartTime.SelectedItem.ToString(), cboEndTime.SelectedItem.ToString(), "Monday");
-                            }
+                                    defaultStatus();
+                                }
                             if (chkTuesday.Checked == true)
                             {
                                 if (checkConstraints("Tuesday") == true)
+                                    {
                                     md.Prof_AddSchedule(usersData.p_id, cboStartTime.SelectedItem.ToString(), cboEndTime.SelectedItem.ToString(), "Tuesday");
+                                    defaultStatus();
+                                }
                             }
                             if (chkWednesday.Checked == true)
                             {
                                 if (checkConstraints("Wednesday") == true)
+                                {
                                     md.Prof_AddSchedule(usersData.p_id, cboStartTime.SelectedItem.ToString(), cboEndTime.SelectedItem.ToString(), "Wednesday");
+                                    defaultStatus();
+                                }
                             }
                             if (chkThursday.Checked == true)
                             {
                                 if (checkConstraints("Thursday") == true)
+                                    {
                                     md.Prof_AddSchedule(usersData.p_id, cboStartTime.SelectedItem.ToString(), cboEndTime.SelectedItem.ToString(), "Thursday");
+                                    defaultStatus();
+                                }
                             }
                             if (chkFriday.Checked == true)
                             {
                                 if (checkConstraints("Friday") == true)
+                                    {
                                     md.Prof_AddSchedule(usersData.p_id, cboStartTime.SelectedItem.ToString(), cboEndTime.SelectedItem.ToString(), "Friday");
+                                    defaultStatus();
+                                }
                             }
                             if (chkSaturday.Checked == true)
                             {
                                 if (checkConstraints("Saturday") == true)
+                                    {
                                     md.Prof_AddSchedule(usersData.p_id, cboStartTime.SelectedItem.ToString(), cboEndTime.SelectedItem.ToString(), "Saturday");
+                                    defaultStatus();
+                                }
                             }
                             if (chkSunday.Checked == true)
                             {
                                 if (checkConstraints("Sunday") == true)
+                                    {
                                     md.Prof_AddSchedule(usersData.p_id, cboStartTime.SelectedItem.ToString(), cboEndTime.SelectedItem.ToString(), "Sunday");
+                                    defaultStatus();
+                                }
                             }
 
                             if(successfulSchedule != "")

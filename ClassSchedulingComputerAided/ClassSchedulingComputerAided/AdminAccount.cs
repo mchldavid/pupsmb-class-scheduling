@@ -24,10 +24,10 @@ namespace ClassSchedulingComputerAided
 
         private void AdminAccount_Load(object sender, EventArgs e)
         {
-            txtFirstName.Focus();
             cboQuestion1.SelectedIndex = 0;
             cboQuestion2.SelectedIndex = 0;
             cboQuestion3.SelectedIndex = 0;
+            txtFirstName.Focus();
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -302,6 +302,31 @@ namespace ClassSchedulingComputerAided
             sb.Replace("-", "");
 
             return sb.ToString();
+        }
+
+        private void txtMobileNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // allows 0-9, backspace, and decimal
+            if (((e.KeyChar < 48 || e.KeyChar > 57) && e.KeyChar != 8 && e.KeyChar != 13))
+            {
+                e.Handled = true;
+                return;
+            }
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                btnNext_Click(sender, e);
+            }
+        }
+
+        private void txtAnswer3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtAnswer3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+                btnSave_Click(sender, e);
         }
     }
 }

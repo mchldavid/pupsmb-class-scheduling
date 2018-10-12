@@ -290,7 +290,7 @@
             this.btnSave.Location = new System.Drawing.Point(736, 448);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(84, 32);
-            this.btnSave.TabIndex = 179;
+            this.btnSave.TabIndex = 25;
             this.btnSave.Text = "SAVE";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -377,6 +377,7 @@
             this.txtMobileNumber.Name = "txtMobileNumber";
             this.txtMobileNumber.Size = new System.Drawing.Size(210, 22);
             this.txtMobileNumber.TabIndex = 12;
+            this.txtMobileNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMobileNumber_KeyPress);
             // 
             // label16
             // 
@@ -423,6 +424,8 @@
             this.txtAnswer3.Name = "txtAnswer3";
             this.txtAnswer3.Size = new System.Drawing.Size(330, 22);
             this.txtAnswer3.TabIndex = 24;
+            this.txtAnswer3.TextChanged += new System.EventHandler(this.txtAnswer3_TextChanged);
+            this.txtAnswer3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAnswer3_KeyPress);
             // 
             // label14
             // 
@@ -512,7 +515,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(440, 538);
+            this.ClientSize = new System.Drawing.Size(442, 538);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlAdmin);
             this.Controls.Add(this.txtAnswer4);

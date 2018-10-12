@@ -190,6 +190,10 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.pnlReport = new System.Windows.Forms.Panel();
             this.btnOKk = new Bunifu.Framework.UI.BunifuImageButton();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.pnlStudentScheduling.SuspendLayout();
             this.tbl_pnl_layout.SuspendLayout();
             this.pnlHeader.SuspendLayout();
@@ -207,6 +211,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlStudentScheduling.BackColor = System.Drawing.Color.White;
             this.pnlStudentScheduling.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlStudentScheduling.Controls.Add(this.pnlStart);
+            this.pnlStudentScheduling.Controls.Add(this.label13);
+            this.pnlStudentScheduling.Controls.Add(this.label12);
+            this.pnlStudentScheduling.Controls.Add(this.label11);
+            this.pnlStudentScheduling.Controls.Add(this.label23);
             this.pnlStudentScheduling.Controls.Add(this.tbl_pnl_layout);
             this.pnlStudentScheduling.Controls.Add(this.pnlHeader);
             this.pnlStudentScheduling.Controls.Add(this.btnCancel_10);
@@ -230,7 +239,6 @@
             this.pnlStudentScheduling.Controls.Add(this.btnSet_1);
             this.pnlStudentScheduling.Controls.Add(this.btnCancel_4);
             this.pnlStudentScheduling.Controls.Add(this.btnSAVE);
-            this.pnlStudentScheduling.Controls.Add(this.pnlStart);
             this.pnlStudentScheduling.Location = new System.Drawing.Point(12, 3);
             this.pnlStudentScheduling.Name = "pnlStudentScheduling";
             this.pnlStudentScheduling.Size = new System.Drawing.Size(1342, 351);
@@ -2790,7 +2798,7 @@
             this.pnlStart.Controls.Add(this.label10);
             this.pnlStart.Location = new System.Drawing.Point(-10, 27);
             this.pnlStart.Name = "pnlStart";
-            this.pnlStart.Size = new System.Drawing.Size(1351, 324);
+            this.pnlStart.Size = new System.Drawing.Size(1353, 324);
             this.pnlStart.TabIndex = 181;
             // 
             // groupBox2
@@ -3071,6 +3079,44 @@
             this.btnOKk.Zoom = 10;
             this.btnOKk.Click += new System.EventHandler(this.btnOKk_Click);
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(1229, 31);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(97, 13);
+            this.label11.TabIndex = 183;
+            this.label11.Text = "Preferred Professor";
+            // 
+            // label23
+            // 
+            this.label23.BackColor = System.Drawing.Color.DarkGreen;
+            this.label23.Location = new System.Drawing.Point(1218, 33);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(10, 10);
+            this.label23.TabIndex = 182;
+            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label23.Visible = false;
+            // 
+            // label12
+            // 
+            this.label12.BackColor = System.Drawing.Color.DarkOrange;
+            this.label12.Location = new System.Drawing.Point(1218, 47);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(10, 10);
+            this.label12.TabIndex = 182;
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label12.Visible = false;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(1229, 45);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(80, 13);
+            this.label13.TabIndex = 183;
+            this.label13.Text = "Other Professor";
+            // 
             // classSchedulingDashboard_UserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3087,6 +3133,7 @@
             this.Size = new System.Drawing.Size(1373, 763);
             this.Load += new System.EventHandler(this.classSchedulingDashboard_UserControl_Load);
             this.pnlStudentScheduling.ResumeLayout(false);
+            this.pnlStudentScheduling.PerformLayout();
             this.tbl_pnl_layout.ResumeLayout(false);
             this.tbl_pnl_layout.PerformLayout();
             this.pnlHeader.ResumeLayout(false);
@@ -3265,5 +3312,9 @@
         private MetroFramework.Controls.MetroButton btnCancel_5;
         private MetroFramework.Controls.MetroButton btnCancel_4;
         public Bunifu.Framework.UI.BunifuImageButton btnOKk;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label23;
     }
 }

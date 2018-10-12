@@ -1,0 +1,1116 @@
+-- MySQL Administrator dump 1.4
+--
+-- ------------------------------------------------------
+-- Server version	5.0.91-community-nt
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+
+--
+-- Create schema db_realdemo
+--
+
+CREATE DATABASE IF NOT EXISTS db_realdemo;
+USE db_realdemo;
+
+--
+-- Definition of table `tbl_audittrail`
+--
+
+DROP TABLE IF EXISTS `tbl_audittrail`;
+CREATE TABLE `tbl_audittrail` (
+  `auditTrail_id` int(10) unsigned NOT NULL auto_increment,
+  `dateTime` datetime NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `action` varchar(45) NOT NULL,
+  `description` varchar(100) NOT NULL,
+  PRIMARY KEY  (`auditTrail_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=282 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_audittrail`
+--
+
+/*!40000 ALTER TABLE `tbl_audittrail` DISABLE KEYS */;
+INSERT INTO `tbl_audittrail` (`auditTrail_id`,`dateTime`,`username`,`action`,`description`) VALUES 
+ (98,'2018-10-11 22:02:00','admin','Logged In','Successfully!'),
+ (99,'2018-10-11 22:04:04','admin','Add','Bachelor of Science in Information Technology program.'),
+ (100,'2018-10-11 22:04:43','admin','Add','BSIT imported from .'),
+ (101,'2018-10-11 22:07:28','admin','Delete','BSIT courses from  [1ST Semester].'),
+ (102,'2018-10-11 22:07:43','admin','Add','BSIT imported from .'),
+ (103,'2018-10-11 22:08:10','admin','Add','BSIT imported from .'),
+ (104,'2018-10-11 22:08:37','admin','Add','Bachelor of Science in Accountancy program.'),
+ (105,'2018-10-11 22:08:50','admin','Add','BSA imported from .'),
+ (106,'2018-10-11 22:09:07','admin','Add','BSA imported from .'),
+ (107,'2018-10-11 22:09:40','admin','Add','Bachelor of Science in Civil Engineering program.'),
+ (108,'2018-10-11 22:09:59','admin','Add','BSCE imported from .'),
+ (109,'2018-10-11 22:10:20','admin','Add','BSCE imported from .'),
+ (110,'2018-10-11 22:10:34','admin','Delete',' from  [2ND Semester].'),
+ (111,'2018-10-11 22:10:48','admin','Add','BSCE imported from .'),
+ (112,'2018-10-11 22:11:11','admin','Add','BSCE imported from .'),
+ (113,'2018-10-11 22:12:34','admin','Add','Bachelor of Science in Hospitality Management program.'),
+ (114,'2018-10-11 22:12:58','admin','Add','BSHM imported from .'),
+ (115,'2018-10-11 22:17:30','admin','Logged In','Successfully!'),
+ (116,'2018-10-11 22:18:05','admin','Add','BSHM imported from .'),
+ (117,'2018-10-11 22:18:44','admin','Add','BSHM imported from .'),
+ (118,'2018-10-11 22:19:44','admin','Add','Bachelor of Science in Secondary Education Major in English program.'),
+ (119,'2018-10-11 22:20:00','admin','Add','BSEDEN imported from .'),
+ (120,'2018-10-11 22:20:14','admin','Add','BSEDEN imported from .'),
+ (121,'2018-10-11 22:21:00','admin','Add','Bachelor of Science in Secondary Education Major in Mathematics program.'),
+ (122,'2018-10-11 22:21:13','admin','Add','BSEDMT imported from .'),
+ (123,'2018-10-11 22:21:58','admin','Add','BSEDMT imported from .'),
+ (124,'2018-10-11 22:22:57','admin','Delete','BSEDEN courses from Bachelor of Science in Secondary Education Major in English [1ST Semester].'),
+ (125,'2018-10-11 22:23:10','admin','Add','BSEDEN imported from .'),
+ (126,'2018-10-11 22:23:30','admin','Add','BSEDEN imported from .'),
+ (127,'2018-10-11 22:25:50','admin','Add','Bachelor of Science in Entrepreneurship Management program.'),
+ (128,'2018-10-11 22:26:04','admin','Add','BSENTREP imported from .'),
+ (129,'2018-10-11 22:26:24','admin','Add','BSENTREP imported from .'),
+ (130,'2018-10-11 22:27:02','admin','Add','Diploma in Office Management Technology program.'),
+ (131,'2018-10-11 22:27:24','admin','Add','DOMT imported from .'),
+ (132,'2018-10-11 22:27:54','admin','Add','DOMT imported from Sheet1.'),
+ (133,'2018-10-11 22:28:05','admin','Logged Out','Successfully!'),
+ (134,'2018-10-11 22:28:42','admin','Logged In','Successfully!'),
+ (135,'2018-10-11 22:29:56','admin','Add','Diploma in Office Management Technology Major in Legal Office Management program.'),
+ (136,'2018-10-11 22:30:15','admin','Add','DOMTLOM imported from section offering 17-18.'),
+ (137,'2018-10-11 22:30:40','admin','Add','DOMTLOM imported from .'),
+ (138,'2018-10-11 22:31:13','admin','Add','BSIT year 1 generate 3 section/s.'),
+ (139,'2018-10-11 22:31:24','admin','Add','BSIT year 2 generate 1 section/s.'),
+ (140,'2018-10-11 22:31:37','admin','Add','BSIT year 3 generate 1 section/s.'),
+ (141,'2018-10-11 22:31:46','admin','Add','BSIT year 4 generate 2 section/s.'),
+ (142,'2018-10-11 22:32:00','admin','Add','BSA year 1 generate 2 section/s.'),
+ (143,'2018-10-11 22:32:07','admin','Add','BSA year 2 generate 2 section/s.'),
+ (144,'2018-10-11 22:32:16','admin','Add','BSA year 3 generate 1 section/s.'),
+ (145,'2018-10-11 22:32:26','admin','Add','BSA year 4 generate 1 section/s.'),
+ (146,'2018-10-11 22:32:52','admin','Add','BSCE year 1 generate 1 section/s.'),
+ (147,'2018-10-11 22:32:59','admin','Add','BSCE year 2 generate 1 section/s.'),
+ (148,'2018-10-11 22:33:07','admin','Add','BSCE year 3 generate 1 section/s.'),
+ (149,'2018-10-11 22:33:14','admin','Add','BSCE year 4 generate 1 section/s.'),
+ (150,'2018-10-11 22:33:22','admin','Add','BSCE year 5 generate 1 section/s.'),
+ (151,'2018-10-11 22:33:51','admin','Add','BSHM year 1 generate 3 section/s.'),
+ (152,'2018-10-11 22:33:59','admin','Add','BSHM year 2 generate 2 section/s.'),
+ (153,'2018-10-11 22:34:05','admin','Add','BSHM year 3 generate 2 section/s.'),
+ (154,'2018-10-11 22:34:13','admin','Add','BSHM year 4 generate 2 section/s.'),
+ (155,'2018-10-11 22:34:23','admin','Add','BSEDEN year 1 generate 2 section/s.'),
+ (156,'2018-10-11 22:34:29','admin','Add','BSEDEN year 2 generate 2 section/s.'),
+ (157,'2018-10-11 22:34:35','admin','Add','BSEDEN year 3 generate 2 section/s.'),
+ (158,'2018-10-11 22:34:41','admin','Add','BSEDEN year 4 generate 2 section/s.'),
+ (159,'2018-10-11 22:34:50','admin','Add','BSEDMT year 1 generate 2 section/s.'),
+ (160,'2018-10-11 22:34:56','admin','Add','BSEDMT year 2 generate 2 section/s.'),
+ (161,'2018-10-11 22:35:02','admin','Add','BSEDMT year 3 generate 2 section/s.'),
+ (162,'2018-10-11 22:35:08','admin','Add','BSEDMT year 4 generate 2 section/s.'),
+ (163,'2018-10-11 22:35:16','admin','Add','BSENTREP year 1 generate 3 section/s.'),
+ (164,'2018-10-11 22:35:22','admin','Add','BSENTREP year 2 generate 2 section/s.'),
+ (165,'2018-10-11 22:35:27','admin','Add','BSENTREP year 3 generate 2 section/s.'),
+ (166,'2018-10-11 22:35:32','admin','Add','BSENTREP year 4 generate 2 section/s.'),
+ (167,'2018-10-11 22:35:40','admin','Add','DOMT year 1 generate 1 section/s.'),
+ (168,'2018-10-11 22:35:46','admin','Add','DOMT year 2 generate 1 section/s.'),
+ (169,'2018-10-11 22:35:52','admin','Add','DOMT year 3 generate 1 section/s.'),
+ (170,'2018-10-11 22:36:01','admin','Add','DOMTLOM year 1 generate 2 section/s.'),
+ (171,'2018-10-11 22:36:41','admin','Add','RM201 was added to the rooms.'),
+ (172,'2018-10-11 22:37:03','admin','Add','RM202 was added to the rooms.'),
+ (173,'2018-10-11 22:37:17','admin','Add','RM203 was added to the rooms.'),
+ (174,'2018-10-11 22:37:29','admin','Add','RM204 was added to the rooms.'),
+ (175,'2018-10-11 22:39:49','admin','Logged In','Successfully!'),
+ (176,'2018-10-11 22:40:08','admin','Add','RM205 was added to the rooms.'),
+ (177,'2018-10-11 22:41:19','admin','Logged In','Successfully!'),
+ (178,'2018-10-11 22:41:32','admin','Add','RM206 was added to the rooms.'),
+ (179,'2018-10-11 22:41:46','admin','Add','RM207 was added to the rooms.'),
+ (180,'2018-10-11 22:41:56','admin','Add','RM208 was added to the rooms.'),
+ (181,'2018-10-11 22:42:07','admin','Add','RM209 was added to the rooms.'),
+ (182,'2018-10-11 22:42:25','admin','Add','RM210 was added to the rooms.'),
+ (183,'2018-10-11 22:42:40','admin','Add','RM211 was added to the rooms.'),
+ (184,'2018-10-11 22:42:54','admin','Add','RM212 was added to the rooms.'),
+ (185,'2018-10-11 22:43:06','admin','Add','RM213 was added to the rooms.'),
+ (186,'2018-10-11 22:43:40','admin','Add','STLNG was added to the rooms.'),
+ (187,'2018-10-11 22:44:11','admin','Add','CPL1 was added to the rooms.'),
+ (188,'2018-10-11 22:44:24','admin','Add','CPL2 was added to the rooms.'),
+ (189,'2018-10-11 22:44:39','admin','Add','FL1 was added to the rooms.'),
+ (190,'2018-10-11 22:44:49','admin','Add','FL2 was added to the rooms.'),
+ (191,'2018-10-11 22:45:11','admin','Add','CL was added to the rooms.'),
+ (192,'2018-10-11 22:45:27','admin','Add','DR was added to the rooms.'),
+ (193,'2018-10-11 22:45:43','admin','Add','GYM was added to the rooms.'),
+ (194,'2018-10-11 22:47:51','admin','Delete','DOMTLOM 1-1 was remove.'),
+ (195,'2018-10-11 22:47:57','admin','Delete','DOMTLOM 1-2 was remove.'),
+ (196,'2018-10-11 22:46:40','pamela','Logged In','Successfully!'),
+ (197,'2018-10-11 22:46:58','pamela','Add','7:30 AM-1:30 PM on Monday preferred schedule.'),
+ (198,'2018-10-11 22:47:15','pamela','Add','1:00 PM-6:00 PM on Wednesday preferred schedule.'),
+ (199,'2018-10-11 22:47:31','pamela','Add','5:00 PM-8:00 PM on Friday preferred schedule.'),
+ (200,'2018-10-11 22:47:52','pamela','Add','1:00 PM-3:00 PM on Sunday preferred schedule.'),
+ (201,'2018-10-11 22:48:43','pamela','Updated','User\'s information.'),
+ (202,'2018-10-11 22:48:47','lykatorres98','Logged In','Successfully!'),
+ (203,'2018-10-11 22:49:02','pamela','Added','COMP 2013 preferred subject.'),
+ (204,'2018-10-11 22:49:09','pamela','Added','OFAD 3003 preferred subject.'),
+ (205,'2018-10-11 22:49:13','pamela','Added','INTE 2053 preferred subject.'),
+ (206,'2018-10-11 22:49:17','lykatorres98','Add','8:00 AM-12:00 PM on Tuesday preferred schedule.'),
+ (207,'2018-10-11 22:49:19','lykatorres98','Add','8:00 AM-12:00 PM on Friday preferred schedule.'),
+ (208,'2018-10-11 22:49:20','lykatorres98','Add','8:00 AM-12:00 PM on Saturday preferred schedule.'),
+ (209,'2018-10-11 22:49:22','pamela','Added','COMP 4023 preferred subject.'),
+ (210,'2018-10-11 22:49:26','pamela','Added','COMP 2113 preferred subject.'),
+ (211,'2018-10-11 22:49:31','pamela','Added','INTE 3013 preferred subject.'),
+ (212,'2018-10-11 22:49:42','pamela','Added','INTE 4213 preferred subject.'),
+ (213,'2018-10-11 22:49:47','pamela','Added','PHIL 1013 preferred subject.'),
+ (214,'2018-10-11 22:50:13','lykatorres98','Add','2:00 PM-7:00 PM on Monday preferred schedule.'),
+ (215,'2018-10-11 22:50:15','lykatorres98','Add','2:00 PM-7:00 PM on Thursday preferred schedule.'),
+ (216,'2018-10-11 22:50:17','pamela','Added','ENSC 2063 preferred subject.'),
+ (217,'2018-10-11 22:50:29','pamela','Added','CIEN 3412 preferred subject.'),
+ (218,'2018-10-11 22:50:35','pamela','Added','CIEN 3463 preferred subject.'),
+ (219,'2018-10-11 22:51:19','lykatorres98','Updated','User\'s information.'),
+ (220,'2018-10-11 22:51:59','lykatorres98','Added','COMP 2023 preferred subject.'),
+ (221,'2018-10-11 22:52:05','lykatorres98','Added','COMP 3023 preferred subject.'),
+ (222,'2018-10-11 22:52:16','lykatorres98','Added','ENGL 1013 preferred subject.'),
+ (223,'2018-10-11 22:52:36','lykatorres98','Added','INTE 3033 preferred subject.'),
+ (224,'2018-10-11 22:53:04','pamela','Logged Out','Successfully!'),
+ (225,'2018-10-11 22:57:35','admin','Update','ACCO 2143 was scheduled toAngelica Rose C. Torres from7:00 AM to 10:00 AM Monday in CPL1'),
+ (226,'2018-10-11 22:58:21','admin','Update','COMP 2013 was scheduled toPamela Gerona Cabrera from7:30 AM to 10:30 AM Monday in GYM'),
+ (227,'2018-10-11 23:00:30','admin','Update','COMP 2023 was scheduled toPamela Gerona Cabrera from10:30 AM to 1:30 PM Monday in CPL1'),
+ (228,'2018-10-11 23:02:03','admin','Update','ACCO 2143 was scheduled toAngelica Rose C. Torres from8:00 AM to 11:00 AM Tuesday in CPL1'),
+ (229,'2018-10-11 23:06:32','admin','Update','ACCO 2143 was scheduled toPamela Gerona Cabrera from11:30 AM to 2:30 PM Tuesday in CPL1'),
+ (230,'2018-10-11 23:07:17','admin','Update','ACCO 2143 was scheduled toAngelica Rose C. Torres from11:30 AM to 2:30 PM Wednesday in CPL1'),
+ (231,'2018-10-11 23:08:15','admin','Update','COMP 2023 was scheduled toPamela Gerona Cabrera from10:30 AM to 1:30 PM Saturday in CPL1'),
+ (232,'2018-10-11 23:08:34','admin','Update','CWTS 1013 was scheduled toAngelica Rose C. Torres from8:00 AM to 11:00 AM Friday in CPL1'),
+ (233,'2018-10-11 23:08:58','admin','Update','ENGL 1013 was scheduled toTBA from8:30 AM to 11:30 AM Thursday in RM203'),
+ (234,'2018-10-11 23:09:19','admin','Update','FILI 1013 was scheduled toAngelica Rose C. Torres from7:30 AM to 10:30 AM Tuesday in CPL2'),
+ (235,'2018-10-11 23:09:38','admin','Update','MATH 1013 was scheduled toAngelica Rose C. Torres from9:00 AM to 12:00 PM Thursday in FL2'),
+ (236,'2018-10-11 23:09:58','admin','Update','OFAD 3003 was scheduled toPamela Gerona Cabrera from8:00 AM to 11:00 AM Thursday in CPL2'),
+ (237,'2018-10-11 23:10:16','admin','Update','PHED 1012_ was scheduled toPamela Gerona Cabrera from9:00 AM to 12:00 PM Wednesday in FL2'),
+ (238,'2018-10-11 23:10:24','admin','Update','BSIT 1-3 schedule was saved for Bachelor of Science in Information Technology 2011.'),
+ (239,'2018-10-11 23:07:28','pamela','Logged In','Successfully!'),
+ (240,'2018-10-11 23:21:02','admin','Update','COMP 2063 was scheduled toAngelica Rose C. Torres from8:00 AM to 11:00 AM Wednesday in DR'),
+ (241,'2018-10-11 23:21:32','admin','Update','HIST 1023 was scheduled toPamela Gerona Cabrera from1:00 PM to 4:00 PM Wednesday in RM202'),
+ (242,'2018-10-11 23:22:13','admin','Update','INTE 4213 was scheduled toAngelica Rose C. Torres from2:30 PM to 5:30 PM Wednesday in CPL2'),
+ (243,'2018-10-11 23:22:35','admin','Update','IT-ELEC3 was scheduled toPamela Gerona Cabrera from12:00 PM to 3:00 PM Monday in CPL1'),
+ (244,'2018-10-11 23:22:58','admin','Update','IT-ELEC4 was scheduled toPamela Gerona Cabrera from8:30 AM to 11:30 AM Tuesday in CPL1'),
+ (245,'2018-10-11 23:23:16','admin','Update','IT-FE2 was scheduled toPamela Gerona Cabrera from12:00 PM to 3:00 PM Sunday in DR'),
+ (246,'2018-10-11 23:23:44','admin','Update','IT-FE3 was scheduled toAngelica Rose C. Torres from12:00 PM to 3:00 PM Thursday in CPL2'),
+ (247,'2018-10-11 23:24:05','admin','Update','LITE 1023 was scheduled toAngelica Rose C. Torres from2:30 PM to 5:30 PM Tuesday in CPL1'),
+ (248,'2018-10-11 23:24:11','admin','Update','BSIT 4-1 schedule was saved for Bachelor of Science in Information Technology 2011.'),
+ (249,'2018-10-11 23:26:29','admin','Update','Pamela Gerona Cabrera\'s account was set to inactive.'),
+ (250,'2018-10-11 23:26:40','admin','Update','Pamela Gerona Cabrera\'s account was set to inactive.'),
+ (251,'2018-10-11 23:23:29','lykatorres98','Logged Out','Successfully!'),
+ (252,'2018-10-11 23:23:41','lykatorres98','Logged In','Successfully!'),
+ (253,'2018-10-11 23:27:23','admin','Update','Pamela Gerona Cabrera\'s account was set to active.'),
+ (254,'2018-10-11 23:26:09','lykatorres98','Logged Out','Successfully!'),
+ (255,'2018-10-11 23:29:58','admin','Logged Out','Successfully!'),
+ (256,'2018-10-11 23:35:38','admin','Logged In','Successfully!'),
+ (257,'2018-10-11 23:38:19','admin','Logged In','Successfully!'),
+ (258,'2018-10-11 23:55:27','admin','Logged In','Successfully!'),
+ (259,'2018-10-11 23:56:48','admin','Update','COMP 2063 was scheduled toPamela Gerona Cabrera from6:00 PM to 9:00 PM Tuesday in CPL1'),
+ (260,'2018-10-11 23:56:56','admin','Logged Out','Successfully!'),
+ (261,'2018-10-11 23:58:31','admin','Logged In','Successfully!'),
+ (262,'2018-10-11 23:59:12','admin','Logged Out','Successfully!'),
+ (263,'2018-10-12 00:09:25','admin','Logged In','Successfully!'),
+ (264,'2018-10-12 00:13:55','admin','Logged In','Successfully!'),
+ (265,'2018-10-12 00:15:27','admin','Update','COMP 2013 was scheduled toPamela Gerona Cabrera from12:30 PM to 3:30 PM Thursday in GYM'),
+ (266,'2018-10-12 00:17:00','admin','Update','COMP 2013 was scheduled toPamela Gerona Cabrera from3:30 PM to 6:30 PM Thursday in GYM'),
+ (267,'2018-10-12 00:19:17','admin','Update','COMP 2023 was scheduled toPamela Gerona Cabrera from6:00 PM to 9:00 PM Sunday in RM202'),
+ (268,'2018-10-12 00:20:23','admin','Logged Out','Successfully!'),
+ (269,'2018-10-12 00:21:58','admin','Logged In','Successfully!'),
+ (270,'2018-10-12 00:29:19','admin','Logged In','Successfully!'),
+ (271,'2018-10-12 00:30:45','admin','Logged Out','Successfully!'),
+ (272,'2018-10-12 00:37:05','admin','Logged In','Successfully!'),
+ (273,'2018-10-12 00:42:52','admin','Logged In','Successfully!'),
+ (274,'2018-10-12 00:45:33','admin','Logged In','Successfully!'),
+ (275,'2018-10-12 00:49:27','admin','Logged In','Successfully!'),
+ (276,'2018-10-12 00:51:47','admin','Logged In','Successfully!'),
+ (277,'2018-10-12 00:52:22','admin','Add','LJERW was added to the rooms.'),
+ (278,'2018-10-12 01:14:40','admin','Logged Out','Successfully!'),
+ (279,'2018-10-12 01:15:20','pamela','Logged In','Successfully!'),
+ (280,'2018-10-12 01:15:53','pamela','Logged Out','Successfully!'),
+ (281,'2018-10-12 01:15:58','admin','Logged In','Successfully!');
+/*!40000 ALTER TABLE `tbl_audittrail` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tbl_course`
+--
+
+DROP TABLE IF EXISTS `tbl_course`;
+CREATE TABLE `tbl_course` (
+  `course_id` int(10) unsigned NOT NULL auto_increment,
+  `curriculums_id` int(10) unsigned NOT NULL,
+  `courseName` varchar(100) NOT NULL,
+  `courseAcronym` varchar(45) NOT NULL,
+  PRIMARY KEY  (`course_id`),
+  KEY `FK_tbl_course_1` (`curriculums_id`),
+  CONSTRAINT `FK_tbl_course_1` FOREIGN KEY (`curriculums_id`) REFERENCES `tbl_curriculums` (`curriculums_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_course`
+--
+
+/*!40000 ALTER TABLE `tbl_course` DISABLE KEYS */;
+INSERT INTO `tbl_course` (`course_id`,`curriculums_id`,`courseName`,`courseAcronym`) VALUES 
+ (19,6,'Bachelor of Science in Information Technology','BSIT'),
+ (20,7,'Bachelor of Science in Accountancy','BSA'),
+ (21,8,'Bachelor of Science in Civil Engineering','BSCE'),
+ (22,9,'Bachelor of Science in Hospitality Management','BSHM'),
+ (23,10,'Bachelor of Science in Secondary Education Major in English','BSEDEN'),
+ (24,11,'Bachelor of Science in Secondary Education Major in Mathematics','BSEDMT'),
+ (25,12,'Bachelor of Science in Entrepreneurship Management','BSENTREP'),
+ (26,13,'Diploma in Office Management Technology','DOMT'),
+ (27,14,'Diploma in Office Management Technology Major in Legal Office Management','DOMTLOM');
+/*!40000 ALTER TABLE `tbl_course` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tbl_curriculums`
+--
+
+DROP TABLE IF EXISTS `tbl_curriculums`;
+CREATE TABLE `tbl_curriculums` (
+  `curriculums_id` int(10) unsigned NOT NULL auto_increment,
+  `programName` varchar(100) NOT NULL,
+  `createdBy` int(10) unsigned NOT NULL,
+  `createdAt` varchar(45) NOT NULL,
+  `status` varchar(45) NOT NULL,
+  `inUsed` varchar(45) NOT NULL,
+  `curriculumYear` varchar(45) NOT NULL,
+  PRIMARY KEY  (`curriculums_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_curriculums`
+--
+
+/*!40000 ALTER TABLE `tbl_curriculums` DISABLE KEYS */;
+INSERT INTO `tbl_curriculums` (`curriculums_id`,`programName`,`createdBy`,`createdAt`,`status`,`inUsed`,`curriculumYear`) VALUES 
+ (6,'Bachelor of Science in Information Technology',9,'Friday, 12 October 2018','active','NO','2011'),
+ (7,'Bachelor of Science in Accountancy',9,'Friday, 12 October 2018','active','NO','2012'),
+ (8,'Bachelor of Science in Civil Engineering',9,'Thursday, 11 October 2018','active','NO','2011'),
+ (9,'Bachelor of Science in Hospitality Management',9,'Thursday, 11 October 2018','active','NO','2017'),
+ (10,'Bachelor of Science in Secondary Education Major in English',9,'Thursday, 11 October 2018','active','NO','2017'),
+ (11,'Bachelor of Science in Secondary Education Major in Mathematics',9,'Thursday, 11 October 2018','active','NO','2016'),
+ (12,'Bachelor of Science in Entrepreneurship Management',9,'Thursday, 11 October 2018','active','NO','2016'),
+ (13,'Diploma in Office Management Technology',9,'Thursday, 11 October 2018','active','NO','2017'),
+ (14,'Diploma in Office Management Technology Major in Legal Office Management',9,'Thursday, 11 October 2018','active','YES','2016');
+/*!40000 ALTER TABLE `tbl_curriculums` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tbl_preferredschedules`
+--
+
+DROP TABLE IF EXISTS `tbl_preferredschedules`;
+CREATE TABLE `tbl_preferredschedules` (
+  `preferredSchedule_id` int(10) unsigned NOT NULL auto_increment,
+  `users_id` int(10) unsigned NOT NULL,
+  `startTime` varchar(45) NOT NULL,
+  `endTime` varchar(45) NOT NULL,
+  `ps_Day` varchar(45) NOT NULL,
+  PRIMARY KEY  USING BTREE (`preferredSchedule_id`),
+  KEY `FK_tbl_preferredschedules_1` (`users_id`),
+  CONSTRAINT `FK_tbl_preferredschedules_1` FOREIGN KEY (`users_id`) REFERENCES `tbl_users` (`users_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_preferredschedules`
+--
+
+/*!40000 ALTER TABLE `tbl_preferredschedules` DISABLE KEYS */;
+INSERT INTO `tbl_preferredschedules` (`preferredSchedule_id`,`users_id`,`startTime`,`endTime`,`ps_Day`) VALUES 
+ (22,10,'7:30 AM','1:30 PM','Monday'),
+ (23,10,'1:00 PM','6:00 PM','Wednesday'),
+ (24,10,'5:00 PM','8:00 PM','Friday'),
+ (25,10,'1:00 PM','3:00 PM','Sunday'),
+ (26,11,'8:00 AM','12:00 PM','Tuesday'),
+ (27,11,'8:00 AM','12:00 PM','Friday'),
+ (28,11,'8:00 AM','12:00 PM','Saturday'),
+ (29,11,'2:00 PM','7:00 PM','Monday'),
+ (30,11,'2:00 PM','7:00 PM','Thursday');
+/*!40000 ALTER TABLE `tbl_preferredschedules` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tbl_preferredsubjects`
+--
+
+DROP TABLE IF EXISTS `tbl_preferredsubjects`;
+CREATE TABLE `tbl_preferredsubjects` (
+  `preferredSubjects_id` int(10) unsigned NOT NULL auto_increment,
+  `users_id` int(10) unsigned NOT NULL,
+  `subjects_id` int(10) unsigned NOT NULL,
+  `semester` varchar(45) NOT NULL,
+  `schoolYear` varchar(45) NOT NULL,
+  `curriculums_id` int(10) unsigned NOT NULL,
+  PRIMARY KEY  (`preferredSubjects_id`),
+  KEY `FK_tbl_preferredsubjects_1` (`users_id`),
+  KEY `FK_tbl_preferredsubjects_2` (`subjects_id`),
+  KEY `FK_tbl_preferredsubjects_3` (`curriculums_id`),
+  CONSTRAINT `FK_tbl_preferredsubjects_1` FOREIGN KEY (`users_id`) REFERENCES `tbl_users` (`users_id`),
+  CONSTRAINT `FK_tbl_preferredsubjects_2` FOREIGN KEY (`subjects_id`) REFERENCES `tbl_subjects` (`subjects_id`),
+  CONSTRAINT `FK_tbl_preferredsubjects_3` FOREIGN KEY (`curriculums_id`) REFERENCES `tbl_curriculums` (`curriculums_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_preferredsubjects`
+--
+
+/*!40000 ALTER TABLE `tbl_preferredsubjects` DISABLE KEYS */;
+INSERT INTO `tbl_preferredsubjects` (`preferredSubjects_id`,`users_id`,`subjects_id`,`semester`,`schoolYear`,`curriculums_id`) VALUES 
+ (19,10,99,'1ST','2018-2019',6),
+ (20,10,105,'1ST','2018-2019',6),
+ (21,10,112,'1ST','2018-2019',6),
+ (22,10,118,'1ST','2018-2019',6),
+ (23,10,117,'1ST','2018-2019',6),
+ (24,10,120,'1ST','2018-2019',6),
+ (25,10,126,'1ST','2018-2019',6),
+ (26,10,123,'1ST','2018-2019',6),
+ (27,10,201,'1ST','2018-2019',8),
+ (28,10,213,'1ST','2018-2019',8),
+ (29,10,222,'1ST','2018-2019',8),
+ (30,11,100,'1ST','2018-2019',6),
+ (31,11,108,'1ST','2018-2019',6),
+ (32,11,102,'1ST','2018-2019',6),
+ (33,11,121,'1ST','2018-2019',6);
+/*!40000 ALTER TABLE `tbl_preferredsubjects` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tbl_room`
+--
+
+DROP TABLE IF EXISTS `tbl_room`;
+CREATE TABLE `tbl_room` (
+  `room_id` int(10) unsigned NOT NULL auto_increment,
+  `roomCode` varchar(45) NOT NULL,
+  `roomName` varchar(45) NOT NULL,
+  `roomSlots` int(10) unsigned NOT NULL,
+  `roomStatus` varchar(45) NOT NULL,
+  PRIMARY KEY  (`room_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_room`
+--
+
+/*!40000 ALTER TABLE `tbl_room` DISABLE KEYS */;
+INSERT INTO `tbl_room` (`room_id`,`roomCode`,`roomName`,`roomSlots`,`roomStatus`) VALUES 
+ (7,'RM201','Room 201',60,'ACTIVE'),
+ (8,'RM202','Room 202',60,'ACTIVE'),
+ (9,'RM203','Room 203',60,'ACTIVE'),
+ (10,'RM204','Room 204',60,'ACTIVE'),
+ (11,'RM205','Room 205',60,'ACTIVE'),
+ (12,'RM206','Room 206',60,'ACTIVE'),
+ (13,'RM207','Room 207',60,'ACTIVE'),
+ (14,'RM208','Room 208',60,'ACTIVE'),
+ (15,'RM209','Room 209',60,'ACTIVE'),
+ (16,'RM210','Room 210',60,'ACTIVE'),
+ (17,'RM211','Room 211',60,'ACTIVE'),
+ (18,'RM212','Room 212',60,'ACTIVE'),
+ (19,'RM213','Room 213',60,'ACTIVE'),
+ (20,'STLNG','Student Lounge',60,'ACTIVE'),
+ (21,'CPL1','Computer Laboratory 1',60,'ACTIVE'),
+ (22,'CPL2','Computer Laboratory 2',60,'ACTIVE'),
+ (23,'FL1','Food Laboratory 1',60,'ACTIVE'),
+ (24,'FL2','Food Laboratory 2',60,'ACTIVE'),
+ (25,'CL','Chemistry Laboratory',60,'ACTIVE'),
+ (26,'DR','Drawing Room',60,'ACTIVE'),
+ (27,'GYM','Gymnasium',60,'ACTIVE'),
+ (28,'LJERW','lkwjerl',662,'ACTIVE');
+/*!40000 ALTER TABLE `tbl_room` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tbl_room_scheduled`
+--
+
+DROP TABLE IF EXISTS `tbl_room_scheduled`;
+CREATE TABLE `tbl_room_scheduled` (
+  `room_scheduled_id` int(10) unsigned NOT NULL auto_increment,
+  `roomCode` varchar(45) NOT NULL,
+  `roomStartTime` varchar(45) NOT NULL,
+  `roomEndTime` varchar(45) NOT NULL,
+  `roomDay` varchar(45) NOT NULL,
+  `assignedProfessor` varchar(100) NOT NULL,
+  `subjectCode` varchar(45) NOT NULL,
+  `course` varchar(45) NOT NULL,
+  `year` varchar(45) NOT NULL,
+  `section` varchar(45) NOT NULL,
+  `semester` varchar(45) NOT NULL,
+  `schoolYear` varchar(45) NOT NULL,
+  `curriculums_id` int(10) unsigned NOT NULL,
+  PRIMARY KEY  (`room_scheduled_id`),
+  KEY `FK_tbl_room_scheduled_1` (`curriculums_id`),
+  CONSTRAINT `FK_tbl_room_scheduled_1` FOREIGN KEY (`curriculums_id`) REFERENCES `tbl_curriculums` (`curriculums_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=280 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_room_scheduled`
+--
+
+/*!40000 ALTER TABLE `tbl_room_scheduled` DISABLE KEYS */;
+INSERT INTO `tbl_room_scheduled` (`room_scheduled_id`,`roomCode`,`roomStartTime`,`roomEndTime`,`roomDay`,`assignedProfessor`,`subjectCode`,`course`,`year`,`section`,`semester`,`schoolYear`,`curriculums_id`) VALUES 
+ (237,'DR','8:00 AM','11:00 AM','Wednesday','Angelica Rose C. Torres','COMP 2063','BSIT','4','1','1ST','2018-2019',6),
+ (238,'RM202','1:00 PM','4:00 PM','Wednesday','Pamela Gerona Cabrera','HIST 1023','BSIT','4','1','1ST','2018-2019',6),
+ (239,'CPL2','2:30 PM','5:30 PM','Wednesday','Angelica Rose C. Torres','INTE 4213','BSIT','4','1','1ST','2018-2019',6),
+ (240,'CPL1','12:00 PM','3:00 PM','Monday','Pamela Gerona Cabrera','IT-ELEC3','BSIT','4','1','1ST','2018-2019',6),
+ (241,'CPL1','8:30 AM','11:30 AM','Tuesday','Pamela Gerona Cabrera','IT-ELEC4','BSIT','4','1','1ST','2018-2019',6),
+ (242,'DR','12:00 PM','3:00 PM','Sunday','Pamela Gerona Cabrera','IT-FE2','BSIT','4','1','1ST','2018-2019',6),
+ (243,'CPL2','12:00 PM','3:00 PM','Thursday','Angelica Rose C. Torres','IT-FE3','BSIT','4','1','1ST','2018-2019',6),
+ (244,'CPL1','2:30 PM','5:30 PM','Tuesday','Angelica Rose C. Torres','LITE 1023','BSIT','4','1','1ST','2018-2019',6),
+ (245,'CPL1','6:00 PM','9:00 PM','Tuesday','Pamela Gerona Cabrera','COMP 2063','BSIT','4','2','1ST','2018-2019',6),
+ (246,'','','','','','HIST 1023','BSIT','4','2','1ST','2018-2019',6),
+ (247,'','','','','','INTE 4213','BSIT','4','2','1ST','2018-2019',6),
+ (248,'','','','','','IT-ELEC3','BSIT','4','2','1ST','2018-2019',6),
+ (249,'','','','','','IT-ELEC4','BSIT','4','2','1ST','2018-2019',6),
+ (250,'','','','','','IT-FE2','BSIT','4','2','1ST','2018-2019',6),
+ (251,'','','','','','IT-FE3','BSIT','4','2','1ST','2018-2019',6),
+ (252,'','','','','','LITE 1023','BSIT','4','2','1ST','2018-2019',6),
+ (271,'CPL1','11:30 AM','2:30 PM','Wednesday','Angelica Rose C. Torres','ACCO 2143','BSIT','1','3','1ST','2018-2019',6),
+ (272,'GYM','3:30 PM','6:30 PM','Thursday','Pamela Gerona Cabrera','COMP 2013','BSIT','1','3','1ST','2018-2019',6),
+ (273,'RM202','6:00 PM','9:00 PM','Sunday','Pamela Gerona Cabrera','COMP 2023','BSIT','1','3','1ST','2018-2019',6),
+ (274,'CPL1','8:00 AM','11:00 AM','Friday','Angelica Rose C. Torres','CWTS 1013','BSIT','1','3','1ST','2018-2019',6),
+ (275,'RM203','8:30 AM','11:30 AM','Thursday','TBA','ENGL 1013','BSIT','1','3','1ST','2018-2019',6),
+ (276,'CPL2','7:30 AM','10:30 AM','Tuesday','Angelica Rose C. Torres','FILI 1013','BSIT','1','3','1ST','2018-2019',6),
+ (277,'FL2','9:00 AM','12:00 PM','Thursday','Angelica Rose C. Torres','MATH 1013','BSIT','1','3','1ST','2018-2019',6),
+ (278,'CPL2','8:00 AM','11:00 AM','Thursday','Pamela Gerona Cabrera','OFAD 3003','BSIT','1','3','1ST','2018-2019',6),
+ (279,'FL2','9:00 AM','12:00 PM','Wednesday','Pamela Gerona Cabrera','PHED 1012_','BSIT','1','3','1ST','2018-2019',6);
+/*!40000 ALTER TABLE `tbl_room_scheduled` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tbl_sections`
+--
+
+DROP TABLE IF EXISTS `tbl_sections`;
+CREATE TABLE `tbl_sections` (
+  `section_id` int(10) unsigned NOT NULL auto_increment,
+  `course` varchar(45) NOT NULL,
+  `year` int(10) unsigned NOT NULL,
+  `section` varchar(45) NOT NULL,
+  PRIMARY KEY  (`section_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=90 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_sections`
+--
+
+/*!40000 ALTER TABLE `tbl_sections` DISABLE KEYS */;
+INSERT INTO `tbl_sections` (`section_id`,`course`,`year`,`section`) VALUES 
+ (33,'BSIT',1,'1'),
+ (34,'BSIT',1,'2'),
+ (35,'BSIT',1,'3'),
+ (36,'BSIT',2,'1'),
+ (37,'BSIT',3,'1'),
+ (38,'BSIT',4,'1'),
+ (39,'BSIT',4,'2'),
+ (40,'BSA',1,'1'),
+ (41,'BSA',1,'2'),
+ (42,'BSA',2,'1'),
+ (43,'BSA',2,'2'),
+ (44,'BSA',3,'1'),
+ (45,'BSA',4,'1'),
+ (46,'BSCE',1,'1'),
+ (47,'BSCE',2,'1'),
+ (48,'BSCE',3,'1'),
+ (49,'BSCE',4,'1'),
+ (50,'BSCE',5,'1'),
+ (51,'BSHM',1,'1'),
+ (52,'BSHM',1,'2'),
+ (53,'BSHM',1,'3'),
+ (54,'BSHM',2,'1'),
+ (55,'BSHM',2,'2'),
+ (56,'BSHM',3,'1'),
+ (57,'BSHM',3,'2'),
+ (58,'BSHM',4,'1'),
+ (59,'BSHM',4,'2'),
+ (60,'BSEDEN',1,'1'),
+ (61,'BSEDEN',1,'2'),
+ (62,'BSEDEN',2,'1'),
+ (63,'BSEDEN',2,'2'),
+ (64,'BSEDEN',3,'1'),
+ (65,'BSEDEN',3,'2'),
+ (66,'BSEDEN',4,'1'),
+ (67,'BSEDEN',4,'2'),
+ (68,'BSEDMT',1,'1'),
+ (69,'BSEDMT',1,'2'),
+ (70,'BSEDMT',2,'1'),
+ (71,'BSEDMT',2,'2'),
+ (72,'BSEDMT',3,'1'),
+ (73,'BSEDMT',3,'2'),
+ (74,'BSEDMT',4,'1'),
+ (75,'BSEDMT',4,'2'),
+ (76,'BSENTREP',1,'1'),
+ (77,'BSENTREP',1,'2'),
+ (78,'BSENTREP',1,'3'),
+ (79,'BSENTREP',2,'1'),
+ (80,'BSENTREP',2,'2'),
+ (81,'BSENTREP',3,'1'),
+ (82,'BSENTREP',3,'2'),
+ (83,'BSENTREP',4,'1'),
+ (84,'BSENTREP',4,'2'),
+ (85,'DOMT',1,'1'),
+ (86,'DOMT',2,'1'),
+ (87,'DOMT',3,'1');
+/*!40000 ALTER TABLE `tbl_sections` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tbl_securityquestions`
+--
+
+DROP TABLE IF EXISTS `tbl_securityquestions`;
+CREATE TABLE `tbl_securityquestions` (
+  `sq_id` int(10) unsigned NOT NULL auto_increment,
+  `users_id` int(10) unsigned NOT NULL,
+  `answer` varchar(45) NOT NULL,
+  `question` varchar(100) NOT NULL,
+  PRIMARY KEY  (`sq_id`),
+  KEY `FK_tbl_securityquestions_1` (`users_id`),
+  CONSTRAINT `FK_tbl_securityquestions_1` FOREIGN KEY (`users_id`) REFERENCES `tbl_users` (`users_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_securityquestions`
+--
+
+/*!40000 ALTER TABLE `tbl_securityquestions` DISABLE KEYS */;
+INSERT INTO `tbl_securityquestions` (`sq_id`,`users_id`,`answer`,`question`) VALUES 
+ (6,9,'michael','Who is your favorite actor, musician, or artist?'),
+ (7,9,'asdf','What is your mother’s maiden name?'),
+ (8,9,'asdf','What is your favorite color?'),
+ (9,10,'April','What is your oldest cousin\'s first name?'),
+ (10,10,'Flight Attendant','What was your dream job as a child '),
+ (11,10,'New York City','In what city did you meet your spouse/significant other?'),
+ (12,11,'Rosie','What was the name of your first stuffed animal?'),
+ (13,11,'Pediatrician','What was your dream job as a child '),
+ (14,11,'Mapua Institute of Technology','What is the name of a college you applied to but didn\'t attend?');
+/*!40000 ALTER TABLE `tbl_securityquestions` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tbl_students_scheduled`
+--
+
+DROP TABLE IF EXISTS `tbl_students_scheduled`;
+CREATE TABLE `tbl_students_scheduled` (
+  `students_scheduled_id` int(10) unsigned NOT NULL auto_increment,
+  `curriculums_id` int(10) unsigned NOT NULL,
+  `course` varchar(45) NOT NULL,
+  `year` varchar(45) NOT NULL,
+  `section` varchar(45) NOT NULL,
+  `scheduledBy` varchar(45) NOT NULL,
+  `scheduledDate` datetime NOT NULL,
+  `semester` varchar(45) NOT NULL,
+  `schoolYear` varchar(45) NOT NULL,
+  `room` varchar(45) NOT NULL,
+  `subjectCode` varchar(45) NOT NULL,
+  `subjectDescription` varchar(200) NOT NULL,
+  `professor` varchar(100) NOT NULL,
+  `scheduledStartTime` varchar(45) NOT NULL,
+  `scheduledEndTime` varchar(45) NOT NULL,
+  `scheduledDay` varchar(45) NOT NULL,
+  `lecHours` varchar(45) NOT NULL,
+  `labHours` varchar(45) NOT NULL,
+  `units` varchar(45) NOT NULL,
+  PRIMARY KEY  USING BTREE (`students_scheduled_id`),
+  KEY `FK_tbl_students_scheduled_1` (`curriculums_id`),
+  CONSTRAINT `FK_tbl_students_scheduled_1` FOREIGN KEY (`curriculums_id`) REFERENCES `tbl_curriculums` (`curriculums_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=630 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_students_scheduled`
+--
+
+/*!40000 ALTER TABLE `tbl_students_scheduled` DISABLE KEYS */;
+INSERT INTO `tbl_students_scheduled` (`students_scheduled_id`,`curriculums_id`,`course`,`year`,`section`,`scheduledBy`,`scheduledDate`,`semester`,`schoolYear`,`room`,`subjectCode`,`subjectDescription`,`professor`,`scheduledStartTime`,`scheduledEndTime`,`scheduledDay`,`lecHours`,`labHours`,`units`) VALUES 
+ (587,6,'BSIT','4','1','9','2018-10-11 23:24:11','1ST','2018-2019','DR','COMP 2063','Professional Ethics','Angelica Rose C. Torres','8:00 AM','11:00 AM','Wednesday','3','0','3'),
+ (588,6,'BSIT','4','1','9','2018-10-11 23:24:11','1ST','2018-2019','RM202','HIST 1023','Buhay, Mga Gawain at Sinulat ni Rizal','Pamela Gerona Cabrera','1:00 PM','4:00 PM','Wednesday','3','0','3'),
+ (589,6,'BSIT','4','1','9','2018-10-11 23:24:11','1ST','2018-2019','CPL2','INTE 4213','Capstone Project','Angelica Rose C. Torres','2:30 PM','5:30 PM','Wednesday','3','0','3'),
+ (590,6,'BSIT','4','1','9','2018-10-11 23:24:11','1ST','2018-2019','CPL1','IT-ELEC3','BSIT ELECTIVE 3','Pamela Gerona Cabrera','12:00 PM','3:00 PM','Monday','2','3','3'),
+ (591,6,'BSIT','4','1','9','2018-10-11 23:24:11','1ST','2018-2019','CPL1','IT-ELEC4','BSIT ELECTIVE 4','Pamela Gerona Cabrera','8:30 AM','11:30 AM','Tuesday','2','3','3'),
+ (592,6,'BSIT','4','1','9','2018-10-11 23:24:11','1ST','2018-2019','DR','IT-FE2','BSIT FREE ELECTIVE 2','Pamela Gerona Cabrera','12:00 PM','3:00 PM','Sunday','3','0','3'),
+ (593,6,'BSIT','4','1','9','2018-10-11 23:24:11','1ST','2018-2019','CPL2','IT-FE3','BSIT FREE ELECTIVE 3','Angelica Rose C. Torres','12:00 PM','3:00 PM','Thursday','3','0','3'),
+ (594,6,'BSIT','4','1','9','2018-10-11 23:24:11','1ST','2018-2019','CPL1','LITE 1023','World Literature','Angelica Rose C. Torres','2:30 PM','5:30 PM','Tuesday','3','0','3'),
+ (595,6,'BSIT','4','2','9','2018-10-11 23:56:49','1ST','2018-2019','CPL1','COMP 2063','Professional Ethics','Pamela Gerona Cabrera','6:00 PM','9:00 PM','Tuesday','3','0','3'),
+ (596,6,'BSIT','4','2','9','2018-10-11 23:56:50','1ST','2018-2019','','HIST 1023','Buhay, Mga Gawain at Sinulat ni Rizal','','','','','3','0','3'),
+ (597,6,'BSIT','4','2','9','2018-10-11 23:56:50','1ST','2018-2019','','INTE 4213','Capstone Project','','','','','3','0','3'),
+ (598,6,'BSIT','4','2','9','2018-10-11 23:56:50','1ST','2018-2019','','IT-ELEC3','BSIT ELECTIVE 3','','','','','2','3','3'),
+ (599,6,'BSIT','4','2','9','2018-10-11 23:56:50','1ST','2018-2019','','IT-ELEC4','BSIT ELECTIVE 4','','','','','2','3','3'),
+ (600,6,'BSIT','4','2','9','2018-10-11 23:56:50','1ST','2018-2019','','IT-FE2','BSIT FREE ELECTIVE 2','','','','','3','0','3'),
+ (601,6,'BSIT','4','2','9','2018-10-11 23:56:50','1ST','2018-2019','','IT-FE3','BSIT FREE ELECTIVE 3','','','','','3','0','3'),
+ (602,6,'BSIT','4','2','9','2018-10-11 23:56:50','1ST','2018-2019','','LITE 1023','World Literature','','','','','3','0','3'),
+ (621,6,'BSIT','1','3','9','2018-10-12 00:19:18','1ST','2018-2019','CPL1','ACCO 2143','Accounting Principles','Angelica Rose C. Torres','11:30 AM','2:30 PM','Wednesday','3','0','3'),
+ (622,6,'BSIT','1','3','9','2018-10-12 00:19:18','1ST','2018-2019','GYM','COMP 2013','Fundamentals of Problem Solving and Programming 1','Pamela Gerona Cabrera','3:30 PM','6:30 PM','Thursday','2','3','3'),
+ (623,6,'BSIT','1','3','9','2018-10-12 00:19:18','1ST','2018-2019','RM202','COMP 2023','Information Technology Fundamentals','Pamela Gerona Cabrera','6:00 PM','9:00 PM','Sunday','2','3','3'),
+ (624,6,'BSIT','1','3','9','2018-10-12 00:19:18','1ST','2018-2019','CPL1','CWTS 1013','Civic Welfare Training Service 1','Angelica Rose C. Torres','8:00 AM','11:00 AM','Friday','3','0','3'),
+ (625,6,'BSIT','1','3','9','2018-10-12 00:19:18','1ST','2018-2019','RM203','ENGL 1013','Study and Thinking Skills in English','TBA','8:30 AM','11:30 AM','Thursday','3','0','3'),
+ (626,6,'BSIT','1','3','9','2018-10-12 00:19:18','1ST','2018-2019','CPL2','FILI 1013','Komunikasyon sa Akademikong Filipino','Angelica Rose C. Torres','7:30 AM','10:30 AM','Tuesday','3','0','3'),
+ (627,6,'BSIT','1','3','9','2018-10-12 00:19:18','1ST','2018-2019','FL2','MATH 1013','College Algebra','Angelica Rose C. Torres','9:00 AM','12:00 PM','Thursday','3','0','3'),
+ (628,6,'BSIT','1','3','9','2018-10-12 00:19:18','1ST','2018-2019','CPL2','OFAD 3003','Keyboarding with Laboratory','Pamela Gerona Cabrera','8:00 AM','11:00 AM','Thursday','1','2','3'),
+ (629,6,'BSIT','1','3','9','2018-10-12 00:19:18','1ST','2018-2019','FL2','PHED 1012_','Physical Fitness and Self-Testing Activities - Physical Fitness','Pamela Gerona Cabrera','9:00 AM','12:00 PM','Wednesday','2','0','2');
+/*!40000 ALTER TABLE `tbl_students_scheduled` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tbl_subjects`
+--
+
+DROP TABLE IF EXISTS `tbl_subjects`;
+CREATE TABLE `tbl_subjects` (
+  `subjects_id` int(10) unsigned NOT NULL auto_increment,
+  `curriculums_id` int(10) unsigned NOT NULL,
+  `course_id` int(10) unsigned NOT NULL,
+  `subjectCode` varchar(45) NOT NULL,
+  `subjectDescription` varchar(100) NOT NULL,
+  `lectureHours` int(10) unsigned NOT NULL,
+  `laboratoryHours` int(10) unsigned NOT NULL,
+  `units` int(10) unsigned NOT NULL,
+  `yearLevel` int(10) unsigned NOT NULL,
+  `course` varchar(45) NOT NULL,
+  `semester` varchar(45) NOT NULL,
+  PRIMARY KEY  USING BTREE (`subjects_id`),
+  KEY `FK_tbl_subjects_1` (`curriculums_id`),
+  KEY `FK_tbl_subjects_2` (`course_id`),
+  CONSTRAINT `FK_tbl_subjects_1` FOREIGN KEY (`curriculums_id`) REFERENCES `tbl_curriculums` (`curriculums_id`),
+  CONSTRAINT `FK_tbl_subjects_2` FOREIGN KEY (`course_id`) REFERENCES `tbl_course` (`course_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=552 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_subjects`
+--
+
+/*!40000 ALTER TABLE `tbl_subjects` DISABLE KEYS */;
+INSERT INTO `tbl_subjects` (`subjects_id`,`curriculums_id`,`course_id`,`subjectCode`,`subjectDescription`,`lectureHours`,`laboratoryHours`,`units`,`yearLevel`,`course`,`semester`) VALUES 
+ (98,6,19,'ACCO 2143','Accounting Principles',3,0,3,1,'BSIT','1ST'),
+ (99,6,19,'COMP 2013','Fundamentals of Problem Solving and Programming 1',2,3,3,1,'BSIT','1ST'),
+ (100,6,19,'COMP 2023','Information Technology Fundamentals',2,3,3,1,'BSIT','1ST'),
+ (101,6,19,'CWTS 1013','Civic Welfare Training Service 1',3,0,3,1,'BSIT','1ST'),
+ (102,6,19,'ENGL 1013','Study and Thinking Skills in English',3,0,3,1,'BSIT','1ST'),
+ (103,6,19,'FILI 1013','Komunikasyon sa Akademikong Filipino',3,0,3,1,'BSIT','1ST'),
+ (104,6,19,'MATH 1013','College Algebra',3,0,3,1,'BSIT','1ST'),
+ (105,6,19,'OFAD 3003','Keyboarding with Laboratory',1,2,3,1,'BSIT','1ST'),
+ (106,6,19,'PHED 1012_','Physical Fitness and Self-Testing Activities - Physical Fitness',2,0,2,1,'BSIT','1ST'),
+ (107,6,19,'COMP 2103','Object-Oriented Programming',2,3,3,2,'BSIT','1ST'),
+ (108,6,19,'COMP 3023','Data Communication And Networking',2,3,3,2,'BSIT','1ST'),
+ (109,6,19,'ENGL 1033','Speech Communication',3,0,3,2,'BSIT','1ST'),
+ (110,6,19,'HIST 1013','Heyograpiya at Kasaysayan ng Pilipinas',3,0,3,2,'BSIT','1ST'),
+ (111,6,19,'INTE 2033','Computer System Organization',2,3,3,2,'BSIT','1ST'),
+ (112,6,19,'INTE 2053','Programming 3',2,3,3,2,'BSIT','1ST'),
+ (113,6,19,'PHED 1252_','Individual/Dual/Combative Sports-Badminton',2,0,2,2,'BSIT','1ST'),
+ (114,6,19,'POSC 1013','Politics and Governance with Philippine Constitution',3,0,3,2,'BSIT','1ST'),
+ (115,6,19,'STAT 2053','Statistics and Probability',3,0,3,2,'BSIT','1ST'),
+ (116,6,19,'COMP 2083','Technical Documentation and Presentation Skills in ICT',3,0,3,3,'BSIT','1ST'),
+ (117,6,19,'COMP 2113','Advanced Programming',2,3,3,3,'BSIT','1ST'),
+ (118,6,19,'COMP 4023','Database Administration',2,3,3,3,'BSIT','1ST'),
+ (119,6,19,'COMP 4163','Fundamentals of Research',3,0,3,3,'BSIT','1ST'),
+ (120,6,19,'INTE 3013','Multimedia',2,3,3,3,'BSIT','1ST'),
+ (121,6,19,'INTE 3033','Database Management Systems 2',2,3,3,3,'BSIT','1ST'),
+ (122,6,19,'MANA 2013','Principles of Management and Organization',3,0,3,3,'BSIT','1ST'),
+ (123,6,19,'PHIL 1013','Logic',3,0,3,3,'BSIT','1ST'),
+ (124,6,19,'COMP 2063','Professional Ethics',3,0,3,4,'BSIT','1ST'),
+ (125,6,19,'HIST 1023','Buhay, Mga Gawain at Sinulat ni Rizal',3,0,3,4,'BSIT','1ST'),
+ (126,6,19,'INTE 4213','Capstone Project',3,0,3,4,'BSIT','1ST'),
+ (127,6,19,'IT-ELEC3','BSIT ELECTIVE 3',2,3,3,4,'BSIT','1ST'),
+ (128,6,19,'IT-ELEC4','BSIT ELECTIVE 4',2,3,3,4,'BSIT','1ST'),
+ (129,6,19,'IT-FE2','BSIT FREE ELECTIVE 2',3,0,3,4,'BSIT','1ST'),
+ (130,6,19,'IT-FE3','BSIT FREE ELECTIVE 3',3,0,3,4,'BSIT','1ST'),
+ (131,6,19,'LITE 1023','World Literature',3,0,3,4,'BSIT','1ST'),
+ (132,6,19,'COMP 2033','Programming 2',2,3,3,1,'BSIT','2ND'),
+ (133,6,19,'COMP 2073','Discrete Structures(Mathematics)',3,0,3,1,'BSIT','2ND'),
+ (134,6,19,'COMP 3013','Operating Systems',2,3,3,2,'BSIT','2ND'),
+ (135,6,19,'COMP 3033','Software Engineering',2,3,3,3,'BSIT','2ND'),
+ (136,6,19,'COMP 3043','Web Development',2,3,3,3,'BSIT','2ND'),
+ (137,6,19,'COMP 3083','Data and File Structures',3,0,3,2,'BSIT','2ND'),
+ (138,6,19,'COMP 4033','Advanced Networking',2,3,3,2,'BSIT','2ND'),
+ (139,6,19,'CWTS 1023','Civic Welfare Training Service 2',3,0,3,1,'BSIT','2ND'),
+ (140,6,19,'ECON 1013','Basic Economics with Taxation and Agrarian Reform',3,0,3,2,'BSIT','2ND'),
+ (141,6,19,'ENGL 1023','Writing in the Discipline',3,0,3,1,'BSIT','2ND'),
+ (142,6,19,'FILI 1023','Pagbasa at Pagsulat Tungo sa Pananaliksik',3,0,3,1,'BSIT','2ND'),
+ (143,6,19,'HUMA 1013','Introduction to the Humanities',3,0,3,3,'BSIT','2ND'),
+ (144,6,19,'INTE 2013','Hardware/Software Installation and Maintenance',2,3,3,1,'BSIT','2ND'),
+ (145,6,19,'INTE 2023','Integrated Application Software',2,3,3,1,'BSIT','2ND'),
+ (146,6,19,'INTE 3023','Database Management Systems 1',2,3,3,2,'BSIT','2ND'),
+ (147,6,19,'INTE 3043','Systems Analysis and Design',2,3,3,3,'BSIT','2ND'),
+ (148,6,19,'INTE 4019','Internship',9,0,9,4,'BSIT','2ND'),
+ (149,6,19,'IT-ELEC1','BSIT ELECTIVE 1',2,3,3,3,'BSIT','2ND'),
+ (150,6,19,'MANA 2053','Total Quality Management',3,0,3,3,'BSIT','2ND'),
+ (151,6,19,'MATH 2033','Plane and Spherical Trigonometry',3,0,3,1,'BSIT','2ND'),
+ (152,6,19,'NASC 1093','Ecology',3,0,3,3,'BSIT','2ND'),
+ (153,6,19,'NASC 2033','College Physics (2/1)',2,3,3,2,'BSIT','2ND'),
+ (154,6,19,'PHED 1122_','Rhythmic Activities-Social Dance',2,0,2,1,'BSIT','2ND'),
+ (155,6,19,'PHED 1332_','Team Sports-Volleyball',2,0,2,2,'BSIT','2ND'),
+ (156,6,19,'PSYC 1013','General Psychology',3,0,3,2,'BSIT','2ND'),
+ (157,7,20,'CCO 3033','Financial Accounting and Reporting, Part 3',3,0,3,3,'BSA','1ST'),
+ (158,7,20,'ACCO 3046','Cost Accounting and Cost Management',6,0,6,3,'BSA','1ST'),
+ (159,7,20,'ACCO 3053','Advanced Financial Accounting & Reporting, Part 1',3,0,3,3,'BSA','1ST'),
+ (160,7,20,'ACCO 3073','Production and Operations Management',3,0,3,3,'BSA','1ST'),
+ (161,7,20,'ACCO 3093','Financial Management, Part 2',3,0,3,3,'BSA','1ST'),
+ (162,7,20,'LAW 3013','Law on Business Organizations',3,0,3,3,'BSA','1ST'),
+ (163,7,20,'MATH 3173','Quantitative Techniques for Decision Making',3,0,3,3,'BSA','1ST'),
+ (164,7,20,'ACCO 2093','Auditing in a CIS Environment',2,2,3,4,'BSA','1ST'),
+ (165,7,20,'ACCO 3133','Management Accounting, Part 2',3,0,3,4,'BSA','1ST'),
+ (166,7,20,'ACCO 3143','Management Consultancy',3,0,3,4,'BSA','1ST'),
+ (167,7,20,'ACCO 3153','Business and Transfer Taxes',3,0,3,4,'BSA','1ST'),
+ (168,7,20,'ACCO 3166','Applied Auditing',6,0,6,4,'BSA','1ST'),
+ (169,7,20,'ACCO 4011','Synthesis',1,0,1,4,'BSA','1ST'),
+ (170,7,20,'ACCO 4143','Internship / Thesis',3,0,3,4,'BSA','1ST'),
+ (171,7,20,'LAW 3033','Negotiable Instruments',3,0,3,4,'BSA','1ST'),
+ (172,7,20,'ACCO 2033','Income Taxation',3,0,3,3,'BSA','2ND'),
+ (173,7,20,'ACCO 2053','Fundamentals of Programming & Database Theory & Application',2,2,3,2,'BSA','2ND'),
+ (174,7,20,'ACCO 2083','Accounting Information System',2,2,3,3,'BSA','2ND'),
+ (175,7,20,'ACCO 3026','Financial Accounting and Reporting, Part 2',6,0,6,2,'BSA','2ND'),
+ (176,7,20,'ACCO 3063','Financial Management, Part 1',3,0,3,2,'BSA','2ND'),
+ (177,7,20,'ACCO 3083','Advanced Financial Accounting & Reporting, Part 2',3,0,3,3,'BSA','2ND'),
+ (178,7,20,'ACCO 3103','Management Accounting, Part 1',3,0,3,3,'BSA','2ND'),
+ (179,7,20,'ACCO 3116','Assurance Principles, Professional Ethics & Good Governance',6,0,6,3,'BSA','2ND'),
+ (180,7,20,'ACCO 3123','Acctg. for Governmental, Not-for-Profit Entities & Specialized Industries',3,0,3,3,'BSA','2ND'),
+ (181,7,20,'ACCO 4063','Theory of Accounts',3,0,3,4,'BSA','2ND'),
+ (182,7,20,'ACCO 4073','Practical Accounting Problems 1',3,0,3,4,'BSA','2ND'),
+ (183,7,20,'ACCO 4083','Practical Accounting Problems 2',3,0,3,4,'BSA','2ND'),
+ (184,7,20,'ACCO 4093','Auditing Theory',3,0,3,4,'BSA','2ND'),
+ (185,7,20,'ACCO 4103','Auditing Problems',3,0,3,4,'BSA','2ND'),
+ (186,7,20,'ACCO 4113','Management Services',3,0,3,4,'BSA','2ND'),
+ (187,7,20,'ACCO 4123','Business Law',3,0,3,4,'BSA','2ND'),
+ (188,7,20,'ACCO 4133','Taxation',3,0,3,4,'BSA','2ND'),
+ (189,7,20,'ECON 2023','Introduction to Microeconomic Theory & Practice',3,0,3,2,'BSA','2ND'),
+ (190,7,20,'ENGL 1043','Technical Report Writing in Business',3,0,3,2,'BSA','2ND'),
+ (191,7,20,'LAW 2013_','Obligations and Contracts',3,0,3,2,'BSA','2ND'),
+ (192,7,20,'LAW 3023','Sales, Agency, Labor and Other Commercial Laws',3,0,3,3,'BSA','2ND'),
+ (193,7,20,'NASC 2173','Physical Science',3,0,3,2,'BSA','2ND'),
+ (194,7,20,'PHED 1332_','Team Sports-Volleyball',2,0,2,2,'BSA','2ND'),
+ (195,7,20,'STAT 1023','Business Statistics',3,0,3,2,'BSA','2ND'),
+ (196,8,21,'CIEN 3053','Elementary Surveying',1,6,3,3,'BSCE','1ST'),
+ (197,8,21,'CIEN 3063','Methods of Engineering Research',3,0,3,3,'BSCE','1ST'),
+ (198,8,21,'CIEN 3073','Engineering Geology and Rock Mechanics',3,0,3,3,'BSCE','1ST'),
+ (199,8,21,'CIEN 3342','Construction Estimating',1,3,2,3,'BSCE','1ST'),
+ (200,8,21,'ENSC 2043','Static of Rigid Bodies',3,0,3,3,'BSCE','1ST'),
+ (201,8,21,'ENSC 2063','Engineering Economy',3,0,3,3,'BSCE','1ST'),
+ (202,8,21,'ENSC 2083','Dynamics of Rigid Bodies',3,0,3,3,'BSCE','1ST'),
+ (203,8,21,'ENSC 2112','Environmental Engineering',2,0,2,3,'BSCE','1ST'),
+ (204,8,21,'ENSC 2192','Computer Fundamentals and Programming',0,6,2,3,'BSCE','1ST'),
+ (205,8,21,'MATH 2103','Elementary Differential Equations',3,0,3,3,'BSCE','1ST'),
+ (206,8,21,'BSCE-ELEC1','BSCE ELECTIVE 1',2,0,2,4,'BSCE','1ST'),
+ (207,8,21,'CIEN 3123','Construction Project Management',2,3,3,4,'BSCE','1ST'),
+ (208,8,21,'CIEN 3134','Soil Mechanics',3,3,4,4,'BSCE','1ST'),
+ (209,8,21,'CIEN 3144','Structural Theory 1',2,6,4,4,'BSCE','1ST'),
+ (210,8,21,'CIEN 3153','Fluid Mechanics',2,3,3,4,'BSCE','1ST'),
+ (211,8,21,'CIEN 3164','Route Surveying and Earthworks',3,3,4,4,'BSCE','1ST'),
+ (212,8,21,'CIEN 3402','Building Design 1',1,3,2,4,'BSCE','1ST'),
+ (213,8,21,'CIEN 3412','Value Engineering',2,0,2,4,'BSCE','1ST'),
+ (214,8,21,'BSCE-ELEC3','BSCE ELECTIVE 3',2,0,2,5,'BSCE','1ST'),
+ (215,8,21,'BSCE-ELEC4','BSCE ELECTIVE 4',2,0,2,5,'BSCE','1ST'),
+ (216,8,21,'CIEN 3103','Computer Application in Civil Engineering',2,3,3,5,'BSCE','1ST'),
+ (217,8,21,'CIEN 3234','Steel Design',3,3,4,5,'BSCE','1ST'),
+ (218,8,21,'CIEN 3242','Timber Design',1,3,2,5,'BSCE','1ST'),
+ (219,8,21,'CIEN 3262','Earthquake Engineering',1,3,2,5,'BSCE','1ST'),
+ (220,8,21,'CIEN 3322','Civil Engineering Project 2',1,3,2,5,'BSCE','1ST'),
+ (221,8,21,'CIEN 3454','Principles of Concrete Design',3,3,4,5,'BSCE','1ST'),
+ (222,8,21,'CIEN 3463','Transportation Engineering',3,0,3,5,'BSCE','1ST'),
+ (223,8,21,'CIEN 4122','Traffic Engineering(ELECTIVE 3)',2,0,2,5,'BSCE','1ST'),
+ (224,8,21,'BSCE-ELEC2','BSCE ELECTIVE 2',2,0,2,4,'BSCE','2ND'),
+ (225,8,21,'BSCE-ELEC5','BSCE ELECTIVE 5',2,0,2,5,'BSCE','2ND'),
+ (226,8,21,'BSCE-ELEC6','BSCE ELECTIVE 6',2,0,2,5,'BSCE','2ND'),
+ (227,8,21,'CIEN 2032','Civil Engineering Fundamentals 2',0,6,2,2,'BSCE','2ND'),
+ (228,8,21,'CIEN 3093','Construction Materials and Testing',2,3,3,3,'BSCE','2ND'),
+ (229,8,21,'CIEN 3173','Highway Engineering',3,0,3,4,'BSCE','2ND'),
+ (230,8,21,'CIEN 3183','Hydrology',3,0,3,4,'BSCE','2ND'),
+ (231,8,21,'CIEN 3194','Structural Theory 2',2,6,4,4,'BSCE','2ND'),
+ (232,8,21,'CIEN 3203','Hydraulics',2,3,3,4,'BSCE','2ND'),
+ (233,8,21,'CIEN 3222','Urban and Regional Transportation Planning',2,0,2,4,'BSCE','2ND'),
+ (234,8,21,'CIEN 3282','Civil Engineering Project 1',1,3,2,4,'BSCE','2ND'),
+ (235,8,21,'CIEN 3293','Reinforced Concrete Design',2,3,3,5,'BSCE','2ND'),
+ (236,8,21,'CIEN 3303','Foundation Engineering',2,3,3,5,'BSCE','2ND'),
+ (237,8,21,'CIEN 3312','Site Inspection and Seminar',0,6,2,5,'BSCE','2ND'),
+ (238,8,21,'CIEN 3333','Civil Engineering Law, Contracts, Specifications and Professional Ethics',3,0,3,5,'BSCE','2ND'),
+ (239,8,21,'CIEN 3353','Advanced Engineering Mathematics in Civil Engineering',3,0,3,3,'BSCE','2ND'),
+ (240,8,21,'CIEN 3364','Higher Surveying',2,6,4,3,'BSCE','2ND'),
+ (241,8,21,'CIEN 3373','Safety Engineering and Management',2,3,3,3,'BSCE','2ND'),
+ (242,8,21,'CIEN 3382','Construction Methods and Equipment',1,3,2,3,'BSCE','2ND'),
+ (243,8,21,'CIEN 3392','Advanced CAD',1,3,2,3,'BSCE','2ND'),
+ (244,8,21,'CIEN 3422','Structural Matrix Analysis',2,0,2,4,'BSCE','2ND'),
+ (245,8,21,'CIEN 3432','Geotechnical Engineering (Introduction to Foundation Engineering)',2,0,2,4,'BSCE','2ND'),
+ (246,8,21,'CIEN 3442','Building Design 2',1,3,2,4,'BSCE','2ND'),
+ (247,8,21,'CIEN 3473','Water Resource Management',3,0,3,5,'BSCE','2ND'),
+ (248,8,21,'CIEN 3482','Total Quality Management in Engineering',2,0,2,5,'BSCE','2ND'),
+ (249,8,21,'ECON 1013','Basic Economics with Taxation and Agrarian Reform',3,0,3,2,'BSCE','2ND'),
+ (251,8,21,'ENSC 2105','Mechanics of Deformable Bodies',5,0,5,3,'BSCE','2ND'),
+ (252,8,21,'ENSC 2143','Basic Electrical Engineering',2,3,3,2,'BSCE','2ND'),
+ (253,8,21,'HIST 1023','Buhay, Mga Gawain at Sinulat ni Rizal',3,0,3,2,'BSCE','2ND'),
+ (254,8,21,'MATH 2094','Integral Calculus',4,0,4,2,'BSCE','2ND'),
+ (255,8,21,'PHED 1332_','Team Sports-Volleyball',2,0,2,2,'BSCE','2ND'),
+ (256,8,21,'PHIL 1013','Logic',3,0,3,2,'BSCE','2ND'),
+ (257,8,21,'SOCI 1013','Sosyolohiya, Kultura at Pagpapamilya',3,0,3,2,'BSCE','2ND'),
+ (258,8,21,'STAT 2013','Statistics for Engineering Research',3,0,3,2,'BSCE','2ND'),
+ (259,8,21,'ENSC 2073','Engineering Management',3,0,3,3,'BSCE','2ND'),
+ (260,9,22,'CWTS 1013','Civic Welfare Training Service 1',3,0,3,1,'BSHM','1ST'),
+ (261,9,22,'ENGL 1013','Study and Thinking Skills in English',3,0,3,1,'BSHM','1ST'),
+ (262,9,22,'FILI 1013','Komunikasyon sa Akademikong Filipino',3,0,3,1,'BSHM','1ST'),
+ (263,9,22,'HORE 2075','Culinary Arts',3,6,5,1,'BSHM','1ST'),
+ (264,9,22,'HORE 3083','Introduction to Hospitality Management',3,0,3,1,'BSHM','1ST'),
+ (265,9,22,'MATH 1133','Mathematics in Business',3,0,3,1,'BSHM','1ST'),
+ (266,9,22,'NASC 2163','Principles of Safety, Hygiene and Sanitation',3,0,3,1,'BSHM','1ST'),
+ (267,9,22,'PHED 1012_','Physical Fitness and Self-Testing Activities - Physical Fitness',2,0,2,1,'BSHM','1ST'),
+ (268,9,22,'ANTH 2033','Cultural Anthropology',3,0,3,3,'BSHM','1ST'),
+ (269,9,22,'HIST 1033','Philippine History with Politics and Governance',3,0,3,3,'BSHM','1ST'),
+ (270,9,22,'HORE 3043','Food and Beverage Control System',3,0,3,3,'BSHM','1ST'),
+ (271,9,22,'HORE 3055','Banquets and Catering Management',3,6,5,3,'BSHM','1ST'),
+ (272,9,22,'HORE 4043','Bar Management (1/2)',1,6,3,3,'BSHM','1ST'),
+ (273,9,22,'STAT 1013','General Statistics',3,0,3,3,'BSHM','1ST'),
+ (274,9,22,'TOUR 2043','Tourism Planning and Development',3,0,3,3,'BSHM','1ST'),
+ (275,9,22,'FOLA 2023','Foreign Language 2',3,0,3,4,'BSHM','1ST'),
+ (276,9,22,'HIST 1023','Buhay, Mga Gawain at Sinulat ni Rizal',3,0,3,4,'BSHM','1ST'),
+ (277,9,22,'HORE 2043','Total Quality Management in Hospitality Industry (TQM)',3,0,3,4,'BSHM','1ST'),
+ (278,9,22,'HORE 4093','Hospitality and Operational Management',3,0,3,4,'BSHM','1ST'),
+ (279,9,22,'HORE 4123','Research Project in Tourism and Hospitality Industry',3,0,3,4,'BSHM','1ST'),
+ (280,9,22,'HUMA 1013','Introduction to the Humanities',3,0,3,4,'BSHM','1ST'),
+ (281,9,22,'PHIL 1013','Logic',3,0,3,4,'BSHM','1ST'),
+ (282,9,22,'COMP 4153','Management and Information System',3,0,3,2,'BSHM','2ND'),
+ (283,9,22,'FINA 2013','Introduction to Business Finance and Philippine Financial System',3,0,3,2,'BSHM','2ND'),
+ (284,9,22,'FOLA 2013','Foreign Language 1',3,0,3,3,'BSHM','2ND'),
+ (285,9,22,'HORE 2023','Hospitality Sales and e-Marketing',3,0,3,2,'BSHM','2ND'),
+ (286,9,22,'HORE 2033','Hospitality Entrepreneurship and Business Planning',3,0,3,2,'BSHM','2ND'),
+ (287,9,22,'HORE 2054','Hospitality Convention and Events Management (2/2)',2,6,4,3,'BSHM','2ND'),
+ (288,9,22,'HORE 3023','Banquets and Catering Procedures (1/2)',1,6,3,2,'BSHM','2ND'),
+ (289,9,22,'HORE 3063','Front Office Procedures',3,0,3,2,'BSHM','2ND'),
+ (290,9,22,'HORE 3103','Hospitality Facilities, Planning and Design',3,0,3,3,'BSHM','2ND'),
+ (291,9,22,'HORE 4036','Practicum 2: Lodging/Accommodation',6,0,6,4,'BSHM','2ND'),
+ (292,9,22,'HORE 4055','International Cuisine',3,6,5,3,'BSHM','2ND'),
+ (293,9,22,'HORE 4073','Leisure Sports and Recreation Management',3,0,3,3,'BSHM','2ND'),
+ (294,9,22,'HORE 4113','Fundamentals of Research',3,0,3,3,'BSHM','2ND'),
+ (295,9,22,'LITE 1013','Philippine Literature',3,0,3,2,'BSHM','2ND'),
+ (296,9,22,'MANA 3113','Corporate Social Responsibility and Good Governance',3,0,3,2,'BSHM','2ND'),
+ (297,9,22,'PHED 1332_','Team Sports-Volleyball',2,0,2,2,'BSHM','2ND'),
+ (367,11,24,'EDUC 2073','Principles and Strategies of Teaching 1',3,0,3,3,'BSEDMT','1ST'),
+ (368,11,24,'EDUC 2081','Field Study 2-Experiencing the Teaching-Learning Process',1,0,1,3,'BSEDMT','1ST'),
+ (369,11,24,'EDUC 2093','Educational Technology 2',3,0,3,3,'BSEDMT','1ST'),
+ (370,11,24,'EDUC 2101','Field Study 3-Technology in the Learning Environment',1,0,1,3,'BSEDMT','1ST'),
+ (371,11,24,'EDUC 2113','Philosophy of Education',3,0,3,3,'BSEDMT','1ST'),
+ (372,11,24,'MATH 2073','Differential Calculus',3,0,3,3,'BSEDMT','1ST'),
+ (373,11,24,'MATH 2213','Number Theory',3,0,3,3,'BSEDMT','1ST'),
+ (374,11,24,'MATH 2393','History of Mathematics',3,0,3,3,'BSEDMT','1ST'),
+ (375,11,24,'NUDI 1013','Principles of Nutrition and Wellness Education',3,0,3,3,'BSEDMT','1ST'),
+ (376,11,24,'STAT 2313','Basic Statistical Methods',3,0,3,3,'BSEDMT','1ST'),
+ (377,11,24,'EDUC 2153','Measurement and Evaluation',3,0,3,4,'BSEDMT','1ST'),
+ (378,11,24,'EDUC 2161','Fields Study 5-Assessment and Evaluation of Learning',1,0,1,4,'BSEDMT','1ST'),
+ (379,11,24,'EDUC 2173','Principles of Guidance and Values Education',3,0,3,4,'BSEDMT','1ST'),
+ (380,11,24,'EDUC 2183','The Teaching Profession',3,0,3,4,'BSEDMT','1ST'),
+ (381,11,24,'EDUC 2191','Field Study 6-On Becoming A Teacher',1,0,1,4,'BSEDMT','1ST'),
+ (382,11,24,'MATH 2103','Elementary Differential Equations',3,0,3,4,'BSEDMT','1ST'),
+ (383,11,24,'MATH 2243','Modern Geometry',3,0,3,4,'BSEDMT','1ST'),
+ (384,11,24,'SEED 4063','Thesis Writing',3,0,3,4,'BSEDMT','1ST'),
+ (385,11,24,'STAT 2303','Statistical Inference with SPSS',3,0,3,4,'BSEDMT','1ST'),
+ (386,11,24,'EDUC 2033','Educational Systems and Current Issues in Education',3,0,3,2,'BSEDMT','2ND'),
+ (387,11,24,'EDUC 2043','Child and Adolescent Development',3,0,3,2,'BSEDMT','2ND'),
+ (388,11,24,'EDUC 2051','Field Study 1 - The Learner`s Development and Environment',1,0,1,2,'BSEDMT','2ND'),
+ (389,11,24,'EDUC 2123','Principles and Strategies of Teaching 2',3,0,3,3,'BSEDMT','2ND'),
+ (390,11,24,'EDUC 2133','Introduction to Curriculum Development',3,0,3,3,'BSEDMT','2ND'),
+ (391,11,24,'EDUC 2141','Field Study 4-Exploring the Curriculum',1,0,1,3,'BSEDMT','2ND'),
+ (392,11,24,'EDUC 2343','Ethics and Social Responsibility',3,0,3,2,'BSEDMT','2ND'),
+ (393,11,24,'LITE 1023','World Literature',3,0,3,2,'BSEDMT','2ND'),
+ (394,11,24,'MATH 2043','Analytic Geometry',3,0,3,2,'BSEDMT','2ND'),
+ (395,11,24,'MATH 2093','Integral Calculus',3,0,3,3,'BSEDMT','2ND'),
+ (396,11,24,'MATH 2133','Solid Geometry',3,0,3,2,'BSEDMT','2ND'),
+ (397,11,24,'MATH 2193','Linear Algebra',3,0,3,3,'BSEDMT','2ND'),
+ (398,11,24,'MATH 2203','Abstract Algebra',3,0,3,3,'BSEDMT','2ND'),
+ (399,11,24,'MATH 2383','Set Theory and Math Logic',3,0,3,2,'BSEDMT','2ND'),
+ (400,11,24,'NASC 1093','Ecology',3,0,3,2,'BSEDMT','2ND'),
+ (401,11,24,'PHED 1332_','Team Sports-Volleyball',2,0,2,2,'BSEDMT','2ND'),
+ (402,11,24,'POSC 1013','Politics and Governance with Philippine Constitution',3,0,3,3,'BSEDMT','2ND'),
+ (403,11,24,'SEED 3213','Strategies of Teaching Mathematics',3,0,3,3,'BSEDMT','2ND'),
+ (404,11,24,'SEED 4053','Fundamentals of Research',3,0,3,3,'BSEDMT','2ND'),
+ (405,11,24,'SEED 4076','Practice Teaching',6,0,6,4,'BSEDMT','2ND'),
+ (406,11,24,'STAT 2103','Probability Theory',3,0,3,3,'BSEDMT','2ND'),
+ (407,10,23,'COMP 1153','Introduction to Information and Communications Technology',3,0,3,1,'BSEDEN','1ST'),
+ (408,10,23,'CWTS 1013','Civic Welfare Training Service 1',3,0,3,1,'BSEDEN','1ST'),
+ (409,10,23,'ENGL 1013','Study and Thinking Skills in English',3,0,3,1,'BSEDEN','1ST'),
+ (410,10,23,'FILI 1013','Komunikasyon sa Akademikong Filipino',3,0,3,1,'BSEDEN','1ST'),
+ (411,10,23,'HIST 1013','Heyograpiya at Kasaysayan ng Pilipinas',3,0,3,1,'BSEDEN','1ST'),
+ (412,10,23,'MATH 1013','College Algebra',3,0,3,1,'BSEDEN','1ST'),
+ (413,10,23,'PHED 1012_','Physical Fitness and Self-Testing Activities - Physical Fitness',2,0,2,1,'BSEDEN','1ST'),
+ (414,10,23,'PSYC 1013','General Psychology',3,0,3,1,'BSEDEN','1ST'),
+ (415,10,23,'SOCI 1013','Sosyolohiya, Kultura at Pagpapamilya',3,0,3,1,'BSEDEN','1ST'),
+ (416,10,23,'EDUC 2023','Educational Technology 1',3,0,3,2,'BSEDEN','1ST'),
+ (417,10,23,'EDUC 2203','Developmental Reading',3,0,3,2,'BSEDEN','1ST'),
+ (418,10,23,'ENGL 1033','Speech Communication',3,0,3,2,'BSEDEN','1ST'),
+ (419,10,23,'ENGL 2023','Introduction to Linguistics',3,0,3,2,'BSEDEN','1ST'),
+ (420,10,23,'FILI 1033','Retorika (Masining na Pagpapahayag)',3,0,3,2,'BSEDEN','1ST'),
+ (421,10,23,'HIST 1023','Buhay, Mga Gawain at Sinulat ni Rizal',3,0,3,2,'BSEDEN','1ST'),
+ (422,10,23,'NUDI 1013','Principles of Nutrition and Wellness Education',3,0,3,2,'BSEDEN','1ST'),
+ (423,10,23,'PHED 1252_','Individual/Dual/Combative Sports-Badminton',2,0,2,2,'BSEDEN','1ST'),
+ (424,10,23,'PHIL 1013','Logic',3,0,3,2,'BSEDEN','1ST'),
+ (425,10,23,'SEED 3193','Language Curriculum for Secondary School',3,0,3,2,'BSEDEN','1ST'),
+ (426,10,23,'EDUC 2073','Principles and Strategies of Teaching 1',3,0,3,3,'BSEDEN','1ST'),
+ (427,10,23,'EDUC 2081','Field Study 2-Experiencing the Teaching-Learning Process',1,0,1,3,'BSEDEN','1ST'),
+ (428,10,23,'EDUC 2093','Educational Technology 2',3,0,3,3,'BSEDEN','1ST'),
+ (429,10,23,'EDUC 2101','Field Study 3-Technology in the Learning Environment',1,0,1,3,'BSEDEN','1ST'),
+ (430,10,23,'EDUC 2113','Philosophy of Education',3,0,3,3,'BSEDEN','1ST'),
+ (431,10,23,'ENGL 3393','English and American Literature',3,0,3,3,'BSEDEN','1ST'),
+ (432,10,23,'ENGL 3403','The Teaching of Speaking',3,0,3,3,'BSEDEN','1ST'),
+ (433,10,23,'ENGL 3413','The Teaching of Listening and Reading',3,0,3,3,'BSEDEN','1ST'),
+ (434,10,23,'ENGL 3423','Teaching and Testing Literature',3,0,3,3,'BSEDEN','1ST'),
+ (435,10,23,'SEED 4053','Fundamentals of Research',3,0,3,3,'BSEDEN','1ST'),
+ (436,10,23,'EDUC 2153','Measurement and Evaluation',3,0,3,4,'BSEDEN','1ST'),
+ (437,10,23,'EDUC 2161','Fields Study 5-Assessment and Evaluation of Learning',1,0,1,4,'BSEDEN','1ST'),
+ (438,10,23,'EDUC 2173','Principles of Guidance and Values Education',3,0,3,4,'BSEDEN','1ST'),
+ (439,10,23,'EDUC 2183','The Teaching Profession',3,0,3,4,'BSEDEN','1ST'),
+ (440,10,23,'EDUC 2191','Field Study 6-On Becoming A Teacher',1,0,1,4,'BSEDEN','1ST'),
+ (441,10,23,'ENGL 2053','Advanced English Grammar',3,0,3,4,'BSEDEN','1ST'),
+ (442,10,23,'ENGL 3103','Creative Writing',3,0,3,4,'BSEDEN','1ST'),
+ (443,10,23,'ENGL 3323','Introduction to Stylistics',3,0,3,4,'BSEDEN','1ST'),
+ (444,10,23,'ENGL 3453','Speech and Stage Arts',3,0,3,4,'BSEDEN','1ST'),
+ (445,10,23,'ENGL 3463','Translation and Editing of Text',3,0,3,4,'BSEDEN','1ST'),
+ (446,10,23,'CWTS 1023','Civic Welfare Training Service 2',3,0,3,1,'BSEDEN','2ND'),
+ (447,10,23,'ECON 1013','Basic Economics with Taxation and Agrarian Reform',3,0,3,1,'BSEDEN','2ND'),
+ (448,10,23,'EDUC 2033','Educational Systems and Current Issues in Education',3,0,3,2,'BSEDEN','2ND'),
+ (449,10,23,'EDUC 2043','Child and Adolescent Development',3,0,3,2,'BSEDEN','2ND'),
+ (450,10,23,'EDUC 2051','Field Study 1 - The Learner`s Development and Environment',1,0,1,2,'BSEDEN','2ND'),
+ (451,10,23,'EDUC 2123','Principles and Strategies of Teaching 2',3,0,3,3,'BSEDEN','2ND'),
+ (452,10,23,'EDUC 2133','Introduction to Curriculum Development',3,0,3,3,'BSEDEN','2ND'),
+ (453,10,23,'EDUC 2141','Field Study 4-Exploring the Curriculum',1,0,1,3,'BSEDEN','2ND'),
+ (454,10,23,'EDUC 2343','Ethics and Social Responsibility',3,0,3,2,'BSEDEN','2ND'),
+ (455,10,23,'ENGL 1023','Writing in the Discipline',3,0,3,1,'BSEDEN','2ND'),
+ (456,10,23,'ENGL 3023','Mythology and Folklore',3,0,3,3,'BSEDEN','2ND'),
+ (457,10,23,'ENGL 3043','Afro-Asian Literature',3,0,3,2,'BSEDEN','2ND'),
+ (458,10,23,'ENGL 3053','Structure of the English Language',3,0,3,2,'BSEDEN','2ND'),
+ (459,10,23,'ENGL 3173','Principles of Literary Criticism',3,0,3,2,'BSEDEN','2ND'),
+ (460,10,23,'ENGL 3433','Language and Literature Assessment',3,0,3,3,'BSEDEN','2ND'),
+ (461,10,23,'ENGL 3443','Campus Journalism',3,0,3,3,'BSEDEN','2ND'),
+ (462,10,23,'FILI 1023','Pagbasa at Pagsulat Tungo sa Pananaliksik',3,0,3,1,'BSEDEN','2ND'),
+ (463,10,23,'HUMA 1013','Introduction to the Humanities',3,0,3,1,'BSEDEN','2ND'),
+ (464,10,23,'LITE 1013','Philippine Literature',3,0,3,1,'BSEDEN','2ND'),
+ (465,10,23,'LITE 1023','World Literature',3,0,3,2,'BSEDEN','2ND'),
+ (466,10,23,'MATH 1033','Fundamentals of Mathematics',3,0,3,1,'BSEDEN','2ND'),
+ (467,10,23,'MATH 1043','Contemporary Mathematics',3,0,3,1,'BSEDEN','2ND'),
+ (468,10,23,'NASC 1083','Biological Science',3,0,3,1,'BSEDEN','2ND'),
+ (469,10,23,'NASC 1093','Ecology',3,0,3,2,'BSEDEN','2ND'),
+ (470,10,23,'PHED 1122_','Rhythmic Activities-Social Dance',2,0,2,1,'BSEDEN','2ND'),
+ (471,10,23,'PHED 1332_','Team Sports-Volleyball',2,0,2,2,'BSEDEN','2ND'),
+ (472,10,23,'POSC 1013','Politics and Governance with Philippine Constitution',3,0,3,3,'BSEDEN','2ND'),
+ (473,10,23,'SEED 3203','Preparation and Evaluation of Instructional Materials',3,0,3,3,'BSEDEN','2ND'),
+ (474,10,23,'SEED 4063','Thesis Writing',3,0,3,3,'BSEDEN','2ND'),
+ (475,10,23,'SEED 4076','Practice Teaching',6,0,6,4,'BSEDEN','2ND'),
+ (476,12,25,'CWTS 1013','Civic Welfare Training Service 1',3,0,3,1,'BSENTREP','1ST'),
+ (477,12,25,'ENGL 1013','Study and Thinking Skills in English',3,0,3,1,'BSENTREP','1ST'),
+ (478,12,25,'ENMA 2013','Introduction to Entrepreneurship',3,0,3,1,'BSENTREP','1ST'),
+ (479,12,25,'FILI 1013','Komunikasyon sa Akademikong Filipino',3,0,3,1,'BSENTREP','1ST'),
+ (480,12,25,'MANA 2013','Principles of Management and Organization',3,0,3,1,'BSENTREP','1ST'),
+ (481,12,25,'MATH 1013','College Algebra',3,0,3,1,'BSENTREP','1ST'),
+ (482,12,25,'NASC 1083','Biological Science',3,0,3,1,'BSENTREP','1ST'),
+ (483,12,25,'PHED 1012_','Physical Fitness and Self-Testing Activities - Physical Fitness',2,0,2,1,'BSENTREP','1ST'),
+ (484,12,25,'PSYC 1013','General Psychology',3,0,3,1,'BSENTREP','1ST'),
+ (485,12,25,'ACCO 3193','Financial Accounting',3,0,3,2,'BSENTREP','1ST'),
+ (486,12,25,'ECON 2043','Microeconomics',3,0,3,2,'BSENTREP','1ST'),
+ (487,12,25,'ENMA 3023','Business Opportunities 1',3,0,3,2,'BSENTREP','1ST'),
+ (488,12,25,'ENMA 3163','Human Resource Management in Small and Meduim Enterprises',3,0,3,2,'BSENTREP','1ST'),
+ (489,12,25,'FINA 3023','Business Finance',3,0,3,2,'BSENTREP','1ST'),
+ (490,12,25,'HIST 1013','Heyograpiya at Kasaysayan ng Pilipinas',3,0,3,2,'BSENTREP','1ST'),
+ (491,12,25,'PHED 1232_','Individual/Dual/Combative Sports-Arnis',2,0,2,2,'BSENTREP','1ST'),
+ (492,12,25,'POSC 1013','Politics and Governance with Philippine Constitution',3,0,3,2,'BSENTREP','1ST'),
+ (493,12,25,'STAT 1023','Business Statistics',3,0,3,2,'BSENTREP','1ST'),
+ (494,12,25,'ACCO 3043','Cost Accounting',3,0,3,3,'BSENTREP','1ST'),
+ (495,12,25,'ENMA 3033','Business Operations Research',3,0,3,3,'BSENTREP','1ST'),
+ (496,12,25,'ENMA 3063','Production & Operation Management',3,0,3,3,'BSENTREP','1ST'),
+ (497,12,25,'ENMA 4063','Fundamentals of Research',3,0,3,3,'BSENTREP','1ST'),
+ (498,12,25,'LAW 2013','Laws on Obligations and Contracts',3,0,3,3,'BSENTREP','1ST'),
+ (499,12,25,'MANA 3153','Supervisory Management',3,0,3,3,'BSENTREP','1ST'),
+ (500,12,25,'PHIL 1013','Logic',3,0,3,3,'BSENTREP','1ST'),
+ (501,12,25,'SOCI 1013','Sosyolohiya, Kultura at Pagpapamilya',3,0,3,3,'BSENTREP','1ST'),
+ (502,12,25,'COOP 3013','Principles of Cooperatives and Social Development',3,0,3,4,'BSENTREP','1ST'),
+ (503,12,25,'ENMA 3113','Project Feasibility',3,0,3,4,'BSENTREP','1ST'),
+ (504,12,25,'ENMA 4033','Small Business Consulting',3,0,3,4,'BSENTREP','1ST'),
+ (505,12,25,'ENMA 4043','Agricultural Entrepreneurship',3,0,3,4,'BSENTREP','1ST'),
+ (506,12,25,'ACCO 2033_','Income Taxation',3,0,3,3,'BSENTREP','2ND'),
+ (507,12,25,'ACCO 3203','Management Accounting',3,0,3,2,'BSENTREP','2ND'),
+ (508,12,25,'COMP 1023','Software Packages',2,2,3,2,'BSENTREP','2ND'),
+ (509,12,25,'COMP 1153','Introduction to Information and Communications Technology',3,0,3,1,'BSENTREP','2ND'),
+ (510,12,25,'CWTS 1023','Civic Welfare Training Service 2',3,0,3,1,'BSENTREP','2ND'),
+ (511,12,25,'ECON 1013','Basic Economics with Taxation and Agrarian Reform',3,0,3,1,'BSENTREP','2ND'),
+ (512,12,25,'ENGL 1023','Writing in the Discipline',3,0,3,1,'BSENTREP','2ND'),
+ (513,12,25,'ENGL 2043','Business Communication and Report Writing',3,0,3,2,'BSENTREP','2ND'),
+ (514,12,25,'ENMA 3013','Entrepreneurial Behavior',3,0,3,1,'BSENTREP','2ND'),
+ (515,12,25,'ENMA 3043','Business Opportunities 2',3,0,3,2,'BSENTREP','2ND'),
+ (516,12,25,'ENMA 3103','Entrepreneurship Integration',3,0,3,3,'BSENTREP','2ND'),
+ (517,12,25,'ENMA 3126','Project Management Implementation',6,0,6,4,'BSENTREP','2ND'),
+ (518,12,25,'ENMA 3143','Seminar in Entrepreneurial Trends and Issues',3,0,3,4,'BSENTREP','2ND'),
+ (519,12,25,'ENMA 4073','Thesis Writing',3,0,3,3,'BSENTREP','2ND'),
+ (520,12,25,'ENMA 4083','Managing Family Business',3,0,3,3,'BSENTREP','2ND'),
+ (521,12,25,'FILI 1023','Pagbasa at Pagsulat Tungo sa Pananaliksik',3,0,3,1,'BSENTREP','2ND'),
+ (522,12,25,'HIST 1023','Buhay, Mga Gawain at Sinulat ni Rizal',3,0,3,2,'BSENTREP','2ND'),
+ (523,12,25,'HUMA 1013','Introduction to the Humanities',3,0,3,3,'BSENTREP','2ND'),
+ (524,12,25,'LAW 3013','Law on Business Organizations',3,0,3,3,'BSENTREP','2ND'),
+ (525,12,25,'MANA 2023','Human Behavior in Organizations',3,0,3,2,'BSENTREP','2ND'),
+ (526,12,25,'MANA 2053','Total Quality Management',3,0,3,3,'BSENTREP','2ND'),
+ (527,12,25,'MANA 3103','Business Policy and Strategy',3,0,3,4,'BSENTREP','2ND'),
+ (528,12,25,'MANA 3113','Corporate Social Responsibility and Good Governance',3,0,3,2,'BSENTREP','2ND'),
+ (529,12,25,'MARK 2013','Principles of Marketing',3,0,3,1,'BSENTREP','2ND'),
+ (530,12,25,'MATH 1133','Mathematics in Business',3,0,3,1,'BSENTREP','2ND'),
+ (531,12,25,'MATH 1143','Mathematics of Investment',3,0,3,3,'BSENTREP','2ND'),
+ (532,12,25,'NASC 1093','Ecology',3,0,3,2,'BSENTREP','2ND'),
+ (533,12,25,'PHED 1122_','Rhythmic Activities-Social Dance',2,0,2,1,'BSENTREP','2ND'),
+ (534,12,25,'PHED 1332_','Team Sports-Volleyball',2,0,2,2,'BSENTREP','2ND'),
+ (535,13,26,'OMMT 112','Math of Investment',3,0,3,3,'DOMT','1ST'),
+ (536,13,26,'OMT 311','Introduction to Internet and Basic Web Design',2,3,3,3,'DOMT','1ST'),
+ (537,13,26,'OMT 312','Management Information System',3,0,3,3,'DOMT','1ST'),
+ (538,13,26,'OMT 313','Financial Business Management',2,3,3,3,'DOMT','1ST'),
+ (539,13,26,'OMT 314','Events Management',3,0,3,3,'DOMT','1ST'),
+ (540,13,26,'OMT 315','Introduction to Research',3,0,3,3,'DOMT','1ST'),
+ (541,13,26,'OMT 316','Office Administration e-Learning Approach',3,0,3,3,'DOMT','1ST'),
+ (542,13,26,'OMT 317','General Psychology',3,0,3,3,'DOMT','1ST'),
+ (543,14,27,'OMT 321','Internship (Office Management Technology Practicum - 600 hours)',6,0,6,3,'DOMTLOM','2ND'),
+ (544,14,27,'LOMT 221','Legal Transcription 2',2,3,3,2,'DOMTLOM','2ND'),
+ (545,14,27,'LOMT 222','Legal Terminology 2',3,0,3,2,'DOMTLOM','2ND'),
+ (546,14,27,'OMT 221','Computer Graphics with Multimedia',2,3,3,2,'DOMTLOM','2ND'),
+ (547,14,27,'OMT 222','Human Behavior in Organization',3,0,3,2,'DOMTLOM','2ND'),
+ (548,14,27,'OMT 223','Introduction to Business',3,0,3,2,'DOMTLOM','2ND'),
+ (549,14,27,'OMT 224','Filipino Steno 2',3,0,3,2,'DOMTLOM','2ND'),
+ (550,14,27,'OMT 225','Machine Shorthand 2',2,3,3,2,'DOMTLOM','2ND'),
+ (551,14,27,'PE 114','Physical Education 4',2,0,2,2,'DOMTLOM','2ND');
+/*!40000 ALTER TABLE `tbl_subjects` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tbl_users`
+--
+
+DROP TABLE IF EXISTS `tbl_users`;
+CREATE TABLE `tbl_users` (
+  `users_id` int(10) unsigned NOT NULL auto_increment,
+  `username` varchar(45) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `firstName` varchar(45) NOT NULL,
+  `middleName` varchar(45) NOT NULL,
+  `lastName` varchar(45) NOT NULL,
+  `address` varchar(120) NOT NULL,
+  `gender` varchar(45) NOT NULL,
+  `teachingStatus` varchar(45) NOT NULL,
+  `courseDepartment` varchar(45) NOT NULL,
+  `emailAddress` varchar(45) NOT NULL,
+  `mobileNumber` varchar(45) NOT NULL,
+  `status` varchar(45) NOT NULL,
+  `userLevel` varchar(45) NOT NULL,
+  `unitsAllowed` varchar(45) NOT NULL,
+  `loginStatus` int(10) unsigned NOT NULL default '0',
+  PRIMARY KEY  (`users_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_users`
+--
+
+/*!40000 ALTER TABLE `tbl_users` DISABLE KEYS */;
+INSERT INTO `tbl_users` (`users_id`,`username`,`password`,`firstName`,`middleName`,`lastName`,`address`,`gender`,`teachingStatus`,`courseDepartment`,`emailAddress`,`mobileNumber`,`status`,`userLevel`,`unitsAllowed`,`loginStatus`) VALUES 
+ (9,'admin','pCAyd+V9rhk=','michael','michael','michael','blk 25 lot 30 sanvicente homes','Male','administrator','administrator','david.michael@yahoo.com','01765626262','active','administrator','administrator',1),
+ (10,'pamela','23qTxuMvTtQ=','Pamela','Gerona','Cabrera','489, Bagbaguin, Santa Maria, Bulacan','Female','Fulltimer','BSIT','pamelageronacabrera@gmail.com','09979900751','active','professor','42',0),
+ (11,'lykatorres98','cGmK/qbecfF9CjS940gXnw==','Angelica Rose','C.','Torres','#10, Phase 1, Garden village subd, Sta. Maria Bulacan','Female','Fulltimer','BSIT','lykatorres98@gmail.com','09171297200','active','professor','42',0);
+/*!40000 ALTER TABLE `tbl_users` ENABLE KEYS */;
+
+
+
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -77,6 +77,7 @@
             this.txtNumberOfSection.Name = "txtNumberOfSection";
             this.txtNumberOfSection.Size = new System.Drawing.Size(146, 22);
             this.txtNumberOfSection.TabIndex = 249;
+            this.txtNumberOfSection.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumberOfSection_KeyPress);
             // 
             // metroLabel11
             // 

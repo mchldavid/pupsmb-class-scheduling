@@ -67,7 +67,7 @@ namespace ClassSchedulingComputerAided
             lbl.Text = "" + dayPrompt + "\r\n" + startTimePrompt + " to " + endTimePrompt + "";
             lbl.Location = new System.Drawing.Point(callDay, callStart);
             lbl.Size = new System.Drawing.Size(79, callShade);
-            lbl.BackColor = System.Drawing.Color.YellowGreen;
+            lbl.BackColor = System.Drawing.Color.LimeGreen;
             lbl.TextAlign = ContentAlignment.MiddleCenter;
             return lbl;
         }
@@ -80,7 +80,7 @@ namespace ClassSchedulingComputerAided
             lbl.Text = "" + courseCode + "\r\n" + sections + "\r\n" + professor + "";
             lbl.Location = new System.Drawing.Point(callDay, callStart);
             lbl.Size = new System.Drawing.Size(79, callShade);
-            lbl.BackColor = System.Drawing.Color.Maroon;
+            lbl.BackColor = System.Drawing.Color.Salmon;
             lbl.TextAlign = ContentAlignment.MiddleCenter;
             lbl.BorderStyle = BorderStyle.Fixed3D;
             return lbl;

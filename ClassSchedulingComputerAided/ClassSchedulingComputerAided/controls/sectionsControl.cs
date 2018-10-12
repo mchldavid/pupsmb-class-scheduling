@@ -102,5 +102,20 @@ namespace ClassSchedulingComputerAided
             dgvShowSections.DataSource = md.dgv_SearchSections(txtSearch.Text).DataSource;
             dgvShowSections.Columns[0].Visible = false;
         }
+
+        private void txtNumberOfSection_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // allows 0-9, backspace, and decimal
+            if (((e.KeyChar < 48 || e.KeyChar > 57) && e.KeyChar != 8 && e.KeyChar != 13))
+            {
+                e.Handled = true;
+                return;
+            }
+
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                btnAdd_Click(sender, e);
+            }
+        }
     }
 }

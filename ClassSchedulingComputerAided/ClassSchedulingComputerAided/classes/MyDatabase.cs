@@ -965,6 +965,7 @@ namespace ClassSchedulingComputerAided
         }
 
         //===============ROOMS======================
+
         public void R_AddRooms(string roomName, string roomCode, string roomSlots)
         {
             try
@@ -3415,6 +3416,36 @@ namespace ClassSchedulingComputerAided
         }
 
         //=================CHECK IF EXISITING==============
+        public bool existRoom(string code, string name)
+        {
+            bool result = false;
+            try
+            {
+                con.Open();
+                string sql = "SELECT * FROM tbl_room WHERE roomCode = @rC AND roomName = @rN;";
+                MySqlCommand com = new MySqlCommand(sql, con);
+                com.Parameters.AddWithValue("@rC", code);
+                com.Parameters.AddWithValue("@rN", code);
+                com.ExecuteNonQuery();
+
+                MySqlDataReader dr = com.ExecuteReader();
+                if (dr.Read())
+                {
+                    result = true;
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "existRoom");
+            }
+            finally
+            {
+                con.Close();
+            }
+            return result;
+        }
+
         public bool existUsername(string username)
         {
             bool result = false;

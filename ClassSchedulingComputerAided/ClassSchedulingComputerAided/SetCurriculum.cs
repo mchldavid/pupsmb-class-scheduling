@@ -414,7 +414,7 @@ namespace ClassSchedulingComputerAided
         private void cboLabHours_KeyPress(object sender, KeyPressEventArgs e)
         {
             // allows 0-9, backspace, and decimal
-            if (((e.KeyChar < 48 || e.KeyChar > 57) && e.KeyChar != 8 && e.KeyChar != 46))
+            if (((e.KeyChar < 48 || e.KeyChar > 57) && e.KeyChar != 8 && e.KeyChar != 46 && e.KeyChar != 13))
             {
                 e.Handled = true;
                 return;
@@ -426,12 +426,17 @@ namespace ClassSchedulingComputerAided
                 if (cboLabHours.Text.IndexOf(e.KeyChar) != -1)
                     e.Handled = true;
             }
+
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                btnAdd_Click(sender, e);
+            }
         }
 
         private void cboYearLevel_KeyPress(object sender, KeyPressEventArgs e)
         {
             // allows 0-9, backspace, and decimal
-            if (((e.KeyChar < 48 || e.KeyChar > 57) && e.KeyChar != 8 && e.KeyChar != 46))
+            if (((e.KeyChar < 48 || e.KeyChar > 57) && e.KeyChar != 8 && e.KeyChar != 46 && e.KeyChar != 13))
             {
                 e.Handled = true;
                 return;
@@ -442,6 +447,11 @@ namespace ClassSchedulingComputerAided
             {
                 if (cboYearLevel.Text.IndexOf(e.KeyChar) != -1)
                     e.Handled = true;
+            }
+
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                btnAdd_Click(sender, e);
             }
         }
 

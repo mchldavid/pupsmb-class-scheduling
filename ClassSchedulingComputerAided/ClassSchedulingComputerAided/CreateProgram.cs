@@ -34,6 +34,7 @@ namespace ClassSchedulingComputerAided
                 {
                     if (md.existProgram(txtProgramName.Text, txtCurriculumYear.Text) == false)
                     {
+                        curriculumData.c_curriculumTitle = txtProgramName.Text;
                         //create program into a curriculum
                         curriculumData.c_id = md.CreateCurriculum(txtProgramName.Text, usersData.a_id, dt, txtCurriculumYear.Text);
                         //create course into a curriculum
@@ -79,6 +80,25 @@ namespace ClassSchedulingComputerAided
             frmCurriculum ahp = new frmCurriculum();
             ahp.Show();
             this.Hide();
+        }
+
+        private void txtProgramAcronym_TextChanged(object sender, EventArgs e)
+        {
+            txtProgramAcronym.CharacterCasing = CharacterCasing.Upper;
+        }
+
+        private void txtCurriculumYear_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // allows 0-9, backspace, and decimal
+            if (((e.KeyChar < 48 || e.KeyChar > 57) && e.KeyChar != 8 && e.KeyChar != 13))
+            {
+                e.Handled = true;
+                return;
+            }
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                btnSave_Click(sender, e);
+            }
         }
     }
 }

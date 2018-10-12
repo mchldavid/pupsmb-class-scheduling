@@ -763,7 +763,7 @@ namespace ClassSchedulingComputerAided
                 isValid = true;
                 if (WalangDay == true)
                 {
-                    DialogResult dr = MessageBox.Show(message, "PROFESSOR'S PREFERRED SCHEDULED CONFLICT", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    DialogResult dr = MessageBox.Show(message, "PROFESSOR'S PREFERRED SCHEDULE CONFLICT", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (dr == DialogResult.Yes)
                         isValid = true;
                     else
@@ -846,7 +846,7 @@ namespace ClassSchedulingComputerAided
 
                                     btnCancel_1.Visible = false;
 
-                                    MessageBox.Show("Scheduled Successful", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    MessageBox.Show("Schedule Successfully.", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                                     SaveScheduled();
                                     SaveData();
