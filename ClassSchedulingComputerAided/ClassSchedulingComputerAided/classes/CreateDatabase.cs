@@ -51,7 +51,32 @@ namespace ClassSchedulingComputerAided
             DBtable_9(dbName, sqlConnection);
             DBtable_10(dbName, sqlConnection);
             DBtable_11(dbName, sqlConnection);
+            DBtable_12(dbName, sqlConnection);
             DBtable_13(dbName, sqlConnection);
+
+            InsertDefaultValue(sqlConnection, dbName);
+        }
+
+        public void InsertDefaultValue(string connstr, string db_name)
+        {
+            try
+            {
+                connstr += "database="+db_name+";";   
+                MySqlConnection connection = new MySqlConnection(connstr);
+                string defaultValueCSD = "INSERT tbl_classschedulestatus(onGoing) VALUES('0');";
+                connection.Open();
+                MySqlCommand command = new MySqlCommand(defaultValueCSD, connection);
+                command.ExecuteNonQuery();
+                connection.Close();
+                
+            }
+            catch(MySqlException ex)
+            {
+            }
+            finally
+            {
+                
+            }
         }
 
         //===============QUERIES==============
@@ -353,6 +378,24 @@ namespace ClassSchedulingComputerAided
                     + "KEY `FK_tbl_room_scheduled_1` (`curriculums_id`),"
                     + "CONSTRAINT `FK_tbl_room_scheduled_1` FOREIGN KEY (`curriculums_id`) REFERENCES `tbl_curriculums` (`curriculums_id`)"
                     + ") ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=latin1;", dbconn))
+                {
+                    dbconn.Open();
+                    cmd.ExecuteNonQuery();
+                    dbconn.Close();
+                }
+            }
+        }
+
+        private void DBtable_12(string name, string conn)
+        {
+            using (MySqlConnection dbconn = new MySqlConnection(conn))
+            {
+                using (MySqlCommand cmd = new MySqlCommand("CREATE TABLE  `"
+                    + name +"`.`tbl_classschedulestatus` ( "
+                    + "`classScheduleStatus_id` int(10) unsigned NOT NULL auto_increment, "
+                    + "`onGoing` int(10) unsigned NOT NULL, "
+                    + "PRIMARY KEY  (`classScheduleStatus_id`) "
+                    + ") ENGINE=InnoDB DEFAULT CHARSET=latin1;", dbconn))
                 {
                     dbconn.Open();
                     cmd.ExecuteNonQuery();
