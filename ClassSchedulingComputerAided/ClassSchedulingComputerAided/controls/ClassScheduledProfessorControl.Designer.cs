@@ -38,12 +38,15 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnOK = new MetroFramework.Controls.MetroButton();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnPrint = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnSettings = new Bunifu.Framework.UI.BunifuImageButton();
             this.lblSemester = new MetroFramework.Controls.MetroLabel();
             this.lblName = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnButtonPrint = new MetroFramework.Controls.MetroButton();
             this.pnlStart.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSettings)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -51,7 +54,7 @@
             // pnlProfessor
             // 
             this.pnlProfessor.BackColor = System.Drawing.Color.White;
-            this.pnlProfessor.Location = new System.Drawing.Point(3, 3);
+            this.pnlProfessor.Location = new System.Drawing.Point(7, 31);
             this.pnlProfessor.Name = "pnlProfessor";
             this.pnlProfessor.Size = new System.Drawing.Size(820, 561);
             this.pnlProfessor.TabIndex = 255;
@@ -70,7 +73,7 @@
             this.pnlStart.Controls.Add(this.btnOK);
             this.pnlStart.Location = new System.Drawing.Point(0, 37);
             this.pnlStart.Name = "pnlStart";
-            this.pnlStart.Size = new System.Drawing.Size(836, 583);
+            this.pnlStart.Size = new System.Drawing.Size(835, 611);
             this.pnlStart.TabIndex = 259;
             // 
             // cboSchoolYear
@@ -146,20 +149,38 @@
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(0)))), ((int)(((byte)(17)))));
+            this.panel3.Controls.Add(this.btnPrint);
             this.panel3.Controls.Add(this.btnSettings);
             this.panel3.Controls.Add(this.lblSemester);
             this.panel3.Controls.Add(this.lblName);
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(837, 38);
+            this.panel3.Size = new System.Drawing.Size(836, 38);
             this.panel3.TabIndex = 260;
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(0)))), ((int)(((byte)(17)))));
+            this.btnPrint.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.Image")));
+            this.btnPrint.ImageActive = null;
+            this.btnPrint.Location = new System.Drawing.Point(124, 7);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(24, 23);
+            this.btnPrint.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnPrint.TabIndex = 250;
+            this.btnPrint.TabStop = false;
+            this.btnPrint.Visible = false;
+            this.btnPrint.Zoom = 10;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // btnSettings
             // 
             this.btnSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(0)))), ((int)(((byte)(17)))));
+            this.btnSettings.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSettings.Image = ((System.Drawing.Image)(resources.GetObject("btnSettings.Image")));
             this.btnSettings.ImageActive = null;
-            this.btnSettings.Location = new System.Drawing.Point(802, 8);
+            this.btnSettings.Location = new System.Drawing.Point(762, 8);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Size = new System.Drawing.Size(24, 23);
             this.btnSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -176,7 +197,7 @@
             this.lblSemester.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.lblSemester.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.lblSemester.ForeColor = System.Drawing.Color.White;
-            this.lblSemester.Location = new System.Drawing.Point(383, 4);
+            this.lblSemester.Location = new System.Drawing.Point(344, 4);
             this.lblSemester.Name = "lblSemester";
             this.lblSemester.Size = new System.Drawing.Size(415, 31);
             this.lblSemester.TabIndex = 178;
@@ -188,35 +209,47 @@
             this.lblName.BackColor = System.Drawing.Color.Transparent;
             this.lblName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.ForeColor = System.Drawing.Color.White;
-            this.lblName.Location = new System.Drawing.Point(37, 9);
+            this.lblName.Location = new System.Drawing.Point(11, 9);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(56, 19);
+            this.lblName.Size = new System.Drawing.Size(109, 19);
             this.lblName.TabIndex = 138;
-            this.lblName.Text = "Home";
+            this.lblName.Text = "My Schedule";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.btnButtonPrint);
             this.panel1.Controls.Add(this.pnlProfessor);
-            this.panel1.Location = new System.Drawing.Point(3, 41);
+            this.panel1.Location = new System.Drawing.Point(0, 41);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(832, 570);
+            this.panel1.Size = new System.Drawing.Size(834, 653);
             this.panel1.TabIndex = 261;
+            // 
+            // btnButtonPrint
+            // 
+            this.btnButtonPrint.Location = new System.Drawing.Point(748, 1);
+            this.btnButtonPrint.Name = "btnButtonPrint";
+            this.btnButtonPrint.Size = new System.Drawing.Size(87, 27);
+            this.btnButtonPrint.TabIndex = 256;
+            this.btnButtonPrint.Text = "PRINT";
+            this.btnButtonPrint.Visible = false;
+            this.btnButtonPrint.Click += new System.EventHandler(this.btnButtonPrint_Click);
             // 
             // ClassScheduledProfessorControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.pnlStart);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlStart);
             this.Name = "ClassScheduledProfessorControl";
-            this.Size = new System.Drawing.Size(835, 625);
+            this.Size = new System.Drawing.Size(834, 653);
             this.Load += new System.EventHandler(this.ClassScheduledProfessorControl_Load);
             this.pnlStart.ResumeLayout(false);
             this.pnlStart.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPrint)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSettings)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -238,5 +271,7 @@
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Panel panel1;
         private Bunifu.Framework.UI.BunifuImageButton btnSettings;
+        public Bunifu.Framework.UI.BunifuImageButton btnPrint;
+        public MetroFramework.Controls.MetroButton btnButtonPrint;
     }
 }

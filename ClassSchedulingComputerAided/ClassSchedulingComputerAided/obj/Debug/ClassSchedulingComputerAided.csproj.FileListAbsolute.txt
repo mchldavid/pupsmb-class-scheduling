@@ -206,5 +206,4 @@ C:\Users\Michael David\Documents\GitHub\PUP_class_scheduling\ClassSchedulingComp
 C:\Users\Michael David\Documents\GitHub\PUP_class_scheduling\ClassSchedulingComputerAided\ClassSchedulingComputerAided\obj\Debug\ClassSchedulingComputerAided.BackUpRestore.resources
 C:\Users\Michael David\Documents\GitHub\PUP_class_scheduling\ClassSchedulingComputerAided\ClassSchedulingComputerAided\bin\Debug\MySql.Data.dll
 C:\Users\Michael David\Documents\GitHub\PUP_class_scheduling\ClassSchedulingComputerAided\ClassSchedulingComputerAided\bin\Debug\MySqlBackup.dll
-C:\Users\Michael David\Documents\GitHub\PUP_class_scheduling\ClassSchedulingComputerAided\ClassSchedulingComputerAided\obj\Debug\ClassSchedulingComputerAided.csprojResolveAssemblyReference.cache
 C:\Users\Michael David\Documents\GitHub\PUP_class_scheduling\ClassSchedulingComputerAided\ClassSchedulingComputerAided\obj\Debug\ClassSchedulingComputerAided.MyAccountControl.resources

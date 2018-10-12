@@ -746,7 +746,7 @@
   <Width>11in</Width>
   <Page>
     <PageHeader>
-      <Height>1.35986in</Height>
+      <Height>1.37251in</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -757,7 +757,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>CLASS SCHEDULE OF THE POLYTECHNIC UNIVERSITY OF THE PHILIPINES SANTA MARIA CAMPUS</Value>
+                  <Value>CLASS SCHEDULE OF THE POLYTECHNIC UNIVERSITY OF THE PHILIPPINES SANTA MARIA BULACAN CAMPUS</Value>
                   <Style>
                     <FontSize>14pt</FontSize>
                     <FontWeight>Bold</FontWeight>
@@ -770,10 +770,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox29</rd:DefaultName>
-          <Top>0.3175cm</Top>
-          <Left>9.91205cm</Left>
+          <Top>0.635cm</Top>
+          <Left>7.29268cm</Left>
           <Height>1.78273cm</Height>
-          <Width>9.68977cm</Width>
+          <Width>13.20873cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -788,8 +788,8 @@
           <Source>Embedded</Source>
           <Value>PUPLogo</Value>
           <Sizing>FitProportional</Sizing>
-          <Top>0.3175cm</Top>
-          <Left>3.42991cm</Left>
+          <Top>0.635cm</Top>
+          <Left>2.79491cm</Left>
           <Height>2.27662cm</Height>
           <Width>2.24573cm</Width>
           <ZIndex>1</ZIndex>
@@ -803,7 +803,8 @@
           <Source>Embedded</Source>
           <Value>CSPUPLOGOREVISE2</Value>
           <Sizing>Fit</Sizing>
-          <Left>21.44581cm</Left>
+          <Top>0.3175cm</Top>
+          <Left>22.39831cm</Left>
           <Height>2.85118cm</Height>
           <Width>3.66767cm</Width>
           <ZIndex>2</ZIndex>
@@ -828,8 +829,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox38</rd:DefaultName>
-          <Top>2.17523cm</Top>
-          <Left>9.91205cm</Left>
+          <Top>2.49273cm</Top>
+          <Left>9.27705cm</Left>
           <Height>0.6cm</Height>
           <Width>1.92413cm</Width>
           <ZIndex>3</ZIndex>
@@ -858,8 +859,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox39</rd:DefaultName>
-          <Top>2.17523cm</Top>
-          <Left>14.46953cm</Left>
+          <Top>2.49273cm</Top>
+          <Left>13.83453cm</Left>
           <Height>0.6cm</Height>
           <Width>2.26188cm</Width>
           <ZIndex>4</ZIndex>
@@ -888,8 +889,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>pSemester</rd:DefaultName>
-          <Top>2.17523cm</Top>
-          <Left>11.87146cm</Left>
+          <Top>2.49273cm</Top>
+          <Left>11.23646cm</Left>
           <Height>0.6cm</Height>
           <Width>2.54515cm</Width>
           <ZIndex>5</ZIndex>
@@ -918,8 +919,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>pSchoolYear</rd:DefaultName>
-          <Top>2.17523cm</Top>
-          <Left>16.83724cm</Left>
+          <Top>2.49273cm</Top>
+          <Left>16.20224cm</Left>
           <Height>0.6cm</Height>
           <Width>2.76458cm</Width>
           <ZIndex>6</ZIndex>

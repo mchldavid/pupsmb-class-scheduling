@@ -90,6 +90,9 @@ namespace ClassSchedulingComputerAided
                 profScheduledControl psc = new profScheduledControl();
                 pnlProfessor.Controls.Clear();
                 pnlProfessor.Controls.Add(psc);
+
+                btnButtonPrint.Visible = true;
+                btnPrint.Visible = true;
             }
             else
             {
@@ -104,6 +107,23 @@ namespace ClassSchedulingComputerAided
         private void btnSettings_Click(object sender, EventArgs e)
         { 
             pnlStart.Visible = true; btnSettings.Visible = false; lblSemester.Text = "";
+            btnPrint.Visible = false;
+            btnButtonPrint.Visible = false;
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            frmPrintFormDialog pfd = new frmPrintFormDialog();
+            pfd.Show();
+            pfd.cboTimeTable.Text = "PROFESSOR";
+            pfd.cboOption.Text = usersData.p_fName +" "+ usersData.p_mName+" "+usersData.p_lName;
+            pfd.cboOption.Enabled = false;
+            pfd.cboTimeTable.Enabled = false;
+        }
+
+        private void btnButtonPrint_Click(object sender, EventArgs e)
+        {
+            btnPrint_Click(sender, e);
         }
     }
 }

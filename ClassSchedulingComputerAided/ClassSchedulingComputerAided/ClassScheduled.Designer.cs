@@ -40,20 +40,20 @@
             this.pnl.Controls.Add(this.btnHome);
             this.pnl.Location = new System.Drawing.Point(0, -1);
             this.pnl.Name = "pnl";
-            this.pnl.Size = new System.Drawing.Size(834, 624);
+            this.pnl.Size = new System.Drawing.Size(834, 653);
             this.pnl.TabIndex = 0;
             // 
             // btnHome
             // 
+            this.btnHome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(0)))), ((int)(((byte)(17)))));
-            this.btnHome.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnHome.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.Image")));
             this.btnHome.ImageActive = null;
-            this.btnHome.Location = new System.Drawing.Point(11, 6);
+            this.btnHome.Location = new System.Drawing.Point(790, 8);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(24, 23);
+            this.btnHome.Size = new System.Drawing.Size(35, 23);
             this.btnHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnHome.TabIndex = 248;
+            this.btnHome.TabIndex = 252;
             this.btnHome.TabStop = false;
             this.btnHome.Zoom = 10;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
@@ -62,7 +62,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(832, 619);
+            this.ClientSize = new System.Drawing.Size(832, 645);
             this.Controls.Add(this.pnl);
             this.Name = "frmClassScheduled";
             this.Style = MetroFramework.MetroColorStyle.White;
@@ -76,7 +76,7 @@
         #endregion
 
         private System.Windows.Forms.Panel pnl;
-        private Bunifu.Framework.UI.BunifuImageButton btnHome;
+        public Bunifu.Framework.UI.BunifuImageButton btnHome;
 
     }
 }

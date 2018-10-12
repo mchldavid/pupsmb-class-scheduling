@@ -1597,8 +1597,8 @@ namespace ClassSchedulingComputerAided
 
         private void cboProfessor_1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            md.CSD_get_professors_id(cboProfessor_1.SelectedItem.ToString());
-            ClassSchedule_Data.professors_name = cboProfessor_1.SelectedItem.ToString();
+            md.CSD_get_professors_id(cboProfessor_1.Text);
+            ClassSchedule_Data.professors_name = cboProfessor_1.Text;
             CSD_ProfTimeTable ptt = new CSD_ProfTimeTable();
             pnlProfessors.Controls.Clear();
             pnlProfessors.Controls.Add(ptt);
@@ -1606,8 +1606,8 @@ namespace ClassSchedulingComputerAided
 
         private void cboProfessor_2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            md.CSD_get_professors_id(cboProfessor_2.SelectedItem.ToString());
-            ClassSchedule_Data.professors_name = cboProfessor_2.SelectedItem.ToString();
+            md.CSD_get_professors_id(cboProfessor_2.Text);
+            ClassSchedule_Data.professors_name = cboProfessor_2.Text;
             CSD_ProfTimeTable ptt = new CSD_ProfTimeTable();
             pnlProfessors.Controls.Clear();
             pnlProfessors.Controls.Add(ptt);
@@ -1615,8 +1615,8 @@ namespace ClassSchedulingComputerAided
 
         private void cboProfessor_3_SelectedIndexChanged(object sender, EventArgs e)
         {
-            md.CSD_get_professors_id(cboProfessor_3.SelectedItem.ToString());
-            ClassSchedule_Data.professors_name = cboProfessor_3.SelectedItem.ToString();
+            md.CSD_get_professors_id(cboProfessor_3.Text);
+            ClassSchedule_Data.professors_name = cboProfessor_3.Text;
             CSD_ProfTimeTable ptt = new CSD_ProfTimeTable();
             pnlProfessors.Controls.Clear();
             pnlProfessors.Controls.Add(ptt);
@@ -1624,8 +1624,8 @@ namespace ClassSchedulingComputerAided
 
         private void cboProfessor_4_SelectedIndexChanged(object sender, EventArgs e)
         {
-            md.CSD_get_professors_id(cboProfessor_4.SelectedItem.ToString());
-            ClassSchedule_Data.professors_name = cboProfessor_4.SelectedItem.ToString();
+            md.CSD_get_professors_id(cboProfessor_4.Text);
+            ClassSchedule_Data.professors_name = cboProfessor_4.Text;
             CSD_ProfTimeTable ptt = new CSD_ProfTimeTable();
             pnlProfessors.Controls.Clear();
             pnlProfessors.Controls.Add(ptt);
@@ -1633,8 +1633,8 @@ namespace ClassSchedulingComputerAided
 
         private void cboProfessor_5_SelectedIndexChanged(object sender, EventArgs e)
         {
-            md.CSD_get_professors_id(cboProfessor_5.SelectedItem.ToString());
-            ClassSchedule_Data.professors_name = cboProfessor_5.SelectedItem.ToString();
+            md.CSD_get_professors_id(cboProfessor_5.Text);
+            ClassSchedule_Data.professors_name = cboProfessor_5.Text;
             CSD_ProfTimeTable ptt = new CSD_ProfTimeTable();
             pnlProfessors.Controls.Clear();
             pnlProfessors.Controls.Add(ptt);
@@ -1642,8 +1642,8 @@ namespace ClassSchedulingComputerAided
 
         private void cboProfessor_6_SelectedIndexChanged(object sender, EventArgs e)
         {
-            md.CSD_get_professors_id(cboProfessor_6.SelectedItem.ToString());
-            ClassSchedule_Data.professors_name = cboProfessor_6.SelectedItem.ToString();
+            md.CSD_get_professors_id(cboProfessor_6.Text);
+            ClassSchedule_Data.professors_name = cboProfessor_6.Text;
             CSD_ProfTimeTable ptt = new CSD_ProfTimeTable();
             pnlProfessors.Controls.Clear();
             pnlProfessors.Controls.Add(ptt);
@@ -1651,8 +1651,8 @@ namespace ClassSchedulingComputerAided
 
         private void cboProfessor_7_SelectedIndexChanged(object sender, EventArgs e)
         {
-            md.CSD_get_professors_id(cboProfessor_7.SelectedItem.ToString());
-            ClassSchedule_Data.professors_name = cboProfessor_7.SelectedItem.ToString();
+            md.CSD_get_professors_id(cboProfessor_7.Text);
+            ClassSchedule_Data.professors_name = cboProfessor_7.Text;
             CSD_ProfTimeTable ptt = new CSD_ProfTimeTable();
             pnlProfessors.Controls.Clear();
             pnlProfessors.Controls.Add(ptt);
@@ -1660,8 +1660,8 @@ namespace ClassSchedulingComputerAided
 
         private void cboProfessor_8_SelectedIndexChanged(object sender, EventArgs e)
         {
-            md.CSD_get_professors_id(cboProfessor_8.SelectedItem.ToString());
-            ClassSchedule_Data.professors_name = cboProfessor_8.SelectedItem.ToString();
+            md.CSD_get_professors_id(cboProfessor_8.Text);
+            ClassSchedule_Data.professors_name = cboProfessor_8.Text;
             CSD_ProfTimeTable ptt = new CSD_ProfTimeTable();
             pnlProfessors.Controls.Clear();
             pnlProfessors.Controls.Add(ptt);
@@ -1669,8 +1669,8 @@ namespace ClassSchedulingComputerAided
 
         private void cboProfessor_9_SelectedIndexChanged(object sender, EventArgs e)
         {
-            md.CSD_get_professors_id(cboProfessor_9.SelectedItem.ToString());
-            ClassSchedule_Data.professors_name = cboProfessor_9.SelectedItem.ToString();
+            md.CSD_get_professors_id(cboProfessor_9.Text);
+            ClassSchedule_Data.professors_name = cboProfessor_9.Text;
             CSD_ProfTimeTable ptt = new CSD_ProfTimeTable();
             pnlProfessors.Controls.Clear();
             pnlProfessors.Controls.Add(ptt);
@@ -1678,8 +1678,8 @@ namespace ClassSchedulingComputerAided
 
         private void cboProfessor_10_SelectedIndexChanged(object sender, EventArgs e)
         {
-            md.CSD_get_professors_id(cboProfessor_10.SelectedItem.ToString());
-            ClassSchedule_Data.professors_name = cboProfessor_10.SelectedItem.ToString();
+            md.CSD_get_professors_id(cboProfessor_10.Text);
+            ClassSchedule_Data.professors_name = cboProfessor_10.Text;
             CSD_ProfTimeTable ptt = new CSD_ProfTimeTable();
             pnlProfessors.Controls.Clear();
             pnlProfessors.Controls.Add(ptt);
@@ -1698,7 +1698,7 @@ namespace ClassSchedulingComputerAided
         {
             //md.CSD_get_professors_id(cboProfessor_1.SelectedItem.ToString());
             //ClassSchedule_Data.professors_name = cboProfessor_1.SelectedItem.ToString();
-            ClassSchedule_Data.roomCode = cboRoom_1.SelectedItem.ToString();
+            ClassSchedule_Data.roomCode = cboRoom_1.Text;
             RoomTimeTableControl rttc = new RoomTimeTableControl();
             pnlRooms.Controls.Clear();
             pnlRooms.Controls.Add(rttc);
@@ -1706,7 +1706,7 @@ namespace ClassSchedulingComputerAided
 
         private void cboRoom_2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ClassSchedule_Data.roomCode = cboRoom_2.SelectedItem.ToString();
+            ClassSchedule_Data.roomCode = cboRoom_2.Text;
             RoomTimeTableControl rttc = new RoomTimeTableControl();
             pnlRooms.Controls.Clear();
             pnlRooms.Controls.Add(rttc);
@@ -1714,7 +1714,7 @@ namespace ClassSchedulingComputerAided
 
         private void cboRoom_3_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ClassSchedule_Data.roomCode = cboRoom_3.SelectedItem.ToString();
+            ClassSchedule_Data.roomCode = cboRoom_3.Text;
             RoomTimeTableControl rttc = new RoomTimeTableControl();
             pnlRooms.Controls.Clear();
             pnlRooms.Controls.Add(rttc);
@@ -1722,7 +1722,7 @@ namespace ClassSchedulingComputerAided
 
         private void cboRoom_4_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ClassSchedule_Data.roomCode = cboRoom_4.SelectedItem.ToString();
+            ClassSchedule_Data.roomCode = cboRoom_4.Text;
             RoomTimeTableControl rttc = new RoomTimeTableControl();
             pnlRooms.Controls.Clear();
             pnlRooms.Controls.Add(rttc);
@@ -1730,7 +1730,7 @@ namespace ClassSchedulingComputerAided
 
         private void cboRoom_5_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ClassSchedule_Data.roomCode = cboRoom_5.SelectedItem.ToString();
+            ClassSchedule_Data.roomCode = cboRoom_5.Text;
             RoomTimeTableControl rttc = new RoomTimeTableControl();
             pnlRooms.Controls.Clear();
             pnlRooms.Controls.Add(rttc);
@@ -1738,7 +1738,7 @@ namespace ClassSchedulingComputerAided
 
         private void cboRoom_6_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ClassSchedule_Data.roomCode = cboRoom_6.SelectedItem.ToString();
+            ClassSchedule_Data.roomCode = cboRoom_6.Text;
             RoomTimeTableControl rttc = new RoomTimeTableControl();
             pnlRooms.Controls.Clear();
             pnlRooms.Controls.Add(rttc);
@@ -1746,7 +1746,7 @@ namespace ClassSchedulingComputerAided
 
         private void cboRoom_7_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ClassSchedule_Data.roomCode = cboRoom_7.SelectedItem.ToString();
+            ClassSchedule_Data.roomCode = cboRoom_7.Text;
             RoomTimeTableControl rttc = new RoomTimeTableControl();
             pnlRooms.Controls.Clear();
             pnlRooms.Controls.Add(rttc);
@@ -1754,7 +1754,7 @@ namespace ClassSchedulingComputerAided
 
         private void cboRoom_8_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ClassSchedule_Data.roomCode = cboRoom_8.SelectedItem.ToString();
+            ClassSchedule_Data.roomCode = cboRoom_8.Text;
             RoomTimeTableControl rttc = new RoomTimeTableControl();
             pnlRooms.Controls.Clear();
             pnlRooms.Controls.Add(rttc);
@@ -1762,7 +1762,7 @@ namespace ClassSchedulingComputerAided
 
         private void cboRoom_9_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ClassSchedule_Data.roomCode = cboRoom_9.SelectedItem.ToString();
+            ClassSchedule_Data.roomCode = cboRoom_9.Text;
             RoomTimeTableControl rttc = new RoomTimeTableControl();
             pnlRooms.Controls.Clear();
             pnlRooms.Controls.Add(rttc);
@@ -1770,7 +1770,7 @@ namespace ClassSchedulingComputerAided
 
         private void cboRoom_10_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ClassSchedule_Data.roomCode = cboRoom_10.SelectedItem.ToString();
+            ClassSchedule_Data.roomCode = cboRoom_10.Text;
             RoomTimeTableControl rttc = new RoomTimeTableControl();
             pnlRooms.Controls.Clear();
             pnlRooms.Controls.Add(rttc);
@@ -2894,6 +2894,17 @@ namespace ClassSchedulingComputerAided
             cboDay_1.Text = CSD_defaultData.day;
             cboRoom_1.Text = CSD_defaultData.room;
 
+            if (CSD_defaultData.professor == "")
+                cboProfessor_1.SelectedIndex = -1;
+            if (CSD_defaultData.startTime == "")
+                cboStart_1.SelectedIndex = -1;
+            if (CSD_defaultData.endTime == "")
+                cboEnd_1.SelectedIndex = -1;
+            if (CSD_defaultData.day == "")
+                cboDay_1.SelectedIndex = -1;
+            if (CSD_defaultData.room == "")
+                cboRoom_1.SelectedIndex = -1;
+
             SetComboBoxToDisabled();
             SetToEnabled();
             btnSet_1.Text = "SET";
@@ -2911,6 +2922,17 @@ namespace ClassSchedulingComputerAided
             cboDay_2.Text = CSD_defaultData.day;
             cboRoom_2.Text = CSD_defaultData.room;
 
+            if (CSD_defaultData.professor == "")
+                cboProfessor_2.SelectedIndex = -1;
+            if (CSD_defaultData.startTime == "")
+                cboStart_2.SelectedIndex = -1;
+            if (CSD_defaultData.endTime == "")
+                cboEnd_2.SelectedIndex = -1;
+            if (CSD_defaultData.day == "")
+                cboDay_2.SelectedIndex = -1;
+            if (CSD_defaultData.room == "")
+                cboRoom_2.SelectedIndex = -1;
+
             SetComboBoxToDisabled();
             SetToEnabled();
             btnSet_2.Text = "SET";
@@ -2926,6 +2948,17 @@ namespace ClassSchedulingComputerAided
             cboEnd_3.Text = CSD_defaultData.endTime;
             cboDay_3.Text = CSD_defaultData.day;
             cboRoom_3.Text = CSD_defaultData.room;
+
+            if (CSD_defaultData.professor == "")
+                cboProfessor_3.SelectedIndex = -1;
+            if (CSD_defaultData.startTime == "")
+                cboStart_3.SelectedIndex = -1;
+            if (CSD_defaultData.endTime == "")
+                cboEnd_3.SelectedIndex = -1;
+            if (CSD_defaultData.day == "")
+                cboDay_3.SelectedIndex = -1;
+            if (CSD_defaultData.room == "")
+                cboRoom_3.SelectedIndex = -1;
 
             SetComboBoxToDisabled();
             SetToEnabled();
@@ -2943,6 +2976,17 @@ namespace ClassSchedulingComputerAided
             cboDay_4.Text = CSD_defaultData.day;
             cboRoom_4.Text = CSD_defaultData.room;
 
+            if (CSD_defaultData.professor == "")
+                cboProfessor_4.SelectedIndex = -1;
+            if (CSD_defaultData.startTime == "")
+                cboStart_4.SelectedIndex = -1;
+            if (CSD_defaultData.endTime == "")
+                cboEnd_4.SelectedIndex = -1;
+            if (CSD_defaultData.day == "")
+                cboDay_4.SelectedIndex = -1;
+            if (CSD_defaultData.room == "")
+                cboRoom_4.SelectedIndex = -1;
+
             SetComboBoxToDisabled();
             SetToEnabled();
             btnSet_4.Text = "SET";
@@ -2958,6 +3002,17 @@ namespace ClassSchedulingComputerAided
             cboEnd_5.Text = CSD_defaultData.endTime;
             cboDay_5.Text = CSD_defaultData.day;
             cboRoom_5.Text = CSD_defaultData.room;
+
+            if (CSD_defaultData.professor == "")
+                cboProfessor_5.SelectedIndex = -1;
+            if (CSD_defaultData.startTime == "")
+                cboStart_5.SelectedIndex = -1;
+            if (CSD_defaultData.endTime == "")
+                cboEnd_5.SelectedIndex = -1;
+            if (CSD_defaultData.day == "")
+                cboDay_5.SelectedIndex = -1;
+            if (CSD_defaultData.room == "")
+                cboRoom_5.SelectedIndex = -1;
 
             SetComboBoxToDisabled();
             SetToEnabled();
@@ -2975,6 +3030,17 @@ namespace ClassSchedulingComputerAided
             cboDay_6.Text = CSD_defaultData.day;
             cboRoom_6.Text = CSD_defaultData.room;
 
+            if (CSD_defaultData.professor == "")
+                cboProfessor_6.SelectedIndex = -1;
+            if (CSD_defaultData.startTime == "")
+                cboStart_6.SelectedIndex = -1;
+            if (CSD_defaultData.endTime == "")
+                cboEnd_6.SelectedIndex = -1;
+            if (CSD_defaultData.day == "")
+                cboDay_6.SelectedIndex = -1;
+            if (CSD_defaultData.room == "")
+                cboRoom_6.SelectedIndex = -1;
+
             SetComboBoxToDisabled();
             SetToEnabled();
             btnSet_6.Text = "SET";
@@ -2990,6 +3056,17 @@ namespace ClassSchedulingComputerAided
             cboEnd_7.Text = CSD_defaultData.endTime;
             cboDay_7.Text = CSD_defaultData.day;
             cboRoom_7.Text = CSD_defaultData.room;
+
+            if (CSD_defaultData.professor == "")
+                cboProfessor_7.SelectedIndex = -1;
+            if (CSD_defaultData.startTime == "")
+                cboStart_7.SelectedIndex = -1;
+            if (CSD_defaultData.endTime == "")
+                cboEnd_7.SelectedIndex = -1;
+            if (CSD_defaultData.day == "")
+                cboDay_7.SelectedIndex = -1;
+            if (CSD_defaultData.room == "")
+                cboRoom_7.SelectedIndex = -1;
 
             SetComboBoxToDisabled();
             SetToEnabled();
@@ -3007,6 +3084,17 @@ namespace ClassSchedulingComputerAided
             cboDay_8.Text = CSD_defaultData.day;
             cboRoom_8.Text = CSD_defaultData.room;
 
+            if (CSD_defaultData.professor == "")
+                cboProfessor_8.SelectedIndex = -1;
+            if (CSD_defaultData.startTime == "")
+                cboStart_8.SelectedIndex = -1;
+            if (CSD_defaultData.endTime == "")
+                cboEnd_8.SelectedIndex = -1;
+            if (CSD_defaultData.day == "")
+                cboDay_8.SelectedIndex = -1;
+            if (CSD_defaultData.room == "")
+                cboRoom_8.SelectedIndex = -1;
+
             SetComboBoxToDisabled();
             SetToEnabled();
             btnSet_8.Text = "SET";
@@ -3023,6 +3111,17 @@ namespace ClassSchedulingComputerAided
             cboDay_9.Text = CSD_defaultData.day;
             cboRoom_9.Text = CSD_defaultData.room;
 
+            if (CSD_defaultData.professor == "")
+                cboProfessor_9.SelectedIndex = -1;
+            if (CSD_defaultData.startTime == "")
+                cboStart_9.SelectedIndex = -1;
+            if (CSD_defaultData.endTime == "")
+                cboEnd_9.SelectedIndex = -1;
+            if (CSD_defaultData.day == "")
+                cboDay_9.SelectedIndex = -1;
+            if (CSD_defaultData.room == "")
+                cboRoom_9.SelectedIndex = -1;
+
             SetComboBoxToDisabled();
             SetToEnabled();
             btnSet_9.Text = "SET";
@@ -3038,6 +3137,17 @@ namespace ClassSchedulingComputerAided
             cboEnd_10.Text = CSD_defaultData.endTime;
             cboDay_10.Text = CSD_defaultData.day;
             cboRoom_10.Text = CSD_defaultData.room;
+
+            if (CSD_defaultData.professor == "")
+                cboProfessor_10.SelectedIndex = -1;
+            if (CSD_defaultData.startTime == "")
+                cboStart_10.SelectedIndex = -1;
+            if (CSD_defaultData.endTime == "")
+                cboEnd_10.SelectedIndex = -1;
+            if (CSD_defaultData.day == "")
+                cboDay_10.SelectedIndex = -1;
+            if (CSD_defaultData.room == "")
+                cboRoom_10.SelectedIndex = -1;
 
             SetComboBoxToDisabled();
             SetToEnabled();
