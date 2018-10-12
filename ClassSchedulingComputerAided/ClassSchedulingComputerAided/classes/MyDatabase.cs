@@ -2175,6 +2175,77 @@ namespace ClassSchedulingComputerAided
             return cboCurriculum;
         }
 
+        public string[] get_id_StudentsScheduled(string students, string semester, string schoolYear)//to get id of the students
+        {
+            string[] id = new string[100];
+            int x = 0;
+            for (x = 0; x < 100; x++)
+                id[x] = "";
+
+            x = 0;
+            try
+            {
+                con.Open();
+                string sql = "SELECT * FROM tbl_students_scheduled t "
+                    + "WHERE CONCAT(course,year,section) = @stu "
+                    + "AND semester = @sem "
+                    + "AND schoolYear = @sY;";
+                MySqlCommand com = new MySqlCommand(sql, con);
+                com.Parameters.AddWithValue("@stu", students);
+                com.Parameters.AddWithValue("@sem", semester);
+                com.Parameters.AddWithValue("@sY", schoolYear);
+                com.ExecuteNonQuery();
+
+                MySqlDataReader dr = com.ExecuteReader();
+                while (dr.Read())
+                {
+                    id[x] = dr["students_scheduled_id"].ToString();
+                    x++;
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "Get_id_StudentsScheduled");
+            }
+            finally
+            {
+                con.Close();
+            }
+            return id;
+        }
+
+        public string[] get_info_StudentsScheduled(string sS_id)
+        {
+            string[] roomSchedule = new string[11];
+            try
+            {
+                con.Open();
+                string testSqlUsers = "SELECT *, CONCAT(course,' ',year,'-',section) FROM tbl_students_scheduled WHERE students_scheduled_id = @id";
+                MySqlCommand com = new MySqlCommand(testSqlUsers, con);
+                com.Parameters.AddWithValue("@id", sS_id);
+                com.ExecuteNonQuery();
+                MySqlDataReader dr = com.ExecuteReader();
+                if (dr.Read())
+                {
+                    roomSchedule[0] = dr["scheduledStartTime"].ToString();
+                    roomSchedule[1] = dr["scheduledEndTime"].ToString();
+                    roomSchedule[2] = dr["scheduledDay"].ToString();
+                    roomSchedule[3] = dr["professor"].ToString();
+                    roomSchedule[4] = dr["subjectCode"].ToString();
+                    roomSchedule[5] = dr["CONCAT(course,' ',year,'-',section)"].ToString();
+                }
+            }
+            catch (MySqlException er)
+            {
+                MessageBox.Show(er.Message, "get_info_StudentsScheduled");
+            }
+            finally
+            {
+                con.Close();
+            }
+            return roomSchedule;
+        }
+
         public string[] get_id_PreferredScheduled(string professor, string semester, string schoolYear)//to get id of the preferred schedule professor
         {
             string[] id = new string[100];
