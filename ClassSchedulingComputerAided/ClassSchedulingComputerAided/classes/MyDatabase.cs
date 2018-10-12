@@ -117,6 +117,7 @@ namespace ClassSchedulingComputerAided
             {
             }
         }
+
         //check the database connection
         public void ConnectSql()
         {
@@ -3567,5 +3568,55 @@ namespace ClassSchedulingComputerAided
             return result;
         }
 
+        //====================ON GOING CLASS SCHEDULING===============
+
+        public void changeState(string state)
+        {
+            try
+            {
+                con.Open();
+                string sqlAddRoom = "UPDATE tbl_classschedulestatus SET onGoing = @o";
+                MySqlCommand com = new MySqlCommand(sqlAddRoom, con);
+                com.Parameters.AddWithValue("@o", state);
+                com.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "R_UpdateRooms");
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public bool isGoing()
+        {
+            bool result = false;
+            try
+            {
+                con.Open();
+                string sql = "SELECT * FROM tbl_classschedulestatus WHERE onGoing = '1'";
+                MySqlCommand com = new MySqlCommand(sql, con);
+                com.ExecuteNonQuery();
+
+                MySqlDataReader dr = com.ExecuteReader();
+                if (dr.Read())
+                {
+                    result = true;
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "existUsername");
+            }
+            finally
+            {
+                con.Close();
+            }
+            return result;
+        }
     }
 }

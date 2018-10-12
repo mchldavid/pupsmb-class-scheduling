@@ -276,6 +276,19 @@ namespace ClassSchedulingComputerAided
                     pnlAdmin.Location = new Point(-437, 35);
                     txtUsername.Focus();
                 }
+                else
+                {
+                    MessageBox.Show("The specified email is invalid!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtEmailAddress.Focus();
+                }
+            }
+            else
+            {
+                if (txtMobileNumber.Text == "") { txtMobileNumber.Focus(); }
+                if (txtEmailAddress.Text == "") { txtEmailAddress.Focus(); }
+                if (txtAddress.Text == "") { txtAddress.Focus(); }
+                if (txtLastName.Text == "") { txtLastName.Focus(); }
+                if (txtFirstName.Text == "") { txtFirstName.Focus(); }
             }
         }
 

@@ -63,14 +63,21 @@ namespace ClassSchedulingComputerAided
                         }
                         else if (md.LoginTest(txtUsername.Text, ms.encryptPassword(txtPassword.Text)).GetValue(2).ToString() == "professor")
                         {
-                            frmProfessorHomePage ph = new frmProfessorHomePage();
-                            ph.Show();
-                            usersData.p_id = md.LoginTest(txtUsername.Text, ms.encryptPassword(txtPassword.Text)).GetValue(1).ToString();
-                            md.updateLogginStatus(usersData.p_id, "1");
-                            this.Hide();
+                            if (md.isGoing() != true)
+                            {
+                                frmProfessorHomePage ph = new frmProfessorHomePage();
+                                ph.Show();
+                                usersData.p_id = md.LoginTest(txtUsername.Text, ms.encryptPassword(txtPassword.Text)).GetValue(1).ToString();
+                                md.updateLogginStatus(usersData.p_id, "1");
+                                this.Hide();
 
-                            //audit
-                            md.AuditTrail(AuditTrailData.username, "Logged In", "Successfully!");
+                                //audit
+                                md.AuditTrail(AuditTrailData.username, "Logged In", "Successfully!");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Class scheduling is on going. Please try again later!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
                         }
                     }
                     else

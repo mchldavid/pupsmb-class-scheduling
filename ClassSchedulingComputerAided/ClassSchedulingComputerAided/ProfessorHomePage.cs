@@ -121,6 +121,18 @@ namespace ClassSchedulingComputerAided
         {
             if (timer1.Interval == 1000)
             {
+                if (md.isGoing() == true)
+                {
+                    timer1.Enabled = false;
+                    MessageBox.Show("Class scheduling is on going. Changes are not allowed, youre about to logout!", "Logout", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    md.updateLogginStatus(usersData.p_id, "0");
+                    Form l = new frmLogin();
+                    l.Show();
+                    this.Hide();
+
+                    //audit
+                    md.AuditTrail(AuditTrailData.username, "Logged Out", "Successfully!");
+                }
                 lblTime.Text = DateTime.Now.ToString("h:mm tt");
                 lblDay.Text = DateTime.Now.ToString("dddd");
                 lblDate.Text = DateTime.Now.ToString("dd MMMM yyyy");

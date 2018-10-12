@@ -98,6 +98,10 @@ namespace ClassSchedulingComputerAided
             Form csd = new frmClassScheduleDashboard();
             csd.Show();
             this.Hide();
+
+            //to change the state of onGoing to 1
+            md.changeState("1");
+
         }
 
         private void btnListOfProfessors_Click(object sender, EventArgs e)
