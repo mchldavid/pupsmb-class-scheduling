@@ -3619,15 +3619,5 @@ namespace ClassSchedulingComputerAided
             }
             return result;
         }
-
-        public void isConnected()
-        {
-            con.Open();
-            string sql = "SELECT * FROM tbl_curriculums WHERE programName = @id AND curriculumYear = '1';";
-            MySqlCommand com = new MySqlCommand(sql, con);
-            com.ExecuteNonQuery();
-
-            con.Close();
-        }
     }
 }
