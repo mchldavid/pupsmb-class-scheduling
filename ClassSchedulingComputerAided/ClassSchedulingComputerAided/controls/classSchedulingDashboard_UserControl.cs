@@ -23,6 +23,7 @@ namespace ClassSchedulingComputerAided
         MyDatabase md = new MyDatabase();
 
         int countForColor = 0;
+        string[] checkDay = {"Monday", "Tuesady", "Wednesday", "Thursday", "Friday","Sarturday", "Sunday"};
 
         private void lblLecHours_4_Click(object sender, EventArgs e)
         {
@@ -608,6 +609,7 @@ namespace ClassSchedulingComputerAided
             bool isValid = true;
             int scheduleIsFree = 0;
             string message = "";
+            bool WalangDay = true;
             for (int x = 0; x < md.get_id_PreferredScheduled(rC, cboSemester.Text, cboSchoolYear.Text).Length; x++)
             {
                 string ps_id = md.get_id_PreferredScheduled(rC, cboSemester.Text, cboSchoolYear.Text).GetValue(x).ToString();
@@ -624,6 +626,13 @@ namespace ClassSchedulingComputerAided
                     int dt3 = DateTime.Compare(PS_startTime, endTime);
                     int dt4 = DateTime.Compare(PS_endTime, startTime);
                     string promptMessage = System.String.Format("The [New Schedule] does not fit with the professor's [Preferred Schedule] \r\n Do you want to force \r\n {0} [{1} {2}-{3} ]", rC, day, sec_sT, sec_eT);
+                    message = promptMessage;
+
+                    for (int a = 0; a < 7; a++)
+                        if (checkDay[a] == day)
+                        {
+                            WalangDay = false;
+                        }
 
                     if (md.get_info_PreferredScheduled(ps_id).GetValue(2).ToString() == day)
                     {
@@ -657,6 +666,14 @@ namespace ClassSchedulingComputerAided
             if (scheduleIsFree < 1)
             {
                 isValid = true;
+                if (WalangDay == true)
+                {
+                    DialogResult dr = MessageBox.Show(message, "PROFESSOR'S PREFERRED SCHEDULED CONFLICT", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (dr == DialogResult.Yes)
+                        isValid = true;
+                    else
+                        isValid = false;
+                }
                 //MessageBox.Show("Your preferred schedule has been added", day);
             }
             else
