@@ -2381,7 +2381,7 @@ namespace ClassSchedulingComputerAided
                     roomSchedule[0] = dr["scheduledStartTime"].ToString();
                     roomSchedule[1] = dr["scheduledEndTime"].ToString();
                     roomSchedule[2] = dr["scheduledDay"].ToString();
-                    roomSchedule[3] = dr["professor"].ToString();
+                    roomSchedule[3] = dr["room"].ToString();
                     roomSchedule[4] = dr["subjectCode"].ToString();
                     roomSchedule[5] = dr["CONCAT(course,' ',year,'-',section)"].ToString();
                 }
@@ -2454,7 +2454,7 @@ namespace ClassSchedulingComputerAided
                     roomSchedule[2] = dr["scheduledDay"].ToString();
                     roomSchedule[3] = dr["room"].ToString();
                     roomSchedule[4] = dr["subjectCode"].ToString();
-                    roomSchedule[5] = dr["CONCAT(course,' ',year,'-',section)"].ToString();
+                    roomSchedule[5] = dr["professor"].ToString();
                 }
             }
             catch (MySqlException er)
