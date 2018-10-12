@@ -207,9 +207,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.pnlStart);
+            this.Controls.Add(this.panel1);
             this.Name = "ClassScheduledProfessorControl";
             this.Size = new System.Drawing.Size(835, 625);
             this.Load += new System.EventHandler(this.ClassScheduledProfessorControl_Load);

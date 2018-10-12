@@ -151,23 +151,6 @@ namespace ClassSchedulingComputerAided
             }
         }
 
-        private void txtDatabase_TextChanged(object sender, EventArgs e)//restrict the user to input not alphabet
-        {
-            string txt = "";
-            if (!System.Text.RegularExpressions.Regex.IsMatch(txtDatabase.Text, "^[a-zA-Z ]^"))
-            {
-                int result;
-                foreach (char a in txtDatabase.Text)
-                {
-                    if(int.TryParse(a.ToString(), out result) == false)
-                        txt += a;
-                }
-            }
-            txtDatabase.Text = txt;
-            txtDatabase.SelectionStart = txtDatabase.Text.Length;
-            txtDatabase.SelectionLength = 0;
-        }
-
         private void txtHost_TextChanged(object sender, EventArgs e)
         {
             if (txtHost.Text != "")
@@ -359,6 +342,23 @@ namespace ClassSchedulingComputerAided
                 }
             }
             throw new Exception("No network adapters with an IPv4 address in the system!");
+        }
+
+        private void txtDatabase_TextChanged(object sender, EventArgs e)
+        {
+            string txt = "";
+            if (!System.Text.RegularExpressions.Regex.IsMatch(txtDatabase.Text, "^[a-zA-Z ]^"))
+            {
+                int result;
+                foreach (char a in txtDatabase.Text)
+                {
+                    if (int.TryParse(a.ToString(), out result) == false)
+                        txt += a;
+                }
+            }
+            txtDatabase.Text = txt;
+            txtDatabase.SelectionStart = txtDatabase.Text.Length;
+            txtDatabase.SelectionLength = 0;
         }
 
     }

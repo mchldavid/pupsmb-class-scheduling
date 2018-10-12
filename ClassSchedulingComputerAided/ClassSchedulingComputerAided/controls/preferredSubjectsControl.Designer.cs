@@ -100,7 +100,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkCyan;
-            this.label2.Location = new System.Drawing.Point(17, 420);
+            this.label2.Location = new System.Drawing.Point(16, 422);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(110, 18);
             this.label2.TabIndex = 238;
@@ -112,7 +112,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(126)))), ((int)(((byte)(49)))));
-            this.label3.Location = new System.Drawing.Point(216, 420);
+            this.label3.Location = new System.Drawing.Point(215, 422);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(83, 18);
             this.label3.TabIndex = 238;
@@ -124,7 +124,7 @@
             this.lblUnitsAllowed.AutoSize = true;
             this.lblUnitsAllowed.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUnitsAllowed.ForeColor = System.Drawing.Color.DarkCyan;
-            this.lblUnitsAllowed.Location = new System.Drawing.Point(133, 417);
+            this.lblUnitsAllowed.Location = new System.Drawing.Point(132, 419);
             this.lblUnitsAllowed.Name = "lblUnitsAllowed";
             this.lblUnitsAllowed.Size = new System.Drawing.Size(34, 24);
             this.lblUnitsAllowed.TabIndex = 238;
@@ -136,7 +136,7 @@
             this.lblTotalUnits.AutoSize = true;
             this.lblTotalUnits.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalUnits.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(126)))), ((int)(((byte)(49)))));
-            this.lblTotalUnits.Location = new System.Drawing.Point(302, 417);
+            this.lblTotalUnits.Location = new System.Drawing.Point(301, 419);
             this.lblTotalUnits.Name = "lblTotalUnits";
             this.lblTotalUnits.Size = new System.Drawing.Size(34, 24);
             this.lblTotalUnits.TabIndex = 238;
@@ -484,6 +484,10 @@
             this.pnlStart.Controls.Add(this.metroLabel5);
             this.pnlStart.Controls.Add(this.label4);
             this.pnlStart.Controls.Add(this.btnOK);
+            this.pnlStart.Controls.Add(this.lblTotalUnits);
+            this.pnlStart.Controls.Add(this.lblUnitsAllowed);
+            this.pnlStart.Controls.Add(this.label3);
+            this.pnlStart.Controls.Add(this.label2);
             this.pnlStart.Location = new System.Drawing.Point(0, -1);
             this.pnlStart.Name = "pnlStart";
             this.pnlStart.Size = new System.Drawing.Size(668, 452);
@@ -545,8 +549,8 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(265, 61);
             this.label4.TabIndex = 178;
-            this.label4.Text = "Please Set the semester and school year before you proceed to your preferred subj" +
-    "ect/s.";
+            this.label4.Text = "Please Set the semester and school year before you proceed to your preferred cour" +
+    "ses.";
             // 
             // btnOK
             // 
@@ -581,7 +585,7 @@
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(83, 21);
             this.metroLabel4.TabIndex = 238;
-            this.metroLabel4.Text = "Add Subject";
+            this.metroLabel4.Text = "Add Course";
             this.metroLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // btnDeleteSubject
@@ -608,7 +612,7 @@
             this.metroLabel7.Name = "metroLabel7";
             this.metroLabel7.Size = new System.Drawing.Size(96, 21);
             this.metroLabel7.TabIndex = 238;
-            this.metroLabel7.Text = "Delete Subject";
+            this.metroLabel7.Text = "Delete Course";
             this.metroLabel7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // preferredSubjectsControl
@@ -625,11 +629,7 @@
             this.Controls.Add(this.lbl);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.lblTotalSubjects);
-            this.Controls.Add(this.lblTotalUnits);
-            this.Controls.Add(this.lblUnitsAllowed);
             this.Controls.Add(this.lbl_id);
             this.Controls.Add(this.pnlStart);
             this.Name = "preferredSubjectsControl";

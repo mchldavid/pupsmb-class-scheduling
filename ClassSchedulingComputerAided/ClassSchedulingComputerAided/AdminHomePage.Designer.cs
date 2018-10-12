@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdminHomePage));
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnBackupRestore = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnSummaryReport = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -53,7 +54,6 @@
             this.lbl_form_title = new System.Windows.Forms.Label();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btnBackupRestore = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -81,6 +81,41 @@
             this.panel3.Size = new System.Drawing.Size(245, 546);
             this.panel3.TabIndex = 2;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // btnBackupRestore
+            // 
+            this.btnBackupRestore.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(149)))), ((int)(((byte)(1)))));
+            this.btnBackupRestore.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btnBackupRestore.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBackupRestore.BorderRadius = 0;
+            this.btnBackupRestore.ButtonText = "    Backup and Restore";
+            this.btnBackupRestore.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBackupRestore.DisabledColor = System.Drawing.Color.Gray;
+            this.btnBackupRestore.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnBackupRestore.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnBackupRestore.Iconimage")));
+            this.btnBackupRestore.Iconimage_right = null;
+            this.btnBackupRestore.Iconimage_right_Selected = null;
+            this.btnBackupRestore.Iconimage_Selected = null;
+            this.btnBackupRestore.IconMarginLeft = 27;
+            this.btnBackupRestore.IconMarginRight = 0;
+            this.btnBackupRestore.IconRightVisible = true;
+            this.btnBackupRestore.IconRightZoom = 0D;
+            this.btnBackupRestore.IconVisible = true;
+            this.btnBackupRestore.IconZoom = 50D;
+            this.btnBackupRestore.IsTab = false;
+            this.btnBackupRestore.Location = new System.Drawing.Point(-5, 451);
+            this.btnBackupRestore.Name = "btnBackupRestore";
+            this.btnBackupRestore.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.btnBackupRestore.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
+            this.btnBackupRestore.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnBackupRestore.selected = false;
+            this.btnBackupRestore.Size = new System.Drawing.Size(252, 42);
+            this.btnBackupRestore.TabIndex = 109;
+            this.btnBackupRestore.Text = "    Backup and Restore";
+            this.btnBackupRestore.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBackupRestore.Textcolor = System.Drawing.Color.LightGray;
+            this.btnBackupRestore.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackupRestore.Click += new System.EventHandler(this.btnBackupRestore_Click);
             // 
             // btnSummaryReport
             // 
@@ -541,9 +576,9 @@
             this.lbl_form_title.ForeColor = System.Drawing.Color.LightCoral;
             this.lbl_form_title.Location = new System.Drawing.Point(8, 6);
             this.lbl_form_title.Name = "lbl_form_title";
-            this.lbl_form_title.Size = new System.Drawing.Size(203, 36);
+            this.lbl_form_title.Size = new System.Drawing.Size(214, 36);
             this.lbl_form_title.TabIndex = 138;
-            this.lbl_form_title.Text = "Admin Home";
+            this.lbl_form_title.Text = "ADMIN HOME";
             // 
             // metroLabel4
             // 
@@ -559,41 +594,6 @@
             // 
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // btnBackupRestore
-            // 
-            this.btnBackupRestore.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(149)))), ((int)(((byte)(1)))));
-            this.btnBackupRestore.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btnBackupRestore.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBackupRestore.BorderRadius = 0;
-            this.btnBackupRestore.ButtonText = "    Backup and Restore";
-            this.btnBackupRestore.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBackupRestore.DisabledColor = System.Drawing.Color.Gray;
-            this.btnBackupRestore.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnBackupRestore.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnBackupRestore.Iconimage")));
-            this.btnBackupRestore.Iconimage_right = null;
-            this.btnBackupRestore.Iconimage_right_Selected = null;
-            this.btnBackupRestore.Iconimage_Selected = null;
-            this.btnBackupRestore.IconMarginLeft = 27;
-            this.btnBackupRestore.IconMarginRight = 0;
-            this.btnBackupRestore.IconRightVisible = true;
-            this.btnBackupRestore.IconRightZoom = 0D;
-            this.btnBackupRestore.IconVisible = true;
-            this.btnBackupRestore.IconZoom = 50D;
-            this.btnBackupRestore.IsTab = false;
-            this.btnBackupRestore.Location = new System.Drawing.Point(-5, 451);
-            this.btnBackupRestore.Name = "btnBackupRestore";
-            this.btnBackupRestore.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.btnBackupRestore.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
-            this.btnBackupRestore.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnBackupRestore.selected = false;
-            this.btnBackupRestore.Size = new System.Drawing.Size(252, 42);
-            this.btnBackupRestore.TabIndex = 109;
-            this.btnBackupRestore.Text = "    Backup and Restore";
-            this.btnBackupRestore.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBackupRestore.Textcolor = System.Drawing.Color.LightGray;
-            this.btnBackupRestore.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBackupRestore.Click += new System.EventHandler(this.btnBackupRestore_Click);
             // 
             // frmAdminHomePage
             // 

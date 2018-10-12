@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.IO;
 using ExcelDataReader;
+using System.Text.RegularExpressions;
 
 namespace ClassSchedulingComputerAided
 {
@@ -158,7 +159,9 @@ namespace ClassSchedulingComputerAided
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-
+            frmAdminHomePage ahp = new frmAdminHomePage();
+            this.Hide();
+            ahp.Show();
         }
 
         DataSet result;
@@ -359,6 +362,104 @@ namespace ClassSchedulingComputerAided
                     md.AuditTrail(AuditTrailData.username, "Delete", txtSubjectCode.Text + " from " + lbl_title.Text + ".");
                 }
             }
+        }
+
+        private void cboUnits_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // allows 0-9, backspace, and decimal
+            if (((e.KeyChar < 48 || e.KeyChar > 57) && e.KeyChar != 8 && e.KeyChar != 46))
+            {
+                e.Handled = true;
+                return;
+            }
+
+            // checks to make sure only 1 decimal is allowed
+            if (e.KeyChar == 46)
+            {
+                if (cboUnits.Text.IndexOf(e.KeyChar) != -1)
+                    e.Handled = true;
+            }
+            
+        }
+
+        private void cboUnits_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void cboLectureHours_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // allows 0-9, backspace, and decimal
+            if (((e.KeyChar < 48 || e.KeyChar > 57) && e.KeyChar != 8 && e.KeyChar != 46))
+            {
+                e.Handled = true;
+                return;
+            }
+
+            // checks to make sure only 1 decimal is allowed
+            if (e.KeyChar == 46)
+            {
+                if (cboLectureHours.Text.IndexOf(e.KeyChar) != -1)
+                    e.Handled = true;
+            }
+        }
+
+        private void cboLabHours_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // allows 0-9, backspace, and decimal
+            if (((e.KeyChar < 48 || e.KeyChar > 57) && e.KeyChar != 8 && e.KeyChar != 46))
+            {
+                e.Handled = true;
+                return;
+            }
+
+            // checks to make sure only 1 decimal is allowed
+            if (e.KeyChar == 46)
+            {
+                if (cboLabHours.Text.IndexOf(e.KeyChar) != -1)
+                    e.Handled = true;
+            }
+        }
+
+        private void cboYearLevel_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // allows 0-9, backspace, and decimal
+            if (((e.KeyChar < 48 || e.KeyChar > 57) && e.KeyChar != 8 && e.KeyChar != 46))
+            {
+                e.Handled = true;
+                return;
+            }
+
+            // checks to make sure only 1 decimal is allowed
+            if (e.KeyChar == 46)
+            {
+                if (cboYearLevel.Text.IndexOf(e.KeyChar) != -1)
+                    e.Handled = true;
+            }
+        }
+
+        private void cboUnits_Leave(object sender, EventArgs e)
+        {
+            if(cboUnits.Text == "")
+            cboUnits.Text = "0";
+        }
+
+        private void cboLectureHours_Leave(object sender, EventArgs e)
+        {
+            if (cboLectureHours.Text == "")
+            cboLectureHours.Text = "0";
+        }
+
+        private void cboLabHours_Leave(object sender, EventArgs e)
+        {
+            if (cboLabHours.Text == "")
+            cboLabHours.Text = "0";
+        }
+
+        private void cboYearLevel_Leave(object sender, EventArgs e)
+        {
+            if (cboYearLevel.Text == "")
+            cboYearLevel.Text = "0";
         }
     }
 }

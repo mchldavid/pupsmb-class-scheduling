@@ -1456,6 +1456,30 @@ namespace ClassSchedulingComputerAided
             AuditTrail(AuditTrailData.username, "Add", startTime + "-" + endTime + " on " + day + " preferred schedule.");
         }
 
+        public void Prof_UpdatePrefSchedule(string id, string start, string end ,string day)
+        {
+            try
+            {
+                con.Open();
+                string sqlAddRoom = "UPDATE tbl_preferredschedules SET startTime = @sT, endTime = @eT, ps_day = @d WHERE preferredschedule_id = @id;";
+                MySqlCommand com = new MySqlCommand(sqlAddRoom, con);
+                com.Parameters.AddWithValue("@id", id);
+                com.Parameters.AddWithValue("@sT", start);
+                com.Parameters.AddWithValue("@eT", end);
+                com.Parameters.AddWithValue("@d", day);
+                com.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "Prof_UpdatePrefSchedule");
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
         public DataGridView dgv_showSchedule()
         {
             DataGridView dgv1 = new DataGridView();
@@ -2017,7 +2041,7 @@ namespace ClassSchedulingComputerAided
             try
             {
                 con.Open();
-                string sqlListCourse = "SELECT DISTINCT(course) FROM tbl_sections;";
+                string sqlListCourse = "SELECT DISTINCT(course) FROM tbl_sections ;";
 
                 MySqlCommand com = new MySqlCommand(sqlListCourse, con);
                 com.ExecuteNonQuery();
@@ -2053,7 +2077,7 @@ namespace ClassSchedulingComputerAided
             try
             {
                 con.Open();
-                string sqlListCourse = "SELECT DISTINCT year FROM tbl_sections WHERE course = @c;";
+                string sqlListCourse = "SELECT DISTINCT year FROM tbl_sections WHERE course = @c ORDER BY year ASC;";
 
                 MySqlCommand com = new MySqlCommand(sqlListCourse, con);
                 com.Parameters.AddWithValue("@c", course);
@@ -2090,7 +2114,7 @@ namespace ClassSchedulingComputerAided
             try
             {
                 con.Open();
-                string sqlListCourse = "SELECT DISTINCT section FROM tbl_sections WHERE course = @c AND year = @y;";
+                string sqlListCourse = "SELECT DISTINCT section FROM tbl_sections WHERE course = @c AND year = @y ORDER BY section ASC;";
 
                 MySqlCommand com = new MySqlCommand(sqlListCourse, con);
                 com.Parameters.AddWithValue("@c", course);

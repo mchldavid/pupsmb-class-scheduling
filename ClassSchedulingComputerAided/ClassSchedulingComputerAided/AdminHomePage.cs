@@ -109,9 +109,10 @@ namespace ClassSchedulingComputerAided
 
         public void btnMyAccount_Click(object sender, EventArgs e)
         {
-            Form ma = new frmMyAccount();
-            ma.Show();
-            this.Hide();
+            MyAccountControl mac = new MyAccountControl();
+            pnl.Controls.Clear();
+            pnl.Controls.Add(mac);
+            lbl_form_title.Text = "MY ACCOUNT";
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
@@ -180,7 +181,7 @@ namespace ClassSchedulingComputerAided
             EventLogControl pup = new EventLogControl();
             pnl.Controls.Clear();
             pnl.Controls.Add(pup);
-            lbl_form_title.Text = "ADMIN HOME";
+            lbl_form_title.Text = "EVENT LOG";
         }
 
         private void btnBackupRestore_Click(object sender, EventArgs e)
@@ -188,6 +189,8 @@ namespace ClassSchedulingComputerAided
             BackUpRestore br = new BackUpRestore();
             pnl.Controls.Clear();
             pnl.Controls.Add(br);
+            lbl_form_title.Text = "BACK-UP AND RESTORE";
+
         }
     }
 }

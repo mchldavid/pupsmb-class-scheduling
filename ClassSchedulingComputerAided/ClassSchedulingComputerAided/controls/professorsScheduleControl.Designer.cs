@@ -33,7 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.gboDay = new System.Windows.Forms.GroupBox();
             this.chkFriday = new MetroFramework.Controls.MetroCheckBox();
             this.chkMonday = new MetroFramework.Controls.MetroCheckBox();
             this.chkTuesday = new MetroFramework.Controls.MetroCheckBox();
@@ -53,27 +53,28 @@
             this.pnlView = new System.Windows.Forms.Panel();
             this.lbl = new System.Windows.Forms.Label();
             this.dgvShow = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.groupBox2.SuspendLayout();
+            this.btnClear = new MetroFramework.Controls.MetroButton();
+            this.gboDay.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShow)).BeginInit();
             this.SuspendLayout();
             // 
-            // groupBox2
+            // gboDay
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.Gainsboro;
-            this.groupBox2.Controls.Add(this.chkFriday);
-            this.groupBox2.Controls.Add(this.chkMonday);
-            this.groupBox2.Controls.Add(this.chkTuesday);
-            this.groupBox2.Controls.Add(this.chkWednesday);
-            this.groupBox2.Controls.Add(this.chkThursday);
-            this.groupBox2.Controls.Add(this.chkSaturday);
-            this.groupBox2.Controls.Add(this.chkSunday);
-            this.groupBox2.Location = new System.Drawing.Point(341, 126);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(301, 194);
-            this.groupBox2.TabIndex = 175;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Preferred Day/s";
+            this.gboDay.BackColor = System.Drawing.Color.Gainsboro;
+            this.gboDay.Controls.Add(this.chkFriday);
+            this.gboDay.Controls.Add(this.chkMonday);
+            this.gboDay.Controls.Add(this.chkTuesday);
+            this.gboDay.Controls.Add(this.chkWednesday);
+            this.gboDay.Controls.Add(this.chkThursday);
+            this.gboDay.Controls.Add(this.chkSaturday);
+            this.gboDay.Controls.Add(this.chkSunday);
+            this.gboDay.Location = new System.Drawing.Point(341, 126);
+            this.gboDay.Name = "gboDay";
+            this.gboDay.Size = new System.Drawing.Size(301, 194);
+            this.gboDay.TabIndex = 175;
+            this.gboDay.TabStop = false;
+            this.gboDay.Text = "Preferred Day/s";
             // 
             // chkFriday
             // 
@@ -411,17 +412,28 @@
             this.dgvShow.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvShow.Size = new System.Drawing.Size(298, 387);
             this.dgvShow.TabIndex = 157;
+            this.dgvShow.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvShow_CellContentClick);
+            // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(533, 294);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(108, 25);
+            this.btnClear.TabIndex = 168;
+            this.btnClear.Text = "Clear";
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // professorsScheduleControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.dgvShow);
             this.Controls.Add(this.lbl);
             this.Controls.Add(this.btnViewTimetable);
             this.Controls.Add(this.lbl_id);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.gboDay);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnAdd);
@@ -429,7 +441,7 @@
             this.Name = "professorsScheduleControl";
             this.Size = new System.Drawing.Size(668, 451);
             this.Load += new System.EventHandler(this.professorsScheduleControl_Load);
-            this.groupBox2.ResumeLayout(false);
+            this.gboDay.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvShow)).EndInit();
             this.ResumeLayout(false);
@@ -439,7 +451,7 @@
 
         #endregion
 
-        public System.Windows.Forms.GroupBox groupBox2;
+        public System.Windows.Forms.GroupBox gboDay;
         public MetroFramework.Controls.MetroCheckBox chkFriday;
         public MetroFramework.Controls.MetroCheckBox chkMonday;
         public MetroFramework.Controls.MetroCheckBox chkTuesday;
@@ -459,5 +471,6 @@
         private System.Windows.Forms.Panel pnlView;
         private System.Windows.Forms.Label lbl;
         private Bunifu.Framework.UI.BunifuCustomDataGrid dgvShow;
+        public MetroFramework.Controls.MetroButton btnClear;
     }
 }

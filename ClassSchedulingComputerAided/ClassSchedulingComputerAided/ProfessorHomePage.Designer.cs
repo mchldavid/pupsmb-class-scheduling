@@ -146,7 +146,7 @@
             this.btnProfessorsScheduled.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnProfessorsScheduled.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnProfessorsScheduled.BorderRadius = 0;
-            this.btnProfessorsScheduled.ButtonText = "    Class Scheduled";
+            this.btnProfessorsScheduled.ButtonText = "    Class Schedule";
             this.btnProfessorsScheduled.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProfessorsScheduled.DisabledColor = System.Drawing.Color.Gray;
             this.btnProfessorsScheduled.Iconcolor = System.Drawing.Color.Transparent;
@@ -169,7 +169,7 @@
             this.btnProfessorsScheduled.selected = false;
             this.btnProfessorsScheduled.Size = new System.Drawing.Size(236, 42);
             this.btnProfessorsScheduled.TabIndex = 106;
-            this.btnProfessorsScheduled.Text = "    Class Scheduled";
+            this.btnProfessorsScheduled.Text = "    Class Schedule";
             this.btnProfessorsScheduled.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProfessorsScheduled.Textcolor = System.Drawing.Color.White;
             this.btnProfessorsScheduled.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -181,7 +181,7 @@
             this.btnMyPreferredSubjects.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.btnMyPreferredSubjects.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnMyPreferredSubjects.BorderRadius = 0;
-            this.btnMyPreferredSubjects.ButtonText = "    Preferred Subjects";
+            this.btnMyPreferredSubjects.ButtonText = "    Preferred Courses";
             this.btnMyPreferredSubjects.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMyPreferredSubjects.DisabledColor = System.Drawing.Color.Gray;
             this.btnMyPreferredSubjects.Iconcolor = System.Drawing.Color.Transparent;
@@ -204,7 +204,7 @@
             this.btnMyPreferredSubjects.selected = false;
             this.btnMyPreferredSubjects.Size = new System.Drawing.Size(236, 42);
             this.btnMyPreferredSubjects.TabIndex = 106;
-            this.btnMyPreferredSubjects.Text = "    Preferred Subjects";
+            this.btnMyPreferredSubjects.Text = "    Preferred Courses";
             this.btnMyPreferredSubjects.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMyPreferredSubjects.Textcolor = System.Drawing.Color.White;
             this.btnMyPreferredSubjects.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

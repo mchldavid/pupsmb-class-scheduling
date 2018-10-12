@@ -71,23 +71,30 @@ namespace ClassSchedulingComputerAided
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            pnlStart.Visible = false;
+            if (cboSemester.Text != "" && cboSchoolYear.Text != "")
+            {
+                pnlStart.Visible = false;
 
-            lblSemester.Text = "[" + cboSemester.Text + " Semester] [SY:" + cboSchoolYear.Text + "]";
+                lblSemester.Text = "[" + cboSemester.Text + " Semester] [SY:" + cboSchoolYear.Text + "]";
 
-            string fname = md.UsersInformation(usersData.p_id).GetValue(2).ToString();
-            string mname = md.UsersInformation(usersData.p_id).GetValue(3).ToString();
-            string lname = md.UsersInformation(usersData.p_id).GetValue(4).ToString();
+                string fname = md.UsersInformation(usersData.p_id).GetValue(2).ToString();
+                string mname = md.UsersInformation(usersData.p_id).GetValue(3).ToString();
+                string lname = md.UsersInformation(usersData.p_id).GetValue(4).ToString();
 
-            SummaryData.professor = fname + " " + mname + " " + lname;
-            SummaryData.semester = cboSemester.Text;
-            SummaryData.schoolYear = cboSchoolYear.Text;
+                SummaryData.professor = fname + " " + mname + " " + lname;
+                SummaryData.semester = cboSemester.Text;
+                SummaryData.schoolYear = cboSchoolYear.Text;
 
-            btnSettings.Visible = true;
+                btnSettings.Visible = true;
 
-            profScheduledControl psc = new profScheduledControl();
-            pnlProfessor.Controls.Clear();
-            pnlProfessor.Controls.Add(psc);
+                profScheduledControl psc = new profScheduledControl();
+                pnlProfessor.Controls.Clear();
+                pnlProfessor.Controls.Add(psc);
+            }
+            else
+            {
+                MessageBox.Show("Fill all fields are required!", "Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void cboSectionName_SelectedIndexChanged(object sender, EventArgs e)

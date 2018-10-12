@@ -46,6 +46,8 @@ namespace ClassSchedulingComputerAided
                 md.CreateBackup(txtBackupPath.Text);
                 MessageBox.Show("Backup taken successfully", "Backup successs", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 md.updateLogginStatus(usersData.a_id, "1");//update the user to 1 after the buckup
+                //audit
+                md.AuditTrail(AuditTrailData.username, "Backup database", "was backup into" + txtBackupPath.Text+" successfully.");
                 txtBackupPath.Text = "";
 
             }

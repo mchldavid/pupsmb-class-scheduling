@@ -34,6 +34,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnCreateDatabase = new MetroFramework.Controls.MetroButton();
             this.btnTest = new MetroFramework.Controls.MetroButton();
+            this.lblIPv4 = new System.Windows.Forms.Label();
+            this.lblIP_Address = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -46,8 +48,6 @@
             this.btnSAVE = new MetroFramework.Controls.MetroButton();
             this.btnCancel = new MetroFramework.Controls.MetroButton();
             this.label6 = new System.Windows.Forms.Label();
-            this.lblIP_Address = new System.Windows.Forms.Label();
-            this.lblIPv4 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -128,6 +128,26 @@
             this.btnTest.TabIndex = 12;
             this.btnTest.Text = "Test Connection";
             this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
+            // 
+            // lblIPv4
+            // 
+            this.lblIPv4.AutoSize = true;
+            this.lblIPv4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIPv4.Location = new System.Drawing.Point(110, 22);
+            this.lblIPv4.Name = "lblIPv4";
+            this.lblIPv4.Size = new System.Drawing.Size(55, 16);
+            this.lblIPv4.TabIndex = 10;
+            this.lblIPv4.Text = "Address";
+            // 
+            // lblIP_Address
+            // 
+            this.lblIP_Address.AutoSize = true;
+            this.lblIP_Address.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIP_Address.Location = new System.Drawing.Point(27, 22);
+            this.lblIP_Address.Name = "lblIP_Address";
+            this.lblIP_Address.Size = new System.Drawing.Size(88, 17);
+            this.lblIP_Address.TabIndex = 10;
+            this.lblIP_Address.Text = "IPv4 address: ";
             // 
             // label5
             // 
@@ -240,26 +260,6 @@
             this.label6.Size = new System.Drawing.Size(202, 16);
             this.label6.TabIndex = 10;
             this.label6.Text = "Note: Please Set the connection.";
-            // 
-            // lblIP_Address
-            // 
-            this.lblIP_Address.AutoSize = true;
-            this.lblIP_Address.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIP_Address.Location = new System.Drawing.Point(27, 22);
-            this.lblIP_Address.Name = "lblIP_Address";
-            this.lblIP_Address.Size = new System.Drawing.Size(88, 17);
-            this.lblIP_Address.TabIndex = 10;
-            this.lblIP_Address.Text = "IPv4 address: ";
-            // 
-            // lblIPv4
-            // 
-            this.lblIPv4.AutoSize = true;
-            this.lblIPv4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIPv4.Location = new System.Drawing.Point(110, 22);
-            this.lblIPv4.Name = "lblIPv4";
-            this.lblIPv4.Size = new System.Drawing.Size(55, 16);
-            this.lblIPv4.TabIndex = 10;
-            this.lblIPv4.Text = "Address";
             // 
             // frmConnectionWizard
             // 

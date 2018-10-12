@@ -65,7 +65,7 @@
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(137, 21);
             this.metroLabel2.TabIndex = 135;
-            this.metroLabel2.Text = "Event Log";
+            this.metroLabel2.Text = "Events";
             this.metroLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // dgvEventLog
