@@ -121,6 +121,16 @@ namespace ClassSchedulingComputerAided
         {
             if (timer1.Interval == 1000)
             {
+                try//check if it is connect
+                {
+                    md.isConnected();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Connection to the server was lost! Terminating the program...","Connection Lost", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    md.updateLogginStatus(usersData.p_id, "0");
+                }
+
                 if (md.isGoing() == true)
                 {
                     timer1.Enabled = false;
@@ -138,7 +148,5 @@ namespace ClassSchedulingComputerAided
                 lblDate.Text = DateTime.Now.ToString("dd MMMM yyyy");
             }
         }
-
-        
     }
 }

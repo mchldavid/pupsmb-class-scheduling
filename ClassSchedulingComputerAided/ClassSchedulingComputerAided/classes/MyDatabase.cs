@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using System.Data;
 using ClassSchedulingComputerAided.Properties;
 using System.IO;
+using System.Net.Sockets;
 
 namespace ClassSchedulingComputerAided
 {
@@ -3617,6 +3618,16 @@ namespace ClassSchedulingComputerAided
                 con.Close();
             }
             return result;
+        }
+
+        public void isConnected()
+        {
+            con.Open();
+            string sql = "SELECT * FROM tbl_curriculums WHERE programName = @id AND curriculumYear = '1';";
+            MySqlCommand com = new MySqlCommand(sql, con);
+            com.ExecuteNonQuery();
+
+            con.Close();
         }
     }
 }
