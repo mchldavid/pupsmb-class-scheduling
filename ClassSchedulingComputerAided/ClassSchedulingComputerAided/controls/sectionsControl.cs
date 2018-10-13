@@ -35,6 +35,8 @@ namespace ClassSchedulingComputerAided
                     //audit
                     md.AuditTrail(AuditTrailData.username, "Add", cboSelectCourse.Text + " year "+cboSelectYear.Text+" generate "+txtNumberOfSection.Text+" section/s.");
                     txtNumberOfSection.Text = "";
+                    cboSelectCourse.SelectedIndex = -1;
+                    cboSelectYear.SelectedIndex = -1;
                 }
                 else
                 {

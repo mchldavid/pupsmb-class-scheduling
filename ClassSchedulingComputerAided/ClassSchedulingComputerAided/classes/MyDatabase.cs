@@ -1524,7 +1524,7 @@ namespace ClassSchedulingComputerAided
                 //    sql = "SELECT subjects_id AS 'ID', subjectCode AS 'Code', subjectDescription AS 'Description', CONCAT('[',programName,']') AS 'Curriculum' FROM tbl_subjects su INNER JOIN tbl_curriculums cu ON su.curriculums_id = cu.curriculums_id WHERE status = 'active' AND su.course = @c ORDER BY cu.programName;";
                 if (courseBy == "Courses from program department.")
                 {
-                    if (by == "Subject Code")
+                    if (by == "Course Code")
                     {
                         sql = "SELECT subjects_id AS 'ID', su.course AS 'Course', subjectCode AS 'Code', subjectDescription AS 'Description', CONCAT('[',programName,']') AS 'Curriculum', su.curriculums_id "
                             + "FROM tbl_subjects su "
@@ -1535,7 +1535,7 @@ namespace ClassSchedulingComputerAided
                             + "AND subjectCode LIKE '" + search + "%' "
                             + "ORDER BY cu.programName;";
                     }
-                    if (by == "Subject Description")
+                    if (by == "Course Description")
                     {
                         sql = "SELECT subjects_id AS 'ID', su.course AS 'Course', subjectCode AS 'Code', subjectDescription AS 'Description', CONCAT('[',programName,']') AS 'Curriculum', su.curriculums_id "
                             + "FROM tbl_subjects su "
@@ -1552,7 +1552,7 @@ namespace ClassSchedulingComputerAided
                 //    sql = "SELECT subjects_id AS 'ID', subjectCode AS 'Code', subjectDescription AS 'Description', CONCAT('[',programName,']') AS 'Curriculum' FROM tbl_subjects su INNER JOIN tbl_curriculums cu ON su.curriculums_id = cu.curriculums_id WHERE status = 'active' ORDER BY cu.programName;";
                 if (courseBy == "All courses from all programs.")
                 {
-                    if (by == "Subject Code")
+                    if (by == "Course Code")
                     {
                         sql = "SELECT subjects_id AS 'ID', su.course AS 'Course', subjectCode AS 'Code', subjectDescription AS 'Description', CONCAT('[',programName,']') AS 'Curriculum', su.curriculums_id "
                         + "FROM tbl_subjects su "
@@ -1562,7 +1562,7 @@ namespace ClassSchedulingComputerAided
                         + "AND subjectCode LIKE '" + search + "%' "
                         + "ORDER BY cu.programName;";
                     }
-                    if (by == "Subject Description")
+                    if (by == "Course Description")
                     {
                         sql = "SELECT subjects_id AS 'ID', su.course AS 'Course', subjectCode AS 'Code', subjectDescription AS 'Description', CONCAT('[',programName,']') AS 'Curriculum', su.curriculums_id "
                         + "FROM tbl_subjects su "
@@ -1605,7 +1605,7 @@ namespace ClassSchedulingComputerAided
                 con.Open();
                 //string sql = "SELECT a.preferredSubjects_id AS 'ID', subjectCode AS 'CODE', subjectDescription AS 'DESCRIPTION', course AS 'COURSE', lectureHours AS 'LEC HRS', laboratoryHours AS 'LAB HRS', units AS 'UNITS', yearLevel AS 'YR LEVEL' FROM tbl_preferredSubjects a, tbl_subjects b WHERE a.users_id = @id AND b.subjects_id = a.subjects_id;";
                 string sql = "";
-                if (by == "Subject Code")
+                if (by == "Course Code")
                 {
                     sql = "SELECT a.preferredSubjects_id AS 'ID', subjectCode AS 'CODE', subjectDescription AS 'DESCRIPTION', course AS 'COURSE', lectureHours AS 'LEC HRS', laboratoryHours AS 'LAB HRS', units AS 'UNITS', yearLevel AS 'YR LEVEL' "
                     + "FROM tbl_preferredSubjects a, tbl_subjects b "
@@ -1615,7 +1615,7 @@ namespace ClassSchedulingComputerAided
                     + "AND a.schoolYear = @sY "
                     + "AND subjectCode LIKE '"+search+"%';";
                 }
-                if (by == "Subject Description")
+                if (by == "Course Description")
                 {
                     sql = "SELECT a.preferredSubjects_id AS 'ID', subjectCode AS 'CODE', subjectDescription AS 'DESCRIPTION', course AS 'COURSE', lectureHours AS 'LEC HRS', laboratoryHours AS 'LAB HRS', units AS 'UNITS', yearLevel AS 'YR LEVEL' "
                     + "FROM tbl_preferredSubjects a, tbl_subjects b "

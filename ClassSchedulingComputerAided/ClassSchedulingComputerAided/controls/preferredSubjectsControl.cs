@@ -34,12 +34,12 @@ namespace ClassSchedulingComputerAided
             cboSemester.Items.Add("2ND");
             cboSemester.Items.Add("3RD");
 
-            cboBy.Items.Add("Subject Code");
-            cboBy.Items.Add("Subject Description");
+            cboBy.Items.Add("Course Code");
+            cboBy.Items.Add("Course Description");
             cboBy.SelectedIndex = 0;
 
-            cbo_pBy.Items.Add("Subject Code");
-            cbo_pBy.Items.Add("Subject Description");
+            cbo_pBy.Items.Add("Course Code");
+            cbo_pBy.Items.Add("Course Description");
             cbo_pBy.SelectedIndex = 0;
 
             //to fill the school year
@@ -86,6 +86,7 @@ namespace ClassSchedulingComputerAided
         private void btnClose_Click(object sender, EventArgs e)
         {
             pnlAddSubject.Visible = false;
+            txtSearchSubjects.Text = "";
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

@@ -39,7 +39,7 @@ namespace ClassSchedulingComputerAided
                 {
                     //audit
                     md.AuditTrail(AuditTrailData.username, "Add", txtRoomCode.Text + " was added to the rooms.");
-
+                    MessageBox.Show("Room added succesfully!", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     md.R_AddRooms(txtRoomName.Text, txtRoomCode.Text, txtSlots.Text);
                     lstActiveRooms.Items.Add(txtRoomCode.Text);
                     dgvShowRooms.DataSource = md.dgv_showRooms().DataSource;
