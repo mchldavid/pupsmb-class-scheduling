@@ -33,7 +33,7 @@ namespace ClassSchedulingComputerAided
         static int countForColor9 = 0;
         static int countForColor10 = 0;
 
-        string[] checkDay = {"Monday", "Tuesady", "Wednesday", "Thursday", "Friday","Sarturday", "Sunday"};
+        string[] checkDay = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday","Saturday", "Sunday"};
 
         private void lblLecHours_4_Click(object sender, EventArgs e)
         {
@@ -736,7 +736,7 @@ namespace ClassSchedulingComputerAided
                     string promptMessage = System.String.Format("The [New Schedule] does not fit with the professor's [Preferred Schedule] \r\n Do you want to force \r\n {0} [{1} {2}-{3} ]", rC, day, sec_sT, sec_eT);
                     message = promptMessage;
 
-                    for (int a = 0; a < 7; a++)
+                    for (int a = 0; a < 7; a++)//kapag walang day
                         if (checkDay[a] == day)
                         {
                             WalangDay = false;
@@ -774,7 +774,7 @@ namespace ClassSchedulingComputerAided
             if (scheduleIsFree < 1)
             {
                 isValid = true;
-                if (WalangDay == true)
+                if (WalangDay == false)
                 {
                     DialogResult dr = MessageBox.Show(message, "PROFESSOR'S PREFERRED SCHEDULE CONFLICT", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (dr == DialogResult.Yes)
