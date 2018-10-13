@@ -27,7 +27,7 @@ namespace ClassSchedulingComputerAided
                     MessageBox.Show(txtNumberOfSection.Text + " section(s) generated in course:[ " + cboSelectCourse.Text + " ] year:[ " + cboSelectYear.Text + " ]", "Generate", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     md.S_DeleteExistingSections(cboSelectCourse.Text, cboSelectYear.Text);
                     for (int x = 1; x <= Convert.ToInt32(txtNumberOfSection.Text); x++)
-                        md.S_AddSections(cboSelectCourse.SelectedItem.ToString(), cboSelectYear.SelectedItem.ToString(), x.ToString());
+                        md.S_AddSections(cboSelectCourse.Text, cboSelectYear.Text, x.ToString());
 
                     dgvShowSections.DataSource = md.dgv_showSections().DataSource;
                     dgvShowSections.Columns[0].Visible = false;
@@ -36,13 +36,13 @@ namespace ClassSchedulingComputerAided
                     md.AuditTrail(AuditTrailData.username, "Add", cboSelectCourse.Text + " year "+cboSelectYear.Text+" generate "+txtNumberOfSection.Text+" section/s.");
                     txtNumberOfSection.Text = "";
                     cboSelectCourse.SelectedIndex = -1;
-                    cboSelectYear.SelectedIndex = -1;
+                    cboSelectYear.Text = "";
                 }
                 else
                 {
                     MessageBox.Show(txtNumberOfSection.Text + " section(s) generated in course:[ " + cboSelectCourse.Text + " ] year:[ " + cboSelectYear.Text + " ]", "Generate", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     for (int x = 1; x <= Convert.ToInt32(txtNumberOfSection.Text); x++)
-                        md.S_AddSections(cboSelectCourse.SelectedItem.ToString(), cboSelectYear.SelectedItem.ToString(), x.ToString());
+                        md.S_AddSections(cboSelectCourse.Text, cboSelectYear.Text, x.ToString());
                     
                     dgvShowSections.DataSource = md.dgv_showSections().DataSource;
                     dgvShowSections.Columns[0].Visible = false;
@@ -117,6 +117,16 @@ namespace ClassSchedulingComputerAided
             if (e.KeyChar == (char)Keys.Enter)
             {
                 btnAdd_Click(sender, e);
+            }
+        }
+
+        private void cboSelectYear_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // allows 0-9, backspace, and decimal
+            if (((e.KeyChar < 48 || e.KeyChar > 57) && e.KeyChar != 8))
+            {
+                e.Handled = true;
+                return;
             }
         }
     }

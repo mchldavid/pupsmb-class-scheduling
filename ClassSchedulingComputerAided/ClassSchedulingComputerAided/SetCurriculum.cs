@@ -85,7 +85,7 @@ namespace ClassSchedulingComputerAided
         {
             if (btnAdd.Text == "ADD")
             {
-                md.C_AddSubjects(curriculumData.c_id, lbl_course_id.Text, cboCourse.Text, txtSubjectCode.Text, txtSubjectDescription.Text, cboLectureHours.SelectedItem.ToString(), cboLabHours.SelectedItem.ToString(), cboUnits.SelectedItem.ToString(), cboYearLevel.SelectedItem.ToString(), curriculumData.c_semester);
+                md.C_AddSubjects(curriculumData.c_id, lbl_course_id.Text, cboCourse.Text, txtSubjectCode.Text, txtSubjectDescription.Text, cboLectureHours.Text, cboLabHours.Text, cboUnits.Text, cboYearLevel.Text, curriculumData.c_semester);
                 dgvListSubject.DataSource = md.dgv_showSubjectCurriculum().DataSource;
                 dgvListSubject.Columns[0].Visible = false;
 
