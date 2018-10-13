@@ -1526,7 +1526,7 @@ namespace ClassSchedulingComputerAided
                 {
                     if (by == "Subject Code")
                     {
-                        sql = "SELECT subjects_id AS 'ID', su.course AS 'Course', subjectCode AS 'Code', subjectDescription AS 'Description', CONCAT('[',programName,']') AS 'Curriculum' "
+                        sql = "SELECT subjects_id AS 'ID', su.course AS 'Course', subjectCode AS 'Code', subjectDescription AS 'Description', CONCAT('[',programName,']') AS 'Curriculum', su.curriculums_id "
                             + "FROM tbl_subjects su "
                             + "INNER JOIN tbl_curriculums cu ON su.curriculums_id = cu.curriculums_id "
                             + "WHERE status = 'active' "
@@ -1537,7 +1537,7 @@ namespace ClassSchedulingComputerAided
                     }
                     if (by == "Subject Description")
                     {
-                        sql = "SELECT subjects_id AS 'ID', su.course AS 'Course', subjectCode AS 'Code', subjectDescription AS 'Description', CONCAT('[',programName,']') AS 'Curriculum' "
+                        sql = "SELECT subjects_id AS 'ID', su.course AS 'Course', subjectCode AS 'Code', subjectDescription AS 'Description', CONCAT('[',programName,']') AS 'Curriculum', su.curriculums_id "
                             + "FROM tbl_subjects su "
                             + "INNER JOIN tbl_curriculums cu ON su.curriculums_id = cu.curriculums_id "
                             + "WHERE status = 'active' "
@@ -1554,7 +1554,7 @@ namespace ClassSchedulingComputerAided
                 {
                     if (by == "Subject Code")
                     {
-                        sql = "SELECT subjects_id AS 'ID', su.course AS 'Course', subjectCode AS 'Code', subjectDescription AS 'Description', CONCAT('[',programName,']') AS 'Curriculum' "
+                        sql = "SELECT subjects_id AS 'ID', su.course AS 'Course', subjectCode AS 'Code', subjectDescription AS 'Description', CONCAT('[',programName,']') AS 'Curriculum', su.curriculums_id "
                         + "FROM tbl_subjects su "
                         + "INNER JOIN tbl_curriculums cu ON su.curriculums_id = cu.curriculums_id "
                         + "WHERE status = 'active' "
@@ -1564,7 +1564,7 @@ namespace ClassSchedulingComputerAided
                     }
                     if (by == "Subject Description")
                     {
-                        sql = "SELECT subjects_id AS 'ID', su.course AS 'Course', subjectCode AS 'Code', subjectDescription AS 'Description', CONCAT('[',programName,']') AS 'Curriculum' "
+                        sql = "SELECT subjects_id AS 'ID', su.course AS 'Course', subjectCode AS 'Code', subjectDescription AS 'Description', CONCAT('[',programName,']') AS 'Curriculum', su.curriculums_id "
                         + "FROM tbl_subjects su "
                         + "INNER JOIN tbl_curriculums cu ON su.curriculums_id = cu.curriculums_id "
                         + "WHERE status = 'active' "
@@ -1696,7 +1696,7 @@ namespace ClassSchedulingComputerAided
                 //if (courseBy == "Course Subject")
                 //    sql = "SELECT subjects_id AS 'ID', subjectCode AS 'Code', subjectDescription AS 'Description', CONCAT('[',programName,']') AS 'Curriculum' FROM tbl_subjects su INNER JOIN tbl_curriculums cu ON su.curriculums_id = cu.curriculums_id WHERE status = 'active' AND su.course = @c ORDER BY cu.programName;";
                 if (courseBy == "Courses from program department.")
-                    sql = "SELECT subjects_id AS 'ID', su.course AS 'Course', subjectCode AS 'Code', subjectDescription AS 'Description', CONCAT('[',programName,']') AS 'Curriculum', su.curriculums_id "
+                    sql = "SELECT subjects_id AS 'ID', su.course AS 'Program', subjectCode AS 'Code', subjectDescription AS 'Description', CONCAT('[',programName,']') AS 'Curriculum', su.curriculums_id "
                         + "FROM tbl_subjects su "
                         + "INNER JOIN tbl_curriculums cu ON su.curriculums_id = cu.curriculums_id "
                         + "WHERE status = 'active' "
@@ -1706,7 +1706,7 @@ namespace ClassSchedulingComputerAided
                 //if (courseBy == "Other Subject")
                 //    sql = "SELECT subjects_id AS 'ID', subjectCode AS 'Code', subjectDescription AS 'Description', CONCAT('[',programName,']') AS 'Curriculum' FROM tbl_subjects su INNER JOIN tbl_curriculums cu ON su.curriculums_id = cu.curriculums_id WHERE status = 'active' ORDER BY cu.programName;";
                 if (courseBy == "All courses from all programs.")
-                    sql = "SELECT subjects_id AS 'ID', su.course AS 'Course', subjectCode AS 'Code', subjectDescription AS 'Description', CONCAT('[',programName,']') AS 'Curriculum', su.curriculums_id "
+                    sql = "SELECT subjects_id AS 'ID', su.course AS 'Program', subjectCode AS 'Code', subjectDescription AS 'Description', CONCAT('[',programName,']') AS 'Curriculum', su.curriculums_id "
                         + "FROM tbl_subjects su "
                         + "INNER JOIN tbl_curriculums cu ON su.curriculums_id = cu.curriculums_id "
                         + "WHERE status = 'active' "
@@ -3477,17 +3477,18 @@ namespace ClassSchedulingComputerAided
             return result;
         }
 
-        public bool existPreferredSubject(string id, string semester, string schoolYear)
+        public bool existPreferredSubject(string id, string semester, string schoolYear, string users_id)
         {
             bool result = false;
             try
             {
                 con.Open();
-                string sql = "SELECT * FROM tbl_preferredsubjects WHERE subjects_id = @id AND semester = @sem AND schoolYear = @sY;";
+                string sql = "SELECT * FROM tbl_preferredsubjects WHERE subjects_id = @id AND semester = @sem AND schoolYear = @sY AND users_id = @u_id;";
                 MySqlCommand com = new MySqlCommand(sql, con);
                 com.Parameters.AddWithValue("@id", id);
                 com.Parameters.AddWithValue("@sem", semester);
                 com.Parameters.AddWithValue("@sY", schoolYear);
+                com.Parameters.AddWithValue("@u_id", users_id);
                 com.ExecuteNonQuery();
 
                 MySqlDataReader dr = com.ExecuteReader();

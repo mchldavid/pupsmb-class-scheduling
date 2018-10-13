@@ -22,7 +22,17 @@ namespace ClassSchedulingComputerAided
 
         MyDatabase md = new MyDatabase();
 
-        int countForColor = 0;
+        static int countForColor1 = 0;
+        static int countForColor2 = 0;
+        static int countForColor3 = 0;
+        static int countForColor4 = 0;
+        static int countForColor5 = 0;
+        static int countForColor6 = 0;
+        static int countForColor7 = 0;
+        static int countForColor8 = 0;
+        static int countForColor9 = 0;
+        static int countForColor10 = 0;
+
         string[] checkDay = {"Monday", "Tuesady", "Wednesday", "Thursday", "Friday","Sarturday", "Sunday"};
 
         private void lblLecHours_4_Click(object sender, EventArgs e)
@@ -426,72 +436,75 @@ namespace ClassSchedulingComputerAided
                 {
                     string sT = md.get_info_StudentsScheduled(ps_id).GetValue(0).ToString();
                     string eT = md.get_info_StudentsScheduled(ps_id).GetValue(1).ToString();
-                    string section = md.get_info_StudentsScheduled(ps_id).GetValue(5).ToString();
-                    DateTime PS_startTime = DateTime.Parse(sT);
-                    DateTime PS_endTime = DateTime.Parse(eT);
-                    DateTime startTime = DateTime.Parse(sec_sT);
-                    DateTime endTime = DateTime.Parse(sec_eT);
-                    int dt1 = DateTime.Compare(PS_startTime, startTime);
-                    int dt2 = DateTime.Compare(PS_endTime, endTime);
-                    int dt3 = DateTime.Compare(PS_startTime, endTime);
-                    int dt4 = DateTime.Compare(PS_endTime, startTime);
-                    string promptMessage = System.String.Format("There's a conflict on \r\n{0} from {1} to {2} \r\n affected: {3}", day, sT, eT, section);
-
-                    if (md.get_info_StudentsScheduled(ps_id).GetValue(2).ToString() == day)
+                    if (sT != "" && eT != "")
                     {
-                        if (dt1 == -1 && dt2 == 1)
+                        string section = md.get_info_StudentsScheduled(ps_id).GetValue(5).ToString();
+                        DateTime PS_startTime = DateTime.Parse(sT);
+                        DateTime PS_endTime = DateTime.Parse(eT);
+                        DateTime startTime = DateTime.Parse(sec_sT);
+                        DateTime endTime = DateTime.Parse(sec_eT);
+                        int dt1 = DateTime.Compare(PS_startTime, startTime);
+                        int dt2 = DateTime.Compare(PS_endTime, endTime);
+                        int dt3 = DateTime.Compare(PS_startTime, endTime);
+                        int dt4 = DateTime.Compare(PS_endTime, startTime);
+                        string promptMessage = System.String.Format("There's a conflict on \r\n{0} from {1} to {2} \r\n affected: {3}", day, sT, eT, section);
+
+                        if (md.get_info_StudentsScheduled(ps_id).GetValue(2).ToString() == day)
                         {
-                            scheduleIsFree++;
-                            message = promptMessage;
-                            isValid = false;
-                        }
-                        if (dt1 == -1 && dt2 == -1 && dt4 == 1)
-                        {
-                            scheduleIsFree++;
-                            message = promptMessage;
-                            isValid = false;
-                        }
-                        if (dt1 == 1 && dt2 == 1 && dt3 == -1)
-                        {
-                            scheduleIsFree++;
-                            message = promptMessage;
-                            isValid = false;
-                        }
-                        if (dt1 == 1 && dt2 == -1)
-                        {
-                            scheduleIsFree++;
-                            message = promptMessage;
-                            isValid = false;
-                        }
-                        if (dt1 == 0 && dt2 == 1 && dt3 == -1)
-                        {
-                            scheduleIsFree++;
-                            message = promptMessage;
-                            isValid = false;
-                        }
-                        if (dt1 == 0 && dt2 == -1)
-                        {
-                            scheduleIsFree++;
-                            message = promptMessage;
-                            isValid = false;
-                        }
-                        if (dt1 == -1 && dt4 == 1 && dt2 == 0)
-                        {
-                            scheduleIsFree++;
-                            message = promptMessage;
-                            isValid = false;
-                        }
-                        if (dt1 == 1 && dt2 == 0)
-                        {
-                            scheduleIsFree++;
-                            message = promptMessage;
-                            isValid = false;
-                        }
-                        if (dt1 == 0 && dt2 == 0)
-                        {
-                            scheduleIsFree++;
-                            message = promptMessage;
-                            isValid = false;
+                            if (dt1 == -1 && dt2 == 1)
+                            {
+                                scheduleIsFree++;
+                                message = promptMessage;
+                                isValid = false;
+                            }
+                            if (dt1 == -1 && dt2 == -1 && dt4 == 1)
+                            {
+                                scheduleIsFree++;
+                                message = promptMessage;
+                                isValid = false;
+                            }
+                            if (dt1 == 1 && dt2 == 1 && dt3 == -1)
+                            {
+                                scheduleIsFree++;
+                                message = promptMessage;
+                                isValid = false;
+                            }
+                            if (dt1 == 1 && dt2 == -1)
+                            {
+                                scheduleIsFree++;
+                                message = promptMessage;
+                                isValid = false;
+                            }
+                            if (dt1 == 0 && dt2 == 1 && dt3 == -1)
+                            {
+                                scheduleIsFree++;
+                                message = promptMessage;
+                                isValid = false;
+                            }
+                            if (dt1 == 0 && dt2 == -1)
+                            {
+                                scheduleIsFree++;
+                                message = promptMessage;
+                                isValid = false;
+                            }
+                            if (dt1 == -1 && dt4 == 1 && dt2 == 0)
+                            {
+                                scheduleIsFree++;
+                                message = promptMessage;
+                                isValid = false;
+                            }
+                            if (dt1 == 1 && dt2 == 0)
+                            {
+                                scheduleIsFree++;
+                                message = promptMessage;
+                                isValid = false;
+                            }
+                            if (dt1 == 0 && dt2 == 0)
+                            {
+                                scheduleIsFree++;
+                                message = promptMessage;
+                                isValid = false;
+                            }
                         }
                     }
                 }
@@ -2263,9 +2276,10 @@ namespace ClassSchedulingComputerAided
             }
 
             //to generate other prof
-            countForColor = 0;
+            countForColor1 = 0;
             for (int z = 0; z < cboProfessor_1.Items.Count; z++)
-                countForColor++;
+                countForColor1++;
+
 
             cboProfessor_1.DrawMode = DrawMode.OwnerDrawFixed;
             cboProfessor_1.DrawItem += new DrawItemEventHandler(cboProfessor_1_DrawItem);
@@ -2286,6 +2300,7 @@ namespace ClassSchedulingComputerAided
                         cboProfessor_1.Items.Add(SubjectForStudents.Professors[x]);
                 }
             }
+            
 
 
             //=====================2================
@@ -2313,9 +2328,9 @@ namespace ClassSchedulingComputerAided
             }
 
             //to generate other prof
-            countForColor = 0;
+            countForColor2 = 0;
             for (int z = 0; z < cboProfessor_2.Items.Count; z++)
-                countForColor++;
+                countForColor2++;
 
             cboProfessor_2.DrawMode = DrawMode.OwnerDrawFixed;
             cboProfessor_2.DrawItem += new DrawItemEventHandler(cboProfessor_2_DrawItem);
@@ -2361,9 +2376,9 @@ namespace ClassSchedulingComputerAided
             }
 
             //to generate other prof
-            countForColor = 0;
+            countForColor3 = 0;
             for (int z = 0; z < cboProfessor_3.Items.Count; z++)
-                countForColor++;
+                countForColor3++;
 
             cboProfessor_3.DrawMode = DrawMode.OwnerDrawFixed;
             cboProfessor_3.DrawItem += new DrawItemEventHandler(cboProfessor_3_DrawItem);
@@ -2409,9 +2424,9 @@ namespace ClassSchedulingComputerAided
             }
 
             //to generate other prof
-            countForColor = 0;
+            countForColor4 = 0;
             for (int z = 0; z < cboProfessor_4.Items.Count; z++)
-                countForColor++;
+                countForColor4++;
 
             cboProfessor_4.DrawMode = DrawMode.OwnerDrawFixed;
             cboProfessor_4.DrawItem += new DrawItemEventHandler(cboProfessor_4_DrawItem);
@@ -2458,9 +2473,9 @@ namespace ClassSchedulingComputerAided
             }
 
             //to generate other prof
-            countForColor = 0;
+            countForColor5 = 0;
             for (int z = 0; z < cboProfessor_5.Items.Count; z++)
-                countForColor++;
+                countForColor5++;
 
             cboProfessor_5.DrawMode = DrawMode.OwnerDrawFixed;
             cboProfessor_5.DrawItem += new DrawItemEventHandler(cboProfessor_5_DrawItem);
@@ -2507,9 +2522,9 @@ namespace ClassSchedulingComputerAided
             }
 
             //to generate other prof
-            countForColor = 0;
+            countForColor6 = 0;
             for (int z = 0; z < cboProfessor_6.Items.Count; z++)
-                countForColor++;
+                countForColor6++;
 
             cboProfessor_6.DrawMode = DrawMode.OwnerDrawFixed;
             cboProfessor_6.DrawItem += new DrawItemEventHandler(cboProfessor_6_DrawItem);
@@ -2557,9 +2572,9 @@ namespace ClassSchedulingComputerAided
 
 
             //to generate other prof
-            countForColor = 0;
+            countForColor7 = 0;
             for (int z = 0; z < cboProfessor_7.Items.Count; z++)
-                countForColor++;
+                countForColor7++;
 
             cboProfessor_7.DrawMode = DrawMode.OwnerDrawFixed;
             cboProfessor_7.DrawItem += new DrawItemEventHandler(cboProfessor_7_DrawItem);
@@ -2606,9 +2621,9 @@ namespace ClassSchedulingComputerAided
             }
 
             //to generate other prof
-            countForColor = 0;
+            countForColor8 = 0;
             for (int z = 0; z < cboProfessor_8.Items.Count; z++)
-                countForColor++;
+                countForColor8++;
 
             cboProfessor_8.DrawMode = DrawMode.OwnerDrawFixed;
             cboProfessor_8.DrawItem += new DrawItemEventHandler(cboProfessor_8_DrawItem);
@@ -2654,9 +2669,9 @@ namespace ClassSchedulingComputerAided
             }
 
             //to generate other prof
-            countForColor = 0;
+            countForColor9 = 0;
             for (int z = 0; z < cboProfessor_9.Items.Count; z++)
-                countForColor++;
+                countForColor9++;
 
             cboProfessor_9.DrawMode = DrawMode.OwnerDrawFixed;
             cboProfessor_9.DrawItem += new DrawItemEventHandler(cboProfessor_9_DrawItem);
@@ -2703,9 +2718,9 @@ namespace ClassSchedulingComputerAided
             }
 
             //to generate other prof
-            countForColor = 0;
+            countForColor10 = 0;
             for (int z = 0; z < cboProfessor_10.Items.Count; z++)
-                countForColor++;
+                countForColor10++;
 
             cboProfessor_10.DrawMode = DrawMode.OwnerDrawFixed;
             cboProfessor_10.DrawItem += new DrawItemEventHandler(cboProfessor_10_DrawItem);
@@ -3308,7 +3323,8 @@ namespace ClassSchedulingComputerAided
             {
                 text = cboProfessor_1.Items[e.Index].ToString();
             }
-            if (e.Index <= countForColor)
+
+            if (e.Index < countForColor1)
             {
                 font = new Font(font, FontStyle.Bold);
                 brush = Brushes.DarkGreen;
@@ -3330,7 +3346,7 @@ namespace ClassSchedulingComputerAided
             {
                 text = cboProfessor_2.Items[e.Index].ToString();
             }
-            if (e.Index <= countForColor)
+            if (e.Index < countForColor2)
             {
                 font = new Font(font, FontStyle.Bold);
                 brush = Brushes.DarkGreen;
@@ -3352,7 +3368,7 @@ namespace ClassSchedulingComputerAided
             {
                 text = cboProfessor_3.Items[e.Index].ToString();
             }
-            if (e.Index <= countForColor)
+            if (e.Index < countForColor3)
             {
                 font = new Font(font, FontStyle.Bold);
                 brush = Brushes.DarkGreen;
@@ -3374,7 +3390,7 @@ namespace ClassSchedulingComputerAided
             {
                 text = cboProfessor_4.Items[e.Index].ToString();
             }
-            if (e.Index <= countForColor)
+            if (e.Index < countForColor4)
             {
                 font = new Font(font, FontStyle.Bold);
                 brush = Brushes.DarkGreen;
@@ -3396,7 +3412,7 @@ namespace ClassSchedulingComputerAided
             {
                 text = cboProfessor_5.Items[e.Index].ToString();
             }
-            if (e.Index <= countForColor)
+            if (e.Index < countForColor5)
             {
                 font = new Font(font, FontStyle.Bold);
                 brush = Brushes.DarkGreen;
@@ -3418,7 +3434,7 @@ namespace ClassSchedulingComputerAided
             {
                 text = cboProfessor_6.Items[e.Index].ToString();
             }
-            if (e.Index <= countForColor)
+            if (e.Index < countForColor6)
             {
                 font = new Font(font, FontStyle.Bold);
                 brush = Brushes.DarkGreen;
@@ -3440,7 +3456,7 @@ namespace ClassSchedulingComputerAided
             {
                 text = cboProfessor_7.Items[e.Index].ToString();
             }
-            if (e.Index <= countForColor)
+            if (e.Index < countForColor7)
             {
                 font = new Font(font, FontStyle.Bold);
                 brush = Brushes.DarkGreen;
@@ -3462,7 +3478,7 @@ namespace ClassSchedulingComputerAided
             {
                 text = cboProfessor_8.Items[e.Index].ToString();
             }
-            if (e.Index <= countForColor)
+            if (e.Index < countForColor8)
             {
                 font = new Font(font, FontStyle.Bold);
                 brush = Brushes.DarkGreen;
@@ -3484,7 +3500,7 @@ namespace ClassSchedulingComputerAided
             {
                 text = cboProfessor_9.Items[e.Index].ToString();
             }
-            if (e.Index <= countForColor)
+            if (e.Index < countForColor9)
             {
                 font = new Font(font, FontStyle.Bold);
                 brush = Brushes.DarkGreen;
@@ -3506,7 +3522,7 @@ namespace ClassSchedulingComputerAided
             {
                 text = cboProfessor_10.Items[e.Index].ToString();
             }
-            if (e.Index <= countForColor)
+            if (e.Index < countForColor10)
             {
                 font = new Font(font, FontStyle.Bold);
                 brush = Brushes.DarkGreen;

@@ -92,7 +92,7 @@ namespace ClassSchedulingComputerAided
         {
             foreach (DataGridViewRow row in dgvAddSubject.SelectedRows)
             {
-                if (md.existPreferredSubject(row.Cells[0].Value.ToString(), cboSemester.Text, cboSchoolYear.Text) == false)
+                if (md.existPreferredSubject(row.Cells[0].Value.ToString(), cboSemester.Text, cboSchoolYear.Text, usersData.p_id) == false)
                 {
                     md.Prof_AddSubjects(row.Cells[0].Value.ToString(), cboSemester.Text, cboSchoolYear.Text, row.Cells[5].Value.ToString());
 
