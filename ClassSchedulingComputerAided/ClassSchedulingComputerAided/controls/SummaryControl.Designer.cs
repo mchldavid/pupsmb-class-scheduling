@@ -377,8 +377,8 @@
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.Controls.Add(this.btnButtonPrint);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.pnlStart);
             this.Controls.Add(this.tbCtrl_Students);
+            this.Controls.Add(this.pnlStart);
             this.Name = "SummaryControl";
             this.Size = new System.Drawing.Size(923, 672);
             this.Load += new System.EventHandler(this.SummaryControl_Load);

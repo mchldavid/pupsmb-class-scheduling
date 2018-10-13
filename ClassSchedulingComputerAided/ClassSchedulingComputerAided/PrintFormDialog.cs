@@ -152,7 +152,7 @@ namespace ClassSchedulingComputerAided
                 md.CSD_ListAllProfessors();
                 for (int x = 0; x < 50; x++)//set to 50 loop
                 {
-                    if (SubjectForStudents.ProfessorsName[x] != "" && SubjectForStudents.ProfessorsName[x] != "TBA")
+                    if (SubjectForStudents.ProfessorsName[x] != "")
                         cboOption.Items.Add(SubjectForStudents.ProfessorsName[x]);
                 }
                 cboOption.SelectedIndex = 0;
