@@ -113,6 +113,8 @@ namespace ClassSchedulingComputerAided
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            dgvShow.DataSource = md.dgv_showListOfProfessors().DataSource;
+            dgvShow.Columns[0].Visible = false;
             pnlShowUserControl.Controls.Clear();
             pnlShowUserControl.Visible = false;
             btnCancel.Visible = false;

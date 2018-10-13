@@ -573,7 +573,7 @@ namespace ClassSchedulingComputerAided
             try
             {
                 con.Open();
-                string sql = "SELECT users_id AS 'ID', CONCAT(firstName,' ',middleName,' ', lastName) AS 'Name',address AS 'Address', gender AS 'Gender',teachingStatus AS 'Teaching Status', courseDepartment AS 'Department',emailAddress AS 'Email', mobileNumber AS 'Number', unitsAllowed AS 'Units Allowed', status AS 'Status' FROM tbl_users t WHERE userLevel = 'professor';";
+                string sql = "SELECT users_id AS 'ID', status AS 'Status', CONCAT(firstName,' ',middleName,' ', lastName) AS 'Name',address AS 'Address', gender AS 'Gender',teachingStatus AS 'Teaching Status', courseDepartment AS 'Department',emailAddress AS 'Email', mobileNumber AS 'Number', unitsAllowed AS 'Units Allowed' FROM tbl_users t WHERE userLevel = 'professor' ORDER BY status ASC;";
                 MySqlCommand com = new MySqlCommand(sql, con);
                 com.ExecuteNonQuery();
                 con.Close();
