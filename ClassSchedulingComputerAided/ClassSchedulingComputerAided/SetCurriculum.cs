@@ -191,6 +191,7 @@ namespace ClassSchedulingComputerAided
             catch (Exception ex)
             {
                 MessageBox.Show("The file you want to import is in used", "Error Occured!");
+                txtFile.Text = "";
             }
         }
 
@@ -302,6 +303,8 @@ namespace ClassSchedulingComputerAided
         private void btnClose_Click_1(object sender, EventArgs e)
         {
             pnl_import.Visible = false;
+            txtFile.Text = "";
+            cboSheets.Items.Clear();
         }
 
         private void btnDeleteAll_Click(object sender, EventArgs e)
