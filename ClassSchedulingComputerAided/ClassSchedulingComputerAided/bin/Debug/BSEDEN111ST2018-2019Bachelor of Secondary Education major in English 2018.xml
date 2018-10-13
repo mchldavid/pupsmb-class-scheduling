@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SaveInfoData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Prof_1 />
+  <Start_1>-1</Start_1>
+  <End_1>-1</End_1>
+  <Day_1>-1</Day_1>
+  <Room_1 />
+  <Prof_2 />
+  <Start_2>-1</Start_2>
+  <End_2>-1</End_2>
+  <Day_2>-1</Day_2>
+  <Room_2 />
+  <Prof_3>Kamille Dizon Legaspi</Prof_3>
+  <Start_3>1</Start_3>
+  <End_3>7</End_3>
+  <Day_3>1</Day_3>
+  <Room_3>RM201</Room_3>
+  <Prof_4 />
+  <Start_4>-1</Start_4>
+  <End_4>-1</End_4>
+  <Day_4>-1</Day_4>
+  <Room_4 />
+  <Prof_5 />
+  <Start_5>-1</Start_5>
+  <End_5>-1</End_5>
+  <Day_5>-1</Day_5>
+  <Room_5 />
+  <Prof_6 />
+  <Start_6>-1</Start_6>
+  <End_6>-1</End_6>
+  <Day_6>-1</Day_6>
+  <Room_6 />
+  <Prof_7 />
+  <Start_7>-1</Start_7>
+  <End_7>-1</End_7>
+  <Day_7>-1</Day_7>
+  <Room_7 />
+  <Prof_8 />
+  <Start_8>-1</Start_8>
+  <End_8>-1</End_8>
+  <Day_8>-1</Day_8>
+  <Room_8 />
+  <Prof_9 />
+  <Start_9>-1</Start_9>
+  <End_9>-1</End_9>
+  <Day_9>-1</Day_9>
+  <Room_9 />
+  <Prof_10 />
+  <Start_10>-1</Start_10>
+  <End_10>-1</End_10>
+  <Day_10>-1</Day_10>
+  <Room_10 />
+  <ProfSemester>0</ProfSemester>
+  <ProfSchoolYear>0</ProfSchoolYear>
+</SaveInfoData>

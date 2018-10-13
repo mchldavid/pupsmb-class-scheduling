@@ -50,7 +50,7 @@
             this.lblDate = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
             this.pnl = new System.Windows.Forms.Panel();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer123 = new System.Windows.Forms.Timer(this.components);
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -425,10 +425,10 @@
             this.pnl.Size = new System.Drawing.Size(668, 452);
             this.pnl.TabIndex = 141;
             // 
-            // timer1
+            // timer123
             // 
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.timer123.Interval = 1000;
+            this.timer123.Tick += new System.EventHandler(this.timer123_Tick);
             // 
             // frmProfessorHomePage
             // 
@@ -480,7 +480,7 @@
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Label lblTime;
         public MetroFramework.Controls.MetroLabel lbl_title;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timer123;
 
     }
 }

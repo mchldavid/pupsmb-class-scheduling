@@ -46,7 +46,6 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
             this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape8 = new Microsoft.VisualBasic.PowerPacks.LineShape();
@@ -87,6 +86,7 @@
             this.label64 = new System.Windows.Forms.Label();
             this.label65 = new System.Windows.Forms.Label();
             this.label66 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
             this.lblProfessorsName = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -307,16 +307,6 @@
             this.label22.Text = "Monday 7:30 to 10:30";
             this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label22.Visible = false;
-            // 
-            // label23
-            // 
-            this.label23.BackColor = System.Drawing.Color.LimeGreen;
-            this.label23.Location = new System.Drawing.Point(393, 5);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(12, 12);
-            this.label23.TabIndex = 0;
-            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label23.Visible = false;
             // 
             // label38
             // 
@@ -845,6 +835,16 @@
             this.label66.Text = "TIME";
             this.label66.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // label23
+            // 
+            this.label23.BackColor = System.Drawing.Color.LimeGreen;
+            this.label23.Location = new System.Drawing.Point(393, 5);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(12, 12);
+            this.label23.TabIndex = 0;
+            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label23.Click += new System.EventHandler(this.label23_Click);
+            // 
             // lblProfessorsName
             // 
             this.lblProfessorsName.AutoSize = true;
@@ -871,6 +871,7 @@
             this.label1.Size = new System.Drawing.Size(98, 13);
             this.label1.TabIndex = 13;
             this.label1.Text = "Preferred Schedule";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -880,7 +881,7 @@
             this.label2.Size = new System.Drawing.Size(12, 12);
             this.label2.TabIndex = 0;
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label2.Visible = false;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -890,6 +891,7 @@
             this.label3.Size = new System.Drawing.Size(80, 13);
             this.label3.TabIndex = 13;
             this.label3.Text = "Class Schedule";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // CSD_ProfTimeTable
             // 

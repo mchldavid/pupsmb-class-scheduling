@@ -2282,7 +2282,7 @@ namespace ClassSchedulingComputerAided
                         if (cboProfessor_1.Items[y].ToString() == SubjectForStudents.Professors[x])
                             toOthers = false;
                     }
-                    if(toOthers == true)
+                    if (toOthers == true)
                         cboProfessor_1.Items.Add(SubjectForStudents.Professors[x]);
                 }
             }
@@ -3308,7 +3308,7 @@ namespace ClassSchedulingComputerAided
             {
                 text = cboProfessor_1.Items[e.Index].ToString();
             }
-            if (e.Index < countForColor)
+            if (e.Index <= countForColor)
             {
                 font = new Font(font, FontStyle.Bold);
                 brush = Brushes.DarkGreen;
@@ -3330,7 +3330,7 @@ namespace ClassSchedulingComputerAided
             {
                 text = cboProfessor_2.Items[e.Index].ToString();
             }
-            if (e.Index < countForColor)
+            if (e.Index <= countForColor)
             {
                 font = new Font(font, FontStyle.Bold);
                 brush = Brushes.DarkGreen;
@@ -3352,7 +3352,7 @@ namespace ClassSchedulingComputerAided
             {
                 text = cboProfessor_3.Items[e.Index].ToString();
             }
-            if (e.Index < countForColor)
+            if (e.Index <= countForColor)
             {
                 font = new Font(font, FontStyle.Bold);
                 brush = Brushes.DarkGreen;
@@ -3374,7 +3374,7 @@ namespace ClassSchedulingComputerAided
             {
                 text = cboProfessor_4.Items[e.Index].ToString();
             }
-            if (e.Index < countForColor)
+            if (e.Index <= countForColor)
             {
                 font = new Font(font, FontStyle.Bold);
                 brush = Brushes.DarkGreen;
@@ -3396,7 +3396,7 @@ namespace ClassSchedulingComputerAided
             {
                 text = cboProfessor_5.Items[e.Index].ToString();
             }
-            if (e.Index < countForColor)
+            if (e.Index <= countForColor)
             {
                 font = new Font(font, FontStyle.Bold);
                 brush = Brushes.DarkGreen;
@@ -3418,7 +3418,7 @@ namespace ClassSchedulingComputerAided
             {
                 text = cboProfessor_6.Items[e.Index].ToString();
             }
-            if (e.Index < countForColor)
+            if (e.Index <= countForColor)
             {
                 font = new Font(font, FontStyle.Bold);
                 brush = Brushes.DarkGreen;
@@ -3440,7 +3440,7 @@ namespace ClassSchedulingComputerAided
             {
                 text = cboProfessor_7.Items[e.Index].ToString();
             }
-            if (e.Index < countForColor)
+            if (e.Index <= countForColor)
             {
                 font = new Font(font, FontStyle.Bold);
                 brush = Brushes.DarkGreen;
@@ -3462,7 +3462,7 @@ namespace ClassSchedulingComputerAided
             {
                 text = cboProfessor_8.Items[e.Index].ToString();
             }
-            if (e.Index < countForColor)
+            if (e.Index <= countForColor)
             {
                 font = new Font(font, FontStyle.Bold);
                 brush = Brushes.DarkGreen;
@@ -3484,7 +3484,7 @@ namespace ClassSchedulingComputerAided
             {
                 text = cboProfessor_9.Items[e.Index].ToString();
             }
-            if (e.Index < countForColor)
+            if (e.Index <= countForColor)
             {
                 font = new Font(font, FontStyle.Bold);
                 brush = Brushes.DarkGreen;
@@ -3506,7 +3506,7 @@ namespace ClassSchedulingComputerAided
             {
                 text = cboProfessor_10.Items[e.Index].ToString();
             }
-            if (e.Index < countForColor)
+            if (e.Index <= countForColor)
             {
                 font = new Font(font, FontStyle.Bold);
                 brush = Brushes.DarkGreen;

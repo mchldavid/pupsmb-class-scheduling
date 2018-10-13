@@ -63,11 +63,12 @@ namespace ClassSchedulingComputerAided
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            //to change the state of onGoing to 0
-            md.changeState("0");
+            
             frmAdminHomePage ahp = new frmAdminHomePage();
             ahp.Show();
             this.Hide();
+            //to change the state of onGoing to 0
+            md.changeState("0");
         }
     }
 }

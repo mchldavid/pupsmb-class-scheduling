@@ -175,8 +175,8 @@ namespace ClassSchedulingComputerAided
                 FileStream read = new FileStream(name + ".xml", FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
                 SaveInfoData sid = (SaveInfoData)xs.Deserialize(read);
 
-                cboSemester.SelectedIndex = sid.ProfSemester;
-                cboSchoolYear.SelectedIndex = sid.ProfSchoolYear;
+                cboSemester.Text = sid.ProfSemester.ToString();
+                cboSchoolYear.Text = sid.ProfSchoolYear.ToString();
             }
         }
 

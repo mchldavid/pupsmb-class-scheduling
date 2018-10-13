@@ -24,13 +24,13 @@
               <Width>3.29374cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.07667cm</Width>
+              <Width>1.81209cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.6959cm</Width>
+              <Width>3.16673cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.94852cm</Width>
+              <Width>4.60456cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -81,7 +81,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>SUBJECT DESCRIPTION</Value>
+                              <Value>COURSE DESCRIPTION</Value>
                               <Style>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -221,7 +221,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>COURSE, YR &amp; SEC.</Value>
+                              <Value>PROGRAM, YR &amp; SEC</Value>
                               <Style>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -732,7 +732,7 @@
         <Top>0.17639cm</Top>
         <Left>0.3175cm</Left>
         <Height>1.2cm</Height>
-        <Width>27.29374cm</Width>
+        <Width>26.15603cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -740,7 +740,7 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>2.97917in</Height>
+    <Height>3.43055in</Height>
     <Style />
   </Body>
   <Width>11in</Width>
@@ -757,7 +757,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>CLASS SCHEDULE OF THE POLYTECHNIC UNIVERSITY OF THE PHILIPPINES SANTA MARIA BULACAN CAMPUS</Value>
+                  <Value>CLASS SCHEDULE OF POLYTECHNIC UNIVERSITY OF THE PHILIPPINES SANTA MARIA BULACAN CAMPUS</Value>
                   <Style>
                     <FontSize>14pt</FontSize>
                     <FontWeight>Bold</FontWeight>
@@ -961,7 +961,6 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox44</rd:DefaultName>
-          <Top>0.06944in</Top>
           <Left>0.125in</Left>
           <Height>0.22569in</Height>
           <Width>0.46875in</Width>
@@ -990,11 +989,39 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>pDateNow</rd:DefaultName>
-          <Top>0.06944in</Top>
           <Left>0.63542in</Left>
           <Height>0.22569in</Height>
           <Width>1in</Width>
           <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="pDateNow2">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Globals!PageNumber</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>pDateNow</rd:DefaultName>
+          <Left>9.42265in</Left>
+          <Height>0.22569in</Height>
+          <Width>1in</Width>
+          <ZIndex>2</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>

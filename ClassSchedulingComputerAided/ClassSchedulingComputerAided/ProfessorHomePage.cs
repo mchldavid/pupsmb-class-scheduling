@@ -28,7 +28,7 @@ namespace ClassSchedulingComputerAided
             lblTime.Text = DateTime.Now.ToString("h:mm tt");
             lblDay.Text = DateTime.Now.ToString("dddd");
             lblDate.Text = DateTime.Now.ToString("dd MMMM yyyy");
-            timer1.Enabled = true;
+            timer123.Enabled = true;
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -41,6 +41,8 @@ namespace ClassSchedulingComputerAided
                 Form l = new frmLogin();
                 l.Show();
                 this.Hide();
+
+                timer123.Enabled = false;
 
                 //audit
                 md.AuditTrail(AuditTrailData.username, "Logged Out", "Successfully!");
@@ -101,8 +103,6 @@ namespace ClassSchedulingComputerAided
             PUPImageControl pup = new PUPImageControl();
             pnl.Controls.Clear();
             pnl.Controls.Add(pup);
-
-            pnl.Controls.Clear();
             sidePanel.Height = btnHome.Height - 1;
             sidePanel.Top = btnHome.Top;
         }
@@ -119,16 +119,19 @@ namespace ClassSchedulingComputerAided
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (timer1.Interval == 1000)
+            
+        }
+
+        private void timer123_Tick(object sender, EventArgs e)
+        {
+            if (timer123.Interval == 1000)
             {
                 if (md.isGoing() == true)
                 {
-                    timer1.Enabled = false;
+                    timer123.Enabled = false;
                     MessageBox.Show("Class scheduling is on going. Changes are not allowed, youre about to logout!", "Logout", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     md.updateLogginStatus(usersData.p_id, "0");
-                    Form l = new frmLogin();
-                    l.Show();
-                    this.Hide();
+                    System.Environment.Exit(0);
 
                     //audit
                     md.AuditTrail(AuditTrailData.username, "Logged Out", "Successfully!");

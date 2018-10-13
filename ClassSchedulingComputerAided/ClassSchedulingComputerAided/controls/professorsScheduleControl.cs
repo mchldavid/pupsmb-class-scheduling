@@ -219,62 +219,8 @@ namespace ClassSchedulingComputerAided
                             DialogResult dr = MessageBox.Show("Save changes?", "Save", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                             if (dr == DialogResult.Yes)
                             {
-                                if (chkMonday.Checked == true)
-                                {
-                                    if (checkConstraints("Monday") == true)
-                                    {
-                                        md.Prof_UpdatePrefSchedule(id, cboStartTime.Text, cboEndTime.Text, "Monday");
-                                        defaultStatus();
-                                    }
-                                }
-                                if (chkTuesday.Checked == true)
-                                {
-                                    if (checkConstraints("Tuesday") == true)
-                                    {
-                                        md.Prof_UpdatePrefSchedule(id, cboStartTime.Text, cboEndTime.Text, "Tuesday");
-                                        defaultStatus();
-                                    }
-                                }
-                                if (chkWednesday.Checked == true)
-                                {
-                                    if (checkConstraints("Wednesday") == true)
-                                    {
-                                        md.Prof_UpdatePrefSchedule(id, cboStartTime.Text, cboEndTime.Text, "Wednesday");
-                                        defaultStatus();
-                                    }
-                                }
-                                if (chkThursday.Checked == true)
-                                {
-                                    if (checkConstraints("Thursday") == true)
-                                    {
-                                        md.Prof_UpdatePrefSchedule(id, cboStartTime.Text, cboEndTime.Text, "Thursday");
-                                        defaultStatus();
-                                    }
-                                }
-                                if (chkFriday.Checked == true)
-                                {
-                                    if (checkConstraints("Friday") == true)
-                                    {
-                                        md.Prof_UpdatePrefSchedule(id, cboStartTime.Text, cboEndTime.Text, "Friday");
-                                        defaultStatus();
-                                    }
-                                }
-                                if (chkSaturday.Checked == true)
-                                {
-                                    if (checkConstraints("Saturday") == true)
-                                    {
-                                        md.Prof_UpdatePrefSchedule(id, cboStartTime.Text, cboEndTime.Text, "Saturday");
-                                        defaultStatus();
-                                    }
-                                }
-                                if (chkSunday.Checked == true)
-                                {
-                                    if (checkConstraints("Sunday") == true)
-                                    {
-                                        md.Prof_UpdatePrefSchedule(id, cboStartTime.Text, cboEndTime.Text, "Sunday");
-                                        defaultStatus();
-                                    }
-                                }
+                                md.Prof_UpdatePrefSchedule(id, cboStartTime.Text, cboEndTime.Text, "Monday");
+                                defaultStatus();
                                 if (successfulSchedule != "")
                                     MessageBox.Show("Your preferred schedule was added: \r\n" + successfulSchedule, "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 if (errorSchedule != "")
@@ -344,6 +290,7 @@ namespace ClassSchedulingComputerAided
                     md.Prof_DeleteSchedule(dr.Cells[0].Value.ToString());
                     dgvShow.DataSource = md.dgv_showSchedule().DataSource;
                     dgvShow.Columns[0].Visible = false;
+                    defaultStatus();
                 }
             }
         }

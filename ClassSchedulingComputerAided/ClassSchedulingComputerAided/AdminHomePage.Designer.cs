@@ -646,13 +646,13 @@
         public Bunifu.Framework.UI.BunifuFlatButton btnHome;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Label lblTime;
-        public System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lblDay;
         public MetroFramework.Controls.MetroLabel lbl_title;
         public Bunifu.Framework.UI.BunifuFlatButton btnSummaryReport;
         private System.Windows.Forms.Panel panel1;
         public Bunifu.Framework.UI.BunifuFlatButton btnBackupRestore;
         private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Timer timer1;
 
 
     }
