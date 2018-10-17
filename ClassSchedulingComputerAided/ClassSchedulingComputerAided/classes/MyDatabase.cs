@@ -2748,9 +2748,8 @@ namespace ClassSchedulingComputerAided
             {
                 con.Open();
                 string sql = "SELECT DISTINCT CONCAT(usr.firstName,' ',usr.middleName,' ', usr.lastName) "
-                    + "FROM tbl_users usr, tbl_preferredsubjects ps, tbl_subjects su "
-                    + "WHERE NOT ps.users_id = usr.users_id "
-                    + "AND usr.status= 'active' "
+                    + "FROM tbl_users usr "
+                    + "WHERE usr.status = 'active' "
                     + "AND usr.userLevel = 'professor';";
 
                 MySqlCommand com = new MySqlCommand(sql, con);

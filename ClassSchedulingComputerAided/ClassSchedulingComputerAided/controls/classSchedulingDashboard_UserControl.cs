@@ -718,6 +718,9 @@ namespace ClassSchedulingComputerAided
             int scheduleIsFree = 0;
             string message = "";
             bool WalangDay = true;
+            string promptMessage = System.String.Format("The [New Schedule] does not fit with the professor's [Preferred Schedule] \r\n Do you want to force \r\n {0} [{1} {2}-{3} ]", rC, day, sec_sT, sec_eT);
+            message = promptMessage;
+            int readDay = 0;
             for (int x = 0; x < md.get_id_PreferredScheduled(rC, cboSemester.Text, cboSchoolYear.Text).Length; x++)
             {
                 string ps_id = md.get_id_PreferredScheduled(rC, cboSemester.Text, cboSchoolYear.Text).GetValue(x).ToString();
@@ -733,7 +736,7 @@ namespace ClassSchedulingComputerAided
                     int dt2 = DateTime.Compare(PS_endTime, endTime);
                     int dt3 = DateTime.Compare(PS_startTime, endTime);
                     int dt4 = DateTime.Compare(PS_endTime, startTime);
-                    string promptMessage = System.String.Format("The [New Schedule] does not fit with the professor's [Preferred Schedule] \r\n Do you want to force \r\n {0} [{1} {2}-{3} ]", rC, day, sec_sT, sec_eT);
+                    promptMessage = System.String.Format("The [New Schedule] does not fit with the professor's [Preferred Schedule] \r\n Do you want to force \r\n {0} [{1} {2}-{3} ]", rC, day, sec_sT, sec_eT);
                     message = promptMessage;
 
                     for (int a = 0; a < 7; a++)//kapag walang day
@@ -744,6 +747,8 @@ namespace ClassSchedulingComputerAided
 
                     if (md.get_info_PreferredScheduled(ps_id).GetValue(2).ToString() == day)
                     {
+                        readDay = 0;//to default
+                        readDay = 1;//to initiate a value
                         if (dt1 == 1 && dt2 == 1 && dt4 == -1)
                         {
                             scheduleIsFree++;
@@ -768,6 +773,18 @@ namespace ClassSchedulingComputerAided
                             message = promptMessage;
                             isValid = false;
                         }
+                        if (dt1 == 0 && dt2 == -1)
+                        {
+                            scheduleIsFree++;
+                            message = promptMessage;
+                            isValid = false;
+                        }
+                        if (dt1 == 1 && dt2 == 0)
+                        {
+                            scheduleIsFree++;
+                            message = promptMessage;
+                            isValid = false;
+                        }
                     }
                 }
             }
@@ -775,6 +792,17 @@ namespace ClassSchedulingComputerAided
             {
                 isValid = true;
                 if (WalangDay == false)
+                {
+                    if (readDay == 0)
+                    {
+                        DialogResult dr = MessageBox.Show(message, "PROFESSOR'S PREFERRED SCHEDULE CONFLICT", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                        if (dr == DialogResult.Yes)
+                            isValid = true;
+                        else
+                            isValid = false;
+                    }
+                }
+                else
                 {
                     DialogResult dr = MessageBox.Show(message, "PROFESSOR'S PREFERRED SCHEDULE CONFLICT", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (dr == DialogResult.Yes)
